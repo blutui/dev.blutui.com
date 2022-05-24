@@ -8,7 +8,7 @@
     ],
     "allowJs": true,
     "skipLibCheck": true,
-    "strict": false,
+    "strict": true,
     "forceConsistentCasingInFileNames": true,
     "noEmit": true,
     "incremental": true,
@@ -20,7 +20,7 @@
     "jsx": "preserve"
   },
   "include": [
-    "next-env.d.ts",
+    "*.d.ts",
     "**/*.ts",
     "**/*.tsx"
   ],
