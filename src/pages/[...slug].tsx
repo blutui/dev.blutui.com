@@ -1,38 +1,26 @@
-import * as fs from 'fs'
-import path from 'path'
 import { ParsedUrlQuery } from 'querystring'
+import React from 'react'
 import { GetStaticPaths, GetStaticProps } from 'next'
 import Markdoc, { renderers } from '@markdoc/markdoc'
 
-import { MainContext, MainContextT } from '@/components/context/MainContext'
-import { getDocs } from '@/utils/getDocs'
+import { getDocs, loadMarkdown } from '@/utils'
 
 import styles from '@/styles/Home.module.css'
-import React from 'react'
 
 interface IParams extends ParsedUrlQuery {
   slug: string[]
 }
 
-type Props = {
-  props: any
-}
-
 export default function Page(props: any) {
-  return renderers.react(props.markdoc.content, React, {
-    components: {
-      ...props.components,
-    },
-  })
+  return renderers.react(props.markdoc.content, React)
 }
 
 export const getStaticProps: GetStaticProps = async (context) => {
   const { slug } = context.params as IParams
-  const file = slug.join('/') + '.md'
+  const filepath = slug.join('/') + '.md'
 
-  const ast = Markdoc.parse(
-    fs.readFileSync(path.resolve('src', 'docs', file), 'utf-8')
-  )
+  const { ast } = loadMarkdown(filepath)
+
   const content = Markdoc.transform(ast)
 
   return {
