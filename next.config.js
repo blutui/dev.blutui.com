@@ -3,7 +3,7 @@ const withMarkdoc = require('@markdoc/next.js')
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
-  pageExtensions: ['ts', 'tsx', 'md', 'mdx']
+  pageExtensions: ['ts', 'tsx', 'md', 'mdoc']
 }
 
 module.exports = withMarkdoc({
