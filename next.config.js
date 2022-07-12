@@ -8,5 +8,4 @@ const nextConfig = {
 
 module.exports = withMarkdoc({
   schemaPath: './src/markdoc',
-  mode: 'static'
 })(nextConfig)
