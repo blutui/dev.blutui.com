@@ -1,6 +1,12 @@
+const withMarkdoc = require('@markdoc/next.js')
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
+  pageExtensions: ['ts', 'tsx', 'md', 'mdx']
 }
 
-module.exports = nextConfig
+module.exports = withMarkdoc({
+  schemaPath: './src/markdoc',
+  mode: 'static'
+})(nextConfig)
