@@ -1,6 +1,8 @@
 import { AppProps } from 'next/app'
 import Head from 'next/head'
 
+import { Contribution } from '../components/Contribution'
+
 import '../styles/globals.css'
 
 function Blutui({ Component, pageProps }: AppProps) {
@@ -24,7 +26,11 @@ function Blutui({ Component, pageProps }: AppProps) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <Component {...pageProps} />
+      <main>
+        <Component {...pageProps} />
+
+        <Contribution />
+      </main>
     </>
   )
 }
