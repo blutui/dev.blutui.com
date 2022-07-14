@@ -7,12 +7,12 @@ export interface HeadingProps {
   className?: string
 }
 
-export function Heading({
+export const Heading = ({
   id = '',
   level = 1,
   children,
   className,
-}: HeadingProps) {
+}: HeadingProps) => {
   return React.createElement(
     `h${level}`,
     {
