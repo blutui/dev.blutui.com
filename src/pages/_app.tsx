@@ -1,15 +1,25 @@
 import { AppProps } from 'next/app'
 import Head from 'next/head'
 
+import { Contribution } from '../components/Contribution'
+import { ArticleContext, ArticleContextT } from '../context/ArticleContext'
+
 import '../styles/globals.css'
 
 function Blutui({ Component, pageProps }: AppProps) {
   const { markdoc } = pageProps
 
   let title = 'Blutui'
+  let articleContext: ArticleContextT = {}
   if (markdoc) {
     if (markdoc.frontmatter.title) {
       title = markdoc.frontmatter.title + ' | Blutui'
+    }
+
+    if (markdoc.file && markdoc.file.path) {
+      articleContext = Object.assign(articleContext, {
+        filePath: markdoc.file.path,
+      })
     }
   }
 
@@ -24,7 +34,12 @@ function Blutui({ Component, pageProps }: AppProps) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <Component {...pageProps} />
+      <main>
+        <ArticleContext.Provider value={articleContext}>
+          <Component {...pageProps} />
+          <Contribution />
+        </ArticleContext.Provider>
+      </main>
     </>
   )
 }
