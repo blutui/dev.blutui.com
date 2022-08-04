@@ -5,6 +5,9 @@
 /.next/
 /out/
 
+# Vercel
+.vercel
+
 # production
 /build
 
@@ -18,3 +21,10 @@ yarn-error.log*
 .DS_Store
 .AppleDouble
 .LSOverride
+
+# Typescript
+*.tsbuildinfo
+next-env.d.ts
+
+# Misc
+*.pem

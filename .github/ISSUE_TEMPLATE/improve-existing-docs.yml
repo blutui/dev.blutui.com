@@ -30,6 +30,6 @@ body:
   - type: textarea
     attributes:
       label: Additional information
-      description: Add any other context or screenshots about the feature request here.
+      description: Add any other context or screenshots about the request here.
     validations:
       required: false
