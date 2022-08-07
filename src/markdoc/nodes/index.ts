@@ -1,1 +1,1 @@
-export * from './heading.markdoc'
+export { heading } from './heading.markdoc'

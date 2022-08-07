@@ -1,1 +1,1 @@
-export {}
+export { comment } from './comment.markdoc'
