@@ -2,6 +2,7 @@ import { AppProps } from 'next/app'
 import Head from 'next/head'
 
 import { Contribution } from '../components/Contribution'
+import { SearchButton, SearchProvider } from '../components/Search'
 import { ArticleContext, ArticleContextT } from '../context/ArticleContext'
 
 import '../styles/globals.css'
@@ -35,10 +36,15 @@ function Blutui({ Component, pageProps }: AppProps) {
       </Head>
 
       <main>
-        <ArticleContext.Provider value={articleContext}>
-          <Component {...pageProps} />
-          <Contribution />
-        </ArticleContext.Provider>
+        <SearchProvider>
+          <ArticleContext.Provider value={articleContext}>
+            <SearchButton className="text-zinc-700 font-semibold tracking-tight px-4 py-2 border rounded-lg bg-white hover:bg-zinc-100">
+              Search
+            </SearchButton>
+            <Component {...pageProps} />
+            <Contribution />
+          </ArticleContext.Provider>
+        </SearchProvider>
       </main>
     </>
   )
