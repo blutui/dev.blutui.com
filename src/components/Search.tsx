@@ -61,6 +61,7 @@ export const SearchProvider = ({ children }: SearchProviderProps) => {
         createPortal(
           <DocSearchModal
             initialScrollY={window.scrollY}
+            placeholder="Search documentation"
             onClose={onClose}
             indexName={INDEX_NAME}
             apiKey={API_KEY}
@@ -77,13 +78,21 @@ export const SearchProvider = ({ children }: SearchProviderProps) => {
                 const a = document.createElement('a')
                 a.href = item.url
 
-                const hash = ''
+                const hash = a.hash
 
                 return {
                   ...item,
                   url: `${a.pathname}${hash}`,
+                  __is_result: () => true,
                   __is_parent: () =>
                     item.type === 'lvl1' && items.length > 1 && index === 0,
+                  __is_child: () =>
+                    item.type !== 'lvl1' &&
+                    items.length > 1 &&
+                    items[0].type === 'lvl1' &&
+                    index !== 0,
+                  __is_first: () => index === 1,
+                  __is_last: () => index === items.length - 1 && index !== 0,
                 }
               })
             }}
@@ -94,12 +103,32 @@ export const SearchProvider = ({ children }: SearchProviderProps) => {
   )
 }
 
-type HitT = Parameters<NonNullable<DocSearchProps['hitComponent']>>
+type HitRaw = Parameters<NonNullable<DocSearchProps['hitComponent']>>
+type HitT = {
+  hit: {
+    __is_result?: () => boolean
+    __is_parent?: () => boolean
+    __is_child?: () => boolean
+    __is_first?: () => boolean
+    __is_last?: () => boolean
+  } & HitRaw[0]['hit']
+  children: HitRaw[0]['children']
+}
 
-const Hit = ({ hit, children }: HitT[0]) => {
+const Hit = ({ hit, children }: HitT) => {
+  const className = [
+    hit.__is_result?.() && 'DocSearch-Hit--Result',
+    hit.__is_parent?.() && 'DocSearch-Hit--Parent',
+    hit.__is_child?.() && 'DocSearch-Hit--Child',
+    hit.__is_first?.() && 'DocSearch-Hit--First',
+    hit.__is_last?.() && 'DocSearch-Hit--Last',
+  ]
+    .filter(Boolean)
+    .join(' ')
+
   return (
     <Link href={hit.url}>
-      <a>{children}</a>
+      <a className={className}>{children}</a>
     </Link>
   )
 }
