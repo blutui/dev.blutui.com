@@ -193,3 +193,49 @@
 .DocSearch-Logo svg {
   @apply ml-3 text-[#5468ff];
 }
+
+.DocSearch-NoResults .DocSearch-Screen-Icon {
+  @apply hidden;
+}
+
+.DocSearch-Title {
+  @apply text-lg leading-6 mb-10;
+}
+
+.DocSearch-Title strong {
+  @apply text-slate-900 font-normal;
+}
+
+.DocSearch-StartScreen .DocSearch-Help {
+  @apply text-center text-slate-400 py-16 px-6;
+}
+
+.DocSearch-NoResults {
+  @apply pt-10 pb-8 px-4;
+}
+
+.DocSearch-NoResults .DocSearch-Title {
+  @apply text-center text-slate-400;
+}
+
+.DocSearch-NoResults-Prefill-List .DocSearch-Help {
+  @apply text-sm leading-6 font-semibold mb-3 text-slate-900;
+}
+
+.DocSearch-NoResults-Prefill-List ul {
+  @apply rounded-lg bg-white border border-slate-200 overflow-hidden;
+}
+
+.DocSearch-NoResults-Prefill-List button {
+  @apply py-2 px-3 block w-full text-left text-sm text-slate-700;
+}
+
+.DocSearch-Hit-action [title='Save this search'],
+.DocSearch-Hit-action [title='Remove this search from history'],
+.DocSearch-Hit-action [title='Remove this search from favorites'] {
+  @apply w-6 h-6;
+}
+
+.DocSearch-Hit-action + .DocSearch-Hit-action {
+  @apply ml-3 pl-3 border-l border-slate-200;
+}

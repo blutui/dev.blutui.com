@@ -2,6 +2,7 @@ import React, {
   createContext,
   useCallback,
   useContext,
+  useEffect,
   useRef,
   useState,
 } from 'react'
@@ -28,7 +29,7 @@ export interface SearchContextI {
   isOpen?: boolean
   onOpen?: any
   onClose?: any
-  onInput?: any
+  onInput?: (event: KeyboardEvent) => void
 }
 
 const SearchContext = createContext<SearchContextI>({})
@@ -45,6 +46,16 @@ export const SearchProvider = ({ children }: SearchProviderProps) => {
     setIsOpen(false)
   }, [setIsOpen])
 
+  const onInput = useCallback(
+    (event: KeyboardEvent) => {
+      console.log(event)
+      setIsOpen(true)
+    },
+    [setIsOpen]
+  )
+
+  useDocSearchKeyboardEvents({ isOpen, onOpen, onClose })
+
   return (
     <>
       <Head>
@@ -54,7 +65,7 @@ export const SearchProvider = ({ children }: SearchProviderProps) => {
           crossOrigin="true"
         />
       </Head>
-      <SearchContext.Provider value={{ isOpen, onOpen, onClose }}>
+      <SearchContext.Provider value={{ isOpen, onOpen, onClose, onInput }}>
         {children}
       </SearchContext.Provider>
       {isOpen &&
@@ -142,4 +153,38 @@ export const SearchButton = ({ children, ...props }: SearchButtonProps) => {
       {children}
     </button>
   )
+}
+
+const useDocSearchKeyboardEvents = ({
+  isOpen,
+  onOpen,
+  onClose,
+}: SearchContextI) => {
+  useEffect(() => {
+    function onKeyDown(event: KeyboardEvent) {
+      function open() {
+        if (!document.body.classList.contains('DocSearch--active')) {
+          onOpen()
+        }
+      }
+
+      if (
+        (event.key === 'k' && (event.metaKey || event.ctrlKey)) ||
+        (event.key === '/' && !isOpen)
+      ) {
+        event.preventDefault()
+
+        if (isOpen) {
+          onClose()
+        } else if (!document.body.classList.contains('DocSearch--active')) {
+          open()
+        }
+      }
+    }
+
+    window.addEventListener('keydown', onKeyDown)
+    return () => {
+      window.removeEventListener('keydown', onKeyDown)
+    }
+  }, [isOpen, onOpen, onClose])
 }
