@@ -6,8 +6,16 @@
   @apply w-screen h-screen fixed z-[200] top-0 left-0 cursor-auto flex flex-col bg-black/20 backdrop-blur-sm p-4 sm:p-6 md:p-[10vh] lg:p-[12vh];
 }
 
-.DocSearch-LoadingIndicator {
+.DocSearch-LoadingIndicator svg {
   @apply hidden;
+}
+
+.DocSearch-LoadingIndicator {
+  @apply hidden w-6 h-6 bg-black;
+}
+
+.DocSearch-Container--Stalled .DocSearch-LoadingIndicator {
+  @apply block;
 }
 
 .DocSearch-Modal {

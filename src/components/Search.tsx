@@ -2,13 +2,16 @@ import React, {
   createContext,
   useCallback,
   useContext,
-  useEffect,
   useRef,
   useState,
 } from 'react'
 import { createPortal } from 'react-dom'
 import { useRouter } from 'next/router'
-import { DocSearchModal, DocSearchProps } from '@docsearch/react'
+import {
+  DocSearchModal,
+  DocSearchProps,
+  useDocSearchKeyboardEvents,
+} from '@docsearch/react'
 import Link from 'next/link'
 import Head from 'next/head'
 
@@ -37,6 +40,7 @@ const SearchContext = createContext<SearchContextI>({})
 export const SearchProvider = ({ children }: SearchProviderProps) => {
   const router = useRouter()
   const [isOpen, setIsOpen] = useState(false)
+  const [initialQuery, setInitialQuery] = useState<string | undefined>()
 
   const onOpen = useCallback(() => {
     setIsOpen(true)
@@ -48,10 +52,10 @@ export const SearchProvider = ({ children }: SearchProviderProps) => {
 
   const onInput = useCallback(
     (event: KeyboardEvent) => {
-      console.log(event)
       setIsOpen(true)
+      setInitialQuery(event.key)
     },
-    [setIsOpen]
+    [setIsOpen, setInitialQuery]
   )
 
   useDocSearchKeyboardEvents({ isOpen, onOpen, onClose })
@@ -71,7 +75,11 @@ export const SearchProvider = ({ children }: SearchProviderProps) => {
       {isOpen &&
         createPortal(
           <DocSearchModal
+            initialQuery={initialQuery}
             initialScrollY={window.scrollY}
+            searchParameters={{
+              distinct: 1,
+            }}
             placeholder="Search documentation"
             onClose={onClose}
             indexName={INDEX_NAME}
@@ -153,38 +161,4 @@ export const SearchButton = ({ children, ...props }: SearchButtonProps) => {
       {children}
     </button>
   )
-}
-
-const useDocSearchKeyboardEvents = ({
-  isOpen,
-  onOpen,
-  onClose,
-}: SearchContextI) => {
-  useEffect(() => {
-    function onKeyDown(event: KeyboardEvent) {
-      function open() {
-        if (!document.body.classList.contains('DocSearch--active')) {
-          onOpen()
-        }
-      }
-
-      if (
-        (event.key === 'k' && (event.metaKey || event.ctrlKey)) ||
-        (event.key === '/' && !isOpen)
-      ) {
-        event.preventDefault()
-
-        if (isOpen) {
-          onClose()
-        } else if (!document.body.classList.contains('DocSearch--active')) {
-          open()
-        }
-      }
-    }
-
-    window.addEventListener('keydown', onKeyDown)
-    return () => {
-      window.removeEventListener('keydown', onKeyDown)
-    }
-  }, [isOpen, onOpen, onClose])
 }
