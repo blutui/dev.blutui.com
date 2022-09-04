@@ -1,0 +1,249 @@
+.DocSearch--active {
+  @apply overflow-hidden !important;
+}
+
+.DocSearch-Container {
+  @apply w-screen h-screen fixed z-[200] top-0 left-0 cursor-auto flex flex-col bg-black/20 backdrop-blur-sm p-4 sm:p-6 md:p-[10vh] lg:p-[12vh];
+}
+
+.DocSearch-LoadingIndicator svg {
+  @apply hidden;
+}
+
+.DocSearch-LoadingIndicator {
+  @apply hidden w-6 h-6 bg-black;
+}
+
+.DocSearch-Container--Stalled .DocSearch-LoadingIndicator {
+  @apply block;
+}
+
+.DocSearch-Modal {
+  @apply my-0 mx-auto w-full max-w-3xl flex flex-col min-h-0 bg-white shadow-lg rounded-lg;
+}
+
+.DocSearch-SearchBar {
+  @apply z-[1] py-0 px-4 flex-none relative flex items-center border-b border-slate-100;
+}
+
+.DocSearch-Form {
+  @apply flex-auto flex items-center min-w-0;
+}
+
+.DocSearch-Dropdown-Container {
+  @apply pb-6;
+}
+
+.DocSearch-Dropdown {
+  @apply flex-auto overflow-auto;
+}
+
+.DocSearch-Hit--Result {
+  @apply mx-6 relative;
+}
+
+.DocSearch-Hit--Result.DocSearch-Hit--Child {
+  @apply ml-12;
+}
+
+.DocSearch-Hit > a {
+  @apply relative text-sm border-b border-slate-100;
+}
+
+.DocSearch-Hit--Result {
+  @apply border-b-0 !important;
+}
+
+.DocSearch-MagnifierLabel {
+  @apply flex-none w-6 h-6;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke-width='1.5' stroke='%23475569' class='w-6 h-6'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' d='M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z' /%3E%3C/svg%3E%0A");
+}
+
+.DocSearch-MagnifierLabel svg,
+.DocSearch-Container--Stalled .DocSearch-MagnifierLabel {
+  @apply hidden;
+}
+
+.DocSearch-Input {
+  @apply appearance-none bg-transparent h-14 text-base text-slate-900 ml-3 mr-4 flex-auto min-w-0;
+}
+
+@screen sm {
+  .DocSearch-Input {
+    @apply text-sm;
+  }
+}
+
+.DocSearch-Input:focus {
+  @apply outline-2 outline-dotted outline-transparent;
+}
+
+.DocSearch-Input::-webkit-search-cancel-button,
+.DocSearch-Input::-webkit-search-decoration,
+.DocSearch-Input::-webkit-search-results-button,
+.DocSearch-Input::-webkit-search-results-decoration {
+  @apply hidden;
+}
+
+.DocSearch-Reset {
+  @apply hidden;
+}
+
+.DocSearch-Cancel {
+  @apply appearance-none flex-none text-xs rounded-md font-medium py-1 px-2 ring-1 ring-black/10 hover:ring-black/20 shadow-sm hover:shadow transition;
+}
+
+.DocSearch-Reset svg {
+  @apply hidden;
+}
+
+.DocSearch-Hit-source {
+  @apply leading-6 font-semibold text-slate-900 pt-10 mt-0 mb-4 mx-6 text-sm;
+}
+
+.DocSearch-Hits:first-child .DocSearch-Hit-source {
+  @apply pt-6;
+}
+
+.DocSearch-Hit-Container {
+  @apply flex items-center;
+}
+
+.DocSearch-Hit-Tree {
+  @apply hidden;
+}
+
+.DocSearch-Hit-icon {
+  @apply hidden;
+}
+
+.DocSearch-Hit--Result .DocSearch-Hit-icon {
+  @apply flex flex-none items-center justify-center mr-4 w-6 h-6 rounded-md bg-white ring-1 ring-black/10 shadow-sm;
+}
+
+.DocSearch-Hit-icon svg {
+  @apply w-4 h-4;
+}
+
+.DocSearch-Hit-content-wrapper {
+  @apply flex-auto flex flex-col-reverse min-w-0 z-[1];
+}
+
+.DocSearch-Hit-path {
+  @apply self-start text-xs leading-5 font-semibold text-slate-700 bg-slate-200 rounded-full py-0 px-2;
+}
+
+.DocSearch-Hit-title {
+  @apply text-slate-700 leading-6 truncate;
+}
+
+.DocSearch-Hit-title + .DocSearch-Hit-path {
+  @apply mb-1;
+}
+
+.DocSearch-Hit-action {
+  @apply flex-none ml-3.5;
+}
+
+.DocSearch-Hit > a {
+  @apply block py-4 px-6;
+}
+
+.DocSearch-Hit--Result {
+  @apply py-3 px-4 !important;
+}
+
+.DocSearch-Hit {
+  @apply relative;
+}
+
+.DocSearch-Hit:first-child > a {
+  @apply border-t border-slate-100;
+}
+
+.DocSearch-Hit--Result {
+  @apply border-t-0 !important;
+}
+
+.DocSearch-Hit + .DocSearch-Hit .DocSearch-Hit--Result {
+  @apply mt-2;
+}
+
+.DocSearch-Hit--Result {
+  @apply bg-slate-50 rounded-lg;
+}
+
+.DocSearch-Hits mark {
+  background: none;
+  @apply text-indigo-600 font-semibold border-b-2 border-indigo-300;
+}
+
+.DocSearch-Hit-path mark {
+  @apply border-0;
+}
+
+.DocSearch-Hit[aria-selected='true'] mark {
+  @apply text-inherit border-b-current;
+}
+
+.DocSearch-Footer {
+  @apply flex-none flex justify-end border-t border-slate-100 py-4 px-6;
+}
+
+.DocSearch-Commands {
+  @apply hidden;
+}
+
+.DocSearch-Logo a {
+  @apply flex items-center text-slate-400 text-xs font-medium;
+}
+
+.DocSearch-Logo svg {
+  @apply ml-3 text-[#5468ff];
+}
+
+.DocSearch-NoResults .DocSearch-Screen-Icon {
+  @apply hidden;
+}
+
+.DocSearch-Title {
+  @apply text-lg leading-6 mb-10;
+}
+
+.DocSearch-Title strong {
+  @apply text-slate-900 font-normal;
+}
+
+.DocSearch-StartScreen .DocSearch-Help {
+  @apply text-center text-slate-400 py-16 px-6;
+}
+
+.DocSearch-NoResults {
+  @apply pt-10 pb-8 px-4;
+}
+
+.DocSearch-NoResults .DocSearch-Title {
+  @apply text-center text-slate-400;
+}
+
+.DocSearch-NoResults-Prefill-List .DocSearch-Help {
+  @apply text-sm leading-6 font-semibold mb-3 text-slate-900;
+}
+
+.DocSearch-NoResults-Prefill-List ul {
+  @apply rounded-lg bg-white border border-slate-200 overflow-hidden;
+}
+
+.DocSearch-NoResults-Prefill-List button {
+  @apply py-2 px-3 block w-full text-left text-sm text-slate-700;
+}
+
+.DocSearch-Hit-action [title='Save this search'],
+.DocSearch-Hit-action [title='Remove this search from history'],
+.DocSearch-Hit-action [title='Remove this search from favorites'] {
+  @apply w-6 h-6;
+}
+
+.DocSearch-Hit-action + .DocSearch-Hit-action {
+  @apply ml-3 pl-3 border-l border-slate-200;
+}
