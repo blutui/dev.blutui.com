@@ -2,9 +2,9 @@ import { AppProps } from 'next/app'
 import Head from 'next/head'
 
 import { Contribution } from '../components/Contribution'
-import { SearchButton, SearchProvider } from '../components/Search'
+import { Header } from '../components/Header'
+import { SearchProvider } from '../components/Search'
 import { ArticleContext, ArticleContextT } from '../context/ArticleContext'
-import { useActionKey } from '../hooks/useActionKey'
 
 import '../styles/globals.css'
 
@@ -25,8 +25,6 @@ function Blutui({ Component, pageProps }: AppProps) {
     }
   }
 
-  const actionKey = useActionKey()
-
   return (
     <>
       <Head>
@@ -38,22 +36,15 @@ function Blutui({ Component, pageProps }: AppProps) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main>
-        <SearchProvider>
-          <ArticleContext.Provider value={articleContext}>
-            <SearchButton className="text-zinc-700 font-semibold tracking-tight px-4 py-2 border rounded-lg bg-white hover:bg-zinc-100">
-              Search
-              {actionKey && (
-                <span className="ml-2 text-xs font-semibold bg-slate-200 py-0.5 px-1.5 rounded text-slate-500">
-                  {actionKey[0]}K
-                </span>
-              )}
-            </SearchButton>
+      <SearchProvider>
+        <ArticleContext.Provider value={articleContext}>
+          <Header />
+          <main>
             <Component {...pageProps} />
             <Contribution />
-          </ArticleContext.Provider>
-        </SearchProvider>
-      </main>
+          </main>
+        </ArticleContext.Provider>
+      </SearchProvider>
     </>
   )
 }
