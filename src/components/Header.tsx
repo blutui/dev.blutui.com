@@ -2,6 +2,7 @@ import React from 'react'
 
 import { useActionKey } from '../hooks/useActionKey'
 
+import { Logo } from './Logo'
 import { SearchButton } from './Search'
 
 export interface HeaderProps {
@@ -15,10 +16,10 @@ export const Header = ({ children }: HeaderProps) => {
     <header className="sticky top-0 flex-none border-b border-black/10 dark:border-white/10">
       <div className="mx-auto max-w-8xl">
         <div className="px-8 flex items-center justify-between h-[3.75rem] space-x-6">
-          <span className="block flex-shrink-0 h-8 w-40 rounded-full bg-gray-500"></span>
+          <Logo className="flex-shrink-0 w-auto h-8 mt-1.5" />
           <div className="flex flex-auto items-center space-x-6">
             <span className="h-6 border-l border-black/10 dark:border-white/10"></span>
-            <SearchButton className="text-left text-gray-600 dark:text-gray-400 font-semibold tracking-tight px-4 py-1.5 rounded-full bg-black/10 hover:bg-black/20 dark:bg-white/10 dark:hover:bg-white/20 transition">
+            <SearchButton className="text-left text-gray-500 dark:text-gray-400 font-medium tracking-tight px-4 py-1.5 rounded-full bg-black/10 hover:bg-black/20 dark:bg-white/10 dark:hover:bg-white/20 transition">
               <div className="flex items-center lg:w-80 space-x-3">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
