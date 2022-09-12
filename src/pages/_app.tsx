@@ -8,7 +8,7 @@ import { ArticleContext, ArticleContextT } from '../context/ArticleContext'
 
 import '../styles/globals.css'
 
-function Blutui({ Component, pageProps }: AppProps) {
+const Blutui = ({ Component, pageProps }: AppProps) => {
   const { markdoc } = pageProps
 
   let title = 'Blutui'
