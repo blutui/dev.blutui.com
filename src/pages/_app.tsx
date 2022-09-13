@@ -1,5 +1,6 @@
 import { AppProps } from 'next/app'
 import Head from 'next/head'
+import { MarkdocNextJsPageProps } from '@markdoc/next.js'
 
 import { Contribution } from '../components/Contribution'
 import { Header } from '../components/Header'
@@ -8,7 +9,10 @@ import { ArticleContext, ArticleContextT } from '../context/ArticleContext'
 
 import '../styles/globals.css'
 
-const Blutui = ({ Component, pageProps }: AppProps) => {
+const Blutui = ({
+  Component,
+  pageProps,
+}: AppProps<{ markdoc: MarkdocNextJsPageProps['markdoc'] }>) => {
   const { markdoc } = pageProps
 
   let title = 'Blutui'
