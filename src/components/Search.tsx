@@ -97,7 +97,8 @@ export const SearchProvider = ({ children }: SearchProviderProps) => {
                 const a = document.createElement('a')
                 a.href = item.url
 
-                const hash = a.hash
+                const hash =
+                  a.hash === '#content' || a.hash === '#header' ? '' : a.hash
 
                 return {
                   ...item,

@@ -1,5 +1,9 @@
 @tailwind base;
 
+#__next {
+  min-height: 100%;
+}
+
 /*! purgecss start ignore */
 @import 'docsearch.css';
 /*! purgecss end ignore */
