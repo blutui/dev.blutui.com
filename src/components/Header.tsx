@@ -17,14 +17,16 @@ export const Header = ({ children }: HeaderProps) => {
     <header className="sticky top-0 flex-none bg-gray-50/70 dark:bg-gray-900/70 backdrop-blur border-b border-black/10 dark:border-white/10">
       <div className="mx-auto max-w-8xl">
         <div className="px-8 flex items-center justify-between h-[3.75rem] space-x-6">
-          <Link href="/">
-            <a className="flex-shrink-0">
-              <span className="sr-only">Blutui Developers home page</span>
-              <Logo className="w-auto h-7 mt-1" />
-            </a>
-          </Link>
-          <div className="flex flex-auto items-center space-x-6">
+          <div className="flex items-center flex-shrink-0">
+            <Link href="/">
+              <a className="w-72">
+                <span className="sr-only">Blutui Developers home page</span>
+                <Logo className="w-auto h-8 mt-1" />
+              </a>
+            </Link>
             <span className="hidden lg:block h-6 border-l border-black/10 dark:border-white/10"></span>
+          </div>
+          <div className="flex flex-auto items-center space-x-6">
             <SearchButton className="hidden lg:block text-left text-gray-500 dark:text-gray-400 font-medium tracking-tight px-4 py-1.5 rounded-full bg-black/10 hover:bg-black/20 dark:bg-white/10 dark:hover:bg-white/20 transition">
               <div className="flex items-center lg:w-80 space-x-3">
                 <svg

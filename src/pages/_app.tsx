@@ -7,7 +7,7 @@ import { Header } from '../components/Header'
 import { SearchProvider } from '../components/Search'
 import { ArticleContext, ArticleContextT } from '../context/ArticleContext'
 
-import '../styles/globals.css'
+import '../styles/main.css'
 
 const Blutui = ({
   Component,
@@ -43,9 +43,12 @@ const Blutui = ({
       <SearchProvider>
         <ArticleContext.Provider value={articleContext}>
           <Header />
-          <main>
-            <Component {...pageProps} />
-            <Contribution />
+          <main className="flex-1 my-8 px-8 mx-auto w-full max-w-8xl flex items-start space-x-6">
+            <div className="border border-white/10 rounded-lg w-72 py-6"></div>
+            <div className="flex-auto">
+              <Component {...pageProps} />
+              <Contribution />
+            </div>
           </main>
         </ArticleContext.Provider>
       </SearchProvider>
