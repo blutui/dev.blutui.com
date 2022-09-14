@@ -7,7 +7,7 @@ export interface ArticleProps {
 export const Article = ({ children }: ArticleProps) => {
   return React.createElement(
     'article',
-    { className: 'mb-6 text-gray-700 dark:text-gray-200' },
+    { className: 'mb-6 prose dark:prose-dark max-w-none' },
     children
   )
 }
