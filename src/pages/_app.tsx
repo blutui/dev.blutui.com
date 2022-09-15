@@ -1,6 +1,7 @@
 import Head from 'next/head'
 
-import { Contribution } from '../components/Contribution'
+import { DocumentationLayout } from '../layouts/DocumentationLayout'
+
 import { Header } from '../components/Header'
 import { SearchProvider } from '../components/Search'
 import { ArticleContext, ArticleContextT } from '../context/ArticleContext'
@@ -10,10 +11,19 @@ import '../styles/main.css'
 import type { AppProps } from 'next/app'
 import type { MarkdocNextJsPageProps } from '@markdoc/next.js'
 
+type BlutuiAppProps<P = {}> = Omit<AppProps<P>, 'Component'> & {
+  Component: AppProps['Component'] & { layoutProps?: any }
+}
+
 export type BlutuiProps = MarkdocNextJsPageProps
 
-const Blutui = ({ Component, pageProps }: AppProps<BlutuiProps>) => {
+const Blutui = ({ Component, pageProps }: BlutuiAppProps<BlutuiProps>) => {
   const { markdoc } = pageProps
+
+  const Layout = Component.layoutProps?.Layout || DocumentationLayout
+  const layoutProps = Component.layoutProps?.Layout
+    ? { layoutProps: Component.layoutProps }
+    : {}
 
   let title = 'Blutui'
   let articleContext: ArticleContextT = {}
@@ -53,17 +63,9 @@ const Blutui = ({ Component, pageProps }: AppProps<BlutuiProps>) => {
       <SearchProvider>
         <ArticleContext.Provider value={articleContext}>
           <Header />
-          <main className="flex-1 my-8 px-8 mx-auto w-full max-w-8xl flex items-start space-x-6">
-            <div className="flex-shrink-0 border border-black/10 dark:border-white/10 rounded-lg w-72 py-6"></div>
-            <div className="flex-auto flex items-start space-x-6">
-              <div className="flex-auto">
-                <Component {...pageProps} />
-              </div>
-              <div className="flex-shrink-0 w-64">
-                <Contribution />
-              </div>
-            </div>
-          </main>
+          <Layout {...layoutProps}>
+            <Component {...pageProps} />
+          </Layout>
         </ArticleContext.Provider>
       </SearchProvider>
     </>
