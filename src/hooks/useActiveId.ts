@@ -14,7 +14,7 @@ export const useActiveId = (items: Section[]) => {
           }
         })
       },
-      { rootMargin: `-100px 0% -60% 0%`, threshold: 1 }
+      { rootMargin: `-100px 0% -70% 0%`, threshold: 1 }
     )
 
     items.forEach((item) => {
