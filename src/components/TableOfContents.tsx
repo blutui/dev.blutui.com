@@ -1,16 +1,19 @@
+import React, { useEffect, useState } from 'react'
 import Link from 'next/link'
-import React from 'react'
 
-import type { Sections } from '../utils/collectHeadings'
+import type { Section } from '../utils/collectHeadings'
+import { useActiveId } from '../hooks/useActiveId'
 
 export interface TableOfContentsProps {
-  toc: Sections[]
+  toc: Section[]
 }
 
 export const TableOfContents = ({ toc }: TableOfContentsProps) => {
   const items = toc.filter(
     (item) => item.id && (item.level === 2 || item.level === 3)
   )
+
+  const activeId = useActiveId(items)
 
   if (items.length <= 1) {
     return null
@@ -24,8 +27,7 @@ export const TableOfContents = ({ toc }: TableOfContentsProps) => {
       <ul className="text-gray-600 text-sm">
         {items.map((item) => {
           const href = `#${item.id}`
-          const active =
-            typeof window !== 'undefined' && window.location.hash === href
+          const active = activeId === item.id
 
           return (
             <li

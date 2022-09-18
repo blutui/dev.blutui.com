@@ -3,11 +3,11 @@ import React from 'react'
 import { Contribution } from '../components/Contribution'
 import { TableOfContents } from '../components/TableOfContents'
 
-import type { Sections } from '../utils/collectHeadings'
+import type { Section } from '../utils/collectHeadings'
 
 export interface DocumentationLayoutProps {
   layoutProps: any
-  toc: Sections[]
+  toc: Section[]
   children: React.ReactNode
 }
 
