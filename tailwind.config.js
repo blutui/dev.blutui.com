@@ -35,7 +35,7 @@ module.exports = {
               color: theme('colors.gray.200'),
             },
             'h2, h3, h4': {
-              'scroll-margin-top': '100px'
+              'scroll-margin-top': '6.25rem'
             },
             code: {
               color: theme('colors.gray.200'),
