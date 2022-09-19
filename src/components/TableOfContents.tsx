@@ -39,7 +39,7 @@ export const TableOfContents = ({ toc }: TableOfContentsProps) => {
               <Link href={href} passHref>
                 <a
                   className={[
-                    'block py-1 font-medium',
+                    'block py-1 font-medium transition',
                     active
                       ? 'text-indigo-500'
                       : 'text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-300',
