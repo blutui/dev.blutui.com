@@ -8,6 +8,9 @@ const nextConfig = {
   i18n: {
     locales: ['en'],
     defaultLocale: 'en'
+  },
+  redirects: async () => {
+    return require('./redirects.json')
   }
 }
 
