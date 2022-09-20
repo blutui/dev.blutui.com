@@ -21,11 +21,7 @@ export const useActiveId = (items: Section[]) => {
       observer.observe(document.getElementById(item.id) as Element)
     })
 
-    return () => {
-      items.forEach((item) => {
-        observer.unobserve(document.getElementById(item.id) as Element)
-      })
-    }
+    return () => observer.disconnect()
   }, [items])
 
   return activeId
