@@ -6,6 +6,8 @@ import { Header } from '../components/Header'
 import { SearchProvider } from '../components/Search'
 import { ArticleContext, ArticleContextT } from '../context/ArticleContext'
 
+import { collectHeadings } from '../utils/collectHeadings'
+
 import '../styles/main.css'
 
 import type { AppProps } from 'next/app'
@@ -20,11 +22,6 @@ export type BlutuiProps = MarkdocNextJsPageProps
 const Blutui = ({ Component, pageProps }: BlutuiAppProps<BlutuiProps>) => {
   const { markdoc } = pageProps
 
-  const Layout = Component.layoutProps?.Layout || DocumentationLayout
-  const layoutProps = Component.layoutProps?.Layout
-    ? { layoutProps: Component.layoutProps }
-    : {}
-
   let title = 'Blutui'
   let articleContext: ArticleContextT = {}
   if (markdoc) {
@@ -38,6 +35,13 @@ const Blutui = ({ Component, pageProps }: BlutuiAppProps<BlutuiProps>) => {
       })
     }
   }
+
+  const toc = markdoc?.content ? collectHeadings(markdoc.content) : []
+
+  const Layout = Component.layoutProps?.Layout || DocumentationLayout
+  const layoutProps = Component.layoutProps?.Layout
+    ? { layoutProps: Component.layoutProps, toc }
+    : { toc }
 
   return (
     <>
