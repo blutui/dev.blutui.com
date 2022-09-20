@@ -14,9 +14,9 @@ export const Header = ({ children }: HeaderProps) => {
   const actionKey = useActionKey()
 
   return (
-    <header className="sticky top-0 z-10 flex-none bg-gray-50/70 dark:bg-gray-900/70 backdrop-blur border-b border-black/10 dark:border-white/10">
+    <header className="sticky top-0 z-10 flex-none bg-gray-50/70 dark:bg-gray-900/70 backdrop-blur">
       <div className="mx-auto max-w-8xl">
-        <div className="px-8 flex items-center justify-between h-[3.75rem] space-x-6">
+        <div className="px-8 flex items-center justify-between h-[3.75rem] space-x-8">
           <div className="flex items-center flex-shrink-0">
             <Link href="/">
               <a className="w-72">

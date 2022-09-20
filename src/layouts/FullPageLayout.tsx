@@ -11,7 +11,7 @@ export const FullPageLayout = ({
 }: FullPageLayoutProps) => {
   return (
     <>
-      <main className="flex-1 my-8 px-8 mx-auto w-full max-w-8xl flex items-start space-x-6">
+      <main className="flex-1 py-10 px-8 mx-auto w-full max-w-8xl flex items-start space-x-6">
         {children}
       </main>
     </>
