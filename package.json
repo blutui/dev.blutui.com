@@ -9,7 +9,7 @@
   },
   "dependencies": {
     "@docsearch/react": "^3.2.1",
-    "@markdoc/markdoc": "^0.1.8",
+    "@markdoc/markdoc": "^0.1.11",
     "@markdoc/next.js": "^0.1.8",
     "next": "^12.3.0",
     "react": "^18.2.0",
