@@ -21,10 +21,10 @@ export const TableOfContents = ({ toc }: TableOfContentsProps) => {
 
   return (
     <nav>
-      <h5 className="text-gray-900 dark:text-gray-200 font-semibold text-sm mb-4">
+      <h5 className="mb-4 text-sm font-semibold text-gray-900 dark:text-gray-200">
         On this page
       </h5>
-      <ul className="text-gray-600 text-sm">
+      <ul className="text-sm text-gray-600">
         {items.map((item) => {
           const href = `#${item.id}`
           const active = activeId === item.id

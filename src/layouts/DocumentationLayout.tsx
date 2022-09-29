@@ -18,11 +18,11 @@ export const DocumentationLayout = ({
 }: DocumentationLayoutProps) => {
   return (
     <>
-      <main className="flex-1 py-10 px-8 mx-auto w-full max-w-8xl flex items-start space-x-8">
-        <div className="flex-shrink-0 sticky top-[6.25rem] border border-black/10 dark:border-white/10 rounded-lg w-72 py-6"></div>
-        <div className="flex-auto flex items-start space-x-8">
+      <main className="mx-auto flex w-full max-w-8xl flex-1 items-start space-x-8 py-10 px-8">
+        <div className="sticky top-[6.25rem] w-72 flex-shrink-0 rounded-lg border border-black/10 py-6 dark:border-white/10"></div>
+        <div className="flex flex-auto items-start space-x-8">
           <div className="flex-auto">{children}</div>
-          <div className="flex-shrink-0 sticky top-[6.25rem] w-64 space-y-6">
+          <div className="sticky top-[6.25rem] w-64 flex-shrink-0 space-y-6">
             <TableOfContents toc={toc} />
             <Contribution />
           </div>

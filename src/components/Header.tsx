@@ -14,26 +14,26 @@ export const Header = ({ children }: HeaderProps) => {
   const actionKey = useActionKey()
 
   return (
-    <header className="sticky top-0 z-10 flex-none bg-gray-50/70 dark:bg-gray-900/70 backdrop-blur">
+    <header className="sticky top-0 z-10 flex-none bg-gray-50/70 backdrop-blur dark:bg-gray-900/70">
       <div className="mx-auto max-w-8xl">
-        <div className="px-8 flex items-center justify-between h-[3.75rem] space-x-8">
-          <div className="flex items-center flex-shrink-0">
+        <div className="flex h-[3.75rem] items-center justify-between space-x-8 px-8">
+          <div className="flex flex-shrink-0 items-center">
             <Link href="/">
               <a className="w-72">
                 <span className="sr-only">Blutui Developers home page</span>
-                <Logo className="w-auto h-8 mt-1" />
+                <Logo className="mt-1 h-8 w-auto" />
               </a>
             </Link>
-            <span className="hidden lg:block h-6 border-l border-black/10 dark:border-white/10"></span>
+            <span className="hidden h-6 border-l border-black/10 dark:border-white/10 lg:block"></span>
           </div>
           <div className="flex flex-auto items-center space-x-6">
-            <SearchButton className="hidden lg:block text-left text-gray-500 dark:text-gray-400 font-medium tracking-tight px-4 py-1.5 rounded-full bg-black/10 hover:bg-black/20 dark:bg-white/10 dark:hover:bg-white/20 transition">
-              <div className="flex items-center lg:w-80 space-x-3">
+            <SearchButton className="hidden rounded-full bg-black/10 px-4 py-1.5 text-left font-medium tracking-tight text-gray-500 transition hover:bg-black/20 dark:bg-white/10 dark:text-gray-400 dark:hover:bg-white/20 lg:block">
+              <div className="flex items-center space-x-3 lg:w-80">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 20 20"
                   fill="currentColor"
-                  className="w-5 h-5"
+                  className="h-5 w-5"
                 >
                   <path
                     fillRule="evenodd"
@@ -41,9 +41,9 @@ export const Header = ({ children }: HeaderProps) => {
                     clipRule="evenodd"
                   />
                 </svg>
-                <span className="flex-auto block">Quick search...</span>
+                <span className="block flex-auto">Quick search...</span>
                 {actionKey && (
-                  <kbd className="ml-2 text-xs font-sans font-semibold text-gray-600 dark:text-gray-300">
+                  <kbd className="ml-2 font-sans text-xs font-semibold text-gray-600 dark:text-gray-300">
                     <abbr title={actionKey[1]} className="no-underline">
                       {actionKey[0]}
                     </abbr>{' '}
@@ -54,18 +54,18 @@ export const Header = ({ children }: HeaderProps) => {
             </SearchButton>
           </div>
           <div className="flex flex-shrink-0 items-center space-x-6">
-            <ul className="hidden lg:flex items-center space-x-6">
+            <ul className="hidden items-center space-x-6 lg:flex">
               <li>
                 <a
                   href="#"
-                  className="flex items-center space-x-1 font-semibold tracking-tight text-gray-500 dark:text-gray-200 hover:text-gray-600 dark:hover:text-gray-500 transition"
+                  className="flex items-center space-x-1 font-semibold tracking-tight text-gray-500 transition hover:text-gray-600 dark:text-gray-200 dark:hover:text-gray-500"
                 >
                   <span>Help centre</span>
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 20 20"
                     fill="currentColor"
-                    className="w-5 h-5 opacity-50"
+                    className="h-5 w-5 opacity-50"
                   >
                     <path
                       fillRule="evenodd"
@@ -78,14 +78,14 @@ export const Header = ({ children }: HeaderProps) => {
               <li>
                 <a
                   href="#"
-                  className="flex items-center space-x-1 font-semibold tracking-tight text-gray-500 dark:text-gray-200 hover:text-gray-600 dark:hover:text-gray-500 transition"
+                  className="flex items-center space-x-1 font-semibold tracking-tight text-gray-500 transition hover:text-gray-600 dark:text-gray-200 dark:hover:text-gray-500"
                 >
                   <span>Console</span>
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 20 20"
                     fill="currentColor"
-                    className="w-5 h-5 opacity-50"
+                    className="h-5 w-5 opacity-50"
                   >
                     <path
                       fillRule="evenodd"
