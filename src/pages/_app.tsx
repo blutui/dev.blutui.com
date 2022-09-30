@@ -27,6 +27,15 @@ const Blutui = ({ Component, pageProps }: BlutuiAppProps<BlutuiProps>) => {
   if (markdoc) {
     if (markdoc.frontmatter.title) {
       title = markdoc.frontmatter.title + ' | Blutui'
+      articleContext = Object.assign(articleContext, {
+        title: markdoc.frontmatter.title,
+      })
+    }
+
+    if (markdoc.frontmatter.description) {
+      articleContext = Object.assign(articleContext, {
+        description: markdoc.frontmatter.description,
+      })
     }
 
     if (markdoc.file && markdoc.file.path) {

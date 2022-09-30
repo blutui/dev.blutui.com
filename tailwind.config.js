@@ -22,6 +22,14 @@ module.exports = {
             'h1, h2, h3': {
               letterSpacing: '-0.025em',
             },
+            a: {
+              fontWeight: theme('fontWeight.semibold'),
+              textDecoration: 'none',
+              borderBottom: `1px solid ${theme('colors.indigo.500')}`
+            },
+            'a:hover': {
+              borderBottomWidth: '2px'
+            },
             code: {
               fontWeight: theme('fontWeight.medium'),
               fontVariantLigatures: 'none'
@@ -36,6 +44,13 @@ module.exports = {
             },
             'h2, h3, h4': {
               'scroll-margin-top': '6.25rem'
+            },
+            a: {
+              color: theme('colors.white'),
+              borderBottomColor: theme('colors.indigo.400'),
+            },
+            strong: {
+              color: theme('colors.gray.200'),
             },
             code: {
               color: theme('colors.gray.200'),
