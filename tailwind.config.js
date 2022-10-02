@@ -33,6 +33,16 @@ module.exports = {
             code: {
               fontWeight: theme('fontWeight.medium'),
               fontVariantLigatures: 'none'
+            },
+            pre: {
+              color: theme('colors.gray.50'),
+              borderRadius: theme('borderRadius.xl'),
+              padding: theme('padding.5'),
+              display: 'flex',
+            },
+            'pre code': {
+              flex: 'none',
+              minWidth: '100%'
             }
           }
         },

@@ -33,12 +33,12 @@ Lets create a new page.
 2. From the `Site Dashboard`, click `Pages`.
 3. Click the `+` button at the bottom of the page.
 4. Enter the information for your page. The `Layout` is the file path to the page template. For best practice it is recommended that you create your page templates in the `pages` directory of your Canvas.
-<media src="https://cdn.blutui.com/uploads/assets/Dev/getting-started/addingapage.gif" alt="Adding a page"></media>
+{% image src="https://cdn.blutui.com/uploads/assets/Dev/getting-started/addingapage.gif" alt="Adding a page" /%}
 
 5. If you have not created the page template, go to the `pages` directory in your Canvas template files and add your page. For example if you set the `Layout` to `pages/about.html`, add `about.html` to your `pages` directory.
 
 In your newly created Canvas template add the following code:
 
-```twig
-{% extend }
+```twig {% process=false %}
+{% extend %}
 ```
