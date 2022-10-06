@@ -84,21 +84,21 @@ In this example we'll add a text area on your canvas. To do this you use `cms_te
 
 Read the [cms_text](/docs/canvas/functions/cms-text) guide for more information about how to use it in a `Canvas`. You can find information about other available CMS components in the `Canvas > Functions` section of the documentation.
 
-## Collection
+## Add data driven content
 
-Now you have some content, a menu, a few pages and a set of editable content. These content types are great for static content but what about dynamic content, like products, staff member, locations, galleries and more?
+Now you have content, a navigation menu, a few pages and some editable content. While these content types are great for static content, what about dynamic data-driven content, like products, staff member, locations, galleries and more?
 
-Introducing collections, an easy way to create dynamic content using a wide range of data types.
+Introducing Blutui Collections, an easy way to create dynamic data-driven content using a wide range of data types.
 
-### Basic Collection
+### Basic collection
 
-Like most items in Blutui it starts in the Site Dashboard. You want to go to `Collections` and click `Create collection`. When creating a collection you are setting the fields that you will fill out with content. In this example we are adding a title field, text area and an image data type:
+Like most content types in Blutui, it all starts in the site dashboard. Visit the **Collections** page using the navigation sidebar. You will be taken to a Collections only view, here click the **Create collection** button in the sidebar. When creating a collection you are defining the fields that you will later fill out with content. In this example we are adding a `text`, `textarea` and `image` data types:
 
-<media src="https://cdn.blutui.com/uploads/assets/Dev/getting-started/collection1.gif" alt="Adding a collection"></media>
+{% image src="https://cdn.blutui.com/uploads/assets/Dev/getting-started/collection1.gif" alt="Adding a collection" /%}
 
-The value of the `Name` field is used to identify the data type in your code. This is the recommended way to render the collection where you want.
+You will notice that all data types require a value for the `Name` field, this is used to identify the data type in your code.
 
-Let's create a template that will render this collection. In this example we called the handle `staff`, we can create a `collections` folder in our Canvas `views` directory called `staff.html`:
+Let's create a template that will render this collection, to do this you need the collection handle. In this example the handle is `staff`. First create a `collections` folder in our Canvas `views` directory, and add a file called `staff.html`, with:
 
 ```twig {% process=false %}
 {% set collection = cms.collection('staff') %}
@@ -114,69 +114,69 @@ Let's create a template that will render this collection. In this example we cal
 {% endfor %}
 ```
 
-In this example you are calling the collection, setting it to a `collection` variable and looping through each collection entry to display it the way you want.
-
-### Linking two collections
-
-Now that you have a collection, you might want to link a collection with another so you don't have to add the same content twice in both collections.
-
-In this example we'll create a `Location` collection and link it to our `Staff` collection, from the previous example. This will allow us to dynamically set the location of each Staff entry, based on the collection entries of `Location` collection. This is a very simple process. You go to the collection you want to link from and click `Manage links`. From here click `New Link`, select the feild that you want to link and a name to call this link:
-
-<media src="https://cdn.blutui.com/uploads/assets/Dev/getting-started/collection2.gif" alt="Linking a collection"></media>
-
-To get the value of this link in your Canvas, you can access the `foreign_keys` in the collection entry object. For example:
-
-```twig {% process=false %}
-{{ entry.foreign_keys.location }}
-```
-
-### Routing collections
-
-Now that you can create complex collections, you might want to render each collection item on its own page. In our example we might want to have a dedicated page for each staff member. For this you can define routing patterns. To create a routing pattern for a collection:
-
-**Steps:**
-
-1. Go to `Settings`.
-2. Click `Routing`.
-3. Click the `Patterns` tab.
-4. Click the `+` in the bottom right corner.
-5. Select the patterns you need and set the template. In our example we want these collection pages to be `/staff/{slug}`.
-
-<media src="https://cdn.blutui.com/uploads/assets/Dev/getting-started/collection3.gif" alt="Routing a collection"></media>
-
-You then want to add the following code in the template you set during the routing pattern creation process. The routing pattern template is a mix of a new page and a collection template: 
+In this code example you are calling the collection, setting it to a `collection` variable and looping through each collection entry to display it the way you want. Once the collection template is created, you can [include](/docs/canvas/tags/include) it in your page template:
 
 ```twig {% process=false %}
 {% extends 'templates/default' %}
 
-{# Set the collection to the collection variable #}
-{% set collection = cms.collection('staff') %}
-{# Filter the collection entries to find a collection by the `title` field #}
-{% set entry = collection | filter(entry => ((entry.title | slug) == route.data.slug)) | first %}
-
 {% block body %}
-  <!-- Code you want to display on this page -->
+  {% include 'collections/staff.html' %}
 {% endblock %}
 ```
 
-## Forms
+### Linking two collections
 
-Now lets add a contact form on your site. Blutui makes the process of making a form simple. It's done similar to making a collection. As normal you create the form in site dashboard. To do this you go to `Forms` and click `Create Form`. From here give it a `Name`, `Handle` and the `Form template` location. Now you can add all the fields that you want in your form, you can set the form fields to be requried, add help text and/or placeholder text.
+Now that you know how to create collections, you might want to link a collection with another so you don't have to add the same content twice in both collections.
 
-<media src="https://cdn.blutui.com/uploads/assets/Dev/getting-started/form.gif" alt="Adding a form"></media>
+In this example we'll create a **Locations** collection and link it to our **Staff** collection, from the previous example. This will allow us to dynamically set the location of each **Staff** member (entry), based on the collection entries of `Location` collection. This is a very simple process, done through the site dashboard. First go to the **Collection settings** of the collection you want to link from, in this case it would be the **Locations** collection, and click `Manage links`. From here click `New link`, select the field that you want to link and give it a `name`, just like you would for a collection data type:
 
-Lets add this form to your code. At the top we want to link `macros/form.html` since this is where you style your form inputs. The template below is to let you display the input fields the way you want. You can find the code for the `macros/form.html` macro below:
+{% image src="https://cdn.blutui.com/uploads/assets/Dev/getting-started/collection2.gif" alt="Linking a collection" /%}
 
-<div class="space-y-3">
-  <card href="https://gist.github.com/jayan-blutui/228a410ebc3d0779011f019d0620ef1e" title="macros/form.html" target="_blank" rel="noopener noreferrer">
-    Blutui form macro.
-  </card>
-</div>
-
-The form template:
+To get the value of this link in your Canvas, you can access the `foreign_keys` in the collection entry object or for convenience you can call it directly from the `entry` object. For example:
 
 ```twig {% process=false %}
-{% import file('macros/form') as ui %}
+{{ entry.foreign_keys.location }}
+{{ entry.location }} {# This is only possible if your entry doesn't already have a location field. #}
+```
+
+### Routing collections
+
+Now that you can create complex collections, you might want to render each collection item on its own page. In our example we might want to have a dedicated page for each staff member. For this you can define routing patterns.
+
+**Steps:**
+
+1. In your site dashboard, go to **Settings** from the navigation sidebar.
+2. Click **Routing**.
+3. Navigate to the **Patterns** tab and click the **Create pattern** button in the top right corner.
+5. Select the pattern you need and set the `template`. In our example we want these collection pages to be `/staff/{slug}`. To create this pattern select the `string` type and set the value to **staff*, then select the `slug` type.
+
+{% image src="https://cdn.blutui.com/uploads/assets/Dev/getting-started/collection3.gif" alt="Routing a collection" /%}
+
+Add the following code in the **template** you set during the routing pattern creation process. The routing pattern template is a mix of a new page and a collection template:
+
+```twig {% process=false %}
+{% extends 'templates/default' %}
+
+{# Set the staff collection to the collection variable #}
+{% set collection = cms.collection('staff') %}
+{# Filter the collection entries to find the first entry by the matching `title` field #}
+{% set entry = collection | filter(entry => ((entry.title | slug) == route.data.slug)) | first %}
+
+{% block body %}
+  <!-- Collection code you want to display on this page -->
+{% endblock %}
+```
+
+## Creating a form
+
+Now lets add a contact form on your site. The process of making a form is similar to making a collection. Let's start in the **site dashboard**. From the navigation sidebar, go to **Forms** and click the **Create form** button on the bottom left of the page. From here give your new form a **Name**, the handle and form template path will automatically be created. Now you can add all the fields required for your form, you can set certain form fields as requried, add help text or placeholder text.
+
+{% image src="https://cdn.blutui.com/uploads/assets/Dev/getting-started/form.gif" alt="Adding a form" /%}
+
+Now that your new form is created, lets add this form to your Canvas. At the top of the form template we want to [import](/docs/canvas/tags/import) `macros/form.canvas` into the `ui` variable, the file responsible for the markup and styling of your form inputs. We've created a form macro template to help you get started. You can find the code for the `macros/form.canvas` macro on [Gist](https://gist.github.com/jayan-blutui/228a410ebc3d0779011f019d0620ef1e). You can use the form macro like:
+
+```twig {% process=false %}
+{% import 'macros/form' as ui %}
 
 {{ form_open() }}
     <input type="hidden" name="_form" value="{{ form._form }}">
@@ -198,35 +198,31 @@ The form template:
 {{ form_close() }}
 ```
 
-You can redirect a user when a form is submitted successfully, by setting a `redirect` URL. In the code above we redirect users to a `/contact/success` page. We also recommend for you to add `recaptcha` to your forms to prevent spam.
+If you would like to redirect the user after the form is submitted successfully, set a `redirect` URL. In the code above we redirect users to a `/contact/success` page. We also recommend you add `recaptcha` to your forms to prevent spam.
 
 ## Blogs
 
-Blog posts are a great way to keep your users updated. Create an unlimited amount of blogs and blog posts for news about the company, announcements or even recipes. The process of making a blog for your site is simple as it follows the same structure as other content types in Blutui. First you start off in the site dashboard where you got to Blogs and create your blog. You will need to add 2 templates one for your blog and 1 for all the blog posts.
+Blog posts are a great way to keep your users updated. Create an unlimited amount of blogs and blog posts for news about the company, announcements or even recipes (please share them with us). The process of making a blog for your project is simple, as it follows the same structure as other content types in Blutui. Using the navigation sidebar in the site dashboard navigate to **Blog posts** and create a new blog, which will later host your posts. You will need to add 2 templates, 1 for your blog and 1 for all the blog posts.
 
-<media src="https://cdn.blutui.com/uploads/assets/Dev/getting-started/blogs.gif" alt="Making a blog"></media>
+{% image src="https://cdn.blutui.com/uploads/assets/Dev/getting-started/blogs.gif" alt="Making a blog" /%}
 
-More information about blogs coming soon.
+## Adding domains
 
-## Domains
+Now that you have built your project it's time to add your domain(s) to it. To do this, go to your [Blutui Console](https://blutui.com/app). From the navigation menu, navigate to **Domains** and click **Add domain**. Add you domain name, then select the **Project** you would like to add the domain to. Now you need to verify the ownership of the newly added domain(s). To verify your domain(s), click the `How to` guide under each domain for full list of instructions to follow.
 
-Now that you have built your Blutui site it's time to add your domain(s) to it.
-
-To do this, go to your [Blutui Console](https://blutui.com/app). Click on `Domains` and add your domain. Then select the `Site` you would like to add the domain to. Now you need to verify the ownership of the newly added domain(s). To verify your domain(s), click the `How to` guide under each domain for full list of instructions to follow.
-
-Once you have added the DNS records on your domain, the process after this point is automated and will come up green and connected depending on your DNS providers speeds. Once your domain is connected Blutui will automatically create an SSL certificate to keep your site secure.
+Once you have added the DNS records on your domain, the process after this point is automated and will automatically become green once connected, depending on your DNS providers speed. Once your domain is connected Blutui will automatically create an SSL certificate to keep your project secure.
 
 ## Publishing
 
-Lets do some last minute checks on your website before we publish it to the world. Make sure you can cross each the items on this list, since they help with user experience:
+Lets do some last minute checks on your project before we publish it to the world. Make sure you can cross each item on this list:
 
-- Test the form(s)
-- Make sure all static content is editable (Saves you from digging through the code later on).
-- Check all buttons and links are working as they should be.
-- Check site meta content.
-- Test site on multiple internet browsers.
-- Test site responsiveness.
-- Test site on mobile device(s).
-- Add all domains to ReCaptcha and Maps API
+1. Test the form(s)
+2. Make sure all static content is editable (saves you from digging through the code later on).
+3. Check all buttons and links are working as they should be.
+4. Check the project's meta content, such as titles and descriptions for each page.
+5. Test your project on multiple internet browsers.
+6. Test your project's responsiveness.
+7. Test your project on an actual mobile device.
+8. Ensure your all your project domains are added to third-party systems such as ReCaptcha, Google Maps API, etc.
 
-Now you are ready to `Publish` your site for the world to see. On to the next one!
+Now you are ready to **Publish** your project for the world to see. On to the next one!
