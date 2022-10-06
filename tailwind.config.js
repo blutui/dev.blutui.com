@@ -43,6 +43,19 @@ module.exports = {
             'pre code': {
               flex: 'none',
               minWidth: '100%'
+            },
+            table: {
+              fontSize: theme('fontSize.sm')[0],
+              lineHeight: theme('fontSize.sm')[1].lineHeight,
+            },
+            thead: {
+              color: theme('colors.gray.700'),
+              borderBottomColor: theme('colors.gray.200')
+            },
+            'thead th': {
+              color: theme('colors.gray.700'),
+              paddingTop: 0,
+              fontWeight: theme('fontWeight.semibold'),
             }
           }
         },
@@ -64,7 +77,17 @@ module.exports = {
             },
             code: {
               color: theme('colors.gray.200'),
-            }
+            },
+            thead: {
+              color: theme('colors.gray.300'),
+              borderBottomColor: theme('colors.gray.700')
+            },
+            'thead th': {
+              color: theme('colors.gray.300'),
+            },
+            'tbody tr': {
+              borderBottomColor: theme('colors.gray.700')
+            },
           }
         }
       })
