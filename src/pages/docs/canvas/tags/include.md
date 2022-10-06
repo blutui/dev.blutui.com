@@ -2,7 +2,7 @@
 title: 'include'
 ---
 
-The `include` statement includes a template and returns the rendered content of that file:
+The **include** statement includes a template and returns the rendered content of that file:
 
 ```twig {% process=false %}
 {% include 'header.canvas' %}
@@ -12,7 +12,7 @@ The `include` statement includes a template and returns the rendered content of 
 
 It is recommended to use the [include](/docs/canvas/functions/include) function instead as it provides the same features with a bit more flexibility:
 
-- The `include` function is semantically more "correct" (including a template outputs its rendered contents in the current scope; a tag should not display anything);
+- The [include](/docs/canvas/functions/include) function is semantically more "correct" (including a template outputs its rendered contents in the current scope; a tag should not display anything);
 - The include function is more "composable":
 
 ```twig {% process=false %}
@@ -31,7 +31,7 @@ It is recommended to use the [include](/docs/canvas/functions/include) function 
 {{ include('template.canvas') | upper }}
 ```
 
-- The `include` function does not impose any specific order for arguments thanks to named arguments.
+- The [include](/docs/canvas/functions/include) function does not impose any specific order for arguments thanks to named arguments.
 
 Included templates have access to the variables of the active context. You can add additional variables by passing them after the `with` keyword:
 
@@ -62,7 +62,7 @@ The template name can be any valid Canvas expression:
 {% include ajax ? 'ajax.canvas' : 'not_ajax.canvas' %}
 ```
 
-You can mark an include with `ignore missing` in which case Canvas will ignore the statement if the template to be included does not exist. It has to be placed just after the template name. Here some valid examples:
+You can mark an include with `ignore missing` in which case Canvas will ignore the statement if the template to be included does not exist. It has to be placed just after the template name. Here are some valid examples:
 
 ```twig {% process=false %}
 {% include 'sidebar.canvas' ignore missing %}
