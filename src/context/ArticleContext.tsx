@@ -2,6 +2,8 @@ import { createContext, useContext } from 'react'
 
 export type ArticleContextT = {
   filePath?: string
+  title?: string
+  description?: string
 }
 
 export const ArticleContext = createContext<ArticleContextT | null>(null)

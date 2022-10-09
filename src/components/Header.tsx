@@ -27,7 +27,7 @@ export const Header = ({ children }: HeaderProps) => {
             <span className="hidden h-6 border-l border-black/10 dark:border-white/10 lg:block"></span>
           </div>
           <div className="flex flex-auto items-center space-x-6">
-            <SearchButton className="hidden rounded-full bg-black/10 px-4 py-1.5 text-left font-medium tracking-tight text-gray-500 transition hover:bg-black/20 dark:bg-white/10 dark:text-gray-400 dark:hover:bg-white/20 lg:block">
+            <SearchButton className="hidden rounded-full bg-gray-900/10 px-4 py-1.5 text-left font-medium tracking-tight text-gray-500 transition hover:bg-black/20 dark:bg-gray-100/10 dark:text-gray-400 dark:hover:bg-white/20 lg:block">
               <div className="flex items-center space-x-3 lg:w-80">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
