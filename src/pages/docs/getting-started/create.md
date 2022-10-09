@@ -34,7 +34,7 @@ First lets create a new page on your newly created project.
 1. Login to your newly created project. You can quickly log into your project through the **Projects** page on your [Agency Console](https://blutui.com/app).
 2. Once logged in, from the **Site Dashboard**, navigate to **Pages** using the navigation sidebar and click the **Add page** button at the top right side of the page.
 3. Enter the required information for your page. The **Layout** is the file path to the page template. For best practice it is recommended that you create your page templates in the `pages` directory of your Canvas.
-4. If you have not created the page template, go to the `pages` directory in your Canvas template files and add create your  new page layout. For example if you set the `Layout` to `pages/about.html`, add `about.html` to your `pages` directory.
+4. If you have not created the page template, go to the `pages` directory in your Canvas template files and add create your  new page layout. For example if you set the `Layout` to `pages/about.canvas`, add `about.canvas` to your `pages` directory.
 
 In your newly created Canvas template add the following code:
 
@@ -98,7 +98,7 @@ Like most content types in Blutui, it all starts in the site dashboard. Visit th
 
 You will notice that all data types require a value for the `Name` field, this is used to identify the data type in your code.
 
-Let's create a template that will render this collection, to do this you need the collection handle. In this example the handle is `staff`. First create a `collections` folder in our Canvas `views` directory, and add a file called `staff.html`, with:
+Let's create a template that will render this collection, to do this you need the collection handle. In this example the handle is `staff`. First create a `collections` folder in our Canvas `views` directory, and add a file called `staff.canvas`, with:
 
 ```twig {% process=false %}
 {% set collection = cms.collection('staff') %}
@@ -120,7 +120,7 @@ In this code example you are calling the collection, setting it to a `collection
 {% extends 'templates/default' %}
 
 {% block body %}
-  {% include 'collections/staff.html' %}
+  {% include 'collections/staff.canvas' %}
 {% endblock %}
 ```
 
