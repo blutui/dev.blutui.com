@@ -43,11 +43,28 @@ Prism.hooks.add('before-tokenize', (env) => {
   }
 
   const pattern = /\{(?:#[\s\S]*?#|%[\s\S]*?%|\{[\s\S]*?\})\}/g
-  Prism.languages['markup-templating'].buildPlaceholders(env, 'canvas', pattern)
+  const markupTemplating = Prism.languages[
+    'markup-templating'
+  ] as Prism.Grammar & {
+    buildPlaceholders: (
+      env: Prism.hooks.TokenizeEnvironment,
+      language: string,
+      placeholderPattern: RegExp
+    ) => any
+  }
+  markupTemplating.buildPlaceholders(env, 'canvas', pattern)
 })
 
 Prism.hooks.add('after-tokenize', (env) => {
-  Prism.languages['markup-templating'].tokenizePlaceholders(env, 'canvas')
+  const markupTemplating = Prism.languages[
+    'markup-templating'
+  ] as Prism.Grammar & {
+    tokenizePlaceholders: (
+      env: Prism.hooks.TokenizeEnvironment,
+      language: string
+    ) => any
+  }
+  markupTemplating.tokenizePlaceholders(env, 'canvas')
 })
 
 export const Code = ({ children, 'data-language': language }: CodeProps) => {
