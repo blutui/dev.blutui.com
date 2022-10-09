@@ -1,0 +1,107 @@
+code[class*="language-"],
+pre[class*="language-"] {
+  @apply text-[#d6deeb] font-mono text-sm text-left whitespace-pre;
+  word-spacing: normal;
+  word-break: normal;
+  direction: ltr;
+  tab-size: 4;
+  hyphens: none;
+}
+
+/* Code blocks */
+pre[class*="language-"] {
+  @apply p-4 my-2 overflow-auto rounded-xl;
+}
+
+:not(pre) > code[class*="language-"],
+pre[class*="language-"] {
+  @apply text-white bg-black;
+}
+
+/* Tokens */
+.token.comment,
+.token.prolog,
+.token.cdata {
+  @apply text-[#637777];
+  font-style: italic;
+}
+
+.token.punctuation {
+  @apply text-[#7792ea];
+}
+
+.token.namespace {
+  @apply text-[#b2ccd6];
+}
+
+.token.deleted {
+	@apply text-[#ef5350]/50;
+	font-style: italic;
+}
+
+.token.symbol,
+.token.property {
+	@apply text-[#80cbc4];
+}
+
+.token.tag,
+.token.operator,
+.token.keyword {
+	@apply text-[#7fdbca];
+}
+
+.token.boolean {
+	@apply text-[#ff5874];
+}
+
+.token.number {
+	@apply text-[#f78c6c];
+}
+
+.token.constant,
+.token.function,
+.token.builtin,
+.token.char {
+  @apply text-[#82aaff];
+}
+
+.token.selector,
+.token.doctype {
+  @apply text-[#c792ea];
+	font-style: italic;
+}
+
+.token.attr-name,
+.token.inserted {
+	@apply text-[#addb67];
+	font-style: italic;
+}
+
+.token.string,
+.token.url,
+.token.entity,
+.language-css .token.string,
+.style .token.string {
+  @apply text-[#addb67];
+}
+
+.token.class-name,
+.token.atrule,
+.token.attr-value {
+  @apply text-[#ffcb8b];
+}
+
+.token.regex,
+.token.important,
+.token.variable {
+  @apply text-[#d6deeb];
+}
+
+.token.important,
+.token.bold {
+	@apply font-bold;
+}
+
+.token.italic {
+	font-style: italic;
+}

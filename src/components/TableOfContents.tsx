@@ -21,10 +21,10 @@ export const TableOfContents = ({ toc }: TableOfContentsProps) => {
 
   return (
     <nav>
-      <h5 className="mb-4 text-sm font-semibold text-gray-900 dark:text-gray-200">
+      <h5 className="mb-4 text-sm font-semibold text-zinc-900 dark:text-zinc-200">
         On this page
       </h5>
-      <ul className="text-sm text-gray-600">
+      <ul className="text-sm text-zinc-600">
         {items.map((item) => {
           const href = `#${item.id}`
           const active = activeId === item.id
@@ -41,8 +41,8 @@ export const TableOfContents = ({ toc }: TableOfContentsProps) => {
                   className={[
                     'block py-1 font-medium transition',
                     active
-                      ? 'text-indigo-500'
-                      : 'text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-300',
+                      ? 'text-indigo-500 dark:text-indigo-400'
+                      : 'text-zinc-600 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-zinc-300',
                   ]
                     .filter(Boolean)
                     .join(' ')}

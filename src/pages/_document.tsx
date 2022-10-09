@@ -10,7 +10,7 @@ export default function Document() {
           rel="stylesheet"
         />
       </Head>
-      <body className="relative h-full bg-gray-50 dark:bg-gray-900">
+      <body className="relative h-full bg-zinc-50 dark:bg-zinc-900">
         <Main />
         <NextScript />
       </body>

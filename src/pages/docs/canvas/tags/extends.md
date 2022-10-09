@@ -4,7 +4,7 @@ title: 'extends'
 
 The **extends** tag can be used to extend a template from another one. Canvas does not support multiple inheritance. So you can only have one extends tag called per rendering. However, Canvas supports horizontal [reuse](/docs/canvas/tags/use). Let’s define a base template, `base.canvas`, which defines a simple HTML skeleton document:
 
-```twig {% process=false %}
+```canvas {% process=false %}
 <!DOCTYPE html>
 <html>
   <head>
@@ -30,7 +30,7 @@ In this example, the [block](/docs/canvas/tags/block) tags define four blocks th
 
 A child template might look like this:
 
-```twig {% process=false %}
+```canvas {% process=false %}
 {% extends 'base.canvas' %}
 
 {% block title %}Home{% endblock %}
@@ -58,7 +58,7 @@ You can’t define multiple block tags with the same name in the same template. 
 
 If you want to print a block multiple times you can however use the [block](/docs/canvas/functions/block) function:
 
-```twig {% process=false %}
+```canvas {% process=false %}
 <title>{% block title %}{% endblock %}</title>
 <h1>{{ block('title') }}</h1>
 {% block body %}{% endblock %}
@@ -68,7 +68,7 @@ If you want to print a block multiple times you can however use the [block](/doc
 
 It’s possible to render the contents of the parent block by using the [parent](/docs/canvas/functions/parent) function. This gives back the results of the parent block:
 
-```twig {% process=false %}
+```canvas {% process=false %}
 {% block sidebar %}
   <h3>Table Of Contents</h3>
   ...
@@ -80,7 +80,7 @@ It’s possible to render the contents of the parent block by using the [parent]
 
 Canvas allows you to put the name of the block after the end tag for better readability (the name after the `endblock` word must match the block name):
 
-```twig {% process=false %}
+```canvas {% process=false %}
 {% block sidebar %}
   {% block inner_sidebar %}
     ...
@@ -92,7 +92,7 @@ Canvas allows you to put the name of the block after the end tag for better read
 
 Blocks can be nested for more complex layouts. Per default, blocks have access to variables from outer scopes:
 
-```twig {% process=false %}
+```canvas {% process=false %}
 {% for item in list %}
   <li>{% block loop_item %}{{ item }}{% endblock %}</li>
 {% endfor %}
@@ -102,13 +102,13 @@ Blocks can be nested for more complex layouts. Per default, blocks have access t
 
 For blocks with little content, it’s possible to use a shortcut syntax. The following constructs do the same thing:
 
-```twig {% process=false %}
+```canvas {% process=false %}
 {% block title %}
   {{ page_title | title }}
 {% endblock %}
 ```
 
-```twig {% process=false %}
+```canvas {% process=false %}
 {% block title page_title | title %}
 ```
 
@@ -116,13 +116,13 @@ For blocks with little content, it’s possible to use a shortcut syntax. The fo
 
 Canvas supports dynamic inheritance by using a variable as the base template:
 
-```twig {% process=false %}
+```canvas {% process=false %}
 {% extends some_var %}
 ```
 
 You can also provide a list of templates that are checked for existence. The first template that exists will be used as a parent:
 
-```twig {% process=false %}
+```canvas {% process=false %}
 {% extends ['layout.canvas', 'base_layout.canvas'] %}
 ```
 
@@ -130,7 +130,7 @@ You can also provide a list of templates that are checked for existence. The fir
 
 As the template name for the parent can be any valid Canvas expression, it’s possible to make the inheritance mechanism conditional:
 
-```twig {% process=false %}
+```canvas {% process=false %}
 {% extends standalone ? 'minimum.canvas' : 'base.canvas' %}
 ```
 

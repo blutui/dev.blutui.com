@@ -13,7 +13,7 @@ export const AppLink = ({ children, ...props }: AppLinkProps) => {
     (props.href.toString().startsWith('http') ? '_blank' : undefined)
 
   return (
-    <Link {...props} passHref>
+    <Link passHref {...props}>
       <a
         target={target}
         rel={target === '_blank' ? 'noopener noreferrer' : undefined}

@@ -4,7 +4,7 @@ title: 'autoescape'
 
 Autoescaping is turned on by default. You can mark a section of a template to be escaped or not by using the `autoescape` tag:
 
-```twig {% process=false %}
+```canvas {% process=false %}
 {% autoescape %}
   Everything will be automatically escaped in this block
   using the HTML strategy
@@ -27,7 +27,7 @@ Autoescaping is turned on by default. You can mark a section of a template to be
 
 When automatic escaping is enabled everything is escaped by default except for values explicitly marked as safe. Those can be marked in the template by using the [raw](/docs/canvas/filters/raw) filter:
 
-```twig {% process=false %}
+```canvas {% process=false %}
 {% autoescape %}
   {{ safe_value | raw }}
 {% endautoescape %}
@@ -37,7 +37,7 @@ Functions and tags returning template data (like [macros](/docs/canvas/tags/macr
 
 Canvas does not escape static expressions:
 
-```twig {% process=false %}
+```canvas {% process=false %}
 {% set hello = '<strong>Hello</strong>' %}
 {{ hello }}
 {{ '<strong>world</strong>' }}

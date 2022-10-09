@@ -8,7 +8,7 @@ Macros are defined in regular templates.
 
 Imagine having a generic helper template that define how to render HTML forms via macros (called `forms.canvas`):
 
-```twig {% process=false %}
+```canvas {% process=false %}
 {% macro input(name, value, type = 'text', size = 20) %}
   <input type="{{ type }}" name="{{ name }}" value="{{ value | e }}" size="{{ size }}" />
 {% endmacro %}
@@ -33,7 +33,7 @@ There are two ways to import macros. You can import the complete template contai
 
 To import all macros from a template into a local variable, use the [import](/docs/canvas/tags/import) tag:
 
-```twig {% process=false %}
+```canvas {% process=false %}
 {% import 'forms.canvas' as forms %}
 ```
 
@@ -41,14 +41,14 @@ The above **import** call imports the `forms.canvas` file (which can contain onl
 
 The macros can then be called at will in the *current* template:
 
-```twig {% process=false %}
+```canvas {% process=false %}
 <p>{{ forms.input('username') }}</p>
 <p>{{ forms.input('password', null, 'password') }}</p>
 ```
 
 Alternatively you can import names from the template into the current namespace via the [from](/docs/canvas/tags/from) tag:
 
-```twig {% process=false %}
+```canvas {% process=false %}
 {% from 'forms.canvas' import input as input, textarea %}
 
 <p>{{ input('password', '', 'password') }}</p>
@@ -57,7 +57,7 @@ Alternatively you can import names from the template into the current namespace 
 
 When **macro** usages and definitions are in the same template, you don’t need to import the macros as they are automatically available under the special `_self` variable:
 
-```twig {% process=false %}
+```canvas {% process=false %}
 <p>{{ _self.input('password', '', 'password') }}</p>
 
 {% macro input(name, value, type = "text", size = 20) %}
@@ -79,7 +79,7 @@ When calling **import** or **from** from a **macro** tag, the imported macros ar
 
 You can check if a macro is defined via the `defined` test:
 
-```twig {% process=false %}
+```canvas {% process=false %}
 {% import 'macros.canvas' as macros %}
 
 {% from 'macros.canvas' import hello %}
@@ -97,7 +97,7 @@ You can check if a macro is defined via the `defined` test:
 
 Canvas allows you to put the name of the macro after the end tag for better readability (the name after the `endmacro` word must match the macro name):
 
-```twig {% process=false %}
+```canvas {% process=false %}
 {% macro input() %}
   ...
 {% endmacro input %}

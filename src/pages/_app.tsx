@@ -8,6 +8,10 @@ import { ArticleContext, ArticleContextT } from '../context/ArticleContext'
 
 import { collectHeadings } from '../utils/collectHeadings'
 
+// Required for custom 'canvas' syntax highlighting...
+import 'prismjs'
+import 'prismjs/components/prism-markup-templating.min'
+
 import '../styles/main.css'
 
 import type { AppProps } from 'next/app'

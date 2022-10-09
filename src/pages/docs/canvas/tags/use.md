@@ -6,7 +6,7 @@ Horizontal reuse is an advanced Canvas feature that is hardly ever used in regul
 
 Template inheritance is one of the most powerful features of Canvas but it is limited to single inheritance; a template can only extend one other template. This limitation makes template inheritance simple to understand and easy to debug.
 
-```twig {% process=false %}
+```canvas {% process=false %}
 {% extends 'base.canvas' %}
 
 {% block title %}{% endblock %}
@@ -15,7 +15,7 @@ Template inheritance is one of the most powerful features of Canvas but it is li
 
 Horizontal reuse is a way to achieve the same goal as multiple inheritance, but without the associated complexity:
 
-```twig {% process=false %}
+```canvas {% process=false %}
 {% extends 'base.canvas' %}
 
 {% use 'blocks.canvas' %}
@@ -26,7 +26,7 @@ Horizontal reuse is a way to achieve the same goal as multiple inheritance, but 
 
 The **use** statement tells Canvas to import the blocks defined in `blocks.canvas` into the current template (it's like macros, but for blocks):
 
-```twig {% process=false %}
+```canvas {% process=false %}
 {# blocks.canvas #}
 
 {% block sidebar %}{% endblock %}
@@ -34,7 +34,7 @@ The **use** statement tells Canvas to import the blocks defined in `blocks.canva
 
 In this example, the **use** statement imports the `sidebar` block into the main template. The code is mostly equivalent to the following one (the imported blocks are not outputted automatically):
 
-```twig {% process=false %}
+```canvas {% process=false %}
 {% extends 'base.canvas' %}
 
 {% block sidebar %}{% endblock %}
@@ -46,7 +46,7 @@ The **use** tag only imports a template if it does not extend another template, 
 
 The main template can also override any imported block. If the template already defines the `sidebar` block, then the one defined in `blocks.canvas` is ignored. To avoid name conflicts, you can rename imported blocks:
 
-```twig {% process=false %}
+```canvas {% process=false %}
 {% extends 'base.canvas' %}
 
 {% use 'blocks.canvas' with sidebar as base_sidebar, title as base_title %}
@@ -58,7 +58,7 @@ The main template can also override any imported block. If the template already 
 
 The [parent()](/docs/canvas/functions/parent) function automatically determines the correct inheritance tree, so it can be used when overriding a block defined in an imported template:
 
-```twig {% process=false %}
+```canvas {% process=false %}
 {% extends 'base.canvas' %}
 
 {% use 'blocks.canvas' %}
@@ -75,7 +75,7 @@ In this example, the **parent()** function will correctly call the `sidebar` blo
 
 Renaming allows you to simulate inheritance by calling the "parent" block:
 
-```twig {% process=false %}
+```canvas {% process=false %}
 {% extends 'base.canvas' %}
 
 {% use 'blocks.canvas' with sidebar as parent_sidebar %}

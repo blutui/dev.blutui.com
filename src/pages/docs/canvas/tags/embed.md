@@ -6,7 +6,7 @@ The **embed** tag combines the behaviour of [include](/docs/canvas/tags/include)
 
 Think of an embedded template as a "micro layout skeleton".
 
-```twig {% process=false %}
+```canvas {% process=false %}
 {% embed 'teasers_skeleton.canvas' %}
   {# These blocks are defined in "teasers_skeleton.canvas" and we override them right here: #}
   {% block left_teaser %}
@@ -22,7 +22,7 @@ The **embed** tag takes the idea of template inheritance to the level of content
 
 Since the use case may not be obvious, let’s look at a simplified example. Imagine a base template shared by multiple pages, defining a single block named "content":
 
-```twig
+```canvas
 ┌─── page layout ─────────────────────┐
 │                                     │
 │           ┌── block "content" ──┐   │
@@ -37,7 +37,7 @@ Since the use case may not be obvious, let’s look at a simplified example. Ima
 
 Some pages ("foo.canvas" and "bar.canvas") share the same content structure - two vertically stacked boxes:
 
-```twig
+```canvas
 ┌─── page layout ─────────────────────┐
 │                                     │
 │           ┌── block "content" ──┐   │
@@ -54,7 +54,7 @@ Some pages ("foo.canvas" and "bar.canvas") share the same content structure - tw
 
 While other pages ("boom.canvas" and "baz.canvas") share a different content structure - two boxes side by side:
 
-```twig
+```canvas
 ┌─── page layout ─────────────────────┐
 │                                     │
 │           ┌── block "content" ──┐   │
@@ -83,7 +83,7 @@ In such a situation, the **embed** tag comes in handy. The common layout code ca
 
 Page template `foo.canvas`:
 
-```twig {% process=false %}
+```canvas {% process=false %}
 {% extends "layout.canvas" %}
 
 {% block content %}
@@ -101,7 +101,7 @@ Page template `foo.canvas`:
 
 And here is the code for `vertical_boxes_skeleton.canvas`:
 
-```twig {% process=false %}
+```canvas {% process=false %}
 <div class="top_box">
   {% block top %}
     Top box default content
@@ -119,7 +119,7 @@ The goal of the `vertical_boxes_skeleton.canvas` template being to factor out th
 
 The **embed** tag takes the exact same arguments as the [include](/docs/canvas/tags/include) tag:
 
-```twig {% process=false %}
+```canvas {% process=false %}
 {% embed "base" with {'foo': 'bar'} %}
   ...
 {% endembed %}

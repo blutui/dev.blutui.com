@@ -4,7 +4,7 @@ title: 'if'
 
 The **if** statement in Canvas is comparable with the if statements of many popular languages. In the simplest form you can use it to test if an expression evaluates to `true`:
 
-```twig {% process=false %}
+```canvas {% process=false %}
 {% if online == false %}
   <p>Our website is in maintenance mode. Please, come back later.</p>
 {% endif %}
@@ -12,7 +12,7 @@ The **if** statement in Canvas is comparable with the if statements of many popu
 
 You can also test if an array is not empty:
 
-```twig {% process=false %}
+```canvas {% process=false %}
 {% if users %}
   <ul>
     {% for user in users %}
@@ -24,7 +24,7 @@ You can also test if an array is not empty:
 
 If you want to test if the variable is defined, use `if users is defined` instead. You can also use `not` to check for values that evaluate to `false`:
 
-```twig {% process=false %}
+```canvas {% process=false %}
 {% if not user.subscribed %}
   <p>You are not subscribed to our mailing list.</p>
 {% endif %}
@@ -32,7 +32,7 @@ If you want to test if the variable is defined, use `if users is defined` instea
 
 For multiple conditions, `and` and `or` can be used:
 
-```twig {% process=false %}
+```canvas {% process=false %}
 {% if temperature > 18 and temperature < 27 %}
   <p>It's a nice day for a walk in the park.</p>
 {% endif %}
@@ -40,7 +40,7 @@ For multiple conditions, `and` and `or` can be used:
 
 For multiple branches `elseif` and `else` can be used like in many popular languages. You can use more complex expressions there too:
 
-```twig {% process=false %}
+```canvas {% process=false %}
 {% if product.stock > 10 %}
   Available
 {% elseif product.stock > 0 %}

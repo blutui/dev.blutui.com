@@ -6,6 +6,7 @@
 
 /*! purgecss start ignore */
 @import 'docsearch.css';
+@import 'prism.css';
 /*! purgecss end ignore */
 
 @tailwind components;

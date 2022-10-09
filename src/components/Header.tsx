@@ -14,7 +14,7 @@ export const Header = ({ children }: HeaderProps) => {
   const actionKey = useActionKey()
 
   return (
-    <header className="sticky top-0 z-10 flex-none bg-gray-50/70 backdrop-blur dark:bg-gray-900/70">
+    <header className="sticky top-0 z-10 flex-none bg-zinc-50/70 backdrop-blur dark:bg-zinc-900/70">
       <div className="mx-auto max-w-8xl">
         <div className="flex h-[3.75rem] items-center justify-between space-x-8 px-8">
           <div className="flex flex-shrink-0 items-center">
@@ -27,7 +27,7 @@ export const Header = ({ children }: HeaderProps) => {
             <span className="hidden h-6 border-l border-black/10 dark:border-white/10 lg:block"></span>
           </div>
           <div className="flex flex-auto items-center space-x-6">
-            <SearchButton className="hidden rounded-full bg-gray-900/10 px-4 py-1.5 text-left font-medium tracking-tight text-gray-500 transition hover:bg-black/20 dark:bg-gray-100/10 dark:text-gray-400 dark:hover:bg-white/20 lg:block">
+            <SearchButton className="hidden rounded-full bg-zinc-900/10 px-4 py-1.5 text-left font-medium tracking-tight text-zinc-500 transition hover:bg-black/20 dark:bg-zinc-100/10 dark:text-zinc-400 dark:hover:bg-white/20 lg:block">
               <div className="flex items-center space-x-3 lg:w-80">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -43,7 +43,7 @@ export const Header = ({ children }: HeaderProps) => {
                 </svg>
                 <span className="block flex-auto">Quick search...</span>
                 {actionKey && (
-                  <kbd className="ml-2 font-sans text-xs font-semibold text-gray-600 dark:text-gray-300">
+                  <kbd className="ml-2 font-sans text-xs font-semibold text-zinc-600 dark:text-zinc-300">
                     <abbr title={actionKey[1]} className="no-underline">
                       {actionKey[0]}
                     </abbr>{' '}
@@ -58,7 +58,7 @@ export const Header = ({ children }: HeaderProps) => {
               <li>
                 <a
                   href="#"
-                  className="flex items-center space-x-1 font-semibold tracking-tight text-gray-500 transition hover:text-gray-600 dark:text-gray-200 dark:hover:text-gray-500"
+                  className="flex items-center space-x-1 font-semibold tracking-tight text-zinc-500 transition hover:text-zinc-600 dark:text-zinc-200 dark:hover:text-zinc-500"
                 >
                   <span>Help centre</span>
                   <svg
@@ -78,7 +78,7 @@ export const Header = ({ children }: HeaderProps) => {
               <li>
                 <a
                   href="#"
-                  className="flex items-center space-x-1 font-semibold tracking-tight text-gray-500 transition hover:text-gray-600 dark:text-gray-200 dark:hover:text-gray-500"
+                  className="flex items-center space-x-1 font-semibold tracking-tight text-zinc-500 transition hover:text-zinc-600 dark:text-zinc-200 dark:hover:text-zinc-500"
                 >
                   <span>Console</span>
                   <svg
@@ -105,7 +105,7 @@ export const Header = ({ children }: HeaderProps) => {
               <svg
                 viewBox="0 0 24 24"
                 aria-hidden="true"
-                className="h-6 w-6 fill-gray-400"
+                className="h-6 w-6 fill-zinc-400"
               >
                 <path
                   fillRule="evenodd"

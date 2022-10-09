@@ -20,16 +20,16 @@ export const Contribution = () => {
     : 'https://github.com/blutui/dev.blutui.com'
 
   return (
-    <div className="max-w-xs rounded-lg border p-6 dark:border-gray-700">
-      <h2 className="mb-4 font-semibold tracking-tight text-gray-700 dark:text-gray-200">
+    <div className="max-w-xs rounded-lg border p-6 dark:border-zinc-700">
+      <h2 className="mb-4 font-semibold tracking-tight text-zinc-700 dark:text-zinc-200">
         Help us make these docs great!
       </h2>
-      <p className="mb-4 text-sm text-zinc-600 dark:text-gray-500">
+      <p className="mb-4 text-sm text-zinc-600 dark:text-zinc-500">
         All Blutui docs are open source. See something that{"'"}s wrong or
         unclear? Submit a pull request.
       </p>
       <a
-        className="rounded-md border px-4 py-2 font-semibold text-indigo-600 transition hover:border-gray-300 hover:bg-gray-100 dark:border-gray-700 dark:text-indigo-400"
+        className="rounded-md border px-4 py-2 font-semibold text-indigo-600 transition hover:border-zinc-300 hover:bg-zinc-100 dark:border-zinc-700 dark:text-indigo-400"
         href={contributionHref}
       >
         Make a contribution
