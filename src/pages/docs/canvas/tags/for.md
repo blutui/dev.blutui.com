@@ -4,7 +4,7 @@ title: 'for'
 
 Loop over each item in a sequence. For example, to display a list of users provided in a variable called `users`:
 
-```twig {% process=false %}
+```canvas {% process=false %}
 <h1>Members</h1>
 <ul>
   {% for user in users %}
@@ -15,7 +15,7 @@ Loop over each item in a sequence. For example, to display a list of users provi
 
 If you do need to iterate over a sequence of numbers, you can use the `..` operator:
 
-```twig {% process=false %}
+```canvas {% process=false %}
 {% for i in 0..10 %}
   * {{ i }}
 {% endfor %}
@@ -23,7 +23,7 @@ If you do need to iterate over a sequence of numbers, you can use the `..` opera
 
 The above snippet of code would print all numbers from 0 to 10. It can be also useful with letters:
 
-```twig {% process=false %}
+```canvas {% process=false %}
 {% for letter in 'a'..'z' %}
   * {{ letter }}
 {% endfor %}
@@ -31,7 +31,7 @@ The above snippet of code would print all numbers from 0 to 10. It can be also u
 
 The `..` operator can take any expression at both sides:
 
-```twig {% process=false %}
+```canvas {% process=false %}
 {% for letter in 'a'|upper..'z'|upper %}
   * {{ letter }}
 {% endfor %}
@@ -52,7 +52,7 @@ Variable         | Description
 `loop.length`    | The number of items in the sequence
 `loop.parent`    | The parent context
 
-```twig {% process=false %}
+```canvas {% process=false %}
 {% for user in users %}
     {{ loop.index }} - {{ user.username }}
 {% endfor %}
@@ -62,7 +62,7 @@ Variable         | Description
 
 If no iteration took place because the sequence was empty, you can render a replacement block by using `else`:
 
-```twig {% process=false %}
+```canvas {% process=false %}
 <ul>
   {% for user in users %}
     <li>{{ user.username | e }}</li>
@@ -76,7 +76,7 @@ If no iteration took place because the sequence was empty, you can render a repl
 
 By default, a loop iterates over the values of the sequence. You can iterate on keys by using the `keys` filter:
 
-```twig {% process=false %}
+```canvas {% process=false %}
 <h1>Members</h1>
 <ul>
     {% for key in users | keys %}
@@ -89,7 +89,7 @@ By default, a loop iterates over the values of the sequence. You can iterate on 
 
 You can also access both keys and values:
 
-```twig {% process=false %}
+```canvas {% process=false %}
 <h1>Members</h1>
 <ul>
     {% for key, user in users %}
@@ -102,7 +102,7 @@ You can also access both keys and values:
 
 You might want to iterate over a subset of values. This can be achieved using the [slice](/docs/canvas/filters/slice) filter:
 
-```twig {% process=false %}
+```canvas {% process=false %}
 <h1>Top Ten Members</h1>
 <ul>
     {% for user in users | slice(0, 10) %}

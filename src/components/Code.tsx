@@ -81,7 +81,6 @@ export const Code = ({ children, 'data-language': language }: CodeProps) => {
       <pre ref={ref} className={`language-${lang}`}>
         <code>{children}</code>
       </pre>
-      <button>copy</button>
     </div>
   )
 }

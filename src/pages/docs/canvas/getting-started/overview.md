@@ -15,7 +15,7 @@ A template contains **variables** or **expressions**, which get replaced with va
 
 Below is a minimal template that illustrates a few basics. We will cover further details later on:
 
-```twig {% process=false %}
+```canvas {% process=false %}
 <!DOCTYPE html>
 <html>
   <head>

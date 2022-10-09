@@ -18,9 +18,12 @@ module.exports = {
       typography: (theme) => ({
         DEFAULT: {
           css: {
-            color: theme('colors.gray.700'),
+            color: theme('colors.zinc.700'),
             'h1, h2, h3': {
               letterSpacing: '-0.025em',
+            },
+            'h2, h3, h4': {
+              'scroll-margin-top': '6.25rem'
             },
             a: {
               fontWeight: theme('fontWeight.semibold'),
@@ -35,7 +38,7 @@ module.exports = {
               fontVariantLigatures: 'none'
             },
             pre: {
-              color: theme('colors.gray.50'),
+              color: theme('colors.zinc.50'),
               borderRadius: theme('borderRadius.xl'),
               padding: theme('padding.5'),
               display: 'flex',
@@ -49,11 +52,11 @@ module.exports = {
               lineHeight: theme('fontSize.sm')[1].lineHeight,
             },
             thead: {
-              color: theme('colors.gray.700'),
-              borderBottomColor: theme('colors.gray.200')
+              color: theme('colors.zinc.700'),
+              borderBottomColor: theme('colors.zinc.200')
             },
             'thead th': {
-              color: theme('colors.gray.700'),
+              color: theme('colors.zinc.700'),
               paddingTop: 0,
               fontWeight: theme('fontWeight.semibold'),
             }
@@ -61,32 +64,29 @@ module.exports = {
         },
         dark: {
           css: {
-            color: theme('colors.gray.400'),
+            color: theme('colors.zinc.400'),
             'h1, h2, h3, h4, h5, h6': {
-              color: theme('colors.gray.200'),
-            },
-            'h2, h3, h4': {
-              'scroll-margin-top': '6.25rem'
+              color: theme('colors.zinc.200'),
             },
             a: {
               color: theme('colors.white'),
               borderBottomColor: theme('colors.indigo.400'),
             },
             strong: {
-              color: theme('colors.gray.200'),
+              color: theme('colors.zinc.200'),
             },
             code: {
-              color: theme('colors.gray.200'),
+              color: theme('colors.zinc.200'),
             },
             thead: {
-              color: theme('colors.gray.300'),
-              borderBottomColor: theme('colors.gray.700')
+              color: theme('colors.zinc.300'),
+              borderBottomColor: theme('colors.zinc.700')
             },
             'thead th': {
-              color: theme('colors.gray.300'),
+              color: theme('colors.zinc.300'),
             },
             'tbody tr': {
-              borderBottomColor: theme('colors.gray.700')
+              borderBottomColor: theme('colors.zinc.700')
             },
           }
         }

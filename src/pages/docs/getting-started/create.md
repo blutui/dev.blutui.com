@@ -38,7 +38,7 @@ First lets create a new page on your newly created project.
 
 In your newly created Canvas template add the following code:
 
-```twig {% process=false %}
+```canvas {% process=false %}
 {% extends 'templates/default' %}
 
 {% block body %}
@@ -62,7 +62,7 @@ Now that you know how to make pages, let's look at creating a navigation menu.
 
 Now that you have a menu, let's learn how to add it to your Canvas template. To do this create a `menu` variable using the [set](/docs/canvas/tags/set) tag, and assign the CMS menu object to it using the helper function:
 
-```twig {% process=false %}
+```canvas {% process=false %}
 {% set menu = cms.menu('main') %}
 
 {% for item in menu.items %}
@@ -78,7 +78,7 @@ Now that you have some pages and a menu, you might want to create some editable 
 
 In this example we'll add a text area on your canvas. To do this you use `cms_text`:
 
-```twig
+```canvas
 {{ cms_text('hero-content') }}
 ```
 
@@ -100,7 +100,7 @@ You will notice that all data types require a value for the `Name` field, this i
 
 Let's create a template that will render this collection, to do this you need the collection handle. In this example the handle is `staff`. First create a `collections` folder in our Canvas `views` directory, and add a file called `staff.canvas`, with:
 
-```twig {% process=false %}
+```canvas {% process=false %}
 {% set collection = cms.collection('staff') %}
 
 {% for entry in collection %}
@@ -116,7 +116,7 @@ Let's create a template that will render this collection, to do this you need th
 
 In this code example you are calling the collection, setting it to a `collection` variable and looping through each collection entry to display it the way you want. Once the collection template is created, you can [include](/docs/canvas/tags/include) it in your page template:
 
-```twig {% process=false %}
+```canvas {% process=false %}
 {% extends 'templates/default' %}
 
 {% block body %}
@@ -134,7 +134,7 @@ In this example we'll create a **Locations** collection and link it to our **Sta
 
 To get the value of this link in your Canvas, you can access the `foreign_keys` in the collection entry object or for convenience you can call it directly from the `entry` object. For example:
 
-```twig {% process=false %}
+```canvas {% process=false %}
 {{ entry.foreign_keys.location }}
 {{ entry.location }} {# This is only possible if your entry doesn't already have a location field. #}
 ```
@@ -154,7 +154,7 @@ Now that you can create complex collections, you might want to render each colle
 
 Add the following code in the **template** you set during the routing pattern creation process. The routing pattern template is a mix of a new page and a collection template:
 
-```twig {% process=false %}
+```canvas {% process=false %}
 {% extends 'templates/default' %}
 
 {# Set the staff collection to the collection variable #}
@@ -175,7 +175,7 @@ Now lets add a contact form on your site. The process of making a form is simila
 
 Now that your new form is created, lets add this form to your Canvas. At the top of the form template we want to [import](/docs/canvas/tags/import) `macros/form.canvas` into the `ui` variable, the file responsible for the markup and styling of your form inputs. We've created a form macro template to help you get started. You can find the code for the `macros/form.canvas` macro on [Gist](https://gist.github.com/jayan-blutui/228a410ebc3d0779011f019d0620ef1e). You can use the form macro like:
 
-```twig {% process=false %}
+```canvas {% process=false %}
 {% import 'macros/form' as ui %}
 
 {{ form_open() }}

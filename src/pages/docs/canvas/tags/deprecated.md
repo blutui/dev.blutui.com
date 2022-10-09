@@ -4,7 +4,7 @@ title: 'deprecated'
 
 This page is generally useful to Canvas template developers. Canvas generates a deprecation notice where the **deprecated** tag is used in a template:
 
-```twig {% process=false %}
+```canvas {% process=false %}
 {# base.html #}
 {% deprecated 'The "base.html" template is deprecated, use "layout.canvas" instead. %}
 {% extends 'layout.canvas' %}
@@ -12,7 +12,7 @@ This page is generally useful to Canvas template developers. Canvas generates a 
 
 Also you can deprecate a block in the following way:
 
-```twig {% process=false %}
+```canvas {% process=false %}
 {% block hey %}
   {% deprecated 'The "hey" block is deprecated, use "greet" instead.' %}
   {{ block('greet') }}
