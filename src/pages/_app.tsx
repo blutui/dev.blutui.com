@@ -27,6 +27,7 @@ const Blutui = ({ Component, pageProps }: BlutuiAppProps<BlutuiProps>) => {
   const { markdoc } = pageProps
 
   let title = 'Blutui'
+  let description = 'Blutui developer documentation'
   let articleContext: ArticleContextT = {}
   if (markdoc) {
     if (markdoc.frontmatter.title) {
@@ -37,6 +38,7 @@ const Blutui = ({ Component, pageProps }: BlutuiAppProps<BlutuiProps>) => {
     }
 
     if (markdoc.frontmatter.description) {
+      description = markdoc.frontmatter.description
       articleContext = Object.assign(articleContext, {
         description: markdoc.frontmatter.description,
       })
@@ -62,7 +64,7 @@ const Blutui = ({ Component, pageProps }: BlutuiAppProps<BlutuiProps>) => {
         <title>{title}</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta name="referrer" content="strict-origin" />
-        <meta name="description" content="Blutui Developer Documentation" />
+        <meta name="description" content={description} />
         <link
           rel="icon"
           type="image/png"
