@@ -15,7 +15,7 @@ export const Header = ({ children }: HeaderProps) => {
 
   return (
     <header className="sticky top-0 z-10 flex-none bg-zinc-50/70 backdrop-blur dark:bg-zinc-900/70">
-      <div className="mx-auto max-w-8xl">
+      <div className="">
         <div className="flex h-[3.75rem] items-center justify-between space-x-8 px-8">
           <div className="flex flex-shrink-0 items-center">
             <Link href="/">
