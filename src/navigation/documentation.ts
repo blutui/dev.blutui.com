@@ -3,12 +3,8 @@ export const documentationNavigation = [
     title: 'Getting Started',
     items: [
       {
-        title: 'Start building sites',
-        url: '/docs/building-sites',
-      },
-      {
-        title: 'Templating language',
-        url: '/docs/templating',
+        title: 'Create a project',
+        url: '/docs/getting-started/create',
       },
       {
         title: 'IntelliSense',
@@ -45,11 +41,11 @@ export const documentationNavigation = [
     title: 'Canvas',
     items: [
       {
-        title: 'Introduction',
+        title: 'Getting started',
         items: [
           {
-            title: 'Canvas',
-            url: '/docs/canvas/introduction/canvas',
+            title: 'Overview',
+            url: '/docs/canvas/getting-started/overview',
           },
           {
             title: 'Variables',
@@ -65,7 +61,7 @@ export const documentationNavigation = [
           },
           {
             title: 'Expressions',
-            url: '/docs/canvas/introduction/expressions',
+            url: '/docs/canvas/getting-started/expressions',
           },
         ],
       },
