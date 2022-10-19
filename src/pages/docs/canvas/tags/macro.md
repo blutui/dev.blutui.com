@@ -6,7 +6,7 @@ Macros are comparable with functions in regular programming languages. They are 
 
 Macros are defined in regular templates.
 
-Imagine having a generic helper template that define how to render HTML forms via macros (called `forms.canvas`):
+Imagine having a generic helper template that define how to render HTML forms via macros (called `forms.html`):
 
 ```canvas {% process=false %}
 {% macro input(name, value, type = 'text', size = 20) %}
@@ -34,10 +34,10 @@ There are two ways to import macros. You can import the complete template contai
 To import all macros from a template into a local variable, use the [import](/docs/canvas/tags/import) tag:
 
 ```canvas {% process=false %}
-{% import 'forms.canvas' as forms %}
+{% import 'forms.html' as forms %}
 ```
 
-The above **import** call imports the `forms.canvas` file (which can contain only macros, or a template and some macros), and import the macros as items of the `forms` local variable.
+The above **import** call imports the `forms.html` file (which can contain only macros, or a template and some macros), and import the macros as items of the `forms` local variable.
 
 The macros can then be called at will in the *current* template:
 
@@ -49,7 +49,7 @@ The macros can then be called at will in the *current* template:
 Alternatively you can import names from the template into the current namespace via the [from](/docs/canvas/tags/from) tag:
 
 ```canvas {% process=false %}
-{% from 'forms.canvas' import input as input, textarea %}
+{% from 'forms.html' import input as input, textarea %}
 
 <p>{{ input('password', '', 'password') }}</p>
 <p>{{ textarea('comment') }}</p>
@@ -80,9 +80,9 @@ When calling **import** or **from** from a **macro** tag, the imported macros ar
 You can check if a macro is defined via the `defined` test:
 
 ```canvas {% process=false %}
-{% import 'macros.canvas' as macros %}
+{% import 'macros.html' as macros %}
 
-{% from 'macros.canvas' import hello %}
+{% from 'macros.html' import hello %}
 
 {% if macros.hello is defined -%}
   OK

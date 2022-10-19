@@ -7,7 +7,7 @@ Horizontal reuse is an advanced Canvas feature that is hardly ever used in regul
 Template inheritance is one of the most powerful features of Canvas but it is limited to single inheritance; a template can only extend one other template. This limitation makes template inheritance simple to understand and easy to debug.
 
 ```canvas {% process=false %}
-{% extends 'base.canvas' %}
+{% extends 'base.html' %}
 
 {% block title %}{% endblock %}
 {% block content %}{% endblock %}
@@ -16,18 +16,18 @@ Template inheritance is one of the most powerful features of Canvas but it is li
 Horizontal reuse is a way to achieve the same goal as multiple inheritance, but without the associated complexity:
 
 ```canvas {% process=false %}
-{% extends 'base.canvas' %}
+{% extends 'base.html' %}
 
-{% use 'blocks.canvas' %}
+{% use 'blocks.html' %}
 
 {% block title %}{% endblock %}
 {% block content %}{% endblock %}
 ```
 
-The **use** statement tells Canvas to import the blocks defined in `blocks.canvas` into the current template (it's like macros, but for blocks):
+The **use** statement tells Canvas to import the blocks defined in `blocks.html` into the current template (it's like macros, but for blocks):
 
 ```canvas {% process=false %}
-{# blocks.canvas #}
+{# blocks.html #}
 
 {% block sidebar %}{% endblock %}
 ```
@@ -35,7 +35,7 @@ The **use** statement tells Canvas to import the blocks defined in `blocks.canva
 In this example, the **use** statement imports the `sidebar` block into the main template. The code is mostly equivalent to the following one (the imported blocks are not outputted automatically):
 
 ```canvas {% process=false %}
-{% extends 'base.canvas' %}
+{% extends 'base.html' %}
 
 {% block sidebar %}{% endblock %}
 {% block title %}{% endblock %}
@@ -44,12 +44,12 @@ In this example, the **use** statement imports the `sidebar` block into the main
 
 The **use** tag only imports a template if it does not extend another template, if it does not define macros, and if the body is empty. But it can *use* other templates. Because **use** statements are resolved independtly of the context passed to the template, the template reference cannot be an expression.
 
-The main template can also override any imported block. If the template already defines the `sidebar` block, then the one defined in `blocks.canvas` is ignored. To avoid name conflicts, you can rename imported blocks:
+The main template can also override any imported block. If the template already defines the `sidebar` block, then the one defined in `blocks.html` is ignored. To avoid name conflicts, you can rename imported blocks:
 
 ```canvas {% process=false %}
-{% extends 'base.canvas' %}
+{% extends 'base.html' %}
 
-{% use 'blocks.canvas' with sidebar as base_sidebar, title as base_title %}
+{% use 'blocks.html' with sidebar as base_sidebar, title as base_title %}
 
 {% block sidebar %}{% endblock %}
 {% block title %}{% endblock %}
@@ -59,9 +59,9 @@ The main template can also override any imported block. If the template already 
 The [parent()](/docs/canvas/functions/parent) function automatically determines the correct inheritance tree, so it can be used when overriding a block defined in an imported template:
 
 ```canvas {% process=false %}
-{% extends 'base.canvas' %}
+{% extends 'base.html' %}
 
-{% use 'blocks.canvas' %}
+{% use 'blocks.html' %}
 
 {% block sidebar %}
   {{ parent() }}
@@ -71,14 +71,14 @@ The [parent()](/docs/canvas/functions/parent) function automatically determines 
 {% block content %}{% endblock %}
 ```
 
-In this example, the **parent()** function will correctly call the `sidebar` block from the `blocks.canvas` template.
+In this example, the **parent()** function will correctly call the `sidebar` block from the `blocks.html` template.
 
 Renaming allows you to simulate inheritance by calling the "parent" block:
 
 ```canvas {% process=false %}
-{% extends 'base.canvas' %}
+{% extends 'base.html' %}
 
-{% use 'blocks.canvas' with sidebar as parent_sidebar %}
+{% use 'blocks.html' with sidebar as parent_sidebar %}
 
 {% block sidebar %}
   {{ block('parent_sidebar') }}

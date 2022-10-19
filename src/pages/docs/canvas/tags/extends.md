@@ -2,7 +2,7 @@
 title: 'extends'
 ---
 
-The **extends** tag can be used to extend a template from another one. Canvas does not support multiple inheritance. So you can only have one extends tag called per rendering. However, Canvas supports horizontal [reuse](/docs/canvas/tags/use). Let’s define a base template, `base.canvas`, which defines a simple HTML skeleton document:
+The **extends** tag can be used to extend a template from another one. Canvas does not support multiple inheritance. So you can only have one extends tag called per rendering. However, Canvas supports horizontal [reuse](/docs/canvas/tags/use). Let’s define a base template, `base.html`, which defines a simple HTML skeleton document:
 
 ```canvas {% process=false %}
 <!DOCTYPE html>
@@ -31,7 +31,7 @@ In this example, the [block](/docs/canvas/tags/block) tags define four blocks th
 A child template might look like this:
 
 ```canvas {% process=false %}
-{% extends 'base.canvas' %}
+{% extends 'base.html' %}
 
 {% block title %}Home{% endblock %}
 
@@ -123,7 +123,7 @@ Canvas supports dynamic inheritance by using a variable as the base template:
 You can also provide a list of templates that are checked for existence. The first template that exists will be used as a parent:
 
 ```canvas {% process=false %}
-{% extends ['layout.canvas', 'base_layout.canvas'] %}
+{% extends ['layout.html', 'base_layout.html'] %}
 ```
 
 ## Conditional interitance
@@ -131,7 +131,7 @@ You can also provide a list of templates that are checked for existence. The fir
 As the template name for the parent can be any valid Canvas expression, it’s possible to make the inheritance mechanism conditional:
 
 ```canvas {% process=false %}
-{% extends standalone ? 'minimum.canvas' : 'base.canvas' %}
+{% extends standalone ? 'minimum.html' : 'base.html' %}
 ```
 
-In this example, the template will extend the "minimum.canvas" layout template if the `standalone` variable evaluates to `true`, and "base.canvas" otherwise.
+In this example, the template will extend the "minimum.html" layout template if the `standalone` variable evaluates to `true`, and "base.html" otherwise.

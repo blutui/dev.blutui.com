@@ -11,7 +11,7 @@ A block provides a way to change how a certain part of a template is rendered bu
 Let’s take the following example to illustrate how a block works and more importantly, how it does not work:
 
 ```canvas {% process=false %}
-{# base.canvas #}
+{# base.html #}
 
 {% for post in posts %}
   {% block post %}
@@ -24,9 +24,9 @@ Let’s take the following example to illustrate how a block works and more impo
 If you render this template, the result would be exactly the same with or without the `block` tag. The `block` inside the `for` loop is just a way to make it overridable by a child template:
 
 ```canvas {% process=false %}
-{# child.canvas #}
+{# child.html #}
 
-{% extends 'base.canvas' %}
+{% extends 'base.html' %}
 
 {% block post %}
   <article>
