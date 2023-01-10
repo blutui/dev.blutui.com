@@ -36,7 +36,7 @@ export const TableOfContents = ({ toc }: TableOfContentsProps) => {
                 .filter(Boolean)
                 .join(' ')}
             >
-              <Link href={href} passHref>
+              <Link href={href}>
                 <a
                   className={[
                     'block py-1 font-medium transition',
