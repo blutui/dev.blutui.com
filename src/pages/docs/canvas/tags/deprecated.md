@@ -6,8 +6,8 @@ This page is generally useful to Canvas template developers. Canvas generates a 
 
 ```canvas {% process=false %}
 {# base.html #}
-{% deprecated 'The "base.html" template is deprecated, use "layout.canvas" instead. %}
-{% extends 'layout.canvas' %}
+{% deprecated 'The "base.html" template is deprecated, use "layout.html" instead. %}
+{% extends 'layout.html' %}
 ```
 
 Also you can deprecate a block in the following way:
