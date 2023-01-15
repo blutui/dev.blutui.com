@@ -155,7 +155,7 @@ export const documentationNavigation = [
           },
           {
             title: 'convert_encoding',
-            url: '/docs/canvas/filters/convert-encoding',
+            url: '/docs/canvas/filters/convert_encoding',
           },
           {
             title: 'date',
@@ -163,7 +163,7 @@ export const documentationNavigation = [
           },
           {
             title: 'date_modify',
-            url: '/docs/canvas/filters/date-modify',
+            url: '/docs/canvas/filters/date_modify',
           },
           {
             title: 'default',
@@ -187,7 +187,7 @@ export const documentationNavigation = [
           },
           {
             title: 'group_by',
-            url: '/docs/canvas/filters/group-by',
+            url: '/docs/canvas/filters/group_by',
           },
           {
             title: 'join',
@@ -195,7 +195,7 @@ export const documentationNavigation = [
           },
           {
             title: 'json_encode',
-            url: '/docs/canvas/filters/json-encode',
+            url: '/docs/canvas/filters/json_encode',
           },
           {
             title: 'keys',
@@ -227,7 +227,7 @@ export const documentationNavigation = [
           },
           {
             title: 'number_format',
-            url: '/docs/canvas/filters/number-format',
+            url: '/docs/canvas/filters/number_format',
           },
           {
             title: 'raw',
@@ -235,7 +235,7 @@ export const documentationNavigation = [
           },
           {
             title: 'reading_time',
-            url: '/docs/canvas/filters/reading-time',
+            url: '/docs/canvas/filters/reading_time',
           },
           {
             title: 'reduce',
@@ -291,7 +291,7 @@ export const documentationNavigation = [
           },
           {
             title: 'url_encode',
-            url: '/docs/canvas/filters/url-encode',
+            url: '/docs/canvas/filters/url_encode',
           },
           {
             title: 'Deprecated filters',

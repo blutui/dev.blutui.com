@@ -4,6 +4,12 @@
   min-height: 100%;
 }
 
+.blutui-scrollbar {
+  scrollbar-width: thin;
+  scrollbar-color: hsla(0, 0%, 45%, .4) transparent;
+  scrollbar-gutter: stable;
+}
+
 /*! purgecss start ignore */
 @import 'docsearch.css';
 @import 'prism.css';
