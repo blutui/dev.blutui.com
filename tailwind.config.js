@@ -16,7 +16,7 @@ module.exports = {
         '8xl': '90rem'
       },
       height: {
-        'sidebar': 'calc(100vh - 8.75rem)'
+        'sidebar': 'calc(100vh - 3.75rem)'
       },
       typography: (theme) => ({
         DEFAULT: {

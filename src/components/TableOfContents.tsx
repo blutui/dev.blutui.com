@@ -36,19 +36,19 @@ export const TableOfContents = ({ toc }: TableOfContentsProps) => {
                 .filter(Boolean)
                 .join(' ')}
             >
-              <Link href={href}>
-                <a
-                  className={[
-                    'block py-1 font-medium transition',
-                    active
-                      ? 'text-indigo-500 dark:text-indigo-400'
-                      : 'text-zinc-600 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-zinc-300',
-                  ]
-                    .filter(Boolean)
-                    .join(' ')}
-                >
-                  {item.title}
-                </a>
+              <Link
+                href={href}
+                shallow
+                className={[
+                  'block py-1 font-medium transition',
+                  active
+                    ? 'text-indigo-500 dark:text-indigo-400'
+                    : 'text-zinc-600 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-zinc-300',
+                ]
+                  .filter(Boolean)
+                  .join(' ')}
+              >
+                {item.title}
               </Link>
             </li>
           )

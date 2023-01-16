@@ -31,11 +31,9 @@ export const DocumentationLayout = ({
 
   return (
     <>
-      <main className="flex w-full flex-1 items-start space-x-8 py-10 px-8">
-        <div className="sticky top-[6.25rem] h-sidebar w-72 flex-shrink-0 overflow-y-auto rounded-lg border border-black/10 py-6 dark:border-white/10">
-          <Sidebar items={items} />
-        </div>
-        <div className="flex flex-auto items-start space-x-8">
+      <main className="flex w-full flex-1 items-start space-x-8 px-8">
+        <Sidebar items={items} />
+        <div className="flex flex-auto items-start space-x-8 py-8">
           <div className="flex-auto space-y-8">
             <header className="mx-auto max-w-screen-md">
               {title && (

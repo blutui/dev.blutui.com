@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import Prism from 'prismjs'
 
 export interface CodeProps {
@@ -68,6 +68,7 @@ Prism.hooks.add('after-tokenize', (env) => {
 })
 
 export const Code = ({ children, 'data-language': language }: CodeProps) => {
+  const [copied, setCopied] = useState(false)
   const ref = useRef(null)
 
   useEffect(() => {
@@ -78,7 +79,7 @@ export const Code = ({ children, 'data-language': language }: CodeProps) => {
 
   return (
     <div className="code not-prose" aria-live="polite">
-      <pre ref={ref} className={`language-${lang}`}>
+      <pre key={children as any} ref={ref} className={`language-${lang}`}>
         <code>{children}</code>
       </pre>
     </div>

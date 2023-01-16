@@ -147,8 +147,8 @@ const Hit = ({ hit, children }: HitT) => {
     .join(' ')
 
   return (
-    <Link href={hit.url}>
-      <a className={className}>{children}</a>
+    <Link href={hit.url} className={className}>
+      {children}
     </Link>
   )
 }
