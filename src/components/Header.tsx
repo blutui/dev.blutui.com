@@ -25,7 +25,7 @@ export const Header = ({ children }: HeaderProps) => {
         </div>
         <div className="flex flex-auto items-center space-x-6">
           <SearchButton className="hidden h-9 rounded-lg bg-zinc-900/10 px-3.5 py-1.5 text-left font-medium tracking-tight text-zinc-500 transition hover:bg-black/20 dark:bg-zinc-100/10 dark:text-zinc-400 dark:hover:bg-white/20 lg:block">
-            <div className="flex items-center space-x-2 lg:w-80">
+            <div className="flex items-center gap-2 lg:w-80">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 20 20"
@@ -40,7 +40,7 @@ export const Header = ({ children }: HeaderProps) => {
               </svg>
               <span className="block flex-auto">Quick search...</span>
               {actionKey && (
-                <kbd className="ml-2 font-sans text-xs font-semibold opacity-70">
+                <kbd className="ml-2 -mr-1 rounded bg-white/10 py-0.5 px-1.5 font-sans text-xs font-semibold">
                   <abbr title={actionKey[1]} className="no-underline">
                     {actionKey[0]}
                   </abbr>{' '}

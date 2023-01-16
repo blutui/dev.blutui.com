@@ -11,9 +11,13 @@ export interface Item {
 }
 
 const Folder = ({ item }: { item: Item }) => {
+  const { asPath: route } = useRouter()
+
+  const active = item.url && [route, route + '/'].includes(item.url + '/')
+
   return (
-    <li className={'flex flex-col gap-1'}>
-      <span className="px-3 py-1.5 text-sm text-zinc-500 dark:text-zinc-500">
+    <li className={cn('flex flex-col gap-1', { active })}>
+      <span className="px-3 py-1 text-sm text-zinc-500 dark:text-zinc-500">
         {item.title}
       </span>
       {Array.isArray(item.items) ? (
@@ -42,10 +46,10 @@ const File = ({ item }: { item: Item }) => {
         <Link
           href={item.url}
           className={cn(
-            'flex cursor-pointer rounded-md px-3 py-1.5 text-sm transition-colors [word-break:break-word]',
+            'flex cursor-pointer rounded-md px-3 py-1 text-sm transition-colors [word-break:break-word]',
             active
               ? 'bg-indigo-50 font-bold text-indigo-500 dark:bg-indigo-500/20 dark:text-indigo-300'
-              : 'text-zinc-700 dark:text-zinc-300'
+              : 'dark:bg-zinc- font-medium text-zinc-700 hover:bg-zinc-100 dark:text-zinc-400 dark:hover:bg-indigo-100/5 dark:hover:text-zinc-50'
           )}
         >
           {item.title}
