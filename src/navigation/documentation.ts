@@ -1,5 +1,9 @@
 export const documentationNavigation = [
   {
+    title: 'Introduction',
+    url: '/docs',
+  },
+  {
     title: 'Getting Started',
     items: [
       {

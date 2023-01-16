@@ -32,11 +32,7 @@ export const DocumentationLayout = ({
   return (
     <>
       <main className="flex w-full flex-1 items-start space-x-8 px-8">
-        <aside className="sticky top-[3.75rem] flex w-72 flex-shrink-0 flex-col self-start border-r border-black/10 dark:border-white/10">
-          <div className="blutui-scrollbar h-sidebar flex-shrink-0 flex-grow overflow-y-auto p-4 pl-0">
-            <Sidebar items={items} />
-          </div>
-        </aside>
+        <Sidebar items={items} />
         <div className="flex flex-auto items-start space-x-8 py-8">
           <div className="flex-auto space-y-8">
             <header className="mx-auto max-w-screen-md">
