@@ -53,15 +53,15 @@ export const documentationNavigation = [
           },
           {
             title: 'Variables',
-            url: '/docs/canvas/introduction/variables',
+            url: '/docs/canvas/getting-started/variables',
           },
           {
             title: 'Filters & Functions',
-            url: '/docs/canvas/introduction/filters-functions',
+            url: '/docs/canvas/getting-started/filters-functions',
           },
           {
             title: 'Templating',
-            url: '/docs/canvas/introduction/templating',
+            url: '/docs/canvas/getting-started/templating',
           },
           {
             title: 'Expressions',
