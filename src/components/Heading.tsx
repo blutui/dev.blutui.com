@@ -1,4 +1,5 @@
 import React from 'react'
+import cn from 'clsx'
 
 export interface HeadingProps {
   id?: string
@@ -13,12 +14,11 @@ export const Heading = ({
   children,
   className,
 }: HeadingProps) => {
-  return React.createElement(
-    `h${level}`,
-    {
-      id,
-      className: ['heading', className].filter(Boolean).join(' '),
-    },
-    children
+  const Component = `h${level}` as keyof JSX.IntrinsicElements
+
+  return (
+    <Component id={id} className={cn('heading', className)}>
+      {children}
+    </Component>
   )
 }

@@ -35,10 +35,6 @@ export const documentationNavigation = [
         title: 'Configuration',
         url: '/docs/courier/configuration',
       },
-      {
-        title: 'Upgrade guide',
-        url: '/docs/courier/upgrade',
-      },
     ],
   },
   {

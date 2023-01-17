@@ -23,7 +23,7 @@ courier install
 Complete the [getting started guide](/docs/courier/getting-started) and learn how to start building your first project.
 {% /callout %}
 
-### Upgrade
+### Upgrade on macOS
 
 To upgrade to the latest version of `courier`, run:
 
@@ -31,7 +31,7 @@ To upgrade to the latest version of `courier`, run:
 brew upgrade courier
 ```
 
-### Firefox
+### Firefox on macOS
 
 To use `courier watch` on Firefox, you need to install `nss` (Network Security Services). NSS is a set of libraries designed to support cross-platform development of security-enabled client and server applications.
 
@@ -107,7 +107,7 @@ sudo zypper in ./courier_*_linux_amd64.rpm
 
 - Run `courier install` to setup the required services for Blutui Courier.
 
-### Firefox
+### Firefox on Linux
 
 To use `courier watch` on Firefox, you need to install `nss` (Network Security Services). NSS is a set of libraries designed to support cross-platform development of security-enabled client and server applications.
 
@@ -146,7 +146,7 @@ courier install
 Complete the [getting started guide](/docs/courier/getting-started) and learn how to start building your first project.
 {% /callout %}
 
-### Upgrade
+### Upgrade on Windows
 
 To upgrade to the latest version of `courier`, run:
 
