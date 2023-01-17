@@ -1,7 +1,8 @@
-import Link from 'next/link'
-import React, { useRef } from 'react'
+import React, { useEffect, useRef } from 'react'
 import cn from 'clsx'
+import Link from 'next/link'
 import { useRouter } from 'next/router'
+import scrollIntoView from 'scroll-into-view-if-needed'
 
 export interface Item {
   title?: string
@@ -83,10 +84,32 @@ export interface SidebarProps {
 
 export const Sidebar = ({ items, className }: SidebarProps) => {
   const sidebarRef = useRef<HTMLDivElement>(null)
+  const containerRef = useRef<HTMLDivElement>(null)
+
+  useEffect(() => {
+    const activeElement = sidebarRef.current?.querySelector('li.active')
+
+    if (activeElement && window.innerWidth > 767) {
+      const scroll = () => {
+        scrollIntoView(activeElement, {
+          block: 'center',
+          inline: 'center',
+          scrollMode: 'always',
+          boundary: containerRef.current,
+          behavior: 'smooth',
+        })
+      }
+
+      scroll()
+    }
+  })
 
   return (
     <>
-      <aside className="sticky top-[3.75rem] -mt-px flex w-72 flex-shrink-0 flex-col self-start border-r border-black/5 dark:border-white/5">
+      <aside
+        className="sticky top-[3.75rem] -mt-px flex w-72 flex-shrink-0 flex-col self-start border-r border-black/5 dark:border-white/5"
+        ref={containerRef}
+      >
         <div
           className="blutui-scrollbar h-sidebar flex-shrink-0 flex-grow overflow-y-auto p-4 pl-0"
           ref={sidebarRef}
