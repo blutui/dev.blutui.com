@@ -14,6 +14,7 @@ function generateID(
     .join(' ')
     .replace(/[?]/g, '')
     .replace(/\s+/g, '-')
+    .replace(/\//g, '-')
     .toLowerCase()
 }
 
