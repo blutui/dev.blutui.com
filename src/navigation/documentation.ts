@@ -480,8 +480,8 @@ export const documentationNavigation = [
     title: 'Site API',
     items: [
       {
-        title: 'Introduction',
-        url: '/docs/site-api/intro',
+        title: 'Getting started',
+        url: '/docs/api/site/getting-started',
       },
     ],
   },
