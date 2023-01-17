@@ -1,6 +1,6 @@
 ---
 title: 'filter'
-description: 'The filter filter filters elements of a sequence or a mapping using an arrow function.'
+description: 'Filter elements of a sequence or a mapping using an arrow function.'
 ---
 
 ```canvas {% process=false %}
