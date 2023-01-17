@@ -2,6 +2,7 @@ const withMarkdoc = require('@markdoc/next.js')
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  target: 'serverless',
   reactStrictMode: true,
   swcMinify: true,
   pageExtensions: ['ts', 'tsx', 'md', 'mdoc'],
