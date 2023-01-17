@@ -2,6 +2,7 @@ import { RenderableTreeNodes } from '@markdoc/markdoc'
 
 export interface Section {
   title: string
+  id: string
   [key: string]: any
 }
 
@@ -16,6 +17,7 @@ export const collectHeadings = (
       if (typeof title === 'string') {
         sections.push({
           ...node.attributes,
+          id: node.attributes.id,
           title,
         })
       }

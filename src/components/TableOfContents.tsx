@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import Link from 'next/link'
+import cn from 'clsx'
 
 import type { Section } from '../utils/collectHeadings'
 import { useActiveId } from '../hooks/useActiveId'
@@ -31,22 +32,18 @@ export const TableOfContents = ({ toc }: TableOfContentsProps) => {
 
           return (
             <li
-              key={item.title}
-              className={[item.level === 3 ? 'ml-4' : undefined]
-                .filter(Boolean)
-                .join(' ')}
+              key={item.id}
+              className={cn(item.level === 3 ? 'ml-4' : undefined)}
             >
               <Link
                 href={href}
                 shallow
-                className={[
+                className={cn(
                   'block py-1 font-medium transition',
                   active
                     ? 'text-indigo-500 dark:text-indigo-400'
-                    : 'text-zinc-600 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-zinc-300',
-                ]
-                  .filter(Boolean)
-                  .join(' ')}
+                    : 'text-zinc-600 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-zinc-300'
+                )}
               >
                 {item.title}
               </Link>

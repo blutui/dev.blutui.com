@@ -17,9 +17,7 @@ const Folder = ({ item }: { item: Item }) => {
 
   return (
     <li className={cn('flex flex-col gap-1', { active })}>
-      <span className="px-3 py-1 text-sm text-zinc-500 dark:text-zinc-500">
-        {item.title}
-      </span>
+      <span className="px-3 py-1 text-sm text-zinc-500">{item.title}</span>
       {Array.isArray(item.items) ? (
         <div className="overflow-hidden p-2 pr-0">
           <Menu
