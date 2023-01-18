@@ -66,7 +66,7 @@ export const SearchProvider = ({ children }: SearchProviderProps) => {
         <link
           rel="preconnect"
           href={`https://${APP_ID}-dsn.algolia.net`}
-          crossOrigin="true"
+          crossOrigin=""
         />
       </Head>
       <SearchContext.Provider value={{ isOpen, onOpen, onClose, onInput }}>
