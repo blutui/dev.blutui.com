@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react'
 import Prism from 'prismjs'
+import cn from 'clsx'
 
 export interface CodeProps {
   children?: React.ReactNode
@@ -78,8 +79,8 @@ export const Code = ({ children, 'data-language': language }: CodeProps) => {
   const lang = language === 'md' ? 'markdoc' : language || 'markdoc'
 
   return (
-    <div className="code not-prose" aria-live="polite">
-      <pre key={children as any} ref={ref} className={`language-${lang}`}>
+    <div className="code not-prose">
+      <pre key={children as any} ref={ref} className={cn(`language-${lang}`)}>
         <code>{children}</code>
       </pre>
     </div>
