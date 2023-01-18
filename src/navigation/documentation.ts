@@ -476,13 +476,4 @@ export const documentationNavigation = [
       },
     ],
   },
-  {
-    title: 'Site API',
-    items: [
-      {
-        title: 'Getting started',
-        url: '/docs/api/site/getting-started',
-      },
-    ],
-  },
 ]
