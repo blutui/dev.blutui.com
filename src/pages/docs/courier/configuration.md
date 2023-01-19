@@ -12,7 +12,7 @@ courier init
 
 This command will generate:
 
-```json
+```json {% process=false %}
 {
   "handle": "",
   "site": "",

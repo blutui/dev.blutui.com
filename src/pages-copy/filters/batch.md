@@ -21,7 +21,7 @@ A second parameter can be provided and used to fill in missing items:
 
 The above example will be rendered as:
 
-```html
+```html {% process=false %}
 <table>
   <tr>
     <td>a</td>
