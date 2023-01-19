@@ -36,13 +36,13 @@ Argument           | Description                                          | Type
 
 The `honeypot_field` functions renders the required HTML to protect your form from robots:
 
-```twig
+```canvas {% process=false %}
 {{ honeypot_field() }}
 ```
 
 The following HTML is rendered:
 
-```html
+```html {% process=false %}
 <span style="display: none;">
   <input type="text" name="{{ honeypot.name }}" id="honeyeater">
   <input type="text" name="{{ honeypot.validFromName }}" value="{{ honeypot.validFromValue }}" id="honeyeater-ttl">

@@ -78,7 +78,7 @@ Now that you have some pages and a menu, you might want to create some editable 
 
 In this example we'll add a text area on your canvas. To do this you use `cms_text`:
 
-```canvas
+```canvas {% process=false %}
 {{ cms_text('hero-content') }}
 ```
 

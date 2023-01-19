@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react'
 import Prism from 'prismjs'
+import cn from 'clsx'
 
 export interface CodeProps {
   children?: React.ReactNode
@@ -35,6 +36,31 @@ Prism.languages.canvas = {
     /[=<>]=?|!=|\*\*?|\/\/?|\?:?|[-+~%|]/,
   ],
   punctuation: /[()\[\]{}:.,]/,
+}
+
+Prism.languages.json = {
+  property: {
+    pattern: /(^|[^\\])"(?:\\.|[^\\"\r\n])*"(?=\s*:)/,
+    lookbehind: true,
+    greedy: true,
+  },
+  string: {
+    pattern: /(^|[^\\])"(?:\\.|[^\\"\r\n])*"(?!\s*:)/,
+    lookbehind: true,
+    greedy: true,
+  },
+  comment: {
+    pattern: /\/\/.*|\/\*[\s\S]*?(?:\*\/|$)/,
+    greedy: true,
+  },
+  number: /-?\b\d+(?:\.\d+)?(?:e[+-]?\d+)?\b/i,
+  punctuation: /[{}[\],]/,
+  operator: /:/,
+  boolean: /\b(?:false|true)\b/,
+  null: {
+    pattern: /\bnull\b/,
+    alias: 'keyword',
+  },
 }
 
 Prism.hooks.add('before-tokenize', (env) => {
@@ -79,7 +105,7 @@ export const Code = ({ children, 'data-language': language }: CodeProps) => {
 
   return (
     <div className="code not-prose" aria-live="polite">
-      <pre key={children as any} ref={ref} className={`language-${lang}`}>
+      <pre key={children as any} ref={ref} className={cn(`language-${lang}`)}>
         <code>{children}</code>
       </pre>
     </div>

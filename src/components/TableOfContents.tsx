@@ -35,9 +35,8 @@ export const TableOfContents = ({ toc }: TableOfContentsProps) => {
               key={item.id}
               className={cn(item.level === 3 ? 'ml-4' : undefined)}
             >
-              <Link
+              <a
                 href={href}
-                shallow
                 className={cn(
                   'block py-1 font-medium transition',
                   active
@@ -46,7 +45,7 @@ export const TableOfContents = ({ toc }: TableOfContentsProps) => {
                 )}
               >
                 {item.title}
-              </Link>
+              </a>
             </li>
           )
         })}

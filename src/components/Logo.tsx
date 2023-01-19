@@ -1,3 +1,5 @@
+import cn from 'clsx'
+
 export interface LogoProps {
   className?: string
   [key: string]: any
@@ -7,7 +9,7 @@ export const Logo = ({ className, ...props }: LogoProps) => {
   return (
     <svg
       viewBox="0 0 304 40"
-      className={['text-[#282F42] dark:text-white', className].join(' ')}
+      className={cn('text-[#282F42] dark:text-white', className)}
       {...props}
     >
       <defs>

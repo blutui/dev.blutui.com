@@ -22,7 +22,7 @@ The **embed** tag takes the idea of template inheritance to the level of content
 
 Since the use case may not be obvious, let’s look at a simplified example. Imagine a base template shared by multiple pages, defining a single block named "content":
 
-```canvas
+```canvas {% process=false %}
 ┌─── page layout ─────────────────────┐
 │                                     │
 │           ┌── block "content" ──┐   │
@@ -37,7 +37,7 @@ Since the use case may not be obvious, let’s look at a simplified example. Ima
 
 Some pages ("foo.html" and "bar.html") share the same content structure - two vertically stacked boxes:
 
-```canvas
+```canvas {% process=false %}
 ┌─── page layout ─────────────────────┐
 │                                     │
 │           ┌── block "content" ──┐   │
@@ -54,7 +54,7 @@ Some pages ("foo.html" and "bar.html") share the same content structure - two ve
 
 While other pages ("boom.html" and "baz.html") share a different content structure - two boxes side by side:
 
-```canvas
+```canvas {% process=false %}
 ┌─── page layout ─────────────────────┐
 │                                     │
 │           ┌── block "content" ──┐   │

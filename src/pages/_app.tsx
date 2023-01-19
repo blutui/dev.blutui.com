@@ -1,4 +1,5 @@
 import Head from 'next/head'
+import { Inter } from '@next/font/google'
 
 import { DocumentationLayout } from '../layouts/DocumentationLayout'
 
@@ -22,6 +23,12 @@ type BlutuiAppProps<P = {}> = Omit<AppProps<P>, 'Component'> & {
 }
 
 export type BlutuiProps = MarkdocNextJsPageProps
+
+const inter = Inter({
+  weight: ['400', '500', '600', '700'],
+  subsets: ['latin'],
+  display: 'optional',
+})
 
 const Blutui = ({ Component, pageProps }: BlutuiAppProps<BlutuiProps>) => {
   const { markdoc } = pageProps

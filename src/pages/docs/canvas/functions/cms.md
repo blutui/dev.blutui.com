@@ -21,7 +21,7 @@ Argument | Description                                            | Type
 
 Example:
 
-```json
+```json {% process=false %}
 {
   "name": "News",
   "slug": "news",
@@ -67,7 +67,7 @@ Argument | Description                                            | Type
 
 Example:
 
-```json
+```json {% process=false %}
 [
   {
     "id": "c6a2c920-5bbc-4e78-b3c3-b97726ef0086",
@@ -100,7 +100,7 @@ Argument | Description                                            | Type
 
 Example:
 
-```json
+```json {% process=false %}
 {
   "name": "Contact",
   "handle": "contact",
@@ -166,7 +166,7 @@ Argument | Description                                            | Type
 
 Example:
 
-```json
+```json {% process=false %}
 {
   "name": "Primary",
   "handle": "primary",

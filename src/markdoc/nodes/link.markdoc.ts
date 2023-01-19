@@ -9,9 +9,6 @@ export const link: Schema<Config, typeof AppLink> = {
       errorLevel: 'critical',
       required: true,
     },
-    target: {
-      type: String,
-    },
     as: {
       type: String,
     },
