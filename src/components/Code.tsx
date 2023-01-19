@@ -79,7 +79,7 @@ export const Code = ({ children, 'data-language': language }: CodeProps) => {
   const lang = language === 'md' ? 'markdoc' : language || 'markdoc'
 
   return (
-    <div className="code not-prose">
+    <div className="code not-prose" aria-live="polite">
       <pre key={children as any} ref={ref} className={cn(`language-${lang}`)}>
         <code>{children}</code>
       </pre>
