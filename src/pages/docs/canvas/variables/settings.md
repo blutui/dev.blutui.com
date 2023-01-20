@@ -7,19 +7,19 @@ description: 'Get the site settings.'
 
 The name of the current site.
 
-### site_handle
+## site_handle
 
 The handle of the current site.
 
-### timezone
+## timezone
 
 The timezone of the current site.
 
-### published
+## published
 
 If the current site is published.
 
-### meta_description
+## meta_description
 
 The meta description of the current site.
 
@@ -27,7 +27,7 @@ The meta description of the current site.
 <meta name="description" content="{{ settings.meta_description }}">
 ```
 
-### google_verification_code
+## google_verification_code
 
 The Google site verification code of the current site.
 
@@ -35,18 +35,18 @@ The Google site verification code of the current site.
 <meta name="google-site-verification" content="{{ settings.google_verification_code }}">
 ```
 
-### code_injection_head
+## code_injection_head
 
 The escaped HTML content injected in the `head` tag of the template.
 
-### code_injection_header
+## code_injection_header
 
 The escaped HTML content injected at the beginning of the `body` tag of the template.
 
-### code_injection_footer
+## code_injection_footer
 
 The escaped HTML content injected at the end of the `body` tag of the template.
 
-### forms_recaptcha_key
+## forms_recaptcha_key
 
 This can be used to configure a custom implementation of Google reCAPTCHA.

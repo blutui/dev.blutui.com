@@ -38,31 +38,6 @@ Prism.languages.canvas = {
   punctuation: /[()\[\]{}:.,]/,
 }
 
-Prism.languages.json = {
-  property: {
-    pattern: /(^|[^\\])"(?:\\.|[^\\"\r\n])*"(?=\s*:)/,
-    lookbehind: true,
-    greedy: true,
-  },
-  string: {
-    pattern: /(^|[^\\])"(?:\\.|[^\\"\r\n])*"(?!\s*:)/,
-    lookbehind: true,
-    greedy: true,
-  },
-  comment: {
-    pattern: /\/\/.*|\/\*[\s\S]*?(?:\*\/|$)/,
-    greedy: true,
-  },
-  number: /-?\b\d+(?:\.\d+)?(?:e[+-]?\d+)?\b/i,
-  punctuation: /[{}[\],]/,
-  operator: /:/,
-  boolean: /\b(?:false|true)\b/,
-  null: {
-    pattern: /\bnull\b/,
-    alias: 'keyword',
-  },
-}
-
 Prism.hooks.add('before-tokenize', (env) => {
   if (env.language !== 'canvas') {
     return

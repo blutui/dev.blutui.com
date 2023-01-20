@@ -1,6 +1,6 @@
-import { FullPageLayout } from '../layouts/FullPageLayout'
+import { FullPageLayout } from '@/layouts/FullPageLayout'
 
-import type { NextPageWithCustomLayout } from '../types'
+import type { NextPageWithCustomLayout } from '@/types'
 
 const Home: NextPageWithCustomLayout = () => {
   return (

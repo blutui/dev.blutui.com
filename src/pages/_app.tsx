@@ -1,19 +1,20 @@
 import Head from 'next/head'
 import { Inter } from '@next/font/google'
 
-import { DocumentationLayout } from '../layouts/DocumentationLayout'
+import { DocumentationLayout } from '@/layouts/DocumentationLayout'
 
-import { Header } from '../components/Header'
-import { SearchProvider } from '../components/Search'
-import { ArticleContext, ArticleContextT } from '../context/ArticleContext'
+import { Header } from '@/components/Header'
+import { SearchProvider } from '@/components/Search'
+import { ArticleContext, ArticleContextT } from '@/context/ArticleContext'
 
-import { collectHeadings } from '../utils/collectHeadings'
+import { collectHeadings } from '@/utils/collectHeadings'
 
 // Required for custom 'canvas' syntax highlighting...
 import 'prismjs'
+import 'prismjs/components/prism-json.min'
 import 'prismjs/components/prism-markup-templating.min'
 
-import '../styles/main.css'
+import '@/styles/main.css'
 
 import type { AppProps } from 'next/app'
 import type { MarkdocNextJsPageProps } from '@markdoc/next.js'
