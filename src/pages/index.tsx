@@ -14,13 +14,6 @@ const Home: NextPageWithCustomLayout = () => {
           blutui.com
         </a>
       </h1>
-
-      <p className="my-12 text-2xl text-gray-900 dark:text-gray-400">
-        Get started by editing{' '}
-        <code className="rounded-md bg-gray-100 px-3 py-2 font-mono text-base dark:bg-gray-800">
-          pages/index.tsx
-        </code>
-      </p>
     </div>
   )
 }

@@ -2,7 +2,7 @@ import React, { useEffect, useRef } from 'react'
 import cn from 'clsx'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
-// import scrollIntoView from 'scroll-into-view-if-needed'
+import scrollIntoView from 'scroll-into-view-if-needed'
 
 export interface Item {
   title?: string
@@ -86,22 +86,22 @@ export const Sidebar = ({ items, className }: SidebarProps) => {
   const sidebarRef = useRef<HTMLDivElement>(null)
   const containerRef = useRef<HTMLDivElement>(null)
 
-  // useEffect(() => {
-  //   const activeElement = sidebarRef.current?.querySelector('li.active')
+  useEffect(() => {
+    const activeElement = sidebarRef.current?.querySelector('li.active')
 
-  //   if (activeElement && window.innerWidth > 767) {
-  //     // const scroll = () => {
-  //     //   scrollIntoView(activeElement, {
-  //     //     block: 'center',
-  //     //     inline: 'center',
-  //     //     scrollMode: 'always',
-  //     //     boundary: containerRef.current,
-  //     //     behavior: 'smooth',
-  //     //   })
-  //     // }
-  //     // scroll()
-  //   }
-  // })
+    if (activeElement && window.innerWidth > 767) {
+      const scroll = () => {
+        scrollIntoView(activeElement, {
+          block: 'center',
+          inline: 'center',
+          scrollMode: 'always',
+          boundary: containerRef.current,
+          behavior: 'smooth',
+        })
+      }
+      scroll()
+    }
+  })
 
   return (
     <>
