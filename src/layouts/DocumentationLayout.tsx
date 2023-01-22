@@ -1,13 +1,13 @@
 import React from 'react'
 
-import { useArticleContext } from '../context/ArticleContext'
-import type { Section } from '../utils/collectHeadings'
+import { useArticleContext } from '@/context/ArticleContext'
+import type { Section } from '@/utils/collectHeadings'
 
-import { Contribution } from '../components/Contribution'
-import { TableOfContents } from '../components/TableOfContents'
-import { Sidebar } from '../components/Sidebar'
+import { Contribution } from '@/components/Contribution'
+import { TableOfContents } from '@/components/TableOfContents'
+import { Sidebar } from '@/components/Sidebar'
 
-import { documentationNavigation } from '../navigation/documentation'
+import { documentationNavigation } from '@/navigation/documentation'
 
 export interface DocumentationLayoutProps {
   layoutProps: any

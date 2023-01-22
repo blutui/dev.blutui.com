@@ -9,7 +9,7 @@ description: 'The cms_quote function is used to define a slot for CMS driven blo
 
 **cms_quote** will output:
 
-```html {% process=false %}
+```canvas {% process=false %}
 <blockquote>
   <p>{{ data.value | raw }}</p>
   <footer>

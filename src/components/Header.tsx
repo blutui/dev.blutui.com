@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import React from 'react'
 
-import { useActionKey } from '../hooks/useActionKey'
+import { useActionKey } from '@/hooks/useActionKey'
 
 import { Logo } from './Logo'
 import { SearchButton } from './Search'

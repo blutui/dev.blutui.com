@@ -2,8 +2,8 @@ import React, { useEffect, useState } from 'react'
 import Link from 'next/link'
 import cn from 'clsx'
 
-import type { Section } from '../utils/collectHeadings'
-import { useActiveId } from '../hooks/useActiveId'
+import type { Section } from '@/utils/collectHeadings'
+import { useActiveId } from '@/hooks/useActiveId'
 
 export interface TableOfContentsProps {
   toc: Section[]

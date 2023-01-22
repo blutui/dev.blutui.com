@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 
-import type { Section } from '../utils/collectHeadings'
+import type { Section } from '@/utils/collectHeadings'
 
 export const useActiveId = (items: Section[]) => {
   const [activeId, setActiveId] = useState<string>()
