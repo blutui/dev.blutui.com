@@ -27,7 +27,7 @@ If you haven’t already, now is the time to install `Blutui Courier`. To instal
 
 First lets create a new page on your newly created project.
 
-{% image src="https://cdn.blutui.com/uploads/assets/Dev/getting-started/addingapage.gif" alt="Adding a page" /%}
+![](https://cdn.blutui.com/uploads/assets/Dev/getting-started/addingapage.gif)
 
 **Steps:**
 
@@ -52,7 +52,7 @@ For more information on the Canvas templating language, read the [Getting starte
 
 Now that you know how to make pages, let's look at creating a navigation menu.
 
-{% image src="https://cdn.blutui.com/uploads/assets/Dev/getting-started/menu.gif" alt="Creating a menu" /%}
+![](https://cdn.blutui.com/uploads/assets/Dev/getting-started/menu.gif)
 
 **Steps:**
 
@@ -94,7 +94,7 @@ Introducing Blutui Collections, an easy way to create dynamic data-driven conten
 
 Like most content types in Blutui, it all starts in the site dashboard. Visit the **Collections** page using the navigation sidebar. You will be taken to a Collections only view, here click the **Create collection** button in the sidebar. When creating a collection you are defining the fields that you will later fill out with content. In this example we are adding a `text`, `textarea` and `image` data types:
 
-{% image src="https://cdn.blutui.com/uploads/assets/Dev/getting-started/collection1.gif" alt="Adding a collection" /%}
+![](https://cdn.blutui.com/uploads/assets/Dev/getting-started/collection1.gif)
 
 You will notice that all data types require a value for the `Name` field, this is used to identify the data type in your code.
 
@@ -130,7 +130,7 @@ Now that you know how to create collections, you might want to link a collection
 
 In this example we'll create a **Locations** collection and link it to our **Staff** collection, from the previous example. This will allow us to dynamically set the location of each **Staff** member (entry), based on the collection entries of `Location` collection. This is a very simple process, done through the site dashboard. First go to the **Collection settings** of the collection you want to link from, in this case it would be the **Locations** collection, and click `Manage links`. From here click `New link`, select the field that you want to link and give it a `name`, just like you would for a collection data type:
 
-{% image src="https://cdn.blutui.com/uploads/assets/Dev/getting-started/collection2.gif" alt="Linking a collection" /%}
+![](https://cdn.blutui.com/uploads/assets/Dev/getting-started/collection2.gif)
 
 To get the value of this link in your Canvas, you can access the `foreign_keys` in the collection entry object or for convenience you can call it directly from the `entry` object. For example:
 
@@ -150,7 +150,7 @@ Now that you can create complex collections, you might want to render each colle
 3. Navigate to the **Patterns** tab and click the **Create pattern** button in the top right corner.
 5. Select the pattern you need and set the `template`. In our example we want these collection pages to be `/staff/{slug}`. To create this pattern select the `string` type and set the value to **staff*, then select the `slug` type.
 
-{% image src="https://cdn.blutui.com/uploads/assets/Dev/getting-started/collection3.gif" alt="Routing a collection" /%}
+![](https://cdn.blutui.com/uploads/assets/Dev/getting-started/collection3.gif)
 
 Add the following code in the **template** you set during the routing pattern creation process. The routing pattern template is a mix of a new page and a collection template:
 
@@ -171,7 +171,7 @@ Add the following code in the **template** you set during the routing pattern cr
 
 Now lets add a contact form on your site. The process of making a form is similar to making a collection. Let's start in the **site dashboard**. From the navigation sidebar, go to **Forms** and click the **Create form** button on the bottom left of the page. From here give your new form a **Name**, the handle and form template path will automatically be created. Now you can add all the fields required for your form, you can set certain form fields as requried, add help text or placeholder text.
 
-{% image src="https://cdn.blutui.com/uploads/assets/Dev/getting-started/form.gif" alt="Adding a form" /%}
+![](https://cdn.blutui.com/uploads/assets/Dev/getting-started/form.gif)
 
 Now that your new form is created, lets add this form to your Canvas. At the top of the form template we want to [import](/docs/canvas/tags/import) `macros/form.html` into the `ui` variable, the file responsible for the markup and styling of your form inputs. We've created a form macro template to help you get started. You can find the code for the `macros/form.html` macro on [Gist](https://gist.github.com/jayan-blutui/228a410ebc3d0779011f019d0620ef1e). You can use the form macro like:
 
@@ -204,7 +204,7 @@ If you would like to redirect the user after the form is submitted successfully,
 
 Blog posts are a great way to keep your users updated. Create an unlimited amount of blogs and blog posts for news about the company, announcements or even recipes (please share them with us). The process of making a blog for your project is simple, as it follows the same structure as other content types in Blutui. Using the navigation sidebar in the site dashboard navigate to **Blog posts** and create a new blog, which will later host your posts. You will need to add 2 templates, 1 for your blog and 1 for all the blog posts.
 
-{% image src="https://cdn.blutui.com/uploads/assets/Dev/getting-started/blogs.gif" alt="Making a blog" /%}
+![](https://cdn.blutui.com/uploads/assets/Dev/getting-started/blogs.gif)
 
 ## Adding domains
 
