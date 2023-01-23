@@ -4,7 +4,10 @@ import { Code } from '@/components/Code'
 
 export const fence: Schema<Config, typeof Code> = {
   render: Code,
-  attributes: nodes.fence.attributes,
+  attributes: {
+    ...nodes.fence.attributes,
+    filename: { type: String, render: 'filename' },
+  },
   transform(node, config) {
     const attributes = node.transformAttributes(config)
     const children = node.children.length
