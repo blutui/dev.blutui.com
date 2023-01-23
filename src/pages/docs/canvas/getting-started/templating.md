@@ -77,7 +77,7 @@ It’s easier to understand the concept by starting with an example.
 
 Let’s define a base template, **base.html**, which defines an HTML skeleton document that might be used for a two-column page:
 
-```canvas {% process=false %}
+```canvas {% process=false filename="base.html" %}
 <!DOCTYPE html>
 <html>
   <head>
@@ -102,7 +102,7 @@ In this example, the [block](/docs/canvas/tags/block) tags define four blocks th
 
 A child template might look like this:
 
-```canvas {% process=false %}
+```canvas {% process=false filename="index.html" %}
 {% extends 'base.html' %}
 
 {% block title %}Index{% endblock %}

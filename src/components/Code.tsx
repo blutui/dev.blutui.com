@@ -3,8 +3,9 @@ import Prism from 'prismjs'
 import cn from 'clsx'
 
 export interface CodeProps {
+  'data-language': string
   children?: React.ReactNode
-  'data-language': any
+  filename?: string
 }
 
 Prism.languages.canvas = {
@@ -68,7 +69,11 @@ Prism.hooks.add('after-tokenize', (env) => {
   markupTemplating.tokenizePlaceholders(env, 'canvas')
 })
 
-export const Code = ({ children, 'data-language': language }: CodeProps) => {
+export const Code = ({
+  children,
+  'data-language': language,
+  filename,
+}: CodeProps) => {
   const [copied, setCopied] = useState(false)
   const ref = useRef(null)
 
@@ -79,8 +84,17 @@ export const Code = ({ children, 'data-language': language }: CodeProps) => {
   const lang = language === 'md' ? 'markdoc' : language || 'markdoc'
 
   return (
-    <div className="code not-prose" aria-live="polite">
-      <pre key={children as any} ref={ref} className={cn(`language-${lang}`)}>
+    <div className="code not-prose relative" aria-live="polite">
+      {filename && (
+        <div className="absolute top-0 z-10 w-full truncate rounded-t-xl bg-zinc-500/30 py-2 px-4 text-sm font-medium text-zinc-300">
+          {filename}
+        </div>
+      )}
+      <pre
+        key={children as any}
+        ref={ref}
+        className={cn(`language-${lang}`, filename ? 'px-4 pt-12 pb-4' : 'p-4')}
+      >
         <code>{children}</code>
       </pre>
     </div>
