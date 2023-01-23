@@ -12,7 +12,7 @@ export interface Item {
 }
 
 const Folder = ({ item }: { item: Item }) => {
-  const { asPath: route } = useRouter()
+  const { pathname: route } = useRouter()
 
   const active = item.url && [route, route + '/'].includes(item.url + '/')
 
@@ -35,7 +35,7 @@ const Folder = ({ item }: { item: Item }) => {
 }
 
 const File = ({ item }: { item: Item }) => {
-  const { asPath: route } = useRouter()
+  const { pathname: route } = useRouter()
 
   const active = item.url && [route, route + '/'].includes(item.url + '/')
 
