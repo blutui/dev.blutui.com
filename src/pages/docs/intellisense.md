@@ -5,6 +5,8 @@ description: 'Intelligent Blutui tooling for Visual Studio Code.'
 
 Blutui IntelliSense enhances the Blutui development experience. This is by providing Visual Studio Code users with advanced features like, autocomplete, syntax highlighting and snippets.
 
+![Autocomplete](https://cdn.blutui.com/uploads/assets/Intellisense/varible-getting.png)
+
 Search `blutui` on vscode or [click here](https://marketplace.visualstudio.com/items?itemName=blutui.intellisense)
 
 ## Key Features
