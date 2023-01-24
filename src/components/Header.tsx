@@ -54,8 +54,10 @@ export const Header = ({ children }: HeaderProps) => {
           <ul className="hidden items-center space-x-6 lg:flex">
             <li>
               <a
-                href="#"
                 className="flex items-center space-x-1 font-semibold tracking-tight text-zinc-500 transition hover:text-zinc-600 dark:text-zinc-200 dark:hover:text-zinc-500"
+                href="https://help.blutui.com"
+                target="_blank"
+                rel="noreferrer"
               >
                 <span>Help centre</span>
                 <svg
@@ -74,8 +76,10 @@ export const Header = ({ children }: HeaderProps) => {
             </li>
             <li>
               <a
-                href="#"
                 className="flex items-center space-x-1 font-semibold tracking-tight text-zinc-500 transition hover:text-zinc-600 dark:text-zinc-200 dark:hover:text-zinc-500"
+                href="https://blutui.com/app"
+                target="_blank"
+                rel="noreferrer"
               >
                 <span>Console</span>
                 <svg
