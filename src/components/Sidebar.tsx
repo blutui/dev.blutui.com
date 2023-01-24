@@ -18,7 +18,9 @@ const Folder = ({ item }: { item: Item }) => {
 
   return (
     <li className={cn('flex flex-col gap-1', { active })}>
-      <span className="px-3 py-1 text-sm text-zinc-500">{item.title}</span>
+      <h2 className="px-3 py-1 text-sm font-semibold tracking-tight text-zinc-800 dark:text-white">
+        {item.title}
+      </h2>
       {Array.isArray(item.items) ? (
         <div className="overflow-hidden p-2 pr-0">
           <Menu
@@ -40,14 +42,14 @@ const File = ({ item }: { item: Item }) => {
   const active = item.url && [route, route + '/'].includes(item.url + '/')
 
   return (
-    <li className={cn('flex flex-col gap-1', { active })}>
+    <li className={cn('relative flex flex-col gap-1', { active })}>
       {item.url && (
         <Link
           href={item.url}
           className={cn(
             'flex cursor-pointer rounded-md px-3 py-1 text-sm transition-colors [word-break:break-word]',
             active
-              ? 'bg-indigo-50 font-bold text-indigo-500 dark:bg-indigo-500/20 dark:text-indigo-300'
+              ? 'bg-indigo-50 font-bold text-indigo-500 before:absolute before:inset-y-1.5 before:-left-3 before:border-l before:border-current dark:bg-indigo-500/20 dark:text-indigo-300'
               : 'dark:bg-zinc- font-medium text-zinc-700 hover:bg-zinc-100 dark:text-zinc-400 dark:hover:bg-indigo-100/5 dark:hover:text-zinc-50'
           )}
         >
@@ -106,7 +108,7 @@ export const Sidebar = ({ items, className }: SidebarProps) => {
   return (
     <>
       <aside
-        className="sticky top-[3.75rem] -mt-px flex w-72 flex-shrink-0 flex-col self-start border-r border-black/5 dark:border-white/5"
+        className="blutui-sidebar-container sticky top-[3.75rem] -mt-px flex w-72 flex-shrink-0 flex-col self-start border-r border-black/5 dark:border-white/5"
         ref={containerRef}
       >
         <div
