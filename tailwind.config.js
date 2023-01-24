@@ -15,6 +15,9 @@ module.exports = {
       maxWidth: {
         '8xl': '90rem'
       },
+      maxHeight: {
+        'sidebar': 'calc(100vh - 3.75rem)'
+      },
       height: {
         'sidebar': 'calc(100vh - 3.75rem)'
       },

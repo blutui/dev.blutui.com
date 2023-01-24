@@ -3,7 +3,6 @@ import React from 'react'
 import { useArticleContext } from '@/context/ArticleContext'
 import type { Section } from '@/utils/collectHeadings'
 
-import { Contribution } from '@/components/Contribution'
 import { TableOfContents } from '@/components/TableOfContents'
 import { Sidebar } from '@/components/Sidebar'
 
@@ -33,8 +32,8 @@ export const DocumentationLayout = ({
     <>
       <main className="flex w-full flex-1 items-start space-x-8 px-8">
         <Sidebar items={items} />
-        <div className="flex flex-auto items-start space-x-8 py-8">
-          <div className="flex-auto space-y-8">
+        <div className="flex w-full min-w-0 max-w-full flex-auto space-x-8 py-8">
+          <div className="w-full min-w-0 max-w-full space-y-8">
             <header className="mx-auto max-w-screen-md">
               {title && (
                 <h1 className="text-4xl font-bold tracking-tight text-gray-900 dark:text-gray-200">
@@ -49,10 +48,7 @@ export const DocumentationLayout = ({
             </header>
             <div className="content-wrapper">{children}</div>
           </div>
-          <div className="sticky top-[6.25rem] w-64 flex-shrink-0 space-y-6">
-            <TableOfContents toc={toc} />
-            <Contribution />
-          </div>
+          <TableOfContents toc={toc} />
         </div>
       </main>
     </>
