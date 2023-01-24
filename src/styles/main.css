@@ -1,4 +1,11 @@
 @tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/*! purgecss start ignore */
+@import 'docsearch.css';
+@import 'prism.css';
+/*! purgecss end ignore */
 
 #__next {
   min-height: 100%;
@@ -10,10 +17,43 @@
   scrollbar-gutter: stable;
 }
 
-/*! purgecss start ignore */
-@import 'docsearch.css';
-@import 'prism.css';
-/*! purgecss end ignore */
+.blutui-scrollbar::-webkit-scrollbar {
+  width: 0.75rem;
+  height: 0.375rem;
+}
 
-@tailwind components;
-@tailwind utilities;
+.blutui-scrollbar::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+.blutui-scrollbar::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+}
+
+.blutui-scrollbar:hover::-webkit-scrollbar-thumb {
+  --tw-shadow-color: rgb(115 115 115 / 0.2);
+  --tw-shadow: var(--tw-shadow-colored);
+  border: 3px solid transparent;
+  background-color: var(--tw-shadow-color);
+  background-clip: content-box;
+}
+
+.blutui-scrollbar:hover::-webkit-scrollbar-thumb:hover {
+  --tw-shadow-color: rgb(115 115 115 / 0.4);
+  --tw-shadow: var(--tw-shadow-colored);
+}
+
+@media (max-width: 767px) {
+  .blutui-scrollbar {
+    scrollbar-gutter: auto;
+  }
+}
+
+/* Inspired by Nextra... */
+@media (min-width: 768px) {
+  .blutui-toc > div,
+  .blutui-sidebar-container {
+    mask-image: linear-gradient(to bottom, transparent, #000 24px),
+      linear-gradient(to left, #000 10px, transparent 10px);
+  }
+}
