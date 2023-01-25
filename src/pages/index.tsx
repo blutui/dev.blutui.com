@@ -9,11 +9,11 @@ const Home: NextPageWithCustomLayout = () => {
     <div className="flex-grow">
       <div className="relative -mx-8 -mt-[6.25rem] overflow-hidden px-8 pt-[6.25rem] pb-10">
         {/* Inspiration from Stripe Docs */}
-        <div className="absolute inset-0 -z-20 animate-pulse">
-          <div className="h-full w-full bg-gradient-to-b from-purple-400 via-orange-300 to-transparent"></div>
+        <div className="absolute inset-0 -z-20">
+          <div className="h-full w-full bg-gradient-to-b from-cyan-400 via-pink-300 to-transparent"></div>
         </div>
         <div className="absolute top-0 left-0 -z-10 h-screen w-full bg-dots from-zinc-50 to-zinc-50 bg-[length:14px_14px] dark:from-zinc-900 dark:to-zinc-900"></div>
-        <div className="mx-auto max-w-screen-xl">
+        <div className="mx-auto flex max-w-screen-xl items-center">
           <div className="bg-zinc-50/90 py-10 px-8 text-left shadow-[0_0_128px_128px] shadow-zinc-50/90 dark:bg-zinc-900/90 dark:shadow-zinc-900/90">
             <p className="mb-2 text-xs uppercase tracking-widest text-white/50">
               Developer Documentation
@@ -55,10 +55,16 @@ const Home: NextPageWithCustomLayout = () => {
           </div>
         </div>
       </div>
-      <div className="mx-auto grid max-w-screen-xl grid-cols-3 gap-6">
-        <div>1</div>
-        <div>2</div>
-        <div>3</div>
+      <div className="mx-auto mt-6 grid max-w-screen-xl grid-cols-3 gap-6 px-8">
+        <div className="rounded-lg bg-zinc-900/5 p-4 dark:bg-white/5 dark:highlight-white/10">
+          1
+        </div>
+        <div className="rounded-lg bg-zinc-900/5 p-4 dark:bg-white/5 dark:highlight-white/10">
+          2
+        </div>
+        <div className="rounded-lg bg-zinc-900/5 p-4 dark:bg-white/5 dark:highlight-white/10">
+          3
+        </div>
       </div>
     </div>
   )
