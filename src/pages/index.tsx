@@ -1,8 +1,102 @@
+import React from 'react'
+import Link, { LinkProps } from 'next/link'
 import { SearchButton } from '@/components/Search'
 import { FullPageLayout } from '@/layouts/FullPageLayout'
 
 import type { NextPageWithCustomLayout } from '@/types'
-import Link from 'next/link'
+
+const VideoIcon = () => {
+  return (
+    <>
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke-width="1.5"
+        stroke="currentColor"
+        className="h-6 w-6"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+        />
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          d="M15.91 11.672a.375.375 0 010 .656l-5.603 3.113a.375.375 0 01-.557-.328V8.887c0-.286.307-.466.557-.327l5.603 3.112z"
+        />
+      </svg>
+    </>
+  )
+}
+
+const MicrophoneIcon = () => {
+  return (
+    <>
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke-width="1.5"
+        stroke="currentColor"
+        className="h-6 w-6"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          d="M12 18.75a6 6 0 006-6v-1.5m-6 7.5a6 6 0 01-6-6v-1.5m6 7.5v3.75m-3.75 0h7.5M12 15.75a3 3 0 01-3-3V4.5a3 3 0 116 0v8.25a3 3 0 01-3 3z"
+        />
+      </svg>
+    </>
+  )
+}
+
+const AtSymbolIcon = () => {
+  return (
+    <>
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke-width="1.5"
+        stroke="currentColor"
+        className="h-6 w-6"
+      >
+        <path
+          stroke-linecap="round"
+          d="M16.5 12a4.5 4.5 0 11-9 0 4.5 4.5 0 019 0zm0 0c0 1.657 1.007 3 2.25 3S21 13.657 21 12a9 9 0 10-2.636 6.364M16.5 12V8.25"
+        />
+      </svg>
+    </>
+  )
+}
+
+interface CardProps {
+  title: string
+  description: string
+  url: LinkProps['href']
+  icon?: React.ReactElement
+}
+
+const Card = ({ title, description, url, icon }: CardProps) => {
+  return (
+    <Link
+      href={url}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="rounded-lg bg-zinc-900/5 p-4 transition hover:scale-105 hover:opacity-80 dark:bg-white/5 dark:highlight-white/10"
+    >
+      <div className="mb-1.5 flex items-center gap-1.5">
+        {icon && <span className="text-indigo-400 opacity-60">{icon}</span>}
+        <h4 className="font-semibold tracking-tight text-zinc-700 dark:text-zinc-100">
+          {title}
+        </h4>
+      </div>
+      <p className="text-sm text-zinc-500 dark:text-zinc-300">{description}</p>
+    </Link>
+  )
+}
 
 const Home: NextPageWithCustomLayout = () => {
   return (
@@ -55,16 +149,25 @@ const Home: NextPageWithCustomLayout = () => {
           </div>
         </div>
       </div>
-      <div className="mx-auto mt-6 grid max-w-screen-xl grid-cols-3 gap-6 px-8">
-        <div className="rounded-lg bg-zinc-900/5 p-4 dark:bg-white/5 dark:highlight-white/10">
-          1
-        </div>
-        <div className="rounded-lg bg-zinc-900/5 p-4 dark:bg-white/5 dark:highlight-white/10">
-          2
-        </div>
-        <div className="rounded-lg bg-zinc-900/5 p-4 dark:bg-white/5 dark:highlight-white/10">
-          3
-        </div>
+      <div className="mx-auto mt-6 grid max-w-screen-xl gap-6 px-8 sm:grid-cols-3">
+        <Card
+          title="YouTube tutorials"
+          description="Watch developer tutorials on our YouTube channel."
+          url="https://www.youtube.com/channel/UCWwCTqK_D0mI-nZAF1zlKOA"
+          icon={<VideoIcon />}
+        />
+        <Card
+          title="Discord"
+          description="Join the community of Blutui developers on Discord."
+          url="https://discord.gg/4H8dZW6Fva"
+          icon={<MicrophoneIcon />}
+        />
+        <Card
+          title="Blutui on Twitter"
+          description="Follow us for product updates, tips and more."
+          url="https://twitter.com/blutui"
+          icon={<AtSymbolIcon />}
+        />
       </div>
     </div>
   )
