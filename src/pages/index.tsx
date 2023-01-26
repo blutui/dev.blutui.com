@@ -76,7 +76,7 @@ interface CardProps {
   title: string
   description: string
   url: LinkProps['href']
-  icon?: React.ReactElement
+  icon?: React.ReactNode
 }
 
 const Card = ({ title, description, url, icon }: CardProps) => {

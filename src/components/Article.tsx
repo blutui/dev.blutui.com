@@ -6,7 +6,7 @@ export interface ArticleProps {
 
 export const Article = ({ children }: ArticleProps) => {
   return (
-    <article className="prose mx-auto mb-6 max-w-screen-md dark:prose-dark">
+    <article className="prose mx-auto mb-6 w-full max-w-screen-md dark:prose-dark">
       {children}
     </article>
   )
