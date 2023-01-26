@@ -101,7 +101,7 @@ const Card = ({ title, description, url, icon }: CardProps) => {
 const Home: NextPageWithCustomLayout = () => {
   return (
     <div className="flex-grow">
-      <div className="relative -mx-8 -mt-[6.25rem] overflow-hidden px-8 pt-[6.25rem] pb-10">
+      <div className="relative -mx-8 -mt-[6.25rem] overflow-hidden pt-[6.25rem] pb-10">
         {/* Inspiration from Stripe Docs */}
         <div className="absolute inset-0 -z-20">
           <div className="h-full w-full bg-gradient-to-b from-cyan-400 via-pink-300 to-transparent"></div>
@@ -149,7 +149,7 @@ const Home: NextPageWithCustomLayout = () => {
           </div>
         </div>
       </div>
-      <div className="mx-auto mt-6 grid max-w-screen-xl gap-6 px-8 sm:grid-cols-3">
+      <div className="mx-auto mt-6 grid max-w-screen-xl gap-6 md:grid-cols-3">
         <Card
           title="YouTube tutorials"
           description="Watch developer tutorials on our YouTube channel."
