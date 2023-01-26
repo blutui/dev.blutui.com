@@ -1,4 +1,5 @@
 const defaultTheme = require('tailwindcss/defaultTheme')
+const { default: flattenColorPalette } = require('tailwindcss/lib/util/flattenColorPalette')
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
@@ -9,8 +10,17 @@ module.exports = {
   ],
   theme: {
     extend: {
+      backgroundImage: {
+        'gradient-radial': 'radial-gradient(circle farthest-side, var(--tw-gradient-stops))',
+        'dots': 'radial-gradient(rgba(0, 0, 0, 0) 2px, var(--tw-gradient-stops) 1px)',
+      },
       fontFamily: {
         'sans': ['Inter', ...defaultTheme.fontFamily.sans]
+      },
+      keyframes: {
+        pulse: {
+          '50%': { opacity: '0.3' }
+        }
       },
       maxWidth: {
         '8xl': '90rem'
@@ -101,5 +111,13 @@ module.exports = {
   },
   plugins: [
     require('@tailwindcss/typography'),
+    function ({ matchUtilities, theme }) {
+      matchUtilities(
+        {
+          highlight: (value) => ({ boxShadow: `inset 0 1px 0 0 ${value}`})
+        },
+        { values: flattenColorPalette(theme('backgroundColor')), type: 'color' }
+      )
+    }
   ],
 }
