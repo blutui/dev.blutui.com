@@ -10,32 +10,97 @@ Please use the ISO standard date and time format.
 
 # {% $markdoc.frontmatter.title %}
 
-{% changelog date="2022-12-15" %}
-### New Protocol template
+{% changelog date="2022-10-10" %}
+### Added
 
-Today we're happy to announce the launch of our new Protocol template, a meticulously crafted documentation template tuned for API references.
+- Added staging link next to the staging password field in the Agency Console.
 
-Powered by MDX, we've sweat all the nitty-gritty details to make sure the authoring experience is an awesome one, letting you focus on just writing great API docs, not the tooling around it.
+### Changed
+
+- Changed form creation flow. When creating a new form, you will no longer need to provide `handle` and `template` values, these values will automatically be filled based on the form name.
 {% /changelog %}
 
-{% changelog date="2022-09-07" %}
-### New Spotlight template
+{% changelog date="2022-10-07" %}
+### Added
 
-Today we're pumped to announce the launch of our new Spotlight template, a personal website so nice you'll actually be inspired to publish on it.
-
-Built with Tailwind CSS and Next.js, it includes everything you need to get a personal website up-and-running, including a blog, projects page, dark mode, and more. And as always, it's been designed and built by the Tailwind CSS team.
+- Added a loading state on buttons when performing actions in the Agency Console and Project Dashboard.
 {% /changelog %}
 
-{% changelog date="2022-03-08" %}
-### New additions
+{% changelog date="2022-09-05" %}
+### Changed
 
-- Added 16 new Table examples to the Application UI package
+- Changed admin bar design. The new admin bar has a much smaller footprint and has been moved to the bottom left corner.
+
+### Fixed
+
+- Fixed an issue with Canopy components not rendering correctly when it has no value.
 {% /changelog %}
 
-{% changelog date="2022-02-18" %}
-### New additions
+{% changelog date="2022-09-02" %}
+### Added
 
-- Added new Comboboxes category to the Application UI package with 5 examples
-- Added new Command Palettes category to the Application UI package with 9 examples
+- Added a new onboarding experience. You might notice that the next time you login to your agency console, you will be asked a few questions, these questions will help the platform display content that is most relevant to you.
+{% /changelog %}
+
+{% changelog date="2022-07-05" %}
+### Added
+
+- Added Canvas filters to easily create HTML tags. `image_tag`, `script_tag` and `stylesheet_tag` have been added.
+- Added much needed speed boost to Collections. Collections are now 2.5x - 3x more faster than before.
+{% /changelog %}
+
+{% changelog date="2022-05-27" %}
+### Added
+
+- Added agency branding to the staging password page.
+
+### Removed
+
+- Removed mention of "Powered by Blutui".
+{% /changelog %}
+
+{% changelog date="2022-05-26" %}
+### Changed
+
+- Changed collection creation flow. Now when you create a new Collection, all you need to do is give it a name and the `handle` is automatically created.
+{% /changelog %}
+
+{% changelog date="2022-05-17" %}
+### Added
+
+- Added improved site transfer system.
+- Added improved agency user invitation system.
+{% /changelog %}
+
+{% changelog date="2022-04-14" %}
+### Fixed
+
+- Fixed an issue with date and time format when viewed in Safari.
+{% /changelog %}
+
+{% changelog date="2022-03-28" %}
+### Changed
+
+- Changed DNS automatic verification to only verify domains that are linked to a project.
+{% /changelog %}
+
+{% changelog date="2022-03-16" %}
+### Added
+
+- Added support for `.webm` files in your project's assets area.
+
+### Fixed
+
+- Fixed DNS automatic verification to be more efficient when adding new domains.
+{% /changelog %}
+
+{% changelog date="2022-02-16" %}
+### Added
+
+- Added autocomplete template paths. Now in your project dashboard you can select a Canvas template from the dropdown or add your own path if you haven't created the template yet.
+
+### Changed
+
+- Changed preferred developer community channel from Slack to [Discord](https://discord.gg/4H8dZW6Fva). Come join us on [Discord](https://discord.gg/4H8dZW6Fva), hang out with the Blutui developer team and ask us questions.
 
 {% /changelog %}
