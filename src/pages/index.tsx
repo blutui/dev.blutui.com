@@ -120,7 +120,7 @@ const Home: NextPageWithCustomLayout = () => {
             </p>
             <div className="flex items-center gap-4">
               <Link
-                href="/docs"
+                href="/docs/getting-started/create"
                 className="inline-flex h-9 select-none items-center whitespace-nowrap rounded-lg bg-indigo-500 px-4 text-sm font-semibold tracking-tight text-white transition highlight-white/10 hover:bg-indigo-400"
               >
                 Get started
