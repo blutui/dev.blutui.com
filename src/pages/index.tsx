@@ -112,7 +112,7 @@ const Home: NextPageWithCustomLayout = () => {
             <p className="mb-2 text-xs uppercase tracking-widest text-white/50">
               Developer Documentation
             </p>
-            <h1 className="text-4xl font-bold tracking-tight text-gray-800 dark:text-white">
+            <h1 className="text-5xl font-bold tracking-tight text-gray-800 dark:text-white">
               Welcome to Blutui
             </h1>
             <p className="mt-2 mb-4 text-xl text-gray-800/80 dark:text-white/80">
