@@ -153,7 +153,7 @@ const Home: NextPageWithCustomLayout = () => {
         <Card
           title="YouTube tutorials"
           description="Watch developer tutorials on our YouTube channel."
-          url="https://www.youtube.com/channel/UCWwCTqK_D0mI-nZAF1zlKOA"
+          url="https://www.youtube.com/@useBlutui"
           icon={<VideoIcon />}
         />
         <Card
