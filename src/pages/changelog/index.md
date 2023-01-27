@@ -10,6 +10,61 @@ Please use the ISO standard date and time format.
 
 # {% $markdoc.frontmatter.title %}
 
+{% changelog date="2023-01-19" %}
+### Added
+
+- Added an improved domain management UI to the agency console.
+{% /changelog %}
+
+{% changelog date="2023-01-13" %}
+### Added
+
+- Added the ability to export form submissions as a CSV file.
+- Added support for special characters in page titles.
+{% /changelog %}
+
+{% changelog date="2023-01-11" %}
+### Added
+
+- Added a new look and feel to the agency console navigation menu.
+- Added the ability to limit access to projects for certain users. As an agency admin, you can now assign what projects are accessible for certain members of your team.
+{% /changelog %}
+
+{% changelog date="2022-11-23" %}
+### Added
+
+- Added the ability to search users in the project dashboard.
+- Added an improved page create and update UI in the project dashboard.
+
+### Fixed
+
+- Fixed an issue where newly added assets are added to the bottom of the assets view in the project dashboard.
+{% /changelog %}
+
+{% changelog date="2022-11-11" %}
+### Added
+
+- Added support to create longer form labels. You can now create form labels that are upto `511` characters in length.
+- Added improved roles and permissions UI to the agency console.
+{% /changelog %}
+
+{% changelog date="2022-11-01" %}
+### Changed
+
+- Changed form submission UI to be more understandable by using the field label instead of the field name.
+
+### Fixed
+
+- Fixed forms UI to load forms and form submission faster.
+- Fixed nested collections cache issue on Blutui projects.
+{% /changelog %}
+
+{% changelog date="2022-10-20" %}
+### Fixed
+
+- Fixed button theme across all Blutui applications to inherit agency whitelabel features, if activated on Blutui's agency plan.
+{% /changelog %}
+
 {% changelog date="2022-10-10" %}
 ### Added
 
