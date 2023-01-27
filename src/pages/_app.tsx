@@ -2,6 +2,7 @@ import Head from 'next/head'
 import { Inter } from '@next/font/google'
 
 import { DocumentationLayout } from '@/layouts/DocumentationLayout'
+import { FullPageLayout } from '@/layouts/FullPageLayout'
 
 import { Header } from '@/components/Header'
 import { SearchProvider } from '@/components/Search'
@@ -60,8 +61,10 @@ const Blutui = ({ Component, pageProps }: BlutuiAppProps<BlutuiProps>) => {
   }
 
   const toc = markdoc?.content ? collectHeadings(markdoc.content) : []
+  const markdownLayout = markdoc?.frontmatter.fullWidth ? FullPageLayout : null
 
-  const Layout = Component.layoutProps?.Layout || DocumentationLayout
+  const Layout =
+    Component.layoutProps?.Layout || markdownLayout || DocumentationLayout
   const layoutProps = Component.layoutProps?.Layout
     ? { layoutProps: Component.layoutProps, toc }
     : { toc }

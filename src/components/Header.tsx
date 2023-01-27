@@ -59,7 +59,7 @@ export const Header = ({ children }: HeaderProps) => {
                 target="_blank"
                 rel="noreferrer"
               >
-                <span>Help centre</span>
+                <span>Help center</span>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 20 20"
