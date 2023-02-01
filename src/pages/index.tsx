@@ -214,7 +214,7 @@ const Home: NextPageWithCustomLayout = () => {
         />
         <Card
           title="What's new in Blutui"
-          description="Watch developer tutorials on our YouTube channel."
+          description="Stay updated on what's been added, changed, fixed or removed."
           url="/changelog"
           icon={<SparklesIcon />}
           span={1.5}
