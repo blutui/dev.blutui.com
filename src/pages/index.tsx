@@ -111,10 +111,11 @@ interface CardProps {
   description: string
   url: LinkProps['href']
   icon?: React.ReactNode
+  bg?: string
   span?: 1 | 1.5 | 2 | 2.5 | 3
 }
 
-const Card = ({ title, description, url, icon, span }: CardProps) => {
+const Card = ({ title, description, url, icon, bg, span }: CardProps) => {
   const cardSpan = span ?? 1
   const cardSpanClasses: { [span in typeof cardSpan]: string } = {
     1: 'md:col-span-2',
@@ -130,17 +131,24 @@ const Card = ({ title, description, url, icon, span }: CardProps) => {
       target={url.toString().startsWith('http') ? '_blank' : undefined}
       rel="noopener noreferrer"
       className={cn(
-        'rounded-xl bg-zinc-900/5 p-4 transition hover:opacity-70 dark:bg-white/5 dark:highlight-white/10',
+        bg ?? 'bg-zinc-900/5 dark:bg-white/5',
+        'rounded-xl p-6 transition hover:opacity-70',
         cardSpanClasses[cardSpan]
       )}
     >
-      <div className="mb-1.5 flex items-center gap-1.5">
-        {icon && <span className="text-indigo-400 opacity-60">{icon}</span>}
-        <h4 className="font-semibold tracking-tight text-zinc-700 dark:text-zinc-100">
+      <div className="mb-2 flex items-center gap-2">
+        {icon && (
+          <span className="text-black/60 opacity-60 dark:text-white/60">
+            {icon}
+          </span>
+        )}
+        <h4 className="text-lg font-semibold tracking-tight text-zinc-700 dark:text-zinc-100">
           {title}
         </h4>
       </div>
-      <p className="text-sm text-zinc-500 dark:text-zinc-300">{description}</p>
+      <p className="text-sm font-medium text-black/80 dark:text-white/80">
+        {description}
+      </p>
     </Link>
   )
 }
