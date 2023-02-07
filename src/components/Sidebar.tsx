@@ -49,8 +49,8 @@ const File = ({ item }: { item: Item }) => {
           className={cn(
             'flex cursor-pointer rounded-md px-3 py-1 text-sm transition-colors [word-break:break-word]',
             active
-              ? 'bg-indigo-50 font-bold text-indigo-500 highlight-white/5 before:absolute before:inset-y-1.5 before:-left-3 before:border-l before:border-current dark:bg-indigo-500/20 dark:text-indigo-300'
-              : 'dark:bg-zinc- font-medium text-zinc-700 hover:bg-zinc-100 hover:highlight-white/5 dark:text-zinc-400 dark:hover:bg-indigo-100/5 dark:hover:text-zinc-50'
+              ? 'bg-han-50 font-bold text-han-500 highlight-white/5 before:absolute before:inset-y-1.5 before:-left-3 before:border-l before:border-current dark:bg-han-500/20 dark:text-han-200'
+              : 'font-medium text-zinc-700 hover:bg-zinc-100 hover:highlight-white/5 dark:text-zinc-400 dark:hover:bg-han-100/5 dark:hover:text-zinc-50'
           )}
         >
           {item.title}
