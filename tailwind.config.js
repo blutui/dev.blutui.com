@@ -14,6 +14,20 @@ module.exports = {
         'gradient-radial': 'radial-gradient(circle farthest-side, var(--tw-gradient-stops))',
         'dots': 'radial-gradient(rgba(0, 0, 0, 0) 2px, var(--tw-gradient-stops) 1px)',
       },
+      colors: {
+        han: {
+          50: '#EBEBFF',
+          100: '#D1D3FF',
+          200: '#A8ABFF',
+          300: '#7A7FFF',
+          400: '#5257FF',
+          500: '#242BFF',
+          600: '#0008EB',
+          700: '#0006AD',
+          800: '#000475',
+          900: '#000238',
+        },
+      },
       fontFamily: {
         'sans': ['Inter', ...defaultTheme.fontFamily.sans]
       },
@@ -44,7 +58,7 @@ module.exports = {
             a: {
               fontWeight: theme('fontWeight.semibold'),
               textDecoration: 'none',
-              borderBottom: `1px solid ${theme('colors.indigo.500')}`
+              borderBottom: `1px solid ${theme('colors.han.500')}`
             },
             'a:hover': {
               borderBottomWidth: '2px'
@@ -86,7 +100,7 @@ module.exports = {
             },
             a: {
               color: theme('colors.white'),
-              borderBottomColor: theme('colors.indigo.400'),
+              borderBottomColor: theme('colors.han.400'),
             },
             strong: {
               color: theme('colors.zinc.200'),

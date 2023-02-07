@@ -37,7 +37,7 @@ export const TableOfContents = ({ toc }: TableOfContentsProps) => {
                       className={cn(
                         'block py-1 font-medium transition',
                         active
-                          ? 'text-indigo-500 dark:text-indigo-400'
+                          ? 'text-han-500 dark:text-han-300'
                           : 'text-zinc-600 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-zinc-300'
                       )}
                     >

@@ -159,7 +159,7 @@ const Home: NextPageWithCustomLayout = () => {
       <div className="relative -mx-8 -mt-[6.25rem] overflow-hidden pt-[6.25rem] pb-10">
         {/* Inspiration from Stripe Docs */}
         <div className="absolute inset-0 -z-20">
-          <div className="h-full w-full bg-gradient-to-b from-cyan-400 via-pink-300 to-transparent"></div>
+          <div className="h-full w-full bg-gradient-to-b from-han-400 via-pink-300 to-transparent"></div>
         </div>
         <div className="absolute top-0 left-0 -z-10 h-screen w-full bg-dots from-zinc-50 to-zinc-50 bg-[length:14px_14px] dark:from-zinc-900 dark:to-zinc-900"></div>
         <div className="mx-auto flex max-w-screen-xl items-center">
@@ -176,7 +176,7 @@ const Home: NextPageWithCustomLayout = () => {
             <div className="flex items-center gap-4">
               <Link
                 href="/docs/getting-started/create"
-                className="inline-flex h-9 select-none items-center whitespace-nowrap rounded-lg bg-indigo-500 px-4 text-sm font-semibold tracking-tight text-white transition highlight-white/10 hover:bg-indigo-400"
+                className="inline-flex h-9 select-none items-center whitespace-nowrap rounded-lg bg-han-500 px-4 text-sm font-semibold tracking-tight text-white transition highlight-white/10 hover:bg-han-400"
               >
                 Get started
               </Link>
