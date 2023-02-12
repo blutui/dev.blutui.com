@@ -15,15 +15,14 @@ This command will generate:
 ```json {% process=false filename="courier.json" %}
 {
   "handle": "",
-  "site": "",
-  "token": "Bearer "
+  "site": ""
 }
 ```
 
 You can also initialise a new configuration file with values through the terminal:
 
 ```bash
-courier init --handle [site-handle] --site [site-url] --token [api-token]
+courier init --handle [site-handle] --site [site-url]
 ```
 
 For more information on the available flags, use `courier init -h`.

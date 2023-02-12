@@ -38,6 +38,20 @@ Install the the required services for Blutui Courier.
 courier install
 ```
 
+## login
+
+Login using your Courier token.
+
+```bash
+courier login <courier-token>
+```
+
+If your Courier token has expired, you can update it using the `--force` flag:
+
+```bash
+courier login <courier-token> -f
+```
+
 ## open
 
 Open the configured **site** in the current `courier.json`.
