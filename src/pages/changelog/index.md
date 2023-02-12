@@ -1,14 +1,12 @@
 ---
 title: 'Changelog'
 description: 
-fullWidth: true
+toc: false
 ---
 
 {% comment %}
 Please use the ISO standard date and time format.
 {% /comment %}
-
-# {% $markdoc.frontmatter.title %}
 
 {% changelog date="2023-01-19" %}
 ### Added

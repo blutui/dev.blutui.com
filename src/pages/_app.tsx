@@ -60,7 +60,8 @@ const Blutui = ({ Component, pageProps }: BlutuiAppProps<BlutuiProps>) => {
     }
   }
 
-  const toc = markdoc?.content ? collectHeadings(markdoc.content) : []
+  const hasToc = markdoc?.frontmatter.toc ?? true
+  const toc = hasToc && markdoc?.content ? collectHeadings(markdoc.content) : []
   const markdownLayout = markdoc?.frontmatter.fullWidth ? FullPageLayout : null
 
   const Layout =

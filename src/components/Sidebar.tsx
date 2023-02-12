@@ -79,6 +79,86 @@ const Menu = ({ items, className }: MenuProps) => {
   )
 }
 
+export const Quicklinks = () => {
+  const Item = ({
+    name,
+    href,
+    children,
+  }: {
+    name: string
+    href: string
+    children?: React.ReactNode
+  }) => {
+    const { pathname: route } = useRouter()
+    const active = href && [route, route + '/'].some((r) => r.includes(href))
+
+    return (
+      <li>
+        <Link
+          href={href}
+          className={cn(
+            'group flex items-center font-semibold tracking-tight transition lg:text-sm',
+            active
+              ? 'text-zinc-700 dark:text-han-200'
+              : 'text-zinc-600 hover:text-zinc-500 dark:text-zinc-400 dark:hover:text-zinc-300'
+          )}
+        >
+          <div
+            className={cn(
+              'mr-3 rounded-md p-1 transition',
+              active
+                ? 'bg-gradient-to-br from-han-400 to-han-500 text-white highlight-white/10'
+                : 'ring-1 ring-black/10 dark:ring-white/10'
+            )}
+          >
+            {children}
+          </div>
+          {name}
+        </Link>
+      </li>
+    )
+  }
+
+  return (
+    <div className="mb-6 mt-2">
+      <ul className="space-y-3 px-3">
+        <Item name="Documentation" href="/docs">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            strokeWidth={1.5}
+            stroke="currentColor"
+            className="h-4 w-4"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25"
+            />
+          </svg>
+        </Item>
+        <Item name="Changelog" href="/changelog">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            strokeWidth={1.5}
+            stroke="currentColor"
+            className="h-4 w-4"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              d="M8.25 6.75h12M8.25 12h12m-12 5.25h12M3.75 6.75h.007v.008H3.75V6.75zm.375 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zM3.75 12h.007v.008H3.75V12zm.375 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zm-.375 5.25h.007v.008H3.75v-.008zm.375 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z"
+            />
+          </svg>
+        </Item>
+      </ul>
+    </div>
+  )
+}
+
 export interface SidebarProps {
   items: Item[]
   className?: string
@@ -115,6 +195,7 @@ export const Sidebar = ({ items, className }: SidebarProps) => {
           className="blutui-scrollbar h-sidebar flex-shrink-0 flex-grow overflow-y-auto p-4 pl-0"
           ref={sidebarRef}
         >
+          <Quicklinks />
           <Menu className="hidden md:flex" items={items} />
         </div>
       </aside>

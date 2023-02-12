@@ -41,13 +41,13 @@ cd new-project
 Once inside the `new-project` directory, it's time to setup a new `courier.json` configuration file. The configuration file is used by Blutui to determine what project you are currently in. To create a new `courier.json` file, run:
 
 ```bash
-courier init -H [your-project-handle] -s [your-project-url] -t [your-courier-token]
+courier init -H [your-project-handle] -s [your-project-url]
 ```
 
 For example:
 
 ```bash
-courier init -H sonic -s sonic.blutui.com -t o03fs...
+courier init -H sonic -s sonic.blutui.com
 ```
 
 You should now have a brand new `courier.json` configuration file in your `new-project` directory. Now let's `pull` your project code from Blutui, this will allow you to build your project locally. To `pull` your project code from Blutui, run:
