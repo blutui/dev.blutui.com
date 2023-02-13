@@ -100,7 +100,7 @@ export const Header = ({ children }: HeaderProps) => {
           <div className="hidden items-center gap-6 sm:flex">
             <span className="h-6 border-l border-black/10 dark:border-white/10"></span>
             <a
-              href="https://github.com/blutui/dev.blutui.com"
+              href="https://github.com/blutui"
               target="_blank"
               rel="noopener noreferrer"
             >
