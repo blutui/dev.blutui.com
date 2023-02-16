@@ -29,6 +29,16 @@ Before you can start using Courier, you will need to obtain a Courier token. Fol
 4. Give your new Courier token a name, something like "Work MacBook", then click `Create`.
 5. Your Courier token will be shown for use later on. Please remember that this token is only shown once.
 
+### Using your Courier token
+
+If you haven't done so already, [login](/docs/courier/commands#login) into Courier using your newly generated token:
+
+```bash
+courier login [your-courier-token]
+```
+
+Once setup, you can now start pushing and pulling projects.
+
 ### Linking your project
 
 After obtaining a Courier token, its time to pull your first project. Open your preferred terminal and create a new directory, for this example we will create a `new-project` directory:
