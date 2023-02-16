@@ -34,7 +34,7 @@ export const DocumentationLayout = ({
         <Sidebar items={items} />
         <div className="flex w-full min-w-0 max-w-full flex-auto space-x-8 py-8">
           <div className="w-full min-w-0 max-w-full">
-            <header className="mx-auto max-w-screen-md">
+            <header id="header" className="mx-auto max-w-screen-md">
               {title && (
                 <h1 className="text-4xl font-bold tracking-tight text-gray-900 dark:text-gray-200">
                   {title}
@@ -46,7 +46,9 @@ export const DocumentationLayout = ({
                 </p>
               )}
             </header>
-            <div className="content-wrapper py-8">{children}</div>
+            <div id="content-wrapper" className="content-wrapper py-8">
+              {children}
+            </div>
             <footer className="mx-auto max-w-screen-md border-t border-black/5 pt-8 pb-16 dark:border-white/5">
               <p className="text-xs text-zinc-600 dark:text-zinc-500">
                 Copyright &copy; {new Date().getFullYear()} Blutui. Proudly New
