@@ -8,10 +8,26 @@ toc: false
 Please use the ISO standard date and time format.
 {% /comment %}
 
+{% changelog date="2023-02-13" %}
+{% badge status="info" %}Changed{% /badge %}
+
+- Changed Agency selector to only show in the **Agency Console** if you're in more than 1 agency.
+
+{% badge status="attention" %}Fixed{% /badge %}
+
+- Number validation for Collection fields without a `min` or `max` value.
+{% /changelog %}
+
+{% changelog date="2023-02-03" %}
+{% badge status="info" %}Changed{% /badge %}
+
+- Changed **Collection Entries** and **Form Submissions** view in the **Project Dashboard** to show `3` values instead of `5` values per record.
+{% /changelog %}
+
 {% changelog date="2023-01-19" %}
 {% badge status="success" %}Added{% /badge %}
 
-- Added an improved domain management UI to the agency console.
+- Added an improved domain management UI to the **Agency Console**.
 {% /changelog %}
 
 {% changelog date="2023-01-13" %}
