@@ -1,18 +1,21 @@
-const defaultTheme = require('tailwindcss/defaultTheme')
-const { default: flattenColorPalette } = require('tailwindcss/lib/util/flattenColorPalette')
+import type { Config } from 'tailwindcss'
 
-/** @type {import('tailwindcss').Config} */
-module.exports = {
+// @ts-ignore
+import flattenColorPalette from 'tailwindcss/lib/util/flattenColorPalette'
+import defaultTheme from 'tailwindcss/defaultTheme'
+
+export default {
   content: [
-    "./src/pages/**/*.{ts,tsx}",
-    "./src/layouts/**/*.{ts,tsx}",
-    "./src/components/**/*.{ts,tsx}"
+    './src/pages/**/*.{ts,tsx}',
+    './src/layouts/**/*.{ts,tsx}',
+    './src/components/**/*.{ts,tsx}',
   ],
   theme: {
     extend: {
       backgroundImage: {
-        'gradient-radial': 'radial-gradient(circle farthest-side, var(--tw-gradient-stops))',
-        'dots': 'radial-gradient(rgba(0, 0, 0, 0) 2px, var(--tw-gradient-stops) 1px)',
+        'gradient-radial':
+          'radial-gradient(circle farthest-side, var(--tw-gradient-stops))',
+        dots: 'radial-gradient(rgba(0, 0, 0, 0) 2px, var(--tw-gradient-stops) 1px)',
       },
       colors: {
         han: {
@@ -29,23 +32,23 @@ module.exports = {
         },
       },
       fontFamily: {
-        'sans': ['Inter', ...defaultTheme.fontFamily.sans]
+        sans: ['Inter', ...defaultTheme.fontFamily.sans],
       },
       keyframes: {
         pulse: {
-          '50%': { opacity: '0.3' }
-        }
+          '50%': { opacity: '0.3' },
+        },
       },
       maxWidth: {
-        '8xl': '90rem'
+        '8xl': '90rem',
       },
       maxHeight: {
-        'sidebar': 'calc(100vh - 3.75rem)'
+        sidebar: 'calc(100vh - 3.75rem)',
       },
       height: {
-        'sidebar': 'calc(100vh - 3.75rem)'
+        sidebar: 'calc(100vh - 3.75rem)',
       },
-      typography: (theme) => ({
+      typography: (theme: (arg0: string) => any[]) => ({
         DEFAULT: {
           css: {
             color: theme('colors.zinc.700'),
@@ -53,19 +56,19 @@ module.exports = {
               letterSpacing: '-0.025em',
             },
             'h2, h3, h4': {
-              'scroll-margin-top': '6.25rem'
+              'scroll-margin-top': '6.25rem',
             },
             a: {
               fontWeight: theme('fontWeight.semibold'),
               textDecoration: 'none',
-              borderBottom: `1px solid ${theme('colors.han.500')}`
+              borderBottom: `1px solid ${theme('colors.han.500')}`,
             },
             'a:hover': {
-              borderBottomWidth: '2px'
+              borderBottomWidth: '2px',
             },
             code: {
               fontWeight: theme('fontWeight.medium'),
-              fontVariantLigatures: 'none'
+              fontVariantLigatures: 'none',
             },
             pre: {
               color: theme('colors.zinc.50'),
@@ -75,7 +78,7 @@ module.exports = {
             },
             'pre code': {
               flex: 'none',
-              minWidth: '100%'
+              minWidth: '100%',
             },
             table: {
               fontSize: theme('fontSize.sm')[0],
@@ -83,14 +86,14 @@ module.exports = {
             },
             thead: {
               color: theme('colors.zinc.700'),
-              borderBottomColor: theme('colors.zinc.200')
+              borderBottomColor: theme('colors.zinc.200'),
             },
             'thead th': {
               color: theme('colors.zinc.700'),
               paddingTop: 0,
               fontWeight: theme('fontWeight.semibold'),
-            }
-          }
+            },
+          },
         },
         dark: {
           css: {
@@ -110,28 +113,33 @@ module.exports = {
             },
             thead: {
               color: theme('colors.zinc.300'),
-              borderBottomColor: theme('colors.zinc.700')
+              borderBottomColor: theme('colors.zinc.700'),
             },
             'thead th': {
               color: theme('colors.zinc.300'),
             },
             'tbody tr': {
-              borderBottomColor: theme('colors.zinc.700')
+              borderBottomColor: theme('colors.zinc.700'),
             },
-          }
-        }
-      })
+          },
+        },
+      }),
     },
   },
   plugins: [
     require('@tailwindcss/typography'),
-    function ({ matchUtilities, theme }) {
-      matchUtilities(
-        {
-          highlight: (value) => ({ boxShadow: `inset 0 1px 0 0 ${value}`})
-        },
-        { values: flattenColorPalette(theme('backgroundColor')), type: 'color' }
-      )
-    }
+    {
+      handler: ({ matchUtilities, theme }) => {
+        matchUtilities(
+          {
+            highlight: (value) => ({ boxShadow: `inset 0 1px 0 0 ${value}` }),
+          },
+          {
+            values: flattenColorPalette(theme('backgroundColor')),
+            type: 'color',
+          }
+        )
+      },
+    },
   ],
-}
+} satisfies Config
