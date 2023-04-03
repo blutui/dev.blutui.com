@@ -8,6 +8,18 @@ toc: false
 Please use the ISO standard date and time format.
 {% /comment %}
 
+{% changelog date="2023-03-09" %}
+{% badge status="success" %}Added{% /badge %}
+
+- Added improvements to Page URL's in the **Project Dashboard**, you can now create nested pages, eg. `/page/nested-page`.
+- Added the ability to archive forms in the **Project Dashboard**.
+
+{% badge status="info" %}Changed{% /badge %}
+
+- Changed project archive UI in the **Agency Console**. You can now see when the project was archived.
+- Changed form builder and collection builder delete confirmation message to be more descriptive.
+{% /changelog %}
+
 {% changelog date="2023-02-28" %}
 {% badge status="info" %}Changed{% /badge %}
 
