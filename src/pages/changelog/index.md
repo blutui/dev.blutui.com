@@ -8,6 +8,16 @@ toc: false
 Please use the ISO standard date and time format.
 {% /comment %}
 
+{% changelog date="2023-02-28" %}
+{% badge status="info" %}Changed{% /badge %}
+
+- Changed route pattern UI in the **Project Dashboard** by adding a visual difference for dynamic and static patterns.
+
+{% badge status="attention" %}Fixed{% /badge %}
+
+- Fixed an issue with the search bar in the **Agency Console** domain UI.
+{% /changelog %}
+
 {% changelog date="2023-02-13" %}
 {% badge status="info" %}Changed{% /badge %}
 
