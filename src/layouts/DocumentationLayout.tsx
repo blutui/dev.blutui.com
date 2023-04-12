@@ -30,18 +30,18 @@ export const DocumentationLayout = ({
 
   return (
     <>
-      <main className="flex w-full flex-1 items-start space-x-8 px-8">
+      <main className="flex w-full flex-1 items-start px-8 lg:space-x-8">
         <Sidebar items={items} />
         <div className="flex w-full min-w-0 max-w-full flex-auto space-x-8 py-8">
           <div className="w-full min-w-0 max-w-full">
             <header id="header" className="mx-auto max-w-screen-md">
               {title && (
-                <h1 className="text-4xl font-bold tracking-tight text-gray-900 dark:text-gray-200">
+                <h1 className="text-3xl font-bold tracking-tight text-gray-900 dark:text-gray-200 lg:text-4xl">
                   {title}
                 </h1>
               )}
               {description && (
-                <p className="mt-2 text-lg text-gray-700 dark:text-gray-400">
+                <p className="mt-2 text-base text-gray-700 dark:text-gray-400 lg:text-lg">
                   {description}
                 </p>
               )}
@@ -49,7 +49,7 @@ export const DocumentationLayout = ({
             <div id="content-wrapper" className="content-wrapper py-8">
               {children}
             </div>
-            <footer className="mx-auto max-w-screen-md border-t border-black/5 pt-8 pb-16 dark:border-white/5">
+            <footer className="mx-auto max-w-screen-md border-t border-black/5 pb-16 pt-8 dark:border-white/5">
               <p className="text-xs text-zinc-600 dark:text-zinc-500">
                 Copyright &copy; {new Date().getFullYear()} Blutui. Proudly New
                 Zealand made.

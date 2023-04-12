@@ -15,8 +15,8 @@ export const TableOfContents = ({ toc }: TableOfContentsProps) => {
   const activeId = useActiveId(items)
 
   return (
-    <nav className="blutui-toc -mt-8 block w-64 flex-shrink-0 space-y-6">
-      <div className="blutui-scrollbar sticky top-[3.75rem] -mr-8 -mt-px max-h-sidebar overflow-y-auto pr-8 pt-8">
+    <nav className="blutui-toc -mt-8 hidden w-64 flex-shrink-0 space-y-6 lg:block">
+      <div className="blutui-scrollbar max-h-sidebar sticky top-[3.75rem] -mr-8 -mt-px overflow-y-auto pr-8 pt-8">
         {items.length >= 1 && (
           <>
             <h5 className="mb-4 text-sm font-semibold text-zinc-900 dark:text-zinc-200">

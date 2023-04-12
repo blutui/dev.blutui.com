@@ -11,13 +11,17 @@ const TypeToEmoji = {
 type CalloutType = keyof typeof TypeToEmoji
 
 const classes: Record<CalloutType, string> = {
-  caution: cn('bg-red-100 text-red-900 dark:bg-red-900/30 dark:text-red-200'),
-  check: cn(
-    'bg-green-100 text-green-900 dark:bg-green-900/30 dark:text-green-200'
+  caution: cn(
+    'from-red-100 dark:from-red-900 text-red-900 dark:text-red-200 ring-red-100 dark:ring-red-900/50'
   ),
-  note: cn('bg-blue-100 text-blue-900 dark:bg-blue-900/30 dark:text-blue-200'),
+  check: cn(
+    'from-green-200 dark:from-green-900 text-green-900 dark:text-green-200 ring-green-200/50 dark:ring-green-900/50'
+  ),
+  note: cn(
+    'from-blue-100 dark:from-blue-900 text-blue-900 dark:text-blue-200 ring-blue-100/50 dark:ring-blue-900/50'
+  ),
   warning: cn(
-    'bg-yellow-100 text-yellow-900 dark:bg-yellow-900/30 dark:text-yellow-200'
+    'from-yellow-100 dark:from-yellow-900 text-yellow-900 dark:text-yellow-100 ring-yellow-100 dark:ring-yellow-900/50'
   ),
 }
 
@@ -33,7 +37,7 @@ export const Callout = ({ type, children, title }: CalloutProps) => {
   return (
     <div
       className={cn(
-        'callout mt-6 flex items-center rounded-lg py-2.5 pr-4',
+        'callout mt-6 flex items-center rounded-lg bg-gradient-to-r py-2.5 pr-4 ring-1 ring-inset',
         classes[type]
       )}
     >
@@ -46,7 +50,7 @@ export const Callout = ({ type, children, title }: CalloutProps) => {
       >
         {emoji}
       </div>
-      <div className="w-full min-w-0 text-sm font-medium prose-p:my-0">
+      <div className="prose-p:my-0 w-full min-w-0 text-sm font-medium">
         {children}
       </div>
     </div>
