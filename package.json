@@ -12,11 +12,11 @@
     "@markdoc/markdoc": "^0.1.13",
     "@markdoc/next.js": "^0.1.10",
     "clsx": "^1.2.1",
-    "next": "^13.2.1",
+    "next": "^13.3.0",
     "prismjs": "^1.29.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "scroll-into-view-if-needed": "^3.0.6"
+    "scroll-into-view-if-needed": "^3.0.10"
   },
   "devDependencies": {
     "@tailwindcss/typography": "^0.5.9",
@@ -26,7 +26,7 @@
     "@types/react-dom": "^18.0.10",
     "autoprefixer": "^10.4.14",
     "eslint": "^8.32.0",
-    "eslint-config-next": "^13.1.2",
+    "eslint-config-next": "^13.3.0",
     "postcss": "^8.4.21",
     "prettier": "^2.8.3",
     "prettier-plugin-tailwindcss": "^0.1.13",
