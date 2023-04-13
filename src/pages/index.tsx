@@ -155,35 +155,35 @@ const Card = ({ title, description, url, icon, bg, span }: CardProps) => {
 
 const Home: NextPageWithCustomLayout = () => {
   return (
-    <div className="flex-grow">
-      <div className="relative -mx-8 -mt-[6.25rem] overflow-hidden pt-[6.25rem] pb-10">
+    <div className="w-full flex-grow">
+      <div className="relative -mx-8 -mt-[6.25rem] overflow-hidden pb-10 pt-[6.25rem]">
         {/* Inspiration from Stripe Docs */}
         <div className="absolute inset-0 -z-20">
-          <div className="h-full w-full bg-gradient-to-b from-han-400 via-pink-300 to-transparent"></div>
+          <div className="from-han-400 h-full w-full bg-gradient-to-b via-pink-300 to-transparent"></div>
         </div>
-        <div className="absolute top-0 left-0 -z-10 h-screen w-full bg-dots from-zinc-50 to-zinc-50 bg-[length:14px_14px] dark:from-zinc-900 dark:to-zinc-900"></div>
+        <div className="bg-dots absolute left-0 top-0 -z-10 h-screen w-full from-zinc-50 to-zinc-50 bg-[length:14px_14px] dark:from-zinc-900 dark:to-zinc-900"></div>
         <div className="mx-auto flex max-w-screen-xl items-center">
-          <div className="bg-zinc-50/90 py-10 px-8 text-left shadow-[0_0_128px_128px] shadow-zinc-50/90 dark:bg-zinc-900/90 dark:shadow-zinc-900/90">
+          <div className="w-full bg-zinc-50/90 px-8 py-10 text-left shadow-[0_0_128px_128px] shadow-zinc-50/90 dark:bg-zinc-900/90 dark:shadow-zinc-900/90">
             <p className="mb-2 text-xs uppercase tracking-widest text-white/50">
               Developer Documentation
             </p>
-            <h1 className="text-5xl font-bold tracking-tight text-gray-800 dark:text-white">
+            <h1 className="text-3xl font-bold tracking-tight text-gray-800 dark:text-white lg:text-5xl">
               Welcome to Blutui
             </h1>
-            <p className="mt-2 mb-4 text-xl text-gray-800/80 dark:text-white/80">
+            <p className="mb-4 mt-2 text-lg text-gray-800/80 dark:text-white/80 lg:text-xl">
               Explore our guides and documentation on using Blutui.
             </p>
-            <div className="flex items-center gap-4">
+            <div className="flex flex-col items-start gap-4 lg:flex-row lg:items-center">
               <Link
                 href="/docs/getting-started/create"
-                className="inline-flex h-9 select-none items-center whitespace-nowrap rounded-lg bg-han-500 px-4 text-sm font-semibold tracking-tight text-white transition highlight-white/10 hover:bg-han-400"
+                className="bg-han-500 highlight-white/10 hover:bg-han-400 inline-flex h-9 select-none items-center whitespace-nowrap rounded-lg px-4 text-sm font-semibold tracking-tight text-white transition"
               >
                 Get started
               </Link>
-              <span className="text-sm font-semibold uppercase text-zinc-800/40 dark:text-white/40">
+              <span className="hidden text-sm font-semibold uppercase text-zinc-800/40 dark:text-white/40 lg:block">
                 or
               </span>
-              <SearchButton className="inline-flex h-9 w-full max-w-xs select-none items-center whitespace-nowrap rounded-lg bg-zinc-900/10 px-3 text-sm font-semibold tracking-tight text-zinc-700 transition hover:bg-zinc-900/20 dark:bg-white/20 dark:text-white dark:highlight-white/10 dark:hover:bg-white/10">
+              <SearchButton className="dark:highlight-white/10 inline-flex h-9 w-full max-w-xs select-none items-center whitespace-nowrap rounded-lg bg-zinc-900/10 px-3 text-sm font-semibold tracking-tight text-zinc-700 transition hover:bg-zinc-900/20 dark:bg-white/20 dark:text-white dark:hover:bg-white/10">
                 <div className="flex items-center gap-2">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
