@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react'
+import React, { useEffect, useRef } from 'react'
 import Prism from 'prismjs'
 import cn from 'clsx'
 
@@ -74,7 +74,7 @@ export const Code = ({
   'data-language': language,
   filename,
 }: CodeProps) => {
-  const [copied, setCopied] = useState(false)
+  // const [copied, setCopied] = useState(false)
   const ref = useRef(null)
 
   useEffect(() => {
@@ -86,14 +86,14 @@ export const Code = ({
   return (
     <div className="code not-prose relative" aria-live="polite">
       {filename && (
-        <div className="absolute top-0 z-10 w-full truncate rounded-t-xl bg-zinc-500/30 py-2 px-4 text-sm font-medium text-zinc-300">
+        <div className="absolute top-0 z-10 w-full truncate rounded-t-xl bg-zinc-500/30 px-4 py-2 text-sm font-medium text-zinc-300">
           {filename}
         </div>
       )}
       <pre
         key={children as any}
         ref={ref}
-        className={cn(`language-${lang}`, filename ? 'px-4 pt-12 pb-4' : 'p-4')}
+        className={cn(`language-${lang}`, filename ? 'px-4 pb-4 pt-12' : 'p-4')}
       >
         <code>{children}</code>
       </pre>
