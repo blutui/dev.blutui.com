@@ -15,9 +15,17 @@ description: Courier is a Blutui command-line interface to interact with your Bl
 
 `courier` is easy to install, works on macOS, Windows, and many popular Linux distributions.
 
-- `macOS`
-- `Windows`
-- `Linux`
+{% card title="macOS" href="/docs/courier/installation#macos" %}
+  Available via Homebrew.
+{% /card %}
+
+{% card title="Windows" href="/docs/courier/installation#windows" %}
+  Available via scoop.
+{% /card %}
+
+{% card title="Linux" href="/docs/courier/installation#linux" %}
+  Available on many popular Linux distributions.
+{% /card %}
 
 ### Create a Courier token
 
