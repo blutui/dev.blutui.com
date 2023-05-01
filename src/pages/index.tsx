@@ -6,6 +6,7 @@ import { SearchButton } from '@/components/Search'
 import { FullPageLayout } from '@/layouts/FullPageLayout'
 
 import type { NextPageWithCustomLayout } from '@/types'
+import { Button } from '@/components/Button'
 
 const VideoIcon = () => {
   return (
@@ -174,16 +175,11 @@ const Home: NextPageWithCustomLayout = () => {
               Explore our guides and documentation on using Blutui.
             </p>
             <div className="flex flex-col items-start gap-4 lg:flex-row lg:items-center">
-              <Link
-                href="/docs/getting-started/create"
-                className="bg-han-500 highlight-white/10 hover:bg-han-400 inline-flex h-9 select-none items-center whitespace-nowrap rounded-lg px-4 text-sm font-semibold tracking-tight text-white transition"
-              >
-                Get started
-              </Link>
+              <Button href="/docs/getting-started/create">Get started</Button>
               <span className="hidden text-sm font-semibold uppercase text-zinc-800/40 dark:text-white/40 lg:block">
                 or
               </span>
-              <SearchButton className="dark:highlight-white/10 inline-flex h-9 w-full max-w-xs select-none items-center whitespace-nowrap rounded-lg bg-zinc-900/10 px-3 text-sm font-semibold tracking-tight text-zinc-700 transition hover:bg-zinc-900/20 dark:bg-white/20 dark:text-white dark:hover:bg-white/10">
+              <SearchButton className="dark:highlight-white/10 inline-flex h-10 w-full max-w-xs select-none items-center whitespace-nowrap rounded-lg bg-zinc-900/10 px-3 text-base font-semibold tracking-tight text-zinc-700 transition hover:bg-zinc-900/20 dark:bg-white/20 dark:text-white dark:hover:bg-white/10">
                 <div className="flex items-center gap-2">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
