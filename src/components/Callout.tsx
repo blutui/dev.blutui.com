@@ -12,16 +12,16 @@ type CalloutType = keyof typeof TypeToEmoji
 
 const classes: Record<CalloutType, string> = {
   caution: cn(
-    'from-red-100 dark:from-red-900 text-red-900 dark:text-red-200 ring-red-100 dark:ring-red-900/50'
+    'from-red-200 to-red-100 dark:from-red-900 dark:to-red-950 text-red-900 dark:text-red-200 ring-red-100 dark:ring-red-900/50'
   ),
   check: cn(
-    'from-green-200 dark:from-green-900 text-green-900 dark:text-green-200 ring-green-200/50 dark:ring-green-900/50'
+    'from-green-300 to-green-200 dark:from-green-900 dark:to-green-950 text-green-900 dark:text-green-200 ring-green-200/50 dark:ring-green-900/50'
   ),
   note: cn(
-    'from-blue-100 dark:from-blue-900 text-blue-900 dark:text-blue-200 ring-blue-100/50 dark:ring-blue-900/50'
+    'from-blue-200 to-blue-100 dark:from-blue-900 dark:to-blue-950 text-blue-900 dark:text-blue-200 ring-blue-100/50 dark:ring-blue-900/50'
   ),
   warning: cn(
-    'from-yellow-100 dark:from-yellow-900 text-yellow-900 dark:text-yellow-100 ring-yellow-100 dark:ring-yellow-900/50'
+    'from-yellow-200 to-yellow-100 dark:from-yellow-900 dark:to-yellow-950 text-yellow-900 dark:text-yellow-100 ring-yellow-100 dark:ring-yellow-900/50'
   ),
 }
 
