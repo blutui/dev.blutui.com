@@ -3,7 +3,7 @@ import { Card } from '@/components/Card'
 
 export const card: Schema<Config, typeof Card> = {
   render: Card,
-  children: ['paragraph'],
+  children: ['paragraph', 'heading', 'tag', 'list'],
   attributes: {
     title: {
       type: String,

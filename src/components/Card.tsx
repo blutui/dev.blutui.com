@@ -1,10 +1,10 @@
 import React from 'react'
-import Link, { LinkProps } from 'next/link'
+import Link from 'next/link'
 import cn from 'clsx'
 
 export interface CardProps {
   title?: string
-  href?: LinkProps['href']
+  href?: string
   children?: React.ReactNode
 }
 
@@ -14,18 +14,23 @@ export const Card = ({ title, href, children }: CardProps) => {
 
   const markup = (
     <div className="m-0 font-normal text-zinc-700 dark:text-zinc-400">
-      <h2 className="font-semibold text-zinc-900 dark:text-white">{title}</h2>
+      {title ? (
+        <h2 className="font-semibold text-zinc-900 dark:text-white">{title}</h2>
+      ) : null}
       {children}
     </div>
   )
 
   return href ? (
-    <Link
+    <a
       href={href}
-      className={cn([classes, 'hover:bg-zinc-900/10 dark:hover:bg-white/10'])}
+      className={cn([
+        classes,
+        'cursor-pointer hover:bg-zinc-900/10 dark:hover:bg-white/10',
+      ])}
     >
       {markup}
-    </Link>
+    </a>
   ) : (
     <div className={classes}>{markup}</div>
   )
