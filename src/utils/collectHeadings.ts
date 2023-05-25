@@ -7,10 +7,10 @@ export interface Section {
 }
 
 export const collectHeadings = (
-  node?: RenderableTreeNodes,
+  node?: any,
   sections: Section[] = []
 ): Section[] => {
-  if (node && typeof node !== 'string' && !Array.isArray(node)) {
+  if (node) {
     if (node.name === 'Heading') {
       const title = node.children[0]
 
