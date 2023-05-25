@@ -9,8 +9,8 @@
   },
   "dependencies": {
     "@docsearch/react": "^3.3.3",
-    "@markdoc/markdoc": "^0.1.13",
-    "@markdoc/next.js": "^0.1.10",
+    "@markdoc/markdoc": "^0.3.0",
+    "@markdoc/next.js": "^0.2.2",
     "clsx": "^1.2.1",
     "next": "^13.3.0",
     "prismjs": "^1.29.0",

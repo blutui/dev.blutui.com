@@ -22,7 +22,7 @@ export const Card = ({ title, href, children }: CardProps) => {
   )
 
   return href ? (
-    <a
+    <Link
       href={href}
       className={cn([
         classes,
@@ -30,7 +30,7 @@ export const Card = ({ title, href, children }: CardProps) => {
       ])}
     >
       {markup}
-    </a>
+    </Link>
   ) : (
     <div className={classes}>{markup}</div>
   )
