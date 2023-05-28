@@ -51,8 +51,7 @@ export const DocumentationLayout = ({
             </div>
             <footer className="mx-auto max-w-screen-md border-t border-black/5 pb-16 pt-8 dark:border-white/5">
               <p className="text-xs text-zinc-600 dark:text-zinc-500">
-                Copyright &copy; {new Date().getFullYear()} Blutui. Proudly New
-                Zealand made.
+                Copyright &copy; {new Date().getFullYear()} Blutui.
               </p>
             </footer>
           </div>
