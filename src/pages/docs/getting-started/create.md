@@ -38,7 +38,7 @@ First lets create a new page on your newly created project.
 
 In your newly created Canvas template add the following code:
 
-```canvas {% process=false %}
+```canvas {% process=false filename="pages/about.html" %}
 {% extends 'templates/default' %}
 
 {% block body %}
@@ -100,7 +100,7 @@ You will notice that all data types require a value for the `Name` field, this i
 
 Let's create a template that will render this collection, to do this you need the collection handle. In this example the handle is `staff`. First create a `collections` folder in our Canvas `views` directory, and add a file called `staff.html`, with:
 
-```canvas {% process=false %}
+```canvas {% process=false filename="collections/staff.html" %}
 {% set collection = cms.collection('staff') %}
 
 {% for entry in collection %}
@@ -116,7 +116,7 @@ Let's create a template that will render this collection, to do this you need th
 
 In this code example you are calling the collection, setting it to a `collection` variable and looping through each collection entry to display it the way you want. Once the collection template is created, you can [include](/docs/canvas/tags/include) it in your page template:
 
-```canvas {% process=false %}
+```canvas {% process=false filename="pages/about.html" %}
 {% extends 'templates/default' %}
 
 {% block body %}
@@ -175,7 +175,7 @@ Now lets add a contact form on your site. The process of making a form is simila
 
 Now that your new form is created, lets add this form to your Canvas. At the top of the form template we want to [import](/docs/canvas/tags/import) `macros/form.html` into the `ui` variable, the file responsible for the markup and styling of your form inputs. We've created a form macro template to help you get started. You can find the code for the `macros/form.html` macro on [Gist](https://gist.github.com/jayan-blutui/228a410ebc3d0779011f019d0620ef1e). You can use the form macro like:
 
-```canvas {% process=false %}
+```canvas {% process=false filename="macros/form.html" %}
 {% import 'macros/form' as ui %}
 
 {{ form_open() }}
