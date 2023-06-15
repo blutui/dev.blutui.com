@@ -14,7 +14,7 @@ export const Header = ({ children }: HeaderProps) => {
   const actionKey = useActionKey()
 
   return (
-    <header className="sticky top-0 z-10 flex-none border-b border-black/5 bg-zinc-50/70 backdrop-blur dark:border-white/5 dark:bg-zinc-900/70">
+    <header className="sticky top-0 z-10 flex-none border-b border-black/5 bg-zinc-50/70 backdrop-blur backdrop-saturate-200 dark:border-white/5 dark:bg-zinc-900/70">
       <div className="flex h-[3.75rem] items-center justify-between space-x-8 px-8">
         <div className="flex flex-shrink-0 items-center">
           <Link href="/" className="w-72">
@@ -40,7 +40,7 @@ export const Header = ({ children }: HeaderProps) => {
               </svg>
               <span className="block flex-auto">Quick search...</span>
               {actionKey && (
-                <kbd className="ml-2 -mr-1 rounded bg-black/10 py-0.5 px-1.5 font-sans text-xs font-semibold highlight-white/10 dark:bg-white/10">
+                <kbd className="highlight-white/10 -mr-1 ml-2 rounded bg-black/10 px-1.5 py-0.5 font-sans text-xs font-semibold dark:bg-white/10">
                   <abbr title={actionKey[1]} className="no-underline">
                     {actionKey[0]}
                   </abbr>{' '}
