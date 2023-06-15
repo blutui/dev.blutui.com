@@ -8,6 +8,55 @@ toc: false
 Please use the ISO standard date and time format.
 {% /comment %}
 
+{% changelog date="2023-05-26" %}
+{% badge status="attention" %}Fixed{% /badge %}
+
+- Fixed several minor UI inconsistencies in the **Project Dashboard**, including small changes to the form builder.
+{% /changelog %}
+
+{% changelog date="2023-05-18" %}
+{% badge status="attention" %}Fixed{% /badge %}
+
+- Fixed several minor UI inconsistencies in the **Agency Console**.
+{% /changelog %}
+
+{% changelog date="2023-05-11" %}
+{% badge status="success" %}Added{% /badge %}
+
+- Added the ability to enable two-step authentication on the **Agency Console** to increase your account's security.
+{% /changelog %}
+
+{% changelog date="2023-05-01" %}
+{% badge status="info" %}Changed{% /badge %}
+
+- Changed emails sent (form submissions, invite user, etc.) by your projects to include your agency's logo.
+{% /changelog %}
+
+{% changelog date="2023-04-27" %}
+{% badge status="success" %}Added{% /badge %}
+
+- Added a brand new starter **Canvas** to show you how to get started with your newly created project.
+
+{% badge status="info" %}Changed{% /badge %}
+
+- Changed "Start building" component on the Project page in the **Agency Console**, to show more information on how to get started.
+{% /changelog %}
+
+{% changelog date="2023-04-17" %}
+{% badge status="attention" %}Fixed{% /badge %}
+
+- Fixed an issue in the **Project Dashboard** that showed two "Cancel" buttons.
+- Fixed an issue in the **Agency Console** where the "Add domain" modal wouldn't suggest `www` for root domains.
+- Fixed an issue in the **Agency Console** where the site tranfer list wouldn't show on the Projects page.
+- Fixed an issue in the **Agency Console** where the "Archive project" modal wouldn't open.
+{% /changelog %}
+
+{% changelog date="2023-04-11" %}
+{% badge status="info" %}Changed{% /badge %}
+
+- Changed how production project's are cached to improve page load speed.
+{% /changelog %}
+
 {% changelog date="2023-03-09" %}
 {% badge status="success" %}Added{% /badge %}
 
