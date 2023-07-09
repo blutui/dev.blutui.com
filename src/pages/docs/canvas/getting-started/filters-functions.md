@@ -77,3 +77,7 @@ You can also use both positional and named arguments in one call, in which case 
 ```
 
 Each function and filter documentation page has a section where the names of all arguments are listed when supported.
+
+{% callout type="note" %}
+Make sure that your running `courier push` after each change to have it go to staging
+{% /callout %}

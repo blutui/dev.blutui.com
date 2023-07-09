@@ -195,3 +195,7 @@ String interpolation (`#{expression}`) allows any valid expression to appear wit
 {{ "foo #{bar} baz" }}
 {{ "foo #{1 + 2} baz" }}
 ```
+
+{% callout type="note" %}
+Make sure that your running `courier push` after each change to have it go to staging
+{% /callout %}

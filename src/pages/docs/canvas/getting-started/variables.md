@@ -30,3 +30,6 @@ You can assign values to variables inside code blocks. Assignments use the [set]
 {% set foo = [1, 2] %}
 {% set foo = {'foo': 'bar'} %}
 ```
+{% callout type="note" %}
+Make sure that your running `courier push` after each change to have it go to staging
+{% /callout %}

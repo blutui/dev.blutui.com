@@ -23,6 +23,30 @@ Blutui Courier is a cross-platform command line tool that is used to build Blutu
 
 If you haven’t already, now is the time to install `Blutui Courier`. To install Blutui Courier follow the [Getting Started with Blutui Courier](/docs/courier/getting-started) guide.
 
+**Using Courier**
+
+To pull the project you want to use:
+
+```bash
+courier pull
+```
+
+Then after you have made changes you want to use:
+
+```bash
+courier push
+```
+{% callout type="note" %}
+Make sure that you run `courier push` after each change to have it go to staging
+{% /callout %}
+
+If you want to run a local enviroment of your site then use:
+
+
+```bash
+courier watch
+```
+
 ## Creating a new page
 
 First lets create a new page on your newly created project.
