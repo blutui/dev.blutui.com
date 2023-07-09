@@ -52,5 +52,5 @@ The folder structure within the `public` and `views` directory is completely up 
 The default project comes with a `pages` folder in the `views` directory. For for information how to create your first project in Blutui, read the [getting started](/docs/getting-started/create) guide
 
 {% callout type="note" %}
-Make sure that your running `courier push` after each change to have it go to staging
+Ensure that you run `courier push` after each update, to view your changes in the staging environment.
 {% /callout %}
