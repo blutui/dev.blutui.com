@@ -201,5 +201,5 @@ In addition to the whitespace modifiers, Canvas also has a [spaceless](/docs/can
 ```
 
 {% callout type="note" %}
-Make sure that your running `courier push` after each change to have it go to staging
+Ensure that you run `courier push` after each update, to view your changes in the staging environment.
 {% /callout %}
