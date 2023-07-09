@@ -50,3 +50,7 @@ The folder structure within the `public` and `views` directory is completely up 
 2. **Create a page through the Site Dashboard**: Create a new page through the **Pages** menu and specify a **Layout**. A layout path is always relative to the `views` directory of your project.
 
 The default project comes with a `pages` folder in the `views` directory. For for information how to create your first project in Blutui, read the [getting started](/docs/getting-started/create) guide
+
+{% callout type="note" %}
+Ensure that you run `courier push` after each update, to view your changes in the staging environment.
+{% /callout %}

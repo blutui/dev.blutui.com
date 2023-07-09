@@ -199,3 +199,7 @@ In addition to the whitespace modifiers, Canvas also has a [spaceless](/docs/can
 
 {# output will be <div><strong>foo bar</strong></div> #}
 ```
+
+{% callout type="note" %}
+Ensure that you run `courier push` after each update, to view your changes in the staging environment.
+{% /callout %}
