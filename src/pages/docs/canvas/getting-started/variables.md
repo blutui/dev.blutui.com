@@ -31,5 +31,5 @@ You can assign values to variables inside code blocks. Assignments use the [set]
 {% set foo = {'foo': 'bar'} %}
 ```
 {% callout type="note" %}
-Make sure that your running `courier push` after each change to have it go to staging
+Ensure that you run `courier push` after each update, to view your changes in the staging environment.
 {% /callout %}
