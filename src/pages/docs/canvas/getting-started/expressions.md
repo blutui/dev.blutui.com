@@ -197,5 +197,5 @@ String interpolation (`#{expression}`) allows any valid expression to appear wit
 ```
 
 {% callout type="note" %}
-Make sure that your running `courier push` after each change to have it go to staging
+Ensure that you run `courier push` after each update, to view your changes in the staging environment.
 {% /callout %}
