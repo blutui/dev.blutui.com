@@ -8,6 +8,19 @@ toc: false
 Please use the ISO standard date and time format.
 {% /comment %}
 
+{% changelog date="2023-06-20" %}
+{% badge status="warning" %}Removed{% /badge %}
+
+- Removed **Blutui** logo from the project admin bar.
+{% /changelog %}
+
+{% changelog date="2023-06-08" %}
+{% badge status="success" %}Added{% /badge %}
+
+- Added a new and improved project creation system to the **Agency Console**.
+- Added you agency's whitelabel logo to **Canopy** in your client's project.
+{% /changelog %}
+
 {% changelog date="2023-05-26" %}
 {% badge status="attention" %}Fixed{% /badge %}
 
