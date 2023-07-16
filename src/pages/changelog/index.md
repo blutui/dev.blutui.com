@@ -8,6 +8,12 @@ toc: false
 Please use the ISO standard date and time format.
 {% /comment %}
 
+{% changelog date="2023-07-17" %}
+{% badge status="attention" %}Fixed{% /badge %}
+
+- Fixed an issue with emails where the buttons where sometimes invisible.
+{% /changelog %}
+
 {% changelog date="2023-06-20" %}
 {% badge status="warning" %}Removed{% /badge %}
 
