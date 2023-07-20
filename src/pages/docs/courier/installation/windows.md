@@ -1,5 +1,5 @@
 ---
-title: 'Installation Windows'
+title: 'Installation on Windows'
 ---
 
 ## Windows
