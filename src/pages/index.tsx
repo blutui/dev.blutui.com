@@ -165,7 +165,7 @@ const Home: NextPageWithCustomLayout = () => {
         <div className="bg-dots absolute left-0 top-0 -z-10 h-screen w-full from-zinc-50 to-zinc-50 bg-[length:14px_14px] dark:from-zinc-900 dark:to-zinc-900"></div>
         <div className="mx-auto flex max-w-screen-xl items-center">
           <div className="w-full bg-zinc-50/90 px-8 py-10 text-left shadow-[0_0_128px_128px] shadow-zinc-50/90 dark:bg-zinc-900/90 dark:shadow-zinc-900/90">
-            <p className="mb-2 text-xs uppercase tracking-widest text-white/50">
+            <p className="mb-2 text-xs uppercase tracking-widest text-gray-500 dark:text-white/50">
               Developer Documentation
             </p>
             <h1 className="text-3xl font-bold tracking-tight text-gray-800 dark:text-white lg:text-5xl">

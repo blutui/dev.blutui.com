@@ -24,16 +24,29 @@ export const documentationNavigation = [
         url: '/docs/courier/getting-started',
       },
       {
-        title: 'Installation',
-        url: '/docs/courier/installation',
-      },
-      {
         title: 'Commands',
         url: '/docs/courier/commands',
       },
       {
         title: 'Configuration',
         url: '/docs/courier/configuration',
+      },
+      {
+        title: 'Installation',
+        items: [
+          {
+            title: 'macOS',
+            url: '/docs/courier/installation/macos',
+          },
+          {
+            title: 'Linux',
+            url: '/docs/courier/installation/linux',
+          },
+          {
+            title: 'Windows',
+            url: '/docs/courier/installation/windows',
+          },
+        ],
       },
     ],
   },
