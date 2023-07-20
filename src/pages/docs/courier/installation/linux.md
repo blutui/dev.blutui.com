@@ -1,5 +1,5 @@
 ---
-title: 'Installation Linux'
+title: 'Installation on Linux'
 ---
 
 ## Linux
