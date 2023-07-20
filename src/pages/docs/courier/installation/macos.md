@@ -1,5 +1,5 @@
 ---
-title: 'Installation macOS'
+title: 'Installation on macOS'
 ---
 
 ## macOS
