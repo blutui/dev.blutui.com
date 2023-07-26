@@ -1,5 +1,6 @@
 import Head from 'next/head'
 import { Inter } from 'next/font/google'
+import { Analytics } from '@vercel/analytics/react'
 
 import { DocumentationLayout } from '@/layouts/DocumentationLayout'
 import { FullPageLayout } from '@/layouts/FullPageLayout'
@@ -99,6 +100,8 @@ const Blutui = ({ Component, pageProps }: BlutuiAppProps<BlutuiProps>) => {
           </Layout>
         </ArticleContext.Provider>
       </SearchProvider>
+
+      <Analytics />
     </>
   )
 }
