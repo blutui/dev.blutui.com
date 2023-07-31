@@ -152,7 +152,7 @@ Go to the [tests](/docs/canvas/tests) page to learn more about the built-in test
 
 ## Other operators
 
-The following operators don’t fit into any of the other categories:
+The following operators don't fit into any of the other categories:
 
 - `|`: Applies a filter.
 - `..`: Creates a sequence based on the operand before and after the operator (this is syntactic sugar for the [range](/docs/canvas/functions/range) function):
@@ -170,7 +170,7 @@ Note that you must use parentheses when combining it with the filter operator du
 (1..5) | join(', ')
 ```
 
-- `~`: Converts all operands into strings and concatenates them. <code v-pre>{{ 'Hello ' ~ name ~ '!' }}</code> would return (assuming `name` is `'John'`) `Hello John!`.
+- `~`: Converts all operands into strings and concatenates them. `{{ 'Hello ' ~ name ~ '!' }}` would return (assuming `name` is `'John'`) `Hello John!`.
 - `.`, `[]`: Gets an attribute of a variable.
 - `?:`: The ternary operator:
 
@@ -185,6 +185,13 @@ Note that you must use parentheses when combining it with the filter operator du
 ```canvas {% process=false %}
 {# returns the value of foo if it is defined and not null, 'no' otherwise #}
 {{ foo ?? 'no' }}
+```
+
+- `...`: The spread operator can be used to expand arrays or hashes (it cannot be used to expand the arguments of a function call):
+
+```canvas {% process=false %}
+{% set numbers = [1, 2, ...moreNumbers] %}
+{% set ratings = { 'foo': 10, 'bar': 5, ...moreRatings } %}
 ```
 
 ## String interpolation

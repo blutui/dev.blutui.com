@@ -10,7 +10,7 @@ Use a dot (`.`) to access attributes of a variable:
 {{ foo.bar }}
 ```
 
-It’s important to know that the curly braces are not part of the variable but the print statement. When accessing variables inside tags, don’t put the braces around them.
+It's important to know that the curly braces are not part of the variable but the print statement. When accessing variables inside tags, don't put the braces around them.
 
 If a variable or attribute does not exist, you will receive a **null** value.
 

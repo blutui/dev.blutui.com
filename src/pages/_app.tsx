@@ -96,6 +96,11 @@ const Blutui = ({ Component, pageProps }: BlutuiAppProps<BlutuiProps>) => {
         <ArticleContext.Provider value={articleContext}>
           <Header />
           <Layout {...layoutProps}>
+            <style jsx global>{`
+              html {
+                font-family: ${inter.style.fontFamily};
+              }
+            `}</style>
             <Component {...pageProps} />
           </Layout>
         </ArticleContext.Provider>

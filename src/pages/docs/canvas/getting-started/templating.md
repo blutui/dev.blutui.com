@@ -73,9 +73,9 @@ You can access templates relative to the **views** folder in your project direct
 
 The most powerful part of Canvas is template inheritance. Template inheritance allows you to build a base "skeleton" template that contains all the common elements of your site and defines **blocks** that child templates can override.
 
-It’s easier to understand the concept by starting with an example.
+It's easier to understand the concept by starting with an example.
 
-Let’s define a base template, **base.html**, which defines an HTML skeleton document that might be used for a two-column page:
+Let's define a base template, **base.html**, which defines an HTML skeleton document that might be used for a two-column page:
 
 ```canvas {% process=false filename="base.html" %}
 <!DOCTYPE html>
@@ -124,9 +124,9 @@ A child template might look like this:
 
 The [extends](/docs/canvas/tags/extends) tag is the key here. It tells the template engine that this template "extends" another template. When the template system evaluates this template, first it locates the parent. The extends tag should be the first tag in the template.
 
-Note that since the child template doesn’t define the **footer** block, the value from the parent template is used instead.
+Note that since the child template doesn't define the **footer** block, the value from the parent template is used instead.
 
-It’s possible to render the contents of the parent block by using the [parent](/docs/canvas/functions/parent) function. This gives back the results of the parent block:
+It's possible to render the contents of the parent block by using the [parent](/docs/canvas/functions/parent) function. This gives back the results of the parent block:
 
 ```canvas {% process=false %}
 {% block sidebar %}
@@ -142,7 +142,7 @@ Canvas also supports multiple inheritance via "horizontal reuse" with the help o
 
 ## HTML escaping
 
-When generating HTML from templates, there’s always a risk that a variable will include characters that affect the resulting HTML. There are two approaches: manually escaping each variable or automatically escaping everything by default.
+When generating HTML from templates, there's always a risk that a variable will include characters that affect the resulting HTML. There are two approaches: manually escaping each variable or automatically escaping everything by default.
 
 Canvas supports both, automatic escaping is enabled by default.
 

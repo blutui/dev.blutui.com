@@ -40,7 +40,7 @@ export const Header = ({ children }: HeaderProps) => {
               </svg>
               <span className="block flex-auto">Quick search...</span>
               {actionKey && (
-                <kbd className="highlight-white/10 -mr-1 ml-2 rounded bg-black/10 px-1.5 py-0.5 font-sans text-xs font-semibold dark:bg-white/10">
+                <kbd className="highlight-white/10 -mr-1 ml-2 rounded bg-black/10 px-1.5 py-0.5 text-xs font-semibold dark:bg-white/10">
                   <abbr title={actionKey[1]} className="no-underline">
                     {actionKey[0]}
                   </abbr>{' '}

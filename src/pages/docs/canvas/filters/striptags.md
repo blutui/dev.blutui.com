@@ -13,7 +13,7 @@ You can also provide tags which should not be stripped:
 {{ some_html | striptags('<br><p>') }}
 ```
 
-In this example, the `<br/>`, `<br>`, `<p>`, and `</p>` tags won’t be removed from the string.
+In this example, the `<br/>`, `<br>`, `<p>`, and `</p>` tags won't be removed from the string.
 
 ## Arguments
 

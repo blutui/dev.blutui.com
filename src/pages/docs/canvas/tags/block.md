@@ -8,7 +8,7 @@ Blocks are used for inheritance and act as placeholders and replacements at the 
 
 A block provides a way to change how a certain part of a template is rendered but it does not interfere in any way with the logic around it.
 
-Let’s take the following example to illustrate how a block works and more importantly, how it does not work:
+Let's take the following example to illustrate how a block works and more importantly, how it does not work:
 
 ```canvas {% process=false %}
 {# base.html #}
@@ -47,7 +47,7 @@ Now, when rendering the child template, the loop is going to use the block defin
 {% endfor %}
 ```
 
-Let’s take another example: a block included within an **if** statement:
+Let's take another example: a block included within an **if** statement:
 
 ```canvas {% process=false %}
 {% if posts is empty %}

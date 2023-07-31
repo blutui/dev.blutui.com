@@ -2,7 +2,6 @@ import type { Config } from 'tailwindcss'
 
 // @ts-ignore
 import flattenColorPalette from 'tailwindcss/lib/util/flattenColorPalette'
-import defaultTheme from 'tailwindcss/defaultTheme'
 
 export default {
   content: [
@@ -30,9 +29,6 @@ export default {
           800: '#000475',
           900: '#000238',
         },
-      },
-      fontFamily: {
-        sans: ['Inter', ...defaultTheme.fontFamily.sans],
       },
       keyframes: {
         pulse: {

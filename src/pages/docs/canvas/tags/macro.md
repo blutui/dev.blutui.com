@@ -25,7 +25,7 @@ Macros differ from native functions in a few ways:
 - Arguments of a macro are always optional.
 - If extra positional arguments are passed to a macro, they end up in the special `varargs` variable as a list of values.
 
-Macros don’t have access to the current template variables.
+Macros don't have access to the current template variables.
 
 ## Importing macros
 
@@ -55,7 +55,7 @@ Alternatively you can import names from the template into the current namespace 
 <p>{{ textarea('comment') }}</p>
 ```
 
-When **macro** usages and definitions are in the same template, you don’t need to import the macros as they are automatically available under the special `_self` variable:
+When **macro** usages and definitions are in the same template, you don't need to import the macros as they are automatically available under the special `_self` variable:
 
 ```canvas {% process=false %}
 <p>{{ _self.input('password', '', 'password') }}</p>
