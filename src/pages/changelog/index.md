@@ -8,6 +8,12 @@ toc: false
 Please use the ISO standard date and time format.
 {% /comment %}
 
+{% changelog date="2023-07-28" %}
+{% badge status="attention" %}Fixed{% /badge %}
+
+- Fixed an issue with links redirecting users to the development project, in the project admin bar.
+{% /changelog %}
+
 {% changelog date="2023-07-17" %}
 {% badge status="attention" %}Fixed{% /badge %}
 
