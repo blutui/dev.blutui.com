@@ -11,7 +11,7 @@ A Canvas determines the way a project will look and feel for your client's proje
 
 A template is a regular text file. It can generate any text-based format (HTML, XML, CSV, LaTeX, etc.).
 
-A template contains **variables** or **expressions**, which get replaced with values when the template is evaluated, and **tags**, which control the template’s logic.
+A template contains **variables** or **expressions**, which get replaced with values when the template is evaluated, and **tags**, which control the template's logic.
 
 Below is a minimal template that illustrates a few basics. We will cover further details later on:
 

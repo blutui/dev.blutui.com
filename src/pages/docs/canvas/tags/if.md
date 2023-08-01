@@ -59,7 +59,7 @@ numeric zero           | false
 NAN (Not A Number)     | true
 INF (Infinity)         | true
 whitespace-only string | true
-string “0” or ‘0’      | false
+string "0" or '0'      | false
 empty array            | false
 null                   | false
 non-empty array        | ture

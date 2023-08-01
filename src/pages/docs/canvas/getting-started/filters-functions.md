@@ -60,7 +60,7 @@ Using named arguments makes your templates more explicit about the meaning of th
 {{ data | convert_encoding(from = 'iso-2022-jp', to = 'UTF-8') }}
 ```
 
-Named arguments also allow you to skip some arguments for which you don’t want to change the default value:
+Named arguments also allow you to skip some arguments for which you don't want to change the default value:
 
 ```canvas {% process=false %}
 {# the first argument is the date format, which defaults to the global date format if null is passed #}

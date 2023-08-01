@@ -21,7 +21,7 @@ Now that your new project is created, you may choose to view the new project's d
 
 Blutui Courier is a cross-platform command line tool that is used to build Blutui projects locally.
 
-If you haven’t already, now is the time to install `Blutui Courier`. To install Blutui Courier follow the [Getting Started with Blutui Courier](/docs/courier/getting-started) guide.
+If you haven't already, now is the time to install `Blutui Courier`. To install Blutui Courier follow the [Getting Started with Blutui Courier](/docs/courier/getting-started) guide.
 
 **Using Courier**
 

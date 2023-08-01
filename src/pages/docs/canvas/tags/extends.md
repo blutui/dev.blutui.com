@@ -2,7 +2,7 @@
 title: 'extends'
 ---
 
-The **extends** tag can be used to extend a template from another one. Canvas does not support multiple inheritance. So you can only have one extends tag called per rendering. However, Canvas supports horizontal [reuse](/docs/canvas/tags/use). Let’s define a base template, `base.html`, which defines a simple HTML skeleton document:
+The **extends** tag can be used to extend a template from another one. Canvas does not support multiple inheritance. So you can only have one extends tag called per rendering. However, Canvas supports horizontal [reuse](/docs/canvas/tags/use). Let's define a base template, `base.html`, which defines a simple HTML skeleton document:
 
 ```canvas {% process=false %}
 <!DOCTYPE html>
@@ -52,9 +52,9 @@ A child template might look like this:
 
 The **extends** tag is the key here. It tells the template engine that this template "extends" another template. When the Canvas template engine evaluates this template, first it locates the parent. The extends tag should be the first tag in the template.
 
-Note that since the child template doesn’t define the `footer` block, the value from the parent template is used instead.
+Note that since the child template doesn't define the `footer` block, the value from the parent template is used instead.
 
-You can’t define multiple block tags with the same name in the same template. This limitation exists because a block tag works in "both" directions. That is, a block tag doesn’t just provide a hole to fill - it also defines the content that fills the hole in the parent. If there were two similarly-named block tags in a template, that template’s parent wouldn’t know which one of the blocks’ content to use.
+You can't define multiple block tags with the same name in the same template. This limitation exists because a block tag works in "both" directions. That is, a block tag doesn't just provide a hole to fill - it also defines the content that fills the hole in the parent. If there were two similarly-named block tags in a template, that template's parent wouldn't know which one of the blocks' content to use.
 
 If you want to print a block multiple times you can however use the [block](/docs/canvas/functions/block) function:
 
@@ -66,7 +66,7 @@ If you want to print a block multiple times you can however use the [block](/doc
 
 ## Parent blocks
 
-It’s possible to render the contents of the parent block by using the [parent](/docs/canvas/functions/parent) function. This gives back the results of the parent block:
+It's possible to render the contents of the parent block by using the [parent](/docs/canvas/functions/parent) function. This gives back the results of the parent block:
 
 ```canvas {% process=false %}
 {% block sidebar %}
@@ -100,7 +100,7 @@ Blocks can be nested for more complex layouts. Per default, blocks have access t
 
 ## Block shortcuts
 
-For blocks with little content, it’s possible to use a shortcut syntax. The following constructs do the same thing:
+For blocks with little content, it's possible to use a shortcut syntax. The following constructs do the same thing:
 
 ```canvas {% process=false %}
 {% block title %}
@@ -128,7 +128,7 @@ You can also provide a list of templates that are checked for existence. The fir
 
 ## Conditional interitance
 
-As the template name for the parent can be any valid Canvas expression, it’s possible to make the inheritance mechanism conditional:
+As the template name for the parent can be any valid Canvas expression, it's possible to make the inheritance mechanism conditional:
 
 ```canvas {% process=false %}
 {% extends standalone ? 'minimum.html' : 'base.html' %}
