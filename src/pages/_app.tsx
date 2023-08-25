@@ -20,6 +20,8 @@ import '@/styles/main.css'
 
 import type { AppProps } from 'next/app'
 import type { MarkdocNextJsPageProps } from '@markdoc/next.js'
+import { useRouter } from 'next/router'
+import { GuidesLayout } from '@/layouts/GuidesLayout'
 
 type BlutuiAppProps<P = {}> = Omit<AppProps<P>, 'Component'> & {
   Component: AppProps['Component'] & { layoutProps?: any }
@@ -61,9 +63,20 @@ const Blutui = ({ Component, pageProps }: BlutuiAppProps<BlutuiProps>) => {
     }
   }
 
+  const { pathname } = useRouter()
+
   const hasToc = markdoc?.frontmatter.toc ?? true
   const toc = hasToc && markdoc?.content ? collectHeadings(markdoc.content) : []
-  const markdownLayout = markdoc?.frontmatter.fullWidth ? FullPageLayout : null
+
+  let markdownLayout
+
+  if (markdoc?.frontmatter.fullWidth) {
+    markdownLayout = FullPageLayout
+  } else if (pathname.startsWith('/guides/')) {
+    markdownLayout = GuidesLayout
+  } else {
+    markdownLayout = null
+  }
 
   const Layout =
     Component.layoutProps?.Layout || markdownLayout || DocumentationLayout
