@@ -1,4 +1,5 @@
 import React from 'react'
+import { useRouter } from 'next/router'
 
 import { useArticleContext } from '@/context/ArticleContext'
 import type { Section } from '@/utils/collectHeadings'
@@ -7,7 +8,6 @@ import { TableOfContents } from '@/components/TableOfContents'
 import { Item, Sidebar } from '@/components/Sidebar'
 
 import { documentationNavigation } from '@/navigation/documentation'
-import { useRouter } from 'next/router'
 
 export interface DocumentationLayoutProps {
   layoutProps: any
@@ -27,10 +27,11 @@ export const DocumentationLayout = ({
   title = articleContext?.title
   description = articleContext?.description
 
-  const { route } = useRouter()
+  const { pathname } = useRouter()
 
   let items: Item[]
-  if (route === '/docs') {
+
+  if (pathname === '/docs' || pathname.startsWith('/docs/')) {
     items = documentationNavigation
   } else {
     items = []
