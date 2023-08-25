@@ -16,7 +16,7 @@ export const TableOfContents = ({ toc }: TableOfContentsProps) => {
 
   return (
     <nav className="blutui-toc -mt-8 hidden w-64 flex-shrink-0 space-y-6 lg:block">
-      <div className="blutui-scrollbar max-h-sidebar sticky top-[3.75rem] -mr-8 -mt-px overflow-y-auto pr-8 pt-8">
+      <div className="blutui-scrollbar max-h-sidebar top-header sticky -mr-8 overflow-y-auto pr-8 pt-8">
         {items.length >= 1 && (
           <>
             <h5 className="mb-4 text-sm font-semibold text-zinc-900 dark:text-zinc-200">

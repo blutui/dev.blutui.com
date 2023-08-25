@@ -158,13 +158,8 @@ const Home: NextPageWithCustomLayout = () => {
   return (
     <div className="w-full flex-grow">
       <div className="relative -mx-8 -mt-[6.25rem] overflow-hidden pb-10 pt-[6.25rem]">
-        {/* Inspiration from Stripe Docs */}
-        <div className="absolute inset-0 -z-20">
-          <div className="from-han-400 h-full w-full bg-gradient-to-b via-pink-300 to-transparent"></div>
-        </div>
-        <div className="bg-dots absolute left-0 top-0 -z-10 h-screen w-full from-zinc-50 to-zinc-50 bg-[length:14px_14px] dark:from-zinc-900 dark:to-zinc-900"></div>
-        <div className="mx-auto flex max-w-screen-xl items-center">
-          <div className="w-full bg-zinc-50/90 px-8 py-10 text-left shadow-[0_0_128px_128px] shadow-zinc-50/90 dark:bg-zinc-900/90 dark:shadow-zinc-900/90">
+        <div className="max-w-8xl mx-auto flex items-center">
+          <div className="w-full px-8 py-10 text-center">
             <p className="mb-2 text-xs uppercase tracking-widest text-gray-500 dark:text-white/50">
               Developer Documentation
             </p>
@@ -174,7 +169,7 @@ const Home: NextPageWithCustomLayout = () => {
             <p className="mb-4 mt-2 text-lg text-gray-800/80 dark:text-white/80 lg:text-xl">
               Explore our guides and documentation on using Blutui.
             </p>
-            <div className="flex flex-col items-start gap-4 lg:flex-row lg:items-center">
+            <div className="flex flex-col items-start justify-center gap-4 lg:flex-row lg:items-center">
               <Button href="/docs/getting-started/create">Get started</Button>
               <span className="hidden text-sm font-semibold uppercase text-zinc-800/40 dark:text-white/40 lg:block">
                 or
