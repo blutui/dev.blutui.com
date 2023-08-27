@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { useArticleContext } from '@/context/ArticleContext'
+import { useArticleContext } from '@/context/article-context'
 
 export interface GuidesLayoutProps {
   layoutProps: any

@@ -1,11 +1,11 @@
 import React from 'react'
 import { useRouter } from 'next/router'
 
-import { useArticleContext } from '@/context/ArticleContext'
+import { useArticleContext } from '@/context/article-context'
 import type { Section } from '@/utils/collectHeadings'
 
-import { TableOfContents } from '@/components/TableOfContents'
-import { Item, Sidebar } from '@/components/Sidebar'
+import { TableOfContents } from '@/components/table-of-contents'
+import { Item, Sidebar } from '@/components/sidebar'
 
 import { documentationNavigation } from '@/navigation/documentation'
 
@@ -50,7 +50,7 @@ export const DocumentationLayout = ({
                 </h1>
               )}
               {description && (
-                <p className="mt-2 text-base text-gray-700 dark:text-gray-400 lg:text-lg">
+                <p className="mt-2 text-base text-gray-600 dark:text-gray-400 lg:text-lg">
                   {description}
                 </p>
               )}

@@ -1,13 +1,15 @@
 import Head from 'next/head'
+import { useRouter } from 'next/router'
 import { Inter } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/react'
 
-import { DocumentationLayout } from '@/layouts/DocumentationLayout'
-import { FullPageLayout } from '@/layouts/FullPageLayout'
+import { DocumentationLayout } from '@/layouts/documentation'
+import { FullPageLayout } from '@/layouts/full-page'
+import { GuidesLayout } from '@/layouts/guides'
 
-import { Header } from '@/components/Header'
-import { SearchProvider } from '@/components/Search'
-import { ArticleContext, ArticleContextT } from '@/context/ArticleContext'
+import { Header } from '@/components/header'
+import { SearchProvider } from '@/components/search'
+import { ArticleContext, ArticleContextT } from '@/context/article-context'
 
 import { collectHeadings } from '@/utils/collectHeadings'
 
@@ -20,8 +22,6 @@ import '@/styles/main.css'
 
 import type { AppProps } from 'next/app'
 import type { MarkdocNextJsPageProps } from '@markdoc/next.js'
-import { useRouter } from 'next/router'
-import { GuidesLayout } from '@/layouts/GuidesLayout'
 
 type BlutuiAppProps<P = {}> = Omit<AppProps<P>, 'Component'> & {
   Component: AppProps['Component'] & { layoutProps?: any }

@@ -1,6 +1,8 @@
 import cn from 'clsx'
-import { Contribution } from '@/components/Contribution'
-import { useActiveId } from '@/hooks/useActiveId'
+
+import { Contribution } from '@/components/contribution'
+import { useActiveId } from '@/utils/use-active-id'
+
 import type { Section } from '@/utils/collectHeadings'
 
 export interface TableOfContentsProps {

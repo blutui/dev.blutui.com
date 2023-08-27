@@ -1,4 +1,4 @@
-import { useArticleContext } from '@/context/ArticleContext'
+import { useArticleContext } from '@/context/article-context'
 
 const trimSlashes = (str: string): string => {
   str = str.startsWith('/') ? str.substring(1) : str

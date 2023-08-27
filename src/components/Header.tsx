@@ -3,10 +3,10 @@ import cn from 'clsx'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 
-import { useActionKey } from '@/hooks/useActionKey'
+import { useActionKey } from '@/utils/use-action-key'
 
-import { Logo } from './Logo'
-import { SearchButton } from './Search'
+import { Logo } from './logo'
+import { SearchButton } from './search'
 
 export interface HeaderProps {
   children?: React.ReactNode
@@ -145,7 +145,7 @@ function HeaderNavigationItem({ name, href }: HeaderNavigationItemProps) {
       className={cn(
         '-mb-px py-3.5 text-sm font-semibold tracking-tight transition',
         active
-          ? 'text-han-500 dark:text-han-100 border-han-200 dark:border-han-300 border-b-2'
+          ? 'text-han-400 dark:text-han-100 border-han-200 dark:border-han-300 border-b-2'
           : 'border-zinc-300 text-zinc-500 hover:border-b-2 dark:border-zinc-500 dark:text-zinc-400'
       )}
     >

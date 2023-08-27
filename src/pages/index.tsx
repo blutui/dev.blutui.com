@@ -2,11 +2,11 @@ import React from 'react'
 import Link, { LinkProps } from 'next/link'
 import cn from 'clsx'
 
-import { SearchButton } from '@/components/Search'
-import { FullPageLayout } from '@/layouts/FullPageLayout'
+import { SearchButton } from '@/components/search'
+import { FullPageLayout } from '@/layouts/full-page'
 
 import type { NextPageWithCustomLayout } from '@/types'
-import { Button } from '@/components/Button'
+import { Button } from '@/components/button'
 
 const VideoIcon = () => {
   return (

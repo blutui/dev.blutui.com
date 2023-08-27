@@ -1,5 +1,5 @@
 import { Tag, Config, Schema, RenderableTreeNode } from '@markdoc/markdoc'
-import { Heading } from '@/components/Heading'
+import { Heading } from '@/components/heading'
 
 function generateID(
   children: RenderableTreeNode[],
