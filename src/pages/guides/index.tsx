@@ -6,16 +6,25 @@ import { GuidesNavigationItem, guidesNavigation } from '@/navigation/guides'
 import { usePagination } from '@/utils/use-pagination'
 
 const GuideItem = ({ item }: { item: GuidesNavigationItem }) => {
+  const formattedDate = new Date(item.createdAt).toLocaleDateString('en-US', {
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric',
+  })
+
   return (
     <Link className="block" href={`/guides/${item.slug}`}>
       <div className="flex w-full flex-col rounded-lg border p-6 transition hover:bg-zinc-100 dark:border-zinc-700 dark:hover:bg-zinc-800">
-        {item.featured && (
-          <span className="mb-4">
-            <span className="inline-flex rounded-full bg-zinc-200 px-3.5 py-1 text-xs font-semibold uppercase tracking-widest text-zinc-800 dark:bg-zinc-700 dark:text-white">
+        <div className="mb-4 flex items-center gap-4">
+          {item.featured && (
+            <span className="dark:bg-han-500/30 ring-han-300/50 bg-han-500/10 text-han-600 dark:text-han-100 inline-flex rounded-full px-3.5 py-1 text-xs font-semibold uppercase tracking-widest ring-1">
               Featured
             </span>
+          )}
+          <span className="text-xs uppercase text-zinc-500 dark:text-zinc-400">
+            {formattedDate}
           </span>
-        )}
+        </div>
         <h4 className="mb-2 text-xl font-bold leading-6 tracking-tight text-zinc-700 dark:text-white">
           {item.title}
         </h4>
