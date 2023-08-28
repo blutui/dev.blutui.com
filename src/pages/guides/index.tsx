@@ -61,10 +61,10 @@ export default function Guides() {
     <div className="w-full">
       <div className="max-w-8xl mx-auto w-full px-8">
         <div className="mb-6 border-b pb-6 dark:border-zinc-700">
-          <h1 className="text-3xl font-bold tracking-tight text-gray-900 dark:text-gray-200 lg:text-4xl">
+          <h1 className="text-3xl font-bold tracking-tight text-zinc-900 dark:text-zinc-200 lg:text-4xl">
             Guides
           </h1>
-          <p className="mt-2 text-base text-gray-600 dark:text-gray-400 lg:text-lg">
+          <p className="mt-2 text-base text-zinc-600 dark:text-zinc-400 lg:text-lg">
             Everything you need to know about Blutui, from getting started to
             advanced use cases.
           </p>

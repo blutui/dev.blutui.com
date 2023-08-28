@@ -160,13 +160,13 @@ const Home: NextPageWithCustomLayout = () => {
       <div className="relative -mx-8 -mt-[6.25rem] overflow-hidden pb-10 pt-[6.25rem]">
         <div className="max-w-8xl mx-auto flex items-center">
           <div className="w-full px-8 py-10 text-center">
-            <p className="mb-2 text-xs uppercase tracking-widest text-gray-500 dark:text-white/50">
+            <p className="mb-2 text-xs uppercase tracking-widest text-zinc-500 dark:text-white/50">
               Developer Documentation
             </p>
-            <h1 className="text-3xl font-bold tracking-tight text-gray-800 dark:text-white lg:text-5xl">
+            <h1 className="text-3xl font-bold tracking-tight text-zinc-800 dark:text-white lg:text-5xl">
               Welcome to Blutui
             </h1>
-            <p className="mb-4 mt-2 text-lg text-gray-800/80 dark:text-white/80 lg:text-xl">
+            <p className="mb-4 mt-2 text-lg text-zinc-800/80 dark:text-white/80 lg:text-xl">
               Explore our guides and documentation on using Blutui.
             </p>
             <div className="flex flex-col items-start justify-center gap-4 lg:flex-row lg:items-center">

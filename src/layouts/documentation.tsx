@@ -45,12 +45,12 @@ export const DocumentationLayout = ({
           <div className="w-full min-w-0 max-w-full">
             <header id="header" className="mx-auto max-w-screen-md">
               {title && (
-                <h1 className="text-3xl font-bold tracking-tight text-gray-900 dark:text-gray-200 lg:text-4xl">
+                <h1 className="text-3xl font-bold tracking-tight text-zinc-900 dark:text-zinc-200 lg:text-4xl">
                   {title}
                 </h1>
               )}
               {description && (
-                <p className="mt-2 text-base text-gray-600 dark:text-gray-400 lg:text-lg">
+                <p className="mt-2 text-base text-zinc-600 dark:text-zinc-400 lg:text-lg">
                   {description}
                 </p>
               )}

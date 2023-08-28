@@ -22,7 +22,7 @@ export const Contribution = () => {
   return (
     <div className="flex flex-col gap-2">
       <a
-        className="text-xs font-medium text-gray-500 transition hover:text-gray-400 dark:text-gray-400 dark:hover:text-gray-500"
+        className="text-xs font-medium text-zinc-500 transition hover:text-zinc-400 dark:text-zinc-400 dark:hover:text-zinc-500"
         href="https://github.com/blutui/dev.blutui.com/issues"
         target="_blank"
         rel="noreferrer"
@@ -30,7 +30,7 @@ export const Contribution = () => {
         Question? Give us feedback →
       </a>
       <a
-        className="text-xs font-medium text-gray-500 transition hover:text-gray-400 dark:text-gray-400 dark:hover:text-gray-500"
+        className="text-xs font-medium text-zinc-500 transition hover:text-zinc-400 dark:text-zinc-400 dark:hover:text-zinc-500"
         href={contributionHref}
       >
         Edit this page on GitHub
