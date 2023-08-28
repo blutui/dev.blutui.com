@@ -3,7 +3,7 @@ import cn from 'clsx'
 import { Contribution } from '@/components/contribution'
 import { useActiveId } from '@/utils/use-active-id'
 
-import type { Section } from '@/utils/collectHeadings'
+import type { Section } from '@/utils/collect-headings'
 
 export interface TableOfContentsProps {
   toc: Section[]

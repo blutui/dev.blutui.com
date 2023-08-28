@@ -11,7 +11,7 @@ import { Header } from '@/components/header'
 import { SearchProvider } from '@/components/search'
 import { ArticleContext, ArticleContextT } from '@/context/article-context'
 
-import { collectHeadings } from '@/utils/collectHeadings'
+import { collectHeadings } from '@/utils/collect-headings'
 
 // Required for custom 'canvas' syntax highlighting...
 import 'prismjs'

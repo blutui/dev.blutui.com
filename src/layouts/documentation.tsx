@@ -2,7 +2,7 @@ import React from 'react'
 import { useRouter } from 'next/router'
 
 import { useArticleContext } from '@/context/article-context'
-import type { Section } from '@/utils/collectHeadings'
+import type { Section } from '@/utils/collect-headings'
 
 import { TableOfContents } from '@/components/table-of-contents'
 import { Item, Sidebar } from '@/components/sidebar'

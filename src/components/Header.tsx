@@ -5,8 +5,8 @@ import { useRouter } from 'next/router'
 
 import { useActionKey } from '@/utils/use-action-key'
 
-import { Logo } from './logo'
-import { SearchButton } from './search'
+import { Logo } from '@/components/logo'
+import { SearchButton } from '@/components/search'
 
 export interface HeaderProps {
   children?: React.ReactNode
