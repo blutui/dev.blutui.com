@@ -47,15 +47,16 @@ const GuideItem = ({ item }: { item: GuidesNavigationItem }) => {
 }
 
 export default function Guides() {
-  const {
-    items: guides,
-    hasMorePages,
-    loadMore,
-  } = usePagination(guidesNavigation)
+  const sortedGuides = guidesNavigation.sort(
+    (a, b) => new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime()
+  )
+
+  const { items: guides, hasMorePages, loadMore } = usePagination(sortedGuides)
 
   const guideItems = guides.filter((items) => {
     return !items.featured
   })
+
   const featuredGuideItems = guides.filter((items) => {
     return items.featured
   })
@@ -69,7 +70,7 @@ export default function Guides() {
   return (
     <div className="w-full">
       <div className="max-w-8xl mx-auto w-full px-8">
-        <div className="mb-6 border-b pb-6 dark:border-zinc-700">
+        <div className="mb-6 pb-6">
           <h1 className="text-3xl font-bold tracking-tight text-zinc-900 dark:text-zinc-200 lg:text-4xl">
             Guides
           </h1>

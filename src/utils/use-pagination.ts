@@ -1,6 +1,6 @@
 import { useState } from 'react'
 
-export const usePagination = (items: any[], perPage = 8) => {
+export function usePagination<T>(items: T[], perPage = 8) {
   const [activePage, setActivePage] = useState(1)
   const totalPages = Math.ceil(items.length / perPage)
   const hasMorePages = activePage !== totalPages
