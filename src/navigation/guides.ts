@@ -18,24 +18,24 @@ export const getGuideBySlug = (slug: string) => {
 }
 
 export const guidesNavigation: GuidesNavigationItem[] = [
-  {
-    title: 'How do I send form submissions to Zapier?',
-    authors: ['Jayan Ratna'],
-    description:
-      'Information on how to send form submissions from a Blutui project to Zapier.',
-    slug: 'send-form-submissions-to-zapier',
-    tags: ['Integrations', 'Webhooks'],
-    createdAt: '2023-08-30',
-  },
-  {
-    title: 'How do I send form submissions to Make / Integromat?',
-    authors: ['Jayan Ratna'],
-    description:
-      'Information on how to send form submissions from a Blutui project to Make (formerly Integromat).',
-    slug: 'send-form-submissions-to-make',
-    tags: ['Integrations', 'Webhooks'],
-    createdAt: '2023-08-30',
-  },
+  // {
+  //   title: 'How do I send form submissions to Zapier?',
+  //   authors: ['Jayan Ratna'],
+  //   description:
+  //     'Information on how to send form submissions from a Blutui project to Zapier.',
+  //   slug: 'send-form-submissions-to-zapier',
+  //   tags: ['Integrations', 'Webhooks'],
+  //   createdAt: '2023-08-30',
+  // },
+  // {
+  //   title: 'How do I send form submissions to Make / Integromat?',
+  //   authors: ['Jayan Ratna'],
+  //   description:
+  //     'Information on how to send form submissions from a Blutui project to Make (formerly Integromat).',
+  //   slug: 'send-form-submissions-to-make',
+  //   tags: ['Integrations', 'Webhooks'],
+  //   createdAt: '2023-08-30',
+  // },
   {
     featured: true,
     title: 'How do I install Blutui Courier on macOS?',
@@ -60,5 +60,32 @@ export const guidesNavigation: GuidesNavigationItem[] = [
     slug: 'install-courier-on-windows',
     tags: ['Courier'],
     createdAt: '2023-08-29',
+  },
+  {
+    title: 'How do I pull a project onto my machine?',
+    authors: ['Ruslan Courtman'],
+    description:
+      'Learn how to pull your project from Blutui onto your machine for development.',
+    slug: 'pull-project-with-courier',
+    tags: ['Courier'],
+    createdAt: '2023-08-31',
+  },
+  {
+    title: 'How do I preview a project onto my machine?',
+    authors: ['Ruslan Courtman'],
+    description:
+      'Learn how to preview your project on your machine while in development.',
+    slug: 'preview-project-with-courier',
+    tags: ['Courier'],
+    createdAt: '2023-08-31',
+  },
+  {
+    title: 'How do I push a project to Blutui?',
+    authors: ['Jayan Ratna'],
+    description:
+      'Learn how to push your project code from your machine to Blutui.',
+    slug: 'push-project-with-courier',
+    tags: ['Courier'],
+    createdAt: '2023-08-31',
   },
 ]

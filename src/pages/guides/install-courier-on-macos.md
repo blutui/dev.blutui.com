@@ -49,7 +49,7 @@ Lastly, to confirm that Courier is successfully installed, run:
 courier
 ```
 
-This will display a list of available commands, confirming Courier successfully is now installed.
+This will display a list of available commands, confirming Courier is now successfully installed.
 {% /step %}
 
 ## Additional steps for Firefox users
@@ -77,7 +77,7 @@ Now you should be able to use `courier watch` on Firefox.
 2. Choose "Edit my profile."
 3. Go to the "Apps" section from the sidebar.
 4. Click the "Create token" button on the right-hand side.
-5. Name your token (e.g., "Work MacBook") and click "Create."
+5. Name your token (e.g., "Work MacBook") and click "Create"
 
 Remember, the token will expire in one year, so plan to renew it accordingly.
 {% /step %}
@@ -89,3 +89,19 @@ Copy your newly created token and run the following command in your terminal:
 courier login [your-courier-token]
 ```
 {% /step %}
+
+And there you have it—a complete guide to installing, and setting up Courier on macOS!
+
+## More resources
+
+{% card title="How do I pull a project onto my machine?" href="/guides/pull-project-with-courier" %}
+  Learn how to pull your project from Blutui onto your machine for development.
+{% /card %}
+
+{% card title="How do I preview a project onto my machine?" href="/guides/preview-project-with-courier" %}
+  Learn how to preview your project on your machine while in development.
+{% /card %}
+
+{% card title="How do I push a project to Blutui?" href="/guides/push-project-with-courier" %}
+  Learn how to push your project code from your machine to Blutui.
+{% /card %}
