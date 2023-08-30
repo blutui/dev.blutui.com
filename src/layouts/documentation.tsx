@@ -1,11 +1,11 @@
-import React from 'react'
 import { useRouter } from 'next/router'
 
 import { useArticleContext } from '@/context/article-context'
 import type { Section } from '@/utils/collect-headings'
 
-import { TableOfContents } from '@/components/table-of-contents'
+import { Footer } from '@/components/footer'
 import { Item, Sidebar } from '@/components/sidebar'
+import { TableOfContents } from '@/components/table-of-contents'
 
 import { documentationNavigation } from '@/navigation/documentation'
 
@@ -58,11 +58,7 @@ export const DocumentationLayout = ({
             <div id="content-wrapper" className="content-wrapper py-8">
               {children}
             </div>
-            <footer className="max-w-8xl mx-auto border-t border-black/5 pb-16 pt-8 dark:border-white/5">
-              <p className="text-xs text-zinc-600 dark:text-zinc-500">
-                Copyright &copy; {new Date().getFullYear()} Blutui.
-              </p>
-            </footer>
+            <Footer fullwidth={false} />
           </div>
           <TableOfContents toc={toc} />
         </div>

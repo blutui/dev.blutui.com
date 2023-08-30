@@ -1,4 +1,3 @@
-import React from 'react'
 import { useRouter } from 'next/router'
 import Link from 'next/link'
 
@@ -6,6 +5,7 @@ import { useArticleContext } from '@/context/article-context'
 import { getGuideBySlug } from '@/navigation/guides'
 
 import { ArrowLongLeft } from '@/components/icons/arrow-long-left'
+import { Footer } from '@/components/footer'
 
 export interface GuidesLayoutProps {
   layoutProps: any
@@ -25,7 +25,7 @@ export const GuidesLayout = ({ layoutProps, children }: GuidesLayoutProps) => {
 
   return (
     <main>
-      <header className="mb-6 border-b px-8 py-8 dark:border-zinc-800">
+      <header className="border-b px-8 py-8 dark:border-zinc-800">
         <div className="mx-auto max-w-screen-md">
           <div className="mb-4">
             <Link
@@ -57,7 +57,8 @@ export const GuidesLayout = ({ layoutProps, children }: GuidesLayoutProps) => {
         </div>
       </header>
       <div className="px-8">
-        <div className="max-w-8xl mx-auto w-full">{children}</div>
+        <div className="max-w-8xl mx-auto w-full py-8">{children}</div>
+        <Footer />
       </div>
     </main>
   )

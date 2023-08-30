@@ -1,4 +1,4 @@
-import React from 'react'
+import { Footer } from '@/components/footer'
 
 export interface FullPageLayoutProps {
   layoutProps: any
@@ -17,11 +17,7 @@ export const FullPageLayout = ({
       >
         {children}
       </main>
-      <footer className="max-w-8xl mx-auto border-t border-black/5 px-8 pb-16 pt-8 dark:border-white/5">
-        <p className="text-xs text-zinc-600 dark:text-zinc-500">
-          Copyright &copy; {new Date().getFullYear()} Blutui.
-        </p>
-      </footer>
+      <Footer />
     </>
   )
 }
