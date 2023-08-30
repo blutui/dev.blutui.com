@@ -12,7 +12,7 @@ function generateID(
   return children
     .filter((child: any) => typeof child === 'string')
     .join(' ')
-    .replace(/[?]/g, '')
+    .replace(/[^A-Za-z0-9 -]/g, '')
     .replace(/\s+/g, '-')
     .replace(/\//g, '-')
     .toLowerCase()
