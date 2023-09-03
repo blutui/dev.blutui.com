@@ -7,7 +7,7 @@ Blutui IntelliSense enhances the Blutui development experience. This is by provi
 
 ![Autocomplete](https://cdn.blutui.com/uploads/assets/Intellisense/varible-getting.png)
 
-Search for `blutui` on the Visual Studio Code Extension Marketplace or [click here](https://marketplace.visualstudio.com/items?itemName=blutui.intellisense)
+Search for `blutui` on the [Visual Studio Code Extension Marketplace](https://marketplace.visualstudio.com/items?itemName=blutui.intellisense)
 
 ## Key Features
 
