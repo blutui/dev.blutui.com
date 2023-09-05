@@ -1,15 +1,17 @@
 import Head from 'next/head'
+import { useRouter } from 'next/router'
 import { Inter } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/react'
 
-import { DocumentationLayout } from '@/layouts/DocumentationLayout'
-import { FullPageLayout } from '@/layouts/FullPageLayout'
+import { DocumentationLayout } from '@/layouts/documentation'
+import { FullPageLayout } from '@/layouts/full-page'
+import { GuidesLayout } from '@/layouts/guides'
 
-import { Header } from '@/components/Header'
-import { SearchProvider } from '@/components/Search'
-import { ArticleContext, ArticleContextT } from '@/context/ArticleContext'
+import { Header } from '@/components/header'
+import { SearchProvider } from '@/components/search'
+import { ArticleContext, ArticleContextT } from '@/context/article-context'
 
-import { collectHeadings } from '@/utils/collectHeadings'
+import { collectHeadings } from '@/utils/collect-headings'
 
 // Required for custom 'canvas' syntax highlighting...
 import 'prismjs'
@@ -61,9 +63,20 @@ const Blutui = ({ Component, pageProps }: BlutuiAppProps<BlutuiProps>) => {
     }
   }
 
+  const { pathname } = useRouter()
+
   const hasToc = markdoc?.frontmatter.toc ?? true
   const toc = hasToc && markdoc?.content ? collectHeadings(markdoc.content) : []
-  const markdownLayout = markdoc?.frontmatter.fullWidth ? FullPageLayout : null
+
+  let markdownLayout
+
+  if (markdoc?.frontmatter.fullWidth) {
+    markdownLayout = FullPageLayout
+  } else if (pathname.startsWith('/guides/')) {
+    markdownLayout = GuidesLayout
+  } else {
+    markdownLayout = null
+  }
 
   const Layout =
     Component.layoutProps?.Layout || markdownLayout || DocumentationLayout

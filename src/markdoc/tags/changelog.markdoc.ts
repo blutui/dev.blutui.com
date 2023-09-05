@@ -1,5 +1,5 @@
 import { Config, Schema } from '@markdoc/markdoc'
-import { Changelog } from '@/components/Changelog'
+import { Changelog } from '@/components/changelog'
 
 export const changelog: Schema<Config, typeof Changelog> = {
   render: Changelog,

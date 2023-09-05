@@ -1,7 +1,6 @@
 ---
 title: 'Changelog'
-description: 
-toc: false
+description: 'A continuous stream of changes made to the Blutui platform.'
 ---
 
 {% comment %}

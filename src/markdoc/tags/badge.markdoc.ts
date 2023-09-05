@@ -1,5 +1,5 @@
 import { Config, Schema } from '@markdoc/markdoc'
-import { Badge } from '@/components/Badge'
+import { Badge } from '@/components/badge'
 
 export const badge: Schema<Config, typeof Badge> = {
   render: Badge,

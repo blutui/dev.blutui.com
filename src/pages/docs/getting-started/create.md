@@ -178,7 +178,7 @@ Now that you can create complex collections, you might want to render each colle
 
 Add the following code in the **template** you set during the routing pattern creation process. The routing pattern template is a mix of a new page and a collection template:
 
-```canvas {% process=false %}
+```canvas {% process=false filename="pages/staff.html" %}
 {% extends 'templates/default' %}
 
 {# Set the staff collection to the collection variable #}
@@ -199,7 +199,7 @@ Now lets add a contact form on your site. The process of making a form is simila
 
 Now that your new form is created, lets add this form to your Canvas. At the top of the form template we want to [import](/docs/canvas/tags/import) `macros/form.html` into the `ui` variable, the file responsible for the markup and styling of your form inputs. We've created a form macro template to help you get started. You can find the code for the `macros/form.html` macro on [Gist](https://gist.github.com/jayan-blutui/228a410ebc3d0779011f019d0620ef1e). You can use the form macro like:
 
-```canvas {% process=false filename="macros/form.html" %}
+```canvas {% process=false filename="forms/contact.html" %}
 {% import 'macros/form' as ui %}
 
 {{ form_open() }}

@@ -1,1 +1,1 @@
-export type { NextPageWithCustomLayout } from './customLayout'
+export type { NextPageWithCustomLayout } from './custom-layout'

@@ -1,5 +1,5 @@
 import { Config, Schema } from '@markdoc/markdoc'
-import { Card } from '@/components/Card'
+import { Card } from '@/components/card'
 
 export const card: Schema<Config, typeof Card> = {
   render: Card,

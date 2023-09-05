@@ -1,5 +1,5 @@
 import { Config, Schema } from '@markdoc/markdoc'
-import { AppLink } from '@/components/AppLink'
+import { AppLink } from '@/components/app-link'
 
 export const link: Schema<Config, typeof AppLink> = {
   render: AppLink,

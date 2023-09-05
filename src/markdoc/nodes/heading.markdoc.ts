@@ -1,5 +1,5 @@
 import { Tag, Config, Schema, RenderableTreeNode } from '@markdoc/markdoc'
-import { Heading } from '@/components/Heading'
+import { Heading } from '@/components/heading'
 
 function generateID(
   children: RenderableTreeNode[],
@@ -12,7 +12,7 @@ function generateID(
   return children
     .filter((child: any) => typeof child === 'string')
     .join(' ')
-    .replace(/[?]/g, '')
+    .replace(/[^A-Za-z0-9 -]/g, '')
     .replace(/\s+/g, '-')
     .replace(/\//g, '-')
     .toLowerCase()

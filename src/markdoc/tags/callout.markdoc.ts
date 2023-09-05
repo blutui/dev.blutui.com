@@ -1,5 +1,5 @@
 import { Config, Schema } from '@markdoc/markdoc'
-import { Callout } from '@/components/Callout'
+import { Callout } from '@/components/callout'
 
 export const callout: Schema<Config, typeof Callout> = {
   render: Callout,

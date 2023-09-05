@@ -38,11 +38,14 @@ export default {
       maxWidth: {
         '8xl': '90rem',
       },
+      inset: {
+        header: '6.8125rem',
+      },
       maxHeight: {
-        sidebar: 'calc(100vh - 3.75rem)',
+        sidebar: 'calc(100vh - 6.8125rem)',
       },
       height: {
-        sidebar: 'calc(100vh - 3.75rem)',
+        sidebar: 'calc(100vh - 6.8125rem)',
       },
       typography: (theme: (arg0: string) => any[]) => ({
         DEFAULT: {

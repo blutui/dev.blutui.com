@@ -1,10 +1,12 @@
-import Link from 'next/link'
 import React from 'react'
+import cn from 'clsx'
+import Link from 'next/link'
+import { useRouter } from 'next/router'
 
-import { useActionKey } from '@/hooks/useActionKey'
+import { useActionKey } from '@/utils/use-action-key'
 
-import { Logo } from './Logo'
-import { SearchButton } from './Search'
+import { Logo } from '@/components/logo'
+import { SearchButton } from '@/components/search'
 
 export interface HeaderProps {
   children?: React.ReactNode
@@ -15,7 +17,7 @@ export const Header = ({ children }: HeaderProps) => {
 
   return (
     <header className="sticky top-0 z-10 flex-none border-b border-black/5 bg-zinc-50/70 backdrop-blur backdrop-saturate-200 dark:border-white/5 dark:bg-zinc-900/70">
-      <div className="flex h-[3.75rem] items-center justify-between space-x-8 px-8">
+      <div className="max-w-8xl mx-auto flex h-[3.75rem] items-center justify-between space-x-8 px-8">
         <div className="flex flex-shrink-0 items-center">
           <Link href="/" className="w-72">
             <span className="sr-only">Blutui Developers home page</span>
@@ -119,6 +121,35 @@ export const Header = ({ children }: HeaderProps) => {
           </div>
         </div>
       </div>
+      <div className="max-w-8xl mx-auto hidden h-12 space-x-6 border-t border-black/5 px-8 text-white dark:border-white/5 lg:flex">
+        <HeaderNavigationItem name="Documentation" href="/docs" />
+        <HeaderNavigationItem name="Guides" href="/guides" />
+        <HeaderNavigationItem name="Changelog" href="/changelog" />
+      </div>
     </header>
+  )
+}
+
+interface HeaderNavigationItemProps {
+  name: string
+  href: string
+}
+
+function HeaderNavigationItem({ name, href }: HeaderNavigationItemProps) {
+  const { pathname: route } = useRouter()
+  const active = href && [route, route + '/'].some((r) => r.includes(href))
+
+  return (
+    <Link
+      href={href}
+      className={cn(
+        '-mb-px py-3.5 text-sm font-semibold tracking-tight transition',
+        active
+          ? 'text-han-400 dark:text-han-100 border-han-200 dark:border-han-300 border-b-2'
+          : 'border-zinc-300 text-zinc-500 hover:border-b-2 dark:border-zinc-500 dark:text-zinc-400'
+      )}
+    >
+      {name}
+    </Link>
   )
 }

@@ -23,7 +23,7 @@
 }
 
 .DocSearch-SearchBar {
-  @apply z-[1] py-0 px-4 flex-none relative flex items-center border-b border-gray-100;
+  @apply z-[1] py-0 px-4 flex-none relative flex items-center border-b border-zinc-100;
 }
 
 .DocSearch-Form {
@@ -52,7 +52,7 @@
 }
 
 .DocSearch-Hit > a {
-  @apply relative text-sm border-b border-gray-100;
+  @apply relative text-sm border-b border-zinc-100;
 }
 
 .DocSearch-Hit--Result {
@@ -70,7 +70,7 @@
 }
 
 .DocSearch-Input {
-  @apply appearance-none bg-transparent h-14 text-base text-gray-900 ml-3 mr-4 flex-auto min-w-0;
+  @apply appearance-none bg-transparent h-14 text-base text-zinc-900 ml-3 mr-4 flex-auto min-w-0;
 }
 
 @screen sm {
@@ -103,7 +103,7 @@
 }
 
 .DocSearch-Hit-source {
-  @apply leading-6 font-semibold text-gray-900 pt-10 mt-0 mb-4 mx-6 text-sm;
+  @apply leading-6 font-semibold text-zinc-900 pt-10 mt-0 mb-4 mx-6 text-sm;
 }
 
 .DocSearch-Hits:first-child .DocSearch-Hit-source {
@@ -135,7 +135,7 @@
 }
 
 .DocSearch-Hit-path {
-  @apply self-start text-xs leading-5 font-semibold text-gray-700 bg-gray-200 rounded-full py-0 px-2;
+  @apply self-start text-xs leading-5 font-semibold text-zinc-700 bg-zinc-200 rounded-full py-0 px-2;
 }
 
 .DocSearch-Hit[aria-selected='true'] .DocSearch-Hit-icon {
@@ -143,7 +143,7 @@
 }
 
 .DocSearch-Hit-title {
-  @apply text-gray-700 leading-6 truncate;
+  @apply text-zinc-700 leading-6 truncate;
 }
 
 .DocSearch-Hit-title + .DocSearch-Hit-path {
@@ -175,7 +175,7 @@
 }
 
 .DocSearch-Hit-action path {
-  @apply stroke-2 stroke-gray-400;
+  @apply stroke-2 stroke-zinc-400;
 }
 
 .DocSearch-Hit[aria-selected='true'] .DocSearch-Hit-action path {
@@ -195,7 +195,7 @@
 }
 
 .DocSearch-Hit:first-child > a {
-  @apply border-t border-gray-100;
+  @apply border-t border-zinc-100;
 }
 
 .DocSearch-Hit--Result {
@@ -207,15 +207,15 @@
 }
 
 .DocSearch-Hit--Result {
-  @apply bg-gray-50 rounded-lg;
+  @apply bg-zinc-50 rounded-lg;
 }
 
 .DocSearch-Hit[aria-selected='true'] > a {
-  @apply bg-gray-100;
+  @apply bg-zinc-100;
 }
 
 .DocSearch-Hit[aria-selected='true'] > a .DocSearch-Hit-action path {
-  @apply stroke-gray-500;
+  @apply stroke-zinc-500;
 }
 
 .DocSearch-Hit[aria-selected='true'] .DocSearch-Hit--Result {
@@ -236,7 +236,7 @@
 }
 
 .DocSearch-Footer {
-  @apply flex-none flex justify-end border-t border-gray-100 py-4 px-6;
+  @apply flex-none flex justify-end border-t border-zinc-100 py-4 px-6;
 }
 
 .DocSearch-Commands {
@@ -244,7 +244,7 @@
 }
 
 .DocSearch-Logo a {
-  @apply flex items-center text-gray-400 text-xs font-medium;
+  @apply flex items-center text-zinc-400 text-xs font-medium;
 }
 
 .DocSearch-Logo svg {
@@ -266,11 +266,11 @@
 }
 
 .DocSearch-Title strong {
-  @apply text-gray-900 font-normal;
+  @apply text-zinc-900 font-normal;
 }
 
 .DocSearch-StartScreen .DocSearch-Help {
-  @apply text-center text-gray-400 py-16 px-6;
+  @apply text-center text-zinc-400 py-16 px-6;
 }
 
 .DocSearch-NoResults {
@@ -278,19 +278,19 @@
 }
 
 .DocSearch-NoResults .DocSearch-Title {
-  @apply text-center text-gray-400;
+  @apply text-center text-zinc-400;
 }
 
 .DocSearch-NoResults-Prefill-List .DocSearch-Help {
-  @apply text-sm leading-6 font-semibold mb-3 text-gray-900;
+  @apply text-sm leading-6 font-semibold mb-3 text-zinc-900;
 }
 
 .DocSearch-NoResults-Prefill-List ul {
-  @apply rounded-lg bg-white border border-gray-200 overflow-hidden;
+  @apply rounded-lg bg-white border border-zinc-200 overflow-hidden;
 }
 
 .DocSearch-NoResults-Prefill-List button {
-  @apply py-2 px-3 block w-full text-left text-sm text-gray-700;
+  @apply py-2 px-3 block w-full text-left text-sm text-zinc-700;
 }
 
 .DocSearch-Hit-action [title='Save this search'],
@@ -300,9 +300,9 @@
 }
 
 .DocSearch-NoResults-Prefill-List li + li button {
-  @apply border-t border-gray-200;
+  @apply border-t border-zinc-200;
 }
 
 .DocSearch-Hit-action + .DocSearch-Hit-action {
-  @apply ml-3 pl-3 border-l border-gray-200;
+  @apply ml-3 pl-3 border-l border-zinc-200;
 }
