@@ -11,4 +11,8 @@ Run the following command from your Blutui project to start watching for file ch
 courier watch
 ```
 
-Your project should should automatically open in your default web browser, ready to preview.
+{% callout type="check" %}
+Your project should should automatically open in a browser window for [https://localhost:8080](https://localhost:8080).
+{% /callout %}
+
+To stop the developement server, press `Ctrl + C` on your keyboard to end the process.

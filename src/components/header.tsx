@@ -143,7 +143,7 @@ function HeaderNavigationItem({ name, href }: HeaderNavigationItemProps) {
     <Link
       href={href}
       className={cn(
-        '-mb-px py-3.5 text-sm font-semibold tracking-tight transition',
+        '-mb-px py-3.5 text-sm font-semibold transition',
         active
           ? 'text-han-400 dark:text-han-100 border-han-200 dark:border-han-300 border-b-2'
           : 'border-zinc-300 text-zinc-500 hover:border-b-2 dark:border-zinc-500 dark:text-zinc-400'

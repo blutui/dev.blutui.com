@@ -66,8 +66,18 @@ export default {
               borderBottomWidth: '2px',
             },
             code: {
-              fontWeight: theme('fontWeight.medium'),
+              color: theme('colors.han.500'),
+              padding: '1px 2px',
+              backgroundColor: theme('colors.han.50'),
+              borderRadius: '4px',
+              fontWeight: theme('fontWeight.semiBold'),
               fontVariantLigatures: 'none',
+            },
+            'code::before': {
+              content: '',
+            },
+            'code::after': {
+              content: '',
             },
             pre: {
               color: theme('colors.zinc.50'),
@@ -108,7 +118,8 @@ export default {
               color: theme('colors.zinc.200'),
             },
             code: {
-              color: theme('colors.zinc.200'),
+              color: theme('colors.han.200'),
+              backgroundColor: theme('colors.han.900'),
             },
             thead: {
               color: theme('colors.zinc.300'),
