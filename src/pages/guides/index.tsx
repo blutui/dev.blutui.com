@@ -35,7 +35,7 @@ const GuideItem = ({ item }: { item: GuidesNavigationItem }) => {
           {item.tags.map((tag, i) => (
             <span
               key={i}
-              className="rounded-md px-2 py-1 text-xs font-medium uppercase text-zinc-500 ring-1 ring-zinc-200 dark:text-zinc-500 dark:ring-zinc-600"
+              className="rounded-md px-2 py-1 font-mono text-xs font-medium uppercase text-zinc-500 ring-1 ring-zinc-200 dark:text-zinc-500 dark:ring-zinc-600"
             >
               {tag}
             </span>

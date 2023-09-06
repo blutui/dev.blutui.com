@@ -6,10 +6,14 @@ import { useActiveId } from '@/utils/use-active-id'
 import type { Section } from '@/utils/collect-headings'
 
 export interface TableOfContentsProps {
+  title?: string
   toc: Section[]
 }
 
-export const TableOfContents = ({ toc }: TableOfContentsProps) => {
+export const TableOfContents = ({
+  title = 'On this page',
+  toc,
+}: TableOfContentsProps) => {
   const items = toc.filter(
     (item) => item.id && (item.level === 2 || item.level === 3)
   )
@@ -22,7 +26,7 @@ export const TableOfContents = ({ toc }: TableOfContentsProps) => {
         {items.length >= 1 && (
           <>
             <h5 className="mb-4 text-sm font-semibold text-zinc-900 dark:text-zinc-200">
-              On this page
+              {title}
             </h5>
             <ul className="text-sm text-zinc-600">
               {items.map((item) => {
