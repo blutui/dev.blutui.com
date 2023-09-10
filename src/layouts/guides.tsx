@@ -3,16 +3,23 @@ import Link from 'next/link'
 
 import { useArticleContext } from '@/context/article-context'
 import { getGuideBySlug } from '@/navigation/guides'
+import { Section } from '@/utils/collect-headings'
 
 import { ArrowLongLeft } from '@/components/icons/arrow-long-left'
 import { Footer } from '@/components/footer'
+import { TableOfContents } from '@/components/table-of-contents'
 
 export interface GuidesLayoutProps {
   layoutProps: any
+  toc: Section[]
   children: React.ReactNode
 }
 
-export const GuidesLayout = ({ layoutProps, children }: GuidesLayoutProps) => {
+export const GuidesLayout = ({
+  layoutProps,
+  toc,
+  children,
+}: GuidesLayoutProps) => {
   const { pathname } = useRouter()
   const articleContext = useArticleContext()
 
@@ -25,8 +32,8 @@ export const GuidesLayout = ({ layoutProps, children }: GuidesLayoutProps) => {
 
   return (
     <main>
-      <header className="border-b px-8 py-8 dark:border-zinc-800">
-        <div className="mx-auto max-w-screen-md">
+      <header className="border-b py-8 dark:border-zinc-800">
+        <div className="max-w-8xl mx-auto px-8">
           <div className="mb-4">
             <Link
               href="/guides"
@@ -56,10 +63,13 @@ export const GuidesLayout = ({ layoutProps, children }: GuidesLayoutProps) => {
           )}
         </div>
       </header>
-      <div className="px-8">
-        <div className="max-w-8xl mx-auto w-full py-8">{children}</div>
-        <Footer />
+      <div className="max-w-8xl mx-auto w-full px-8 py-8">
+        <div className="flex gap-8">
+          <TableOfContents title="In this guide" toc={toc} />
+          <div>{children}</div>
+        </div>
       </div>
+      <Footer />
     </main>
   )
 }
