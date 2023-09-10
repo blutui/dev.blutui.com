@@ -26,7 +26,7 @@ export const Header = ({ children }: HeaderProps) => {
           <span className="-ml-px hidden h-9 border-l border-black/5 dark:border-white/5 lg:block"></span>
         </div>
         <div className="flex flex-auto items-center space-x-6">
-          <SearchButton className="hidden h-9 w-full rounded-lg bg-zinc-900/10 px-3.5 py-1.5 text-left font-medium tracking-tight text-black/60 transition hover:bg-black/20 dark:bg-zinc-100/10 dark:text-white/60 dark:hover:bg-white/20 lg:block lg:max-w-sm">
+          <SearchButton className="hidden h-9 w-full rounded-lg bg-zinc-900/10 px-3.5 py-1.5 text-left font-medium text-black/60 transition hover:bg-black/20 dark:bg-zinc-100/10 dark:text-white/60 dark:hover:bg-white/20 lg:block lg:max-w-sm">
             <div className="flex items-center gap-2">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -56,7 +56,7 @@ export const Header = ({ children }: HeaderProps) => {
           <ul className="hidden items-center space-x-6 lg:flex">
             <li>
               <a
-                className="flex items-center space-x-1 font-semibold tracking-tight text-zinc-500 transition hover:text-zinc-600 dark:text-zinc-200 dark:hover:text-zinc-500"
+                className="flex items-center space-x-1 font-semibold text-zinc-500 transition hover:text-zinc-600 dark:text-zinc-200 dark:hover:text-zinc-500"
                 href="https://help.blutui.com"
                 target="_blank"
                 rel="noreferrer"
@@ -78,7 +78,7 @@ export const Header = ({ children }: HeaderProps) => {
             </li>
             <li>
               <a
-                className="flex items-center space-x-1 font-semibold tracking-tight text-zinc-500 transition hover:text-zinc-600 dark:text-zinc-200 dark:hover:text-zinc-500"
+                className="flex items-center space-x-1 font-semibold text-zinc-500 transition hover:text-zinc-600 dark:text-zinc-200 dark:hover:text-zinc-500"
                 href="https://blutui.com/app"
                 target="_blank"
                 rel="noreferrer"
@@ -143,7 +143,7 @@ function HeaderNavigationItem({ name, href }: HeaderNavigationItemProps) {
     <Link
       href={href}
       className={cn(
-        '-mb-px py-3.5 text-sm font-semibold transition',
+        '-mb-px py-3.5 text-sm font-medium transition',
         active
           ? 'text-han-400 dark:text-han-100 border-han-200 dark:border-han-300 border-b-2'
           : 'border-zinc-300 text-zinc-500 hover:border-b-2 dark:border-zinc-500 dark:text-zinc-400'

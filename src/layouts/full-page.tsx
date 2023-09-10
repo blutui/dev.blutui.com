@@ -13,7 +13,7 @@ export const FullPageLayout = ({
     <>
       <main
         id="content-wrapper"
-        className="flex w-full flex-1 items-start space-x-6 px-8 py-10"
+        className="flex w-full flex-1 items-start space-x-6 py-10"
       >
         {children}
       </main>

@@ -25,7 +25,7 @@ const GuideItem = ({ item }: { item: GuidesNavigationItem }) => {
             {formattedDate}
           </span>
         </div>
-        <h4 className="mb-2 text-xl font-bold leading-6 tracking-tight text-zinc-700 dark:text-white">
+        <h4 className="mb-2 text-xl font-bold leading-6 text-zinc-700 dark:text-white">
           {item.title}
         </h4>
         <div className="text-zinc-500 dark:text-zinc-400">
@@ -71,7 +71,7 @@ export default function Guides() {
     <div className="w-full">
       <div className="max-w-8xl mx-auto w-full px-8">
         <div className="mb-6 pb-6">
-          <h1 className="text-3xl font-bold tracking-tight text-zinc-900 dark:text-zinc-200 lg:text-4xl">
+          <h1 className="text-3xl font-bold text-zinc-900 dark:text-zinc-200 lg:text-4xl">
             Guides
           </h1>
           <p className="mt-2 text-base text-zinc-600 dark:text-zinc-400 lg:text-lg">
@@ -95,7 +95,7 @@ export default function Guides() {
 
           {hasMorePages && (
             <button
-              className="w-full rounded-lg border px-4 py-2 text-sm font-semibold tracking-tight text-zinc-500 transition hover:bg-zinc-100 dark:border-zinc-600 dark:text-white dark:hover:bg-zinc-800"
+              className="w-full rounded-lg border px-4 py-2 text-sm font-semibold text-zinc-500 transition hover:bg-zinc-100 dark:border-zinc-600 dark:text-white dark:hover:bg-zinc-800"
               onClick={loadMore}
             >
               Show more guides

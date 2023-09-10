@@ -43,12 +43,12 @@ export const GuidesLayout = ({
               Back to guides
             </Link>
           </div>
-          <h1 className="text-3xl font-bold tracking-tight text-zinc-900 dark:text-zinc-200 lg:text-4xl">
+          <h1 className="text-3xl font-bold text-zinc-900 dark:text-zinc-200 lg:text-4xl">
             {title}
           </h1>
           {guide && (
             <div className="mt-6 flex items-center gap-4 text-zinc-500 dark:text-zinc-400">
-              <span className="text-sm font-semibold">
+              <span className="text-sm font-medium">
                 {guide.authors.join(', ')}
               </span>
               <span>—</span>

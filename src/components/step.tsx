@@ -26,9 +26,7 @@ export function Step({ title, position, children }: StepProps) {
         className={cn('relative md:flex-1', position === 1 ? 'pt-0' : 'pt-6')}
       >
         <div className="not-prose mb-4 mt-2">
-          <h3 className="text-lg font-semibold tracking-tight dark:text-zinc-300">
-            {title}
-          </h3>
+          <h3 className="text-lg font-semibold dark:text-zinc-200">{title}</h3>
         </div>
         <div className="prose-p:my-4 prose-p:last:mb-0">{children}</div>
       </div>

@@ -45,7 +45,7 @@ export const DocumentationLayout = ({
           <div className="w-full min-w-0 max-w-full">
             <header id="header" className="mx-auto max-w-screen-md">
               {title && (
-                <h1 className="text-3xl font-bold tracking-tight text-zinc-900 dark:text-zinc-200 lg:text-4xl">
+                <h1 className="text-3xl font-bold text-zinc-900 dark:text-zinc-200 lg:text-4xl">
                   {title}
                 </h1>
               )}

@@ -31,7 +31,7 @@ export const Badge = ({ status, children }: BadgeProps) => {
   return (
     <span
       className={cn(
-        'inline-flex items-center rounded-full px-3 py-0.5 text-sm font-semibold tracking-tight ring-1',
+        'inline-flex items-center rounded-full px-3 py-0.5 text-sm font-semibold ring-1',
         classes[status]
       )}
     >

@@ -16,24 +16,24 @@ import type { NextPageWithCustomLayout } from '@/types'
 const Home: NextPageWithCustomLayout = () => {
   return (
     <div className="w-full flex-grow">
-      <div className="relative -mx-8 -mt-[6.25rem] overflow-hidden pb-6 pt-[6.25rem] md:pb-10">
+      <div className="relative -mt-[6.25rem] overflow-hidden pb-6 pt-[6.25rem] md:pb-10">
         <div className="max-w-8xl mx-auto flex items-center">
-          <div className="w-full px-8 py-6 text-center md:py-10">
+          <div className="w-full px-8 py-6 md:py-10">
             <p className="mb-2 text-xs uppercase tracking-widest text-zinc-500 dark:text-white/50">
               Developer Documentation
             </p>
-            <h1 className="text-3xl font-bold tracking-tight text-zinc-800 dark:text-white lg:text-5xl">
+            <h1 className="text-3xl font-bold text-zinc-800 dark:text-white lg:text-5xl">
               Welcome to Blutui
             </h1>
-            <p className="mb-4 mt-2 text-lg text-zinc-800/80 dark:text-white/80 lg:text-xl">
+            <p className="mb-4 mt-2 text-lg text-zinc-800/80 dark:text-white/70 lg:text-xl">
               Explore our guides and documentation on using Blutui.
             </p>
-            <div className="flex flex-col items-center justify-center gap-4 lg:flex-row">
+            <div className="flex flex-col items-center gap-4 lg:flex-row">
               <Button href="/docs/getting-started/create">Get started</Button>
               <span className="hidden text-sm font-semibold uppercase text-zinc-800/40 dark:text-white/40 lg:block">
                 or
               </span>
-              <SearchButton className="dark:highlight-white/10 inline-flex h-10 w-full max-w-xs select-none items-center whitespace-nowrap rounded-lg bg-zinc-900/10 px-3 text-base font-semibold tracking-tight text-zinc-700 transition hover:bg-zinc-900/20 dark:bg-white/20 dark:text-white dark:hover:bg-white/10">
+              <SearchButton className="inline-flex h-10 w-full max-w-xs select-none items-center whitespace-nowrap rounded-lg bg-zinc-900/10 px-3 text-base font-medium text-zinc-700 transition hover:bg-zinc-900/20 dark:bg-white/20 dark:text-zinc-300 dark:hover:bg-white/10">
                 <div className="flex items-center gap-2">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -54,7 +54,7 @@ const Home: NextPageWithCustomLayout = () => {
           </div>
         </div>
       </div>
-      <div className="mx-auto mt-6 grid max-w-screen-lg gap-6 md:grid-cols-6">
+      <div className="max-w-8xl mx-auto mt-6 grid gap-6 px-8 md:grid-cols-6">
         <div className="md:col-span-3">
           <Card
             title="Read the docs"
