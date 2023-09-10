@@ -55,7 +55,7 @@ export default {
               letterSpacing: '-0.025em',
             },
             'h2, h3, h4': {
-              'scroll-margin-top': '6.25rem',
+              'scroll-margin-top': '8.5rem',
             },
             a: {
               fontWeight: theme('fontWeight.semibold'),
