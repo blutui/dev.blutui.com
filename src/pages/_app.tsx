@@ -1,6 +1,6 @@
 import Head from 'next/head'
 import { useRouter } from 'next/router'
-import { Inter } from 'next/font/google'
+import { Manrope } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/react'
 
 import { DocumentationLayout } from '@/layouts/documentation'
@@ -29,7 +29,7 @@ type BlutuiAppProps<P = {}> = Omit<AppProps<P>, 'Component'> & {
 
 export type BlutuiProps = MarkdocNextJsPageProps
 
-const inter = Inter({
+const manrope = Manrope({
   weight: ['400', '500', '600', '700'],
   subsets: ['latin'],
   display: 'optional',
@@ -111,7 +111,7 @@ const Blutui = ({ Component, pageProps }: BlutuiAppProps<BlutuiProps>) => {
           <Layout {...layoutProps}>
             <style jsx global>{`
               html {
-                font-family: ${inter.style.fontFamily};
+                font-family: ${manrope.style.fontFamily};
               }
             `}</style>
             <Component {...pageProps} />

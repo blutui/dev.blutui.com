@@ -11,7 +11,7 @@ export const Button = ({ href, children }: ButtonProps) => {
   let buttonMarkup
 
   const classes =
-    'bg-han-500 inline-flex cursor-pointer items-center justify-center rounded-lg px-4 py-2 text-base font-semibold tracking-tight text-white shadow-sm hover:bg-han-400 transition'
+    'bg-han-500 inline-flex cursor-pointer items-center justify-center rounded-full px-6 py-2 text-base font-semibold text-white shadow-sm hover:bg-han-400 transition'
 
   if (href) {
     buttonMarkup = (

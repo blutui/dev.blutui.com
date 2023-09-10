@@ -18,7 +18,7 @@ const Folder = ({ item }: { item: Item }) => {
 
   return (
     <li className={cn('flex flex-col gap-1', { active })}>
-      <h2 className="px-3 py-1 text-sm font-semibold tracking-tight text-zinc-800 dark:text-white">
+      <h2 className="px-3 py-1 text-sm font-semibold text-zinc-800 dark:text-white">
         {item.title}
       </h2>
       {Array.isArray(item.items) ? (
