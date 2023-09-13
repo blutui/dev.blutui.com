@@ -70,7 +70,7 @@ export default function Guides() {
   return (
     <div className="w-full">
       <div className="max-w-8xl mx-auto w-full px-8">
-        <div className="mb-6 pb-6">
+        <header id="header" className="mb-6 pb-6">
           <h1 className="text-3xl font-bold text-zinc-900 dark:text-zinc-200 lg:text-4xl">
             Guides
           </h1>
@@ -78,7 +78,7 @@ export default function Guides() {
             Everything you need to know about Blutui, from getting started to
             advanced use cases.
           </p>
-        </div>
+        </header>
         <div>
           <div className="mb-6">{countMarkup}</div>
 
