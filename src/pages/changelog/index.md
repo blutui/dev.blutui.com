@@ -7,6 +7,36 @@ description: 'A continuous stream of changes made to the Blutui platform.'
 Please use the ISO standard date and time format.
 {% /comment %}
 
+{% changelog date="2023-09-12" %}
+{% badge status="success" %}Added{% /badge %}
+
+- Added the ability to click an entry row to edit the collection entry in the **Project Dashboard**.
+- Added the ability to view "Pending invitations" in the **Project Dashboard** user settings view.
+
+{% badge status="attention" %}Fixed{% /badge %}
+
+- Fixed search links in the **Project Dashboard**.
+{% /changelog %}
+
+{% changelog date="2023-09-06" %}
+{% badge status="success" %}Added{% /badge %}
+
+- Added webhook support to projects. The first release of webhooks includes the following events:
+
+  - `form.created`
+  - `form.deleted`
+  - `form.updated`
+  - `form.submission.created`
+  - `form.submission.deleted`
+  - `post.created`
+
+- Added updated settings UI in the **Project Dashboard**. It's now easier to see all available settings for a project.
+
+{% badge status="attention" %}Fixed{% /badge %}
+
+- Fixed help text for code injection settings view in the **Project Dashboard**.
+{% /changelog %}
+
 {% changelog date="2023-07-28" %}
 {% badge status="attention" %}Fixed{% /badge %}
 
