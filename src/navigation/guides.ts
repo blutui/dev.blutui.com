@@ -18,15 +18,16 @@ export const getGuideBySlug = (slug: string) => {
 }
 
 export const guidesNavigation: GuidesNavigationItem[] = [
-  // {
-  //   title: 'How do I send form submissions to Zapier?',
-  //   authors: ['Jayan Ratna'],
-  //   description:
-  //     'Information on how to send form submissions from a Blutui project to Zapier.',
-  //   slug: 'send-form-submissions-to-zapier',
-  //   tags: ['Integrations', 'Webhooks'],
-  //   createdAt: '2023-08-30',
-  // },
+  {
+    featured: true,
+    title: 'How do I send form submissions to Zapier?',
+    authors: ['Jayan Ratna'],
+    description:
+      'Information on how to send form submissions from a Blutui project to Zapier.',
+    slug: 'send-form-submissions-to-zapier',
+    tags: ['Integrations', 'Webhooks'],
+    createdAt: '2023-09-15',
+  },
   // {
   //   title: 'How do I send form submissions to Make / Integromat?',
   //   authors: ['Jayan Ratna'],
