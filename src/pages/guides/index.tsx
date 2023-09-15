@@ -17,7 +17,7 @@ const GuideItem = ({ item }: { item: GuidesNavigationItem }) => {
       <div className="flex w-full flex-col rounded-lg border p-6 transition hover:bg-zinc-100 dark:border-zinc-700 dark:hover:bg-zinc-800">
         <div className="mb-4 flex items-center gap-4">
           {item.featured && (
-            <span className="dark:bg-han-500/30 ring-han-300/50 bg-han-500/10 text-han-600 dark:text-han-100 inline-flex rounded-full px-3.5 py-1 text-xs font-semibold uppercase tracking-widest ring-1">
+            <span className="inline-flex rounded-full bg-han-500/10 px-3.5 py-1 text-xs font-semibold uppercase tracking-widest text-han-600 ring-1 ring-han-300/50 dark:bg-han-500/30 dark:text-han-100">
               Featured
             </span>
           )}
@@ -25,9 +25,11 @@ const GuideItem = ({ item }: { item: GuidesNavigationItem }) => {
             {formattedDate}
           </span>
         </div>
-        <h4 className="mb-2 text-xl font-bold leading-6 text-zinc-700 dark:text-white">
-          {item.title}
-        </h4>
+        <Link href={`/guides/${item.slug}`}>
+          <h2 className="mb-2 text-xl font-bold leading-6 text-zinc-700 dark:text-white">
+            {item.title}
+          </h2>
+        </Link>
         <div className="text-zinc-500 dark:text-zinc-400">
           <p>{item.description}</p>
         </div>
@@ -69,7 +71,7 @@ export default function Guides() {
 
   return (
     <div className="w-full">
-      <div className="max-w-8xl mx-auto w-full px-8">
+      <div className="mx-auto w-full max-w-8xl px-8">
         <header id="header" className="mb-6 pb-6">
           <h1 className="text-3xl font-bold text-zinc-900 dark:text-zinc-200 lg:text-4xl">
             Guides
