@@ -1,4 +1,10 @@
-export const Tags = ['Integrations', 'Webhooks', 'Courier'] as const
+export const Tags = [
+  'Courier',
+  'Forms',
+  'Integrations',
+  'Security',
+  'Webhooks',
+] as const
 
 export const Authors = ['Jayan Ratna', 'Ruslan Courtman'] as const
 
@@ -18,6 +24,14 @@ export const getGuideBySlug = (slug: string) => {
 }
 
 export const guidesNavigation: GuidesNavigationItem[] = [
+  {
+    title: 'How do I add reCAPTCHA v2 to a form?',
+    authors: ['Ruslan Courtman'],
+    description: 'Learn how to protect your forms with reCAPTCHA v2.',
+    slug: 'add-recaptcha-2-to-a-form',
+    tags: ['Forms', 'Security'],
+    createdAt: '2023-09-15',
+  },
   // {
   //   title: 'How do I send form submissions to Zapier?',
   //   authors: ['Jayan Ratna'],
