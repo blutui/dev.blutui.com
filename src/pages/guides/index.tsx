@@ -25,11 +25,9 @@ const GuideItem = ({ item }: { item: GuidesNavigationItem }) => {
             {formattedDate}
           </span>
         </div>
-        <Link href={`/guides/${item.slug}`}>
-          <h2 className="mb-2 text-xl font-bold leading-6 text-zinc-700 dark:text-white">
-            {item.title}
-          </h2>
-        </Link>
+        <h2 className="mb-2 text-xl font-bold leading-6 text-zinc-700 dark:text-white">
+          {item.title}
+        </h2>
         <div className="text-zinc-500 dark:text-zinc-400">
           <p>{item.description}</p>
         </div>
