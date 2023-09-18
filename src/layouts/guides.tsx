@@ -32,7 +32,7 @@ export const GuidesLayout = ({
 
   return (
     <main>
-      <header className="border-b py-8 dark:border-zinc-800">
+      <header id="header" className="border-b py-8 dark:border-zinc-800">
         <div className="mx-auto max-w-8xl px-8">
           <div className="mb-4">
             <Link
@@ -66,7 +66,12 @@ export const GuidesLayout = ({
       <div className="mx-auto w-full max-w-8xl px-8 py-8">
         <div className="flex gap-8">
           <TableOfContents title="In this guide" toc={toc} />
-          <div className="w-full md:max-w-screen-md">{children}</div>
+          <div
+            id="content-wrapper"
+            className="content-wrapper w-full md:max-w-screen-md"
+          >
+            {children}
+          </div>
         </div>
       </div>
       <Footer />
