@@ -62,7 +62,7 @@ Within your `<form>` tag code, prior to the `submit` button, insert the followin
 Ensure the ID within `getElementById()` function matches the ID you assigned to your form.
 {% /step %}
 
-{% step title="Adjusting the submit button" position="2" %}
+{% step title="Adjusting the submit button" position="5" %}
 Modify your form's submit button to include reCAPTCHA v3 attributes:
 
 ```canvas
