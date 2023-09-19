@@ -10,8 +10,11 @@ export function Step({ title, position, children }: StepProps) {
   position = Number(position)
 
   return (
-    <div id={`step-${position}`} className="step md:flex">
-      <div className="not-prose relative flex-shrink-0 md:w-12 md:pr-12">
+    <div
+      id={`step-${position}`}
+      className="step grid-cols-[3rem_minmax(0,_1fr)] md:grid"
+    >
+      <div className="not-prose relative flex-shrink-0 md:w-12">
         <div className="absolute -bottom-2.5 -top-3 left-3.5 hidden w-px bg-zinc-200 dark:bg-zinc-800 md:top-2.5 md:block"></div>
         <div
           className={cn(
@@ -28,7 +31,7 @@ export function Step({ title, position, children }: StepProps) {
         <div className="not-prose mb-4 mt-2">
           <h3 className="text-lg font-semibold dark:text-zinc-200">{title}</h3>
         </div>
-        <div className="prose-p:my-4 prose-p:last:mb-0">{children}</div>
+        <div className="w-full prose-p:my-4 prose-p:last:mb-0">{children}</div>
       </div>
     </div>
   )

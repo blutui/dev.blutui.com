@@ -25,6 +25,14 @@ export const getGuideBySlug = (slug: string) => {
 
 export const guidesNavigation: GuidesNavigationItem[] = [
   {
+    title: 'How do I add reCAPTCHA v3 to a form?',
+    authors: ['Ruslan Courtman'],
+    description: 'Learn how to protect your forms with reCAPTCHA v3.',
+    slug: 'add-recaptcha-3-to-a-form',
+    tags: ['Forms', 'Security'],
+    createdAt: '2023-09-18',
+  },
+  {
     title: 'How do I add reCAPTCHA v2 to a form?',
     authors: ['Ruslan Courtman'],
     description: 'Learn how to protect your forms with reCAPTCHA v2.',

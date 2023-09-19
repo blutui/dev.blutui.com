@@ -49,8 +49,8 @@ const File = ({ item }: { item: Item }) => {
           className={cn(
             'flex cursor-pointer rounded-md px-3 py-1 text-sm transition-colors [word-break:break-word]',
             active
-              ? 'bg-han-50 text-han-500 highlight-white/5 dark:bg-han-400/20 dark:text-han-100 font-semibold before:absolute before:inset-y-1.5 before:-left-3 before:border-l before:border-current'
-              : 'hover:highlight-white/5 dark:hover:bg-han-100/5 font-medium text-zinc-700 hover:bg-zinc-100 dark:text-zinc-400 dark:hover:text-zinc-50'
+              ? 'bg-han-50 font-semibold text-han-500 highlight-white/5 before:absolute before:inset-y-1.5 before:-left-3 before:border-l before:border-current dark:bg-han-400/20 dark:text-han-100'
+              : 'font-medium text-zinc-700 hover:bg-zinc-100 hover:highlight-white/5 dark:text-zinc-400 dark:hover:bg-han-100/5 dark:hover:text-zinc-50'
           )}
         >
           {item.title}
@@ -101,7 +101,7 @@ export const Quicklinks = () => {
           className={cn(
             'group flex items-center font-semibold transition lg:text-sm',
             active
-              ? 'dark:text-han-200 text-zinc-700'
+              ? 'text-zinc-700 dark:text-han-200'
               : 'text-zinc-600 hover:text-zinc-500 dark:text-zinc-400 dark:hover:text-zinc-300'
           )}
         >
@@ -109,7 +109,7 @@ export const Quicklinks = () => {
             className={cn(
               'mr-3 flex h-7 w-7 items-center justify-center rounded-md p-1 transition',
               active
-                ? 'from-han-400 to-han-500 highlight-white/10 bg-gradient-to-br text-white'
+                ? 'bg-gradient-to-br from-han-400 to-han-500 text-white highlight-white/10'
                 : 'ring-1 ring-inset ring-black/10 dark:ring-white/10'
             )}
           >
@@ -135,7 +135,7 @@ export const Quicklinks = () => {
           </svg>
         </Item>
         <Item name="GitHub" href="https://github.com/blutui">
-          <svg viewBox="0 0 24 24" fill="currentColor" className="h-4 w-4">
+          <svg viewBox="0 0 24 24" fill="currentColor" className="h-5 w-5">
             <path
               fillRule="evenodd"
               clipRule="evenodd"
@@ -177,7 +177,7 @@ export const Sidebar = ({ items, className }: SidebarProps) => {
   return (
     <>
       <aside
-        className="blutui-sidebar-container top-header sticky hidden w-72 flex-shrink-0 flex-col self-start border-r border-black/5 dark:border-white/5 lg:flex"
+        className="blutui-sidebar-container sticky top-header hidden w-72 flex-shrink-0 flex-col self-start border-r border-black/5 dark:border-white/5 lg:flex"
         ref={containerRef}
       >
         <div

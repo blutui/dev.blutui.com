@@ -26,7 +26,7 @@ Associate it with your primary Google account. If you're using older versions of
 {% /step %}
 
 {% step title="Complete registration" position="5" %}
-Lastly, read and accept the terms of service and click **Submit**. Once registered, you'll receive two keys, a public key and a secret key. If you need further details or encounter any challenges while obtaining your reCAPTCHA keys, Google's [developer documentation](https://developers.google.com/recaptcha/intro) is a valuable resource.
+Lastly, read and accept the terms of service and click **Submit**. Once registered, you'll receive two keys, a **public key** and a **secret key**. If you need further details or encounter any challenges while obtaining your reCAPTCHA keys, Google's [developer documentation](https://developers.google.com/recaptcha/intro) is a valuable resource.
 {% /step %}
 
 ## Integrating with Blutui
