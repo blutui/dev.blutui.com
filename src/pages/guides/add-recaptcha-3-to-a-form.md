@@ -9,9 +9,11 @@ Google's reCAPTCHA v3 offers an advanced protection method for your forms withou
 
 ## Setting Up reCAPTCHA v3
 
-{% step title="Registration" position="1" %}
-Start by visiting [Google reCAPTCHA's registration page](https://www.google.com/recaptcha/admin/create). Sign in using your Google account.
-{% /step %}
+{% steps %}
+  {% step title="Registration" position="1" %}
+  Start by visiting [Google reCAPTCHA's registration page](https://www.google.com/recaptcha/admin/create). Sign in using your Google account.
+  {% /step %}
+{% /steps %}
 
 {% step title="Create a new site" position="2" %}
 Next, click on **Register a new site**. Provide an appropriate name for your reCAPTCHA integration, ensure you select the reCAPTCHA type as **v3**.
