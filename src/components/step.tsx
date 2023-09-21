@@ -2,15 +2,14 @@ import { generateID } from '@/utils/generate-id'
 import cn from 'clsx'
 
 export interface StepProps {
+  id: string
   title: string
   position: number
   children?: React.ReactNode
 }
 
-export function Step({ title, position, children }: StepProps) {
+export function Step({ id, title, position, children }: StepProps) {
   position = Number(position)
-
-  const id = generateID([title], {})
 
   return (
     <div
