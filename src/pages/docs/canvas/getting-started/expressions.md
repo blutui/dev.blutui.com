@@ -148,8 +148,6 @@ Tests can be negated by using the `is not` operator:
 {% if not (post.status is constant('Post::PUBLISHED')) %}
 ```
 
-Go to the [tests](/docs/canvas/tests) page to learn more about the built-in tests.
-
 ## Other operators
 
 The following operators don't fit into any of the other categories:

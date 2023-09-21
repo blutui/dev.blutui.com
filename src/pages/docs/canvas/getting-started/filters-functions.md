@@ -26,8 +26,6 @@ To apply a filter on a section of code, wrap it with the [apply](/docs/canvas/ta
 {% endapply %}
 ```
 
-Go to the [filters](/docs/canvas/filters) page to learn more about the available filters.
-
 ## Functions
 
 Functions can be called to generate content. Functions are called by their name followed by parentheses (`()`) and may have arguments.
@@ -39,8 +37,6 @@ For instance, the `range` function returns a list containing an arithmetic progr
   {{ i }},
 {% endfor %}
 ```
-
-Go to the [functions](/docs/canvas/functions) page to learn more about the available functions.
 
 ### Named arguments
 
