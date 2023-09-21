@@ -1,3 +1,4 @@
+import { generateID } from '@/utils/generate-id'
 import cn from 'clsx'
 
 export interface StepProps {
@@ -8,6 +9,8 @@ export interface StepProps {
 
 export function Step({ title, position, children }: StepProps) {
   position = Number(position)
+
+  const id = generateID([title], {})
 
   return (
     <div
@@ -29,7 +32,12 @@ export function Step({ title, position, children }: StepProps) {
         className={cn('relative md:flex-1', position === 1 ? 'pt-0' : 'pt-6')}
       >
         <div className="not-prose mb-4 mt-2">
-          <h3 className="text-lg font-semibold dark:text-zinc-200">{title}</h3>
+          <h3
+            id={id}
+            className="heading scroll-mt-[8.5rem] text-lg font-semibold dark:text-zinc-200"
+          >
+            {title}
+          </h3>
         </div>
         <div className="w-full prose-p:my-4 prose-p:last:mb-0">{children}</div>
       </div>
