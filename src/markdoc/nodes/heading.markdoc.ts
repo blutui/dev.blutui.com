@@ -1,22 +1,6 @@
 import { Tag, Config, Schema, RenderableTreeNode } from '@markdoc/markdoc'
 import { Heading } from '@/components/heading'
-
-function generateID(
-  children: RenderableTreeNode[],
-  attributes: Record<string, any>
-): string {
-  if (attributes.id && typeof attributes.id === 'string') {
-    return attributes.id
-  }
-
-  return children
-    .filter((child: any) => typeof child === 'string')
-    .join(' ')
-    .replace(/[^A-Za-z0-9 -]/g, '')
-    .replace(/\s+/g, '-')
-    .replace(/\//g, '-')
-    .toLowerCase()
-}
+import { generateID } from '@/utils/generate-id'
 
 export const heading: Schema<Config, typeof Heading> = {
   render: Heading,

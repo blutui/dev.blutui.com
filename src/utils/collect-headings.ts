@@ -11,7 +11,7 @@ export const collectHeadings = (
   sections: Section[] = []
 ): Section[] => {
   if (node) {
-    if (node.name === 'Heading') {
+    if (node.name === 'Heading' || node.name === 'Step') {
       const title = node.children[0]
 
       if (typeof title === 'string') {
@@ -19,6 +19,16 @@ export const collectHeadings = (
           ...node.attributes,
           id: node.attributes.id,
           title,
+        })
+      }
+
+      if (node.attributes && node.attributes.title) {
+        const stepTitle = node.attributes.title
+
+        sections.push({
+          level: 3,
+          id: node.attributes.id,
+          title: stepTitle,
         })
       }
     }
