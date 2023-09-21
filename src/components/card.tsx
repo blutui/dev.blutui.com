@@ -14,11 +14,13 @@ export const Card = ({ title, href, icon, children }: CardProps) => {
     'card not-prose transition flex bg-zinc-900/5 dark:bg-white/5 rounded-xl p-6 border-0 ring-1 ring-zinc-900/10 dark:ring-white/10'
 
   const titleMarkup = title && (
-    <h2 className="font-semibold text-zinc-900 dark:text-white">{title}</h2>
+    <h2 className="font-semibold leading-tight text-zinc-900 dark:text-white">
+      {title}
+    </h2>
   )
 
   const markup = (
-    <div className="m-0 font-normal text-zinc-700 dark:text-zinc-400">
+    <div className="m-0 w-full font-normal text-zinc-700 dark:text-zinc-400">
       <div className="mb-2 flex items-center gap-2">
         {icon && (
           <span className="text-black/60 opacity-60 dark:text-white/60">

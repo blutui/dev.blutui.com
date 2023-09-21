@@ -31,7 +31,9 @@ export function Step({ title, position, children }: StepProps) {
         <div className="not-prose mb-4 mt-2">
           <h3 className="text-lg font-semibold dark:text-zinc-200">{title}</h3>
         </div>
-        <div className="w-full prose-p:my-4 prose-p:last:mb-0">{children}</div>
+        <div className="step-content w-full prose-p:my-4 prose-p:last:mb-0">
+          {children}
+        </div>
       </div>
     </div>
   )
