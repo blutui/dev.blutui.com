@@ -50,7 +50,7 @@ export const Callout = ({ type, children, title }: CalloutProps) => {
       >
         {emoji}
       </div>
-      <div className="prose-p:my-0 w-full min-w-0 text-sm font-semibold">
+      <div className="w-full min-w-0 text-sm font-semibold prose-p:mb-0 prose-p:mt-0">
         {children}
       </div>
     </div>

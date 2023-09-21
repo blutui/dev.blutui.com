@@ -15,6 +15,10 @@
   margin-top: 1.25rem;
 }
 
+.step-content .card {
+  @apply mt-4;
+}
+
 .blutui-scrollbar {
   scrollbar-width: thin;
   scrollbar-color: hsla(0, 0%, 45%, .4) transparent;

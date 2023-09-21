@@ -37,7 +37,9 @@ export function Step({ id, title, position, children }: StepProps) {
             {title}
           </h3>
         </div>
-        <div className="w-full prose-p:my-4 prose-p:last:mb-0">{children}</div>
+        <div className="step-content w-full prose-p:my-4 prose-p:last:mb-0">
+          {children}
+        </div>
       </div>
     </div>
   )

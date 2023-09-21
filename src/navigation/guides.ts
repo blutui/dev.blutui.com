@@ -1,4 +1,5 @@
 export const Tags = [
+  'Canvas',
   'Console',
   'Courier',
   'Forms',
@@ -26,6 +27,15 @@ export const getGuideBySlug = (slug: string) => {
 }
 
 export const guidesNavigation: GuidesNavigationItem[] = [
+  {
+    title: 'What is a Blutui Canvas?',
+    authors: ['Ruslan Courtman'],
+    description:
+      "Understand the fundamentals of a Blutui project's file structure.",
+    slug: 'what-is-blutui-canvas',
+    tags: ['Canvas', 'Courier'],
+    createdAt: '2023-09-22',
+  },
   {
     title: 'How do I create a Blutui project?',
     authors: ['Ruslan Courtman'],
