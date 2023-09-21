@@ -17,7 +17,7 @@ const Home: NextPageWithCustomLayout = () => {
   return (
     <div className="w-full flex-grow">
       <div className="relative -mt-[6.25rem] overflow-hidden pb-6 pt-[6.25rem] md:pb-10">
-        <div className="max-w-8xl mx-auto flex items-center">
+        <div className="mx-auto flex max-w-8xl items-center">
           <div className="w-full px-8 py-6 md:py-10">
             <p className="mb-2 text-xs uppercase tracking-widest text-zinc-500 dark:text-white/50">
               Developer Documentation
@@ -54,7 +54,7 @@ const Home: NextPageWithCustomLayout = () => {
           </div>
         </div>
       </div>
-      <div className="max-w-8xl mx-auto mt-6 grid gap-6 px-8 md:grid-cols-6">
+      <div className="mx-auto mt-6 grid max-w-8xl gap-6 px-8 md:grid-cols-6">
         <div className="md:col-span-3">
           <Card
             title="Read the docs"
@@ -98,8 +98,8 @@ const Home: NextPageWithCustomLayout = () => {
         </div>
         <div className="md:col-span-3">
           <Card
-            title="Blutui on Twitter"
-            href="https://twitter.com/blutui"
+            title="Blutui on X"
+            href="https://x.com/blutui"
             icon={<AtSymbol />}
           >
             Follow us for product updates, tips and more.
