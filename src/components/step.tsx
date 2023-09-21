@@ -1,4 +1,3 @@
-import { generateID } from '@/utils/generate-id'
 import cn from 'clsx'
 
 export interface StepProps {
