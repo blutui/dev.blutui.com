@@ -33,7 +33,7 @@ When automatic escaping is enabled everything is escaped by default except for v
 {% endautoescape %}
 ```
 
-Functions and tags returning template data (like [macros](/docs/canvas/tags/macros) and [parent](/docs/canvas/functions/parent)) always return safe markup. Canvas is smart enough to not escape an already escaped value by the [escape](/docs/canvas/filters/escape) filter.
+Functions and tags returning template data (like [macro](/docs/canvas/tags/macro) and [parent](/docs/canvas/functions/parent)) always return safe markup. Canvas is smart enough to not escape an already escaped value by the [escape](/docs/canvas/filters/escape) filter.
 
 Canvas does not escape static expressions:
 

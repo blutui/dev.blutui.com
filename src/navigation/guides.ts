@@ -1,7 +1,9 @@
 export const Tags = [
+  'Console',
   'Courier',
   'Forms',
   'Integrations',
+  'Projects',
   'Security',
   'Webhooks',
 ] as const
@@ -24,6 +26,14 @@ export const getGuideBySlug = (slug: string) => {
 }
 
 export const guidesNavigation: GuidesNavigationItem[] = [
+  {
+    title: 'How do I create a Blutui project?',
+    authors: ['Ruslan Courtman'],
+    description: 'Learn how to successfully create a new Blutui project.',
+    slug: 'create-project',
+    tags: ['Console', 'Projects'],
+    createdAt: '2023-09-21',
+  },
   {
     title: 'How do I add reCAPTCHA v3 to a form?',
     authors: ['Ruslan Courtman'],

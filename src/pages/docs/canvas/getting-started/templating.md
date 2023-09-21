@@ -29,8 +29,6 @@ The [if](/docs/canvas/tags/if) tag can be used to test an expression:
 {% endif %}
 ```
 
-Go to the [tags](/docs/canvas/tags) page to learn more about the built-in tags.
-
 ## Comments
 
 To comment-out part of a line in a template, use the comment syntax `{# ... #}`. This is useful for debugging or to add information for other template designers or yourself:
@@ -136,7 +134,7 @@ It's possible to render the contents of the parent block by using the [parent](/
 {% endblock %}
 ```
 
-The documentation page for the [extends](/docs/canvas/tags/extend) tag describes more advanced features like block nesting, scope, dynamic inheritance, and conditional inheritance.
+The documentation page for the [extends](/docs/canvas/tags/extends) tag describes more advanced features like block nesting, scope, dynamic inheritance, and conditional inheritance.
 
 Canvas also supports multiple inheritance via "horizontal reuse" with the help of the [use](/docs/canvas/tags/use) tag.
 
