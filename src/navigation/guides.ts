@@ -28,6 +28,15 @@ export const getGuideBySlug = (slug: string) => {
 
 export const guidesNavigation: GuidesNavigationItem[] = [
   {
+    title: 'How can I make the most out of Blutui Canvas?',
+    authors: ['Ruslan Courtman'],
+    description:
+      'Learn how you can leverage Blutui Canvas to build web projects.',
+    slug: 'make-the-most-out-of-canvas',
+    tags: ['Canvas', 'Courier', 'Projects'],
+    createdAt: '2023-09-23',
+  },
+  {
     title: 'How do I make a form in a Blutui project?',
     authors: ['Ruslan Courtman'],
     description: 'Learn how to create and add a form to a Blutui project.',
