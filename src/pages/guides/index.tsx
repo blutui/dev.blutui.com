@@ -71,7 +71,7 @@ export default function Guides() {
     <div className="w-full">
       <div className="mx-auto w-full max-w-8xl px-8">
         <header id="header" className="mb-6 pb-6">
-          <h1 className="text-3xl font-bold text-zinc-900 dark:text-zinc-200 lg:text-4xl">
+          <h1 className="text-3xl font-bold tracking-tight text-zinc-900 dark:text-zinc-200 lg:text-4xl">
             Guides
           </h1>
           <p className="mt-2 text-base text-zinc-600 dark:text-zinc-400 lg:text-lg">
