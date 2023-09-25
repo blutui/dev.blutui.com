@@ -2,6 +2,7 @@ export const Tags = [
   'Canvas',
   'Console',
   'Courier',
+  'Dashboard',
   'Forms',
   'Integrations',
   'Projects',
@@ -28,6 +29,15 @@ export const getGuideBySlug = (slug: string) => {
 
 export const guidesNavigation: GuidesNavigationItem[] = [
   {
+    title: 'How do I send form submissions to an email address?',
+    authors: ['Ruslan Courtman'],
+    description:
+      'Information on how to send form submission from a Blutui project to an email address.',
+    slug: 'send-form-submissions-to-an-email-address',
+    tags: ['Forms', 'Dashboard'],
+    createdAt: '2023-09-25',
+  },
+  {
     title: 'How can I make the most out of Blutui Canvas?',
     authors: ['Ruslan Courtman'],
     description:
@@ -41,7 +51,7 @@ export const guidesNavigation: GuidesNavigationItem[] = [
     authors: ['Ruslan Courtman'],
     description: 'Learn how to create and add a form to a Blutui project.',
     slug: 'create-form',
-    tags: ['Forms', 'Canvas', 'Projects'],
+    tags: ['Forms', 'Canvas', 'Projects', 'Dashboard'],
     createdAt: '2023-09-22',
   },
   {
@@ -66,7 +76,7 @@ export const guidesNavigation: GuidesNavigationItem[] = [
     authors: ['Ruslan Courtman'],
     description: 'Learn how to protect your forms with reCAPTCHA v3.',
     slug: 'add-recaptcha-3-to-a-form',
-    tags: ['Forms', 'Security'],
+    tags: ['Forms', 'Security', 'Dashboard'],
     createdAt: '2023-09-18',
   },
   {
@@ -74,7 +84,7 @@ export const guidesNavigation: GuidesNavigationItem[] = [
     authors: ['Ruslan Courtman'],
     description: 'Learn how to protect your forms with reCAPTCHA v2.',
     slug: 'add-recaptcha-2-to-a-form',
-    tags: ['Forms', 'Security'],
+    tags: ['Forms', 'Security', 'Dashboard'],
     createdAt: '2023-09-15',
   },
   {
@@ -84,7 +94,7 @@ export const guidesNavigation: GuidesNavigationItem[] = [
     description:
       'Information on how to send form submissions from a Blutui project to Zapier.',
     slug: 'send-form-submissions-to-zapier',
-    tags: ['Integrations', 'Webhooks'],
+    tags: ['Integrations', 'Webhooks', 'Dashboard'],
     createdAt: '2023-09-15',
   },
   // {

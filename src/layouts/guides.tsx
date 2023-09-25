@@ -43,7 +43,7 @@ export const GuidesLayout = ({
               Back to guides
             </Link>
           </div>
-          <h1 className="text-3xl font-bold text-zinc-900 dark:text-zinc-200 lg:text-4xl">
+          <h1 className="text-3xl font-bold tracking-tight text-zinc-900 dark:text-zinc-200 lg:text-4xl">
             {title}
           </h1>
           {guide && (
