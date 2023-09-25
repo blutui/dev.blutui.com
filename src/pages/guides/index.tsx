@@ -47,9 +47,17 @@ const GuideItem = ({ item }: { item: GuidesNavigationItem }) => {
 }
 
 export default function Guides() {
-  const sortedGuides = guidesNavigation.sort(
-    (a, b) => new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime()
-  )
+  const sortedGuides = guidesNavigation.sort((a, b) => {
+    // Compare the featured property first
+    if (a.featured && !b.featured) {
+      return -1 // A comes first
+    } else if (!a.featured && b.featured) {
+      return 1 // B comes first
+    }
+
+    // If A & B both have featured set to false, compare by date.
+    return new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime()
+  })
 
   const { items: guides, hasMorePages, loadMore } = usePagination(sortedGuides)
 
