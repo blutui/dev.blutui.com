@@ -63,7 +63,7 @@ This command compiles the CSS and outputs it to the `public` folder, making it r
 {% step title="Integrating Tailwind CSS with Parcel.js" position="5" %}
 If you're using Parcel in your Blutui project and need to set it up, refer to the guide on [setting up Parcel with Blutui](/guides/use-parcel-js-in-a-project).
 
-Next, create a `postcss.config.js` file at the root of your project (next to the `tailwind.config.js` file) and add the following configuration:
+Next, create a `.postcssrc` file at the root of your project (next to the `tailwind.config.js` file) and add the following configuration:
 
 ```js
 module.exports = {
