@@ -41,7 +41,7 @@ content: [
 {% /step %}
 
 {% step title="Setting up the source directory" position="3" %}
-Create a `source` folder at the root of your project, so you have `source`, `public`, and `views` folders. This structure allows TailwindCSS to only compile the classes you're using. Inside the `source` folder, create a `css` sub-folder and then add a `style.css` file within it. Add the following directives in the `style.css` file:
+Create a `src` folder at the root of your project, so you have `src`, `public`, and `views` folders. This structure allows TailwindCSS to only compile the classes you're using. Inside the `src` folder, create a `styles` sub-folder and then add a `main.css` file within it. Add the following directives in the `main.css` file:
 
 ```css
 @tailwind base;
