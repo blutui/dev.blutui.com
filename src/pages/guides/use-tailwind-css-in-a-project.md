@@ -54,7 +54,7 @@ Create a `src` folder at the root of your project, so you have `src`, `public`, 
 Execute the following command:
 
 ```bash
-npx tailwindcss -i ./source/css/style.css -o ./public/style.css --watch
+npx tailwindcss -i ./src/styles/main.css -o ./public/main.css --watch
 ```
 
 This command compiles the CSS and outputs it to the `public` folder, making it ready to link in your template.
