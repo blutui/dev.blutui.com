@@ -66,7 +66,7 @@ If you're using Parcel in your Blutui project and need to set it up, refer to th
 Next, create a `.postcssrc` file at the root of your project (next to the `tailwind.config.js` file) and add the following configuration:
 
 ```js
-module.exports = {
+{
   plugins: {
     tailwindcss: {},
     autoprefixer: {},
