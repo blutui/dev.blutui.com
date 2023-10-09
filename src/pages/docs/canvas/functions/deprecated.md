@@ -5,63 +5,7 @@ description: 'The following Canvas functions are considered deprecated.'
 
 It is recommended that you use the alternative functions listed below.
 
-## Collections
-
-### collection
-
-{% callout type="note" %}
-**Alternatives**: [cms.collection](/docs/canvas/functions/cms#collection)
-{% /callout %}
-
-### collection_raw
-
-{% callout type="note" %}
-**Alternatives**: [cms.collection](/docs/canvas/functions/cms#collection)
-{% /callout %}
-
-## Forms
-
-### form
-
-{% callout type="note" %}
-**Alternatives**: [cms.form](/docs/canvas/functions/cms#form)
-{% /callout %}
-
-### form_raw
-
-{% callout type="note" %}
-**Alternatives**: [cms.form](/docs/canvas/functions/cms#form)
-{% /callout %}
-
-### form_open
-
-{% callout type="note" %}
-**Alternatives**: [cms.form](/docs/canvas/functions/cms#form)
-{% /callout %}
-
-### form_close
-
-{% callout type="note" %}
-**Alternatives**: [cms.form](/docs/canvas/functions/cms#form)
-{% /callout %}
-
-## Menus
-
-### menu
-
-{% callout type="note" %}
-**Alternatives**: [cms.menu](/docs/canvas/functions/cms#menu)
-{% /callout %}
-
-### menu_raw
-
-{% callout type="note" %}
-**Alternatives**: [cms.menu](/docs/canvas/functions/cms#menu)
-{% /callout %}
-
-## Other
-
-### file
+## file
 
 {% callout type="note" %}
 **Alternatives**: [include](/docs/canvas/functions/include)
@@ -73,13 +17,13 @@ It is recommended that you use the alternative functions listed below.
 {{ file('path/to/file') }}
 ```
 
-#### Arguments
+### Arguments
 
 Argument   | Description          | Type
 ---------- | -------------------- | ------
 `filepath` | The path to the file | String
 
-### import
+## import
 
 {% callout type="note" %}
 **Alternatives**: [include](/docs/canvas/functions/include)
@@ -95,7 +39,7 @@ Argument   | Description          | Type
 The import function no longer renders HTML content within the imported file.
 {% /callout %}
 
-#### Arguments
+### Arguments
 
 Argument   | Description                                             | Type
 ---------- | ------------------------------------------------------- | ------
