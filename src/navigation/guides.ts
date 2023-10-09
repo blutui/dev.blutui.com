@@ -29,6 +29,14 @@ export const getGuideBySlug = (slug: string) => {
 
 export const guidesNavigation: GuidesNavigationItem[] = [
   {
+    title: 'How do I use Tailwind CSS on a project?',
+    authors: ['Ruslan Courtman'],
+    description: 'Learn how to use Tailwind CSS in your Blutui project.',
+    slug: 'use-tailwind-css-in-a-project',
+    tags: ['Canvas', 'Courier', 'Projects'],
+    createdAt: '2023-10-09',
+  },
+  {
     title: 'How do I use Parcel.js in a Blutui project?',
     authors: ['Ruslan Courtman'],
     description:
