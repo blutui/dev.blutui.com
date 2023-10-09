@@ -69,7 +69,6 @@ Next, create a `.postcssrc` file at the root of your project (next to the `tailw
 {
   plugins: {
     tailwindcss: {},
-    autoprefixer: {},
   }
 }
 ```
