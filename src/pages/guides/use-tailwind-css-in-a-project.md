@@ -18,7 +18,7 @@ TailwindCSS is a utility-first CSS framework that allows for rapid development o
 Open your terminal or command prompt and navigate to your Blutui project directory. Begin by installing TailwindCSS using:
 
 ```bash
-npm install -D tailwindcss postcss autoprefixer
+npm install -D tailwindcss postcss
 ```
 
 Initialise the configuration for TailwindCSS with:
