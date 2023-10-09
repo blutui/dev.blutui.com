@@ -37,6 +37,15 @@ export const guidesNavigation: GuidesNavigationItem[] = [
     createdAt: '2023-10-09',
   },
   {
+    title: 'How do I use Parcel.js in a Blutui project?',
+    authors: ['Ruslan Courtman'],
+    description:
+      'Learn how to use Parcel.js to compile your CSS and JavaScript files.',
+    slug: 'use-parcel-js-in-a-project',
+    tags: ['Canvas', 'Courier', 'Projects'],
+    createdAt: '2023-10-05',
+  },
+  {
     title: 'How do I use a package manager in a Blutui project?',
     authors: ['Ruslan Courtman'],
     description:
