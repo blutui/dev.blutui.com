@@ -37,6 +37,15 @@ export const guidesNavigation: GuidesNavigationItem[] = [
     createdAt: '2023-10-09',
   },
   {
+    title: 'How do I use a package manager in a Blutui project?',
+    authors: ['Ruslan Courtman'],
+    description:
+      'Learn how to use a package manager like npm, yarn, or pnpm in your Blutui project.',
+    slug: 'use-a-package-manager-in-a-project',
+    tags: ['Canvas', 'Courier', 'Projects'],
+    createdAt: '2023-10-05',
+  },
+  {
     title: 'How do I send form submissions to an email address?',
     authors: ['Ruslan Courtman'],
     description:
