@@ -103,6 +103,12 @@ const Blutui = ({ Component, pageProps }: BlutuiAppProps<BlutuiProps>) => {
           sizes="16x16"
           href="/favicon-16x16.png"
         />
+
+        <meta property="og:title" content={title} />
+        <meta property="og:description" content={description} />
+        <meta property="twitter:title" content={title} />
+        <meta property="twitter:description" content={description} />
+        <meta property="twitter:card" content="summary_large_image" />
       </Head>
 
       <SearchProvider>
