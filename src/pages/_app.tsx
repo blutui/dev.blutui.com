@@ -63,7 +63,7 @@ const Blutui = ({ Component, pageProps }: BlutuiAppProps<BlutuiProps>) => {
     }
   }
 
-  const { pathname } = useRouter()
+  const { pathname, asPath } = useRouter()
 
   const hasToc = markdoc?.frontmatter.toc ?? true
   const toc = hasToc && markdoc?.content ? collectHeadings(markdoc.content) : []
@@ -84,12 +84,17 @@ const Blutui = ({ Component, pageProps }: BlutuiAppProps<BlutuiProps>) => {
     ? { layoutProps: Component.layoutProps, toc }
     : { toc }
 
+  const canonicalUrl = (
+    `https://dev.blutui.com` + (asPath === '/' ? '' : asPath)
+  ).split('?')[0]
+
   return (
     <>
       <Head>
         <title>{title}</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta name="referrer" content="strict-origin" />
+        <link rel="canonical" href={canonicalUrl} />
         <meta name="description" content={description} />
         <link
           rel="icon"
@@ -106,6 +111,7 @@ const Blutui = ({ Component, pageProps }: BlutuiAppProps<BlutuiProps>) => {
 
         <meta property="og:title" content={title} />
         <meta property="og:description" content={description} />
+        <meta property="og:url" content={canonicalUrl} />
         <meta property="twitter:title" content={title} />
         <meta property="twitter:description" content={description} />
         <meta property="twitter:card" content="summary_large_image" />
