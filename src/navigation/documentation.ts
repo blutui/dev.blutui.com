@@ -1,4 +1,16 @@
-export const documentationNavigation = [
+export interface NavigationItemWithoutItems {
+  title: string
+  url: string
+}
+
+export interface NavigationItemWithItems {
+  title: string
+  items: NavigationItem[]
+}
+
+export type NavigationItem = NavigationItemWithoutItems | NavigationItemWithItems
+
+export const documentationNavigation: NavigationItem[] = [
   {
     title: 'Introduction',
     url: '/docs',
@@ -108,6 +120,10 @@ export const documentationNavigation = [
           {
             title: 'for',
             url: '/docs/canvas/tags/for',
+          },
+          {
+            title: 'form',
+            url: '/docs/canvas/tags/form'
           },
           {
             title: 'from',
