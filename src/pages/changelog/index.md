@@ -7,6 +7,45 @@ description: 'A continuous stream of changes made to the Blutui platform.'
 Please use the ISO standard date and time format.
 {% /comment %}
 
+{% changelog date="2023-10-20" %}
+{% badge status="attention" %}Fixed{% /badge %}
+
+- Fixed the **Collection Link** UI in the **Project Dashboard**.
+- Fixed an issue with updating payment methods in the **Agency Console**.
+{% /changelog %}
+
+{% changelog date="2023-10-17" %}
+{% badge status="success" %}Added{% /badge %}
+
+- Added new **`{% form %}`** **Canvas** tag. Designed to improve the experience of creating forms in your **Canvas** files.
+
+{% badge status="attention" %}Fixed{% /badge %}
+
+- Fixed an issue in the **Project** routing system that sometimes caused a 404 page for dynamic pages.
+{% /changelog %}
+
+{% changelog date="2023-10-05" %}
+{% badge status="attention" %}Fixed{% /badge %}
+
+- Fixed file uploads in the **Project Dashboard**.
+{% /changelog %}
+
+{% changelog date="2023-10-04" %}
+{% badge status="attention" %}Fixed{% /badge %}
+
+- Fixed **Project** routing system to improve stability.
+{% /changelog %}
+
+{% changelog date="2023-09-22" %}
+{% badge status="success" %}Added{% /badge %}
+
+- Added support for adding content for multiple languages in the **Project Dashboard**.
+
+{% badge status="info" %}Changed{% /badge %}
+
+- Changed form submission email to include no branding.
+{% /changelog %}
+
 {% changelog date="2023-09-12" %}
 {% badge status="success" %}Added{% /badge %}
 
