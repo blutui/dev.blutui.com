@@ -1,8 +1,14 @@
+import { useState } from 'react'
 import Link from 'next/link'
 
 import { FullPageLayout } from '@/layouts/full-page'
-import { GuidesNavigationItem, guidesNavigation } from '@/navigation/guides'
+import {
+  Tags,
+  GuidesNavigationItem,
+  guidesNavigation,
+} from '@/navigation/guides'
 
+import { slugify } from '@/utils/slugify'
 import { usePagination } from '@/utils/use-pagination'
 
 const GuideItem = ({ item }: { item: GuidesNavigationItem }) => {
@@ -47,6 +53,7 @@ const GuideItem = ({ item }: { item: GuidesNavigationItem }) => {
 }
 
 export default function Guides() {
+  const perPage = 8
   const sortedGuides = guidesNavigation.sort((a, b) => {
     // Compare the featured property first
     if (a.featured && !b.featured) {
@@ -59,7 +66,35 @@ export default function Guides() {
     return new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime()
   })
 
-  const { items: guides, hasMorePages, loadMore } = usePagination(sortedGuides)
+  const tagList = Tags.map((item) => {
+    return {
+      name: slugify(item),
+      title: item,
+    }
+  })
+
+  const [filterTags, setFilterTags] = useState<string[]>([])
+  const filterHandler = (event: React.ChangeEvent<HTMLInputElement>) => {
+    if (event.target.checked) {
+      setFilterTags([...filterTags, event.target.value])
+    } else {
+      setFilterTags(filterTags.filter((tag) => tag !== event.target.value))
+    }
+  }
+
+  const filteredGuides = sortedGuides.filter((item) =>
+    filterTags.length > 0
+      ? filterTags.some((filterTag) =>
+          item.tags.map((tag) => slugify(tag)).includes(filterTag)
+        )
+      : sortedGuides
+  )
+
+  const {
+    items: guides,
+    hasMorePages,
+    loadMore,
+  } = usePagination(filteredGuides, perPage)
 
   const guideItems = guides.filter((items) => {
     return !items.featured
@@ -71,7 +106,13 @@ export default function Guides() {
 
   const countMarkup = (
     <div className="text-xs font-semibold uppercase text-zinc-400 dark:text-zinc-500">
-      Showing {guides.length} of {guidesNavigation.length} guides
+      {filterTags.length ? (
+        <>Showing {guides.length} guides</>
+      ) : (
+        <>
+          Showing {guides.length} of {guidesNavigation.length} guides
+        </>
+      )}
     </div>
   )
 
@@ -87,28 +128,60 @@ export default function Guides() {
             advanced use cases.
           </p>
         </header>
-        <div>
-          <div className="mb-6">{countMarkup}</div>
 
-          <div className="space-y-4">
-            {featuredGuideItems.map((item, index) => (
-              <GuideItem key={index} item={item} />
-            ))}
-            {guideItems.map((item, index) => (
-              <GuideItem key={index} item={item} />
-            ))}
+        <div className="flex max-w-full gap-8">
+          <aside className="sticky top-header -mt-6 max-h-sidebar w-64 max-w-[16rem] flex-shrink-0">
+            <div className="mt-6 text-xs font-semibold uppercase text-zinc-400 dark:text-zinc-500">
+              <div>Filters</div>
+            </div>
+
+            <div className="relative mt-6 space-y-2">
+              {tagList.map((tag, index) => (
+                <label
+                  key={index}
+                  htmlFor={tag.name}
+                  className="flex h-9 w-full cursor-pointer select-none items-center rounded-md bg-zinc-100 pl-3 transition hover:bg-zinc-200 dark:bg-white/5 dark:hover:bg-white/10"
+                >
+                  <span className="relative flex items-center">
+                    <input
+                      id={tag.name}
+                      type="checkbox"
+                      className="form-checkbox rounded border-zinc-300 bg-transparent text-han-500 transition focus:border-han-300 focus:ring focus:ring-han-200/50 focus:ring-offset-0 dark:border-zinc-600 dark:text-han-400 dark:focus:border-han-400 dark:focus:ring-han-400/50"
+                      value={tag.name}
+                      onChange={filterHandler}
+                    />
+                  </span>
+                  <span className="ml-2 flex-1 text-sm text-zinc-500 dark:text-zinc-400">
+                    {tag.title}
+                  </span>
+                </label>
+              ))}
+            </div>
+          </aside>
+
+          <div className="m-0 flex-grow">
+            <div className="mb-6">{countMarkup}</div>
+
+            <div className="space-y-4">
+              {featuredGuideItems.map((item, index) => (
+                <GuideItem key={index} item={item} />
+              ))}
+              {guideItems.map((item, index) => (
+                <GuideItem key={index} item={item} />
+              ))}
+            </div>
+
+            <div className="mb-4 mt-6">{countMarkup}</div>
+
+            {filteredGuides.length > perPage && hasMorePages && (
+              <button
+                className="w-full rounded-lg border px-4 py-2 text-sm font-semibold text-zinc-500 transition hover:bg-zinc-100 dark:border-zinc-600 dark:text-white dark:hover:bg-zinc-800"
+                onClick={loadMore}
+              >
+                Show more guides
+              </button>
+            )}
           </div>
-
-          <div className="mb-4 mt-6">{countMarkup}</div>
-
-          {hasMorePages && (
-            <button
-              className="w-full rounded-lg border px-4 py-2 text-sm font-semibold text-zinc-500 transition hover:bg-zinc-100 dark:border-zinc-600 dark:text-white dark:hover:bg-zinc-800"
-              onClick={loadMore}
-            >
-              Show more guides
-            </button>
-          )}
         </div>
       </div>
     </div>

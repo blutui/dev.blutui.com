@@ -8,7 +8,7 @@ export function Footer({ fullwidth = true }: FooterProps) {
   return (
     <footer
       className={cn(
-        'max-w-8xl mx-auto border-t border-black/5 pb-16 pt-8 dark:border-white/5',
+        'mx-auto max-w-8xl border-t border-black/5 pb-16 pt-8 dark:border-white/5',
         fullwidth ? 'px-8' : null
       )}
     >

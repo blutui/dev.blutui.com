@@ -10,8 +10,9 @@ export interface CardProps {
 }
 
 export const Card = ({ title, href, icon, children }: CardProps) => {
-  const classes =
+  const classes = cn(
     'card not-prose transition flex bg-zinc-900/5 dark:bg-white/5 rounded-xl p-6 border-0 ring-1 ring-zinc-900/10 dark:ring-white/10'
+  )
 
   const titleMarkup = title && (
     <h2 className="font-semibold leading-tight text-zinc-900 dark:text-white">

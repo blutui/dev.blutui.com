@@ -138,6 +138,9 @@ export default {
   },
   plugins: [
     require('@tailwindcss/typography'),
+    require('@tailwindcss/forms')({
+      strategy: 'class',
+    }),
     {
       handler: ({ matchUtilities, theme }) => {
         matchUtilities(

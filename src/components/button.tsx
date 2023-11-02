@@ -10,8 +10,9 @@ export interface ButtonProps {
 export const Button = ({ href, children }: ButtonProps) => {
   let buttonMarkup
 
-  const classes =
+  const classes = cn(
     'bg-han-500 inline-flex cursor-pointer items-center justify-center rounded-full px-6 py-2 text-base font-semibold text-white shadow-sm hover:bg-han-400 transition'
+  )
 
   if (href) {
     buttonMarkup = (

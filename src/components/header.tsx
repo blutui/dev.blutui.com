@@ -17,7 +17,7 @@ export const Header = ({ children }: HeaderProps) => {
 
   return (
     <header className="sticky top-0 z-10 flex-none border-b border-black/5 bg-zinc-50/70 backdrop-blur backdrop-saturate-200 dark:border-white/5 dark:bg-zinc-900/70">
-      <div className="max-w-8xl mx-auto flex h-[3.75rem] items-center justify-between space-x-8 px-8">
+      <div className="mx-auto flex h-[3.75rem] max-w-8xl items-center justify-between space-x-8 px-8">
         <div className="flex flex-shrink-0 items-center">
           <Link href="/" className="w-72">
             <span className="sr-only">Blutui Developers home page</span>
@@ -42,7 +42,7 @@ export const Header = ({ children }: HeaderProps) => {
               </svg>
               <span className="block flex-auto">Quick search...</span>
               {actionKey && (
-                <kbd className="highlight-white/10 -mr-1 ml-2 rounded bg-black/10 px-1.5 py-0.5 font-sans text-xs font-semibold dark:bg-white/10">
+                <kbd className="-mr-1 ml-2 rounded bg-black/10 px-1.5 py-0.5 font-sans text-xs font-semibold highlight-white/10 dark:bg-white/10">
                   <abbr title={actionKey[1]} className="no-underline">
                     {actionKey[0]}
                   </abbr>{' '}
@@ -121,7 +121,7 @@ export const Header = ({ children }: HeaderProps) => {
           </div>
         </div>
       </div>
-      <div className="max-w-8xl mx-auto hidden h-12 space-x-6 border-t border-black/5 px-8 text-white dark:border-white/5 lg:flex">
+      <div className="mx-auto hidden h-12 max-w-8xl space-x-6 border-t border-black/5 px-8 text-white dark:border-white/5 lg:flex">
         <HeaderNavigationItem name="Documentation" href="/docs" />
         <HeaderNavigationItem name="Guides" href="/guides" />
         <HeaderNavigationItem name="Changelog" href="/changelog" />
@@ -143,10 +143,10 @@ function HeaderNavigationItem({ name, href }: HeaderNavigationItemProps) {
     <Link
       href={href}
       className={cn(
-        '-mb-px py-3.5 text-sm font-medium transition',
+        '-mb-px border-b-2 py-3.5 text-sm font-medium transition',
         active
-          ? 'text-han-400 dark:text-han-100 border-han-200 dark:border-han-300 border-b-2'
-          : 'border-zinc-300 text-zinc-500 hover:border-b-2 dark:border-zinc-500 dark:text-zinc-400'
+          ? 'border-han-200 text-han-400 dark:border-han-300 dark:text-han-100'
+          : 'border-transparent text-zinc-500 hover:border-zinc-300 dark:text-zinc-400 dark:hover:border-zinc-500'
       )}
     >
       {name}
