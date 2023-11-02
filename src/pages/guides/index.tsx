@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import Link from 'next/link'
+import cn from 'clsx'
 
 import { FullPageLayout } from '@/layouts/full-page'
 import {
@@ -106,13 +107,11 @@ export default function Guides() {
 
   const countMarkup = (
     <div className="text-xs font-semibold uppercase text-zinc-400 dark:text-zinc-500">
-      {filterTags.length ? (
-        <>Showing {guides.length} guides</>
-      ) : (
-        <>
-          Showing {guides.length} of {guidesNavigation.length} guides
-        </>
-      )}
+      Showing{' '}
+      {filterTags.length
+        ? guides.length
+        : `${guides.length} of ${guidesNavigation.length}`}{' '}
+      {filterTags.length === 1 ? 'guide' : 'guides'}
     </div>
   )
 
@@ -140,7 +139,12 @@ export default function Guides() {
                 <label
                   key={index}
                   htmlFor={tag.name}
-                  className="flex h-9 w-full cursor-pointer select-none items-center rounded-md bg-zinc-100 pl-3 transition hover:bg-zinc-200 dark:bg-white/5 dark:hover:bg-white/10"
+                  className={cn(
+                    'flex h-9 w-full cursor-pointer select-none items-center rounded-md pl-3 transition',
+                    filterTags.includes(tag.name)
+                      ? 'bg-han-100/30 dark:bg-han-400/10'
+                      : 'bg-zinc-100 hover:bg-zinc-200 dark:bg-white/5 dark:hover:bg-white/10'
+                  )}
                 >
                   <span className="relative flex items-center">
                     <input
