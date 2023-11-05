@@ -22,7 +22,7 @@ export const TableOfContents = ({
 
   return (
     <nav className="blutui-toc -mt-8 hidden w-64 flex-shrink-0 space-y-6 lg:block">
-      <div className="blutui-scrollbar max-h-sidebar top-header sticky -mr-8 overflow-y-auto pr-8 pt-8">
+      <div className="blutui-scrollbar sticky top-header -mr-8 max-h-sidebar overflow-y-auto pr-8 pt-8">
         {items.length >= 1 && (
           <>
             <h5 className="mb-4 text-sm font-semibold text-zinc-900 dark:text-zinc-200">
