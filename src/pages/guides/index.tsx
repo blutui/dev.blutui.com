@@ -22,7 +22,7 @@ const GuideItem = ({ item }: { item: GuidesNavigationItem }) => {
   return (
     <Link className="block" href={`/guides/${item.slug}`}>
       <div className="flex w-full flex-col rounded-lg border p-6 transition hover:bg-zinc-100 dark:border-zinc-700 dark:hover:bg-zinc-800">
-        <div className="mb-4 flex items-center gap-4">
+        <div className="mb-4 flex flex-col items-start gap-4 lg:flex-row lg:items-center">
           {item.featured && (
             <span className="inline-flex rounded-full bg-han-500/10 px-3.5 py-1 text-xs font-semibold uppercase tracking-widest text-han-600 ring-1 ring-han-300/50 dark:bg-han-500/30 dark:text-han-100">
               Featured
@@ -129,7 +129,7 @@ export default function Guides() {
         </header>
 
         <div className="flex max-w-full gap-8">
-          <aside className="sticky top-header -mt-6 max-h-sidebar w-64 max-w-[16rem] flex-shrink-0">
+          <aside className="sticky top-header -mt-6 hidden max-h-sidebar w-64 max-w-[16rem] flex-shrink-0 lg:block">
             <div className="mt-6 text-xs font-semibold uppercase text-zinc-400 dark:text-zinc-500">
               <div>Filters</div>
             </div>
