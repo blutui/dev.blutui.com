@@ -12,7 +12,13 @@ import {
 import { slugify } from '@/utils/slugify'
 import { usePagination } from '@/utils/use-pagination'
 
-const GuideItem = ({ item }: { item: GuidesNavigationItem }) => {
+const GuideItem = ({
+  item,
+  selectedTags,
+}: {
+  item: GuidesNavigationItem
+  selectedTags: string[]
+}) => {
   const formattedDate = new Date(item.createdAt).toLocaleDateString('en-US', {
     year: 'numeric',
     month: 'long',
@@ -42,7 +48,12 @@ const GuideItem = ({ item }: { item: GuidesNavigationItem }) => {
           {item.tags.map((tag, i) => (
             <span
               key={i}
-              className="rounded-md px-2 py-1 font-mono text-xs font-medium uppercase text-zinc-500 ring-1 ring-zinc-200 dark:text-zinc-500 dark:ring-zinc-600"
+              className={cn(
+                'rounded-md px-2 py-1 font-mono text-xs font-medium uppercase ring-1 transition',
+                selectedTags.includes(slugify(tag))
+                  ? 'text-han-500 ring-han-500 dark:text-han-300 dark:ring-han-300'
+                  : 'text-zinc-500 ring-zinc-200 dark:text-zinc-500 dark:ring-zinc-600'
+              )}
             >
               {tag}
             </span>
@@ -111,7 +122,7 @@ export default function Guides() {
       {filterTags.length
         ? guides.length
         : `${guides.length} of ${guidesNavigation.length}`}{' '}
-      {filterTags.length === 1 ? 'guide' : 'guides'}
+      {guides.length === 1 ? 'guide' : 'guides'}
     </div>
   )
 
@@ -168,10 +179,10 @@ export default function Guides() {
 
             <div className="space-y-4">
               {featuredGuideItems.map((item, index) => (
-                <GuideItem key={index} item={item} />
+                <GuideItem key={index} item={item} selectedTags={filterTags} />
               ))}
               {guideItems.map((item, index) => (
-                <GuideItem key={index} item={item} />
+                <GuideItem key={index} item={item} selectedTags={filterTags} />
               ))}
             </div>
 
