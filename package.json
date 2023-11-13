@@ -9,7 +9,7 @@
   },
   "dependencies": {
     "@docsearch/react": "^3.5.2",
-    "@markdoc/markdoc": "^0.3.4",
+    "@markdoc/markdoc": "^0.3.5",
     "@markdoc/next.js": "^0.3.4",
     "@vercel/analytics": "^1.1.1",
     "clsx": "^2.0.0",
