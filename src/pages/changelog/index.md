@@ -7,6 +7,18 @@ description: 'A continuous stream of changes made to the Blutui platform.'
 Please use the ISO standard date and time format.
 {% /comment %}
 
+{% changelog date="2023-12-21" %}
+{% badge status="success" %}Added{% /badge %}
+
+- Added the ability to preview `.webp` and `.webm` files in the **Project Dashboard**.
+- Added improved navigation to the user profile view in the **Agency Console**.
+
+{% badge status="attention" %}Fixed{% /badge %}
+
+- Fixed an issue with buttons on the blog view in the **Project Dashboard**.
+- Fixed an issue where buttons would sometimes appear white in email communications.
+{% /changelog %}
+
 {% changelog date="2023-10-20" %}
 {% badge status="attention" %}Fixed{% /badge %}
 
@@ -17,7 +29,7 @@ Please use the ISO standard date and time format.
 {% changelog date="2023-10-17" %}
 {% badge status="success" %}Added{% /badge %}
 
-- Added new **`{% form %}`** **Canvas** tag. Designed to improve the experience of creating forms in your **Canvas** files.
+- Added new **[`{% form %}`](/docs/canvas/tags/form)** **Canvas** tag. Designed to improve the experience of creating forms in your **Canvas** files.
 
 {% badge status="attention" %}Fixed{% /badge %}
 
