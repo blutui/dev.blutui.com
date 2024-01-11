@@ -19,14 +19,16 @@ export const Header = ({ children }: HeaderProps) => {
     <header className="sticky top-0 z-10 flex-none border-b border-black/5 bg-zinc-50/70 backdrop-blur backdrop-saturate-200 dark:border-white/5 dark:bg-zinc-900/70">
       <div className="mx-auto flex h-[3.75rem] max-w-8xl items-center justify-between space-x-8 px-8">
         <div className="flex flex-shrink-0 items-center">
-          <Link href="/" className="w-72">
-            <span className="sr-only">Blutui Developers home page</span>
-            <Logo className="mt-1 h-8 w-auto" />
-          </Link>
-          <span className="-ml-px hidden h-9 border-l border-black/5 dark:border-white/5 lg:block"></span>
+          <div className="inline-flex w-72">
+            <Link href="/">
+              <span className="sr-only">Blutui Developers home page</span>
+              <Logo className="mt-1 h-8 w-auto" />
+            </Link>
+          </div>
+          <span className="-ml-px hidden h-9 border-l border-black/5 lg:block dark:border-white/5"></span>
         </div>
         <div className="flex flex-auto items-center space-x-6">
-          <SearchButton className="hidden h-9 w-full rounded-lg bg-zinc-900/10 px-3.5 py-1.5 text-left font-medium text-black/60 transition hover:bg-black/20 dark:bg-zinc-100/10 dark:text-white/60 dark:hover:bg-white/20 lg:block lg:max-w-sm">
+          <SearchButton className="hidden h-9 w-full rounded-lg bg-zinc-900/10 px-3.5 py-1.5 text-left font-medium text-black/60 transition hover:bg-black/20 lg:block lg:max-w-sm dark:bg-zinc-100/10 dark:text-white/60 dark:hover:bg-white/20">
             <div className="flex items-center gap-2">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -53,7 +55,7 @@ export const Header = ({ children }: HeaderProps) => {
           </SearchButton>
         </div>
         <div className="flex flex-shrink-0 items-center space-x-6">
-          <ul className="hidden items-center space-x-6 lg:flex">
+          <ul className="hidden items-center space-x-6 md:flex">
             <li>
               <a
                 className="flex items-center space-x-1 font-semibold text-zinc-500 transition hover:text-zinc-600 dark:text-zinc-200 dark:hover:text-zinc-500"
@@ -121,7 +123,7 @@ export const Header = ({ children }: HeaderProps) => {
           </div>
         </div>
       </div>
-      <div className="mx-auto hidden h-12 max-w-8xl space-x-6 border-t border-black/5 px-8 text-white dark:border-white/5 lg:flex">
+      <div className="mx-auto hidden h-12 max-w-8xl space-x-6 border-t border-black/5 px-8 text-white lg:flex dark:border-white/5">
         <HeaderNavigationItem name="Documentation" href="/docs" />
         <HeaderNavigationItem name="Guides" href="/guides" />
         <HeaderNavigationItem name="Changelog" href="/changelog" />
