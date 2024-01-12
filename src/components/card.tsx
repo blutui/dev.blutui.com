@@ -30,7 +30,7 @@ export const Card = ({ title, href, icon, children }: CardProps) => {
         )}
         {titleMarkup}
       </div>
-      <div className="text-base">{children}</div>
+      <div className="text-sm md:text-base">{children}</div>
     </div>
   )
 

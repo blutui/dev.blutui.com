@@ -16,7 +16,7 @@ export function Step({ id, title, position, children }: StepProps) {
       className="step grid-cols-[3rem_minmax(0,_1fr)] md:grid"
     >
       <div className="not-prose relative flex-shrink-0 md:w-12">
-        <div className="absolute -bottom-2.5 -top-3 left-3.5 hidden w-px bg-zinc-200 dark:bg-zinc-800 md:top-2.5 md:block"></div>
+        <div className="absolute -bottom-2.5 -top-3 left-3.5 hidden w-px bg-zinc-200 md:top-2.5 md:block dark:bg-zinc-800"></div>
         <div
           className={cn(
             'relative flex h-7 w-7 items-center justify-center rounded-full bg-zinc-200 text-sm font-semibold dark:bg-zinc-700',
@@ -27,7 +27,10 @@ export function Step({ id, title, position, children }: StepProps) {
         </div>
       </div>
       <div
-        className={cn('relative md:flex-1', position === 1 ? 'pt-0' : 'pt-6')}
+        className={cn(
+          'relative md:flex-1',
+          position === 1 ? 'md:pt-0' : 'md:pt-6'
+        )}
       >
         <div className="not-prose mb-4 mt-2">
           <h3

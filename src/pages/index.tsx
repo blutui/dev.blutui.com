@@ -22,15 +22,17 @@ const Home: NextPageWithCustomLayout = () => {
             <p className="mb-2 text-xs uppercase tracking-widest text-zinc-500 dark:text-white/50">
               Developer Documentation
             </p>
-            <h1 className="text-3xl font-bold text-zinc-800 dark:text-white lg:text-5xl">
+            <h1 className="text-3xl font-bold text-zinc-800 lg:text-5xl dark:text-white">
               Welcome to Blutui
             </h1>
-            <p className="mb-4 mt-2 text-lg text-zinc-800/80 dark:text-white/70 lg:text-xl">
+            <p className="mb-4 mt-2 text-base text-zinc-800/80 md:text-lg lg:text-xl dark:text-white/70">
               Explore our guides and documentation on using Blutui.
             </p>
-            <div className="flex flex-col items-center gap-4 lg:flex-row">
-              <Button href="/docs/getting-started/create">Get started</Button>
-              <span className="hidden text-sm font-semibold uppercase text-zinc-800/40 dark:text-white/40 lg:block">
+            <div className="flex flex-col items-center gap-4 md:flex-row">
+              <span className="hidden md:inline-block">
+                <Button href="/docs/getting-started/create">Get started</Button>
+              </span>
+              <span className="hidden text-sm font-semibold uppercase text-zinc-800/40 md:block dark:text-white/40">
                 or
               </span>
               <SearchButton className="inline-flex h-10 w-full max-w-xs select-none items-center whitespace-nowrap rounded-lg bg-zinc-900/10 px-3 text-base font-medium text-zinc-700 transition hover:bg-zinc-900/20 dark:bg-white/20 dark:text-zinc-300 dark:hover:bg-white/10">
@@ -54,7 +56,7 @@ const Home: NextPageWithCustomLayout = () => {
           </div>
         </div>
       </div>
-      <div className="mx-auto mt-6 grid max-w-8xl gap-6 px-8 md:grid-cols-6">
+      <div className="mx-auto mt-6 grid max-w-8xl gap-6 px-8 lg:grid-cols-6">
         <div className="md:col-span-3">
           <Card
             title="Read the docs"
