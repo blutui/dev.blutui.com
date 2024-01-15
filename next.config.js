@@ -14,9 +14,9 @@ const nextConfig = {
   },
   redirects: async () => {
     return require('./redirects.json')
-  }
+  },
 }
 
 module.exports = withMarkdoc({
-  schemaPath: './src/markdoc'
+  schemaPath: './_src/markdoc',
 })(nextConfig)

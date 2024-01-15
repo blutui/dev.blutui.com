@@ -1,3 +1,5 @@
+'use client'
+
 import React, {
   createContext,
   useCallback,
@@ -6,7 +8,7 @@ import React, {
   useState,
 } from 'react'
 import { createPortal } from 'react-dom'
-import { useRouter } from 'next/router'
+import { useRouter } from 'next/navigation'
 import {
   DocSearchModal,
   DocSearchProps,

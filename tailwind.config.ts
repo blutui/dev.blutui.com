@@ -5,9 +5,10 @@ import flattenColorPalette from 'tailwindcss/lib/util/flattenColorPalette'
 
 export default {
   content: [
+    './app/**/*.{ts,tsx}',
     './src/pages/**/*.{ts,tsx}',
     './src/layouts/**/*.{ts,tsx}',
-    './src/components/**/*.{ts,tsx}',
+    './_src/components/**/*.{ts,tsx}',
   ],
   theme: {
     extend: {
