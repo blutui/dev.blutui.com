@@ -290,7 +290,7 @@ Please use the ISO standard date and time format.
 {% changelog date="2022-07-05" %}
 {% badge status="success" %}Added{% /badge %}
 
-- Added Canvas filters to easily create HTML tags. `image_tag`, `script_tag` and `stylesheet_tag` have been added.
+- Added Canvas filters to easily create HTML tags. [`image_tag`](/docs/canvas/filters/image_tag), `script_tag` and `stylesheet_tag` have been added.
 - Added much needed speed boost to Collections. Collections are now 2.5x - 3x more faster than before.
 {% /changelog %}
 
