@@ -4,11 +4,11 @@ import { FullPageLayout } from '@/layouts/full-page'
 import { Button } from '@/components/button'
 import { Card } from '@/components/card'
 
-import { AcademicCap } from '@/components/icons/academic-cap'
+import { AcademicCapOutline } from '@/components/icons/academic-cap'
 import { AtSymbol } from '@/components/icons/at-symbol'
-import { BookOpen } from '@/components/icons/book-open'
+import { BookOpenOutline } from '@/components/icons/book-open'
 import { Microphone } from '@/components/icons/microphone'
-import { Sparkles } from '@/components/icons/sparkles'
+import { SparklesOutline } from '@/components/icons/sparkles'
 import { Video } from '@/components/icons/video'
 
 import type { NextPageWithCustomLayout } from '@/types'
@@ -61,13 +61,13 @@ const Home: NextPageWithCustomLayout = () => {
           <Card
             title="Read the docs"
             href="/docs/getting-started/create"
-            icon={<BookOpen />}
+            icon={<BookOpenOutline />}
           >
             Learn how to get set up and start building your first project.
           </Card>
         </div>
         <div className="md:col-span-3">
-          <Card title="Guides" href="/guides" icon={<AcademicCap />}>
+          <Card title="Guides" href="/guides" icon={<AcademicCapOutline />}>
             Find a guide on how to develop with Blutui.
           </Card>
         </div>
@@ -75,7 +75,7 @@ const Home: NextPageWithCustomLayout = () => {
           <Card
             title="What's new in Blutui"
             href="/changelog"
-            icon={<Sparkles />}
+            icon={<SparklesOutline />}
           >
             {`See what's been added, changed, fixed or removed.`}
           </Card>
