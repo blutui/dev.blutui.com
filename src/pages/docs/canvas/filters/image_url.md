@@ -16,27 +16,35 @@ Custom `width` and `height` dimensions can never be resized to be larger than th
 
 ## width
 
+`width: number | min: 1`
+
 You can specify the width of the image. If you only specify the width, then the height is automatically calculated based on the image's dimensions:
 
 ```canvas {% process=false %}
-{{ entry.image | image_url(width = 280) }}
+{{ entry.image | image_url({ width: 280 }) }}
 {# outputs: https://cdn.blutui.com/uploads/project_name/image.png?width=280 #}
 ```
 
 ## height
 
+`height: number | min: 1`
+
 You can specify the height of the image. If you only specify the height, then the width is automatically calculated based on the image's dimensions:
 
 ```canvas {% process=false %}
-{{ entry.image | image_url(height = 280) }}
+{{ entry.image | image_url({ height: 280 }) }}
 {# outputs: https://cdn.blutui.com/uploads/project_name/image.png?height=280 #}
 ```
 
 ## format
 
+`format: string`
+
 You can specify the file format to use for the image:
 
 ```canvas {% process=false %}
-{{ entry.image | image_url(width = 280, format = 'webp') }}
+{{ entry.image | image_url({ width: 280, format: 'webp' }) }}
 {# outputs: https://cdn.blutui.com/uploads/project_name/image.png?format=webp&width=280 #}
 ```
+
+The valid formats are `jpeg`, `webp`, `avif`, `png`, `svg`, or `gif`
