@@ -8,7 +8,9 @@ export interface NavigationItemWithItems {
   items: NavigationItem[]
 }
 
-export type NavigationItem = NavigationItemWithoutItems | NavigationItemWithItems
+export type NavigationItem =
+  | NavigationItemWithoutItems
+  | NavigationItemWithItems
 
 export const documentationNavigation: NavigationItem[] = [
   {
@@ -123,7 +125,7 @@ export const documentationNavigation: NavigationItem[] = [
           },
           {
             title: 'form',
-            url: '/docs/canvas/tags/form'
+            url: '/docs/canvas/tags/form',
           },
           {
             title: 'from',
@@ -217,6 +219,14 @@ export const documentationNavigation: NavigationItem[] = [
           {
             title: 'group_by',
             url: '/docs/canvas/filters/group_by',
+          },
+          {
+            title: 'image_tag',
+            url: '/docs/canvas/filters/image_tag',
+          },
+          {
+            title: 'image_url',
+            url: '/docs/canvas/filters/image_url',
           },
           {
             title: 'join',

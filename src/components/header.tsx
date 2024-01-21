@@ -7,6 +7,9 @@ import { useActionKey } from '@/utils/use-action-key'
 
 import { Logo } from '@/components/logo'
 import { SearchButton } from '@/components/search'
+import { BookOpenMini } from './icons/book-open'
+import { AcademicCapMini } from './icons/academic-cap'
+import { SparklesMini } from './icons/sparkles'
 
 export interface HeaderProps {
   children?: React.ReactNode
@@ -124,9 +127,21 @@ export const Header = ({ children }: HeaderProps) => {
         </div>
       </div>
       <div className="mx-auto hidden h-12 max-w-8xl space-x-6 border-t border-black/5 px-8 text-white lg:flex dark:border-white/5">
-        <HeaderNavigationItem name="Documentation" href="/docs" />
-        <HeaderNavigationItem name="Guides" href="/guides" />
-        <HeaderNavigationItem name="Changelog" href="/changelog" />
+        <HeaderNavigationItem
+          name="Documentation"
+          href="/docs"
+          icon={<BookOpenMini />}
+        />
+        <HeaderNavigationItem
+          name="Guides"
+          href="/guides"
+          icon={<AcademicCapMini />}
+        />
+        <HeaderNavigationItem
+          name="Changelog"
+          href="/changelog"
+          icon={<SparklesMini />}
+        />
       </div>
     </header>
   )
@@ -135,9 +150,10 @@ export const Header = ({ children }: HeaderProps) => {
 interface HeaderNavigationItemProps {
   name: string
   href: string
+  icon?: React.ReactNode
 }
 
-function HeaderNavigationItem({ name, href }: HeaderNavigationItemProps) {
+function HeaderNavigationItem({ name, href, icon }: HeaderNavigationItemProps) {
   const { pathname: route } = useRouter()
   const active = href && [route, route + '/'].some((r) => r.includes(href))
 
@@ -145,13 +161,18 @@ function HeaderNavigationItem({ name, href }: HeaderNavigationItemProps) {
     <Link
       href={href}
       className={cn(
-        '-mb-px border-b-2 py-3.5 text-sm font-medium transition',
+        '-mb-px inline-flex items-center border-b-2 py-3.5 text-sm font-medium transition',
         active
           ? 'border-han-200 text-han-400 dark:border-han-300 dark:text-han-100'
           : 'border-transparent text-zinc-500 hover:border-zinc-300 dark:text-zinc-400 dark:hover:border-zinc-500'
       )}
     >
-      {name}
+      {icon && (
+        <span className={cn('mr-2', active ? 'opacity-70' : 'opacity-50')}>
+          {icon}
+        </span>
+      )}
+      <span>{name}</span>
     </Link>
   )
 }
