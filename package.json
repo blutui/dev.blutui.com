@@ -11,7 +11,7 @@
     "@docsearch/react": "^3.5.2",
     "@markdoc/markdoc": "^0.4.0",
     "@markdoc/next.js": "^0.3.7",
-    "@vercel/analytics": "^1.1.1",
+    "@vercel/analytics": "^1.1.2",
     "clsx": "^2.1.0",
     "next": "^14.0.4",
     "prismjs": "^1.29.0",
