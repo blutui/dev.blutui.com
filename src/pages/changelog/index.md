@@ -7,6 +7,24 @@ description: 'A continuous stream of changes made to the Blutui platform.'
 Please use the ISO standard date and time format.
 {% /comment %}
 
+{% changelog date="2024-01-22" %}
+{% badge status="success" %}Added{% /badge %}
+
+- Added favicons for project images in the **Agency Console**.
+- Added [`image_url`](/docs/canvas/filters/image_url) filter to the **Canvas** templating language, to allow you to retrieve an optimised image.
+
+{% badge status="warning" %}Removed{% /badge %}
+
+- Removed the refresh domain button on the domain list view in the **Agency Console**.
+{% /changelog %}
+
+{% changelog date="2024-01-15" %}
+{% badge status="success" %}Added{% /badge %}
+
+- Added the ability to add a SEO title and SEO description to blog posts in the **Project Dashboard**.
+- Added the ability to view `webp` image thumbnails in the **Project Dashboard**.
+{% /changelog %}
+
 {% changelog date="2023-12-21" %}
 {% badge status="success" %}Added{% /badge %}
 
