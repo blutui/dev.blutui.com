@@ -1,4 +1,3 @@
-import React from 'react'
 import cn from 'clsx'
 
 type BadgeStatus =
@@ -33,7 +32,7 @@ const classes: Record<BadgeStatus, string> = {
   critical: cn(''),
 }
 
-export const Badge = ({ status, children }: BadgeProps) => {
+export function Badge({ status, children }: BadgeProps) {
   return (
     <span
       className={cn(

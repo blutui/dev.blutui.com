@@ -10,10 +10,10 @@ export interface TableOfContentsProps {
   toc: Section[]
 }
 
-export const TableOfContents = ({
+export function TableOfContents({
   title = 'On this page',
   toc,
-}: TableOfContentsProps) => {
+}: TableOfContentsProps) {
   const items = toc.filter(
     (item) => item.id && (item.level === 2 || item.level === 3)
   )

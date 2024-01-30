@@ -1,4 +1,3 @@
-import React from 'react'
 import cn from 'clsx'
 
 export interface HeadingProps {
@@ -8,12 +7,12 @@ export interface HeadingProps {
   className?: string
 }
 
-export const Heading = ({
+export function Heading({
   id = '',
   level = 1,
   children,
   className,
-}: HeadingProps) => {
+}: HeadingProps) {
   const Component = `h${level}` as keyof JSX.IntrinsicElements
 
   return (

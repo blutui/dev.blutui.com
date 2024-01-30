@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react'
+import { useEffect, useRef } from 'react'
 import Prism from 'prismjs'
 import cn from 'clsx'
 
@@ -69,11 +69,11 @@ Prism.hooks.add('after-tokenize', (env) => {
   markupTemplating.tokenizePlaceholders(env, 'canvas')
 })
 
-export const Code = ({
+export function Code({
   children,
   'data-language': language,
   filename,
-}: CodeProps) => {
+}: CodeProps) {
   // const [copied, setCopied] = useState(false)
   const ref = useRef(null)
 

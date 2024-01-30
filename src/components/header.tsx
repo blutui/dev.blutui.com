@@ -1,4 +1,3 @@
-import React from 'react'
 import cn from 'clsx'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
@@ -7,6 +6,8 @@ import { useActionKey } from '@/utils/use-action-key'
 
 import { Logo } from '@/components/logo'
 import { SearchButton } from '@/components/search'
+import { ThemeToggle } from './theme-toggle'
+
 import { BookOpenMini } from './icons/book-open'
 import { AcademicCapMini } from './icons/academic-cap'
 import { SparklesMini } from './icons/sparkles'
@@ -15,7 +16,7 @@ export interface HeaderProps {
   children?: React.ReactNode
 }
 
-export const Header = ({ children }: HeaderProps) => {
+export function Header({ children }: HeaderProps) {
   const actionKey = useActionKey()
 
   return (
@@ -126,22 +127,27 @@ export const Header = ({ children }: HeaderProps) => {
           </div>
         </div>
       </div>
-      <div className="mx-auto hidden h-12 max-w-8xl space-x-6 border-t border-black/5 px-8 text-white lg:flex dark:border-white/5">
-        <HeaderNavigationItem
-          name="Documentation"
-          href="/docs"
-          icon={<BookOpenMini />}
-        />
-        <HeaderNavigationItem
-          name="Guides"
-          href="/guides"
-          icon={<AcademicCapMini />}
-        />
-        <HeaderNavigationItem
-          name="Changelog"
-          href="/changelog"
-          icon={<SparklesMini />}
-        />
+      <div className="mx-auto hidden h-12 max-w-8xl border-t border-black/5 px-8 text-white lg:flex lg:items-center lg:justify-between dark:border-white/5">
+        <div className="flex space-x-6">
+          <HeaderNavigationItem
+            name="Documentation"
+            href="/docs"
+            icon={<BookOpenMini />}
+          />
+          <HeaderNavigationItem
+            name="Guides"
+            href="/guides"
+            icon={<AcademicCapMini />}
+          />
+          <HeaderNavigationItem
+            name="Changelog"
+            href="/changelog"
+            icon={<SparklesMini />}
+          />
+        </div>
+        <div className="flex items-center">
+          <ThemeToggle />
+        </div>
       </div>
     </header>
   )

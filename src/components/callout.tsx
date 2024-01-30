@@ -1,4 +1,3 @@
-import React from 'react'
 import cn from 'clsx'
 
 const TypeToIcon = {
@@ -96,7 +95,7 @@ export interface CalloutProps {
   title?: string
 }
 
-export const Callout = ({ type, children, title }: CalloutProps) => {
+export function Callout({ type, children, title }: CalloutProps) {
   const Emoji = TypeToIcon[type]
 
   return (

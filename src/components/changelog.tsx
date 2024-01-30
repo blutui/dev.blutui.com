@@ -5,7 +5,7 @@ export interface ChangelogProps {
   children?: React.ReactNode
 }
 
-export const Changelog = ({ date, children }: ChangelogProps) => {
+export function Changelog({ date, children }: ChangelogProps) {
   const id = date
   const formattedDate = new Date(date).toLocaleDateString('en-US', {
     year: 'numeric',

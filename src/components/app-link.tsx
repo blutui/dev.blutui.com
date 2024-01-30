@@ -1,4 +1,3 @@
-import React from 'react'
 import Link, { LinkProps } from 'next/link'
 
 export type AppLinkProps = LinkProps & {
@@ -6,7 +5,7 @@ export type AppLinkProps = LinkProps & {
   children?: React.ReactNode
 }
 
-export const AppLink = ({ children, ...props }: AppLinkProps) => {
+export function AppLink({ children, ...props }: AppLinkProps) {
   const target = props.href.toString().startsWith('http') ? '_blank' : undefined
 
   return (
