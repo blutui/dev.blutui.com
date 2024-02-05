@@ -45,7 +45,7 @@ This will output:
 
 `sources: array`
 
-You can specify each source attribute directly. `sources` is a array of objects which has to varibles. `url` which is for the src attribute and `type` which is for the type attribute
+You can specify each source attribute directly. `sources` is an array of objects which has two variables. `url` which is for the src attribute and `type` which is for the type attribute
 
 ```canvas {% process=false %}
 {{ cms_audio('artist-1', {sources:[{ url:'audio-1.mp3', type:'audio/mp3' },{ url:'audio-1.mp4', type:'audio/mp4' }]}) }}
@@ -55,8 +55,8 @@ This will output:
 
 ```html {% process=false %}
 <audio controls class="{{ class }}">
-    <source src="audio-1.mp3" type="audio/mp3">
-   <source src="audio-1.mp4" type="audio/mp4">
+  <source src="audio-1.mp3" type="audio/mp3">
+  <source src="audio-1.mp4" type="audio/mp4">
 
   Your browser does not support the audio tag.
 </audio>
