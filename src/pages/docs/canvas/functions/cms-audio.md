@@ -19,11 +19,11 @@ description: 'The cms_audio function is used to define a slot for CMS driven aud
 </audio>
 ```
 
-## Class
+## class
 
-`Class: string`
+`class: string`
 
-You can specify the style element directly on the `<audio>` tag.
+You can specify the class element directly on the `<audio>` tag.
 
 ```canvas {% process=false %}
 {{ cms_audio('artist-1',{ class:'w-full' }) }}
@@ -41,7 +41,12 @@ This will output:
 </audio>
 ```
 
-## Sources
+{% callout type="note" %}
+This `class` variable is only accessed by this way. All other variables can be editable in the canopy editor. 
+{% /callout %}
+
+
+## sources
 
 `sources: array`
 
