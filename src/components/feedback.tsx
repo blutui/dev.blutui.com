@@ -72,7 +72,7 @@ export function Feedback() {
                   path: pathname,
                 })
                 Cookies.set(`feedback-dev-${slugify(pathname)}`, label, {
-                  sameSite: 'None',
+                  sameSite: 'Lax',
                 })
                 setReaction(label)
               }}
