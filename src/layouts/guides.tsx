@@ -8,6 +8,7 @@ import { Section } from '@/utils/collect-headings'
 import { ArrowLongLeft } from '@/components/icons/arrow-long-left'
 import { Footer } from '@/components/footer'
 import { TableOfContents } from '@/components/table-of-contents'
+import { Feedback } from '@/components/feedback'
 
 export interface GuidesLayoutProps {
   layoutProps: any
@@ -43,7 +44,7 @@ export const GuidesLayout = ({
               Back to guides
             </Link>
           </div>
-          <h1 className="text-3xl font-bold tracking-tight text-zinc-900 dark:text-zinc-200 lg:text-4xl">
+          <h1 className="text-3xl font-bold tracking-tight text-zinc-900 lg:text-4xl dark:text-zinc-200">
             {title}
           </h1>
           {guide && (
@@ -66,11 +67,11 @@ export const GuidesLayout = ({
       <div className="mx-auto w-full max-w-8xl px-8 py-8">
         <div className="flex gap-8">
           <TableOfContents title="In this guide" toc={toc} />
-          <div
-            id="content-wrapper"
-            className="content-wrapper w-full md:max-w-screen-md"
-          >
-            {children}
+          <div className="w-full md:max-w-screen-md">
+            <div id="content-wrapper" className="content-wrapper mb-8">
+              {children}
+            </div>
+            <Feedback />
           </div>
         </div>
       </div>
