@@ -3,6 +3,7 @@ import { useRouter } from 'next/router'
 import { useArticleContext } from '@/context/article-context'
 import type { Section } from '@/utils/collect-headings'
 
+import { Feedback } from '@/components/feedback'
 import { Footer } from '@/components/footer'
 import { Item, Sidebar } from '@/components/sidebar'
 import { TableOfContents } from '@/components/table-of-contents'
@@ -45,12 +46,12 @@ export const DocumentationLayout = ({
           <div className="w-full min-w-0 max-w-full">
             <header id="header" className="mx-auto max-w-screen-md">
               {title && (
-                <h1 className="text-3xl font-bold tracking-tight text-zinc-900 dark:text-zinc-200 lg:text-4xl">
+                <h1 className="text-3xl font-bold tracking-tight text-zinc-900 lg:text-4xl dark:text-zinc-200">
                   {title}
                 </h1>
               )}
               {description && (
-                <p className="mt-2 text-base text-zinc-600 dark:text-zinc-400 lg:text-lg">
+                <p className="mt-2 text-base text-zinc-600 lg:text-lg dark:text-zinc-400">
                   {description}
                 </p>
               )}
@@ -58,6 +59,7 @@ export const DocumentationLayout = ({
             <div id="content-wrapper" className="content-wrapper py-8">
               {children}
             </div>
+            <Feedback />
             <Footer fullwidth={false} />
           </div>
           <TableOfContents toc={toc} />

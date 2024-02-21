@@ -1,5 +1,6 @@
 import cn from 'clsx'
 import Link from 'next/link'
+import dynamic from 'next/dynamic'
 import { useRouter } from 'next/router'
 
 import { useActionKey } from '@/utils/use-action-key'
@@ -12,6 +13,11 @@ import { BookOpenMini } from './icons/book-open'
 import { AcademicCapMini } from './icons/academic-cap'
 import { SparklesMini } from './icons/sparkles'
 
+const AskAiButton = dynamic(
+  () => import('./ask-ai-button').then((mod) => mod.AskAiButton),
+  { ssr: false }
+)
+
 export interface HeaderProps {
   children?: React.ReactNode
 }
@@ -23,7 +29,7 @@ export function Header({ children }: HeaderProps) {
     <header className="sticky top-0 z-10 flex-none border-b border-black/5 bg-zinc-50/70 backdrop-blur backdrop-saturate-200 dark:border-white/5 dark:bg-zinc-900/70">
       <div className="mx-auto flex h-[3.75rem] max-w-8xl items-center justify-between space-x-8 px-8">
         <div className="flex flex-shrink-0 items-center">
-          <div className="inline-flex w-72">
+          <div className="inline-flex lg:w-72">
             <Link href="/">
               <span className="sr-only">Blutui Developers home page</span>
               <Logo className="mt-1 h-8 w-auto" />
@@ -31,8 +37,8 @@ export function Header({ children }: HeaderProps) {
           </div>
           <span className="-ml-px hidden h-9 border-l border-black/5 lg:block dark:border-white/5"></span>
         </div>
-        <div className="flex flex-auto items-center space-x-6">
-          <SearchButton className="hidden h-9 w-full rounded-lg bg-zinc-900/10 px-3.5 py-1.5 text-left font-medium text-black/60 transition hover:bg-black/20 lg:block lg:max-w-sm dark:bg-zinc-100/10 dark:text-white/60 dark:hover:bg-white/20">
+        <div className="flex flex-auto items-center">
+          <SearchButton className="mr-6 hidden h-9 w-full rounded-lg bg-zinc-900/10 px-3.5 py-1.5 text-left font-medium text-black/60 transition hover:bg-black/20 lg:block lg:max-w-xs dark:bg-zinc-100/10 dark:text-white/60 dark:hover:bg-white/20">
             <div className="flex items-center gap-2">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -57,6 +63,7 @@ export function Header({ children }: HeaderProps) {
               )}
             </div>
           </SearchButton>
+          <AskAiButton />
         </div>
         <div className="flex flex-shrink-0 items-center space-x-6">
           <ul className="hidden items-center space-x-6 md:flex">
