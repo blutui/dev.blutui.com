@@ -1,5 +1,7 @@
 import cn from 'clsx'
 
+import { ThemeToggle } from './theme-toggle'
+
 export interface FooterProps {
   fullwidth?: boolean
 }
@@ -12,9 +14,14 @@ export function Footer({ fullwidth = true }: FooterProps) {
         fullwidth ? 'px-8' : null
       )}
     >
-      <p className="font-mono text-xs text-zinc-600 dark:text-zinc-500">
-        Copyright &copy; {new Date().getFullYear()} Blutui.
-      </p>
+      <div className="flex items-center space-x-4">
+        <div className="flex-1">
+          <p className="font-mono text-xs text-zinc-400 dark:text-zinc-500">
+            Copyright &copy; {new Date().getFullYear()} Blutui.
+          </p>
+        </div>
+        <ThemeToggle />
+      </div>
     </footer>
   )
 }

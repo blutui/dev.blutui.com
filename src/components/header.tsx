@@ -7,7 +7,6 @@ import { useActionKey } from '@/utils/use-action-key'
 
 import { Logo } from '@/components/logo'
 import { SearchButton } from '@/components/search'
-import { ThemeToggle } from './theme-toggle'
 
 import { BookOpenMini } from './icons/book-open'
 import { AcademicCapMini } from './icons/academic-cap'
@@ -151,9 +150,6 @@ export function Header({ children }: HeaderProps) {
             href="/changelog"
             icon={<SparklesMini />}
           />
-        </div>
-        <div className="flex items-center">
-          <ThemeToggle />
         </div>
       </div>
     </header>
