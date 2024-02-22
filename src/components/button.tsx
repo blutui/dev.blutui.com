@@ -1,4 +1,3 @@
-import React from 'react'
 import Link, { LinkProps } from 'next/link'
 import cn from 'clsx'
 
@@ -8,7 +7,7 @@ export interface ButtonProps {
   children?: React.ReactNode
 }
 
-export const Button = ({ href, children, className }: ButtonProps) => {
+export function Button({ href, children, className }: ButtonProps) {
   let buttonMarkup
 
   const classes = cn(

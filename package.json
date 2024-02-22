@@ -18,7 +18,8 @@
     "prismjs": "^1.29.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "scroll-into-view-if-needed": "^3.0.10"
+    "scroll-into-view-if-needed": "^3.0.10",
+    "zustand": "^4.5.1"
   },
   "devDependencies": {
     "@tailwindcss/forms": "^0.5.7",

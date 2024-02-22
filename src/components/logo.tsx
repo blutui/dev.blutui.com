@@ -5,7 +5,7 @@ export interface LogoProps {
   [key: string]: any
 }
 
-export const Logo = ({ className, ...props }: LogoProps) => {
+export function Logo({ className, ...props }: LogoProps) {
   return (
     <svg
       viewBox="0 0 304 40"

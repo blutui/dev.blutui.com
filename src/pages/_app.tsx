@@ -30,7 +30,7 @@ type BlutuiAppProps<P = {}> = Omit<AppProps<P>, 'Component'> & {
 export type BlutuiProps = MarkdocNextJsPageProps
 
 const manrope = Manrope({
-  weight: ['400', '500', '600', '700'],
+  weight: ['400', '500', '600', '700', '800'],
   subsets: ['latin'],
   display: 'optional',
 })

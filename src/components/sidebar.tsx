@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react'
+import { useEffect, useRef } from 'react'
 import cn from 'clsx'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
@@ -79,7 +79,7 @@ const Menu = ({ items, className }: MenuProps) => {
   )
 }
 
-export const Quicklinks = () => {
+export function Quicklinks() {
   const Item = ({
     name,
     href,
@@ -177,7 +177,7 @@ export const Sidebar = ({ items, className }: SidebarProps) => {
   return (
     <>
       <aside
-        className="blutui-sidebar-container sticky top-header hidden w-72 flex-shrink-0 flex-col self-start border-r border-black/5 dark:border-white/5 lg:flex"
+        className="blutui-sidebar-container sticky top-header hidden w-72 flex-shrink-0 flex-col self-start border-r border-black/5 lg:flex dark:border-white/5"
         ref={containerRef}
       >
         <div

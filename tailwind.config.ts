@@ -9,6 +9,7 @@ export default {
     './src/layouts/**/*.{ts,tsx}',
     './src/components/**/*.{ts,tsx}',
   ],
+  darkMode: 'class',
   theme: {
     extend: {
       backgroundImage: {

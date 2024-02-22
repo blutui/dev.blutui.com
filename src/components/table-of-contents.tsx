@@ -10,10 +10,10 @@ export interface TableOfContentsProps {
   toc: Section[]
 }
 
-export const TableOfContents = ({
+export function TableOfContents({
   title = 'On this page',
   toc,
-}: TableOfContentsProps) => {
+}: TableOfContentsProps) {
   const items = toc.filter(
     (item) => item.id && (item.level === 2 || item.level === 3)
   )
@@ -58,7 +58,7 @@ export const TableOfContents = ({
         <div
           className={cn(
             items.length >= 1 ? 'mt-6 border-t pt-8' : null,
-            'sticky bottom-0 border-black/10 bg-zinc-50 pb-8 dark:border-white/10 dark:bg-zinc-900'
+            'sticky bottom-0 border-black/10 bg-zinc-50 pb-8 transition-colors dark:border-white/10 dark:bg-zinc-900'
           )}
         >
           <Contribution />
