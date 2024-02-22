@@ -205,4 +205,5 @@ export default function Guides() {
 
 Guides.layoutProps = {
   Layout: FullPageLayout,
+  title: 'Guides',
 }

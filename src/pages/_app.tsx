@@ -38,12 +38,12 @@ const manrope = Manrope({
 const Blutui = ({ Component, pageProps }: BlutuiAppProps<BlutuiProps>) => {
   const { markdoc } = pageProps
 
-  let title = 'Blutui'
+  let title = 'Blutui Developers'
   let description = 'Blutui developer documentation'
   let articleContext: ArticleContextT = {}
   if (markdoc) {
     if (markdoc.frontmatter.title) {
-      title = markdoc.frontmatter.title + ' | Blutui'
+      title = markdoc.frontmatter.title + ' | Blutui Developers'
       articleContext = Object.assign(articleContext, {
         title: markdoc.frontmatter.title,
       })
@@ -61,6 +61,10 @@ const Blutui = ({ Component, pageProps }: BlutuiAppProps<BlutuiProps>) => {
         filePath: markdoc.file.path,
       })
     }
+  }
+
+  if (Component.layoutProps?.title) {
+    title = Component.layoutProps?.title + ' | Blutui Developers'
   }
 
   const { pathname, asPath } = useRouter()
