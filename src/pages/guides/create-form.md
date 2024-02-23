@@ -116,7 +116,7 @@ Inside your `views/forms/contact.html` file, insert:
 
 ```canvas {% process=false %}
 {% set form = cms.form('contact') %}
-{% import 'components/form as ui %}
+{% import 'components/form' as ui %}
 
 <form id="" method="POST" action="{{ request.url }}" enctype="multipart/form-data">
   {{ csrf_field() | raw }}
