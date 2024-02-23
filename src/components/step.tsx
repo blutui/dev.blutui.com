@@ -16,10 +16,10 @@ export function Step({ id, title, position, children }: StepProps) {
       className="step grid-cols-[3rem_minmax(0,_1fr)] md:grid"
     >
       <div className="not-prose relative flex-shrink-0 md:w-12">
-        <div className="absolute -bottom-2.5 -top-3 left-3.5 hidden w-px bg-zinc-200 transition-colors dark:bg-zinc-800 md:top-2.5 md:block"></div>
+        <div className="absolute -bottom-2.5 -top-3 left-3.5 hidden w-px bg-zinc-200 dark:bg-zinc-800 md:top-2.5 md:block"></div>
         <div
           className={cn(
-            'relative flex h-7 w-7 items-center justify-center rounded-full bg-zinc-200 text-sm font-semibold transition-colors dark:bg-zinc-700',
+            'relative flex h-7 w-7 items-center justify-center rounded-full bg-zinc-200 text-sm font-semibold dark:bg-zinc-700',
             position === 1 ? 'mt-2' : 'mt-8'
           )}
         >
