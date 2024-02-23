@@ -11,6 +11,11 @@
   min-height: 100%;
 }
 
+.changing-theme,
+.changing-theme * {
+  transition: none !important;
+}
+
 .card + .card {
   margin-top: 1.25rem;
 }

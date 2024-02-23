@@ -47,7 +47,7 @@ const File = ({ item }: { item: Item }) => {
         <Link
           href={item.url}
           className={cn(
-            'flex cursor-pointer rounded-md px-3 py-1 text-sm transition-colors [word-break:break-word]',
+            'flex cursor-pointer rounded-md px-3 py-1 text-sm [word-break:break-word]',
             active
               ? 'bg-han-50 font-semibold text-han-500 highlight-white/5 before:absolute before:inset-y-1.5 before:-left-3 before:border-l before:border-current dark:bg-han-400/20 dark:text-han-100'
               : 'font-medium text-zinc-700 hover:bg-zinc-100 hover:highlight-white/5 dark:text-zinc-400 dark:hover:bg-han-100/5 dark:hover:text-zinc-50'
@@ -177,7 +177,7 @@ export const Sidebar = ({ items, className }: SidebarProps) => {
   return (
     <>
       <aside
-        className="blutui-sidebar-container sticky top-header hidden w-72 flex-shrink-0 flex-col self-start border-r border-black/5 lg:flex dark:border-white/5"
+        className="blutui-sidebar-container sticky top-header hidden w-72 flex-shrink-0 flex-col self-start border-r border-black/5 dark:border-white/5 lg:flex"
         ref={containerRef}
       >
         <div
