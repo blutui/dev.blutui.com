@@ -140,7 +140,7 @@ export default function Guides() {
         </header>
 
         <div className="flex max-w-full gap-8">
-          <aside className="sticky top-header -mt-6 hidden max-h-sidebar w-64 max-w-[16rem] flex-shrink-0 lg:block">
+          <aside className="sticky top-header -mt-6 hidden max-h-sidebar w-64 max-w-[16rem] shrink-0 lg:block">
             <div className="mt-6 text-xs font-semibold uppercase text-zinc-400 dark:text-zinc-500">
               <div>Filters</div>
             </div>
@@ -174,7 +174,7 @@ export default function Guides() {
             </div>
           </aside>
 
-          <div className="m-0 flex-grow">
+          <div className="m-0 grow">
             <div className="mb-6">{countMarkup}</div>
 
             <div className="space-y-4">

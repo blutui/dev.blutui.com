@@ -16,7 +16,7 @@ import type { NextPageWithCustomLayout } from '@/types'
 
 const Home: NextPageWithCustomLayout = () => {
   return (
-    <div className="w-full flex-grow">
+    <div className="w-full grow">
       <div className="relative -mt-10 overflow-hidden pb-8 pt-10 md:pb-12">
         <div className="relative mx-auto flex max-w-8xl items-center">
           <div className="w-full px-8 py-6 md:py-10">
@@ -42,7 +42,7 @@ const Home: NextPageWithCustomLayout = () => {
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 20 20"
                     fill="currentColor"
-                    className="h-5 w-5 opacity-70"
+                    className="size-5 opacity-70"
                   >
                     <path
                       fillRule="evenodd"

@@ -36,7 +36,7 @@ export function ThemeToggle({ className }: ThemeToggleProps) {
   const [setting, setSetting] = useTheme()
 
   return (
-    <div className="flex flex-shrink-0 items-center space-x-3">
+    <div className="flex shrink-0 items-center space-x-3">
       {settings.map(({ value, label, icon: Icon }) => (
         <button
           key={value}

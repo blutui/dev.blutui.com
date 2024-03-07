@@ -84,7 +84,7 @@ export function Code({
   const lang = language === 'md' ? 'markdoc' : language || 'markdoc'
 
   return (
-    <div className="code not-prose relative" aria-live="polite">
+    <div className="not-prose relative" aria-live="polite">
       {filename && (
         <div className="absolute top-0 z-10 w-full truncate rounded-t-xl bg-zinc-500/30 px-4 py-2 text-sm font-medium text-zinc-300">
           {filename}

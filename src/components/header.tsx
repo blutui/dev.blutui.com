@@ -27,7 +27,7 @@ export function Header({ children }: HeaderProps) {
   return (
     <header className="sticky top-0 z-10 flex-none border-b border-black/5 bg-zinc-50/70 backdrop-blur backdrop-saturate-200 transition dark:border-white/5 dark:bg-zinc-900/70">
       <div className="mx-auto flex h-[3.75rem] max-w-8xl items-center justify-between space-x-8 px-8">
-        <div className="flex flex-shrink-0 items-center">
+        <div className="flex shrink-0 items-center">
           <div className="inline-flex lg:w-72">
             <Link href="/">
               <span className="sr-only">Blutui Developers home page</span>
@@ -43,7 +43,7 @@ export function Header({ children }: HeaderProps) {
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 20 20"
                 fill="currentColor"
-                className="h-5 w-5 opacity-70"
+                className="size-5 opacity-70"
               >
                 <path
                   fillRule="evenodd"
@@ -64,7 +64,7 @@ export function Header({ children }: HeaderProps) {
           </SearchButton>
           <AskAiButton />
         </div>
-        <div className="flex flex-shrink-0 items-center space-x-6">
+        <div className="flex shrink-0 items-center space-x-6">
           <ul className="hidden items-center space-x-6 md:flex">
             <li>
               <a
@@ -78,7 +78,7 @@ export function Header({ children }: HeaderProps) {
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 20 20"
                   fill="currentColor"
-                  className="h-5 w-5 opacity-50"
+                  className="size-5 opacity-50"
                 >
                   <path
                     fillRule="evenodd"
@@ -100,7 +100,7 @@ export function Header({ children }: HeaderProps) {
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 20 20"
                   fill="currentColor"
-                  className="h-5 w-5 opacity-50"
+                  className="size-5 opacity-50"
                 >
                   <path
                     fillRule="evenodd"
@@ -121,7 +121,7 @@ export function Header({ children }: HeaderProps) {
               <svg
                 viewBox="0 0 24 24"
                 aria-hidden="true"
-                className="h-6 w-6 fill-zinc-700 dark:fill-zinc-400"
+                className="size-6 fill-zinc-700 dark:fill-zinc-400"
               >
                 <path
                   fillRule="evenodd"
