@@ -6,7 +6,7 @@ export function ArrowLongLeft({ className }: { className?: string }) {
       viewBox="0 0 24 24"
       strokeWidth={1.5}
       stroke="currentColor"
-      className={className ?? 'h-6 w-6'}
+      className={className ?? 'size-6'}
     >
       <path
         strokeLinecap="round"

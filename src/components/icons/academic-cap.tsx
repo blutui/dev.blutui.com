@@ -6,7 +6,7 @@ export function AcademicCapOutline({ className }: { className?: string }) {
       viewBox="0 0 24 24"
       strokeWidth={1.5}
       stroke="currentColor"
-      className={className ?? 'h-6 w-6'}
+      className={className ?? 'size-6'}
     >
       <path
         strokeLinecap="round"
@@ -23,7 +23,7 @@ export function AcademicCapMini() {
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 20 20"
       fill="currentColor"
-      className="h-5 w-5"
+      className="size-5"
     >
       <path
         fillRule="evenodd"

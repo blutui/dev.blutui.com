@@ -29,12 +29,12 @@ export function AskAiButton() {
       />
       {showButton && (
         <button
-          className="flex flex-shrink-0 items-center justify-center space-x-1 rounded-full bg-transparent px-3 py-2 text-han-300 ring-1 ring-han-300/50 transition hover:bg-han-200/20 hover:text-han-200 hover:ring-han-200/50"
+          className="flex shrink-0 items-center justify-center space-x-1 rounded-full bg-transparent px-3 py-2 text-han-300 ring-1 ring-han-300/50 transition hover:bg-han-200/20 hover:text-han-200 hover:ring-han-200/50"
           onClick={handleOnClick}
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            className="h-4 w-4 flex-shrink-0"
+            className="size-4 shrink-0"
             fill="none"
             strokeWidth="2"
             viewBox="0 0 24 24"

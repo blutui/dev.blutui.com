@@ -21,7 +21,7 @@ export function TableOfContents({
   const activeId = useActiveId(items)
 
   return (
-    <nav className="blutui-toc -mt-8 hidden w-64 flex-shrink-0 space-y-6 lg:block">
+    <nav className="-mt-8 hidden w-64 shrink-0 space-y-6 lg:block">
       <div className="blutui-scrollbar sticky top-header -mr-8 max-h-sidebar overflow-y-auto pr-8 pt-8">
         {items.length >= 1 && (
           <>
