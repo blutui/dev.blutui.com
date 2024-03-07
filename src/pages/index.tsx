@@ -9,6 +9,7 @@ import { AtSymbol } from '@/components/icons/at-symbol'
 import { BookOpenOutline } from '@/components/icons/book-open'
 import { Microphone } from '@/components/icons/microphone'
 import { SparklesOutline } from '@/components/icons/sparkles'
+import { HeroElement } from '@/components/hero-element'
 import { Video } from '@/components/icons/video'
 
 import type { NextPageWithCustomLayout } from '@/types'
@@ -16,8 +17,8 @@ import type { NextPageWithCustomLayout } from '@/types'
 const Home: NextPageWithCustomLayout = () => {
   return (
     <div className="w-full grow">
-      <div className="relative mt-[-6.25rem] overflow-hidden pb-6 pt-[6.25rem] md:pb-10">
-        <div className="mx-auto flex max-w-8xl items-center">
+      <div className="relative -mt-10 overflow-hidden pb-8 pt-10 md:pb-12">
+        <div className="relative mx-auto flex max-w-8xl items-center">
           <div className="w-full px-8 py-6 md:py-10">
             <p className="mb-2 text-xs uppercase tracking-widest text-zinc-500 dark:text-white/50">
               Developer Documentation
@@ -28,7 +29,7 @@ const Home: NextPageWithCustomLayout = () => {
             <p className="mb-4 mt-2 text-base text-zinc-800/80 dark:text-white/70 md:text-lg lg:text-xl">
               Explore our guides and documentation on using Blutui.
             </p>
-            <div className="flex flex-col items-center gap-4 md:flex-row">
+            <div className="flex flex-row items-center gap-4">
               <span className="hidden md:inline-block">
                 <Button href="/docs/getting-started/create">Get started</Button>
               </span>
@@ -54,9 +55,10 @@ const Home: NextPageWithCustomLayout = () => {
               </SearchButton>
             </div>
           </div>
+          <HeroElement />
         </div>
       </div>
-      <div className="mx-auto mt-6 grid max-w-8xl gap-6 px-8 lg:grid-cols-6">
+      <div className="mx-auto mt-0 grid max-w-8xl gap-6 px-8 lg:grid-cols-6">
         <div className="md:col-span-3">
           <Card
             title="Read the docs"
