@@ -19,7 +19,7 @@
 }
 
 .DocSearch-Modal {
-  @apply my-0 mx-auto w-full max-w-3xl flex flex-col min-h-0 bg-white shadow-lg rounded-lg;
+  @apply my-0 mx-auto w-full max-w-3xl flex flex-col min-h-0 bg-white shadow-lg rounded-lg cursor-auto;
 }
 
 .DocSearch-SearchBar {
@@ -27,7 +27,7 @@
 }
 
 .DocSearch-Form {
-  @apply flex-auto flex items-center min-w-0;
+  @apply flex-auto flex items-center min-w-0 pr-3;
 }
 
 .DocSearch-Dropdown-Container {
@@ -91,15 +91,15 @@
 }
 
 .DocSearch-Reset {
-  @apply hidden;
+  @apply appearance-none bg-none border-0 rounded-full text-zinc-500 cursor-pointer p-0.5 right-0 stroke-[1.5px];
+}
+
+.DocSearch-Reset svg {
+  @apply block;
 }
 
 .DocSearch-Cancel {
   @apply appearance-none flex-none text-xs rounded-md font-medium py-1 px-2 ring-1 ring-black/10 hover:ring-black/20 shadow-sm hover:shadow transition;
-}
-
-.DocSearch-Reset svg {
-  @apply hidden;
 }
 
 .DocSearch-Hit-source {
@@ -241,6 +241,14 @@
 
 .DocSearch-Commands {
   @apply hidden;
+}
+
+/* Hide element accessibly, so that it is still accessible to
+assistive tech users */
+.DocSearch-VisuallyHiddenForAccessibility {
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  @apply h-px overflow-hidden absolute whitespace-nowrap w-px;
 }
 
 .DocSearch-Logo a {
