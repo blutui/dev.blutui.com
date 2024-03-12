@@ -7,6 +7,16 @@ description: 'A continuous stream of changes made to the Blutui platform.'
 Please use the ISO standard date and time format.
 {% /comment %}
 
+{% changelog date="2024-03-12" %}
+{% badge status="success" %}Added{% /badge %}
+
+- Added the ability to create Blutui OAuth apps through the **Agency Console**.
+
+{% badge status="attention" %}Fixed{% /badge %}
+
+- Fixed the date format in the form submission CSV export.
+{% /changelog %}
+
 {% changelog date="2024-01-22" %}
 {% badge status="success" %}Added{% /badge %}
 
