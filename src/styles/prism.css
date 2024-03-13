@@ -1,6 +1,6 @@
 code[class*="language-"],
 pre[class*="language-"] {
-  @apply text-[#d6deeb] font-mono text-sm text-left whitespace-pre;
+  @apply text-[#24292f] dark:text-[#c9d1d9] font-mono text-sm text-left whitespace-pre;
   word-spacing: normal;
   word-break: normal;
   direction: ltr;
@@ -15,65 +15,65 @@ pre[class*="language-"] {
 
 :not(pre) > code[class*="language-"],
 pre[class*="language-"] {
-  @apply text-white bg-black;
+  @apply text-[#24292f] dark:text-[#c9d1d9] bg-zinc-100 dark:bg-black ring-1 ring-black/10 dark:ring-white/10;
 }
 
 /* Tokens */
 .token.comment,
 .token.prolog,
 .token.cdata {
-  @apply text-[#637777];
+  @apply text-[#7e9292] dark:text-[#637777];
   font-style: italic;
 }
 
 .token.punctuation {
-  @apply text-[#7792ea];
+  @apply text-[#5066db] dark:text-[#7792ea];
 }
 
 .token.namespace {
-  @apply text-[#b2ccd6];
+  @apply text-[#598c9e] dark:text-[#b2ccd6];
 }
 
 .token.deleted {
-	@apply text-[#ef5350]/50;
+	@apply text-[#db2a27]/50 dark:text-[#ef5350]/50;
 	font-style: italic;
 }
 
 .token.symbol,
 .token.property {
-	@apply text-[#80cbc4];
+	@apply text-[#39938f] dark:text-[#80cbc4];
 }
 
 .token.tag,
 .token.operator,
 .token.keyword {
-	@apply text-[#7fdbca];
+	@apply text-[#2aa292] dark:text-[#7fdbca];
 }
 
 .token.boolean {
-	@apply text-[#ff5874];
+	@apply text-[#e7174a] dark:text-[#ff5874];
 }
 
 .token.number {
-	@apply text-[#f78c6c];
+	@apply text-[#db5027] dark:text-[#f78c6c];
 }
 
 .token.constant,
 .token.function,
 .token.builtin,
 .token.char {
-  @apply text-[#82aaff];
+  @apply text-[#3763fa] dark:text-[#82aaff];
 }
 
 .token.selector,
 .token.doctype {
-  @apply text-[#c792ea];
+  @apply text-[#9f4dd0] dark:text-[#c792ea];
 	font-style: italic;
 }
 
 .token.attr-name,
 .token.inserted {
-	@apply text-[#addb67];
+	@apply text-[#7bb32f] dark:text-[#addb67];
 	font-style: italic;
 }
 
@@ -82,19 +82,19 @@ pre[class*="language-"] {
 .token.entity,
 .language-css .token.string,
 .style .token.string {
-  @apply text-[#addb67];
+  @apply text-[#7bb32f] dark:text-[#addb67];
 }
 
 .token.class-name,
 .token.atrule,
 .token.attr-value {
-  @apply text-[#ffcb8b];
+  @apply text-[#fc7c13] dark:text-[#ffcb8b];
 }
 
 .token.regex,
 .token.important,
 .token.variable {
-  @apply text-[#d6deeb];
+  @apply text-[#778dba] dark:text-[#d6deeb];
 }
 
 .token.important,

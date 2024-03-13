@@ -25,7 +25,7 @@ export function Header({ children }: HeaderProps) {
   const actionKey = useActionKey()
 
   return (
-    <header className="sticky top-0 z-10 flex-none border-b border-black/5 bg-zinc-50/70 backdrop-blur backdrop-saturate-200 transition dark:border-white/5 dark:bg-zinc-900/70">
+    <header className="sticky top-0 z-20 flex-none border-b border-black/5 bg-zinc-50/70 backdrop-blur backdrop-saturate-200 transition dark:border-white/5 dark:bg-zinc-900/70">
       <div className="mx-auto flex h-[3.75rem] max-w-8xl items-center justify-between space-x-8 px-8">
         <div className="flex shrink-0 items-center">
           <div className="inline-flex lg:w-72">
