@@ -51,7 +51,7 @@ export const DocumentationLayout = ({
                 </h1>
               )}
               {description && (
-                <p className="mt-2 text-base text-zinc-600 dark:text-zinc-400 lg:text-lg">
+                <p className="mt-2 text-base text-zinc-500 dark:text-zinc-400 lg:text-lg">
                   {description}
                 </p>
               )}
