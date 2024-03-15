@@ -202,24 +202,17 @@ Now that your new form is created, lets add this form to your Canvas. At the top
 ```canvas {% process=false filename="forms/contact.html" %}
 {% import 'macros/form' as ui %}
 
-{{ form_open() }}
-    <input type="hidden" name="_form" value="{{ form._form }}">
+{% form 'contact' %}
     <input type="hidden" name="redirect" value="/contact/success">  
 
-    {{ ui.field(form.firstname) }}
-
-    {{ ui.field(form.lastname) }}
- 
-    {{ ui.field(form.email) }}
-  
-    {{ ui.field(form.phone) }}
-
-    {{ ui.field(form.message) }}
+    {% for field in form.fields %}
+      {{ ui.field(field) }}
+    {% endfor %}
 
     {{ recaptcha() }}
 
     <button type="submit" name="submit" value="Submit">Submit</button>
-{{ form_close() }}
+{% endform %}
 ```
 
 If you would like to redirect the user after the form is submitted successfully, set a `redirect` URL. In the code above we redirect users to a `/contact/success` page. We also recommend you add `recaptcha` to your forms to prevent spam.
