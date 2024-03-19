@@ -10,7 +10,7 @@ import { SearchButton } from '@/components/search'
 
 import { BookOpenMini } from './icons/book-open'
 import { AcademicCapMini } from './icons/academic-cap'
-import { SparklesMini } from './icons/sparkles'
+import { QueueListMini } from './icons/queue-list'
 
 const AskAiButton = dynamic(
   () => import('./ask-ai-button').then((mod) => mod.AskAiButton),
@@ -148,7 +148,7 @@ export function Header({ children }: HeaderProps) {
           <HeaderNavigationItem
             name="Changelog"
             href="/changelog"
-            icon={<SparklesMini />}
+            icon={<QueueListMini />}
           />
         </div>
       </div>
