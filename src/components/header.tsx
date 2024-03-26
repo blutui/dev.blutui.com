@@ -170,10 +170,10 @@ function HeaderNavigationItem({ name, href, icon }: HeaderNavigationItemProps) {
     <Link
       href={href}
       className={cn(
-        '-mb-px inline-flex items-center border-b-2 py-3.5 text-sm font-medium transition',
+        'group relative inline-flex items-center py-3.5 text-sm font-medium transition',
         active
-          ? 'border-han-200 text-han-400 dark:border-han-300 dark:text-han-100'
-          : 'border-transparent text-zinc-500 hover:border-zinc-300 dark:text-zinc-400 dark:hover:border-zinc-500'
+          ? 'text-han-400 dark:text-han-100'
+          : 'text-zinc-500 dark:text-zinc-400'
       )}
     >
       {icon && (
@@ -182,6 +182,14 @@ function HeaderNavigationItem({ name, href, icon }: HeaderNavigationItemProps) {
         </span>
       )}
       <span>{name}</span>
+      <span
+        className={cn(
+          'absolute bottom-0 h-0.5 w-full transition',
+          active
+            ? 'scale-100 bg-han-200 dark:bg-han-300'
+            : 'scale-0 bg-transparent group-hover:scale-100 group-hover:bg-zinc-300 dark:group-hover:bg-zinc-500'
+        )}
+      />
     </Link>
   )
 }
