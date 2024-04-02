@@ -10,7 +10,7 @@ Starting a project on Blutui is a simple process that offers customisation and a
 ## Getting started
 
 {% step title="Accessing the Console" position="1" %}
-Navigate to what is commonly known as the agency dashboard or simply, the [Console](https://blutui.com/app).
+Navigate to what is commonly known as the agency dashboard or simply, the [Agency Console](https://console.blutui.com).
 {% /step %}
 
 {% step title="Initiating a new project" position="2" %}
