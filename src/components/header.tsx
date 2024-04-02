@@ -91,7 +91,7 @@ export function Header({ children }: HeaderProps) {
             <li>
               <a
                 className="flex items-center space-x-1 font-semibold text-zinc-500 transition hover:text-zinc-600 dark:text-zinc-200 dark:hover:text-zinc-500"
-                href="https://blutui.com/app"
+                href="https://console.blutui.com"
                 target="_blank"
                 rel="noreferrer"
               >
