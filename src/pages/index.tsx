@@ -7,9 +7,9 @@ import { Card } from '@/components/card'
 import { AcademicCapOutline } from '@/components/icons/academic-cap'
 import { AtSymbol } from '@/components/icons/at-symbol'
 import { BookOpenOutline } from '@/components/icons/book-open'
-import { Microphone } from '@/components/icons/microphone'
-import { SparklesOutline } from '@/components/icons/sparkles'
 import { HeroElement } from '@/components/hero-element'
+import { Microphone } from '@/components/icons/microphone'
+import { QueueListOutline } from '@/components/icons/queue-list'
 import { Video } from '@/components/icons/video'
 
 import type { NextPageWithCustomLayout } from '@/types'
@@ -77,7 +77,7 @@ const Home: NextPageWithCustomLayout = () => {
           <Card
             title="What's new in Blutui"
             href="/changelog"
-            icon={<SparklesOutline />}
+            icon={<QueueListOutline />}
           >
             {`See what's been added, changed, fixed or removed.`}
           </Card>
