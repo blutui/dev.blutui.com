@@ -7,6 +7,31 @@ description: 'A continuous stream of changes made to the Blutui platform.'
 Please use the ISO standard date and time format.
 {% /comment %}
 
+{% changelog date="2024-04-08" %}
+{% badge status="info" %}Changed{% /badge %}
+
+- Changed the site deletion feature in the **Agency Console** to permanently remove the site after a 30-day period. Previously, the site would be instantly deleted.
+{% /changelog %}
+
+{% changelog date="2024-03-25" %}
+{% badge status="info" %}Changed{% /badge %}
+
+- Changed the **Agency Console** URL from:
+  - `blutui.com/app` -> `console.blutui.com`
+- Changed the **Blutui API** URL from:
+  - `blutui.com/api` -> `api.blutui.com/v1`
+- Changed the **OAuth** URL from:
+  - `blutui.com/oauth` -> `auth.blutui.com/oauth`
+{% /changelog %}
+
+{% changelog date="2024-03-15" %}
+{% badge status="success" %}Added{% /badge %}
+
+- Added 2 new API's to the platform:
+  - `GET` `/v1/user` - Retrieve the current user.
+  - `GET` `/v1/user/email` - Retrieve the current user's email address
+{% /changelog %}
+
 {% changelog date="2024-03-12" %}
 {% badge status="success" %}Added{% /badge %}
 
