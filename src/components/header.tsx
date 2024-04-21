@@ -8,8 +8,9 @@ import { useActionKey } from '@/utils/use-action-key'
 import { Logo } from '@/components/logo'
 import { SearchButton } from '@/components/search'
 
-import { BookOpenMini } from './icons/book-open'
 import { AcademicCapMini } from './icons/academic-cap'
+import { BookOpenMini } from './icons/book-open'
+import { CodeBracketSquareMini } from './icons/code-bracket-square'
 import { QueueListMini } from './icons/queue-list'
 
 const AskAiButton = dynamic(
@@ -141,6 +142,11 @@ export function Header({ children }: HeaderProps) {
             icon={<BookOpenMini />}
           />
           <HeaderNavigationItem
+            name="API reference"
+            href="/api"
+            icon={<CodeBracketSquareMini />}
+          />
+          <HeaderNavigationItem
             name="Guides"
             href="/guides"
             icon={<AcademicCapMini />}
@@ -184,10 +190,10 @@ function HeaderNavigationItem({ name, href, icon }: HeaderNavigationItemProps) {
       <span>{name}</span>
       <span
         className={cn(
-          'absolute bottom-0 h-0.5 w-full transition',
+          'absolute bottom-0 w-full transition',
           active
-            ? 'scale-100 bg-han-200 dark:bg-han-300'
-            : 'scale-0 bg-transparent group-hover:scale-100 group-hover:bg-zinc-300 dark:group-hover:bg-zinc-500'
+            ? 'h-0.5 bg-han-200 dark:bg-han-300'
+            : 'h-0 bg-transparent group-hover:h-0.5 group-hover:bg-zinc-300 dark:group-hover:bg-zinc-500'
         )}
       />
     </Link>

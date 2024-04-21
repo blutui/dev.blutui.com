@@ -12,6 +12,14 @@ const nextConfig = {
       }
     ],
   },
+  rewrites: async () => {
+    return [
+      {
+        source: '/api/:slug*',
+        destination: '/api-reference/:slug*'
+      }
+    ]
+  },
   redirects: async () => {
     return require('./redirects.json')
   }
