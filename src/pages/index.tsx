@@ -1,3 +1,5 @@
+import { ReactElement } from 'react'
+
 import { SearchButton } from '@/components/search'
 import { FullPageLayout } from '@/layouts/full-page'
 
@@ -12,9 +14,9 @@ import { Microphone } from '@/components/icons/microphone'
 import { QueueListOutline } from '@/components/icons/queue-list'
 import { Video } from '@/components/icons/video'
 
-import type { NextPageWithCustomLayout } from '@/types'
+import type { NextPageWithLayout } from '@/types'
 
-const Home: NextPageWithCustomLayout = () => {
+const Home: NextPageWithLayout = () => {
   return (
     <div className="w-full grow">
       <div className="relative -mt-10 overflow-hidden pb-8 pt-10 md:pb-12">
@@ -114,8 +116,8 @@ const Home: NextPageWithCustomLayout = () => {
   )
 }
 
-export default Home
-
-Home.layoutProps = {
-  Layout: FullPageLayout,
+Home.getLayout = function getLayout(page: ReactElement) {
+  return <FullPageLayout>{page}</FullPageLayout>
 }
+
+export default Home

@@ -11,16 +11,11 @@ import { TableOfContents } from '@/components/table-of-contents'
 import { Feedback } from '@/components/feedback'
 
 export interface GuidesLayoutProps {
-  layoutProps: any
   toc: Section[]
   children: React.ReactNode
 }
 
-export const GuidesLayout = ({
-  layoutProps,
-  toc,
-  children,
-}: GuidesLayoutProps) => {
+export const GuidesLayout = ({ toc, children }: GuidesLayoutProps) => {
   const { pathname } = useRouter()
   const articleContext = useArticleContext()
 

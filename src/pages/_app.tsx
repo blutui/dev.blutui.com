@@ -22,9 +22,10 @@ import '@/styles/main.css'
 
 import type { AppProps } from 'next/app'
 import type { MarkdocNextJsPageProps } from '@markdoc/next.js'
+import { NextPageWithLayout } from '@/types'
 
-type BlutuiAppProps<P = {}> = Omit<AppProps<P>, 'Component'> & {
-  Component: AppProps['Component'] & { layoutProps?: any }
+type BlutuiAppPropsWithLayout<P = {}> = AppProps<P> & {
+  Component: NextPageWithLayout<P>
 }
 
 export type BlutuiProps = MarkdocNextJsPageProps
@@ -35,7 +36,10 @@ const manrope = Manrope({
   display: 'optional',
 })
 
-const Blutui = ({ Component, pageProps }: BlutuiAppProps<BlutuiProps>) => {
+const Blutui = ({
+  Component,
+  pageProps,
+}: BlutuiAppPropsWithLayout<BlutuiProps>) => {
   const { markdoc } = pageProps
 
   let title = 'Blutui Developers'
@@ -63,8 +67,8 @@ const Blutui = ({ Component, pageProps }: BlutuiAppProps<BlutuiProps>) => {
     }
   }
 
-  if (Component.layoutProps?.title) {
-    title = Component.layoutProps?.title + ' | Blutui Developers'
+  if (Component.title) {
+    title = Component.title + ' | Blutui Developers'
   }
 
   const { pathname, asPath } = useRouter()
@@ -82,11 +86,9 @@ const Blutui = ({ Component, pageProps }: BlutuiAppProps<BlutuiProps>) => {
     markdownLayout = null
   }
 
-  const Layout =
-    Component.layoutProps?.Layout || markdownLayout || DocumentationLayout
-  const layoutProps = Component.layoutProps?.Layout
-    ? { layoutProps: Component.layoutProps, toc }
-    : { toc }
+  const Layout = markdownLayout || DocumentationLayout
+  const getLayout =
+    Component.getLayout ?? ((page) => <Layout toc={toc}>{page}</Layout>)
 
   const canonicalUrl = (
     `https://dev.blutui.com` + (asPath === '/' ? '' : asPath)
@@ -129,14 +131,16 @@ const Blutui = ({ Component, pageProps }: BlutuiAppProps<BlutuiProps>) => {
       <SearchProvider>
         <ArticleContext.Provider value={articleContext}>
           <Header />
-          <Layout {...layoutProps}>
-            <style jsx global>{`
-              html {
-                font-family: ${manrope.style.fontFamily};
-              }
-            `}</style>
-            <Component {...pageProps} />
-          </Layout>
+          {getLayout(
+            <>
+              <style jsx global>{`
+                html {
+                  font-family: ${manrope.style.fontFamily};
+                }
+              `}</style>
+              <Component {...pageProps} />
+            </>
+          )}
         </ArticleContext.Provider>
       </SearchProvider>
 

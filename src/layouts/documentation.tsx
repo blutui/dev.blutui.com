@@ -11,13 +11,11 @@ import { TableOfContents } from '@/components/table-of-contents'
 import { documentationNavigation } from '@/navigation/documentation'
 
 export interface DocumentationLayoutProps {
-  layoutProps: any
   toc: Section[]
   children: React.ReactNode
 }
 
 export const DocumentationLayout = ({
-  layoutProps,
   toc,
   children,
 }: DocumentationLayoutProps) => {
