@@ -1,6 +1,19 @@
-export { badge } from './badge.markdoc'
-export { callout } from './callout.markdoc'
-export { card } from './card.markdoc'
-export { changelog } from './changelog.markdoc'
-export { comment } from './comment.markdoc'
-export { step } from './step.markdoc'
+import { badge } from './badge.markdoc'
+import { callout } from './callout.markdoc'
+import { card } from './card.markdoc'
+import { changelog } from './changelog.markdoc'
+import { codeGroup } from './code-group.markdoc'
+import { comment } from './comment.markdoc'
+import { step } from './step.markdoc'
+
+const tags = {
+  badge,
+  callout,
+  card,
+  changelog,
+  'code-group': codeGroup,
+  comment,
+  step,
+}
+
+export default tags

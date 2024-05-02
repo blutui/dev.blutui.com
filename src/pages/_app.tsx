@@ -15,8 +15,11 @@ import { collectHeadings } from '@/utils/collect-headings'
 
 // Required for custom 'canvas' syntax highlighting...
 import 'prismjs'
+import 'prismjs/components/prism-bash.min'
 import 'prismjs/components/prism-json.min'
 import 'prismjs/components/prism-markup-templating.min'
+import 'prismjs/components/prism-php.min'
+import 'prismjs/components/prism-typescript.min'
 
 import '@/styles/main.css'
 
