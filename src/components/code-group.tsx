@@ -33,11 +33,18 @@ export const CodeGroup = forwardRef(function CodeGroup(
   >
 
   return (
-    <div ref={ref} className="not-prose my-4" {...props}>
+    <div
+      ref={ref}
+      className="not-prose relative my-4 rounded-2xl bg-zinc-900/5 ring-1 ring-zinc-900/10 dark:bg-white/5 dark:ring-white/10"
+      {...props}
+    >
       <Tabs>
         {childArr.map((child, tabIndex: number) => (
           <Tab title={child.props.filename || 'Filename'} key={tabIndex}>
-            <Code data-language={child.props['data-language']}>
+            <Code
+              className="px-1 pb-1"
+              data-language={child.props['data-language']}
+            >
               {child.props.children}
             </Code>
           </Tab>

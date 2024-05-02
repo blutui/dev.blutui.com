@@ -21,8 +21,8 @@ export function Tab({ title, isActive = true, children }: TabProps) {
           className={cn(
             'rounded-md px-2 py-1',
             isActive
-              ? 'bg-han-50 text-han-500 dark:bg-han-400/20 dark:text-han-100'
-              : ''
+              ? 'bg-zinc-300 text-zinc-700 highlight-white/5 dark:bg-zinc-400/30 dark:text-zinc-100'
+              : 'text-zinc-600 dark:text-zinc-400'
           )}
         >
           {title}

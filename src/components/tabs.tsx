@@ -12,7 +12,7 @@ export function Tabs({ children }: TabsProps) {
 
   return (
     <>
-      <ul className="-mb-2 flex min-w-full">
+      <ul className="flex min-w-full px-1">
         {childArr.map((child, i: number) => (
           <li
             key={i}
