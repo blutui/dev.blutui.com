@@ -3,6 +3,7 @@ import { useRouter } from 'next/router'
 import { Manrope } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/react'
 
+import { ApiLayout } from '@/layouts/api'
 import { DocumentationLayout } from '@/layouts/documentation'
 import { FullPageLayout } from '@/layouts/full-page'
 import { GuidesLayout } from '@/layouts/guides'
@@ -68,6 +69,12 @@ const Blutui = ({
         filePath: markdoc.file.path,
       })
     }
+
+    if (markdoc.frontmatter.api) {
+      articleContext = Object.assign(articleContext, {
+        api: markdoc.frontmatter.api,
+      })
+    }
   }
 
   if (Component.title) {
@@ -79,10 +86,12 @@ const Blutui = ({
   const hasToc = markdoc?.frontmatter.toc ?? true
   const toc = hasToc && markdoc?.content ? collectHeadings(markdoc.content) : []
 
-  let markdownLayout
+  let markdownLayout: (({}: any) => React.ReactElement) | null
 
   if (markdoc?.frontmatter.fullWidth) {
     markdownLayout = FullPageLayout
+  } else if (markdoc?.frontmatter.api) {
+    markdownLayout = ApiLayout
   } else if (pathname.startsWith('/guides/')) {
     markdownLayout = GuidesLayout
   } else {
