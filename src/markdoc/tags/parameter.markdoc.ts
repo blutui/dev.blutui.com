@@ -12,5 +12,10 @@ export const parameter: Schema<Config, typeof Parameter> = {
       type: String,
       required: true,
     },
+    required: {
+      type: Boolean,
+      required: false,
+      default: false,
+    },
   },
 }

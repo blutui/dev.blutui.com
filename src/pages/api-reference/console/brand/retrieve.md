@@ -1,7 +1,7 @@
 ---
-title: 'Get the current user'
-description: 'Retrieve the currently authenticated user.'
-api: 'GET /v1/user'
+title: 'Retrieve brand'
+description: 'Retrieve the current agency brand.'
+api: 'GET /v1/agencies/{username}/brand'
 ---
 
 {% row %}
@@ -10,27 +10,31 @@ api: 'GET /v1/user'
 ### Response
 
 {% parameter name="id" type="string" %}
-The unique identifier for this user.
+The unique identifier for this brand.
 {% /parameter %}
 
 {% parameter name="object" type="string" %}
-The unique identifier for this user.
+This will always contain `brand` for this endpoint.
 {% /parameter %}
 
-{% parameter name="name" type="string" %}
-The unique identifier for this user.
+{% parameter name="logo" type="string" %}
+The image URL of the agency logo.
 {% /parameter %}
 
-{% parameter name="two_factor_enabled" type="boolean" %}
-The unique identifier for this user.
+{% parameter name="primary_color" type="string" %}
+The primary hexadecimal color of the agency brand.
+{% /parameter %}
+
+{% parameter name="secondary_color" type="string" %}
+The secondary hexadecimal color of the agency brand.
 {% /parameter %}
 
 {% parameter name="created_at" type="timestamp" %}
-The unique identifier for this user.
+The brand's created at timestamp.
 {% /parameter %}
 
 {% parameter name="updated_at" type="timestamp" %}
-The unique identifier for this user.
+The brand's updated at timestamp.
 {% /parameter %}
 
 {% /column %}
@@ -44,11 +48,11 @@ import Blutui from 'blutui'
 
 const blutui = new Blutui('ey....')
 
-blutui.user.get()
+blutui.agency('studio').brand.get()
 ```
 
 ```bash {% process=false filename="cURL" %}
-curl -X GET 'https://api.blutui.com/v1/user' \
+curl -X GET 'https://api.blutui.com/v1/agencies/studio/brand' \
      -H 'Authorization: Bearer ey....' \
      -H 'Content-Type: application/json'
 ```
@@ -57,10 +61,10 @@ curl -X GET 'https://api.blutui.com/v1/user' \
 
 ```json {% process=false filename="Response" %}
 {
-  "id": "49a3999c-0ce1-4ea6-ab68-afcd6dc2e794",
-  "object": "user",
-  "name": "Luke Skywalker",
-  "two_factor_enabled": true,
+  "id": "9bfdb42b-1bf0-4510-978e-46aa329f8efa",
+  "object": "brand",
+  "primary_color": "#6227FF",
+  "secondary_color": "#333333",
   "created_at": 1690330767,
   "updated_at": 1703633941
 }

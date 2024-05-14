@@ -4,10 +4,13 @@ import Link from 'next/link'
 import { useRouter } from 'next/router'
 import scrollIntoView from 'scroll-into-view-if-needed'
 
+import { APIMethod } from '@/navigation/api'
+
 export interface Item {
   title?: string
   type?: string
   url?: string
+  method?: APIMethod
   items?: Item[]
 }
 
@@ -37,7 +40,11 @@ const Folder = ({ item }: { item: Item }) => {
 }
 
 const File = ({ item }: { item: Item }) => {
-  const { pathname: route } = useRouter()
+  let { pathname: route } = useRouter()
+
+  if (route.startsWith('/api-reference')) {
+    route = route.replace('/api-reference', '/api')
+  }
 
   const active = item.url && [route, route + '/'].includes(item.url + '/')
 
@@ -47,13 +54,22 @@ const File = ({ item }: { item: Item }) => {
         <Link
           href={item.url}
           className={cn(
-            'flex cursor-pointer rounded-md px-3 py-1 text-sm [word-break:break-word]',
+            'flex cursor-pointer items-center justify-between rounded-md px-3 py-1 text-sm [word-break:break-word]',
             active
               ? 'bg-han-50 font-semibold text-han-500 highlight-white/5 before:absolute before:inset-y-1.5 before:-left-3 before:border-l before:border-current dark:bg-han-400/20 dark:text-han-100'
               : 'font-medium text-zinc-700 hover:bg-zinc-100 hover:highlight-white/5 dark:text-zinc-400 dark:hover:bg-han-100/5 dark:hover:text-zinc-50'
           )}
         >
-          {item.title}
+          <span>{item.title}</span>
+          {item.method && (
+            <span
+              className={cn(
+                'ml-2 font-mono text-[0.625rem] font-semibold leading-none opacity-50'
+              )}
+            >
+              {item.method}
+            </span>
+          )}
         </Link>
       )}
     </li>
@@ -151,9 +167,14 @@ export function Quicklinks() {
 export interface SidebarProps {
   items: Item[]
   className?: string
+  quickLinks?: boolean
 }
 
-export const Sidebar = ({ items, className }: SidebarProps) => {
+export const Sidebar = ({
+  items,
+  className,
+  quickLinks = true,
+}: SidebarProps) => {
   const sidebarRef = useRef<HTMLDivElement>(null)
   const containerRef = useRef<HTMLDivElement>(null)
 
@@ -185,7 +206,7 @@ export const Sidebar = ({ items, className }: SidebarProps) => {
           ref={sidebarRef}
         >
           <div className="sticky top-0 z-10 h-6 bg-gradient-to-b from-zinc-50 to-transparent dark:from-zinc-900"></div>
-          <Quicklinks />
+          {quickLinks && <Quicklinks />}
           <Menu className="hidden md:flex" items={items} />
         </div>
       </aside>
