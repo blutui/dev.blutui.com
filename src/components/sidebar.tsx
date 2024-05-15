@@ -1,10 +1,12 @@
-import { useEffect, useRef } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import cn from 'clsx'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 import scrollIntoView from 'scroll-into-view-if-needed'
 
 import { APIMethod } from '@/navigation/api'
+import { MinusMicro } from './icons/minus'
+import { PlusMicro } from './icons/plus'
 
 export interface Item {
   title?: string
@@ -12,19 +14,55 @@ export interface Item {
   url?: string
   method?: APIMethod
   items?: Item[]
+  expandable?: boolean
 }
 
 const Folder = ({ item }: { item: Item }) => {
-  const { pathname: route } = useRouter()
+  let { pathname: route } = useRouter()
+  let expanded = item.expandable ? false : true
+  const expandable = item.expandable ?? false
+
+  if (route.startsWith('/api-reference')) {
+    route = route.replace('/api-reference', '/api')
+  }
+
+  const itemUrls = item.items?.map((item) => item.url)
 
   const active = item.url && [route, route + '/'].includes(item.url + '/')
+  const itemActive =
+    item.items &&
+    itemUrls &&
+    itemUrls.filter((item) => [route, route + '/'].includes(item + '')).length
+      ? true
+      : false
+
+  if (itemActive) {
+    expanded = true
+  }
+
+  const [isExpanded, setIsExpanded] = useState<boolean>(expanded)
 
   return (
     <li className={cn('flex flex-col gap-1', { active })}>
-      <h2 className="px-3 py-1 text-sm font-semibold text-zinc-800 dark:text-white">
-        {item.title}
+      <h2
+        className={cn(
+          'group flex items-center justify-between px-3 py-1 text-sm font-semibold text-zinc-800 dark:text-white',
+          expandable ? 'cursor-pointer' : null
+        )}
+        onClick={
+          expandable
+            ? () => setIsExpanded((isExpanded) => !isExpanded)
+            : undefined
+        }
+      >
+        <span>{item.title}</span>
+        {expandable && (
+          <span className="opacity-50 transition group-hover:opacity-100">
+            {isExpanded ? <MinusMicro /> : <PlusMicro />}
+          </span>
+        )}
       </h2>
-      {Array.isArray(item.items) ? (
+      {isExpanded && Array.isArray(item.items) ? (
         <div className="overflow-hidden p-2 pr-0">
           <Menu
             className={cn(
@@ -168,15 +206,20 @@ export interface SidebarProps {
   items: Item[]
   className?: string
   quickLinks?: boolean
+  children?: React.ReactNode
 }
 
 export const Sidebar = ({
   items,
   className,
   quickLinks = true,
+  children,
 }: SidebarProps) => {
   const sidebarRef = useRef<HTMLDivElement>(null)
   const containerRef = useRef<HTMLDivElement>(null)
+  const childRef = useRef<HTMLDivElement>(null)
+
+  const [height, setHeight] = useState(0)
 
   useEffect(() => {
     const activeElement = sidebarRef.current?.querySelector('li.active')
@@ -195,14 +238,28 @@ export const Sidebar = ({
     }
   })
 
+  useEffect(() => {
+    const childElement = childRef.current?.offsetHeight
+    if (childElement) {
+      setHeight(childElement)
+    }
+  }, [])
+
   return (
     <>
       <aside
-        className="sticky top-header hidden w-72 shrink-0 flex-col self-start border-r border-black/5 dark:border-white/5 lg:flex"
+        className={cn(
+          'sticky top-header hidden w-72 shrink-0 flex-col self-start border-r border-black/5 dark:border-white/5 lg:flex',
+          className
+        )}
         ref={containerRef}
       >
+        <div ref={childRef}>{children}</div>
         <div
-          className="blutui-scrollbar h-sidebar shrink-0 grow overflow-y-auto px-4 pl-0"
+          className={cn(
+            'blutui-scrollbar h-sidebar shrink-0 grow overflow-y-auto px-4 pl-0'
+          )}
+          style={{ height: `calc(100vh - 6.8125rem - ${height}px)` }}
           ref={sidebarRef}
         >
           <div className="sticky top-0 z-10 h-6 bg-gradient-to-b from-zinc-50 to-transparent dark:from-zinc-900"></div>

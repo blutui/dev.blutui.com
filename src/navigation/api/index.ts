@@ -9,6 +9,7 @@ export interface APINavigationItemWithoutItems {
 export interface APINavigationItemWithItems {
   title: string
   items: APINavigationItem[]
+  expandable?: boolean
 }
 
 export type APINavigationItem =

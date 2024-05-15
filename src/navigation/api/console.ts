@@ -2,11 +2,22 @@ import { APINavigationItem } from '.'
 
 export const consoleAPINavigation: APINavigationItem[] = [
   {
-    title: 'Introduction',
-    url: '/api/console',
+    title: 'Overview',
+    expandable: false,
+    items: [
+      {
+        title: 'Introduction',
+        url: '/api/console',
+      },
+      {
+        title: 'Authentication',
+        url: '/api/console/authentication',
+      },
+    ],
   },
   {
     title: 'Brand',
+    expandable: false,
     items: [
       {
         title: 'Create brand',
