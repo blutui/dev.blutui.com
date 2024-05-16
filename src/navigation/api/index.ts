@@ -16,6 +16,44 @@ export type APINavigationItem =
   | APINavigationItemWithoutItems
   | APINavigationItemWithItems
 
-export const apiNavigation: APINavigationItem[] = []
+export const apiNavigation: APINavigationItem[] = [
+  {
+    title: 'Overview',
+    url: '/api',
+  },
+  {
+    title: 'API references',
+    items: [
+      {
+        title: 'Console API',
+        url: '/api/console',
+      },
+      {
+        title: 'Admin API',
+        url: '/api/admin',
+      },
+      {
+        title: 'Project API',
+        url: '/api/project',
+      },
+    ],
+  },
+  {
+    title: 'User',
+    expandable: false,
+    items: [
+      {
+        title: 'Retrieve user',
+        url: '/api/user',
+        method: 'GET',
+      },
+      {
+        title: "Retrieve user's email",
+        url: '/api/user/email',
+        method: 'GET',
+      },
+    ],
+  },
+]
 
 export { consoleAPINavigation } from './console'

@@ -243,7 +243,7 @@ export const Sidebar = ({
     if (childElement) {
       setHeight(childElement)
     }
-  }, [])
+  }, [children])
 
   return (
     <>
