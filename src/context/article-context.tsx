@@ -4,6 +4,7 @@ export type ArticleContextT = {
   filePath?: string
   title?: string
   description?: string
+  api?: string
 }
 
 export const ArticleContext = createContext<ArticleContextT | null>(null)

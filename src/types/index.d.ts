@@ -1,4 +1,4 @@
-export type { NextPageWithCustomLayout } from './custom-layout'
+export * from './custom-layout'
 
 interface GlimeOptions {
   styles?: {

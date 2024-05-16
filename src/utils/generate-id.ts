@@ -11,6 +11,7 @@ export function generateID(
   return children
     .filter((child: any) => typeof child === 'string')
     .join(' ')
+    .trim()
     .replace(/[^A-Za-z0-9 -]/g, '')
     .replace(/\s+/g, '-')
     .replace(/\//g, '-')

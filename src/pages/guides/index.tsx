@@ -12,6 +12,8 @@ import {
 import { slugify } from '@/utils/slugify'
 import { usePagination } from '@/utils/use-pagination'
 
+import type { NextPageWithLayout } from '@/types'
+
 const GuideItem = ({
   item,
   selectedTags,
@@ -64,7 +66,7 @@ const GuideItem = ({
   )
 }
 
-export default function Guides() {
+const Guides: NextPageWithLayout = () => {
   const perPage = 8
   const sortedGuides = guidesNavigation.sort((a, b) => {
     // Compare the featured property first
@@ -203,7 +205,10 @@ export default function Guides() {
   )
 }
 
-Guides.layoutProps = {
-  Layout: FullPageLayout,
-  title: 'Guides',
+Guides.title = 'Guides'
+
+Guides.getLayout = function getLayout(page) {
+  return <FullPageLayout>{page}</FullPageLayout>
 }
+
+export default Guides

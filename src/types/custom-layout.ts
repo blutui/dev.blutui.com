@@ -1,10 +1,11 @@
+import React, { ReactElement, ReactNode } from 'react'
 import { NextPage } from 'next'
-import React from 'react'
 
 export interface LayoutProps {
   Layout: React.FunctionComponent<any>
 }
 
-export type NextPageWithCustomLayout = NextPage & {
-  layoutProps?: LayoutProps
+export type NextPageWithLayout<P = {}, IP = P> = NextPage<P, IP> & {
+  title?: string
+  getLayout?: (page: ReactElement) => ReactNode
 }

@@ -1,4 +1,4 @@
-import { Tag, Config, Schema, RenderableTreeNode } from '@markdoc/markdoc'
+import { Tag, Config, Schema } from '@markdoc/markdoc'
 import { Heading } from '@/components/heading'
 import { generateID } from '@/utils/generate-id'
 

@@ -10,7 +10,7 @@ pre[class*="language-"] {
 
 /* Code blocks */
 pre[class*="language-"] {
-  @apply my-2 overflow-auto rounded-xl;
+  @apply overflow-auto rounded-xl;
 }
 
 :not(pre) > code[class*="language-"],
