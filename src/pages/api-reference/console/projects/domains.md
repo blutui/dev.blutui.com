@@ -9,8 +9,12 @@ api: 'GET /v1/agencies/{username}/projects/{id}/domains'
 {% column %}
 ### Request query parameters
 
-{% parameter name="limit" type="default: 10" %}
+{% parameter name="limit" type="integer | default: 10" %}
 Limit the number of objects to return, ranging between 1 and 20.
+{% /parameter %}
+
+{% parameter name="page" type="integer | default: 1" %}
+The current page used to display the pagination results.
 {% /parameter %}
 
 ### Response
