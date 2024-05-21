@@ -10,7 +10,7 @@ api: 'GET /v1/agencies/{username}/domains/{id}'
 ### Request query parameters
 
 {% parameter name="expand" type="string[]" %}
-Expand the reponse for the given items. Expand array accepts `project`.
+Expand the response for the given items. Expand array accepts `project`.
 {% /parameter %}
 
 ### Response
