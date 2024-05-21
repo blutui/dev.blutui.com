@@ -23,7 +23,7 @@ The secondary hexadecimal color of the agency brand.
 
 ### Response
 
-{% partial file="api/console/brand-response.md" /%}
+{% partial file="api/console/brand-response-parameters.md" /%}
 
 {% /column %}
 

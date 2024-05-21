@@ -1,0 +1,46 @@
+---
+title: 'Retrieve domain'
+description: 'Retrieve a domain in your agency.'
+api: 'GET /v1/agencies/{username}/domains/{id}'
+---
+
+{% row %}
+
+{% column %}
+### Request query parameters
+
+{% parameter name="expand" type="string[]" %}
+Expand the reponse for the given items. Expand array accepts `project`.
+{% /parameter %}
+
+### Response
+
+{% partial file="api/console/domain-response-parameters.md" /%}
+
+{% /column %}
+
+{% column sticky="true" %}
+
+{% code-group %}
+
+```ts {% process=false filename="Node.js" %}
+import Blutui from 'blutui'
+
+const blutui = new Blutui('ey....')
+
+blutui.agency('studio').domains.get('9c17d680-e0af-4f00-9e28-08c4e38e89e0')
+```
+
+```bash {% process=false filename="cURL" %}
+curl -X GET 'https://api.blutui.com/v1/agencies/studio/domains/9c17d680-e0af-4f00-9e28-08c4e38e89e0' \
+     -H 'Authorization: Bearer ey....' \
+     -H 'Content-Type: application/json'
+```
+
+{% /code-group %}
+
+{% partial file="api/console/domain-response.md" /%}
+
+{% /column %}
+
+{% /row %}
