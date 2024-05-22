@@ -7,7 +7,7 @@ api: 'PATCH /v1/agencies/{username}/brand'
 {% row %}
 
 {% column %}
-### Request parameters
+### Body parameters
 
 {% parameter name="logo" type="string" %}
 The image URL of the agency logo.

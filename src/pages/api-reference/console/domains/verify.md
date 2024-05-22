@@ -1,12 +1,18 @@
 ---
 title: Verify domain
-description: 'Send a verification request for a domain in your agency.'
+description: 'Check the verification status for a domain in your agency.'
 api: 'POST /v1/agencies/{username}/domains/{id}/verify'
 ---
 
 {% row %}
 
 {% column %}
+### Path parameters
+
+{% parameter name="id" type="string" required="true" %}
+The domain ID to verify the status of.
+{% /parameter %}
+
 ### Response
 
 {% parameter name="object" type="string" %}

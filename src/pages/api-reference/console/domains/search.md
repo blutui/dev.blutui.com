@@ -7,7 +7,7 @@ api: 'POST /v1/agencies/{username}/domains/search'
 {% row %}
 
 {% column %}
-### Request parameters
+### Body parameters
 
 {% parameter name="name" type="string" required=true %}
 The name of the domain to search for.

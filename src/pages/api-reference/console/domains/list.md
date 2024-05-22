@@ -7,7 +7,7 @@ api: 'GET /v1/agencies/{username}/domains'
 {% row %}
 
 {% column %}
-### Request query parameters
+### Query parameters
 
 {% parameter name="limit" type="integer | default: 10" %}
 Limit the number of objects to return, ranging between 1 and 20.

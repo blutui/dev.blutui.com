@@ -7,7 +7,13 @@ api: 'GET /v1/agencies/{username}/projects/{id}/domains'
 {% row %}
 
 {% column %}
-### Request query parameters
+### Path parameters
+
+{% parameter name="id" type="string" required="true" %}
+The ID of the project to retrieve.
+{% /parameter %}
+
+### Query parameters
 
 {% parameter name="limit" type="integer | default: 10" %}
 Limit the number of objects to return, ranging between 1 and 20.

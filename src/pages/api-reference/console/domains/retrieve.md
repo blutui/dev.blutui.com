@@ -7,7 +7,13 @@ api: 'GET /v1/agencies/{username}/domains/{id}'
 {% row %}
 
 {% column %}
-### Request query parameters
+### Path parameters
+
+{% parameter name="id" type="string" required="true" %}
+The ID of the domain to retrieve.
+{% /parameter %}
+
+### Query parameters
 
 {% parameter name="expand" type="string[]" %}
 Expand the response for the given items. Expand array accepts `project`.

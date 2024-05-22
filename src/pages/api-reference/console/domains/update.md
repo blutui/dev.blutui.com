@@ -7,7 +7,13 @@ api: 'PATCH /v1/agencies/{username}/domains/{id}'
 {% row %}
 
 {% column %}
-### Request parameters
+### Path parameters
+
+{% parameter name="id" type="string" required="true" %}
+The ID of the domain to update.
+{% /parameter %}
+
+### Body parameters
 
 {% parameter name="project" type="string | null" %}
 The ID of the project this domain will belong to.

@@ -7,6 +7,12 @@ api: 'POST /v1/agencies/{username}/domains/{id}/refresh'
 {% row %}
 
 {% column %}
+### Path parameters
+
+{% parameter name="id" type="string" required="true" %}
+The ID of the domain to refresh the verification token.
+{% /parameter %}
+
 ### Response
 
 {% partial file="api/console/domain-response-parameters.md" /%}

@@ -7,6 +7,12 @@ api: 'DELETE /v1/agencies/{username}/domains/{id}'
 {% row %}
 
 {% column %}
+### Path parameters
+
+{% parameter name="id" type="string" required="true" %}
+The ID of the domain to remove.
+{% /parameter %}
+
 ### Response
 
 {% parameter name="id" type="string" %}
