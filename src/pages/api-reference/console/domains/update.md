@@ -15,7 +15,7 @@ The ID of the domain to update.
 
 ### Body parameters
 
-{% parameter name="project" type="string | null" %}
+{% parameter name="project" type="string | null" required="true" %}
 The ID of the project this domain will belong to.
 {% /parameter %}
 
