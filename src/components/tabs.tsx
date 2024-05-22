@@ -17,6 +17,8 @@ export function Tabs({ children }: TabsProps) {
           <li
             key={i}
             className="cursor-pointer"
+            role="tab"
+            aria-selected={i === activeTabIndex}
             onClick={() => setActiveTabIndex(i)}
           >
             <Tab
