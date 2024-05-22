@@ -265,6 +265,7 @@ export const Sidebar = ({
           <div className="sticky top-0 z-10 h-6 bg-gradient-to-b from-zinc-50 to-transparent dark:from-zinc-900"></div>
           {quickLinks && <Quicklinks />}
           <Menu className="hidden md:flex" items={items} />
+          <div className="sticky bottom-0 z-10 h-6 bg-gradient-to-t from-zinc-50 to-transparent dark:from-zinc-900"></div>
         </div>
       </aside>
     </>
