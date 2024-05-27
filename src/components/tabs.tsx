@@ -12,11 +12,13 @@ export function Tabs({ children }: TabsProps) {
 
   return (
     <>
-      <ul className="flex min-w-full px-1">
+      <ul className="flex min-w-full px-1" role="tablist">
         {childArr.map((child, i: number) => (
           <li
             key={i}
             className="cursor-pointer"
+            role="tab"
+            aria-selected={i === activeTabIndex}
             onClick={() => setActiveTabIndex(i)}
           >
             <Tab

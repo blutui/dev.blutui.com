@@ -14,8 +14,6 @@ export function Tab({ title, isActive = true, children }: TabProps) {
           'group flex items-center whitespace-nowrap px-1 py-2 text-sm font-semibold',
           isActive ? '' : ''
         )}
-        role="tab"
-        aria-selected={isActive}
       >
         <div
           className={cn(

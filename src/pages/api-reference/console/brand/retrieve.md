@@ -9,7 +9,11 @@ api: 'GET /v1/agencies/{username}/brand'
 {% column %}
 ### Response
 
-{% partial file="api/console/brand-response.md" /%}
+{% callout type="note" %}
+If an agency brand doesn't exist a `204` `No Content` response is returned.
+{% /callout %}
+
+{% partial file="api/console/brand-response-parameters.md" /%}
 
 {% /column %}
 

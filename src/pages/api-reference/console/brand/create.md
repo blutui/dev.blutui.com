@@ -7,7 +7,7 @@ api: 'POST /v1/agencies/{username}/brand'
 {% row %}
 
 {% column %}
-### Request parameters
+### Body parameters
 
 {% parameter name="primary_color" type="string" required=true %}
 The primary hexadecimal color of the agency brand.
@@ -23,7 +23,7 @@ The image URL of the agency logo.
 
 ### Response
 
-{% partial file="api/console/brand-response.md" /%}
+{% partial file="api/console/brand-response-parameters.md" /%}
 
 {% /column %}
 

@@ -7,7 +7,7 @@ api: 'PATCH /v1/agencies/{username}/brand'
 {% row %}
 
 {% column %}
-### Request parameters
+### Body parameters
 
 {% parameter name="logo" type="string" %}
 The image URL of the agency logo.
@@ -23,7 +23,7 @@ The secondary hexadecimal color of the agency brand.
 
 ### Response
 
-{% partial file="api/console/brand-response.md" /%}
+{% partial file="api/console/brand-response-parameters.md" /%}
 
 {% /column %}
 
