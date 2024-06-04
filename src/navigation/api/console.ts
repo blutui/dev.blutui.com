@@ -92,6 +92,31 @@ export const consoleAPINavigation: APINavigationItem[] = [
     expandable: false,
     items: [
       {
+        title: 'Add project',
+        url: '/api/console/projects/create',
+        method: 'POST',
+      },
+      // {
+      //   title: 'Update project',
+      //   url: '/api/console/projects/update',
+      //   method: 'PATCH',
+      // },
+      // {
+      //   title: 'Retrieve project',
+      //   url: '/api/console/projects/retrieve',
+      //   method: 'GET',
+      // },
+      // {
+      //   title: 'List all projects',
+      //   url: '/api/console/projects/list',
+      //   method: 'GET',
+      // },
+      // {
+      //   title: 'Remove project',
+      //   url: '/api/console/projects/remove',
+      //   method: 'DELETE',
+      // },
+      {
         title: 'List all project domains',
         url: '/api/console/projects/domains',
         method: 'GET',
