@@ -55,7 +55,7 @@ Open your Blutui project and paste the code.
 
 ![Paste Code on Blutui project](https://cdn.blutui.com/uploads/assets/Dev/guides/paste-ai-components.png)
 
-And preview the changes
+View the changes.
 
 ![Canopy preview](https://cdn.blutui.com/uploads/assets/Dev/guides/preview-ai-components.png)
 
