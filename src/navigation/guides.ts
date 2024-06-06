@@ -8,9 +8,10 @@ export const Tags = [
   'Projects',
   'Security',
   'Webhooks',
+  'AI Components',
 ] as const
 
-export const Authors = ['Jayan Ratna', 'Ruslan Courtman'] as const
+export const Authors = ['Jayan Ratna', 'Ruslan Courtman', 'Dion Pinto'] as const
 
 export interface GuidesNavigationItem {
   title: string
@@ -28,6 +29,14 @@ export const getGuideBySlug = (slug: string) => {
 }
 
 export const guidesNavigation: GuidesNavigationItem[] = [
+  {
+    title: 'How do I use AI Components in my Blutui project?',
+    authors: ['Dion Pinto'],
+    description: 'Learn how to use AI Components in your Blutui project.',
+    slug: 'use-blutui-ai-in-a-project',
+    tags: ['AI Components', 'Canvas'],
+    createdAt: '2024-06-06',
+  },
   {
     title: 'How do I use Tailwind CSS on a project?',
     authors: ['Ruslan Courtman'],

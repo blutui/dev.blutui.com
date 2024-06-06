@@ -31,13 +31,14 @@ This command will create a `tailwind.config.js` file in your project root.
 {% /step %}
 
 {% step title="Configure Tailwind CSS" position="2" %}
-Add the following configuration to instruct TailwindCSS where to look for classes:
+Add the following configuration to `tailwind.config.js` under the `content` key to instruct TailwindCSS where to look for classes:
 
 ```js
 content: [
   "./views/**/*.{canvas,html}",
 ],
 ```
+
 {% /step %}
 
 {% step title="Setting up the source directory" position="3" %}
@@ -48,6 +49,7 @@ Create a `src` folder at the root of your project, so you have `src`, `public`, 
 @tailwind components;
 @tailwind utilities;
 ```
+
 {% /step %}
 
 {% step title="Compiling Tailwind CSS" position="4" %}
@@ -68,7 +70,8 @@ Next, create a `.postcssrc` file at the root of your project (next to the `tailw
 ```js
 {
   plugins: {
-    tailwindcss: {}
+    tailwindcss: {
+    }
   }
 }
 ```
