@@ -68,4 +68,4 @@ View the changes.
 
 ## Conclusion
 
-You've now successfully integrated Components AI with your Blutui project.
+You've now successfully integrated AI Components with your Blutui project.
