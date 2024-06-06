@@ -10,6 +10,7 @@ Blutui AI Components accelerates the development of your Blutui site by enabling
 ## Prerequisites
 
 - A Blutui project set up and ready to go.
+- [Tailwind CSS](https://dev.blutui.com/guides/use-tailwind-css-in-a-project)
 
 ## Getting started
 
@@ -22,22 +23,23 @@ Blutui AI Components accelerates the development of your Blutui site by enabling
 
 {% step title="Generate Components" position="2" %}
 
-- Once logged in, you can start typing the description of the component you want to generate in the **Generate Component** textbox.
-- Optionally, you can choose a component from the available bubbles.
+Once logged in, you can start typing the description of the component you want to generate in the **Generate Component** textbox.
 
-![Blutui AI Components textbox](https://cdn.blutui.com/uploads/assets/Dev/guides/generate-component-textbox-components-ai.png)
+Optionally, you can choose a component from the available bubbles.
 
-- After describing your desired component, click the submit icon.
-- Your component will now be generated.
+![Blutui AI Components textbox](https://cdn.blutui.com/uploads/assets/Dev/guides/textbox-ai-components.png)
 
-![Generated Component](https://cdn.blutui.com/uploads/assets/Dev/guides/generated-component-components-ai.png)
+After describing your desired component, click the submit icon.
+Your component will now be generated.
+
+![Generated Component](https://cdn.blutui.com/uploads/assets/Dev/guides/prompt-ai-components.png)
 
 {% /step %}
 
 {% step title="Refine Your Components" position="3" %}
 After generating your component, you can iterate and refine it to better suit your needs.
 
-![Refined Component](https://cdn.blutui.com/uploads/assets/Dev/guides/refined-component-components-ai.png)
+![Refined Component](https://cdn.blutui.com/uploads/assets/Dev/guides/refined-ai-components.png)
 
 You can keep refining your component until you are happy with it.
 
@@ -45,21 +47,17 @@ You can keep refining your component until you are happy with it.
 
 {% step title="Using your generated component in a Blutui project" position="4" %}
 
-- Copy the generated component code by clicking on the **Code** tab in the generated component's top-right corner and copy the generated code.
+Copy the generated component code by clicking on the **Code** tab in the generated component's top-right corner and copy the generated code.
 
-![Generated Code](https://cdn.blutui.com/uploads/assets/Dev/guides/generated-code-components-ai.png)
+![Generated Code](https://cdn.blutui.com/uploads/assets/Dev/guides/generated-code-ai-components.png)
 
-- Open your Blutui project and paste the code.
+Open your Blutui project and paste the code.
 
-![Paste Code on Blutui project](https://cdn.blutui.com/uploads/assets/Dev/guides/paste-components-ai.png)
+![Paste Code on Blutui project](https://cdn.blutui.com/uploads/assets/Dev/guides/paste-ai-components.png)
 
-- Additionally you can open the project on Canopy and edit it further.
+And preview the changes
 
-![Canopy view](https://cdn.blutui.com/uploads/assets/Dev/guides/canopy-view-components-ai.png)
-
-- And preview the changes
-
-![Canopy preview](https://cdn.blutui.com/uploads/assets/Dev/guides/canopy-preview-components-ai.png)
+![Canopy preview](https://cdn.blutui.com/uploads/assets/Dev/guides/preview-ai-components.png)
 
 {% /step %}
 
