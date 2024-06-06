@@ -70,8 +70,7 @@ Next, create a `.postcssrc` file at the root of your project (next to the `tailw
 ```js
 {
   plugins: {
-    tailwindcss: {
-    }
+    tailwindcss: {}
   }
 }
 ```
