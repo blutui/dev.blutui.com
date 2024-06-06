@@ -30,6 +30,7 @@ export const getGuideBySlug = (slug: string) => {
 
 export const guidesNavigation: GuidesNavigationItem[] = [
   {
+    featured: true,
     title: 'How do I use AI Components in my Blutui project?',
     authors: ['Dion Pinto'],
     description: 'Learn how to use AI Components in your Blutui project.',
