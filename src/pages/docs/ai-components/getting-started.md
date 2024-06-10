@@ -1,6 +1,6 @@
 ---
 title: 'Getting started'
-description: 'Get the Most Out of Blutui AI Components'
+description: 'Get the most out of Blutui AI Components'
 ---
 
 ## Introduction
