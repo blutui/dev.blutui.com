@@ -8,6 +8,7 @@ import { comment } from './comment.markdoc'
 import { parameter } from './parameter.markdoc'
 import { row } from './row.markdoc'
 import { step } from './step.markdoc'
+import { prompt } from './prompt.markdoc'
 
 const tags = {
   badge,
@@ -20,6 +21,7 @@ const tags = {
   parameter,
   row,
   step,
+  prompt,
 }
 
 export default tags

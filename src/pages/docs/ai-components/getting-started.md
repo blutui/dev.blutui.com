@@ -11,7 +11,9 @@ Blutui's AI components can supercharge your website development by generating pr
 
 Blutui AI Components excels at creating individual website components.
 
-**Prompt:** `Give me a our team section component`
+{%prompt%}
+Give me a our team section component
+{%/prompt%}
 
 ![Generated output](https://cdn.blutui.com/uploads/assets/Dev/ai-components/best-practices-prompt.png)
 
@@ -32,9 +34,11 @@ Open your Blutui project on [Canopy](https://help.blutui.com/dashboard/site-dash
 {% step title="Specificity is Key for Styling" position="3" %}
 The more detailed you are about your styling needs, the better the AI can tailor the generated code to your exact vision. Be as verbose as possible.
 
-**Prompt:** `Create a page component which is a hero section that has a faded-out background using this as a background image https://cdn.blutui.com/uploads/stride_echoes/bg.webp, we have text and buttons on the left side and 2 images on the right with slight offset at the top on where the image starts the 2 images are https://cdn.blutui.com/uploads/stride_echoes/rc-1.webp and https://cdn.blutui.com/uploads/stride_echoes/rc-2.webp. I want the text to be old-time roman as title and serif for everything else. Make the text black and the buttons black with white text and no roundness, Make the layout a grid-based where the text side takes 2 columns and the images take 1 column each and have a gap between.`
+{%prompt%}
+Create a page component which is a hero section that has a faded-out background, we have text and buttons on the left side and 2 images on the right with slight offset at the top on where the image starts the 2 images are https://cdn.blutui.com/uploads/stride_echoes/rc-1.webp and https://cdn.blutui.com/uploads/stride_echoes/rc-2.webp. I want the text to be old-time roman as title and serif for everything else. Make the text black and the buttons black with white text and no roundness, Make the layout a grid-based where the text side takes 2 columns and the images take 1 column each and have a gap between.
+{%/prompt%}
 
-![Verbose prompt](https://cdn.blutui.com/uploads/assets/Dev/ai-components/best-practices-verbose.png)
+![Verbose prompt](https://cdn.blutui.com/uploads/assets/Dev/ai-components/get-started-verbose.png)
 
 {% callout type="note" %}
 Don't need a whole component in one prompt? Simply iterate over your chat and regenerate the code.
