@@ -15,7 +15,7 @@ Blutui AI Components excels at creating individual website components.
 Give me a our team section component
 {%/prompt%}
 
-![Generated output](https://cdn.blutui.com/uploads/assets/Dev/ai-components/best-practices-prompt.png)
+![Generated output](https://cdn.blutui.com/uploads/assets/Dev/ai-components/get-started-prompt.png)
 
 While generating entire single-page websites is possible, you might need to adjust the code based on your project structure (cut-and-paste certain sections).
 
