@@ -31,6 +31,15 @@ export const documentationNavigation: NavigationItem[] = [
     ],
   },
   {
+    title: 'AI Components',
+    items: [
+      {
+        title: 'Getting started',
+        url: '/docs/ai-components/getting-started',
+      },
+    ],
+  },
+  {
     title: 'Courier',
     items: [
       {
