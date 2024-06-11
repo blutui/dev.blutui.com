@@ -42,9 +42,8 @@ This will output:
 ```
 
 {% callout type="note" %}
-This `class` variable is only accessed by this way. All other variables can be editable in the canopy editor. 
+The `class` variable is only accessible in the code. All other variables are in the Canopy editor.
 {% /callout %}
-
 
 ## sources
 
