@@ -21,7 +21,7 @@ While generating entire single-page websites is possible, you might need to adju
 
 {% /step %}
 
-{% step title="Leverage Canopy for Effortless Text Editing" position="2" %}
+{% step title="Leverage Canopy for Effortless Editing" position="2" %}
 
 While the AI tool can populate your components with text/images etc, using Canopy, Blutui's built-in editor, is a faster and more efficient way to add or edit content.
 
