@@ -9,7 +9,7 @@ Blutui AI Components accelerates the development of your Blutui site by enabling
 
 ## Prerequisites
 
-- A Blutui project set up and ready to go.
+- [A Blutui project set up and ready to go](https://dev.blutui.com/docs/getting-started/create)
 - [Tailwind CSS](https://dev.blutui.com/guides/use-tailwind-css-in-a-project)
 
 ## Getting started
