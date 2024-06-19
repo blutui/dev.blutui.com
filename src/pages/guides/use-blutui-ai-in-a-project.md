@@ -32,12 +32,20 @@ Optionally, you can choose a component from the available bubbles.
 After describing your desired component, click the submit icon.
 Your component will now be generated.
 
+{%prompt%}
+Build a gallery component
+{%/prompt%}
+
 ![Generated Component](https://cdn.blutui.com/uploads/assets/Dev/guides/prompt-ai-components.png)
 
 {% /step %}
 
 {% step title="Refine Your Components" position="3" %}
 After generating your component, you can iterate and refine it to better suit your needs.
+
+{%prompt%}
+Make the component pink themed and change the Title to "Our team"
+{%/prompt%}
 
 ![Refined Component](https://cdn.blutui.com/uploads/assets/Dev/guides/refined-ai-components.png)
 
