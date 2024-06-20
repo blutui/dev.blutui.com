@@ -44,7 +44,7 @@ Build a gallery component
 After generating your component, you can iterate and refine it to better suit your needs.
 
 {%prompt%}
-Make the component pink themed and change the Title to "Our team"
+Make the component pink themed and change the title to "Our Workshop"
 {%/prompt%}
 
 ![Refined Component](https://cdn.blutui.com/uploads/assets/Dev/guides/refined-ai-components.png)
