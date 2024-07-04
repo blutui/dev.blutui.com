@@ -1,6 +1,5 @@
 import cn from 'clsx'
 import Link from 'next/link'
-import dynamic from 'next/dynamic'
 import { useRouter } from 'next/router'
 
 import { useActionKey } from '@/utils/use-action-key'
@@ -13,10 +12,10 @@ import { BookOpenMini } from './icons/book-open'
 import { CodeBracketSquareMini } from './icons/code-bracket-square'
 import { QueueListMini } from './icons/queue-list'
 
-const AskAiButton = dynamic(
-  () => import('./ask-ai-button').then((mod) => mod.AskAiButton),
-  { ssr: false }
-)
+// const AskAiButton = dynamic(
+//   () => import('./ask-ai-button').then((mod) => mod.AskAiButton),
+//   { ssr: false }
+// )
 
 export interface HeaderProps {
   children?: React.ReactNode
@@ -63,7 +62,6 @@ export function Header({ children }: HeaderProps) {
               )}
             </div>
           </SearchButton>
-          <AskAiButton />
         </div>
         <div className="flex shrink-0 items-center space-x-6">
           <ul className="hidden items-center space-x-6 md:flex">
