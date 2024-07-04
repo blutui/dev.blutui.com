@@ -2,7 +2,7 @@
   "name": "dev.blutui.com",
   "private": "true",
   "scripts": {
-    "dev": "next dev --experimental-https",
+    "dev": "next dev",
     "build": "next build",
     "start": "next start",
     "lint": "next lint"

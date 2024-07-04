@@ -7,6 +7,56 @@ description: 'A continuous stream of changes made to the Blutui platform.'
 Please use the ISO standard date and time format.
 {% /comment %}
 
+{% changelog date="2024-05-27" %}
+{% badge status="info" %}Changed{% /badge %}
+
+- Changed the "Project Domains" screen in the **Agency Console** to simplify the process of adding new domains to a project.
+
+- Changed [Update domain](/api/console/domains/update) API to ensure a `project` parameter is required in the body of the request.
+{% /changelog %}
+
+{% changelog date="2024-05-20" %}
+{% badge status="success" %}Added{% /badge %}
+
+- Added `domain` resource to the [Console API](/api/console). This allows you to manage domains in your agency directly through the Console API.
+
+{% badge status="attention" %}Fixed{% /badge %}
+
+- Fixed syntax error on the output of the **Blutui Canopy** `list` component.
+{% /changelog %}
+
+{% changelog date="2024-05-07" %}
+{% badge status="success" %}Added{% /badge %}
+
+- Added `brand` resource to the [Console API](/api/console). This allows you to manage your agency's brand directly through the Console API.
+
+- Added [`blutui`](https://www.npmjs.com/package/blutui) Node.js SDK to simplify interaction with Blutui APIs.
+{% /changelog %}
+
+{% changelog date="2024-05-06" %}
+{% badge status="attention" %}Fixed{% /badge %}
+
+- Fixed the order of form submissions in the form submission CSV export file.
+{% /changelog %}
+
+{% changelog date="2024-05-03" %}
+{% badge status="attention" %}Fixed{% /badge %}
+
+- Fixed issues when creating a new role in the **Agency Console**.
+{% /changelog %}
+
+{% changelog date="2024-04-29" %}
+{% badge status="info" %}Changed{% /badge %}
+
+- Changed the look and feel of the Blutui authentication screens.
+{% /changelog %}
+
+{% changelog date="2024-04-17" %}
+{% badge status="attention" %}Fixed{% /badge %}
+
+- Fixed rendering issues with the [`{% form %}` tag](/docs/canvas/tags/form).
+{% /changelog %}
+
 {% changelog date="2024-04-08" %}
 {% badge status="info" %}Changed{% /badge %}
 
