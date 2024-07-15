@@ -34,11 +34,7 @@ The project timezone.
 The project subdomain.
 {% /parameter %}
 
-{% parameter name="primary_domain_id" type="string | null" %}
-The ID of the primary domain for this project.
-{% /parameter %}
-
-{% parameter name="primary_domain" type="object | null" %}
+{% parameter name="primary_domain" type="object | string" %}
 The primary domain for this project.
 {% /parameter %}
 
@@ -48,14 +44,6 @@ The project published status.
 
 {% parameter name="processed" type="boolean" %}
 The project processed status.
-{% /parameter %}
-
-{% parameter name="transfer_id" type="string | null" %}
-The ID of the transfer for this project.
-{% /parameter %}
-
-{% parameter name="transfer" type="string | boolean" %}
-The slug of transfer organization for this project.
 {% /parameter %}
 
 {% parameter name="created_at" type="timestamp" %}
