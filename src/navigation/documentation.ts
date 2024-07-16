@@ -409,10 +409,6 @@ export const documentationNavigation: NavigationItem[] = [
                 title: 'cms_audio',
                 url: '/docs/canvas/functions/canopy/cms-audio',
               },
-              {
-                title: 'cms_embed',
-                url: '/docs/canvas/functions/canopy/cms-embed',
-              },
             ],
           },
 
