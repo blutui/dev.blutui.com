@@ -5,7 +5,7 @@ const trimSlashes = (str: string): string => {
   return str
 }
 
-export const Contribution = () => {
+export function Contribution() {
   let relativePath: string | null = null
   const articleContext = useArticleContext()
 

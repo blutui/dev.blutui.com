@@ -9,13 +9,13 @@ With Blutui you can create an unlimited number of development projects. A develo
 
 **Steps to get started:**
 
-1. Login to your [Agency Console](https://blutui.com/app).
+1. Login to your [Agency Console](https://console.blutui.com).
 2. Click **Projects** in the navigation menu.
 3. Click **Create project**.
 4. In the **Project name** field, give your new project a name. You can also set additional information about the project, such as **Description** and **Timezone**.
 5. Click **Create project**.
 
-Now that your new project is created, you may choose to view the new project's dashboard. To view the project dashboard click **Login** from the project settings page in your [Agency Console](https://blutui.com/app).
+Now that your new project is created, you may choose to view the new project's dashboard. To view the project dashboard click **Login** from the project settings page in your [Agency Console](https://console.blutui.com).
 
 ## Install Blutui Courier
 
@@ -55,7 +55,7 @@ First lets create a new page on your newly created project.
 
 **Steps:**
 
-1. Login to your newly created project. You can quickly log into your project through the **Projects** page on your [Agency Console](https://blutui.com/app).
+1. Login to your newly created project. You can quickly log into your project through the **Projects** page on your [Agency Console](https://console.blutui.com).
 2. Once logged in, from the **Site Dashboard**, navigate to **Pages** using the navigation sidebar and click the **Add page** button at the top right side of the page.
 3. Enter the required information for your page. The **Layout** is the file path to the page template. For best practice it is recommended that you create your page templates in the `pages` directory of your Canvas.
 4. If you have not created the page template, go to the `pages` directory in your Canvas template files and add create your  new page layout. For example if you set the `Layout` to `pages/about.html`, add `about.html` to your `pages` directory.
@@ -202,24 +202,17 @@ Now that your new form is created, lets add this form to your Canvas. At the top
 ```canvas {% process=false filename="forms/contact.html" %}
 {% import 'macros/form' as ui %}
 
-{{ form_open() }}
-    <input type="hidden" name="_form" value="{{ form._form }}">
+{% form 'contact' %}
     <input type="hidden" name="redirect" value="/contact/success">  
 
-    {{ ui.field(form.firstname) }}
-
-    {{ ui.field(form.lastname) }}
- 
-    {{ ui.field(form.email) }}
-  
-    {{ ui.field(form.phone) }}
-
-    {{ ui.field(form.message) }}
+    {% for field in form.fields %}
+      {{ ui.field(field) }}
+    {% endfor %}
 
     {{ recaptcha() }}
 
     <button type="submit" name="submit" value="Submit">Submit</button>
-{{ form_close() }}
+{% endform %}
 ```
 
 If you would like to redirect the user after the form is submitted successfully, set a `redirect` URL. In the code above we redirect users to a `/contact/success` page. We also recommend you add `recaptcha` to your forms to prevent spam.
@@ -232,7 +225,7 @@ Blog posts are a great way to keep your users updated. Create an unlimited amoun
 
 ## Adding domains
 
-Now that you have built your project it's time to add your domain(s) to it. To do this, go to your [Blutui Console](https://blutui.com/app). From the navigation menu, navigate to **Domains** and click **Add domain**. Add you domain name, then select the **Project** you would like to add the domain to. Now you need to verify the ownership of the newly added domain(s). To verify your domain(s), click the `How to` guide under each domain for full list of instructions to follow.
+Now that you have built your project it's time to add your domain(s) to it. To do this, go to your [Agency Console](https://console.blutui.com). From the navigation menu, navigate to **Domains** and click **Add domain**. Add you domain name, then select the **Project** you would like to add the domain to. Now you need to verify the ownership of the newly added domain(s). To verify your domain(s), click the `How to` guide under each domain for full list of instructions to follow.
 
 Once you have added the DNS records on your domain, the process after this point is automated and will automatically become green once connected, depending on your DNS providers speed. Once your domain is connected Blutui will automatically create an SSL certificate to keep your project secure.
 

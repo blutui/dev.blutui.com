@@ -1,10 +1,11 @@
-import React, { useEffect, useRef } from 'react'
+import { useEffect, useRef } from 'react'
 import Prism from 'prismjs'
 import cn from 'clsx'
 
 export interface CodeProps {
   'data-language': string
   children?: React.ReactNode
+  className?: string
   filename?: string
 }
 
@@ -69,11 +70,12 @@ Prism.hooks.add('after-tokenize', (env) => {
   markupTemplating.tokenizePlaceholders(env, 'canvas')
 })
 
-export const Code = ({
+export function Code({
   children,
+  className,
   'data-language': language,
   filename,
-}: CodeProps) => {
+}: CodeProps) {
   // const [copied, setCopied] = useState(false)
   const ref = useRef(null)
 
@@ -84,9 +86,9 @@ export const Code = ({
   const lang = language === 'md' ? 'markdoc' : language || 'markdoc'
 
   return (
-    <div className="code not-prose relative" aria-live="polite">
+    <div className={cn('not-prose relative', className)} aria-live="polite">
       {filename && (
-        <div className="absolute top-0 z-10 w-full truncate rounded-t-xl bg-zinc-500/30 px-4 py-2 text-sm font-medium text-zinc-300">
+        <div className="absolute top-0 z-10 w-full truncate rounded-t-xl bg-zinc-500/5 px-4 py-2 text-sm font-medium text-zinc-600 dark:bg-zinc-500/20 dark:text-zinc-300">
           {filename}
         </div>
       )}

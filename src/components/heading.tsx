@@ -1,4 +1,3 @@
-import React from 'react'
 import cn from 'clsx'
 
 export interface HeadingProps {
@@ -8,12 +7,12 @@ export interface HeadingProps {
   className?: string
 }
 
-export const Heading = ({
+export function Heading({
   id = '',
   level = 1,
   children,
   className,
-}: HeadingProps) => {
+}: HeadingProps) {
   const Component = `h${level}` as keyof JSX.IntrinsicElements
 
   return (
@@ -30,12 +29,12 @@ export const Heading = ({
           href={`#${id}`}
           aria-label="Navigate to heading"
         >
-          <div className="flex h-6 w-6 items-center justify-center rounded-md text-zinc-400 ring-1 ring-zinc-200 backdrop-blur transition hover:text-zinc-500 hover:ring-zinc-300 dark:ring-zinc-100/10 dark:hover:ring-zinc-100/20">
+          <div className="flex size-6 items-center justify-center rounded-md text-zinc-400 ring-1 ring-zinc-200 backdrop-blur transition hover:text-zinc-500 hover:ring-zinc-300 dark:ring-zinc-100/10 dark:hover:ring-zinc-100/20">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 20 20"
               fill="currentColor"
-              className="h-3.5 w-3.5"
+              className="size-3.5"
             >
               <path
                 fillRule="evenodd"

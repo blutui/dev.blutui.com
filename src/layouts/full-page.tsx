@@ -1,14 +1,10 @@
 import { Footer } from '@/components/footer'
 
 export interface FullPageLayoutProps {
-  layoutProps: any
   children: React.ReactNode
 }
 
-export const FullPageLayout = ({
-  layoutProps,
-  children,
-}: FullPageLayoutProps) => {
+export const FullPageLayout = ({ children }: FullPageLayoutProps) => {
   return (
     <>
       <main

@@ -115,23 +115,18 @@ Feel free to customise the appearance and layout by modifying the provided HTML 
 Inside your `views/forms/contact.html` file, insert:
 
 ```canvas {% process=false %}
-{% set form = cms.form('contact') %}
-{% import 'components/form as ui %}
+{% import 'components/form' as ui %}
 
-<form id="" method="POST" action="{{ request.url }}" enctype="multipart/form-data">
-  {{ csrf_field() | raw }}
-  {{ honeypot_field() | raw }}
-  <input type="hidden" name="_form" value="{{ form.handle }}">
-    
+{% form 'contact' %}  
   {% for field in form.fields %}
     {{ ui.field(field) }}
   {% endfor %}
     
   <button type="submit" class="">Submit</button>
-</form>
+{% endform %}
 ```
 
-This will setup the form and import the `components/form.html` file we created in the previous step. It includes security measures, such as `csrf_field()`, `honeypot_field()` and a hidden input for `_form`. The code loops through each field and renders them based on their type. This approach will allow content creators to add more fields in the future directly from the dashboard.
+This will setup the form and import the `components/form.html` file we created in the previous step. It includes security measures to help protect your form from bots. The code loops through each field and renders them based on their type. This approach will allow content creators to add more fields in the future directly from the dashboard.
 
 You can directly reference individual form fields using `{{ ui.field(form.fields.name) }}` or `{{ ui.field(form.fields['name']) }}`. Lastly add a form submission button at the end.
 {% /step %}

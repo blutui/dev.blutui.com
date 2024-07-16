@@ -7,6 +7,91 @@ description: 'A continuous stream of changes made to the Blutui platform.'
 Please use the ISO standard date and time format.
 {% /comment %}
 
+{% changelog date="2024-05-27" %}
+{% badge status="info" %}Changed{% /badge %}
+
+- Changed the "Project Domains" screen in the **Agency Console** to simplify the process of adding new domains to a project.
+
+- Changed [Update domain](/api/console/domains/update) API to ensure a `project` parameter is required in the body of the request.
+{% /changelog %}
+
+{% changelog date="2024-05-20" %}
+{% badge status="success" %}Added{% /badge %}
+
+- Added `domain` resource to the [Console API](/api/console). This allows you to manage domains in your agency directly through the Console API.
+
+{% badge status="attention" %}Fixed{% /badge %}
+
+- Fixed syntax error on the output of the **Blutui Canopy** `list` component.
+{% /changelog %}
+
+{% changelog date="2024-05-07" %}
+{% badge status="success" %}Added{% /badge %}
+
+- Added `brand` resource to the [Console API](/api/console). This allows you to manage your agency's brand directly through the Console API.
+
+- Added [`blutui`](https://www.npmjs.com/package/blutui) Node.js SDK to simplify interaction with Blutui APIs.
+{% /changelog %}
+
+{% changelog date="2024-05-06" %}
+{% badge status="attention" %}Fixed{% /badge %}
+
+- Fixed the order of form submissions in the form submission CSV export file.
+{% /changelog %}
+
+{% changelog date="2024-05-03" %}
+{% badge status="attention" %}Fixed{% /badge %}
+
+- Fixed issues when creating a new role in the **Agency Console**.
+{% /changelog %}
+
+{% changelog date="2024-04-29" %}
+{% badge status="info" %}Changed{% /badge %}
+
+- Changed the look and feel of the Blutui authentication screens.
+{% /changelog %}
+
+{% changelog date="2024-04-17" %}
+{% badge status="attention" %}Fixed{% /badge %}
+
+- Fixed rendering issues with the [`{% form %}` tag](/docs/canvas/tags/form).
+{% /changelog %}
+
+{% changelog date="2024-04-08" %}
+{% badge status="info" %}Changed{% /badge %}
+
+- Changed the site deletion feature in the **Agency Console** to permanently remove the site after a 30-day period. Previously, the site would be instantly deleted.
+{% /changelog %}
+
+{% changelog date="2024-03-25" %}
+{% badge status="info" %}Changed{% /badge %}
+
+- Changed the **Agency Console** URL from:
+  - `blutui.com/app` -> `console.blutui.com`
+- Changed the **Blutui API** URL from:
+  - `blutui.com/api` -> `api.blutui.com/v1`
+- Changed the **OAuth** URL from:
+  - `blutui.com/oauth` -> `auth.blutui.com/oauth`
+{% /changelog %}
+
+{% changelog date="2024-03-15" %}
+{% badge status="success" %}Added{% /badge %}
+
+- Added 2 new API's to the platform:
+  - `GET` `/v1/user` - Retrieve the current user.
+  - `GET` `/v1/user/email` - Retrieve the current user's email address
+{% /changelog %}
+
+{% changelog date="2024-03-12" %}
+{% badge status="success" %}Added{% /badge %}
+
+- Added the ability to create Blutui OAuth apps through the **Agency Console**.
+
+{% badge status="attention" %}Fixed{% /badge %}
+
+- Fixed the date format in the form submission CSV export.
+{% /changelog %}
+
 {% changelog date="2024-01-22" %}
 {% badge status="success" %}Added{% /badge %}
 

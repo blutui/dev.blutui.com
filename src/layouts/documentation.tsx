@@ -3,20 +3,20 @@ import { useRouter } from 'next/router'
 import { useArticleContext } from '@/context/article-context'
 import type { Section } from '@/utils/collect-headings'
 
+import { Feedback } from '@/components/feedback'
 import { Footer } from '@/components/footer'
 import { Item, Sidebar } from '@/components/sidebar'
 import { TableOfContents } from '@/components/table-of-contents'
 
 import { documentationNavigation } from '@/navigation/documentation'
+import { apiNavigation } from '@/navigation/api'
 
 export interface DocumentationLayoutProps {
-  layoutProps: any
   toc: Section[]
   children: React.ReactNode
 }
 
 export const DocumentationLayout = ({
-  layoutProps,
   toc,
   children,
 }: DocumentationLayoutProps) => {
@@ -33,6 +33,11 @@ export const DocumentationLayout = ({
 
   if (pathname === '/docs' || pathname.startsWith('/docs/')) {
     items = documentationNavigation
+  } else if (
+    pathname === '/api-reference' ||
+    pathname.startsWith('/api-reference/')
+  ) {
+    items = apiNavigation
   } else {
     items = []
   }
@@ -45,19 +50,20 @@ export const DocumentationLayout = ({
           <div className="w-full min-w-0 max-w-full">
             <header id="header" className="mx-auto max-w-screen-md">
               {title && (
-                <h1 className="text-3xl font-bold tracking-tight text-zinc-900 dark:text-zinc-200 lg:text-4xl">
+                <h1 className="text-3xl font-bold tracking-tight text-zinc-900 dark:text-zinc-200">
                   {title}
                 </h1>
               )}
               {description && (
-                <p className="mt-2 text-base text-zinc-600 dark:text-zinc-400 lg:text-lg">
+                <p className="mt-2 text-base text-zinc-500 dark:text-zinc-400 lg:text-lg">
                   {description}
                 </p>
               )}
             </header>
-            <div id="content-wrapper" className="content-wrapper py-8">
+            <div id="content-wrapper" className="py-8">
               {children}
             </div>
+            <Feedback />
             <Footer fullwidth={false} />
           </div>
           <TableOfContents toc={toc} />

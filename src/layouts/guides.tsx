@@ -8,18 +8,14 @@ import { Section } from '@/utils/collect-headings'
 import { ArrowLongLeft } from '@/components/icons/arrow-long-left'
 import { Footer } from '@/components/footer'
 import { TableOfContents } from '@/components/table-of-contents'
+import { Feedback } from '@/components/feedback'
 
 export interface GuidesLayoutProps {
-  layoutProps: any
   toc: Section[]
   children: React.ReactNode
 }
 
-export const GuidesLayout = ({
-  layoutProps,
-  toc,
-  children,
-}: GuidesLayoutProps) => {
+export const GuidesLayout = ({ toc, children }: GuidesLayoutProps) => {
   const { pathname } = useRouter()
   const articleContext = useArticleContext()
 
@@ -39,7 +35,7 @@ export const GuidesLayout = ({
               href="/guides"
               className="inline-flex items-center gap-2 text-sm text-zinc-600 transition hover:text-zinc-400 dark:text-zinc-400 dark:hover:text-zinc-500"
             >
-              <ArrowLongLeft className="h-5 w-5" />
+              <ArrowLongLeft className="size-5" />
               Back to guides
             </Link>
           </div>
@@ -63,14 +59,14 @@ export const GuidesLayout = ({
           )}
         </div>
       </header>
-      <div className="mx-auto w-full max-w-8xl px-8 py-8">
+      <div className="mx-auto w-full max-w-8xl p-8">
         <div className="flex gap-8">
           <TableOfContents title="In this guide" toc={toc} />
-          <div
-            id="content-wrapper"
-            className="content-wrapper w-full md:max-w-screen-md"
-          >
-            {children}
+          <div className="w-full md:max-w-screen-md">
+            <div id="content-wrapper" className="mb-8">
+              {children}
+            </div>
+            <Feedback />
           </div>
         </div>
       </div>

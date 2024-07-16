@@ -1,3 +1,5 @@
+import { ReactElement } from 'react'
+
 import { SearchButton } from '@/components/search'
 import { FullPageLayout } from '@/layouts/full-page'
 
@@ -7,32 +9,33 @@ import { Card } from '@/components/card'
 import { AcademicCapOutline } from '@/components/icons/academic-cap'
 import { AtSymbol } from '@/components/icons/at-symbol'
 import { BookOpenOutline } from '@/components/icons/book-open'
+import { HeroElement } from '@/components/hero-element'
 import { Microphone } from '@/components/icons/microphone'
-import { SparklesOutline } from '@/components/icons/sparkles'
+import { QueueListOutline } from '@/components/icons/queue-list'
 import { Video } from '@/components/icons/video'
 
-import type { NextPageWithCustomLayout } from '@/types'
+import type { NextPageWithLayout } from '@/types'
 
-const Home: NextPageWithCustomLayout = () => {
+const Home: NextPageWithLayout = () => {
   return (
-    <div className="w-full flex-grow">
-      <div className="relative -mt-[6.25rem] overflow-hidden pb-6 pt-[6.25rem] md:pb-10">
-        <div className="mx-auto flex max-w-8xl items-center">
+    <div className="w-full grow">
+      <div className="relative -mt-10 overflow-hidden pb-8 pt-10 md:pb-12">
+        <div className="relative mx-auto flex max-w-8xl items-center">
           <div className="w-full px-8 py-6 md:py-10">
             <p className="mb-2 text-xs uppercase tracking-widest text-zinc-500 dark:text-white/50">
               Developer Documentation
             </p>
-            <h1 className="text-3xl font-bold text-zinc-800 lg:text-5xl dark:text-white">
+            <h1 className="text-3xl font-extrabold tracking-tight text-zinc-800 dark:text-white lg:text-5xl">
               Welcome to Blutui
             </h1>
-            <p className="mb-4 mt-2 text-base text-zinc-800/80 md:text-lg lg:text-xl dark:text-white/70">
+            <p className="mb-4 mt-2 text-base text-zinc-800/80 dark:text-white/70 md:text-lg lg:text-xl">
               Explore our guides and documentation on using Blutui.
             </p>
-            <div className="flex flex-col items-center gap-4 md:flex-row">
+            <div className="flex flex-row items-center gap-4">
               <span className="hidden md:inline-block">
                 <Button href="/docs/getting-started/create">Get started</Button>
               </span>
-              <span className="hidden text-sm font-semibold uppercase text-zinc-800/40 md:block dark:text-white/40">
+              <span className="hidden text-sm font-semibold uppercase text-zinc-800/40 dark:text-white/40 md:block">
                 or
               </span>
               <SearchButton className="inline-flex h-10 w-full max-w-xs select-none items-center whitespace-nowrap rounded-lg bg-zinc-900/10 px-3 text-base font-medium text-zinc-700 transition hover:bg-zinc-900/20 dark:bg-white/20 dark:text-zinc-300 dark:hover:bg-white/10">
@@ -41,7 +44,7 @@ const Home: NextPageWithCustomLayout = () => {
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 20 20"
                     fill="currentColor"
-                    className="h-5 w-5 opacity-70"
+                    className="size-5 opacity-70"
                   >
                     <path
                       fillRule="evenodd"
@@ -54,9 +57,10 @@ const Home: NextPageWithCustomLayout = () => {
               </SearchButton>
             </div>
           </div>
+          <HeroElement />
         </div>
       </div>
-      <div className="mx-auto mt-6 grid max-w-8xl gap-6 px-8 lg:grid-cols-6">
+      <div className="mx-auto mt-0 grid max-w-8xl gap-6 px-8 lg:grid-cols-6">
         <div className="md:col-span-3">
           <Card
             title="Read the docs"
@@ -75,7 +79,7 @@ const Home: NextPageWithCustomLayout = () => {
           <Card
             title="What's new in Blutui"
             href="/changelog"
-            icon={<SparklesOutline />}
+            icon={<QueueListOutline />}
           >
             {`See what's been added, changed, fixed or removed.`}
           </Card>
@@ -112,8 +116,8 @@ const Home: NextPageWithCustomLayout = () => {
   )
 }
 
-export default Home
-
-Home.layoutProps = {
-  Layout: FullPageLayout,
+Home.getLayout = function getLayout(page: ReactElement) {
+  return <FullPageLayout>{page}</FullPageLayout>
 }
+
+export default Home

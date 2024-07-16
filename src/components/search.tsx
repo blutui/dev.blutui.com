@@ -1,10 +1,4 @@
-import React, {
-  createContext,
-  useCallback,
-  useContext,
-  useRef,
-  useState,
-} from 'react'
+import { createContext, useCallback, useContext, useRef, useState } from 'react'
 import { createPortal } from 'react-dom'
 import { useRouter } from 'next/router'
 import {
@@ -153,7 +147,7 @@ const Hit = ({ hit, children }: HitT) => {
   )
 }
 
-export const SearchButton = ({ children, ...props }: SearchButtonProps) => {
+export function SearchButton({ children, ...props }: SearchButtonProps) {
   let searchButtonRef = useRef(null)
   let { onOpen } = useContext(SearchContext)
 
