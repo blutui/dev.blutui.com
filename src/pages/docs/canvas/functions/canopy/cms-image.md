@@ -1,68 +1,53 @@
 ---
 title: 'cms_image'
-description: 'The cms_image function is used to define a slot for CMS driven image content, editable using Blutui Canopy.'
+description: 'The cms_image function is used to define a image component which can be edited on the Canopy editor.'
 ---
 
 ```canvas {% process=false %}
-{{ cms_image('hero-image') }}
+{{ cms_image(name, { url:'...', alt_text:'...', class:'...'}) }}
 ```
 
-**cms_image** will output:
-
-```html {% process=false %}
-<img src="{{ data.url }}" alt="{{ data.alt_text }}" />
-```
-
-## class
-
-`class: string`
-
-You can specify the class element directly on the `<img>` tag.
-
-```canvas {% process=false %}
-{{ cms_image('hero-image',{ class:'w-full' }) }}
-```
-
-This will output:
-
-```html {% process=false %}
-<img src="{{ data.url }}" alt="{{ data.alt_text }}" class="w-full" />
-```
+| Argument              | Description                                                        | Data Type |
+| :-------------------- | :----------------------------------------------------------------- | --------: |
+| `name`                | The element identifier                                             |    String |
+| `url` (optional)      | Link to an image to display                                        |    String |
+| `alt_text` (optional) | Descriptive text for accessibility and SEO                         |    String |
+| `class` (optional)    | A space-separated list of CSS classes to style the image component |    String |
 
 {% callout type="note" %}
-The `class` variable is only accessible in the code. All other variables are in the Canopy editor.
+The `class` variable is only accessible in the code. All other variables are available in the Canopy editor.
 {% /callout %}
 
-
-## url
-
-`url: string `
-
-You can specify the src inside the `<img>` tag.
+#### Image component template
 
 ```canvas {% process=false %}
-{{ cms_image('hero-image') }}
+<img src={{ url }} alt={{ alt_text }} class={{ class }} />
 ```
 
-This will output:
+#### Rendered HTML output
 
 ```html {% process=false %}
-<img src="{{ data.url }}" alt="{{ data.alt_text }}" />
+<img
+  src="https://placehold.co/300x200"
+  alt="Placeholder Image"
+  class="rounded-lg shadow-lg"
+/>
 ```
 
-## src
+#### Example
 
-`src: string `
+{% code-group %}
 
-You can specify the src inside the `<embed>` tag.
-
-```canvas {% process=false %}
-{{ cms_image('hero-image') }}
+```canvas {% process=false filename="index.html" %}
+{{ cms_image('myimage', { url: 'https://placehold.co/300x200', alt_text: 'Placeholder Image', class: 'rounded-lg shadow-lg' }) }}
 ```
 
-This will output:
-
-```html {% process=false %}
-<img src="{{ data.url }}" alt="{{ data.alt_text }}" />
-```pe="{{ data.type }}" src="https://cdn.blutui.com/uploads/assets/video.webm" >
+```html {% process=false filename="Output" %}
+<img
+  src="https://placehold.co/300x200"
+  alt="Placeholder Image"
+  class="rounded-lg shadow-lg"
+/>
 ```
+
+{% /code-group %}

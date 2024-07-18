@@ -367,12 +367,12 @@ export const documentationNavigation: NavigationItem[] = [
             url: '/docs/canvas/functions/block',
           },
           {
+            title: 'cms',
+            url: '/docs/canvas/functions/cms',
+          },
+          {
             title: 'Canopy',
             items: [
-              {
-                title: 'cms',
-                url: '/docs/canvas/functions/canopy/cms',
-              },
               {
                 title: 'cms_heading',
                 url: '/docs/canvas/functions/canopy/cms-heading',
