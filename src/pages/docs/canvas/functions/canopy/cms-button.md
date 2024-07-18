@@ -4,137 +4,58 @@ description: 'The cms_button function is used to define a slot for CMS driven bu
 ---
 
 ```canvas {% process=false %}
-{{ cms_button('cta-hero') }}
+{{ cms_button(name, { text:'...', url:'...', class:'...', opens_new_tab:... }) }}
 ```
 
-**cms_button** will output:
+| Argument                   | Description                                                          | Data Type |
+| :------------------------- | :------------------------------------------------------------------- | --------: |
+| `name`                     | The element identifier                                               |    String |
+| `text` (optional)          | The text content to be displayed within the button                   |    String |
+| `url` (optional)           | The button URL                                                       |    String |
+| `class` (optional)         | A space-separated list of CSS classes to style the heading component |    String |
+| `opens_new_tab` (optional) | Set to true to open the linked URL in a new tab                      |   Boolean |
 
-```html {% process=false %}
-{% if data.url %}
-  <a href="{{ data.url }}" rel="noopener" class="btn {{ data.theme }} {{ data.size }}" {% if data.opens_new_tab %}target="_blank"{% endif %}>
-    {{ data.text }}
-  </a>
-{% else %}
-  <button class="btn {{ data.theme }} {{ data.size }}">
-    {{ data.text }}
-  </button>
-{% endif %}
-```
-
-## class
-
-`class: string`
-
-You can specify the class element directly on the `<button>` or `<a>` tag.
-
-```canvas {% process=false %}
-{{ cms_button('cta-hero',{ class:'w-full' }) }}
-```
-
-This will output:
-
-```html {% process=false %}
-{% if data.url %}
-  <a href="{{ data.url }}" rel="noopener" class="btn {{ data.theme }} {{ data.size }} w-full" {% if data.opens_new_tab %}target="_blank"{% endif %}>
-    {{ data.text }}
-  </a>
-{% else %}
-  <button class="btn {{ data.theme }} {{ data.size }} w-full">
-    {{ data.text }}
-  </button>
-{% endif %}
-```
-
-{% callout type="note" %}
-The `class` variable is only accessible in the code. All other variables are in the Canopy editor.
-{% /callout %}
-
-
-## theme and size
-
-`theme: string` `size: string` 
-
-You can specify the class element directly on the `<button>` or `<a>` tag.
-
-```canvas {% process=false %}
-{{ cms_button('cta-hero',{ theme:'btn-primary', size:'btn-lg' }) }}
-```
-
-This will output:
-
-```html {% process=false %}
-{% if data.url %}
-  <a href="{{ data.url }}" rel="noopener" class="btn btn-primary btn-lg {{ class }}" {% if data.opens_new_tab %}target="_blank"{% endif %}>
-    {{ data.text }}
-  </a>
-{% else %}
-  <button class="btn btn-primary btn-lg {{ class }}">
-    {{ data.text }}
-  </button>
-{% endif %}
-```
-
-## text
-
-`text: string` 
-
-You can specify the text directly in the `<button>` or `<a>` tag.
-
-```canvas {% process=false %}
-{{ cms_button('cta-hero',{ text:'Get in touch' }) }}
-```
-
-This will output:
-
-```html {% process=false %}
-{% if data.url %}
-  <a href="{{ data.url }}" rel="noopener" class="btn {{ data.theme }} {{ data.size }}" {% if data.opens_new_tab %}target="_blank"{% endif %}>
-    Get in touch
-  </a>
-{% else %}
-  <button class="btn {{ data.theme }} {{ data.size }}">
-     Get in touch
-  </button>
-{% endif %}
-```
-
-## url
-
-`url: string` 
-
-You can specify the href element directly on the `<a>` tag.
-
-```canvas {% process=false %}
-{{ cms_button('cta-hero',{ url:'https://dev.blutui.com/docs/canvas/functions/cms-button' }) }}
-```
-
-This will output:
-
-```html {% process=false %}
-  <a href="https://dev.blutui.com/docs/canvas/functions/cms-button" rel="noopener" class="btn {{ data.theme }} {{ data.size }}" {% if data.opens_new_tab %}target="_blank"{% endif %}>
-    {{ data.text }}
-  </a>
-```
-
-## opens_new_tab
-
-`opens_new_tab: boolean` 
-
-You can specify the if target="_blank" element directly on the `<a>` tag.
-
-```canvas {% process=false %}
-{{ cms_button('cta-hero',{ opens_new_tab:'true' }) }}
-```
-
-This will output:
-
-```html {% process=false %}
-  <a href="{{ data.url }}" rel="noopener" class="btn {{ data.theme }} {{ data.size }} {{ class }}" target="_blank">
-    {{ data.text }}
-  </a>
-```
 {% callout type="note" %}
 The `opens_new_tab` only works if you are using a `url`.
 {% /callout %}
 
+{% callout type="note" %}
+The `class` variable is only accessible in the code. All other variables are available in the Canopy editor.
+{% /callout %}
 
+#### Button component template
+
+```canvas {% process=false %}
+    <a href="{{ url }}" class={{ class }} rel="noopener" {% if opens_new_tab %} target="_blank" {% endif %}>
+      {{ text }}
+    </a>
+```
+
+#### Rendered HTML output
+
+```html {% process=false %}
+<a href="https://blutui.ai/" class="bg-pink-500" rel="noopener" target="_blank">
+  Blutui AI
+</a>
+```
+
+#### Example
+
+{% code-group %}
+
+```canvas {% process=false filename="index.html" %}
+{{ cms_button('mybutton', { text:'Blutui AI Components', url:'https://blutui.ai/', class:'bg-blue-500 text-white rounded hover:bg-blue-700',  opens_new_tab:true }) }}
+```
+
+```html {% process=false filename="Output" %}
+<a
+  href="https://blutui.ai/"
+  class="rounded bg-blue-500 text-white hover:bg-blue-700"
+  rel="noopener"
+  target="_blank"
+>
+  Blutui AI Components
+</a>
+```
+
+{% /code-group %}
