@@ -1,67 +1,72 @@
 ---
 title: 'cms_audio'
-description: 'The cms_audio function is used to define a slot for CMS driven audio content, editable using Blutui Canopy.'
+description: 'The cms_audio function is used to define a audio component which can be edited on the Canopy editor.'
 ---
 
 ```canvas {% process=false %}
-{{ cms_audio('artist-1') }}
+{{ cms_audio(name, { controls:..., url:'...', type:'...', class:'...' }) }}
 ```
 
-**cms_audio** will output:
+| Argument              | Description                                                          | Data Type |
+| :-------------------- | :------------------------------------------------------------------- | --------: |
+| `name`                | The element identifier                                               |    String |
+| `controls` (optional) | Display standard audio controls (play, pause, volume)                |   Boolean |
+| `url` (optional)      | Link to the audio file                                               |    String |
+| `type` (optional)     | Specify the audio format (most browsers can handle multiple formats) |    String |
+| `class` (optional)    | A space-separated list of CSS classes to style the audio component   |    String |
 
-```html {% process=false %}
-<audio controls class="{{ class }}">
-  {% for source in data.sources %}
-    <source src="{{ source.url }}" type="{{ source.type }}">
-  {% endfor %}
-
-  Your browser does not support the audio tag.
-</audio>
-```
-
-## class
-
-`class: string`
-
-You can specify the class element directly on the `<audio>` tag.
+#### Multiple audio sources
 
 ```canvas {% process=false %}
-{{ cms_audio('artist-1',{ class:'w-full' }) }}
+{{ cms_audio(name, { controls:..., sources:[{url:'...', type:'...'},{url:'...', type:'...'}], class:'...' }) }}
 ```
 
-This will output:
-
-```html {% process=false %}
-<audio controls class="w-full">
-  {% for source in data.sources %}
-    <source src="{{ source.url }}" type="{{ source.type }}">
-  {% endfor %}
-
-  Your browser does not support the audio tag.
-</audio>
-```
+| Argument              | Description                                                        |     Data Type |
+| :-------------------- | :----------------------------------------------------------------- | ------------: |
+| `name`                | The element identifier                                             |        String |
+| `controls` (optional) | Display standard audio controls (play, pause, volume)              |       Boolean |
+| `sources` (optional)  | An array of objects specifying alternative audio sources           | Array[Object] |
+| `class` (optional)    | A space-separated list of CSS classes to style the audio component |        String |
 
 {% callout type="note" %}
-The `class` variable is only accessible in the code. All other variables are in the Canopy editor.
+`type:'audio/mp3'` is a common format, but check browser compatibility for others
 {% /callout %}
 
-## sources
+{% callout type="note" %}
+The `class` variable is only accessible in the code. All other variables are available in the Canopy editor.
+{% /callout %}
 
-`sources: array`
-
-You can specify each source attribute directly. `sources` is an array of objects which has two variables. `url` which is for the src attribute and `type` which is for the type attribute
+#### Audio component template
 
 ```canvas {% process=false %}
-{{ cms_audio('artist-1', {sources:[{ url:'audio-1.mp3', type:'audio/mp3' },{ url:'audio-1.mp4', type:'audio/mp4' }]}) }}
-```
-
-This will output:
-
-```html {% process=false %}
-<audio controls class="{{ class }}">
-  <source src="audio-1.mp3" type="audio/mp3">
-  <source src="audio-1.mp4" type="audio/mp4">
-
-  Your browser does not support the audio tag.
+<audio controls={{ controls }} class={{ class }}>
+  {% for source in sources %}
+    <source src="{{ url }}" type="{{ type }}">
+  {% endfor %}
 </audio>
 ```
+
+#### Rendered HTML output
+
+```html {% process=false %}
+<audio class="mt-4 w-full" controls>
+  <source src="https://www.example.com/audio.mp3" type="audio/mp3" />
+  Your browser does not support the audio element.
+</audio>
+```
+
+#### Example
+
+{% code-group %}
+
+```canvas {% process=false filename="index.html" %}
+{{ cms_audio('myaudio', { class: 'w-full mt-4', controls:false,  url:'https://www.example.com/audio.mp3', type:'audio/mp3' }) }}
+```
+
+```html {% process=false filename="Output" %}
+<audio class="mt-4 w-full">
+  <source src="https://www.example.com/audio.mp3" type="audio/mp3" />
+</audio>
+```
+
+{% /code-group %}

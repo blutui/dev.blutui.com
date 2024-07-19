@@ -1,57 +1,60 @@
 ---
 title: 'cms_code'
-description: 'The cms_code function is used to define a slot for CMS driven code content, editable using Blutui Canopy.'
+description: 'The cms_code function is used to define a code component which can be edited on the Canopy editor.'
 ---
 
 ```canvas {% process=false %}
-{{ cms_code('example-code') }}
+{{ cms_code(name, { value:'...', class:'...' }) }}
 ```
 
-**cms_code** will output:
-
-```html {% process=false %}
-<code>
-  <pre>{{ data.value }}</pre>
-</code>
-```
-
-## class
-
-`class: string`
-
-You can specify the class element directly on the `<code>` tag.
-
-```canvas {% process=false %}
-{{ cms_code('example-code', { class:'w-full' }) }}
-```
-
-This will output:
-
-```html {% process=false %}
-<code class="w-full">
-  <pre>{{ data.value }}</pre>
-</code>
-```
+| Argument           | Description                                                       | Data Type |
+| :----------------- | :---------------------------------------------------------------- | --------: |
+| `name`             | The element identifier                                            |    String |
+| `value` (optional) | The code to be displayed                                          |    String |
+| `class` (optional) | A space-separated list of CSS classes to style the code component |    String |
 
 {% callout type="note" %}
-The `class` variable is only accessible in the code. All other variables are in the Canopy editor.
+The `class` variable is only accessible in the code. All other variables are available in the Canopy editor.
 {% /callout %}
 
-
-## value
-
-`value: string `
-
-You can specify the content inside the `<pre>` tag.
+#### Code component template
 
 ```canvas {% process=false %}
-{{ cms_code('example-code', { value:'x = 5;' }) }}
-```
-
-This will output:
-
-```html {% process=false %}
-<code>
-  <pre>x = 5;</pre>
+<code class={{ class }}>
+  <pre>{{ value }}</pre>
 </code>
 ```
+
+#### Rendered HTML output
+
+```html {% process=false %}
+<code class="text-sm">
+  <pre>
+  function greet() {
+      console.log("Hello, World!");
+  }
+  greet();
+  </pre>
+</code>
+```
+
+#### Example
+
+{% code-group %}
+
+```canvas {% process=false filename="index.html" %}
+ {{ cms_code('mycode', { value: 'function greet() {\n    console.log("Hello, World!");\n}\ngreet();', class: 'text-sm' }) }}
+```
+
+```html {% process=false filename="Output" %}
+<code class="text-sm">
+  <pre>
+  function greet() {
+      console.log("Hello, World!");
+  }
+  greet();
+  </pre>
+</code>
+```
+
+{% /code-group %}
