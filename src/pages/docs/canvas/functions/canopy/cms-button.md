@@ -1,6 +1,6 @@
 ---
 title: 'cms_button'
-description: 'The cms_button function is used to define a slot for CMS driven button content, editable using Blutui Canopy.'
+description: 'The cms_button function is used to define a button component which can be edited on the Canopy editor.'
 ---
 
 ```canvas {% process=false %}
