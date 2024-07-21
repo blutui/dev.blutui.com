@@ -19,7 +19,7 @@ description: 'The cms_audio function is used to define a audio component which c
 #### Multiple audio sources
 
 ```canvas {% process=false %}
-{{ cms_audio(name, { controls: ..., autoplay: ..., sources: [{ url:'...', type:'...' },{ url: '...', type: '...' }], class: '...' }) }}
+{{ cms_audio(name, { controls: ..., autoplay: ..., sources: [{ url: '...', type: '...' }, { url: '...', type: '...' }], class: '...' }) }}
 ```
 
 | Argument              | Description                                                        |     Data Type |
