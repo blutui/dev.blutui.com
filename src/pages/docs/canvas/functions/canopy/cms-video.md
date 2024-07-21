@@ -19,7 +19,7 @@ description: 'The cms_video function is used to define a video component which c
 #### Multiple video sources
 
 ```canvas {% process=false %}
-{{ cms_video(name, { controls:..., autoplay: ..., sources: [{ url: '...', type: '...' },{url: '...', type: '...' }], class: '...' }) }}
+{{ cms_video(name, { controls: ..., autoplay: ..., sources: [{ url: '...', type: '...' },{ url: '...', type: '...' }], class: '...' }) }}
 ```
 
 | Argument              | Description                                                        |     Data Type |
