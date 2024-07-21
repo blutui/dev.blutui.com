@@ -4,7 +4,7 @@ description: 'The cms_quote function is used to define a quote component which c
 ---
 
 ```canvas {% process=false %}
-{{ cms_quote(name, { value:'...', cite:'...', class:'...' }) }}
+{{ cms_quote(name, { value: '...', cite: '...', class: '...' }) }}
 ```
 
 | Argument           | Description                                                        | Data Type |
@@ -45,14 +45,14 @@ The `class` variable is only accessible in the code. All other variables are ava
 {% code-group %}
 
 ```canvas {% process=false filename="index.html" %}
- {{ cms_quote('myquote', { value: "I'll be back.", cite: 'Terminator (character)', class: 'text-lg italic text-gray-600' }) }}
+ {{ cms_quote('myquote', { value: "I'll be back.", cite: 'Terminator', class: 'text-lg italic text-gray-600' }) }}
 ```
 
 ```html {% process=false filename="Output" %}
 <blockquote class="text-lg italic text-gray-600">
-  "I'll be back."
+  I'll be back.
   <footer>
-    <cite>"Terminator"</cite>
+    <cite>Terminator</cite>
   </footer>
 </blockquote>
 ```

@@ -4,13 +4,14 @@ description: 'The cms_video function is used to define a video component which c
 ---
 
 ```canvas {% process=false %}
-{{ cms_video(name, { controls:..., url:'...', type:'...', class:'...' }) }}
+{{ cms_video(name, { controls: ..., autoplay: ..., url: '...', type: '...', class: '...' }) }}
 ```
 
 | Argument              | Description                                                          | Data Type |
 | :-------------------- | :------------------------------------------------------------------- | --------: |
 | `name`                | The element identifier                                               |    String |
 | `controls` (optional) | Display standard video controls (play, pause, volume, etc.)          |   Boolean |
+| `autoplay` (optional) | Starts playback automatically when the page loads.                   |   Boolean |
 | `url` (optional)      | Link to the video file                                               |    String |
 | `type` (optional)     | Specify the video format (most browsers can handle multiple formats) |    String |
 | `class` (optional)    | A space-separated list of CSS classes to style the video component   |    String |
@@ -18,13 +19,14 @@ description: 'The cms_video function is used to define a video component which c
 #### Multiple video sources
 
 ```canvas {% process=false %}
-{{ cms_video(name, { controls:..., sources:[{url:'...', type:'...'},{url:'...', type:'...'}], class:'...' }) }}
+{{ cms_video(name, { controls:..., autoplay: ..., sources: [{ url: '...', type: '...' },{url: '...', type: '...' }], class: '...' }) }}
 ```
 
 | Argument              | Description                                                        |     Data Type |
 | :-------------------- | :----------------------------------------------------------------- | ------------: |
 | `name`                | The element identifier                                             |        String |
 | `controls` (optional) | Display standard video controls (play, pause, volume, etc.)        |       Boolean |
+| `autoplay` (optional) | Starts playback automatically when the page loads.                 |       Boolean |
 | `sources` (optional)  | An array of objects specifying alternative video sources           | Array[Object] |
 | `class` (optional)    | A space-separated list of CSS classes to style the video component |        String |
 
@@ -39,7 +41,7 @@ The `class` variable is only accessible in the code. All other variables are ava
 #### Video component template
 
 ```canvas {% process=false %}
-<video controls={{ controls }} class={{ class }}>
+<video {{ controls }} {{ autoplay }} class={{ class }}>
   {% for source in sources %}
     <source src={{ url }} type={{ type }}>
   {% endfor %}
@@ -49,7 +51,7 @@ The `class` variable is only accessible in the code. All other variables are ava
 #### Rendered HTML output
 
 ```html {% process=false %}
-<video controls class="w-full rounded-lg">
+<video controls autoplay class="w-full rounded-lg">
   <source src="https://placehold.co/600x400" type="video/mp4" />
   Your browser does not support the video tag.
 </video>
@@ -60,11 +62,11 @@ The `class` variable is only accessible in the code. All other variables are ava
 {% code-group %}
 
 ```canvas {% process=false filename="index.html" %}
-{{ cms_video('myvideo',{sources:[{type:'video/mp4',url:'https://cdn.blutui.com/uploads/curation/collection-web-2.mp4'}],controls:true}) }}
+{{ cms_video('myvideo',{ sources: [{ type: 'video/mp4',url: 'https://cdn.blutui.com/uploads/curation/collection-web-2.mp4' }], controls: true, autoplay: true }) }}
 ```
 
 ```html {% process=false filename="Output" %}
-<video controls>
+<video controls autoplay>
   <source
     src="https://cdn.blutui.com/uploads/curation/collection-web-2.mp4"
     type="video/mp4"

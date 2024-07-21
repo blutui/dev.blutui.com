@@ -4,7 +4,7 @@ description: 'The cms_heading function is used to define a heading component whi
 ---
 
 ```canvas {% process=false %}
-{{ cms_heading(name, { element:'...', value:'...', class:'...' }) }}
+{{ cms_heading(name, { element: '...', value: '...', class: '...' }) }}
 ```
 
 | Argument             | Description                                                          | Data Type |
@@ -37,7 +37,7 @@ The `class` variable is only accessible in the code. All other variables are ava
 {% code-group %}
 
 ```canvas {% process=false filename="index.html" %}
-{{ cms_heading('myheading', { element:'h3', value:'Welcome to our page', class:'text-blue-500 font-bold' }) }}
+{{ cms_heading('myheading', { element: 'h3', value: 'Welcome to our page', class: 'text-blue-500 font-bold' }) }}
 ```
 
 ```html {% process=false filename="Output" %}

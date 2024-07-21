@@ -4,7 +4,7 @@ description: 'The cms_list function is used to define a list component which can
 ---
 
 ```canvas {% process=false %}
-{{ cms_list(name, { ordered:..., items:['...','...'], class:'...' }) }}
+{{ cms_list(name, { ordered: ..., items: [ '...', '...' ], class: '...' }) }}
 ```
 
 | Argument             | Description                                                       |     Data Type |
@@ -42,7 +42,7 @@ The `class` variable is only accessible in the code. All other variables are ava
 {% code-group %}
 
 ```canvas {% process=false filename="index.html" %}
-{{ cms_list('list-tag-123', { ordered:true, items:['Item 1', 'Item 2', 'Item 3'], class:'list-decimal pl-5 space-y-2' }) }}
+{{ cms_list('list-tag-123', { ordered: true, items:[ 'Item 1', 'Item 2', 'Item 3' ], class: 'list-decimal pl-5 space-y-2' }) }}
 ```
 
 ```html {% process=false filename="Output" %}

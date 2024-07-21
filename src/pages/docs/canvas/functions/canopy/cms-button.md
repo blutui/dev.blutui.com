@@ -4,7 +4,7 @@ description: 'The cms_button function is used to define a slot for CMS driven bu
 ---
 
 ```canvas {% process=false %}
-{{ cms_button(name, { text:'...', url:'...', class:'...', opens_new_tab:... }) }}
+{{ cms_button(name, { text: '...', url: '...', class: '...', opens_new_tab: ... }) }}
 ```
 
 | Argument                   | Description                                                          | Data Type |
@@ -44,7 +44,7 @@ The `class` variable is only accessible in the code. All other variables are ava
 {% code-group %}
 
 ```canvas {% process=false filename="index.html" %}
-{{ cms_button('mybutton', { text:'Blutui AI Components', url:'https://blutui.ai/', class:'bg-blue-500 text-white rounded hover:bg-blue-700',  opens_new_tab:true }) }}
+{{ cms_button('mybutton', { text: 'Blutui AI Components', url: 'https://blutui.ai/', class: 'bg-blue-500 text-white rounded hover:bg-blue-700',  opens_new_tab: true }) }}
 ```
 
 ```html {% process=false filename="Output" %}

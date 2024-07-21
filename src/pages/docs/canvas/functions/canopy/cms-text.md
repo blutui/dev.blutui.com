@@ -4,7 +4,7 @@ description: 'The cms_text function is used to define a text component which can
 ---
 
 ```canvas {% process=false %}
-{{ cms_text(name, { value:'...', class:'...' }) }}
+{{ cms_text(name, { value: '...', class: '...' }) }}
 ```
 
 | Argument           | Description                                                       | Data Type |
@@ -36,7 +36,7 @@ The `class` variable is only accessible in the code. All other variables are ava
 {% code-group %}
 
 ```canvas {% process=false filename="index.html" %}
-{{ cms_text('mytextcontent', { value:'Blutui is pro-developer in everything we do', class:'font-medium text-purple-500' }) }}
+{{ cms_text('mytextcontent', { value: 'Blutui is pro-developer in everything we do', class: 'font-medium text-purple-500' }) }}
 ```
 
 ```html {% process=false filename="Output" %}

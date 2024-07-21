@@ -4,7 +4,7 @@ description: 'The cms_code function is used to define a code component which can
 ---
 
 ```canvas {% process=false %}
-{{ cms_code(name, { value:'...', class:'...' }) }}
+{{ cms_code(name, { value: '...', class: '...' }) }}
 ```
 
 | Argument           | Description                                                       | Data Type |

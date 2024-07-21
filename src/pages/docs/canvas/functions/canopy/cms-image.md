@@ -4,7 +4,7 @@ description: 'The cms_image function is used to define a image component which c
 ---
 
 ```canvas {% process=false %}
-{{ cms_image(name, { url:'...', alt_text:'...', class:'...'}) }}
+{{ cms_image(name, { url: '...', alt_text: '...', class: '...'}) }}
 ```
 
 | Argument              | Description                                                        | Data Type |
