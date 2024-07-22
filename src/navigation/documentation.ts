@@ -371,45 +371,47 @@ export const documentationNavigation: NavigationItem[] = [
             url: '/docs/canvas/functions/cms',
           },
           {
-            title: 'cms_audio',
-            url: '/docs/canvas/functions/cms-audio',
+            title: 'Canopy',
+            items: [
+              {
+                title: 'cms_heading',
+                url: '/docs/canvas/functions/canopy/cms-heading',
+              },
+              {
+                title: 'cms_text',
+                url: '/docs/canvas/functions/canopy/cms-text',
+              },
+              {
+                title: 'cms_button',
+                url: '/docs/canvas/functions/canopy/cms-button',
+              },
+              {
+                title: 'cms_image',
+                url: '/docs/canvas/functions/canopy/cms-image',
+              },
+              {
+                title: 'cms_list',
+                url: '/docs/canvas/functions/canopy/cms-list',
+              },
+              {
+                title: 'cms_video',
+                url: '/docs/canvas/functions/canopy/cms-video',
+              },
+              {
+                title: 'cms_code',
+                url: '/docs/canvas/functions/canopy/cms-code',
+              },
+              {
+                title: 'cms_quote',
+                url: '/docs/canvas/functions/canopy/cms-quote',
+              },
+              {
+                title: 'cms_audio',
+                url: '/docs/canvas/functions/canopy/cms-audio',
+              },
+            ],
           },
-          {
-            title: 'cms_button',
-            url: '/docs/canvas/functions/cms-button',
-          },
-          {
-            title: 'cms_code',
-            url: '/docs/canvas/functions/cms-code',
-          },
-          {
-            title: 'cms_embed',
-            url: '/docs/canvas/functions/cms-embed',
-          },
-          {
-            title: 'cms_heading',
-            url: '/docs/canvas/functions/cms-heading',
-          },
-          {
-            title: 'cms_image',
-            url: '/docs/canvas/functions/cms-image',
-          },
-          {
-            title: 'cms_list',
-            url: '/docs/canvas/functions/cms-list',
-          },
-          {
-            title: 'cms_quote',
-            url: '/docs/canvas/functions/cms-quote',
-          },
-          {
-            title: 'cms_text',
-            url: '/docs/canvas/functions/cms-text',
-          },
-          {
-            title: 'cms_video',
-            url: '/docs/canvas/functions/cms-video',
-          },
+
           {
             title: 'constant',
             url: '/docs/canvas/functions/constant',
