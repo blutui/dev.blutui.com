@@ -62,7 +62,7 @@ courier open
 
 ## pull
 
-Pull all the site code for **handle** in the current `courier.json`.
+Pull all the site code for **handle** from the current `courier.json`, targeting the `public` and `views` folders.
 
 ```bash
 courier pull
@@ -70,7 +70,7 @@ courier pull
 
 ## push
 
-Push all the site code for **handle** in the current `courier.json`.
+Push all the site code for **handle** from the current `courier.json`, targeting the `public` and `views` folders.
 
 ```bash
 courier push
@@ -94,8 +94,12 @@ courier version
 
 ## watch
 
-Watch all the site code changes in the current working directory.
+Watch will set up a local environment hosting your `public` folder, use the `views` folder to watch for changes and push the modified files, and utilize the Blutui cloud to build for you, accessible at `localhost:8080`.
 
 ```bash
 courier watch
 ```
+
+{% callout type="note" %}
+On the first run, watch does not automatically push code, it starts monitoring file changes in the views directory.
+{% /callout %}
