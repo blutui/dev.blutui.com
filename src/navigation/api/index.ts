@@ -39,6 +39,27 @@ export const apiNavigation: APINavigationItem[] = [
     ],
   },
   {
+    title: 'Agencies',
+    expandable: false,
+    items: [
+      {
+        title: 'List all agencies',
+        url: '/api/agencies/list',
+        method: 'GET',
+      },
+      {
+        title: 'Retrieve agency',
+        url: '/api/agencies/retrieve',
+        method: 'GET',
+      },
+      {
+        title: 'Update agency',
+        url: '/api/agencies/update',
+        method: 'PATCH',
+      },
+    ],
+  },
+  {
     title: 'User',
     expandable: false,
     items: [

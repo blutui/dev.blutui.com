@@ -9,11 +9,7 @@
  "password": "password",
  "timezone": "Pacific/Auckland",
  "subdomain": "example-site",
- "primary_domain": {
-   "id": "9c17d63b-96c0-4315-b4dd-e55373ce4ffd",
-   "object": "domain",
-   ...
- },
+ "primary_domain": "9c17d63b-96c0-4315-b4dd-e55373ce4ffd",
  "published": true,
  "processed": true,
  "created_at": 1711305486,

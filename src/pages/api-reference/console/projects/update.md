@@ -1,7 +1,7 @@
 ---
-title: 'Add project'
-description: 'Add a project to your agency.'
-api: 'POST /v1/agencies/{username}/projects'
+title: 'Update project'
+description: 'Update a project in your agency.'
+api: 'PATCH /v1/agencies/{username}/projects'
 ---
 
 {% row %}
@@ -13,20 +13,20 @@ api: 'POST /v1/agencies/{username}/projects'
 The name of the project.
 {% /parameter %}
 
-{% parameter name="handle" type="string" %}
-The unique slug of the project.
+{% parameter name="password" type="string" %}
+The password used to access the staging URL of the project.
 {% /parameter %}
 
 {% parameter name="timezone" type="string" %}
 The timezone of the project. The value must be a valid timezone string, check the [list of supported timezones](/api/timezones) for more information.
 {% /parameter %}
 
-{% parameter name="description" type="string" %}
-The description of the project.
+{% parameter name="primary_domain" type="string | null" %}
+The ID of a verified domain to be used as the project's primary domain.
 {% /parameter %}
 
-{% parameter name="subdomain" type="string" %}
-The subdomain of the project. Your project will be accessible at `https://{subdomain}.blutui.com`.
+{% parameter name="description" type="string | null" %}
+The project description.
 {% /parameter %}
 
 ### Response
@@ -44,17 +44,17 @@ import Blutui from 'blutui'
 
 const blutui = new Blutui('ey....')
 
-blutui.agency('studio').projects.create({
-  name: 'Example Site',
+blutui.agency('studio').projects.update('9c17d680-e0af-4f00-9e28-08c4e38e89e0', {
+  primaryDomain: '9c17d680-e0af-4f00-9e28-08c4e38e89e0',
 })
 ```
 
 ```bash {% process=false filename="cURL" %}
-curl -X POST 'https://api.blutui.com/v1/agencies/studio/projects' \
+curl -X PATCH 'https://api.blutui.com/v1/agencies/studio/projects/9c17d680-e0af-4f00-9e28-08c4e38e89e0' \
      -H 'Authorization: Bearer ey....' \
      -H 'Content-Type: application/json'
      -d $'{
-  "name": "Example Site"
+  "primary_domain": "9c17d680-e0af-4f00-9e28-08c4e38e89e0"
 }'
 ```
 

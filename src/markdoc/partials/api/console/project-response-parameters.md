@@ -34,7 +34,7 @@ The project timezone.
 The project subdomain.
 {% /parameter %}
 
-{% parameter name="primary_domain" type="object | string" %}
+{% parameter name="primary_domain" type="object | string | null" %}
 The primary domain for this project.
 {% /parameter %}
 
