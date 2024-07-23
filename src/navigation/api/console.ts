@@ -112,7 +112,7 @@ export const consoleAPINavigation: APINavigationItem[] = [
         method: 'GET',
       },
       {
-        title: 'Remove project',
+        title: 'Archive project',
         url: '/api/console/projects/remove',
         method: 'DELETE',
       },

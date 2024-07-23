@@ -9,7 +9,7 @@ api: 'PATCH /v1/agencies/{username}/projects'
 {% column %}
 ### Body parameters
 
-{% parameter name="name" type="string" required=true %}
+{% parameter name="name" type="string" %}
 The name of the project.
 {% /parameter %}
 
