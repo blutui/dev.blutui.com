@@ -92,9 +92,64 @@ export const consoleAPINavigation: APINavigationItem[] = [
     expandable: false,
     items: [
       {
+        title: 'Create project',
+        url: '/api/console/projects/create',
+        method: 'POST',
+      },
+      {
+        title: 'Update project',
+        url: '/api/console/projects/update',
+        method: 'PATCH',
+      },
+      {
+        title: 'Retrieve project',
+        url: '/api/console/projects/retrieve',
+        method: 'GET',
+      },
+      {
+        title: 'List all projects',
+        url: '/api/console/projects/list',
+        method: 'GET',
+      },
+      {
+        title: 'Archive project',
+        url: '/api/console/projects/remove',
+        method: 'DELETE',
+      },
+      {
+        title: 'List all archived projects',
+        url: '/api/console/projects/archived',
+        method: 'GET',
+      },
+      {
+        title: 'Restore project',
+        url: '/api/console/projects/restore',
+        method: 'DELETE',
+      },
+      {
         title: 'List all project domains',
         url: '/api/console/projects/domains',
         method: 'GET',
+      },
+      {
+        title: 'Search projects',
+        url: '/api/console/projects/search',
+        method: 'POST',
+      },
+      {
+        title: 'Publish project',
+        url: '/api/console/projects/publish',
+        method: 'POST',
+      },
+      {
+        title: 'Republish project',
+        url: '/api/console/projects/republish',
+        method: 'POST',
+      },
+      {
+        title: 'Unpublish project',
+        url: '/api/console/projects/unpublish',
+        method: 'POST',
       },
     ],
   },

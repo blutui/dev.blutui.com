@@ -12,7 +12,7 @@ export function Article({ children }: ArticleProps) {
   return (
     <article
       className={cn(
-        'prose mb-6 w-full dark:prose-dark',
+        'prose mb-6 w-full dark:prose-dark prose-th:text-left',
         articleContext.api
           ? typeof articleContext.api === 'string'
             ? 'max-w-full'

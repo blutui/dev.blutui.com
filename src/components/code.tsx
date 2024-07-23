@@ -95,7 +95,11 @@ export function Code({
       <pre
         key={children as any}
         ref={ref}
-        className={cn(`language-${lang}`, filename ? 'px-4 pb-4 pt-12' : 'p-4')}
+        className={cn(
+          `language-${lang}`,
+          filename ? 'px-4 pb-4 pt-12' : 'p-4',
+          'blutui-scrollbar'
+        )}
       >
         <code>{children}</code>
       </pre>
