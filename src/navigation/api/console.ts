@@ -153,4 +153,35 @@ export const consoleAPINavigation: APINavigationItem[] = [
       },
     ],
   },
+  {
+    title: 'Roles',
+    expandable: true,
+    items: [
+      {
+        title: 'Create role',
+        url: '/api/console/roles/create',
+        method: 'POST',
+      },
+      {
+        title: 'Update role',
+        url: '/api/console/roles/update',
+        method: 'PATCH',
+      },
+      {
+        title: 'Retrieve role',
+        url: '/api/console/roles/retrieve',
+        method: 'GET',
+      },
+      {
+        title: 'List all roles',
+        url: '/api/console/roles/list',
+        method: 'GET',
+      },
+      {
+        title: 'Remove role',
+        url: '/api/console/roles/remove',
+        method: 'DELETE',
+      },
+    ],
+  },
 ]
