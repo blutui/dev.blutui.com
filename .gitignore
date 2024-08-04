@@ -30,5 +30,6 @@ next-env.d.ts
 
 # Misc
 *.pem
+.env
 
 certificates
