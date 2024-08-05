@@ -42,7 +42,7 @@ blutui.agency('studio').roles.update(2, {
 ```
 
 ```bash {% process=false filename="cURL" %}
-curl -X POST 'https://api.blutui.com/v1/agencies/studio/roles' \
+curl -X PATCH 'https://api.blutui.com/v1/agencies/studio/roles/2' \
      -H 'Authorization: Bearer ey....' \
      -H 'Content-Type: application/json'
      -d $'{
