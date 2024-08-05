@@ -11,6 +11,7 @@ import { AcademicCapMini } from './icons/academic-cap'
 import { BookOpenMini } from './icons/book-open'
 import { CodeBracketSquareMini } from './icons/code-bracket-square'
 import { QueueListMini } from './icons/queue-list'
+import Chat from './chat'
 
 // const AskAiButton = dynamic(
 //   () => import('./ask-ai-button').then((mod) => mod.AskAiButton),
@@ -62,6 +63,9 @@ export function Header({ children }: HeaderProps) {
               )}
             </div>
           </SearchButton>
+          {/* <Chat /> */}
+          <Chat />
+          {/* <AskAiButton /> */}
         </div>
         <div className="flex shrink-0 items-center space-x-6">
           <ul className="hidden items-center space-x-6 md:flex">

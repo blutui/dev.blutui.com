@@ -4,6 +4,8 @@ import type { NextApiRequest, NextApiResponse } from 'next'
 import { assistantId } from '@/pages/assistant-config'
 import { openai } from '@/pages/openai'
 
+export const maxDuration = 60
+
 export const config = {
   api: {
     bodyParser: true, // Enable body parsing for JSON requests
@@ -14,16 +16,23 @@ export const config = {
 async function handlePost(req: NextApiRequest, res: NextApiResponse) {
   try {
     const { id } = req.query as { id: string }
-    const { content } = req.body
+    console.log('thread id', id)
+    console.log(req.body)
+    const { content } = JSON.parse(req.body)
+    console.log('content', content)
 
     await openai.beta.threads.messages.create(id, {
       role: 'user',
       content: content,
     })
 
+    console.log('create message')
+
     const stream = await openai.beta.threads.runs.stream(id, {
       assistant_id: assistantId,
     })
+
+    console.log('run steream', stream)
 
     res.status(200).send(stream.toReadableStream())
   } catch (error: any) {
