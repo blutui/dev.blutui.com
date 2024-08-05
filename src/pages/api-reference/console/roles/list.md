@@ -42,7 +42,7 @@ import Blutui from 'blutui'
 
 const blutui = new Blutui('ey....')
 
-blutui.agency('studio').projects.list()
+blutui.agency('studio').roles.list()
 ```
 
 ```bash {% process=false filename="cURL" %}
