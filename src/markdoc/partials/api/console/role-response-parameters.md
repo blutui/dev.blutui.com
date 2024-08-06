@@ -18,6 +18,10 @@ The description of the role.
 Determine if the role is a super role. Super roles cannot be removed.
 {% /parameter %}
 
+{% parameter name="permissions" type="object" %}
+An object defining the permissions associated with the role. Each key in the object represents a specific permission, and the value is a boolean indicating whether the permission is granted (true) or denied (false).
+{% /parameter %}
+
 {% parameter name="created_at" type="timestamp" %}
 The role's created at timestamp.
 {% /parameter %}
