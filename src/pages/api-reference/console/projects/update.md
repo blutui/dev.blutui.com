@@ -1,7 +1,7 @@
 ---
 title: 'Update project'
 description: 'Update a project in your agency.'
-api: 'PATCH /v1/agencies/{username}/projects'
+api: 'PATCH /v1/agencies/{username}/projects/{id}'
 ---
 
 {% row %}

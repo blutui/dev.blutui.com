@@ -1,6 +1,6 @@
 ---
-title: 'Add project'
-description: 'Add a project to your agency.'
+title: 'Create project'
+description: 'Create a project to your agency.'
 api: 'POST /v1/agencies/{username}/projects'
 ---
 
