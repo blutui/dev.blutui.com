@@ -1,7 +1,7 @@
 ---
-title: 'List all projects'
-description: 'List all projects in your agency.'
-api: 'GET /v1/agencies/{username}/projects'
+title: 'List all members'
+description: 'List all team members in your agency.'
+api: 'GET /v1/agencies/{username}/members'
 ---
 
 {% row %}
@@ -17,10 +17,6 @@ Limit the number of objects to return, ranging between 1 and 20.
 The current page used to display the pagination results.
 {% /parameter %}
 
-{% parameter name="expand" type="string[]" %}
-Expand the response for the given items. Expand array accepts `primary_domain`.
-{% /parameter %}
-
 ### Response
 
 {% parameter name="object" type="string" %}
@@ -28,7 +24,7 @@ This will always contain `list` for this endpoint.
 {% /parameter %}
 
 {% parameter name="data" type="array" %}
-An array of up to `limit` project resources. If no projects are available, an empty array is returned.
+An array of up to `limit` member resources. If no members are available, an empty array is returned.
 {% /parameter %}
 
 {% parameter name="meta" type="object" %}
@@ -46,18 +42,18 @@ import Blutui from 'blutui'
 
 const blutui = new Blutui('ey....')
 
-blutui.agency('studio').projects.list()
+blutui.agency('studio').members.list()
 ```
 
 ```bash {% process=false filename="cURL" %}
-curl -X GET 'https://api.blutui.com/v1/agencies/studio/projects' \
+curl -X GET 'https://api.blutui.com/v1/agencies/studio/members' \
      -H 'Authorization: Bearer ey....' \
      -H 'Content-Type: application/json'
 ```
 
 {% /code-group %}
 
-{% partial file="api/console/project-response-list.md" /%}
+{% partial file="api/console/member-response-list.md" /%}
 
 {% /column %}
 

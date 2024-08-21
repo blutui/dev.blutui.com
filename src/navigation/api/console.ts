@@ -88,6 +88,32 @@ export const consoleAPINavigation: APINavigationItem[] = [
     ],
   },
   {
+    title: 'Members',
+    expandable: true,
+    items: [
+      {
+        title: 'Update member',
+        url: '/api/console/members/update',
+        method: 'PATCH',
+      },
+      {
+        title: 'Retrieve member',
+        url: '/api/console/members/retrieve',
+        method: 'GET',
+      },
+      {
+        title: 'List all members',
+        url: '/api/console/members/list',
+        method: 'GET',
+      },
+      {
+        title: 'Remove member',
+        url: '/api/console/members/remove',
+        method: 'DELETE',
+      },
+    ],
+  },
+  {
     title: 'Projects',
     expandable: false,
     items: [
