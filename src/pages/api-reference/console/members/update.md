@@ -15,7 +15,7 @@ The ID of the member to update.
 
 ### Body parameters
 
-{% parameter name="role" type="string" %}
+{% parameter name="role" type="integer" %}
 The ID of the role this member will be apart of.
 {% /parameter %}
 
