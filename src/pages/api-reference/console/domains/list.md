@@ -46,7 +46,7 @@ blutui.agency('studio').domains.list()
 ```
 
 ```bash {% process=false filename="cURL" %}
-curl -X GET 'https://api.blutui.com/v1/agencies/studio/domains/9c17d680-e0af-4f00-9e28-08c4e38e89e0' \
+curl -X GET 'https://api.blutui.com/v1/agencies/studio/domains' \
      -H 'Authorization: Bearer ey....' \
      -H 'Content-Type: application/json'
 ```
