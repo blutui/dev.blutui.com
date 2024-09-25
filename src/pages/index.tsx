@@ -38,7 +38,7 @@ const Home: NextPageWithLayout = () => {
               <span className="hidden text-sm font-semibold uppercase text-zinc-800/40 dark:text-white/40 md:block">
                 or
               </span>
-              <SearchButton className="inline-flex h-10 w-full max-w-xs select-none items-center whitespace-nowrap rounded-lg bg-zinc-900/10 px-3 text-base font-medium text-zinc-700 transition hover:bg-zinc-900/20 dark:bg-white/20 dark:text-zinc-300 dark:hover:bg-white/10">
+              <SearchButton className="inline-flex h-9 w-full max-w-xs select-none items-center whitespace-nowrap rounded-lg bg-zinc-900/10 px-3 text-sm/tight font-semibold text-black/50 transition hover:bg-zinc-900/20 dark:bg-white/20 dark:text-white/50 dark:hover:bg-white/10">
                 <div className="flex items-center gap-2">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -52,7 +52,7 @@ const Home: NextPageWithLayout = () => {
                       clipRule="evenodd"
                     />
                   </svg>
-                  <span>Quick search...</span>
+                  <span>Search documentation...</span>
                 </div>
               </SearchButton>
             </div>
