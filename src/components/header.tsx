@@ -37,7 +37,7 @@ export function Header({ children }: HeaderProps) {
           <span className="-ml-px hidden h-9 border-l border-black/5 dark:border-white/5 lg:block"></span>
         </div>
         <div className="flex flex-auto items-center">
-          <SearchButton className="mr-6 hidden h-9 w-full rounded-lg bg-zinc-900/10 px-3.5 py-1.5 text-left font-medium text-black/60 transition hover:bg-black/20 dark:bg-zinc-100/10 dark:text-white/60 dark:hover:bg-white/20 lg:block lg:max-w-xs">
+          <SearchButton className="mr-6 hidden h-9 w-full rounded-lg bg-zinc-900/10 px-3 py-1.5 text-left text-sm/tight font-semibold text-black/50 transition hover:bg-black/20 dark:bg-zinc-100/10 dark:text-white/50 dark:hover:bg-white/20 lg:block lg:max-w-xs">
             <div className="flex items-center gap-2">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -51,7 +51,9 @@ export function Header({ children }: HeaderProps) {
                   clipRule="evenodd"
                 />
               </svg>
-              <span className="block flex-auto">Quick search...</span>
+              <span className="block flex-auto tracking-tight">
+                Search documentation...
+              </span>
               {actionKey && (
                 <kbd className="-mr-1 ml-2 rounded bg-black/10 px-1.5 py-0.5 font-sans text-xs font-semibold highlight-white/10 dark:bg-white/10">
                   <abbr title={actionKey[1]} className="no-underline">
@@ -132,7 +134,7 @@ export function Header({ children }: HeaderProps) {
           </div>
         </div>
       </div>
-      <div className="mx-auto hidden h-12 max-w-8xl border-t border-black/5 px-8 text-white dark:border-white/5 lg:flex lg:items-center lg:justify-between">
+      <div className="mx-auto hidden h-12 max-w-8xl border-black/5 px-8 text-white dark:border-white/5 lg:flex lg:items-center lg:justify-between">
         <div className="flex space-x-6">
           <HeaderNavigationItem
             name="Documentation"
