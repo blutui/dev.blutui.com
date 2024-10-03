@@ -1,4 +1,4 @@
-import { NextPageContext } from 'next'
+import { GetServerSideProps } from 'next'
 
 const schema = {
   $schema: 'https://json-schema.org/draft/2020-12/schema#',
@@ -33,15 +33,13 @@ const schema = {
   required: ['handle', 'template'],
 }
 
-Schema.getInitialProps = (context: NextPageContext) => {
-  const res = context.res
+export const getServerSideProps = (async (context) => {
+  context.res.setHeader('Content-Type', 'application/json; charset=utf-8')
+  context.res.write(JSON.stringify(schema))
+  context.res.end()
 
-  res?.setHeader('Content-Type', 'application/json; charset=utf-8')
-  res?.write(JSON.stringify(schema))
-  res?.end()
-
-  return {}
-}
+  return { props: {} }
+}) satisfies GetServerSideProps
 
 export default function Schema() {
   return <></>
