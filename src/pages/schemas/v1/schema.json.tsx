@@ -23,6 +23,7 @@ const schema = {
     site: {
       description: 'The subdomain of this project',
       type: ['string', 'null'],
+      deprecated: true,
     },
     template: {
       description: 'The template handle for this template',
@@ -30,7 +31,7 @@ const schema = {
     },
   },
   additionalProperties: false,
-  required: ['handle', 'template'],
+  required: ['handle'],
 }
 
 export const getServerSideProps = (async (context) => {
