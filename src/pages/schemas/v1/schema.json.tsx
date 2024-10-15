@@ -25,8 +25,8 @@ const schema = {
       type: ['string', 'null'],
       deprecated: true,
     },
-    template: {
-      description: 'The template handle for this template',
+    cassette: {
+      description: 'The handle for this Cassette',
       type: ['string', 'null'],
     },
   },
