@@ -25,10 +25,6 @@ The timezone of the project. The value must be a valid timezone string, check th
 The description of the project.
 {% /parameter %}
 
-{% parameter name="subdomain" type="string" %}
-The subdomain of the project. Your project will be accessible at `https://{subdomain}.blutui.com`.
-{% /parameter %}
-
 ### Response
 
 {% partial file="api/console/project-response-parameters.md" /%}

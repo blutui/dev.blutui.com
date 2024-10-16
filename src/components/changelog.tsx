@@ -14,11 +14,15 @@ export function Changelog({ date, children }: ChangelogProps) {
   })
 
   return (
-    <section id={id} className="md:flex" aria-labelledby={`${id}-heading`}>
-      <div className="not-prose pl-7 md:w-1/4 md:pl-0 md:pr-12 md:text-right">
+    <section
+      id={id}
+      className="scroll-mt-36 md:flex"
+      aria-labelledby={`${id}-heading`}
+    >
+      <div className="not-prose pb-8 pl-7 md:w-1/4 md:pb-16 md:pl-0 md:pr-12 md:text-right">
         <h2
           id={`${id}-heading`}
-          className="sticky top-36 text-sm leading-6 text-zinc-500"
+          className="sticky top-36 mb-2 text-sm leading-6 text-zinc-500"
         >
           <a href={`#${id}`}>{formattedDate}</a>
         </h2>
