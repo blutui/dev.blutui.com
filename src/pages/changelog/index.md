@@ -7,6 +7,100 @@ description: 'A continuous stream of changes made to the Blutui platform.'
 Please use the ISO standard date and time format.
 {% /comment %}
 
+{% changelog date="2024-10-17" %}
+{% badge status="success" %}Added{% /badge %}
+
+- Added improved performance when loading the **Agency Console** in your web browser for the first time.
+
+{% badge status="attention" %}Fixed{% /badge %}
+
+- Fixed an issue in the **Agency Console** where the brand was not being shown.
+{% /changelog %}
+
+{% changelog date="2024-10-09" %}
+{% badge status="attention" %}Fixed{% /badge %}
+
+- Fixed error handling for project form submissions.
+{% /changelog %}
+
+{% changelog date="2024-09-11" %}
+{% badge status="attention" %}Fixed{% /badge %}
+
+- Fixed an issue with project webhooks sometimes not sending requests to the configured endpoint.
+{% /changelog %}
+
+{% changelog date="2024-08-20" %}
+{% badge status="success" %}Added{% /badge %}
+
+- Added improved support for project timezones.
+{% /changelog %}
+
+{% changelog date="2024-08-08" %}
+{% badge status="success" %}Added{% /badge %}
+
+- Added `members` resource in the [Console API](/api/console). You can now manage the role and access for team members in your agency through the API.
+{% /changelog %}
+
+{% changelog date="2024-07-26" %}
+{% badge status="attention" %}Fixed{% /badge %}
+
+- Fixed `is_super` response parameter on the `role` resource in the [Console API](/api/console) to always return a `boolean`.
+- Fixed the dates and times in the **Project Dashboard** to respect the timezone of the project.
+{% /changelog %}
+
+{% changelog date="2024-07-25" %}
+{% badge status="success" %}Added{% /badge %}
+
+- Added `role` resource in the [Console API](/api/console). You can now manage roles and permissions in your agency through the API.
+{% /changelog %}
+
+{% changelog date="2024-07-23" %}
+{% badge status="success" %}Added{% /badge %}
+
+- Added support for `controls` and `autoplay` HTML attributes in the [audio](/docs/canvas/functions/canopy/cms-audio) and [video](/docs/canvas/functions/canopy/cms-video) **Canopy** components.
+
+{% badge status="attention" %}Fixed{% /badge %}
+
+- Fixed styling issue with the archived projects view in the **Agency Console**.
+- Fixed issues related to touch devices when using **Canopy**.
+{% /changelog %}
+
+{% changelog date="2024-07-16" %}
+{% badge status="success" %}Added{% /badge %}
+
+- Added `agency` resource in the [API](/api/agencies/list). You can now manage your agency through the API.
+
+{% badge status="info" %}Changed{% /badge %}
+
+- Changed the `primary_domain_id` response property to `primary_domain` in the [`project` resource](/api/console/projects/retrieve#response) to make it consistent with the value passed to the `expand` query parameter.
+{% /changelog %}
+
+{% changelog date="2024-07-11" %}
+{% badge status="success" %}Added{% /badge %}
+
+- Added a `search` endpoint to the `project` resource in the [Console API](/api/console). You can now search for projects in your agency through the API.
+{% /changelog %}
+
+{% changelog date="2024-07-09" %}
+{% badge status="success" %}Added{% /badge %}
+
+- Added `project` resource in the [Console API](/api/console). You can now manage projects, including publishing, unpublishing, and viewing a project's domains directly in your agency through the API.
+
+{% badge status="attention" %}Fixed{% /badge %}
+
+- Fixed an issue where projects wouldn't show correctly when managing a team members access in the **Agency Console**.
+{% /changelog %}
+
+{% changelog date="2024-07-04" %}
+{% badge status="info" %}Changed{% /badge %}
+
+- Changed the Blutui authentication screens to make switching between [login](https://auth.blutui.com/login) and [register](https://auth.blutui.com/register) easier.
+
+{% badge status="attention" %}Fixed{% /badge %}
+
+- Fixed an issue where project domains wouldn't show correctly in the **Agency Console**.
+{% /changelog %}
+
 {% changelog date="2024-05-27" %}
 {% badge status="info" %}Changed{% /badge %}
 
@@ -18,7 +112,7 @@ Please use the ISO standard date and time format.
 {% changelog date="2024-05-20" %}
 {% badge status="success" %}Added{% /badge %}
 
-- Added `domain` resource to the [Console API](/api/console). This allows you to manage domains in your agency directly through the Console API.
+- Added `domain` resource to the [Console API](/api/console). This allows you to manage domains in your agency directly through the API.
 
 {% badge status="attention" %}Fixed{% /badge %}
 
@@ -28,7 +122,7 @@ Please use the ISO standard date and time format.
 {% changelog date="2024-05-07" %}
 {% badge status="success" %}Added{% /badge %}
 
-- Added `brand` resource to the [Console API](/api/console). This allows you to manage your agency's brand directly through the Console API.
+- Added `brand` resource to the [Console API](/api/console). This allows you to manage your agency's brand directly through the API.
 
 - Added [`blutui`](https://www.npmjs.com/package/blutui) Node.js SDK to simplify interaction with Blutui APIs.
 {% /changelog %}
