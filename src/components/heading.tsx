@@ -1,5 +1,7 @@
 import cn from 'clsx'
 
+import type { JSX } from 'react'
+
 export interface HeadingProps {
   id?: string
   level: number
