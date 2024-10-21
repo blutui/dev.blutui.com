@@ -16,8 +16,8 @@
     "js-cookie": "^3.0.5",
     "next": "15.0.0",
     "prismjs": "^1.29.0",
-    "react": "19.0.0-rc-65a56d0e-20241020",
-    "react-dom": "19.0.0-rc-65a56d0e-20241020",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
     "scroll-into-view-if-needed": "^3.0.10",
     "zustand": "^5.0.0"
   },
@@ -27,8 +27,8 @@
     "@types/js-cookie": "^3.0.6",
     "@types/node": "^20.16.12",
     "@types/prismjs": "^1.26.4",
-    "@types/react": "npm:types-react@19.0.0-rc.1",
-    "@types/react-dom": "npm:types-react-dom@19.0.0-rc.1",
+    "@types/react": "^18.3.11",
+    "@types/react-dom": "^18.3.1",
     "@typescript-eslint/parser": "^8.10.0",
     "autoprefixer": "^10.4.20",
     "eslint": "^8.57.1",
@@ -42,9 +42,5 @@
   },
   "volta": {
     "node": "20.16.0"
-  },
-  "overrides": {
-    "@types/react": "npm:types-react@19.0.0-rc.1",
-    "@types/react-dom": "npm:types-react-dom@19.0.0-rc.1"
   }
 }
