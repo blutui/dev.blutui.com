@@ -168,11 +168,6 @@ export const consoleAPINavigation: APINavigationItem[] = [
         method: 'POST',
       },
       {
-        title: 'Republish project',
-        url: '/api/console/projects/republish',
-        method: 'POST',
-      },
-      {
         title: 'Unpublish project',
         url: '/api/console/projects/unpublish',
         method: 'POST',
