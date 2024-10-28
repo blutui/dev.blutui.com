@@ -17,7 +17,7 @@ Git is required to install **scoop** buckets
 
 ## Create a Courier token
 
-{% partial file="create-courier-token.md" /%}
+{% partial file="create-courier-token.md" variables={os: "windows"} /%}
 
 ## Upgrade on Windows
 
