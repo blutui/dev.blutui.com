@@ -32,17 +32,7 @@ brew install courier
 Courier will require administrative access for running projects locally and connecting to Blutui.
 {% /step %}
 
-{% step title="Run the installer" position="3" %}
-Next, execute the following command:
-
-```bash
-courier install
-```
-
-You will be prompted to enter your admin password.
-{% /step %}
-
-{% step title="Verify the installation" position="4" %}
+{% step title="Verify the installation" position="3" %}
 Lastly, to confirm that Courier is successfully installed, run:
 
 ```bash
@@ -62,33 +52,11 @@ brew install nss
 ```
 {% /step %}
 
-{% step title="Run the installer again" position="2" %}
-```bash
-courier install
-```
-{% /step %}
-
-Now you should be able to use `courier watch` on Firefox.
+Now you should be able to use `courier dev` on Firefox.
 
 ## Authentication
 
-{% step title="Generate a Courier token" position="1" %}
-1. Navigate to your Agency Console and click on your avatar in the top-right corner.
-2. Choose "Edit my profile."
-3. Go to the "Apps" section from the sidebar.
-4. Click the "Create token" button on the right-hand side.
-5. Name your token (e.g., "Work MacBook") and click "Create"
-
-Remember, the token will expire in one year, so plan to renew it accordingly.
-{% /step %}
-
-{% step title="Login to Courier" position="2" %}
-Copy your newly created token and run the following command in your terminal:
-
-```bash
-courier login [your-courier-token]
-```
-{% /step %}
+{% partial file="create-courier-token.md" /%}
 
 And there you have it—a complete guide to installing, and setting up Courier on macOS!
 

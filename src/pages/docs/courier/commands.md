@@ -14,6 +14,18 @@ Manage the `courier.json` configuration in the current working directory if it e
 courier config
 ```
 
+## dev
+
+This command will set up a local dev environment hosting your `public` folder, use the `views` folder to watch for changes and push the modified files, and utilize the Blutui cloud to build for you, accessible at `localhost:8080`.
+
+```bash
+courier dev
+```
+
+{% callout type="note" %}
+On the first run, `dev` does not automatically push code, it starts monitoring file changes in the views directory.
+{% /callout %}
+
 ## help
 
 Get help with Blutui Courier.
@@ -24,37 +36,25 @@ courier help
 
 ## init
 
-Create a basic `courier.json` file in the current directory.
+Create a basic `courier.json` file in the current directory for the provided project handle.
 
 ```bash
-courier init
-```
-
-## install
-
-Install the the required services for Blutui Courier.
-
-```bash
-courier install
+courier init [project-handle]
 ```
 
 ## login
 
-Login using your Courier token.
+Log in to Courier using your Blutui access token.
 
 ```bash
-courier login <courier-token>
+courier login --token < token.txt
 ```
 
-If your Courier token has expired, you can update it using the `--force` flag:
-
-```bash
-courier login <courier-token> -f
-```
+If your Courier token has expired, you can login again using the same command.
 
 ## open
 
-Open the configured **site** in the current `courier.json`.
+Open the current project in the web browser.
 
 ```bash
 courier open
@@ -76,14 +76,6 @@ Push all the site code for **handle** from the current `courier.json`, targeting
 courier push
 ```
 
-## uninstall
-
-Uninstall all required services for Blutui Courier.
-
-```bash
-courier uninstall
-```
-
 ## version
 
 Print the current version of Blutui Courier.
@@ -91,15 +83,3 @@ Print the current version of Blutui Courier.
 ```bash
 courier version
 ```
-
-## watch
-
-Watch will set up a local environment hosting your `public` folder, use the `views` folder to watch for changes and push the modified files, and utilize the Blutui cloud to build for you, accessible at `localhost:8080`.
-
-```bash
-courier watch
-```
-
-{% callout type="note" %}
-On the first run, watch does not automatically push code, it starts monitoring file changes in the views directory.
-{% /callout %}
