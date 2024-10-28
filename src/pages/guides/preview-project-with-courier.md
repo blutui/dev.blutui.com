@@ -8,7 +8,7 @@ Courier provides developers with a development environment to easily preview fil
 Run the following command from your Blutui project to start watching for file changes and preview them at `https://localhost:8080`:
 
 ```bash
-courier watch
+courier dev
 ```
 
 {% callout type="check" %}

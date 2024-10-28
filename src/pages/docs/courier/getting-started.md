@@ -5,7 +5,7 @@ description: Courier is a Blutui command-line interface to interact with your Bl
 
 ## Features
 
-- Experience the power of Blutui from your local environment using `courier watch`, to easily keep your code in sync.
+- Experience the power of Blutui from your local environment using `courier dev`, to easily keep your code in sync.
 - Easily push code to your project using the simple `courier push` command.
 - Get started with a new project using `courier pull` to easily pull the latest code for your project.
 
@@ -41,13 +41,13 @@ cd new-project
 Once inside the `new-project` directory, it's time to setup a new `courier.json` configuration file. The configuration file is used by Blutui to determine what project you are currently in. To create a new `courier.json` file, run:
 
 ```bash
-courier init -H [your-project-handle] -s [your-project-url]
+courier init [your-project-handle]
 ```
 
 For example:
 
 ```bash
-courier init -H sonic -s sonic.blutui.com
+courier init sonic
 ```
 
 You should now have a brand new `courier.json` configuration file in your `new-project` directory. Now let's `pull` your project code from Blutui, this will allow you to build your project locally. To `pull` your project code from Blutui, run:
@@ -56,4 +56,4 @@ You should now have a brand new `courier.json` configuration file in your `new-p
 courier pull
 ```
 
-You can run `courier watch` to watch for file changes and automatically sync changes to your project.
+You can run `courier dev` to watch for file changes and automatically sync changes to your project.

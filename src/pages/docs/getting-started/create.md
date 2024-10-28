@@ -44,7 +44,7 @@ If you want to run a local enviroment of your site then use:
 
 
 ```bash
-courier watch
+courier dev
 ```
 
 ## Creating a new page

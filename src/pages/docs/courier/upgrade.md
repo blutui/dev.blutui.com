@@ -22,16 +22,6 @@ If you are upgrading to Blutui Courier it is important to note that the new `pus
 
 It is recommended that you uninstall `@blutui/cli` this version of the command-line interface for Blutui is no longer supported.
 
-## Switching browsers
-
-To get `courier watch` working on your new browser you will need to reinstall the services required for `courier`. To reinstall `courier`, run:
-
-```bash
-courier install
-```
-
-You might have to delete the `.courier` folder in you Blutui project directory to reset the `watch` command.
-
 {% callout type="note" %}
 If you use Firefox there is an extra step to get Blutui Courier working. See the [installation guide](/docs/courier/installation).
 {% /callout %}
