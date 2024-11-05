@@ -71,9 +71,6 @@ export const SearchProvider = ({ children }: SearchProviderProps) => {
           <DocSearchModal
             initialQuery={initialQuery}
             initialScrollY={window.scrollY}
-            searchParameters={{
-              distinct: 1,
-            }}
             placeholder="Search documentation"
             onClose={onClose}
             indexName={INDEX_NAME}
