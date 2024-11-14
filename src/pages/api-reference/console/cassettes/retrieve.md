@@ -1,6 +1,6 @@
 ---
 title: 'Retrieve Cassette'
-description: 'Retrieve a Cassette in your agency.'
+description: 'Retrieve a Cassette for a project your agency.'
 api: 'GET /v1/agencies/{username}/cassettes/{id}'
 ---
 
