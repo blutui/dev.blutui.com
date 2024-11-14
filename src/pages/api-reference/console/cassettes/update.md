@@ -1,6 +1,6 @@
 ---
 title: 'Update Cassette'
-description: 'Update a Cassette in your agency.'
+description: 'Update a Cassette for a project your agency.'
 api: 'PATCH /v1/agencies/{username}/cassettes/{id}'
 ---
 
