@@ -1,6 +1,6 @@
 ---
 title: 'Remove Cassette'
-description: 'Remove a Cassette in your agency.'
+description: 'Remove a Cassette from a project your agency.'
 api: 'DELETE /v1/agencies/{username}/cassettes/{id}'
 ---
 
