@@ -1,6 +1,6 @@
 ---
 title: 'Duplicate Cassette'
-description: 'Duplicate a Cassette to your agency.'
+description: 'Duplicate a Cassette for a project your agency.'
 api: 'POST /v1/agencies/{username}/cassettes/{id}/duplicate'
 ---
 
