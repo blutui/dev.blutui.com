@@ -1,6 +1,6 @@
 ---
 title: 'Create Cassette'
-description: 'Create a Cassette to your agency.'
+description: 'Create a Cassette for a project in your agency.'
 api: 'POST /v1/agencies/{username}/cassettes'
 ---
 
