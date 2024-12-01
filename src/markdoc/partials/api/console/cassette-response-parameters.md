@@ -1,5 +1,5 @@
 {% parameter name="id" type="string" %}
-The unique identifier for this domain.
+The unique identifier for this Cassette.
 {% /parameter %}
 
 {% parameter name="object" type="string" %}
