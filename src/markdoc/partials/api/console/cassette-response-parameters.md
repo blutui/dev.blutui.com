@@ -7,7 +7,7 @@ This will always contain `cassette` for this endpoint.
 {% /parameter %}
 
 {% parameter name="handle" type="string" %}
-The unique handle of the Cassette. The handle is unique to every project.
+The unique handle of the Cassette. The handle is only unique to every Cassette within a project.
 {% /parameter %}
 
 {% parameter name="name" type="string" %}
