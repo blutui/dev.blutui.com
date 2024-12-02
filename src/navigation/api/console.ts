@@ -42,6 +42,37 @@ export const consoleAPINavigation: APINavigationItem[] = [
     ],
   },
   {
+    title: 'Cassettes',
+    expandable: false,
+    items: [
+      {
+        title: 'Create Cassette',
+        url: '/api/console/cassettes/create',
+        method: 'POST',
+      },
+      {
+        title: 'Update Cassette',
+        url: '/api/console/cassettes/update',
+        method: 'PATCH',
+      },
+      {
+        title: 'Retrieve Cassette',
+        url: '/api/console/cassettes/retrieve',
+        method: 'GET',
+      },
+      {
+        title: 'Remove Cassette',
+        url: '/api/console/cassettes/remove',
+        method: 'DELETE',
+      },
+      {
+        title: 'Duplicate Cassette',
+        url: '/api/console/cassettes/duplicate',
+        method: 'POST',
+      },
+    ],
+  },
+  {
     title: 'Domains',
     expandable: false,
     items: [
@@ -155,6 +186,11 @@ export const consoleAPINavigation: APINavigationItem[] = [
       {
         title: 'List all project domains',
         url: '/api/console/projects/domains',
+        method: 'GET',
+      },
+      {
+        title: 'List all project Cassettes',
+        url: '/api/console/projects/cassettes',
         method: 'GET',
       },
       {
