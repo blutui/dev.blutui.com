@@ -119,6 +119,27 @@ export const consoleAPINavigation: APINavigationItem[] = [
     ],
   },
   {
+    title: 'Invites',
+    expandable: true,
+    items: [
+      {
+        title: 'Update invite',
+        url: '/api/console/invites/update',
+        method: 'PATCH',
+      },
+      {
+        title: 'List all invites',
+        url: '/api/console/invites/list',
+        method: 'GET',
+      },
+      {
+        title: 'Remove invite',
+        url: '/api/console/invites/remove',
+        method: 'DELETE',
+      },
+    ],
+  },
+  {
     title: 'Members',
     expandable: true,
     items: [
