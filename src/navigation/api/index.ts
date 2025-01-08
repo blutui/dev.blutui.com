@@ -77,4 +77,5 @@ export const apiNavigation: APINavigationItem[] = [
   },
 ]
 
+export { adminAPINavigation } from './admin'
 export { consoleAPINavigation } from './console'
