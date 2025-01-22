@@ -4,7 +4,11 @@ import cn from 'clsx'
 
 import { Section } from '@/utils/collect-headings'
 import { useArticleContext } from '@/context/article-context'
-import { apiNavigation, consoleAPINavigation } from '@/navigation/api'
+import {
+  adminAPINavigation,
+  apiNavigation,
+  consoleAPINavigation,
+} from '@/navigation/api'
 
 import { Footer } from '@/components/footer'
 import { Item, Sidebar } from '@/components/sidebar'
@@ -50,6 +54,12 @@ export function ApiLayout({ toc, children }: ApiLayoutProps) {
   ) {
     items = consoleAPINavigation
     apiType = 'Console API'
+  } else if (
+    pathname === '/api-reference/admin' ||
+    pathname.startsWith('/api-reference/admin/')
+  ) {
+    items = adminAPINavigation
+    apiType = 'Admin API'
   } else {
     items = apiNavigation
     apiType = null
