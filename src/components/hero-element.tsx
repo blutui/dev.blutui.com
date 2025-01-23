@@ -1,7 +1,6 @@
-/* eslint-disable tailwindcss/no-custom-classname */
 export function HeroElement() {
   return (
-    <div className="absolute right-10 top-0 -z-10 text-zinc-200 dark:text-zinc-700">
+    <div className="absolute top-0 right-10 -z-10 text-zinc-200 dark:text-zinc-700">
       <svg
         xmlns="http://www.w3.org/2000/svg"
         height={1080}

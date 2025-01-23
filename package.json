@@ -33,7 +33,6 @@
     "@typescript-eslint/parser": "^8.21.0",
     "eslint": "^9.18.0",
     "eslint-config-next": "15.1.5",
-    "eslint-plugin-tailwindcss": "^3.18.0",
     "postcss": "^8.5.1",
     "prettier": "^3.4.2",
     "prettier-plugin-tailwindcss": "^0.6.11",
