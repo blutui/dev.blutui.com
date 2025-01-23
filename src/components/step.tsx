@@ -13,7 +13,7 @@ export function Step({ id, title, position, children }: StepProps) {
   return (
     <div
       id={`step-${position}`}
-      className="grid-cols-[3rem_minmax(0,_1fr)] md:grid"
+      className="grid-cols-[3rem_minmax(0,1fr)] md:grid"
     >
       <div className="not-prose relative shrink-0 md:w-12">
         <div className="absolute -bottom-2.5 -top-3 left-3.5 hidden w-px bg-zinc-200 dark:bg-zinc-800 md:top-2.5 md:block"></div>
@@ -40,7 +40,7 @@ export function Step({ id, title, position, children }: StepProps) {
             {title}
           </h3>
         </div>
-        <div className="step-content w-full prose-p:my-4 prose-p:last:mb-0">
+        <div className="step-content w-full prose-p:my-4 last:prose-p:mb-0">
           {children}
         </div>
       </div>

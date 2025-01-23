@@ -126,7 +126,7 @@ export function ApiLayout({ toc, children }: ApiLayoutProps) {
               {title}
             </h1>
             {description && (
-              <p className="max-w-screen-md text-lg text-zinc-500 dark:text-zinc-400">
+              <p className="max-w-(--breakpoint-md) text-lg text-zinc-500 dark:text-zinc-400">
                 {description}
               </p>
             )}

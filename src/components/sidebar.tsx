@@ -66,7 +66,7 @@ const Folder = ({ item }: { item: Item }) => {
         <div className="overflow-hidden p-2 pr-0">
           <Menu
             className={cn(
-              'relative before:absolute before:inset-y-1.5 before:left-0 before:w-px before:bg-black/10 before:dark:bg-white/10',
+              'relative before:absolute before:inset-y-1.5 before:left-0 before:w-px before:bg-black/10 dark:before:bg-white/10',
               'ml-1 pl-3'
             )}
             items={item.items}
@@ -163,7 +163,7 @@ export function Quicklinks() {
             className={cn(
               'mr-3 flex h-7 w-7 items-center justify-center rounded-md p-1 transition',
               active
-                ? 'bg-gradient-to-br from-han-400 to-han-500 text-white highlight-white/10'
+                ? 'bg-linear-to-br from-han-400 to-han-500 text-white highlight-white/10'
                 : 'ring-1 ring-inset ring-black/10 dark:ring-white/10'
             )}
           >
@@ -262,10 +262,10 @@ export const Sidebar = ({
           style={{ height: `calc(100vh - 6.8125rem - ${height}px)` }}
           ref={sidebarRef}
         >
-          <div className="sticky top-0 z-10 h-6 bg-gradient-to-b from-zinc-50 to-transparent dark:from-zinc-900"></div>
+          <div className="sticky top-0 z-10 h-6 bg-linear-to-b from-zinc-50 to-transparent dark:from-zinc-900"></div>
           {quickLinks && <Quicklinks />}
           <Menu className="hidden md:flex" items={items} />
-          <div className="sticky bottom-0 z-10 h-6 bg-gradient-to-t from-zinc-50 to-transparent dark:from-zinc-900"></div>
+          <div className="sticky bottom-0 z-10 h-6 bg-linear-to-t from-zinc-50 to-transparent dark:from-zinc-900"></div>
         </div>
       </aside>
     </>

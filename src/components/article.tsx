@@ -16,8 +16,8 @@ export function Article({ children }: ArticleProps) {
         articleContext.api
           ? typeof articleContext.api === 'string'
             ? 'max-w-full'
-            : 'max-w-screen-md'
-          : 'mx-auto max-w-screen-md'
+            : 'max-w-(--breakpoint-md)'
+          : 'mx-auto max-w-(--breakpoint-md)'
       )}
     >
       {children}
