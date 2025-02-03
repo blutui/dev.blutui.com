@@ -1,9 +1,9 @@
 .DocSearch--active {
-  @apply overflow-hidden !important;
+  @apply overflow-hidden!;
 }
 
 .DocSearch-Container {
-  @apply w-screen h-screen fixed z-[200] top-0 left-0 cursor-auto flex flex-col bg-black/20 backdrop-blur-sm p-4 sm:p-6 md:p-[10vh] lg:p-[12vh];
+  @apply w-screen h-screen fixed z-200 top-0 left-0 cursor-auto flex flex-col bg-black/20 backdrop-blur-xs p-4 sm:p-6 md:p-[10vh] lg:p-[12vh];
 }
 
 .DocSearch-LoadingIndicator svg {
@@ -23,7 +23,7 @@
 }
 
 .DocSearch-SearchBar {
-  @apply z-[1] py-0 px-4 flex-none relative flex items-center border-b border-zinc-100;
+  @apply z-1 py-0 px-4 flex-none relative flex items-center border-b border-zinc-100;
 }
 
 .DocSearch-Form {
@@ -56,7 +56,7 @@
 }
 
 .DocSearch-Hit--Result {
-  @apply border-b-0 !important;
+  @apply border-b-0!;
 }
 
 .DocSearch-MagnifierLabel {
@@ -73,7 +73,7 @@
   @apply appearance-none bg-transparent h-14 text-base text-zinc-900 ml-3 mr-4 flex-auto min-w-0;
 }
 
-@screen sm {
+@media (width >= theme(--breakpoint-sm)) {
   .DocSearch-Input {
     @apply text-sm;
   }
@@ -99,7 +99,7 @@
 }
 
 .DocSearch-Cancel {
-  @apply appearance-none flex-none text-xs rounded-md font-medium py-1 px-2 ring-1 ring-black/10 hover:ring-black/20 shadow-sm hover:shadow transition;
+  @apply appearance-none flex-none text-xs rounded-md font-medium py-1 px-2 ring-1 ring-black/10 hover:ring-black/20 shadow-xs hover:shadow-sm transition;
 }
 
 .DocSearch-Hit-source {
@@ -123,7 +123,7 @@
 }
 
 .DocSearch-Hit--Result .DocSearch-Hit-icon {
-  @apply flex flex-none items-center justify-center mr-4 w-6 h-6 rounded-md bg-white ring-1 ring-black/10 shadow-sm;
+  @apply flex flex-none items-center justify-center mr-4 w-6 h-6 rounded-md bg-white ring-1 ring-black/10 shadow-xs;
 }
 
 .DocSearch-Hit-icon svg {
@@ -131,7 +131,7 @@
 }
 
 .DocSearch-Hit-content-wrapper {
-  @apply flex-auto flex flex-col-reverse min-w-0 z-[1];
+  @apply flex-auto flex flex-col-reverse min-w-0 z-1;
 }
 
 .DocSearch-Hit-path {
@@ -187,7 +187,7 @@
 }
 
 .DocSearch-Hit--Result {
-  @apply py-3 px-4 !important;
+  @apply py-3! px-4!;
 }
 
 .DocSearch-Hit {
@@ -199,7 +199,7 @@
 }
 
 .DocSearch-Hit--Result {
-  @apply border-t-0 !important;
+  @apply border-t-0!;
 }
 
 .DocSearch-Hit + .DocSearch-Hit .DocSearch-Hit--Result {

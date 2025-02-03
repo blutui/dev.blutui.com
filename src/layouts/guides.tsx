@@ -62,7 +62,7 @@ export const GuidesLayout = ({ toc, children }: GuidesLayoutProps) => {
       <div className="mx-auto w-full max-w-8xl p-8">
         <div className="flex gap-8">
           <TableOfContents title="In this guide" toc={toc} />
-          <div className="w-full md:max-w-screen-md">
+          <div className="w-full md:max-w-(--breakpoint-md)">
             <div id="content-wrapper" className="mb-8">
               {children}
             </div>

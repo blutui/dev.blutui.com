@@ -101,7 +101,7 @@ export function Callout({ type, children, title }: CalloutProps) {
   return (
     <div
       className={cn(
-        'callout mt-6 flex items-center rounded-lg bg-gradient-to-r px-4 py-3 ring-1 ring-inset',
+        'callout mt-6 flex items-center rounded-lg bg-linear-to-r px-4 py-3 ring-1 ring-inset',
         classes[type]
       )}
     >

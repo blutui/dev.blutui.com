@@ -163,7 +163,7 @@ const Guides: NextPageWithLayout = () => {
                     <input
                       id={tag.name}
                       type="checkbox"
-                      className="form-checkbox rounded border-zinc-300 bg-transparent text-han-500 transition focus:border-han-300 focus:ring focus:ring-han-200/50 focus:ring-offset-0 dark:border-zinc-600 dark:text-han-400 dark:focus:border-han-400 dark:focus:ring-han-400/50"
+                      className="form-checkbox rounded-sm border-zinc-300 bg-transparent text-han-500 transition focus:border-han-300 focus:ring-3 focus:ring-han-200/50 focus:ring-offset-0 dark:border-zinc-600 dark:text-han-400 dark:focus:border-han-400 dark:focus:ring-han-400/50"
                       value={tag.name}
                       onChange={filterHandler}
                     />

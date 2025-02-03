@@ -2,10 +2,8 @@
   "$schema": "https://json.schemastore.org/eslintrc",
   "root": true,
   "extends": [
-    "next/core-web-vitals",
-    "plugin:tailwindcss/recommended"
+    "next/core-web-vitals"
   ],
-  "plugins": ["tailwindcss"],
   "overrides": [
     {
       "files": ["*.ts", "*.tsx"],

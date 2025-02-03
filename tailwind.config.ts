@@ -1,8 +1,3 @@
-import type { Config } from 'tailwindcss'
-
-// @ts-ignore
-import flattenColorPalette from 'tailwindcss/lib/util/flattenColorPalette'
-
 export default {
   content: [
     './src/pages/**/*.{ts,tsx}',
@@ -16,25 +11,6 @@ export default {
         'gradient-radial':
           'radial-gradient(circle farthest-side, var(--tw-gradient-stops))',
         dots: 'radial-gradient(rgba(0, 0, 0, 0) 2px, var(--tw-gradient-stops) 1px)',
-      },
-      colors: {
-        han: {
-          50: '#EBEBFF',
-          100: '#D1D3FF',
-          200: '#A8ABFF',
-          300: '#7A7FFF',
-          400: '#5257FF',
-          500: '#242BFF',
-          600: '#0008EB',
-          700: '#0006AD',
-          800: '#000475',
-          900: '#000238',
-        },
-      },
-      keyframes: {
-        pulse: {
-          '50%': { opacity: '0.3' },
-        },
       },
       maxWidth: {
         '8xl': '90rem',
@@ -142,18 +118,5 @@ export default {
     require('@tailwindcss/forms')({
       strategy: 'class',
     }),
-    {
-      handler: ({ matchUtilities, theme }) => {
-        matchUtilities(
-          {
-            highlight: (value) => ({ boxShadow: `inset 0 1px 0 0 ${value}` }),
-          },
-          {
-            values: flattenColorPalette(theme('backgroundColor')),
-            type: 'color',
-          }
-        )
-      },
-    },
   ],
-} satisfies Config
+}
