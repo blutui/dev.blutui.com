@@ -46,4 +46,35 @@ export const adminAPINavigation: APINavigationItem[] = [
       },
     ],
   },
+  {
+    title: 'Redirects',
+    expandable: false,
+    items: [
+      {
+        title: 'Create redirect',
+        url: '/api/admin/redirects/create',
+        method: 'POST',
+      },
+      {
+        title: 'Update redirect',
+        url: '/api/admin/redirects/update',
+        method: 'PATCH',
+      },
+      {
+        title: 'Retrieve redirect',
+        url: '/api/admin/redirects/retrieve',
+        method: 'GET',
+      },
+      {
+        title: 'List all redirects',
+        url: '/api/admin/redirects/list',
+        method: 'GET',
+      },
+      {
+        title: 'Remove redirect',
+        url: '/api/admin/redirects/remove',
+        method: 'DELETE',
+      },
+    ],
+  },
 ]
