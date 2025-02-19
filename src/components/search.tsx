@@ -33,6 +33,7 @@ const SearchContext = createContext<SearchContextI>({})
 
 export const SearchProvider = ({ children }: SearchProviderProps) => {
   const router = useRouter()
+  const searchButtonRef = useRef(null)
   const [isOpen, setIsOpen] = useState(false)
   const [initialQuery, setInitialQuery] = useState<string | undefined>()
 
@@ -52,7 +53,7 @@ export const SearchProvider = ({ children }: SearchProviderProps) => {
     [setIsOpen, setInitialQuery]
   )
 
-  useDocSearchKeyboardEvents({ isOpen, onOpen, onClose })
+  useDocSearchKeyboardEvents({ isOpen, onOpen, onClose, searchButtonRef })
 
   return (
     <>
