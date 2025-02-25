@@ -26,7 +26,7 @@ export function Header({ children }: HeaderProps) {
 
   return (
     <header className="sticky top-0 z-20 flex-none border-b border-black/5 bg-zinc-50/70 backdrop-blur-sm backdrop-saturate-200 transition dark:border-white/5 dark:bg-zinc-900/70">
-      <div className="mx-auto flex h-[3.75rem] max-w-8xl items-center justify-between space-x-8 px-8">
+      <div className="max-w-8xl mx-auto flex h-[3.75rem] items-center justify-between space-x-8 px-8">
         <div className="flex shrink-0 items-center">
           <div className="inline-flex lg:w-72">
             <Link href="/">
@@ -34,10 +34,10 @@ export function Header({ children }: HeaderProps) {
               <Logo className="mt-1 h-8 w-auto" />
             </Link>
           </div>
-          <span className="-ml-px hidden h-9 border-l border-black/5 dark:border-white/5 lg:block"></span>
+          <span className="-ml-px hidden h-9 border-l border-black/5 lg:block dark:border-white/5"></span>
         </div>
         <div className="flex flex-auto items-center">
-          <SearchButton className="mr-6 hidden h-9 w-full rounded-lg bg-zinc-900/10 px-3 py-1.5 text-left text-sm/tight font-semibold text-black/50 transition hover:bg-black/20 dark:bg-zinc-100/10 dark:text-white/50 dark:hover:bg-white/20 lg:block lg:max-w-xs">
+          <SearchButton className="mr-6 hidden h-9 w-full cursor-pointer rounded-lg bg-zinc-900/10 px-3 py-1.5 text-left text-sm/tight font-semibold text-black/50 transition hover:bg-black/20 lg:block lg:max-w-xs dark:bg-zinc-100/10 dark:text-white/50 dark:hover:bg-white/20">
             <div className="flex items-center gap-2">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -55,7 +55,7 @@ export function Header({ children }: HeaderProps) {
                 Search documentation...
               </span>
               {actionKey && (
-                <kbd className="-mr-1 ml-2 rounded-sm bg-black/10 px-1.5 py-0.5 font-sans text-xs font-semibold highlight-white/10 dark:bg-white/10">
+                <kbd className="highlight-white/10 -mr-1 ml-2 rounded-sm bg-black/10 px-1.5 py-0.5 font-sans text-xs font-semibold dark:bg-white/10">
                   <abbr title={actionKey[1]} className="no-underline">
                     {actionKey[0]}
                   </abbr>{' '}
@@ -134,7 +134,7 @@ export function Header({ children }: HeaderProps) {
           </div>
         </div>
       </div>
-      <div className="mx-auto hidden h-12 max-w-8xl border-black/5 px-8 text-white dark:border-white/5 lg:flex lg:items-center lg:justify-between">
+      <div className="max-w-8xl mx-auto hidden h-12 border-black/5 px-8 text-white lg:flex lg:items-center lg:justify-between dark:border-white/5">
         <div className="flex space-x-6">
           <HeaderNavigationItem
             name="Documentation"
@@ -192,7 +192,7 @@ function HeaderNavigationItem({ name, href, icon }: HeaderNavigationItemProps) {
         className={cn(
           'absolute bottom-0 w-full transition',
           active
-            ? 'h-0.5 bg-han-200 dark:bg-han-300'
+            ? 'bg-han-200 dark:bg-han-300 h-0.5'
             : 'h-0 bg-transparent group-hover:h-0.5 group-hover:bg-zinc-300 dark:group-hover:bg-zinc-500'
         )}
       />
