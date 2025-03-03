@@ -62,10 +62,10 @@ export function Feedback() {
             <button
               key={label}
               className={cn(
-                'flex h-8 w-8 items-center justify-center space-x-2 rounded-md text-sm leading-tight ring-1 transition',
+                'flex h-8 w-8 cursor-pointer items-center justify-center space-x-2 rounded-md text-sm leading-tight ring-1 transition',
                 reaction === label
                   ? 'text-han-300 ring-han-300/50'
-                  : 'text-zinc-400 ring-zinc-200 dark:text-zinc-500 dark:ring-zinc-700'
+                  : 'text-zinc-400 ring-zinc-200 hover:text-zinc-500 hover:ring-zinc-300 dark:text-zinc-500 dark:ring-zinc-700 dark:hover:text-zinc-400 dark:hover:ring-zinc-600'
               )}
               onClick={() => {
                 va.track(`Feedback: ${label}`, {

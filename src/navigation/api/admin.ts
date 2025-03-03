@@ -47,6 +47,37 @@ export const adminAPINavigation: APINavigationItem[] = [
     ],
   },
   {
+    title: 'Blog posts',
+    expandable: false,
+    items: [
+      {
+        title: 'Create post',
+        url: '/api/admin/posts/create',
+        method: 'POST',
+      },
+      {
+        title: 'Update post',
+        url: '/api/admin/posts/update',
+        method: 'PATCH',
+      },
+      {
+        title: 'Retrieve post',
+        url: '/api/admin/posts/retrieve',
+        method: 'GET',
+      },
+      {
+        title: 'List all posts',
+        url: '/api/admin/posts/list',
+        method: 'GET',
+      },
+      {
+        title: 'Remove post',
+        url: '/api/admin/posts/remove',
+        method: 'DELETE',
+      },
+    ],
+  },
+  {
     title: 'Collections',
     expandable: false,
     items: [
@@ -254,37 +285,6 @@ export const adminAPINavigation: APINavigationItem[] = [
     ],
   },
   {
-    title: 'Posts',
-    expandable: false,
-    items: [
-      {
-        title: 'Create post',
-        url: '/api/admin/posts/create',
-        method: 'POST',
-      },
-      {
-        title: 'Update post',
-        url: '/api/admin/posts/update',
-        method: 'PATCH',
-      },
-      {
-        title: 'Retrieve post',
-        url: '/api/admin/posts/retrieve',
-        method: 'GET',
-      },
-      {
-        title: 'List all posts',
-        url: '/api/admin/posts/list',
-        method: 'GET',
-      },
-      {
-        title: 'Remove post',
-        url: '/api/admin/posts/remove',
-        method: 'DELETE',
-      },
-    ],
-  },
-  {
     title: 'Redirects',
     expandable: false,
     items: [
@@ -383,7 +383,7 @@ export const adminAPINavigation: APINavigationItem[] = [
     items: [
       {
         title: 'Create webhook',
-        url: '/api/admin/webhook/create',
+        url: '/api/admin/webhooks/create',
         method: 'POST',
       },
       {
