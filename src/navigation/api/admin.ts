@@ -351,16 +351,6 @@ export const adminAPINavigation: APINavigationItem[] = [
     expandable: false,
     items: [
       {
-        title: 'Create user',
-        url: '/api/admin/users/create',
-        method: 'POST',
-      },
-      {
-        title: 'Update user',
-        url: '/api/admin/users/update',
-        method: 'PATCH',
-      },
-      {
         title: 'Retrieve user',
         url: '/api/admin/users/retrieve',
         method: 'GET',

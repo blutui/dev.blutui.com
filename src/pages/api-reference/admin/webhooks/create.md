@@ -37,7 +37,7 @@ import Blutui from 'blutui'
 const blutui = new Blutui('ey....')
 
 blutui.project('one').admin.webhooks.create({
-  url: 'https://hooks.zapier.com/hooks/catch/123456/zbB61',
+  url: 'https://webhook.endpoint.test/123456',
   events: ['form.submission.created'],
 })
 ```
@@ -47,7 +47,7 @@ curl -X POST 'https://{handle}.blutui.com/admin/api/webhooks' \
      -H 'Authorization: Bearer ey....' \
      -H 'Content-Type: application/json'
      -d $'{
-  "url": "https://hooks.zapier.com/hooks/catch/123456/zbB61",
+  "url": "https://webhook.endpoint.test/123456",
   "events": ["form.submission.created"]
 }'
 ```
