@@ -1,19 +1,10 @@
----
-title: 'Update form'
-description: 'Update a form in a project.'
-api: 'PATCH {handle}.blutui.com/admin/api/forms/{id}'
----
-
-{% row %}
-
-{% column %}
-### Path parameters
-
-{% parameter name="id" type="string" required="true" %}
-The ID of the form to update.
+{% parameter name="id" type="string" %}
+The unique identifier for this form.
 {% /parameter %}
 
-### Body parameters
+{% parameter name="object" type="string" %}
+This will always contain `form` for this endpoint.
+{% /parameter %}
 
 {% parameter name="name" type="string" %}
 The name of this form.
@@ -63,16 +54,20 @@ The spam score given to a form submission in order to be marked as spam.
 The fields for this form.
 {% /parameter %}
 
-{% parameter name="fields.*.name" type="string" required="true" %}
+{% parameter name="fields.*.id" type="string" %}
+The unique identifier for the form field.
+{% /parameter %}
+
+{% parameter name="fields.*.object" type="string" %}
+This will always contain `form_field`.
+{% /parameter %}
+
+{% parameter name="fields.*.name" type="string" %}
 The name of the form field.
 {% /parameter %}
 
-{% parameter name="fields.*.label" type="string" required="true" %}
+{% parameter name="fields.*.label" type="string" %}
 The label for the form field.
-{% /parameter %}
-
-{% parameter name="fields.*.type" type="string" required="true" %}
-The type of form field.
 {% /parameter %}
 
 {% parameter name="fields.*.default_value" type="string | null" %}
@@ -95,39 +90,22 @@ The placeholder value for the form field.
 Whether the form field is required or not.
 {% /parameter %}
 
-### Response
+{% parameter name="fields.*.type" type="string" %}
+The type of form field.
+{% /parameter %}
 
-{% partial file="api/admin/form-response-parameters.md" /%}
+{% parameter name="fields.*.created_at" type="string" %}
+The date and time when the form field was created.
+{% /parameter %}
 
-{% /column %}
+{% parameter name="fields.*.updated_at" type="string" %}
+The date and time when the form field was updated.
+{% /parameter %}
 
-{% column sticky="true" %}
+{% parameter name="created_at" type="string" %}
+The date and time when the form was created.
+{% /parameter %}
 
-{% code-group %}
-
-```ts {% process=false filename="Node.js" %}
-import Blutui from 'blutui'
-
-const blutui = new Blutui('ey....')
-
-blutui.project('one').admin.forms.update('99e2addd-e8d2-45c3-8184-fbcae8a6cf29', {
-  storeSubmissions: false,
-})
-```
-
-```bash {% process=false filename="cURL" %}
-curl -X PATCH 'https://{handle}.blutui.com/admin/api/forms/99e2addd-e8d2-45c3-8184-fbcae8a6cf29' \
-     -H 'Authorization: Bearer ey....' \
-     -H 'Content-Type: application/json'
-     -d $'{
-  "store_submissions": false
-}'
-```
-
-{% /code-group %}
-
-{% partial file="api/admin/form-response.md" /%}
-
-{% /column %}
-
-{% /row %}
+{% parameter name="updated_at" type="string" %}
+The date and time when the form was updated.
+{% /parameter %}
