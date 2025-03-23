@@ -46,14 +46,14 @@ export function ThemeToggle({ className }: ThemeToggleProps) {
             'relative transition',
             setting === value
               ? 'text-han-400 dark:text-han-300'
-              : 'text-zinc-400 hover:text-zinc-600 dark:text-zinc-500 dark:hover:text-zinc-300'
+              : 'cursor-pointer text-zinc-400 hover:text-zinc-600 dark:text-zinc-500 dark:hover:text-zinc-300'
           )}
           onClick={() => setSetting(value)}
         >
           <Icon />
           <span
             className={cn(
-              'absolute left-1/2 top-1/2 -z-10 h-8 w-8 -translate-x-1/2 -translate-y-1/2 rounded-full bg-current opacity-15 transition',
+              'absolute top-1/2 left-1/2 -z-10 h-8 w-8 -translate-x-1/2 -translate-y-1/2 rounded-full bg-current opacity-15 transition',
               setting === value ? 'scale-100' : 'scale-0'
             )}
           />

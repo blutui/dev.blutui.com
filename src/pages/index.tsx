@@ -19,26 +19,26 @@ import type { NextPageWithLayout } from '@/types'
 const Home: NextPageWithLayout = () => {
   return (
     <div className="w-full grow">
-      <div className="relative -mt-10 overflow-hidden pb-8 pt-10 md:pb-12">
-        <div className="relative mx-auto flex max-w-8xl items-center">
+      <div className="relative -mt-10 overflow-hidden pt-10 pb-8 md:pb-12">
+        <div className="max-w-8xl relative mx-auto flex items-center">
           <div className="w-full px-8 py-6 md:py-10">
-            <p className="mb-2 text-xs uppercase tracking-widest text-zinc-500 dark:text-white/50">
+            <p className="mb-2 text-xs tracking-widest text-zinc-500 uppercase dark:text-white/50">
               Developer Documentation
             </p>
-            <h1 className="text-3xl font-extrabold tracking-tight text-zinc-800 dark:text-white lg:text-5xl">
+            <h1 className="text-3xl font-extrabold tracking-tight text-zinc-800 lg:text-5xl dark:text-white">
               Welcome to Blutui
             </h1>
-            <p className="mb-4 mt-2 text-base text-zinc-800/80 dark:text-white/70 md:text-lg lg:text-xl">
+            <p className="mt-2 mb-4 text-base text-zinc-800/80 md:text-lg lg:text-xl dark:text-white/70">
               Explore our guides and documentation on using Blutui.
             </p>
             <div className="flex flex-row items-center gap-4">
               <span className="hidden md:inline-block">
                 <Button href="/docs/getting-started/create">Get started</Button>
               </span>
-              <span className="hidden text-sm font-semibold uppercase text-zinc-800/40 dark:text-white/40 md:block">
+              <span className="hidden text-sm font-semibold text-zinc-800/40 uppercase md:block dark:text-white/40">
                 or
               </span>
-              <SearchButton className="inline-flex h-9 w-full max-w-xs select-none items-center whitespace-nowrap rounded-lg bg-zinc-900/10 px-3 text-sm/tight font-semibold text-black/50 transition hover:bg-zinc-900/20 dark:bg-white/20 dark:text-white/50 dark:hover:bg-white/10">
+              <SearchButton className="inline-flex h-9 w-full max-w-xs cursor-pointer items-center rounded-lg bg-zinc-900/10 px-3 text-sm/tight font-semibold whitespace-nowrap text-black/50 transition select-none hover:bg-zinc-900/20 dark:bg-white/20 dark:text-white/50 dark:hover:bg-white/10">
                 <div className="flex items-center gap-2">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -60,7 +60,7 @@ const Home: NextPageWithLayout = () => {
           <HeroElement />
         </div>
       </div>
-      <div className="mx-auto mt-0 grid max-w-8xl gap-6 px-8 lg:grid-cols-6">
+      <div className="max-w-8xl mx-auto mt-0 grid gap-6 px-8 lg:grid-cols-6">
         <div className="md:col-span-3">
           <Card
             title="Read the docs"
