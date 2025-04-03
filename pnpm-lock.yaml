@@ -47,13 +47,13 @@ importers:
     devDependencies:
       '@tailwindcss/forms':
         specifier: ^0.5.10
-        version: 0.5.10(tailwindcss@4.1.0)
+        version: 0.5.10(tailwindcss@4.1.2)
       '@tailwindcss/postcss':
         specifier: ^4.1.2
         version: 4.1.2
       '@tailwindcss/typography':
         specifier: ^0.5.16
-        version: 0.5.16(tailwindcss@4.1.0)
+        version: 0.5.16(tailwindcss@4.1.2)
       '@types/js-cookie':
         specifier: ^3.0.6
         version: 3.0.6
@@ -88,8 +88,8 @@ importers:
         specifier: ^0.6.11
         version: 0.6.11(prettier@3.5.3)
       tailwindcss:
-        specifier: ^4.1.0
-        version: 4.1.0
+        specifier: ^4.1.2
+        version: 4.1.2
       typescript:
         specifier: ^5.8.2
         version: 5.8.2
@@ -1907,9 +1907,6 @@ packages:
     resolution: {integrity: sha512-ot0WnXS9fgdkgIcePe6RHNk1WA8+muPa6cSjeR3V8K27q9BB1rTE3R1p7Hv0z1ZyAc8s6Vvv8DIyWf681MAt0w==}
     engines: {node: '>= 0.4'}
 
-  tailwindcss@4.1.0:
-    resolution: {integrity: sha512-vBYstoFnvUZCDxaauNGQQEvJNQgCd1vSMDRYuZZMH1xRRcTboOk1rJrW5yFkEabU9X6Yx1C4LQ+QvPOvQj4Daw==}
-
   tailwindcss@4.1.2:
     resolution: {integrity: sha512-VCsK+fitIbQF7JlxXaibFhxrPq4E2hDcG8apzHUdWFMCQWD8uLdlHg4iSkZ53cgLCCcZ+FZK7vG8VjvLcnBgKw==}
 
@@ -2370,10 +2367,10 @@ snapshots:
     dependencies:
       tslib: 2.8.1
 
-  '@tailwindcss/forms@0.5.10(tailwindcss@4.1.0)':
+  '@tailwindcss/forms@0.5.10(tailwindcss@4.1.2)':
     dependencies:
       mini-svg-data-uri: 1.4.4
-      tailwindcss: 4.1.0
+      tailwindcss: 4.1.2
 
   '@tailwindcss/node@4.1.2':
     dependencies:
@@ -2437,13 +2434,13 @@ snapshots:
       postcss: 8.5.3
       tailwindcss: 4.1.2
 
-  '@tailwindcss/typography@0.5.16(tailwindcss@4.1.0)':
+  '@tailwindcss/typography@0.5.16(tailwindcss@4.1.2)':
     dependencies:
       lodash.castarray: 4.4.0
       lodash.isplainobject: 4.0.6
       lodash.merge: 4.6.2
       postcss-selector-parser: 6.0.10
-      tailwindcss: 4.1.0
+      tailwindcss: 4.1.2
 
   '@tybys/wasm-util@0.9.0':
     dependencies:
@@ -3987,8 +3984,6 @@ snapshots:
       has-flag: 4.0.0
 
   supports-preserve-symlinks-flag@1.0.0: {}
-
-  tailwindcss@4.1.0: {}
 
   tailwindcss@4.1.2: {}
 
