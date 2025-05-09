@@ -47,13 +47,13 @@ importers:
     devDependencies:
       '@tailwindcss/forms':
         specifier: ^0.5.10
-        version: 0.5.10(tailwindcss@4.1.5)
+        version: 0.5.10(tailwindcss@4.1.6)
       '@tailwindcss/postcss':
         specifier: ^4.1.5
         version: 4.1.5
       '@tailwindcss/typography':
         specifier: ^0.5.16
-        version: 0.5.16(tailwindcss@4.1.5)
+        version: 0.5.16(tailwindcss@4.1.6)
       '@types/js-cookie':
         specifier: ^3.0.6
         version: 3.0.6
@@ -88,8 +88,8 @@ importers:
         specifier: ^0.6.11
         version: 0.6.11(prettier@3.5.3)
       tailwindcss:
-        specifier: ^4.1.5
-        version: 4.1.5
+        specifier: ^4.1.6
+        version: 4.1.6
       typescript:
         specifier: ^5.8.3
         version: 5.8.3
@@ -2127,6 +2127,9 @@ packages:
   tailwindcss@4.1.5:
     resolution: {integrity: sha512-nYtSPfWGDiWgCkwQG/m+aX83XCwf62sBgg3bIlNiiOcggnS1x3uVRDAuyelBFL+vJdOPPCGElxv9DjHJjRHiVA==}
 
+  tailwindcss@4.1.6:
+    resolution: {integrity: sha512-j0cGLTreM6u4OWzBeLBpycK0WIh8w7kSwcUsQZoGLHZ7xDTdM69lN64AgoIEEwFi0tnhs4wSykUa5YWxAzgFYg==}
+
   tapable@2.2.1:
     resolution: {integrity: sha512-GNzQvQTOIP6RyTfE2Qxb8ZVlNmw0n88vp1szwWRimP02mnTsx3Wtn5qRdqY9w2XduFNUgvOwhNnQsjwCp+kqaQ==}
     engines: {node: '>=6'}
@@ -2632,10 +2635,10 @@ snapshots:
     dependencies:
       tslib: 2.8.1
 
-  '@tailwindcss/forms@0.5.10(tailwindcss@4.1.5)':
+  '@tailwindcss/forms@0.5.10(tailwindcss@4.1.6)':
     dependencies:
       mini-svg-data-uri: 1.4.4
-      tailwindcss: 4.1.5
+      tailwindcss: 4.1.6
 
   '@tailwindcss/node@4.1.5':
     dependencies:
@@ -2703,13 +2706,13 @@ snapshots:
       postcss: 8.5.3
       tailwindcss: 4.1.5
 
-  '@tailwindcss/typography@0.5.16(tailwindcss@4.1.5)':
+  '@tailwindcss/typography@0.5.16(tailwindcss@4.1.6)':
     dependencies:
       lodash.castarray: 4.4.0
       lodash.isplainobject: 4.0.6
       lodash.merge: 4.6.2
       postcss-selector-parser: 6.0.10
-      tailwindcss: 4.1.5
+      tailwindcss: 4.1.6
 
   '@tybys/wasm-util@0.9.0':
     dependencies:
@@ -4449,6 +4452,8 @@ snapshots:
   supports-preserve-symlinks-flag@1.0.0: {}
 
   tailwindcss@4.1.5: {}
+
+  tailwindcss@4.1.6: {}
 
   tapable@2.2.1: {}
 
