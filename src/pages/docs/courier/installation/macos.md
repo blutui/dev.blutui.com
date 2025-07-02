@@ -7,8 +7,7 @@ title: 'Installation on macOS'
 **courier** is available via Homebrew. To install **courier** run:
 
 ```bash
-brew tap blutui/courier
-brew install courier
+brew install --cask blutui/courier/courier
 ```
 
 ## Create a Courier token
@@ -22,7 +21,7 @@ brew install courier
 To upgrade to the latest version of `courier`, run:
 
 ```bash
-brew upgrade courier
+brew upgrade --cask courier
 ```
 
 ## Firefox on macOS

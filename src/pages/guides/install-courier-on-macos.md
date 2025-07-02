@@ -15,24 +15,16 @@ Courier is a development tool that allows you to write code locally and view the
 ## Installation
 
 {% step title="Add the Courier Homebrew Tap" position="1" %}
-Firstly, open your terminal and run the following command:
+Firstly, open your terminal and run the following command to install Courier:
 
 ```bash
-brew tap blutui/courier
-```
-{% /step %}
-
-{% step title="Install Courier" position="2" %}
-Secondly, continue in your terminal with:
-
-```bash
-brew install courier
+brew install --cask blutui/courier/courier
 ```
 
 Courier will require administrative access for running projects locally and connecting to Blutui.
 {% /step %}
 
-{% step title="Verify the installation" position="3" %}
+{% step title="Verify the installation" position="2" %}
 Lastly, to confirm that Courier is successfully installed, run:
 
 ```bash

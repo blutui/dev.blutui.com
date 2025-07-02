@@ -6,6 +6,14 @@ title: 'Commands'
 All commands have a `-h` flag for more information about a command.
 {% /callout %}
 
+## create
+
+Create a new Blutui project using a selected Canvas in the specified directory.
+
+```bash
+courier create
+```
+
 ## config
 
 Manage the `courier.json` configuration in the current working directory if it exists.
