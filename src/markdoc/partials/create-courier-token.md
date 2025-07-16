@@ -15,7 +15,7 @@ Before using **Courier**, you need to generate a Blutui access token. Follow the
 1. To securely add your access token to a `token.txt` file, use the following command:
 
 ```bash
-read -s -p "Enter your Courier access token: " TOKEN && echo $TOKEN > token.txt
+printf "Enter your Courier access token: " && read -s TOKEN && echo $TOKEN > token.txt
 ```
 
 {% callout type="note" %}
