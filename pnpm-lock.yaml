@@ -15,8 +15,8 @@ importers:
         specifier: ^0.5.2
         version: 0.5.2(@types/react@19.1.8)(react@19.1.0)
       '@markdoc/next.js':
-        specifier: ^0.4.0
-        version: 0.4.0(@markdoc/markdoc@0.5.2(@types/react@19.1.8)(react@19.1.0))(next@15.4.1(react-dom@19.1.0(react@19.1.0))(react@19.1.0))(react@19.1.0)
+        specifier: ^0.5.0
+        version: 0.5.0(@markdoc/markdoc@0.5.2(@types/react@19.1.8)(react@19.1.0))(next@15.4.1(react-dom@19.1.0(react@19.1.0))(react@19.1.0))(react@19.1.0)
       '@vercel/analytics':
         specifier: ^1.5.0
         version: 1.5.0(next@15.4.1(react-dom@19.1.0(react@19.1.0))(react@19.1.0))(react@19.1.0)
@@ -414,8 +414,8 @@ packages:
       react:
         optional: true
 
-  '@markdoc/next.js@0.4.0':
-    resolution: {integrity: sha512-/tWBjixB4NWo5XUla70keO57xZP5OEP4ms358zXmbNoKtZHR4LjnBtulqLLZaJXOF7/M2BbblrjTYfSRWwE7Pg==}
+  '@markdoc/next.js@0.5.0':
+    resolution: {integrity: sha512-gzWvRc2dlxArQn1mDS4SHed46vkAoKBbXkELihQRYv1eVSA0u9eoNEdJXNuBL4Ajn9j2dPpwZp6nAVjN4nzZlA==}
     peerDependencies:
       '@markdoc/markdoc': '*'
       next: '*'
@@ -2452,7 +2452,7 @@ snapshots:
       '@types/react': 19.1.8
       react: 19.1.0
 
-  '@markdoc/next.js@0.4.0(@markdoc/markdoc@0.5.2(@types/react@19.1.8)(react@19.1.0))(next@15.4.1(react-dom@19.1.0(react@19.1.0))(react@19.1.0))(react@19.1.0)':
+  '@markdoc/next.js@0.5.0(@markdoc/markdoc@0.5.2(@types/react@19.1.8)(react@19.1.0))(next@15.4.1(react-dom@19.1.0(react@19.1.0))(react@19.1.0))(react@19.1.0)':
     dependencies:
       '@markdoc/markdoc': 0.5.2(@types/react@19.1.8)(react@19.1.0)
       js-yaml: 4.1.0
