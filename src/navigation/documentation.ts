@@ -22,6 +22,18 @@ export const documentationNavigation: NavigationItem[] = [
     items: [
       {
         title: 'Create a project',
+        url: '/docs/getting-started/create-a-project',
+      },
+      {
+        title: 'Setup Courier',
+        url: '/docs/getting-started/setup-courier',
+      },
+      {
+        title: 'Folder structure',
+        url: '/docs/getting-started/folder-structure',
+      },
+      {
+        title: 'Create a project',
         url: '/docs/getting-started/create',
       },
       {
