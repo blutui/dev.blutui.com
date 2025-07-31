@@ -32,7 +32,7 @@ Once Blutui Courier is successfully installed, you can use it to scaffold a new 
 
 ```bash
 -> ~ courier create
- ✓ What is your project name? > [project-handle]
+ ✔ What is your project name? > [project-handle]
  ? Which Canvas would you like to use?
    | base
    | Bare bones Canvas for Blutui.
@@ -50,6 +50,18 @@ Once Blutui Courier is successfully installed, you can use it to scaffold a new 
 {%/step%}
 
 {% step title="Choose your Canvas" position="4" %}
+
+```bash
+✔ What is your project named? … [project-handle]
+✔ Which Canvas would you like to use? … tailwindcss-js
+
+✔ Success! A new Canvas was created at ./[project-handle]
+
+  Start building your new project by typing:
+
+  $ cd [project-handle]
+```
+
 You will then be presented with a list of available Canvases. Canvases are pre-configured project templates that provide a starting point for your development, including
 
 [**base**](https://github.com/blutui/blueprint-blutui-base): A minimal project structure.
@@ -67,6 +79,7 @@ If you'd like to share a canvas that would help the wider Blutui community, subm
 {% /callout %}
 
 Upon selecting the appropriate **Canvas**, Courier will scaffold your new project within a new directory named **[project-handle]**.
+
 {%/step%}
 
 {% step title="Initializing Courier Configuration" position="5" %}
