@@ -6,6 +6,8 @@ export interface NavigationItemWithoutItems {
 export interface NavigationItemWithItems {
   title: string
   items: NavigationItem[]
+  expandable?: boolean
+  defaultExpandableState?: boolean
 }
 
 export type NavigationItem =
@@ -19,6 +21,7 @@ export const documentationNavigation: NavigationItem[] = [
   },
   {
     title: 'Getting Started',
+    expandable: true,
     items: [
       {
         title: 'Create a project',
@@ -33,26 +36,22 @@ export const documentationNavigation: NavigationItem[] = [
         url: '/docs/getting-started/folder-structure',
       },
       {
+        title: 'Developing your project',
+        url: '/docs/getting-started/developing-project',
+      },
+      {
+        title: 'Deploying your project',
+        url: '/docs/getting-started/deploy-project',
+      },
+      {
         title: 'Create a project',
         url: '/docs/getting-started/create',
-      },
-      {
-        title: 'IntelliSense',
-        url: '/docs/intellisense',
-      },
-    ],
-  },
-  {
-    title: 'AI Components',
-    items: [
-      {
-        title: 'Getting started',
-        url: '/docs/ai-components/getting-started',
       },
     ],
   },
   {
     title: 'Courier',
+    expandable: true,
     items: [
       {
         title: 'Getting started',
@@ -86,10 +85,75 @@ export const documentationNavigation: NavigationItem[] = [
     ],
   },
   {
-    title: 'Canvas',
+    title: 'Cassettes',
+    expandable: true,
     items: [
       {
         title: 'Getting started',
+        url: '/docs/cassettes/getting-started',
+      },
+    ],
+  },
+  {
+    title: 'Canopy',
+    expandable: true,
+    items: [
+      {
+        title: 'cms_heading',
+        url: '/docs/canvas/functions/canopy/cms-heading',
+      },
+      {
+        title: 'cms_text',
+        url: '/docs/canvas/functions/canopy/cms-text',
+      },
+      {
+        title: 'cms_button',
+        url: '/docs/canvas/functions/canopy/cms-button',
+      },
+      {
+        title: 'cms_image',
+        url: '/docs/canvas/functions/canopy/cms-image',
+      },
+      {
+        title: 'cms_list',
+        url: '/docs/canvas/functions/canopy/cms-list',
+      },
+      {
+        title: 'cms_video',
+        url: '/docs/canvas/functions/canopy/cms-video',
+      },
+      {
+        title: 'cms_code',
+        url: '/docs/canvas/functions/canopy/cms-code',
+      },
+      {
+        title: 'cms_quote',
+        url: '/docs/canvas/functions/canopy/cms-quote',
+      },
+      {
+        title: 'cms_audio',
+        url: '/docs/canvas/functions/canopy/cms-audio',
+      },
+    ],
+  },
+  {
+    title: 'AI Components',
+    expandable: true,
+    items: [
+      {
+        title: 'Getting started',
+        url: '/docs/ai-components/getting-started',
+      },
+    ],
+  },
+  {
+    title: 'Canvas',
+    expandable: true,
+    defaultExpandableState: false,
+    items: [
+      {
+        title: 'Getting started',
+        expandable: true,
         items: [
           {
             title: 'Overview',
@@ -115,6 +179,7 @@ export const documentationNavigation: NavigationItem[] = [
       },
       {
         title: 'Tags',
+        expandable: true,
         items: [
           {
             title: 'apply',
@@ -188,6 +253,7 @@ export const documentationNavigation: NavigationItem[] = [
       },
       {
         title: 'Filters',
+        expandable: true,
         items: [
           {
             title: 'abs',
@@ -361,6 +427,7 @@ export const documentationNavigation: NavigationItem[] = [
       },
       {
         title: 'Functions',
+        expandable: true,
         items: [
           {
             title: 'agent',
@@ -381,47 +448,6 @@ export const documentationNavigation: NavigationItem[] = [
           {
             title: 'cms',
             url: '/docs/canvas/functions/cms',
-          },
-          {
-            title: 'Canopy',
-            items: [
-              {
-                title: 'cms_heading',
-                url: '/docs/canvas/functions/canopy/cms-heading',
-              },
-              {
-                title: 'cms_text',
-                url: '/docs/canvas/functions/canopy/cms-text',
-              },
-              {
-                title: 'cms_button',
-                url: '/docs/canvas/functions/canopy/cms-button',
-              },
-              {
-                title: 'cms_image',
-                url: '/docs/canvas/functions/canopy/cms-image',
-              },
-              {
-                title: 'cms_list',
-                url: '/docs/canvas/functions/canopy/cms-list',
-              },
-              {
-                title: 'cms_video',
-                url: '/docs/canvas/functions/canopy/cms-video',
-              },
-              {
-                title: 'cms_code',
-                url: '/docs/canvas/functions/canopy/cms-code',
-              },
-              {
-                title: 'cms_quote',
-                url: '/docs/canvas/functions/canopy/cms-quote',
-              },
-              {
-                title: 'cms_audio',
-                url: '/docs/canvas/functions/canopy/cms-audio',
-              },
-            ],
           },
 
           {
@@ -480,6 +506,7 @@ export const documentationNavigation: NavigationItem[] = [
       },
       {
         title: 'Tests',
+        expandable: true,
         items: [
           {
             title: 'constant',
@@ -521,6 +548,7 @@ export const documentationNavigation: NavigationItem[] = [
       },
       {
         title: 'Variables',
+        expandable: true,
         items: [
           {
             title: 'request',

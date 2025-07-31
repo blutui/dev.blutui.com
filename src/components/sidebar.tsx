@@ -15,12 +15,14 @@ export interface Item {
   method?: APIMethod
   items?: Item[]
   expandable?: boolean
+  defaultExpandableState?: boolean
 }
 
 const Folder = ({ item }: { item: Item }) => {
   let { pathname: route } = useRouter()
   let expanded = item.expandable ? false : true
   const expandable = item.expandable ?? false
+  const defaultExpandableState = item.defaultExpandableState ?? true
 
   if (route.startsWith('/api-reference')) {
     route = route.replace('/api-reference', '/api')
@@ -38,6 +40,10 @@ const Folder = ({ item }: { item: Item }) => {
 
   if (itemActive) {
     expanded = true
+  }
+
+  if (defaultExpandableState) {
+    expanded = defaultExpandableState
   }
 
   const [isExpanded, setIsExpanded] = useState<boolean>(expanded)
@@ -94,15 +100,15 @@ const File = ({ item }: { item: Item }) => {
           className={cn(
             'flex cursor-pointer items-center justify-between rounded-md px-3 py-1 text-sm [word-break:break-word]',
             active
-              ? 'bg-han-50 font-semibold text-han-500 highlight-white/5 before:absolute before:inset-y-1.5 before:-left-3 before:border-l before:border-current dark:bg-han-400/20 dark:text-han-100'
-              : 'font-medium text-zinc-700 hover:bg-zinc-100 hover:highlight-white/5 dark:text-zinc-400 dark:hover:bg-han-100/5 dark:hover:text-zinc-50'
+              ? 'bg-han-50 text-han-500 highlight-white/5 dark:bg-han-400/20 dark:text-han-100 font-semibold before:absolute before:inset-y-1.5 before:-left-3 before:border-l before:border-current'
+              : 'hover:highlight-white/5 dark:hover:bg-han-100/5 font-medium text-zinc-700 hover:bg-zinc-100 dark:text-zinc-400 dark:hover:text-zinc-50'
           )}
         >
           <span>{item.title}</span>
           {item.method && (
             <span
               className={cn(
-                'ml-2 font-mono text-[0.625rem] font-semibold leading-none opacity-50'
+                'ml-2 font-mono text-[0.625rem] leading-none font-semibold opacity-50'
               )}
             >
               {item.method}
@@ -155,7 +161,7 @@ export function Quicklinks() {
           className={cn(
             'group flex items-center font-semibold transition lg:text-sm',
             active
-              ? 'text-zinc-700 dark:text-han-200'
+              ? 'dark:text-han-200 text-zinc-700'
               : 'text-zinc-600 hover:text-zinc-500 dark:text-zinc-400 dark:hover:text-zinc-300'
           )}
         >
@@ -163,8 +169,8 @@ export function Quicklinks() {
             className={cn(
               'mr-3 flex h-7 w-7 items-center justify-center rounded-md p-1 transition',
               active
-                ? 'bg-linear-to-br from-han-400 to-han-500 text-white highlight-white/10'
-                : 'ring-1 ring-inset ring-black/10 dark:ring-white/10'
+                ? 'from-han-400 to-han-500 highlight-white/10 bg-linear-to-br text-white'
+                : 'ring-1 ring-black/10 ring-inset dark:ring-white/10'
             )}
           >
             {children}
@@ -176,7 +182,7 @@ export function Quicklinks() {
   }
 
   return (
-    <div className="mb-6 mt-2">
+    <div className="mt-2 mb-6">
       <ul className="space-y-3 px-3">
         <Item name="Discord" href="https://discord.gg/4H8dZW6Fva">
           <svg
@@ -249,7 +255,7 @@ export const Sidebar = ({
     <>
       <aside
         className={cn(
-          'sticky top-header hidden w-72 shrink-0 flex-col self-start border-r border-black/5 dark:border-white/5 lg:flex',
+          'top-header sticky hidden w-72 shrink-0 flex-col self-start border-r border-black/5 lg:flex dark:border-white/5',
           className
         )}
         ref={containerRef}
