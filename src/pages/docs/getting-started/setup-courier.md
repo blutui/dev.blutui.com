@@ -23,14 +23,30 @@ Once Blutui Courier is successfully installed, you can use it to scaffold a new 
 {% step title="Run the courier create command" position="2" %}
 
 ```bash
-courier create
+-> ~ courier create
+? What is your project name? > [project-handle]
 ```
 
-![Courier create](https://cdn.blutui.com/uploads/assets/Dev/courier/courier-create-project)
 {%/step%}
-
 {% step title="Enter your unique project name" position="3" %}
-![Courier enter project name](https://cdn.blutui.com/uploads/assets/Dev/courier/courier-create-canvas-res)
+
+```bash
+-> ~ courier create
+ ✓ What is your project name? > [project-handle]
+ ? Which Canvas would you like to use?
+   | base
+   | Bare bones Canvas for Blutui.
+
+   | tailwindcss
+   | Bare bones Canvas with Tailwind CSS for Blutui.
+
+   | tailwindcss-js
+   | Bare bones Canvas with Tailwind CSS + Parcel.js for Blutui.
+
+   | headless-nextjs-blank
+   | Bare bones Next.js Canvas for Blutui Headless.
+```
+
 {%/step%}
 
 {% step title="Choose your Canvas" position="4" %}

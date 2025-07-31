@@ -9,9 +9,10 @@ Depending on the starter canvas you chose during the **courier create** step, yo
 
 ```bash
 npm install
+npm run dev
 ```
 
-to install all necessary dependencies.
+to install all necessary dependencies and start the development server.
 
 After which you can run:
 

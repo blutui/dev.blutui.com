@@ -43,10 +43,6 @@ export const documentationNavigation: NavigationItem[] = [
         title: 'Deploying your project',
         url: '/docs/getting-started/deploy-project',
       },
-      {
-        title: 'Create a project',
-        url: '/docs/getting-started/create',
-      },
     ],
   },
   {
