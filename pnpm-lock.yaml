@@ -12,11 +12,11 @@ importers:
         specifier: ^3.9.0
         version: 3.9.0(@algolia/client-search@5.20.3)(@types/react@19.1.9)(react-dom@19.1.1(react@19.1.1))(react@19.1.1)(search-insights@2.17.3)
       '@markdoc/markdoc':
-        specifier: ^0.5.2
-        version: 0.5.2(@types/react@19.1.9)(react@19.1.1)
+        specifier: ^0.5.4
+        version: 0.5.4(@types/react@19.1.9)(react@19.1.1)
       '@markdoc/next.js':
         specifier: ^0.5.0
-        version: 0.5.0(@markdoc/markdoc@0.5.2(@types/react@19.1.9)(react@19.1.1))(next@15.4.5(react-dom@19.1.1(react@19.1.1))(react@19.1.1))(react@19.1.1)
+        version: 0.5.0(@markdoc/markdoc@0.5.4(@types/react@19.1.9)(react@19.1.1))(next@15.4.5(react-dom@19.1.1(react@19.1.1))(react@19.1.1))(react@19.1.1)
       '@vercel/analytics':
         specifier: ^1.5.0
         version: 1.5.0(next@15.4.5(react-dom@19.1.1(react@19.1.1))(react@19.1.1))(react@19.1.1)
@@ -402,8 +402,8 @@ packages:
   '@jridgewell/trace-mapping@0.3.28':
     resolution: {integrity: sha512-KNNHHwW3EIp4EDYOvYFGyIFfx36R2dNJYH4knnZlF8T5jdbD5Wx8xmSaQ2gP9URkJ04LGEtlcCtwArKcmFcwKw==}
 
-  '@markdoc/markdoc@0.5.2':
-    resolution: {integrity: sha512-clrqWpJ3+S8PXigRE+zBIs6LVZYXaJ7JTDFq1CcCWc4xpoB2kz+9qRUQQ4vXtLUjQ8ige1BGdMruV6gM/2gloA==}
+  '@markdoc/markdoc@0.5.4':
+    resolution: {integrity: sha512-36YFNlqFk//gVNGm5xZaTWVwbAVF2AOmVjf1tiUrS6tCoD/YSkVy2E3CkAfhc5MlKcjparL/QFHCopxL4zRyaQ==}
     engines: {node: '>=14.7.0'}
     peerDependencies:
       '@types/react': '*'
@@ -2445,16 +2445,16 @@ snapshots:
       '@jridgewell/resolve-uri': 3.1.2
       '@jridgewell/sourcemap-codec': 1.5.3
 
-  '@markdoc/markdoc@0.5.2(@types/react@19.1.9)(react@19.1.1)':
+  '@markdoc/markdoc@0.5.4(@types/react@19.1.9)(react@19.1.1)':
     optionalDependencies:
       '@types/linkify-it': 3.0.5
       '@types/markdown-it': 12.2.3
       '@types/react': 19.1.9
       react: 19.1.1
 
-  '@markdoc/next.js@0.5.0(@markdoc/markdoc@0.5.2(@types/react@19.1.9)(react@19.1.1))(next@15.4.5(react-dom@19.1.1(react@19.1.1))(react@19.1.1))(react@19.1.1)':
+  '@markdoc/next.js@0.5.0(@markdoc/markdoc@0.5.4(@types/react@19.1.9)(react@19.1.1))(next@15.4.5(react-dom@19.1.1(react@19.1.1))(react@19.1.1))(react@19.1.1)':
     dependencies:
-      '@markdoc/markdoc': 0.5.2(@types/react@19.1.9)(react@19.1.1)
+      '@markdoc/markdoc': 0.5.4(@types/react@19.1.9)(react@19.1.1)
       js-yaml: 4.1.0
       next: 15.4.5(react-dom@19.1.1(react@19.1.1))(react@19.1.1)
       react: 19.1.1
