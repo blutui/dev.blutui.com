@@ -1,15 +1,10 @@
 export default {
-  content: [
-    './src/pages/**/*.{ts,tsx}',
-    './src/layouts/**/*.{ts,tsx}',
-    './src/components/**/*.{ts,tsx}',
-  ],
+  content: ['./src/pages/**/*.{ts,tsx}', './src/layouts/**/*.{ts,tsx}', './src/components/**/*.{ts,tsx}'],
   darkMode: 'class',
   theme: {
     extend: {
       backgroundImage: {
-        'gradient-radial':
-          'radial-gradient(circle farthest-side, var(--tw-gradient-stops))',
+        'gradient-radial': 'radial-gradient(circle farthest-side, var(--tw-gradient-stops))',
         dots: 'radial-gradient(rgba(0, 0, 0, 0) 2px, var(--tw-gradient-stops) 1px)',
       },
       maxWidth: {
@@ -27,21 +22,6 @@ export default {
       typography: (theme: (arg0: string) => any[]) => ({
         DEFAULT: {
           css: {
-            color: theme('colors.zinc.700'),
-            'h1, h2, h3': {
-              letterSpacing: '-0.025em',
-            },
-            'h2, h3, h4': {
-              'scroll-margin-top': '8.5rem',
-            },
-            a: {
-              fontWeight: theme('fontWeight.semibold'),
-              textDecoration: 'none',
-              borderBottom: `1px solid ${theme('colors.han.500')}`,
-            },
-            'a:hover': {
-              borderBottomWidth: '2px',
-            },
             code: {
               color: theme('colors.han.500'),
               padding: '1px 2px',
@@ -83,14 +63,6 @@ export default {
         },
         dark: {
           css: {
-            color: theme('colors.zinc.400'),
-            'h1, h2, h3, h4, h5, h6': {
-              color: theme('colors.zinc.200'),
-            },
-            a: {
-              color: theme('colors.white'),
-              borderBottomColor: theme('colors.han.400'),
-            },
             strong: {
               color: theme('colors.zinc.200'),
             },
@@ -114,7 +86,6 @@ export default {
     },
   },
   plugins: [
-    require('@tailwindcss/typography'),
     require('@tailwindcss/forms')({
       strategy: 'class',
     }),
