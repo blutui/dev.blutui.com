@@ -9,6 +9,10 @@ Blutui cassettes are a version control system for the front-end logic of your we
 
 Blutui tracks changes within the **public** and **views** directories of your project. These directories contain the front-end logic of your site. When you use the `courier push` command, these changes are uploaded to a specific cassette.
 
+{% callout type="warning" %}
+Cassettes only track changes in the **public** and **views** directories. Any changes made outside these directories will not be included in the cassette and won't be available when you run **courier pull**.
+{%/callout %}
+
 The cassette to which your changes are pushed is determined by the cassette attribute in your **courier.json** file. By changing this attribute, you can direct your development efforts to a different cassette, allowing you to work on multiple versions of your site simultaneously.
 
 ## Managing Cassettes
@@ -17,7 +21,7 @@ You can manage your cassettes through the Blutui Agency console. Here's a typica
 
 ![Duplicate a Cassette](https://cdn.blutui.com/uploads/assets/Dev/cassettes/duplicate-cassette.png)
 
-- Duplicate a Cassette: To create a new version of your site (e.g., a Christmas theme), you can duplicate an existing cassette from the Agency console. This creates a new, identical copy of your site's front-end logic.
+**1. Duplicate a Cassette:** To create a new version of your site (e.g., a Christmas theme), you can duplicate an existing cassette from the Agency console. This creates a new, identical copy of your site's front-end logic.
 
 ```json {% process=false filename="courier.json" %}
 {
@@ -27,11 +31,11 @@ You can manage your cassettes through the Blutui Agency console. Here's a typica
 }
 ```
 
-- Switch Cassettes Locally: Update the cassette attribute in your **courier.json** file to the name of the Active cassette. Now, any changes you make and push will be applied to this new version.
+**2. Switch Cassettes Locally:** Update the cassette attribute in your **courier.json** file to the name of the Active cassette. Now, any changes you make and push will be applied to this new version.
 
-- Develop and Test: You can now develop your new site version (e.g., add Christmas-specific styles, layouts, and content) without affecting your live website.
+**3. Develop and Test:** You can now develop your new site version (e.g., add Christmas-specific styles, layouts, and content) without affecting your live website.
 
-- Go Live: Once you are satisfied with the new cassette, you can make it the live version of your site. This is done in the Agency console by selecting the **Active cassette** from a dropdown list and clicking the **Update** button.
+**4. Go Live:** Once you are satisfied with the new cassette, you can make it the live version of your site. This is done in the Agency console by selecting the **Active cassette** from a dropdown list and clicking the **Update** button.
 
 {% callout type="note" %}
 The change is immediate, and your new site UI will be visible to all visitors.

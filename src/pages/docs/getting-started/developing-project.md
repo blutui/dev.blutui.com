@@ -14,7 +14,7 @@ npm run dev
 
 to install all necessary dependencies and start the development server.
 
-After which you can run:
+After which on a different terminal you can run:
 
 ```bash
 courier dev
@@ -23,7 +23,8 @@ courier dev
 to start your development server on `https://localhost:8080/`.
 
 {% callout type="warning" %}
-Courier only tracks changes after you have run the development server.
+Courier only tracks changes after you have run the development server and
+only track changes in the **public** and **views** directories. Any changes made outside these directories will not be included
 {%/callout %}
 
 Let's edit the **index.canvas** page and add the following code.
