@@ -1,7 +1,6 @@
-const withMarkdoc = require('@markdoc/next.js')
+import { NextConfig } from 'next'
 
-/** @type {import('next').NextConfig} */
-const nextConfig = {
+const nextConfig: NextConfig = {
   reactStrictMode: true,
   pageExtensions: ['js', 'jsx', 'ts', 'tsx', 'md', 'mdoc'],
   images: {
@@ -9,22 +8,20 @@ const nextConfig = {
       {
         protocol: 'https',
         hostname: 'cdn.blutui.com',
-      }
+      },
     ],
   },
   rewrites: async () => {
     return [
       {
         source: '/api/:slug*',
-        destination: '/api-reference/:slug*'
-      }
+        destination: '/api-reference/:slug*',
+      },
     ]
   },
   redirects: async () => {
     return require('./redirects.json')
-  }
+  },
 }
 
-module.exports = withMarkdoc({
-  schemaPath: './src/markdoc'
-})(nextConfig)
+export default nextConfig
