@@ -1,6 +1,6 @@
 import { Config, Schema, Tag } from '@markdoc/markdoc'
 import { Step } from '@/components/step'
-import { generateID } from '@/utils/generate-id'
+import { generateID } from 'utils/generate-id'
 
 export const step: Schema<Config, typeof Step> = {
   render: Step,
