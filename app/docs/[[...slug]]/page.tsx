@@ -16,7 +16,12 @@ export async function generateMetadata({ params }: Props, parent: ResolvingMetad
     return {
       title: frontmatter.title as string,
     }
-  } catch {}
+  } catch {
+    const parentMetadata = await parent
+    return {
+      title: parentMetadata.title,
+    }
+  }
 }
 
 export default async function DocumentationPage({ params }: Props) {
