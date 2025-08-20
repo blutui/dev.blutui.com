@@ -23,5 +23,5 @@ If you are upgrading to Blutui Courier it is important to note that the new `pus
 It is recommended that you uninstall `@blutui/cli` this version of the command-line interface for Blutui is no longer supported.
 
 {% callout type="note" %}
-If you use Firefox there is an extra step to get Blutui Courier working. See the [installation guide](/docs/courier/installation).
+If you use Firefox there is an extra step to get Blutui Courier working. See the [installation guide](/docs/courier/installation/macos).
 {% /callout %}
