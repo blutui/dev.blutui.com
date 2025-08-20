@@ -1,0 +1,17 @@
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --color-han-50: #EBEBFF;
+  --color-han-100: #D1D3FF;
+  --color-han-200: #A8ABFF;
+  --color-han-300: #7A7FFF;
+  --color-han-400: #5257FF;
+  --color-han-500: #242BFF;
+  --color-han-600: #0008EB;
+  --color-han-700: #0006AD;
+  --color-han-800: #000475;
+  --color-han-900: #000238;
+}
