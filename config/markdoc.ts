@@ -1,6 +1,7 @@
 import { type Config, nodes, Tag } from '@markdoc/markdoc'
 
 import { Article } from 'components/article'
+import { Card } from 'components/card'
 import { Heading } from 'components/heading'
 
 import { generateID } from 'utils/generate-id'
@@ -28,9 +29,24 @@ export const markdocConfig = {
       },
     },
   },
+  tags: {
+    card: {
+      render: 'Card',
+      children: ['paragraph', 'heading', 'tag', 'list'],
+      attributes: {
+        title: {
+          type: String,
+        },
+        href: {
+          type: String,
+        },
+      },
+    },
+  },
 } satisfies Config
 
 export const markdocComponents = {
   Article,
   Heading,
+  Card,
 }

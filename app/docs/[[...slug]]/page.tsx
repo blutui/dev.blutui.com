@@ -18,11 +18,13 @@ export async function generateMetadata({ params }: Props, parent: ResolvingMetad
     const { frontmatter } = await loadDocumentationContent(page)
     return {
       title: frontmatter.title as string,
+      description: frontmatter.description as string,
     }
   } catch {
     const parentMetadata = await parent
     return {
       title: parentMetadata.title,
+      description: parentMetadata.description,
     }
   }
 }

@@ -1,6 +1,5 @@
 import { badge } from './badge.markdoc'
 import { callout } from './callout.markdoc'
-import { card } from './card.markdoc'
 import { changelog } from './changelog.markdoc'
 import { codeGroup } from './code-group.markdoc'
 import { column } from './column.markdoc'
@@ -13,7 +12,6 @@ import { prompt } from './prompt.markdoc'
 const tags = {
   badge,
   callout,
-  card,
   changelog,
   'code-group': codeGroup,
   column,

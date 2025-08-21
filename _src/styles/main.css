@@ -43,10 +43,6 @@
   transition: none !important;
 }
 
-.card + .card {
-  margin-top: 1.25rem;
-}
-
 .step-content .card {
   @apply mt-4;
 }

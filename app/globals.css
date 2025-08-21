@@ -15,3 +15,9 @@
   --color-han-800: #000475;
   --color-han-900: #000238;
 }
+
+@layer components {
+  .card + .card {
+    @apply mt-5;
+  }
+}
