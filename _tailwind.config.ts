@@ -22,26 +22,6 @@ export default {
       typography: (theme: (arg0: string) => any[]) => ({
         DEFAULT: {
           css: {
-            code: {
-              color: theme('colors.han.500'),
-              padding: '1px 2px',
-              backgroundColor: theme('colors.han.50'),
-              borderRadius: '4px',
-              fontWeight: theme('fontWeight.semiBold'),
-              fontVariantLigatures: 'none',
-            },
-            'code::before': {
-              content: '',
-            },
-            'code::after': {
-              content: '',
-            },
-            pre: {
-              color: theme('colors.zinc.50'),
-              borderRadius: theme('borderRadius.xl'),
-              padding: theme('padding.5'),
-              display: 'flex',
-            },
             'pre code': {
               flex: 'none',
               minWidth: '100%',

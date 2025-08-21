@@ -16,7 +16,7 @@ export function Heading({ id = '', level = 1, children, className }: HeadingProp
       {level <= 3 && (
         <a
           href={`#${id}`}
-          className="absolute -ml-10 hidden h-full items-center border-0 opacity-0 group-hover:opacity-100 lg:flex"
+          className="not-prose absolute -ml-10 hidden h-full items-center border-0 opacity-0 group-hover:opacity-100 lg:flex"
           aria-label="Navigate to heading"
         >
           <span className="flex size-6 items-center justify-center rounded-md text-zinc-400 ring-1 ring-zinc-200 backdrop-blur-sm transition hover:text-zinc-500 hover:ring-zinc-300 dark:ring-zinc-100/10 dark:hover:ring-zinc-100/20">

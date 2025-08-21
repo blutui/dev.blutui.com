@@ -8,11 +8,33 @@ import Markdoc, { Node } from '@markdoc/markdoc'
 import { markdocComponents, markdocConfig } from 'config/markdoc'
 
 /**
+ * Load the source content for the given page in the given content directory.
+ */
+export async function loadSourceFor(contentDir: 'docs' | 'api', page: string): Promise<string> {
+  const filePath = path.join(process.cwd(), 'content', 'docs', `${page}.md`)
+
+  let source: string
+  try {
+    source = await readFile(filePath, 'utf-8')
+  } catch (e) {
+    throw e
+  }
+
+  return source
+}
+
+/**
  * Load all the partials from the `partials` content directory.
  */
 export async function loadPartials(): Promise<Record<string, Node>> {
   const partialsDir = path.join(process.cwd(), 'content', 'partials')
-  const entries = await readdir(partialsDir)
+
+  let entries: string[]
+  try {
+    entries = await readdir(partialsDir)
+  } catch (e) {
+    throw e
+  }
 
   const partials: Record<string, Node> = {}
   for (const entry of entries) {
@@ -27,22 +49,25 @@ export async function loadPartials(): Promise<Record<string, Node>> {
   return partials
 }
 
+type DocumentationFrontmatter = {
+  title?: string
+  description?: string
+}
+
 /**
  * Load the given page from the `docs` content directory.
  */
 export async function loadDocumentationContent(
   page: string
-): Promise<{ content: React.ReactNode; frontmatter: Record<string, unknown> }> {
-  const filePath = path.join(process.cwd(), 'content', 'docs', `${page}.md`)
-
+): Promise<{ content: React.ReactNode; frontmatter: DocumentationFrontmatter }> {
   let source: string
+  let partials: Record<string, Node>
   try {
-    source = await readFile(filePath, 'utf-8')
+    source = await loadSourceFor('docs', page)
+    partials = await loadPartials()
   } catch (e) {
     throw e
   }
-
-  const partials = await loadPartials()
 
   const ast = Markdoc.parse(source)
   const frontmatter = ast.attributes.frontmatter

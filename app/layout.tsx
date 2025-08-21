@@ -1,8 +1,8 @@
 import { Metadata } from 'next'
-import { Inter } from 'next/font/google'
+import { Manrope } from 'next/font/google'
 import './globals.css'
 
-const inter = Inter({
+const manrope = Manrope({
   subsets: ['latin'],
 })
 
@@ -14,9 +14,9 @@ export const metadata: Metadata = {
   description: 'Welcome to Blutui',
 }
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default function RootLayout({ children }: LayoutProps<'/'>) {
   return (
-    <html lang="en" className={inter.className}>
+    <html lang="en" className={manrope.className}>
       <body>{children}</body>
     </html>
   )
