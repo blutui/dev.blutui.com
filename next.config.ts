@@ -19,8 +19,8 @@ const nextConfig: NextConfig = {
       },
     ]
   },
-  redirects: async () => {
-    return require('./redirects.json')
+  async redirects() {
+    return [{ source: '/discord', destination: 'https://discord.gg/4H8dZW6Fva', permanent: false }]
   },
 }
 
