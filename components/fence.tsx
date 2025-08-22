@@ -1,4 +1,5 @@
 import { createHighlighter, Highlighter } from 'shiki'
+import cn from 'clsx'
 
 let highlighter: Promise<Highlighter>
 
@@ -18,12 +19,13 @@ async function getHighlighter() {
 export interface FenceProps {
   'data-language': string
   children?: React.ReactNode
+  className?: string
   content?: string
   process?: boolean
   filename?: string
 }
 
-export async function Fence({ content, 'data-language': language, process, children }: FenceProps) {
+export async function Fence({ content, 'data-language': language, process, className, children }: FenceProps) {
   const code = content || (children as string)
 
   const highlighter = await getHighlighter()
@@ -38,7 +40,7 @@ export async function Fence({ content, 'data-language': language, process, child
 
   return (
     <div
-      className="not-prose font-mono text-sm [&>pre]:rounded-xl [&>pre]:px-4 [&>pre]:py-3.5"
+      className={cn('not-prose font-mono text-sm [&>pre]:rounded-xl [&>pre]:px-4 [&>pre]:py-3.5', className)}
       dangerouslySetInnerHTML={{ __html: out }}
     />
   )

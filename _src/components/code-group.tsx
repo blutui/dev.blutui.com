@@ -1,21 +1,14 @@
-import {
-  Children,
-  ComponentPropsWithoutRef,
-  ForwardedRef,
-  ReactElement,
-  forwardRef,
-} from 'react'
+import { Children, ComponentPropsWithoutRef, ForwardedRef, ReactElement, forwardRef } from 'react'
 
-import { Code, CodeProps } from './code'
 import { Tabs } from './tabs'
 import { Tab } from './tab'
+import { Fence, FenceProps } from 'components/fence'
 
 export type CodeGroupPropsBase = {
-  children?: ReactElement<CodeProps>[] | ReactElement<CodeProps>
+  children?: ReactElement<FenceProps>[] | ReactElement<FenceProps>
 }
 
-export type CodeGroupProps = CodeGroupPropsBase &
-  Omit<ComponentPropsWithoutRef<'div'>, keyof CodeGroupPropsBase>
+export type CodeGroupProps = CodeGroupPropsBase & Omit<ComponentPropsWithoutRef<'div'>, keyof CodeGroupPropsBase>
 
 export const CodeGroup = forwardRef(function CodeGroup(
   { children, ...props }: CodeGroupProps,
@@ -28,9 +21,7 @@ export const CodeGroup = forwardRef(function CodeGroup(
     children = [children]
   }
 
-  const childArr = Children.toArray(children) as Array<
-    Exclude<ReactElement<CodeProps>, boolean | null | boolean>
-  >
+  const childArr = Children.toArray(children) as Array<Exclude<ReactElement<FenceProps>, boolean | null | boolean>>
 
   return (
     <div
@@ -41,12 +32,9 @@ export const CodeGroup = forwardRef(function CodeGroup(
       <Tabs>
         {childArr.map((child, tabIndex: number) => (
           <Tab title={child.props.filename || 'Filename'} key={tabIndex}>
-            <Code
-              className="px-1 pb-1"
-              data-language={child.props['data-language']}
-            >
+            <Fence className="px-1 pb-1" data-language={child.props['data-language']}>
               {child.props.children}
-            </Code>
+            </Fence>
           </Tab>
         ))}
       </Tabs>
