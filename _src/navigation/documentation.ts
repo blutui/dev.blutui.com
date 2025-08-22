@@ -8,9 +8,7 @@ export interface NavigationItemWithItems {
   items: NavigationItem[]
 }
 
-export type NavigationItem =
-  | NavigationItemWithoutItems
-  | NavigationItemWithItems
+export type NavigationItem = NavigationItemWithoutItems | NavigationItemWithItems
 
 export const documentationNavigation: NavigationItem[] = [
   {
@@ -35,7 +33,7 @@ export const documentationNavigation: NavigationItem[] = [
     items: [
       {
         title: 'Getting started',
-        url: '/docs/ai-components/getting-started',
+        url: '/docs/components/getting-started',
       },
     ],
   },

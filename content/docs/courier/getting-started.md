@@ -34,8 +34,7 @@ description: Courier is a Blutui command-line interface tool to interact with yo
 After obtaining a Courier token, its time to pull your first project. Open your preferred terminal and create a new directory, for this example we will create a `new-project` directory:
 
 ```bash
-mkdir new-project
-cd new-project
+mkdir new-project && cd new-project
 ```
 
 Once inside the `new-project` directory, it's time to setup a new `courier.json` configuration file. The configuration file is used by Blutui to determine what project you are currently in. To create a new `courier.json` file, run:

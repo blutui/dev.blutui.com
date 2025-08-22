@@ -2,7 +2,6 @@ import { NextConfig } from 'next'
 
 const nextConfig: NextConfig = {
   reactStrictMode: true,
-  pageExtensions: ['js', 'jsx', 'ts', 'tsx', 'md', 'mdoc'],
   images: {
     remotePatterns: [
       {

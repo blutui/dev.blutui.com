@@ -2,6 +2,7 @@ import { type Config, nodes, Tag } from '@markdoc/markdoc'
 
 import { Article } from 'components/article'
 import { Card } from 'components/card'
+import { Fence } from 'components/fence'
 import { Heading } from 'components/heading'
 
 import { generateID } from 'utils/generate-id'
@@ -11,6 +12,19 @@ export const markdocConfig = {
     document: {
       ...nodes.document,
       render: 'Article',
+    },
+    fence: {
+      render: 'Fence',
+      attributes: {
+        ...nodes.fence.attributes,
+        filename: { type: String, render: 'filename' },
+      },
+      transform(node, config) {
+        const attributes = node.transformAttributes(config)
+        const children = node.children.length ? node.transformChildren(config) : [node.attributes.content]
+
+        return new Tag(this.render?.toString(), attributes, children)
+      },
     },
     heading: {
       render: 'Heading',
@@ -47,6 +61,7 @@ export const markdocConfig = {
 
 export const markdocComponents = {
   Article,
-  Heading,
   Card,
+  Fence,
+  Heading,
 }
