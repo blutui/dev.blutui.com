@@ -14,6 +14,8 @@
   --color-han-700: #0006AD;
   --color-han-800: #000475;
   --color-han-900: #000238;
+
+  --container-8xl: 90rem;
 }
 
 @layer components {

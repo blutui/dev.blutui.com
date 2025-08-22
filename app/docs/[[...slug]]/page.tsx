@@ -16,5 +16,5 @@ export default async function DocumentationPage({ params }: PageProps<'/docs/[[.
     notFound()
   }
 
-  return <div>{content}</div>
+  return <>{content}</>
 }
