@@ -21,11 +21,10 @@ export interface FenceProps {
   children?: React.ReactNode
   className?: string
   content?: string
-  process?: boolean
   filename?: string
 }
 
-export async function Fence({ content, 'data-language': language, process, className, children }: FenceProps) {
+export async function Fence({ content, 'data-language': language, className, children }: FenceProps) {
   const code = content || (children as string)
 
   const highlighter = await getHighlighter()

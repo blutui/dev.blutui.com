@@ -16,7 +16,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       priority: 1,
     },
     ...docs.map((path): MetadataRoute.Sitemap[number] => ({
-      url: `${url}/${path}`,
+      url: `${url}/docs${path === '' ? '' : `/${path}`}`,
       priority: 0.8,
     })),
   ]

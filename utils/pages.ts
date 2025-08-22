@@ -13,7 +13,7 @@ export const getAllPages = async (directory: string, base = ''): Promise<string[
       const res = path.join(content, entry.name)
       const rel = path.join(base, entry.name)
       if (entry.isDirectory()) return getAllPages(res, rel)
-      if (entry.isFile() && entry.name.endsWith('.md')) return [rel.replace(/\.md$/, '')]
+      if (entry.isFile() && entry.name.endsWith('.md')) return [rel.replace(/\.md$/, '').replace('index', '')]
       return []
     })
   )
