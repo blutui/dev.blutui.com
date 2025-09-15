@@ -1,8 +1,8 @@
 import { Metadata } from 'next'
-import { Manrope } from 'next/font/google'
+import { Inter } from 'next/font/google'
 import './globals.css'
 
-const manrope = Manrope({
+const inter = Inter({
   subsets: ['latin'],
 })
 
@@ -16,7 +16,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: LayoutProps<'/'>) {
   return (
-    <html lang="en" className={manrope.className}>
+    <html lang="en" className={inter.className}>
       <body>{children}</body>
     </html>
   )

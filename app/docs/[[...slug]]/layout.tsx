@@ -42,7 +42,7 @@ export default async function DocumentationLayout({ params, children }: LayoutPr
         <div className="w-full max-w-full min-w-0">
           <header id="content-header" className="flex flex-col gap-2">
             {frontmatter.title && (
-              <h1 className="text-3xl font-bold tracking-tight text-zinc-900 dark:text-zinc-200">
+              <h1 className="text-3xl font-semibold tracking-tight text-zinc-900 dark:text-zinc-200">
                 {frontmatter.title}
               </h1>
             )}

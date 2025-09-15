@@ -7,7 +7,7 @@ export interface ArticleProps {
 export function Article({ children }: ArticleProps) {
   const proseP = cn('prose-p:text-zinc-700 prose-p:dark:text-zinc-400')
   const proseHeadings = cn(
-    'prose-headings:tracking-tight prose-headings:font-bold prose-headings:scroll-mt-34 prose-headings:dark:text-zinc-200'
+    'prose-headings:tracking-tight prose-headings:font-semibold prose-headings:scroll-mt-34 prose-headings:dark:text-zinc-200'
   )
   const proseA = cn(
     'prose-a:font-semibold prose-a:no-underline prose-a:border-b prose-a:border-han-500 prose-a:hover:border-b-2 prose-a:dark:text-white prose-a:dark:border-han-400'

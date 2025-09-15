@@ -1,11 +1,9 @@
+'use client'
+
 export function HeroElement() {
   return (
     <div className="absolute top-0 right-10 -z-10 text-zinc-200 dark:text-zinc-700">
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        height={1080}
-        viewBox="0 0 1683 2284"
-      >
+      <svg xmlns="http://www.w3.org/2000/svg" height={1080} viewBox="0 0 1683 2284">
         <defs>
           <radialGradient id="pulseGradient">
             <stop offset="10%" stopColor="#247BFF" />
@@ -29,13 +27,7 @@ export function HeroElement() {
             <stop offset="100%" stopColor="#65BADB" />
           </linearGradient>
           <mask id="vignette">
-            <rect
-              x="0"
-              y="0"
-              width="1683"
-              height="2284"
-              fill="url('#fadeGradient')"
-            />
+            <rect x="0" y="0" width="1683" height="2284" fill="url('#fadeGradient')" />
           </mask>
           <mask id="b-clip">
             <path
@@ -151,18 +143,10 @@ export function HeroElement() {
             <circle r="450" fill="url('#pulseGradient')" className="bPath" />
           </g>
           <g xmlns="http://www.w3.org/2000/svg" mask="url(#b-clip-upper)">
-            <circle
-              r="350"
-              fill="url('#pulseGradient')"
-              className="bupperPath"
-            />
+            <circle r="350" fill="url('#pulseGradient')" className="bupperPath" />
           </g>
           <g xmlns="http://www.w3.org/2000/svg" mask="url(#b-clip-lower)">
-            <circle
-              r="350"
-              fill="url('#pulseGradient')"
-              className="blowerPath"
-            />
+            <circle r="350" fill="url('#pulseGradient')" className="blowerPath" />
           </g>
         </g>
       </svg>
