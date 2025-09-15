@@ -34,5 +34,6 @@
   },
   "tailwindCSS.experimental.classRegex": [
     ["cn\\(([^)]*)\\)", "(?:'|\"|`)([^']*)(?:'|\"|`)"]
-  ]
+  ],
+  "tailwindCSS.experimental.configFile": "app/globals.css"
 }
