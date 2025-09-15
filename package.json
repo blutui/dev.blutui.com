@@ -29,7 +29,6 @@
     "@tailwindcss/typography": "^0.5.16",
     "@types/js-cookie": "^3.0.6",
     "@types/js-yaml": "^4.0.9",
-    "shiki": "^3.11.0",
     "@types/node": "^22.18.3",
     "@types/react": "^19.1.12",
     "@types/react-dom": "^19.1.9",
@@ -39,6 +38,7 @@
     "postcss": "^8.5.6",
     "prettier": "^3.6.2",
     "prettier-plugin-tailwindcss": "^0.6.14",
+    "shiki": "^3.11.0",
     "tailwindcss": "^4.1.13",
     "typescript": "^5.9.2"
   },
