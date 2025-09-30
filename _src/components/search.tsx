@@ -35,6 +35,7 @@ export const SearchProvider = ({ children }: SearchProviderProps) => {
   const router = useRouter()
   const searchButtonRef = useRef(null)
   const [isOpen, setIsOpen] = useState(false)
+  const [isAskAiActive, setIsAskAiActive] = useState(false)
   const [initialQuery, setInitialQuery] = useState<string | undefined>()
 
   const onOpen = useCallback(() => {
@@ -45,15 +46,32 @@ export const SearchProvider = ({ children }: SearchProviderProps) => {
     setIsOpen(false)
   }, [setIsOpen])
 
+  const onAskAiToggle = useCallback(
+    (askAitoggle: boolean) => {
+      setIsAskAiActive(askAitoggle)
+    },
+    [setIsAskAiActive]
+  )
+
   const onInput = useCallback(
     (event: KeyboardEvent) => {
       setIsOpen(true)
       setInitialQuery(event.key)
+      if (isAskAiActive) {
+        setIsAskAiActive(false)
+      }
     },
-    [setIsOpen, setInitialQuery]
+    [setIsOpen, setInitialQuery, isAskAiActive, setIsAskAiActive]
   )
 
-  useDocSearchKeyboardEvents({ isOpen, onOpen, onClose, searchButtonRef })
+  useDocSearchKeyboardEvents({
+    isOpen,
+    onOpen,
+    onClose,
+    isAskAiActive,
+    onAskAiToggle,
+    searchButtonRef,
+  })
 
   return (
     <>
@@ -73,6 +91,8 @@ export const SearchProvider = ({ children }: SearchProviderProps) => {
             initialQuery={initialQuery}
             initialScrollY={window.scrollY}
             placeholder="Search documentation"
+            isAskAiActive={isAskAiActive}
+            onAskAiToggle={onAskAiToggle}
             onClose={onClose}
             indexName={INDEX_NAME}
             apiKey={API_KEY}
