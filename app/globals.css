@@ -1,9 +1,11 @@
 @import "tailwindcss";
 @plugin "@tailwindcss/typography";
 
-@custom-variant dark (&:where(.dark, .dark *));
+/* @custom-variant dark (&:where(.dark, .dark *)); */
 
 @theme {
+  --font-fira-code: var(--font-fira-code);
+
   --color-han-50: #EBEBFF;
   --color-han-100: #D1D3FF;
   --color-han-200: #A8ABFF;
@@ -23,9 +25,11 @@
     @apply mt-5;
   }
 
-  html.dark .shiki,
-  html.dark .shiki span {
-    color: var(--shiki-dark) !important;
-    background-color: var(--shiki-dark-bg) !important;
+  @media (prefers-color-scheme: dark) {
+    .shiki,
+    .shiki span {
+      color: var(--shiki-dark) !important;
+      background-color: var(--shiki-dark-bg) !important;
+    }
   }
 }

@@ -1,9 +1,11 @@
 import { Metadata } from 'next'
-import { Inter } from 'next/font/google'
+import { Fira_Code } from 'next/font/google'
 import './globals.css'
 
-const inter = Inter({
+const firaCode = Fira_Code({
   subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-fira-code',
 })
 
 export const metadata: Metadata = {
@@ -16,8 +18,8 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: LayoutProps<'/'>) {
   return (
-    <html lang="en" className={inter.className}>
-      <body>{children}</body>
+    <html lang="en" className={`font-fira-code ${firaCode.variable}`}>
+      <body className="bg-neutral-50 dark:bg-neutral-900">{children}</body>
     </html>
   )
 }
