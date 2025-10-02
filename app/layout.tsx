@@ -1,11 +1,11 @@
 import { Metadata } from 'next'
-import { Fira_Code } from 'next/font/google'
+import { Inter } from 'next/font/google'
+import { RootProvider } from 'fumadocs-ui/provider/next'
+
 import './globals.css'
 
-const firaCode = Fira_Code({
+const inter = Inter({
   subsets: ['latin'],
-  display: 'swap',
-  variable: '--font-fira-code',
 })
 
 export const metadata: Metadata = {
@@ -18,8 +18,10 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: LayoutProps<'/'>) {
   return (
-    <html lang="en" className={`font-fira-code ${firaCode.variable}`}>
-      <body className="bg-neutral-50 dark:bg-neutral-900">{children}</body>
+    <html lang="en" className={inter.className} suppressHydrationWarning>
+      <body className="bg-neutral-50 dark:bg-neutral-900">
+        <RootProvider>{children}</RootProvider>
+      </body>
     </html>
   )
 }

@@ -1,11 +1,10 @@
 @import "tailwindcss";
-@plugin "@tailwindcss/typography";
+@import 'fumadocs-ui/css/neutral.css';
+@import 'fumadocs-ui/css/preset.css';
 
 /* @custom-variant dark (&:where(.dark, .dark *)); */
 
 @theme {
-  --font-fira-code: var(--font-fira-code);
-
   --color-han-50: #EBEBFF;
   --color-han-100: #D1D3FF;
   --color-han-200: #A8ABFF;
@@ -18,18 +17,4 @@
   --color-han-900: #000238;
 
   --container-8xl: 90rem;
-}
-
-@layer components {
-  .card + .card {
-    @apply mt-5;
-  }
-
-  @media (prefers-color-scheme: dark) {
-    .shiki,
-    .shiki span {
-      color: var(--shiki-dark) !important;
-      background-color: var(--shiki-dark-bg) !important;
-    }
-  }
 }

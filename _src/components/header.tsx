@@ -4,7 +4,7 @@ import { useRouter } from 'next/router'
 
 import { useActionKey } from '@/utils/use-action-key'
 
-import { Logo } from '@/components/logo'
+import { Logo } from 'components/logo'
 import { SearchButton } from '@/components/search'
 
 import { AcademicCapMini } from './icons/academic-cap'
@@ -51,9 +51,7 @@ export function Header({ children }: HeaderProps) {
                   clipRule="evenodd"
                 />
               </svg>
-              <span className="block flex-auto tracking-tight">
-                Search documentation...
-              </span>
+              <span className="block flex-auto tracking-tight">Search documentation...</span>
               {actionKey && (
                 <kbd className="highlight-white/10 -mr-1 ml-2 rounded-sm bg-black/10 px-1.5 py-0.5 font-sans text-xs font-semibold dark:bg-white/10">
                   <abbr title={actionKey[1]} className="no-underline">
@@ -114,16 +112,8 @@ export function Header({ children }: HeaderProps) {
           </ul>
           <div className="hidden items-center gap-6 sm:flex">
             <span className="h-6 border-l border-black/10 dark:border-white/10"></span>
-            <a
-              href="https://github.com/blutui"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <svg
-                viewBox="0 0 24 24"
-                aria-hidden="true"
-                className="size-6 fill-zinc-700 dark:fill-zinc-400"
-              >
+            <a href="https://github.com/blutui" target="_blank" rel="noopener noreferrer">
+              <svg viewBox="0 0 24 24" aria-hidden="true" className="size-6 fill-zinc-700 dark:fill-zinc-400">
                 <path
                   fillRule="evenodd"
                   clipRule="evenodd"
@@ -136,26 +126,10 @@ export function Header({ children }: HeaderProps) {
       </div>
       <div className="max-w-8xl mx-auto hidden h-12 border-black/5 px-8 text-white lg:flex lg:items-center lg:justify-between dark:border-white/5">
         <div className="flex space-x-6">
-          <HeaderNavigationItem
-            name="Documentation"
-            href="/docs"
-            icon={<BookOpenMini />}
-          />
-          <HeaderNavigationItem
-            name="API reference"
-            href="/api"
-            icon={<CodeBracketSquareMini />}
-          />
-          <HeaderNavigationItem
-            name="Guides"
-            href="/guides"
-            icon={<AcademicCapMini />}
-          />
-          <HeaderNavigationItem
-            name="Changelog"
-            href="/changelog"
-            icon={<QueueListMini />}
-          />
+          <HeaderNavigationItem name="Documentation" href="/docs" icon={<BookOpenMini />} />
+          <HeaderNavigationItem name="API reference" href="/api" icon={<CodeBracketSquareMini />} />
+          <HeaderNavigationItem name="Guides" href="/guides" icon={<AcademicCapMini />} />
+          <HeaderNavigationItem name="Changelog" href="/changelog" icon={<QueueListMini />} />
         </div>
       </div>
     </header>
@@ -177,16 +151,10 @@ function HeaderNavigationItem({ name, href, icon }: HeaderNavigationItemProps) {
       href={href}
       className={cn(
         'group relative inline-flex items-center py-3.5 text-sm font-medium transition',
-        active
-          ? 'text-han-400 dark:text-han-100'
-          : 'text-zinc-500 dark:text-zinc-400'
+        active ? 'text-han-400 dark:text-han-100' : 'text-zinc-500 dark:text-zinc-400'
       )}
     >
-      {icon && (
-        <span className={cn('mr-2', active ? 'opacity-70' : 'opacity-50')}>
-          {icon}
-        </span>
-      )}
+      {icon && <span className={cn('mr-2', active ? 'opacity-70' : 'opacity-50')}>{icon}</span>}
       <span>{name}</span>
       <span
         className={cn(

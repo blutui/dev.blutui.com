@@ -1,20 +1,43 @@
+import { createRelativeLink } from 'fumadocs-ui/mdx'
+import { DocsBody, DocsDescription, DocsPage, DocsTitle } from 'fumadocs-ui/page'
+import { source } from 'lib/source'
+import { getMDXComponents } from 'mdx-components'
+import type { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 
-import { loadDocumentationContent } from 'utils/markdoc'
-import { generateStaticParamsFor } from 'utils/pages'
+export async function generateStaticParams() {
+  return source.generateParams()
+}
 
-export const generateStaticParams = generateStaticParamsFor('docs')
+export async function generateMetadata(props: PageProps<'/docs/[[...slug]]'>): Promise<Metadata> {
+  const params = await props.params
+  const page = source.getPage(params.slug)
+  if (!page) notFound()
 
-export default async function DocumentationPage({ params }: PageProps<'/docs/[[...slug]]'>) {
-  const slug = (await params).slug
-  const page = slug ? slug.join('/') : 'index'
-
-  let content: React.ReactNode
-  try {
-    ;({ content } = await loadDocumentationContent(page))
-  } catch {
-    notFound()
+  return {
+    title: page.data.title,
+    description: page.data.description,
   }
+}
 
-  return <>{content}</>
+export default async function Page(props: PageProps<'/docs/[[...slug]]'>) {
+  const params = await props.params
+  const page = source.getPage(params.slug)
+  if (!page) notFound()
+
+  const MDX = page.data.body
+
+  return (
+    <DocsPage toc={page.data.toc} full={page.data.full}>
+      <DocsTitle>{page.data.title}</DocsTitle>
+      <DocsDescription>{page.data.description}</DocsDescription>
+      <DocsBody>
+        <MDX
+          components={getMDXComponents({
+            a: createRelativeLink(source, page),
+          })}
+        />
+      </DocsBody>
+    </DocsPage>
+  )
 }

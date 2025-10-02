@@ -1,23 +1,26 @@
 import { MetadataRoute } from 'next'
-import { getAllPages } from 'utils/pages'
-import { getServerSideURL } from 'utils/url'
+
+import { baseUrl } from 'lib/metadata'
+import { source } from 'lib/source'
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  // Get all `docs` pages
-  const docs = await getAllPages('docs')
+  const url = (path: string): string => new URL(path, baseUrl).toString()
 
-  // Define the base URL dynamically
-  const url: string = getServerSideURL()
-
-  // Construct sitemap
   return [
     {
-      url,
+      url: url('/'),
+      changeFrequency: 'monthly',
       priority: 1,
     },
-    ...docs.map((path): MetadataRoute.Sitemap[number] => ({
-      url: `${url}/docs${path === '' ? '' : `/${path}`}`,
-      priority: 0.8,
-    })),
+    ...source.getPages().map((page) => {
+      const { lastModified } = page.data
+
+      return {
+        url: url(page.url),
+        lastModified: lastModified ? new Date(lastModified) : undefined,
+        changeFrequency: 'weekly',
+        priority: 0.5,
+      } as MetadataRoute.Sitemap[number]
+    }),
   ]
 }
