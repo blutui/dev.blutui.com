@@ -5,7 +5,7 @@ description: 'Learn how to start building projects in Blutui'
 
 ## Creating your first project
 
-With Blutui you can create an unlimited number of development projects. A development project is a free password protected website only accessible using the project's development password. When you are ready to publish your project to the world, a recurring monthly fee will apply. Before we get started, you will need a [Blutui account](https://blutui.com/register).
+With Blutui you can create an unlimited number of development projects. A development project is a free password protected website only accessible using the project's development password. When you are ready to publish your project to the world, a recurring monthly fee will apply. Before we get started, you will need a [Blutui account](https://auth.blutui.com/register).
 
 **Steps to get started:**
 
@@ -36,12 +36,12 @@ Then after you have made changes you want to use:
 ```bash
 courier push
 ```
+
 {% callout type="note" %}
 Make sure that you run `courier push` after each change to have it go to staging
 {% /callout %}
 
 If you want to run a local enviroment of your site then use:
-
 
 ```bash
 courier dev
@@ -58,7 +58,7 @@ First lets create a new page on your newly created project.
 1. Login to your newly created project. You can quickly log into your project through the **Projects** page on your [Agency Console](https://console.blutui.com).
 2. Once logged in, from the **Site Dashboard**, navigate to **Pages** using the navigation sidebar and click the **Add page** button at the top right side of the page.
 3. Enter the required information for your page. The **Layout** is the file path to the page template. For best practice it is recommended that you create your page templates in the `pages` directory of your Canvas.
-4. If you have not created the page template, go to the `pages` directory in your Canvas template files and add create your  new page layout. For example if you set the `Layout` to `pages/about.html`, add `about.html` to your `pages` directory.
+4. If you have not created the page template, go to the `pages` directory in your Canvas template files and add create your new page layout. For example if you set the `Layout` to `pages/about.html`, add `about.html` to your `pages` directory.
 
 In your newly created Canvas template add the following code:
 
@@ -172,7 +172,7 @@ Now that you can create complex collections, you might want to render each colle
 1. In your site dashboard, go to **Settings** from the navigation sidebar.
 2. Click **Routing**.
 3. Navigate to the **Patterns** tab and click the **Create pattern** button in the top right corner.
-5. Select the pattern you need and set the `template`. In our example we want these collection pages to be `/staff/{slug}`. To create this pattern select the `string` type and set the value to **staff*, then select the `slug` type.
+4. Select the pattern you need and set the `template`. In our example we want these collection pages to be `/staff/{slug}`. To create this pattern select the `string` type and set the value to \*_staff_, then select the `slug` type.
 
 ![](https://cdn.blutui.com/uploads/assets/Dev/getting-started/collection3.gif)
 
@@ -203,7 +203,7 @@ Now that your new form is created, lets add this form to your Canvas. At the top
 {% import 'macros/form' as ui %}
 
 {% form 'contact' %}
-    <input type="hidden" name="redirect" value="/contact/success">  
+    <input type="hidden" name="redirect" value="/contact/success">
 
     {% for field in form.fields %}
       {{ ui.field(field) }}
