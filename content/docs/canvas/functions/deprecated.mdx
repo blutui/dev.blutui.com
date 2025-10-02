@@ -1,5 +1,5 @@
 ---
-title: 'Deprecated Functions'
+title: 'Deprecated functions'
 description: 'The following Canvas functions are considered deprecated.'
 ---
 
@@ -7,13 +7,13 @@ It is recommended that you use the alternative functions listed below.
 
 ## file
 
-{% callout type="note" %}
+<Callout>
 **Alternatives**: [include](/docs/canvas/functions/include)
-{% /callout %}
+</Callout>
 
 **file** returns the file path:
 
-```canvas {% process=false %}
+```canvas
 {{ file('path/to/file') }}
 ```
 
@@ -25,19 +25,19 @@ Argument   | Description          | Type
 
 ## import
 
-{% callout type="note" %}
+<Callout>
 **Alternatives**: [include](/docs/canvas/functions/include)
-{% /callout %}
+</Callout>
 
 **import** returns the contents of a file:
 
-```canvas {% process=false %}
+```canvas
 {{ import('includes/messages.html') }}
 ```
 
-{% callout type="warning" %}
+<Callout type="warning">
 The import function no longer renders HTML content within the imported file.
-{% /callout %}
+</Callout>
 
 ### Arguments
 

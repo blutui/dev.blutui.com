@@ -3,7 +3,7 @@ title: 'cms_video'
 description: 'The cms_video function is used to define a video component which can be edited on the Canopy editor.'
 ---
 
-```canvas {% process=false %}
+```canvas
 {{ cms_video(name, { controls: ..., autoplay: ..., url: '...', type: '...', class: '...' }) }}
 ```
 
@@ -16,9 +16,9 @@ description: 'The cms_video function is used to define a video component which c
 | `type` (optional)     | Specify the video format (most browsers can handle multiple formats) |    String |
 | `class` (optional)    | A space-separated list of CSS classes to style the video component   |    String |
 
-#### Multiple video sources
+## Multiple video sources
 
-```canvas {% process=false %}
+```canvas
 {{ cms_video(name, { controls: ..., autoplay: ..., sources: [{ url: '...', type: '...' },{ url: '...', type: '...' }], class: '...' }) }}
 ```
 
@@ -30,17 +30,17 @@ description: 'The cms_video function is used to define a video component which c
 | `sources` (optional)  | An array of objects specifying alternative video sources           | Array[Object] |
 | `class` (optional)    | A space-separated list of CSS classes to style the video component |        String |
 
-{% callout type="note" %}
+<Callout>
 `type:'video/mp4'` is a common format, but check browser compatibility for others
-{% /callout %}
+</Callout>
 
-{% callout type="note" %}
+<Callout>
 The `class` variable is only accessible in the code. All other variables are available in the Canopy editor.
-{% /callout %}
+</Callout>
 
-#### Video component template
+## Video component template
 
-```canvas {% process=false %}
+```canvas
 <video {{ controls }} {{ autoplay }} class={{ class }}>
   {% for source in sources %}
     <source src={{ url }} type={{ type }}>
@@ -48,24 +48,22 @@ The `class` variable is only accessible in the code. All other variables are ava
 </video>
 ```
 
-#### Rendered HTML output
+## Rendered HTML output
 
-```html {% process=false %}
+```html
 <video controls autoplay class="w-full rounded-lg">
   <source src="https://placehold.co/600x400" type="video/mp4" />
   Your browser does not support the video tag.
 </video>
 ```
 
-#### Example
+### Example
 
-{% code-group %}
-
-```canvas {% process=false filename="index.html" %}
-{{ cms_video('myvideo',{ sources: [{ type: 'video/mp4',url: 'https://cdn.blutui.com/uploads/curation/collection-web-2.mp4' }], controls: true, autoplay: true }) }}
+```canvas tab="Input" title="index.html"
+{{ cms_video('myvideo', { sources: [{ type: 'video/mp4',url: 'https://cdn.blutui.com/uploads/curation/collection-web-2.mp4' }], controls: true, autoplay: true }) }}
 ```
 
-```html {% process=false filename="Output" %}
+```html tab="Output"
 <video controls autoplay>
   <source
     src="https://cdn.blutui.com/uploads/curation/collection-web-2.mp4"
@@ -73,5 +71,3 @@ The `class` variable is only accessible in the code. All other variables are ava
   />
 </video>
 ```
-
-{% /code-group %}

@@ -5,7 +5,7 @@ description: 'Canvas allows expressions everywhere.'
 
 The operator precedence is as follows, with the lowest-precedence operators listed first: `?:` (ternary operator), `b-and`, `b-xor`, `b-or`, `or`, `and`, `==`, `!=`, `<=>`, `<`, `>`, `>=`, `<=`, `in`, `matches`, `starts with`, `ends with`, `..`, `+`, `-`, `~`, `*`, `/`, `//`, `%`, `is` (tests), `**`, `??`, `|` (filters), `[]`, and `.`:
 
-```canvas {% process=false %}
+```canvas
 {% set greeting = 'Hello ' %}
 {% set name = 'Fabien' %}
 
@@ -27,7 +27,7 @@ The simplest form of expressions are literals. Literals are representations for 
 
 `{"foo": "bar"}`: Hashes are defined by a list of keys and values separated by a comma (`,`) and wrapped with curly braces (`{}`):
 
-```canvas {% process=false %}
+```canvas
 {# keys as string #}
 { 'foo': 'foo', 'bar': 'bar' }
 
@@ -48,7 +48,7 @@ The simplest form of expressions are literals. Literals are representations for 
 
 Arrays and hashes can be nested:
 
-```canvas {% process=false %}
+```canvas
 {% set foo = [1, {"foo": "bar"}] %}
 ```
 
@@ -83,7 +83,7 @@ The following comparison operators are supported in any expression: `==`, `!=`, 
 
 You can also check if a string `starts with` or `ends with` another string:
 
-```canvas {% process=false %}
+```canvas
 {% if 'Fabien' starts with 'F' %}
   ...
 {% endif %}
@@ -95,7 +95,7 @@ You can also check if a string `starts with` or `ends with` another string:
 
 For complex string comparisons, the matches operator allows you to use regular expressions:
 
-```canvas {% process=false %}
+```canvas
 {% if phone matches '/^[\\d\\.]+$/' %}
   ...
 {% endif %}
@@ -105,7 +105,7 @@ For complex string comparisons, the matches operator allows you to use regular e
 
 The `in` operator performs containment test. It returns `true` if the left operand is contained in the right:
 
-```canvas {% process=false %}
+```canvas
 {# returns true #}
 
 {{ 1 in [1, 2, 3] }}
@@ -117,7 +117,7 @@ You can use this filter to perform a containment test on strings, arrays, or obj
 
 To perform a negative test, use the `not in` operator:
 
-```canvas {% process=false %}
+```canvas
 {% if 1 not in [1, 2, 3] %}
 
 {# is equivalent to #}
@@ -128,20 +128,20 @@ To perform a negative test, use the `not in` operator:
 
 The `is` operator performs tests. Tests can be used to test a variable against a common expression. The right operand is name of the test:
 
-```canvas {% process=false %}
+```canvas
 {# find out if a variable is odd #}
 {{ name is odd }}
 ```
 
 Tests can accept arguments too:
 
-```canvas {% process=false %}
+```canvas
 {% if post.status is constant('Post::PUBLISHED') %}
 ```
 
 Tests can be negated by using the `is not` operator:
 
-```canvas {% process=false %}
+```canvas
 {% if post.status is not constant('Post::PUBLISHED') %}
 
 {# is equivalent to #}
@@ -155,7 +155,7 @@ The following operators don't fit into any of the other categories:
 - `|`: Applies a filter.
 - `..`: Creates a sequence based on the operand before and after the operator (this is syntactic sugar for the [range](/docs/canvas/functions/range) function):
 
-```canvas {% process=false %}
+```canvas
 {{ 1..5 }}
 
 {# equivalent to #}
@@ -164,7 +164,7 @@ The following operators don't fit into any of the other categories:
 
 Note that you must use parentheses when combining it with the filter operator due to the [operator precedence rules](/docs/canvas/getting-started/expressions):
 
-```canvas {% process=false %}
+```canvas
 (1..5) | join(', ')
 ```
 
@@ -172,7 +172,7 @@ Note that you must use parentheses when combining it with the filter operator du
 - `.`, `[]`: Gets an attribute of a variable.
 - `?:`: The ternary operator:
 
-```canvas {% process=false %}
+```canvas
 {{ foo ? 'yes' : 'no' }}
 {{ foo ?: 'no' }} is the same as {{ foo ? foo : 'no' }}
 {{ foo ? 'yes' }} is the same as {{ foo ? 'yes' : '' }}
@@ -180,14 +180,14 @@ Note that you must use parentheses when combining it with the filter operator du
 
 - `??`: The null-coalescing operator:
 
-```canvas {% process=false %}
+```canvas
 {# returns the value of foo if it is defined and not null, 'no' otherwise #}
 {{ foo ?? 'no' }}
 ```
 
 - `...`: The spread operator can be used to expand arrays or hashes (it cannot be used to expand the arguments of a function call):
 
-```canvas {% process=false %}
+```canvas
 {% set numbers = [1, 2, ...moreNumbers] %}
 {% set ratings = { 'foo': 10, 'bar': 5, ...moreRatings } %}
 ```
@@ -196,11 +196,11 @@ Note that you must use parentheses when combining it with the filter operator du
 
 String interpolation (`#{expression}`) allows any valid expression to appear within a *double-quoted string*. The result of evaluating that expression is inserted into the string:
 
-```canvas {% process=false %}
+```canvas
 {{ "foo #{bar} baz" }}
 {{ "foo #{1 + 2} baz" }}
 ```
 
-{% callout type="note" %}
+<Callout>
 Ensure that you run `courier push` after each update, to view your changes in the staging environment.
-{% /callout %}
+</Callout>

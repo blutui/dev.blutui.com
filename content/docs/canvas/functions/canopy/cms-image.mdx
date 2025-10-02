@@ -3,7 +3,7 @@ title: 'cms_image'
 description: 'The cms_image function is used to define a image component which can be edited on the Canopy editor.'
 ---
 
-```canvas {% process=false %}
+```canvas
 {{ cms_image(name, { url: '...', alt_text: '...', class: '...'}) }}
 ```
 
@@ -14,19 +14,19 @@ description: 'The cms_image function is used to define a image component which c
 | `alt_text` (optional) | Descriptive text for accessibility and SEO                         |    String |
 | `class` (optional)    | A space-separated list of CSS classes to style the image component |    String |
 
-{% callout type="note" %}
+<Callout>
 The `class` variable is only accessible in the code. All other variables are available in the Canopy editor.
-{% /callout %}
+</Callout>
 
-#### Image component template
+## Image component template
 
-```canvas {% process=false %}
+```canvas
 <img src={{ url }} alt={{ alt_text }} class={{ class }} />
 ```
 
-#### Rendered HTML output
+## Rendered HTML output
 
-```html {% process=false %}
+```html
 <img
   src="https://placehold.co/300x200"
   alt="Placeholder Image"
@@ -34,20 +34,16 @@ The `class` variable is only accessible in the code. All other variables are ava
 />
 ```
 
-#### Example
+### Example
 
-{% code-group %}
-
-```canvas {% process=false filename="index.html" %}
+```canvas tab="Input" title="index.html"
 {{ cms_image('myimage', { url: 'https://placehold.co/300x200', alt_text: 'Placeholder Image', class: 'rounded-lg shadow-lg' }) }}
 ```
 
-```html {% process=false filename="Output" %}
+```html tab="Output"
 <img
   src="https://placehold.co/300x200"
   alt="Placeholder Image"
   class="rounded-lg shadow-lg"
 />
 ```
-
-{% /code-group %}

@@ -3,7 +3,7 @@ title: 'cms_quote'
 description: 'The cms_quote function is used to define a quote component which can be edited on the Canopy editor.'
 ---
 
-```canvas {% process=false %}
+```canvas
 {{ cms_quote(name, { value: '...', cite: '...', class: '...' }) }}
 ```
 
@@ -14,13 +14,13 @@ description: 'The cms_quote function is used to define a quote component which c
 | `cite` (optional)  | Reference information for the quote (author, source, etc.)         |    String |
 | `class` (optional) | A space-separated list of CSS classes to style the quote component |    String |
 
-{% callout type="note" %}
+<Callout>
 The `class` variable is only accessible in the code. All other variables are available in the Canopy editor.
-{% /callout %}
+</Callout>
 
-#### Quote component template
+## Quote component template
 
-```canvas {% process=false %}
+```canvas
 <blockquote class={{ class }}>
   <p>{{ value }}</p>
   <footer>
@@ -29,9 +29,9 @@ The `class` variable is only accessible in the code. All other variables are ava
 </blockquote>
 ```
 
-#### Rendered HTML output
+## Rendered HTML output
 
-```html {% process=false %}
+```html
 <blockquote class="bg-pink">
   "There's no place like home."
   <footer>
@@ -40,15 +40,13 @@ The `class` variable is only accessible in the code. All other variables are ava
 </blockquote>
 ```
 
-#### Example
+### Example
 
-{% code-group %}
-
-```canvas {% process=false filename="index.html" %}
+```canvas tab="Input" title="index.html"
  {{ cms_quote('myquote', { value: "I'll be back.", cite: 'Terminator', class: 'text-lg italic text-gray-600' }) }}
 ```
 
-```html {% process=false filename="Output" %}
+```html tab="Output"
 <blockquote class="text-lg italic text-gray-600">
   I'll be back.
   <footer>
@@ -56,5 +54,3 @@ The `class` variable is only accessible in the code. All other variables are ava
   </footer>
 </blockquote>
 ```
-
-{% /code-group %}

@@ -3,7 +3,7 @@ title: 'cms_list'
 description: 'The cms_list function is used to define a list component which can be edited on the Canopy editor.'
 ---
 
-```canvas {% process=false %}
+```canvas
 {{ cms_list(name, { ordered: ..., items: [ '...', '...' ], class: '...' }) }}
 ```
 
@@ -14,13 +14,13 @@ description: 'The cms_list function is used to define a list component which can
 | `items` (optional)   | Array containing the content of each list item                    | Array[String] |
 | `class` (optional)   | A space-separated list of CSS classes to style the list component |        String |
 
-{% callout type="note" %}
+<Callout>
 The `class` variable is only accessible in the code. All other variables are available in the Canopy editor.
-{% /callout %}
+</Callout>
 
-#### List component template
+## List component template
 
-```canvas {% process=false %}
+```canvas
 <{{ ordered ? 'ol' : 'ul' }} class={{ class }}>
   {% for item in items %}
     <li>{{ item }}</li>
@@ -28,29 +28,25 @@ The `class` variable is only accessible in the code. All other variables are ava
 </{{ ordered ? 'ol' : 'ul' }}>
 ```
 
-#### Rendered HTML output
+## Rendered HTML output
 
-```html {% process=false %}
+```html
 <ol class="bg-pink">
   <li>Item 1</li>
   <li>Item 2</li>
 </ol>
 ```
 
-#### Example
+### Example
 
-{% code-group %}
-
-```canvas {% process=false filename="index.html" %}
+```canvas tab="Input" title="index.html"
 {{ cms_list('list-tag-123', { ordered: true, items: [ 'Item 1', 'Item 2', 'Item 3' ], class: 'list-decimal pl-5 space-y-2' }) }}
 ```
 
-```html {% process=false filename="Output" %}
+```html tab="Output"
 <ol class="list-decimal space-y-2 pl-5">
   <li>Item 1</li>
   <li>Item 2</li>
   <li>Item 3</li>
 </ol>
 ```
-
-{% /code-group %}

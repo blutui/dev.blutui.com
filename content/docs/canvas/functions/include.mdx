@@ -3,36 +3,36 @@ title: 'include'
 description: 'The include function returns the rendered content of a template.'
 ---
 
-```canvas {% process=false %}
+```canvas
 {{ include('snippets/icon-search') }}
 {{ include(some_var) }}
 ```
 
-{% callout type="note" %}
+<Callout>
 By default the include function assumes you want to include `.html` or `.canvas` files, this means you dont need to specify a file format.
-{% /callout %}
+</Callout>
 
 Included templates have access to the variables of the active context. The context is passed by default to the template but you can also pass additional variables:
 
-```canvas {% process=false %}
+```canvas
 {# template.html will have access to the variables from the current context and the additional ones provided #}
 {{ include('template.html', {foo: 'bar'}, with_context = false) }}
 ```
 
-```canvas {% process=false %}
+```canvas
 {# no variables will be accessible #}
 {{ include('template.html', with_context = false) }}
 ```
 
 When you set the **ignore_missing** flag, Canvas will return an empty string if the template does not exist:
 
-```canvas {% process=false %}
+```canvas
 {{ include('sidebar.html', ignore_missing = true) }}
 ```
 
 You can also provide a list of templates that are checked for existence before inclusion. The first template that exists will be rendered:
 
-```canvas {% process=false %}
+```canvas
 {{ include(['page_detailed.html', 'page.html']) }}
 ```
 
@@ -40,7 +40,7 @@ If **ignore_missing** is set, it will fall back to rendering nothing if none of 
 
 When including a template created by an end user, you should consider sandboxing it:
 
-```canvas {% process=false %}
+```canvas
 {{ include('page.html', sandboxed = true) }}
 ```
 

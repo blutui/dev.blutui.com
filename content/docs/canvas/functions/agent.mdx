@@ -7,7 +7,7 @@ description: 'The agent function allows you to get information about the current
 
 Check for a certain property in the user agent:
 
-```canvas {% process=false %}
+```canvas
 {{ agent().is('Windows') }}
 {{ agent().is('Firefox') }}
 {{ agent().is('iPhone') }}
@@ -18,7 +18,7 @@ Check for a certain property in the user agent:
 
 Magic method that does the same as the previous **is** method:
 
-```canvas {% process=false %}
+```canvas
 {{ agent().isAndroidOS() }}
 {{ agent().isNexus() }}
 {{ agent().isSafari() }}
@@ -28,7 +28,7 @@ Magic method that does the same as the previous **is** method:
 
 Check for mobile device:
 
-```canvas {% process=false %}
+```canvas
 {{ agent().isMobile() }}
 {{ agent().isTablet() }}
 ```
@@ -37,7 +37,7 @@ Check for mobile device:
 
 Search the user agent with a regular expression:
 
-```canvas {% process=false %}
+```canvas
 {{ agent().match('regexp') }}
 ```
 
@@ -45,7 +45,7 @@ Search the user agent with a regular expression:
 
 Get the browser's accepted languages. Example:
 
-```canvas {% process=false %}
+```canvas
 {{ agent().languages() }}
 {# outputs: ['en-us', 'en'] #}
 ```
@@ -54,7 +54,7 @@ Get the browser's accepted languages. Example:
 
 Get the device name, if mobile. (iPhone, Nexus, ...)
 
-```canvas {% process=false %}
+```canvas
 {{ agent().device() }}
 ```
 
@@ -62,7 +62,7 @@ Get the device name, if mobile. (iPhone, Nexus, ...)
 
 Get the device type. (desktop, tablet, mobile, ...)
 
-```canvas {% process=false %}
+```canvas
 {{ agent().deviceType() }}
 ```
 
@@ -70,7 +70,7 @@ Get the device type. (desktop, tablet, mobile, ...)
 
 Get the operating system. (Ubuntu, Windows, OS X, ...)
 
-```canvas {% process=false %}
+```canvas
 {{ agent().platform() }}
 ```
 
@@ -78,7 +78,7 @@ Get the operating system. (Ubuntu, Windows, OS X, ...)
 
 Get the browser name. (Chrome, IE, Safari, Firefox, ...)
 
-```canvas {% process=false %}
+```canvas
 {{ agent().browser() }}
 ```
 
@@ -86,7 +86,7 @@ Get the browser name. (Chrome, IE, Safari, Firefox, ...)
 
 Check if the user is using a desktop device.
 
-```canvas {% process=false %}
+```canvas
 {{ agent().isDesktop() }}
 ```
 
@@ -94,7 +94,7 @@ Check if the user is using a desktop device.
 
 Check if the user is using a phone device.
 
-```canvas {% process=false %}
+```canvas
 {{ agent().isPhone() }}
 ```
 
@@ -102,7 +102,7 @@ Check if the user is using a phone device.
 
 Check if the user is a robot.
 
-```canvas {% process=false %}
+```canvas
 {{ agent().isRobot() }}
 ```
 
@@ -110,19 +110,19 @@ Check if the user is a robot.
 
 Get the robot name.
 
-```canvas {% process=false %}
+```canvas
 {{ agent().robot() }}
 ```
 
-## Browser/platform version
+## Browser version
 
-{% callout type="warning" %}
+<Callout type="warning">
 The version method is still in beta, so it might not return the correct result.
-{% /callout %}
+</Callout>
 
 Get the browser or platform version you can use:
 
-```canvas {% process=false %}
+```canvas
 {% set browser = agent().browser() %}
 {{ agent().version(browser) }}
 

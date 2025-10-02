@@ -3,7 +3,7 @@ title: 'cms_text'
 description: 'The cms_text function is used to define a text component which can be edited on the Canopy editor.'
 ---
 
-```canvas {% process=false %}
+```canvas
 {{ cms_text(name, { value: '...', class: '...' }) }}
 ```
 
@@ -13,36 +13,32 @@ description: 'The cms_text function is used to define a text component which can
 | `value` (optional) | The text content to be displayed within the text component        |    String |
 | `class` (optional) | A space-separated list of CSS classes to style the text component |    String |
 
-{% callout type="note" %}
+<Callout>
 The `class` variable is only accessible in the code. All other variables are available in the Canopy editor.
-{% /callout %}
+</Callout>
 
-#### Text component template
+## Text component template
 
-```canvas {% process=false %}
+```canvas
 <div class={{ class }}>
     {{ value }}
 </div>
 ```
 
-#### Rendered HTML output
+## Rendered HTML output
 
-```html {% process=false %}
+```html
 <div class="text-purple-500">String passed in value</div>
 ```
 
-#### Example
+### Example
 
-{% code-group %}
-
-```canvas {% process=false filename="index.html" %}
+```canvas tab="Input" title="index.html"
 {{ cms_text('mytextcontent', { value: 'Blutui is pro-developer in everything we do', class: 'font-medium text-purple-500' }) }}
 ```
 
-```html {% process=false filename="Output" %}
+```html tab="Output"
 <div class="font-medium text-purple-500">
   Blutui is pro-developer in everything we do
 </div>
 ```
-
-{% /code-group %}

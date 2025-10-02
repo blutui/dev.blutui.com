@@ -3,7 +3,7 @@ title: 'cms_code'
 description: 'The cms_code function is used to define a code component which can be edited on the Canopy editor.'
 ---
 
-```canvas {% process=false %}
+```canvas
 {{ cms_code(name, { value: '...', class: '...' }) }}
 ```
 
@@ -13,40 +13,38 @@ description: 'The cms_code function is used to define a code component which can
 | `value` (optional) | The code to be displayed                                          |    String |
 | `class` (optional) | A space-separated list of CSS classes to style the code component |    String |
 
-{% callout type="note" %}
+<Callout>
 The `class` variable is only accessible in the code. All other variables are available in the Canopy editor.
-{% /callout %}
+</Callout>
 
-#### Code component template
+## Code component template
 
-```canvas {% process=false %}
+```canvas
 <code class={{ class }}>
   <pre>{{ value }}</pre>
 </code>
 ```
 
-#### Rendered HTML output
+## Rendered HTML output
 
-```html {% process=false %}
+```html
 <code class="text-sm">
   <pre>
-  function greet() {
-      console.log("Hello, World!");
-  }
-  greet();
+    function greet() {
+        console.log("Hello, World!");
+    }
+    greet();
   </pre>
 </code>
 ```
 
-#### Example
+### Example
 
-{% code-group %}
-
-```canvas {% process=false filename="index.html" %}
+```canvas tab="Input" title="index.html"
  {{ cms_code('mycode', { value: 'function greet() {\n    console.log("Hello, World!");\n}\ngreet();', class: 'text-sm' }) }}
 ```
 
-```html {% process=false filename="Output" %}
+```html tab="Output"
 <code class="text-sm">
   <pre>
   function greet() {
@@ -56,5 +54,3 @@ The `class` variable is only accessible in the code. All other variables are ava
   </pre>
 </code>
 ```
-
-{% /code-group %}
