@@ -3,12 +3,7 @@
 import { useId } from 'react'
 import cn from 'clsx'
 
-export interface LogoProps {
-  className?: string
-  [key: string]: any
-}
-
-export function Logo({ className, ...props }: LogoProps) {
+export function Logo({ className, ...props }: React.SVGProps<SVGSVGElement>) {
   const id = useId()
 
   return (
