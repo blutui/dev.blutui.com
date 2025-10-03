@@ -1,6 +1,7 @@
-import { Metadata } from 'next'
 import { Instrument_Sans } from 'next/font/google'
 import { RootProvider } from 'fumadocs-ui/provider/next'
+
+import { baseUrl, createMetadata } from 'lib/metadata'
 
 import './globals.css'
 
@@ -8,13 +9,14 @@ const instrumentSans = Instrument_Sans({
   subsets: ['latin'],
 })
 
-export const metadata: Metadata = {
+export const metadata = createMetadata({
   title: {
     template: '%s | Blutui Developers',
     default: 'Blutui',
   },
   description: 'Welcome to Blutui',
-}
+  metadataBase: baseUrl,
+})
 
 export default function RootLayout({ children }: LayoutProps<'/'>) {
   return (
