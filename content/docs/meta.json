@@ -1,0 +1,14 @@
+{
+  "pages": [
+    "---[Album]Getting started---",
+    "index",
+    "...getting-started",
+    "intellisense",
+    "---[Sparkles]AI components---",
+    "...components",
+    "---[SquareTerminal]Courier---",
+    "...courier",
+    "---[LayoutTemplate]Canvas---",
+    "...canvas"
+  ]
+}
