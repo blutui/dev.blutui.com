@@ -25,14 +25,13 @@ import 'prismjs/components/prism-typescript.min'
 import '@/styles/main.css'
 
 import type { AppProps } from 'next/app'
-import type { MarkdocNextJsPageProps } from '@markdoc/next.js'
 import { NextPageWithLayout } from '@/types'
 
 type BlutuiAppPropsWithLayout<P = {}> = AppProps<P> & {
   Component: NextPageWithLayout<P>
 }
 
-export type BlutuiProps = MarkdocNextJsPageProps
+export type BlutuiProps = Record<string, any>
 
 const manrope = Manrope({
   weight: ['400', '500', '600', '700', '800'],
@@ -40,10 +39,7 @@ const manrope = Manrope({
   display: 'optional',
 })
 
-const Blutui = ({
-  Component,
-  pageProps,
-}: BlutuiAppPropsWithLayout<BlutuiProps>) => {
+const Blutui = ({ Component, pageProps }: BlutuiAppPropsWithLayout<BlutuiProps>) => {
   const { markdoc } = pageProps
 
   let title = 'Blutui Developers'
@@ -99,12 +95,9 @@ const Blutui = ({
   }
 
   const Layout = markdownLayout || DocumentationLayout
-  const getLayout =
-    Component.getLayout ?? ((page) => <Layout toc={toc}>{page}</Layout>)
+  const getLayout = Component.getLayout ?? ((page) => <Layout toc={toc}>{page}</Layout>)
 
-  const canonicalUrl = (
-    `https://dev.blutui.com` + (asPath === '/' ? '' : asPath)
-  ).split('?')[0]
+  const canonicalUrl = (`https://dev.blutui.com` + (asPath === '/' ? '' : asPath)).split('?')[0]
 
   return (
     <>
@@ -114,23 +107,9 @@ const Blutui = ({
         <meta name="referrer" content="strict-origin" />
         <link rel="canonical" href={canonicalUrl} />
         <meta name="description" content={description} />
-        <link
-          rel="apple-touch-icon"
-          sizes="180x180"
-          href="/apple-touch-icon.png"
-        />
-        <link
-          rel="icon"
-          type="image/png"
-          sizes="32x32"
-          href="/favicon-32x32.png"
-        />
-        <link
-          rel="icon"
-          type="image/png"
-          sizes="16x16"
-          href="/favicon-16x16.png"
-        />
+        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
 
         <meta property="og:title" content={title} />
         <meta property="og:description" content={description} />

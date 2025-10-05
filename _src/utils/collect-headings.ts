@@ -1,15 +1,10 @@
-import { RenderableTreeNodes } from '@markdoc/markdoc'
-
 export interface Section {
   title: string
   id: string
   [key: string]: any
 }
 
-export const collectHeadings = (
-  node?: any,
-  sections: Section[] = []
-): Section[] => {
+export const collectHeadings = (node?: any, sections: Section[] = []): Section[] => {
   if (node) {
     if (node.name === 'Heading' || node.name === 'Step') {
       const title = node.children[0]
