@@ -6,17 +6,26 @@ import { notFound } from 'next/navigation'
 
 import { createMetadata } from 'lib/metadata'
 import { source } from 'lib/source'
+import { LLMCopyButton } from 'components/ai/page-actions'
 
 export default async function Page(props: PageProps<'/docs/[[...slug]]'>) {
   const params = await props.params
   const page = source.getPage(params.slug)
   if (!page) notFound()
 
-  const MDX = page.data.body
+  const { body: MDX, toc, full, lastModified } = page.data
 
   return (
-    <DocsPage toc={page.data.toc} full={page.data.full}>
-      <DocsTitle>{page.data.title}</DocsTitle>
+    <DocsPage
+      toc={toc}
+      full={full}
+      tableOfContent={{ style: 'clerk' }}
+      lastUpdate={lastModified ? new Date(lastModified) : undefined}
+    >
+      <DocsTitle className="flex w-full items-center justify-between gap-2">
+        <span>{page.data.title}</span>
+        <LLMCopyButton markdownUrl={`${page.url}.mdx`} />
+      </DocsTitle>
       <DocsDescription>{page.data.description}</DocsDescription>
       <DocsBody>
         <MDX

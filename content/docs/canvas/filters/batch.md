@@ -5,7 +5,7 @@ description: 'The batch filter "batches" items by returning a list of lists with
 
 A second parameter can be provided and used to fill in missing items:
 
-```canvas {% process=false %}
+```canvas
 {% set items = ['a', 'b', 'c', 'd', 'e', 'f', 'g'] %}
 
 <table>
@@ -21,7 +21,7 @@ A second parameter can be provided and used to fill in missing items:
 
 The above example will be rendered as:
 
-```html {% process=false %}
+```html
 <table>
   <tr>
     <td>a</td>

@@ -1,9 +1,7 @@
 import { createMDX } from 'fumadocs-mdx/next'
+import type { NextConfig } from 'next'
 
-const withMDX = createMDX({})
-
-/** @type {import('next').NextConfig} */
-const config = {
+const config: NextConfig = {
   reactStrictMode: true,
   images: {
     remotePatterns: [
@@ -19,11 +17,17 @@ const config = {
         source: '/api/:slug*',
         destination: '/api-reference/:slug*',
       },
+      {
+        source: '/docs/:path*.mdx',
+        destination: '/llms.mdx/:path*',
+      },
     ]
   },
   async redirects() {
     return [{ source: '/discord', destination: 'https://discord.gg/4H8dZW6Fva', permanent: false }]
   },
 }
+
+const withMDX = createMDX()
 
 export default withMDX(config)

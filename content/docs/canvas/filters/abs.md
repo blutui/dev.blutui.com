@@ -3,7 +3,7 @@ title: 'abs'
 description: 'The abs filter returns the absolute value.'
 ---
 
-```canvas {% process=false %}
+```canvas
 {# number = -5 #}
 {{ number | abs }}
 {# outputs 5 #}
