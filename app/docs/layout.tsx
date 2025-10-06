@@ -15,6 +15,7 @@ export default function Layout({ children }: LayoutProps<'/docs'>) {
       sidebar={{
         collapsible: false,
         tabs: tabItems,
+        prefetch: false,
       }}
     >
       {children}

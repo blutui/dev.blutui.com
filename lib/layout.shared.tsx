@@ -1,7 +1,7 @@
 import { Logo } from 'components/logo'
-import type { BaseLayoutProps, LinkItemType } from 'fumadocs-ui/layouts/shared'
+import type { BaseLayoutProps } from 'fumadocs-ui/layouts/shared'
 import { SidebarTab } from 'fumadocs-ui/utils/get-sidebar-tabs'
-import { BookOpen, GraduationCap } from 'lucide-react'
+import { BookOpen, Code, GraduationCap, Logs } from 'lucide-react'
 
 export const tabItems: SidebarTab[] = [
   {
@@ -12,6 +12,7 @@ export const tabItems: SidebarTab[] = [
   {
     title: 'API reference',
     url: '/reference',
+    icon: <Code className="size-full" />,
   },
   {
     title: 'Guides',
@@ -21,6 +22,7 @@ export const tabItems: SidebarTab[] = [
   {
     title: 'Changelog',
     url: '/changelog',
+    icon: <Logs className="size-full" />,
   },
 ]
 
