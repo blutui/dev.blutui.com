@@ -22,11 +22,11 @@ export default async function Page(props: PageProps<'/docs/[[...slug]]'>) {
       tableOfContent={{ style: 'clerk' }}
       lastUpdate={lastModified ? new Date(lastModified) : undefined}
     >
-      <DocsTitle className="flex w-full items-center justify-between gap-2">
-        <span>{page.data.title}</span>
+      <DocsTitle>{page.data.title}</DocsTitle>
+      <DocsDescription className="mb-0">{page.data.description}</DocsDescription>
+      <div className="mb-6 flex flex-row items-center gap-2">
         <LLMCopyButton markdownUrl={`${page.url}.mdx`} />
-      </DocsTitle>
-      <DocsDescription>{page.data.description}</DocsDescription>
+      </div>
       <DocsBody>
         <MDX
           components={getMDXComponents({

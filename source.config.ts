@@ -1,5 +1,5 @@
 import fs from 'node:fs'
-import { defineDocs, defineConfig } from 'fumadocs-mdx/config'
+import { defineDocs, defineConfig, defineCollections } from 'fumadocs-mdx/config'
 import { remarkSteps } from 'fumadocs-core/mdx-plugins'
 
 export const docs = defineDocs({
@@ -8,6 +8,11 @@ export const docs = defineDocs({
       includeProcessedMarkdown: true,
     },
   },
+})
+
+export const guides = defineCollections({
+  type: 'doc',
+  dir: 'content/guides',
 })
 
 const canvas = JSON.parse(fs.readFileSync('./lib/canvas.grammar.json', 'utf-8'))

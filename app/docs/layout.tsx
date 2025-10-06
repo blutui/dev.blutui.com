@@ -1,13 +1,22 @@
-import { DocsLayout } from 'fumadocs-ui/layouts/docs'
+import { DocsLayout } from 'fumadocs-ui/layouts/notebook'
 
 import { source } from 'lib/source'
-import { baseOptions } from 'lib/layout.shared'
+import { baseOptions, tabItems } from 'lib/layout.shared'
 
 export default function Layout({ children }: LayoutProps<'/docs'>) {
-  const base = baseOptions()
+  const { nav, ...base } = baseOptions()
 
   return (
-    <DocsLayout {...base} tree={source.pageTree} nav={{ ...base.nav }}>
+    <DocsLayout
+      {...base}
+      nav={{ ...nav, mode: 'top' }}
+      tabMode="navbar"
+      tree={source.pageTree}
+      sidebar={{
+        collapsible: false,
+        tabs: tabItems,
+      }}
+    >
       {children}
     </DocsLayout>
   )
