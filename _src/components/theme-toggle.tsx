@@ -1,30 +1,22 @@
 import cn from 'clsx'
 
-import { ComputerDesktopMini } from './icons/computer-desktop'
-import { MoonMini } from './icons/moon'
-import { SunMini } from './icons/sun'
-
 import { useTheme } from '@/utils/use-theme'
 
 const settings: {
   value: 'dark' | 'light' | 'system'
   label: string
-  icon: () => React.ReactNode
 }[] = [
   {
     value: 'dark',
     label: 'Dark',
-    icon: MoonMini,
   },
   {
     value: 'light',
     label: 'Light',
-    icon: SunMini,
   },
   {
     value: 'system',
     label: 'System',
-    icon: ComputerDesktopMini,
   },
 ]
 
@@ -37,7 +29,7 @@ export function ThemeToggle({ className }: ThemeToggleProps) {
 
   return (
     <div className="flex shrink-0 items-center space-x-3">
-      {settings.map(({ value, label, icon: Icon }) => (
+      {settings.map(({ value, label }) => (
         <button
           key={value}
           type="button"
@@ -50,7 +42,6 @@ export function ThemeToggle({ className }: ThemeToggleProps) {
           )}
           onClick={() => setSetting(value)}
         >
-          <Icon />
           <span
             className={cn(
               'absolute top-1/2 left-1/2 -z-10 h-8 w-8 -translate-x-1/2 -translate-y-1/2 rounded-full bg-current opacity-15 transition',

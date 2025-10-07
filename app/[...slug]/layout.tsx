@@ -2,6 +2,7 @@ import { DocsLayout } from 'fumadocs-ui/layouts/notebook'
 
 import { source } from 'lib/source'
 import { baseOptions } from 'lib/layout.shared'
+import { Banner } from 'components/banner'
 
 export default function Layout({ children }: LayoutProps<'/[...slug]'>) {
   const { nav, ...base } = baseOptions()
@@ -14,7 +15,7 @@ export default function Layout({ children }: LayoutProps<'/[...slug]'>) {
       tree={source.pageTree}
       sidebar={{
         collapsible: false,
-        prefetch: false,
+        banner: <Banner />,
         tabs: {
           transform(option, node) {
             const meta = source.getNodeMeta(node)

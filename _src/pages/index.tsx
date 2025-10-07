@@ -6,14 +6,6 @@ import { FullPageLayout } from '@/layouts/full-page'
 import { Button } from '@/components/button'
 import { Card } from 'components/card'
 
-import { AcademicCapOutline } from '@/components/icons/academic-cap'
-import { AtSymbol } from '@/components/icons/at-symbol'
-import { BookOpenOutline } from '@/components/icons/book-open'
-import { HeroElement } from 'components/hero-element'
-import { Microphone } from '@/components/icons/microphone'
-import { QueueListOutline } from '@/components/icons/queue-list'
-import { Video } from '@/components/icons/video'
-
 import type { NextPageWithLayout } from '@/types'
 
 const Home: NextPageWithLayout = () => {
@@ -57,37 +49,36 @@ const Home: NextPageWithLayout = () => {
               </SearchButton>
             </div>
           </div>
-          <HeroElement />
         </div>
       </div>
       <div className="max-w-8xl mx-auto mt-0 grid gap-6 px-8 lg:grid-cols-6">
         <div className="md:col-span-3">
-          <Card title="Read the docs" href="/docs/getting-started/create" icon={<BookOpenOutline />}>
+          <Card title="Read the docs" href="/docs/getting-started/create">
             Learn how to get set up and start building your first project.
           </Card>
         </div>
         <div className="md:col-span-3">
-          <Card title="Guides" href="/guides" icon={<AcademicCapOutline />}>
+          <Card title="Guides" href="/guides">
             Find a guide on how to develop with Blutui.
           </Card>
         </div>
         <div className="md:col-span-3">
-          <Card title="What's new in Blutui" href="/changelog" icon={<QueueListOutline />}>
+          <Card title="What's new in Blutui" href="/changelog">
             {`See what's been added, changed, fixed or removed.`}
           </Card>
         </div>
         <div className="md:col-span-3">
-          <Card title="YouTube tutorials" href="https://www.youtube.com/@useBlutui" icon={<Video />}>
+          <Card title="YouTube tutorials" href="https://www.youtube.com/@useBlutui">
             Watch developer tutorials on our YouTube channel.
           </Card>
         </div>
         <div className="md:col-span-3">
-          <Card title="Discord" href="https://discord.gg/4H8dZW6Fva" icon={<Microphone />}>
+          <Card title="Discord" href="https://discord.gg/4H8dZW6Fva">
             Join the community of Blutui developers on Discord.
           </Card>
         </div>
         <div className="md:col-span-3">
-          <Card title="Blutui on X" href="https://x.com/blutui" icon={<AtSymbol />}>
+          <Card title="Blutui on X" href="https://x.com/blutui">
             Follow us for product updates, tips and more.
           </Card>
         </div>

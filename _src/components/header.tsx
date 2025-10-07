@@ -7,11 +7,6 @@ import { useActionKey } from '@/utils/use-action-key'
 import { Logo } from 'components/logo'
 import { SearchButton } from '@/components/search'
 
-import { AcademicCapMini } from './icons/academic-cap'
-import { BookOpenMini } from './icons/book-open'
-import { CodeBracketSquareMini } from './icons/code-bracket-square'
-import { QueueListMini } from './icons/queue-list'
-
 // const AskAiButton = dynamic(
 //   () => import('./ask-ai-button').then((mod) => mod.AskAiButton),
 //   { ssr: false }
@@ -126,10 +121,10 @@ export function Header({ children }: HeaderProps) {
       </div>
       <div className="max-w-8xl mx-auto hidden h-12 border-black/5 px-8 text-white lg:flex lg:items-center lg:justify-between dark:border-white/5">
         <div className="flex space-x-6">
-          <HeaderNavigationItem name="Documentation" href="/docs" icon={<BookOpenMini />} />
-          <HeaderNavigationItem name="API reference" href="/api" icon={<CodeBracketSquareMini />} />
-          <HeaderNavigationItem name="Guides" href="/guides" icon={<AcademicCapMini />} />
-          <HeaderNavigationItem name="Changelog" href="/changelog" icon={<QueueListMini />} />
+          <HeaderNavigationItem name="Documentation" href="/docs" />
+          <HeaderNavigationItem name="API reference" href="/api" />
+          <HeaderNavigationItem name="Guides" href="/guides" />
+          <HeaderNavigationItem name="Changelog" href="/changelog" />
         </div>
       </div>
     </header>
