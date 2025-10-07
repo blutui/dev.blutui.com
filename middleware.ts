@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { isMarkdownPreferred, rewritePath } from 'fumadocs-core/negotiation'
 
-const { rewrite: rewriteLLM } = rewritePath('/docs/*path', '/llms.mdx/*path')
+const { rewrite: rewriteLLM } = rewritePath('/*path', '/llms.mdx/*path')
 
 export function middleware(request: NextRequest) {
   if (isMarkdownPreferred(request)) {

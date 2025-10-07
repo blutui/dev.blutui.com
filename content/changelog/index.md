@@ -38,20 +38,20 @@ Please use the ISO standard date and time format.
 {% changelog date="2024-08-08" %}
 {% badge status="success" %}Added{% /badge %}
 
-- Added `members` resource in the [Console API](/api/console). You can now manage the role and access for team members in your agency through the API.
+- Added `members` resource in the [Console API](/api-reference/console). You can now manage the role and access for team members in your agency through the API.
 {% /changelog %}
 
 {% changelog date="2024-07-26" %}
 {% badge status="attention" %}Fixed{% /badge %}
 
-- Fixed `is_super` response parameter on the `role` resource in the [Console API](/api/console) to always return a `boolean`.
+- Fixed `is_super` response parameter on the `role` resource in the [Console API](/api-reference/console) to always return a `boolean`.
 - Fixed the dates and times in the **Project Dashboard** to respect the timezone of the project.
 {% /changelog %}
 
 {% changelog date="2024-07-25" %}
 {% badge status="success" %}Added{% /badge %}
 
-- Added `role` resource in the [Console API](/api/console). You can now manage roles and permissions in your agency through the API.
+- Added `role` resource in the [Console API](/api-reference/console). You can now manage roles and permissions in your agency through the API.
 {% /changelog %}
 
 {% changelog date="2024-07-23" %}
@@ -72,19 +72,19 @@ Please use the ISO standard date and time format.
 
 {% badge status="info" %}Changed{% /badge %}
 
-- Changed the `primary_domain_id` response property to `primary_domain` in the [`project` resource](/api/console/projects/retrieve#response) to make it consistent with the value passed to the `expand` query parameter.
+- Changed the `primary_domain_id` response property to `primary_domain` in the [`project` resource](/api-reference/console/projects/retrieve#response) to make it consistent with the value passed to the `expand` query parameter.
 {% /changelog %}
 
 {% changelog date="2024-07-11" %}
 {% badge status="success" %}Added{% /badge %}
 
-- Added a `search` endpoint to the `project` resource in the [Console API](/api/console). You can now search for projects in your agency through the API.
+- Added a `search` endpoint to the `project` resource in the [Console API](/api-reference/console). You can now search for projects in your agency through the API.
 {% /changelog %}
 
 {% changelog date="2024-07-09" %}
 {% badge status="success" %}Added{% /badge %}
 
-- Added `project` resource in the [Console API](/api/console). You can now manage projects, including publishing, unpublishing, and viewing a project's domains directly in your agency through the API.
+- Added `project` resource in the [Console API](/api-reference/console). You can now manage projects, including publishing, unpublishing, and viewing a project's domains directly in your agency through the API.
 
 {% badge status="attention" %}Fixed{% /badge %}
 
@@ -106,13 +106,13 @@ Please use the ISO standard date and time format.
 
 - Changed the "Project Domains" screen in the **Agency Console** to simplify the process of adding new domains to a project.
 
-- Changed [Update domain](/api/console/domains/update) API to ensure a `project` parameter is required in the body of the request.
+- Changed [Update domain](/api-reference/console/domains/update) API to ensure a `project` parameter is required in the body of the request.
 {% /changelog %}
 
 {% changelog date="2024-05-20" %}
 {% badge status="success" %}Added{% /badge %}
 
-- Added `domain` resource to the [Console API](/api/console). This allows you to manage domains in your agency directly through the API.
+- Added `domain` resource to the [Console API](/api-reference/console). This allows you to manage domains in your agency directly through the API.
 
 {% badge status="attention" %}Fixed{% /badge %}
 
@@ -122,7 +122,7 @@ Please use the ISO standard date and time format.
 {% changelog date="2024-05-07" %}
 {% badge status="success" %}Added{% /badge %}
 
-- Added `brand` resource to the [Console API](/api/console). This allows you to manage your agency's brand directly through the API.
+- Added `brand` resource to the [Console API](/api-reference/console). This allows you to manage your agency's brand directly through the API.
 
 - Added [`blutui`](https://www.npmjs.com/package/blutui) Node.js SDK to simplify interaction with Blutui APIs.
 {% /changelog %}

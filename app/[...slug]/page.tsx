@@ -8,7 +8,7 @@ import { createMetadata } from 'lib/metadata'
 import { source } from 'lib/source'
 import { LLMCopyButton } from 'components/ai/page-actions'
 
-export default async function Page(props: PageProps<'/docs/[[...slug]]'>) {
+export default async function Page(props: PageProps<'/[...slug]'>) {
   const params = await props.params
   const page = source.getPage(params.slug)
   if (!page) notFound()
@@ -38,7 +38,7 @@ export default async function Page(props: PageProps<'/docs/[[...slug]]'>) {
   )
 }
 
-export async function generateMetadata(props: PageProps<'/docs/[[...slug]]'>): Promise<Metadata> {
+export async function generateMetadata(props: PageProps<'/[...slug]'>): Promise<Metadata> {
   const { slug = [] } = await props.params
   const page = source.getPage(slug)
   if (!page) notFound()
@@ -53,7 +53,7 @@ export async function generateMetadata(props: PageProps<'/docs/[[...slug]]'>): P
     title: page.data.title,
     description: page.data.description,
     openGraph: {
-      url: `/docs/${page.slugs.join('/')}`,
+      url: `/${page.slugs.join('/')}`,
       images: [image],
     },
     twitter: {

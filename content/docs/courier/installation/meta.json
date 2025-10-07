@@ -1,0 +1,8 @@
+{
+  "pages": [
+    "macos",
+    "windows",
+    "linux",
+    "!create-courier-token"
+  ]
+}

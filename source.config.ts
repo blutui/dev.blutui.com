@@ -3,16 +3,12 @@ import { defineDocs, defineConfig, defineCollections } from 'fumadocs-mdx/config
 import { remarkSteps } from 'fumadocs-core/mdx-plugins'
 
 export const docs = defineDocs({
+  dir: 'content',
   docs: {
     postprocess: {
       includeProcessedMarkdown: true,
     },
   },
-})
-
-export const guides = defineCollections({
-  type: 'doc',
-  dir: 'content/guides',
 })
 
 const canvas = JSON.parse(fs.readFileSync('./lib/canvas.grammar.json', 'utf-8'))

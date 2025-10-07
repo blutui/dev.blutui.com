@@ -14,11 +14,7 @@ const config: NextConfig = {
   rewrites: async () => {
     return [
       {
-        source: '/api/:slug*',
-        destination: '/api-reference/:slug*',
-      },
-      {
-        source: '/docs/:path*.mdx',
+        source: '/:path*.mdx',
         destination: '/llms.mdx/:path*',
       },
     ]

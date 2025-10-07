@@ -1,4 +1,7 @@
 {
+  "title": "Guides",
+  "icon": "GraduationCap",
+  "root": true,
   "pages": [
     "..."
   ]
