@@ -1,6 +1,6 @@
 ---
-title: 'How do I add reCAPTCHA v2 to a form?'
-description: 'Learn how to protect your forms with reCAPTCHA v2.'
+title: How do I add reCAPTCHA v2 to a form?
+description: Learn how to protect your forms with reCAPTCHA v2.
 ---
 
 ## Introduction
@@ -9,39 +9,59 @@ Protecting your forms from spam and abuse is crucial. Google's reCAPTCHA v2 prov
 
 ## Setting Up reCAPTCHA v2
 
-{% step title="Registration" position="1" %}
+<Steps>
+<Step>
+### Registration
+
 Start by visiting [Google reCAPTCHA's registration page](https://www.google.com/recaptcha/admin/create). Sign in using your Google account.
-{% /step %}
+</Step>
 
-{% step title="Create a new site" position="2" %}
+<Step>
+### Create a new site
+
 Next, click on **Register a new site**. Provide a suitable name for your reCAPTCHA integration, ensure you select the reCAPTCHA type as **v2 Checkbox**.
-{% /step %}
+</Step>
 
-{% step title="Domain configuration" position="3" %}
+<Step>
+### Domain configuration
+
 Input all domains where your site will be live. It's advisable to also include your staging URL, ensuring you can test the form in the staging environment.
-{% /step %}
+</Step>
 
-{% step title="Alert settings" position="4" %}
+<Step>
+### Alert settings
+
 Associate it with your primary Google account. If you're using older versions of reCAPTCHA, specify emails to receive alerts regarding any issues.
-{% /step %}
+</Step>
 
-{% step title="Complete registration" position="5" %}
+<Step>
+### Complete registration
+
 Lastly, read and accept the terms of service and click **Submit**. Once registered, you'll receive two keys, a **public key** and a **secret key**. If you need further details or encounter any challenges while obtaining your reCAPTCHA keys, Google's [developer documentation](https://developers.google.com/recaptcha/intro) is a valuable resource.
-{% /step %}
+</Step>
+</Steps>
 
 ## Integrating with Blutui
 
-{% step title="Navigate to settings" position="1" %}
+<Steps>
+<Step>
+### Navigate to Settings
+
 Head to your Blutui Project Dashboard. Click on **Settings** and navigate to **Forms** page.
-{% /step %}
+</Step>
 
-{% step title="Key configuration" position="2" %}
+<Step>
+### Key configuration
+
 Paste the **Public Key** and **Secret Key** from the reCAPTCHA dashboard into their respective fields in the Blutui Project Dashboard.
-{% /step %}
+</Step>
 
-{% step title="Update your form template" position="3" %}
+<Step>
+### Update your form template
+
 Navigate to your form template code for the Blutui project. Insert the [`{{ recaptcha() }}`](/docs/canvas/functions/recaptcha) function where you'd like the reCAPTCHA checkbox to appear. Typically, it's best to place this right above the form's submit button.
-{% /step %}
+</Step>
+</Steps>
 
 ## Conclusion
 

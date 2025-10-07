@@ -17,25 +17,30 @@ In this guide we'll learn how to subscribe to the `form.submission.created` even
 
 ## Setup
 
-step title="Create a new Zap" position="1" %}
+<Steps>
+<Step>
+### Create a new Zap
 Firstly, let's create a new Zap in Zapier. From your Zapier dashboard, click the **Create Zap** button or go to [zap.new](https://zap.new/).
 
 ![](https://cdn.blutui.com/uploads/assets/Dev/guides/form-submission-created-zapier-1.png)
-/step %}
+</Step>
 
-step title="Select the webhook trigger" position="2" %}
+<Step>
+### Select the webhook trigger
 Click the **Trigger** button to add the **Webooks by Zapier** trigger. Use the search bar if the trigger is not visible. Then select the **Catch Hook** event type.
 
 ![](https://cdn.blutui.com/uploads/assets/Dev/guides/form-submission-created-zapier-2.png)
-/step %}
+</Step>
 
-step title="Retrieve your webhook URL" position="3" %}
+<Step>
+### Retrieve your webhook URL
 After selecting your event type, you will be taken to the **Trigger** step. Click continue to proceed to the **Test** step. You will be presented with your webhook URL.
 
 ![](https://cdn.blutui.com/uploads/assets/Dev/guides/form-submission-created-zapier-3.png)
-/step %}
+</Step>
 
-step title="Add your webhook URL to the Blutui Project" position="4" %}
+<Step>
+### Add your webhook URL to the Blutui Project
 Next, copy your webhook URL. From your Blutui Project Dashboard, click the **Settings** page and navigate to **Webhooks**.
 
 1. Click **Add endpoint** to create a new event subscriber.
@@ -45,18 +50,21 @@ Next, copy your webhook URL. From your Blutui Project Dashboard, click the **Set
 5. Click **Add endpoint** to create the event subscriber for the project.
 
 ![](https://cdn.blutui.com/uploads/assets/Dev/guides/form-submission-created-zapier-4.png)
-/step %}
+</Step>
 
-step title="Test the form submission event" position="5" %}
+<Step>
+### Test the form submission event
 Now that we've created a webhook endpoint and subscribed to the `form.submission.created` event, lets test it by submitting a form. Once you have submitted a form on your project's frontend, we can test the Trigger in Zapier is setup correctly. Click the **Test trigger** button in Zapier to load any requests that were triggered by the Blutui project.
 
 ![](https://cdn.blutui.com/uploads/assets/Dev/guides/form-submission-created-zapier-5.png)
-/step %}
+</Step>
 
-step title="Select a test record" position="6" %}
+<Step>
+### Select a test record
 Once the requests have finished loading, select a request to continue to the Action step.
 
 ![](https://cdn.blutui.com/uploads/assets/Dev/guides/form-submission-created-zapier-6.png)
-/step %}
+</Step>
+</Steps>
 
 And there you have it—a complete guide to sending webhook requests to Zapier from a Blutui project. You can learn more about how to [setup an Action in Zapier](https://help.zapier.com/hc/en-us/articles/8496257774221) from their help center.

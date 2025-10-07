@@ -14,6 +14,7 @@ export const docs = defineDocs({
 const canvas = JSON.parse(fs.readFileSync('./lib/canvas.grammar.json', 'utf-8'))
 
 export default defineConfig({
+  lastModifiedTime: 'git',
   mdxOptions: {
     rehypeCodeOptions: {
       lazy: true,

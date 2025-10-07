@@ -9,15 +9,22 @@ Creating forms in Blutui can be an intuitive process. This guide provides a deta
 
 ## Creating a form
 
-step title="Navigate to forms" position="1" %}
+<Steps>
+<Step>
+### Navigate to forms
+
 Head to your Blutui Project Dashboard. Click on **Forms** to access the forms section of the dashboard.
-/step %}
+</Step>
 
-step title="Create a new form" position="2" %}
+<Step>
+### Create a new form
+
 From the **Forms** screen, click on the **Create form** button. A modal will appear, prompting you to enter a name for your form. The name will automatically be converted into a slug format for the handle. You can opt to use a custom handle by clicking on **Use custom handle**.
-/step %}
+</Step>
 
-step title="Add form fields" position="3" %}
+<Step>
+### Add form fields
+
 Once your new form is created, you'll be redirected to the form settings page. Here you can add the desired fields for the form. In our example, we'll create the `Name`, `Email`, and `Message` fields.
 
 Click **Add field** and select the **Text** option for the `Name` field. Label it as 'Name'. Assign a unique name to reference in your code, e.g., 'name'. Optionally, add help text (e.g., "Please put your name here"). Ensure you mark the field as 'Required'.
@@ -25,19 +32,25 @@ Click **Add field** and select the **Text** option for the `Name` field. Label i
 Similarly, add the Email (using the `email` type) and Message (using the `textarea` type).
 
 ![](https://cdn.blutui.com/uploads/assets/Dev/guides/create-form-1.png)
-/step %}
+</Step>
 
-step title="Save the form" position="4" %}
+<Step>
+### Save the form
+
 Click the **Update form** button to save your changes.
-/step %}
+</Step>
+</Steps>
 
 ## Add the form to your project code
 
-step title="Directory setup" position="1" %}
+<Steps>
+<Step>
+### Directory setup
 Create a new folder named `forms` inside the `views` directory. Inside the `forms` folder, create a file named `contact.html`.
-/step %}
+</Step>
 
-step title="Create a form component system" position="2" %}
+<Step>
+### Create a form component system
 Next, we'll use a system named [macro](/docs/canvas/tags/macro) to help define input types and their output structure. If you don't already have a `components` folder, create one in the `views` directory. Inside the `components` folder, create a file named `form.html`. Paste the code below into `form.html` to define various form elements. These macros serve as templates for each type of form input, allowing flexibility in form design:
 
 ```canvas
@@ -109,9 +122,10 @@ Next, we'll use a system named [macro](/docs/canvas/tags/macro) to help define i
 ```
 
 Feel free to customise the appearance and layout by modifying the provided HTML and adding CSS styles.
-/step %}
+</Step>
 
-step title="Form integration" position="3" %}
+<Step>
+### Form integration
 Inside your `views/forms/contact.html` file, insert:
 
 ```canvas
@@ -129,11 +143,13 @@ Inside your `views/forms/contact.html` file, insert:
 This will setup the form and import the `components/form.html` file we created in the previous step. It includes security measures to help protect your form from bots. The code loops through each field and renders them based on their type. This approach will allow content creators to add more fields in the future directly from the dashboard.
 
 You can directly reference individual form fields using `{{ ui.field(form.fields.name) }}` or `{{ ui.field(form.fields['name']) }}`. Lastly add a form submission button at the end.
-/step %}
+</Step>
 
-step title="Embedding the form on a page" position="4" %}
+<Step>
+### Embedding the form on a page
 To display the form on any page or section, use `{% include 'forms/contact' %}` snippet to embed the form at the desired location in your page code.
-/step %}
+</Step>
+</Steps>
 
 ## Conclusion
 

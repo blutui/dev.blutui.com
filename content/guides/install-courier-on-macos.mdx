@@ -1,6 +1,6 @@
 ---
-title: 'How do I install Courier on macOS?'
-description: 'Learn how to get started with Blutui Courier on macOS.'
+title: How do I install Courier on macOS?
+description: Learn how to get started with Blutui Courier on macOS.
 ---
 
 ## Introduction
@@ -14,7 +14,9 @@ Courier is a development tool that allows you to write code locally and view the
 
 ## Installation
 
-{% step title="Add the Courier Homebrew Tap" position="1" %}
+<Steps>
+<Step>
+### Add the Courier Homebrew Tap
 Firstly, open your terminal and run the following command to install Courier:
 
 ```bash
@@ -22,9 +24,10 @@ brew install --cask blutui/courier/courier
 ```
 
 Courier will require administrative access for running projects locally and connecting to Blutui.
-{% /step %}
+</Step>
 
-{% step title="Verify the installation" position="2" %}
+<Step>
+### Verify the installation
 Lastly, to confirm that Courier is successfully installed, run:
 
 ```bash
@@ -32,36 +35,40 @@ courier
 ```
 
 This will display a list of available commands, confirming Courier is now successfully installed.
-{% /step %}
+</Step>
 
 ## Additional steps for Firefox users
 
 If you're using Firefox, you'll need to install Network Security Services (NSS):
 
-{% step title="Install NSS" position="1" %}
+<Step>
+### Install NSS
 ```bash
 brew install nss
 ```
-{% /step %}
+</Step>
+</Steps>
 
 Now you should be able to use `courier dev` on Firefox.
 
 ## Authentication
 
-{% partial file="create-courier-token.md" /%}
+<include cwd>./content/docs/courier/installation/create-courier-token.mdx#unix</include>
 
 And there you have it—a complete guide to installing, and setting up Courier on macOS!
 
 ## More resources
 
-{% card title="How do I pull a project onto my machine?" href="/guides/pull-project-with-courier" %}
-  Learn how to pull your project from Blutui onto your machine for development.
-{% /card %}
+<Cards>
+  <Card title="How do I pull a project onto my machine?" href="/guides/pull-project-with-courier">
+    Learn how to pull your project from Blutui onto your machine for development.
+  </Card>
 
-{% card title="How do I preview a project onto my machine?" href="/guides/preview-project-with-courier" %}
-  Learn how to preview your project on your machine while in development.
-{% /card %}
+  <Card title="How do I preview a project onto my machine?" href="/guides/preview-project-with-courier">
+    Learn how to preview your project on your machine while in development.
+  </Card>
 
-{% card title="How do I push a project to Blutui?" href="/guides/push-project-with-courier" %}
-  Learn how to push your project code from your machine to Blutui.
-{% /card %}
+  <Card title="How do I push a project to Blutui?" href="/guides/push-project-with-courier">
+    Learn how to push your project code from your machine to Blutui.
+  </Card>
+</Cards>
