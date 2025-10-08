@@ -14,7 +14,6 @@ export interface GenerateProps {
 }
 
 export function generate({ title, description }: GenerateProps) {
-  const siteName = 'Blutui Developers'
   const primaryTextColor = 'rgb(240,240,240)'
   const logo = (
     <svg viewBox="0 0 304 40" style={{ height: '48px', color: primaryTextColor }}>

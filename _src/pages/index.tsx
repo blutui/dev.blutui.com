@@ -1,7 +1,6 @@
 import { ReactElement } from 'react'
 
 import { SearchButton } from '@/components/search'
-import { FullPageLayout } from '@/layouts/full-page'
 
 import { Button } from '@/components/button'
 import { Card } from 'components/card'
@@ -88,7 +87,7 @@ const Home: NextPageWithLayout = () => {
 }
 
 Home.getLayout = function getLayout(page: ReactElement) {
-  return <FullPageLayout>{page}</FullPageLayout>
+  return <>{page}</>
 }
 
 export default Home
