@@ -10,7 +10,7 @@ TailwindCSS is a utility-first CSS framework that allows for rapid development o
 ## Prerequisites
 
 - A Blutui project set up and ready to go.
-- A package manager (`npm`, `yarn`, or `pnpm`) installed. If not, refer to the using a package manager in a Blutui project guide.
+- A package manager (`npm`, `pnpm`, `yarn`, or `bun`) installed. If not, refer to the using a package manager in a Blutui project guide.
 
 ## Getting started
 
@@ -19,13 +19,13 @@ TailwindCSS is a utility-first CSS framework that allows for rapid development o
 ### Installing Tailwind CSS
 Open your terminal or command prompt and navigate to your Blutui project directory. Begin by installing TailwindCSS using:
 
-```bash
+```npm
 npm install -D tailwindcss postcss
 ```
 
 Initialise the configuration for TailwindCSS with:
 
-```bash
+```npm
 npx tailwindcss init
 ```
 
@@ -59,7 +59,7 @@ Create a `src` folder at the root of your project, so you have `src`, `public`, 
 ### Compiling Tailwind CSS
 Execute the following command:
 
-```bash
+```npm
 npx tailwindcss -i ./src/styles/main.css -o ./public/main.css --watch
 ```
 

@@ -10,11 +10,7 @@ description: 'Learn how to use Parcel.js to compile your CSS and JavaScript file
 ## **Prerequisites**
 
 - A Blutui project set up and ready to go.
-- A package manager (**`npm`**, **`yarn`**, or **`pnpm`**) installed. If not, refer to the [using a package manager in a Blutui project guide](/guides/use-a-package-manager-in-a-project).
-
-<Callout>
-This guide focuses on `npm` commands, but you can easily replace them with the relevant `yarn` or `pnpm` commands as they serve similar purposes.
-</Callout>
+- A package manager (`npm`, `pnpm`, `yarn`, or `bun`) installed. If not, refer to the [using a package manager in a Blutui project guide](/guides/use-a-package-manager-in-a-project).
 
 ## Getting started
 
@@ -23,7 +19,7 @@ This guide focuses on `npm` commands, but you can easily replace them with the r
 ### Installing Parcel.js
 Open your terminal or command prompt and navigate to your Blutui project directory. Install Parcel as a development dependency using:
 
-```bash
+```npm
 npm install -D parcel
 ```
 </Step>
@@ -74,7 +70,7 @@ Ensure you remove the `"main": "index.js"` line from the `package.json` file, as
 ### Compiling your with Parcel.js
 To compile your CSS and JavaScript, run:
 
-```bash
+```npm
 npm run build
 ```
 

@@ -16,5 +16,15 @@
   --color-han-800: #000475;
   --color-han-900: #000238;
 
+  --color-fd-primary: hsl(238, 100%, 57%);
+
   --container-8xl: 90rem;
+}
+
+.dark {
+  --color-fd-primary: hsl(238, 100%, 83%);
+}
+
+:root {
+  --fd-layout-width: 1400px;
 }
