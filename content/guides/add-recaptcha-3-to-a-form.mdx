@@ -1,0 +1,98 @@
+---
+title: How do I add reCAPTCHA v3 to a form?
+description: Learn how to protect your forms with reCAPTCHA v3.
+---
+
+## Introduction
+
+Google's reCAPTCHA v3 offers an advanced protection method for your forms without user interaction, ensuring a better user experience while still shielding your site from bots and spam. This guide walks you through integrating reCAPTCHA v3 with forms on a Blutui project.
+
+## Setting Up reCAPTCHA v3
+
+<Steps>
+<Step>
+### Registration
+Start by visiting [Google reCAPTCHA's registration page](https://www.google.com/recaptcha/admin/create). Sign in using your Google account.
+</Step>
+
+<Step>
+### Create a new site
+Next, click on **Register a new site**. Provide an appropriate name for your reCAPTCHA integration, ensure you select the reCAPTCHA type as **v3**.
+</Step>
+
+<Step>
+### Domain configuration
+Input all domains where your site will be live. It's advisable to also include your staging URL, ensuring you can test the form in the staging environment.
+</Step>
+
+<Step>
+### Alert settings
+Associate it with your primary Google account. If you're using older versions of reCAPTCHA, specify emails to receive alerts regarding any issues.
+</Step>
+
+<Step>
+### Complete registration
+Lastly, read and accept the terms of service and click **Submit**. Once registered, you'll receive two keys, a **public key** and a **secret key**. If you need further details or encounter any challenges while obtaining your reCAPTCHA keys, Google's [developer documentation](https://developers.google.com/recaptcha/intro) is a valuable resource.
+</Step>
+</Steps>
+
+## Integrating with Blutui
+
+<Steps>
+<Step>
+### Navigate to settings
+Head to your Blutui Project Dashboard. Click on **Settings** and navigate to **Forms** page.
+</Step>
+
+<Step>
+### Key configuration
+Paste the **Public Key** and **Secret Key** from the reCAPTCHA dashboard into their respective fields in the Blutui Project Dashboard.
+</Step>
+
+<Step>
+### Form ID configuration
+Within your form element, assign an ID. For this guide, we'll use contact as the ID:
+
+```canvas
+<form id="contact" method="POST" action="{{ request.url }}" enctype="multipart/form-data">
+```
+</Step>
+
+<Step>
+### Embedding the JavaScript function
+Within your `<form>` tag code, prior to the `submit` button, insert the following JavaScript function:
+
+```canvas
+<script src="https://www.google.com/recaptcha/api.js"></script>
+<script>
+   function onSubmit(token) {
+     document.getElementById("contact").submit();
+   }
+</script>
+```
+
+Ensure the ID within `getElementById()` function matches the ID you assigned to your form.
+</Step>
+
+<Step>
+### Adjusting the submit button
+Modify your form's submit button to include reCAPTCHA v3 attributes:
+
+```canvas
+<button
+	class="g-recaptcha"
+	data-sitekey="{{ settings.forms_recaptcha_key }}"
+	data-callback='onSubmit'
+	data-action='submit'
+>
+	Submit
+</button>
+```
+
+Important attributes to note are `g-recaptcha`, `data-sitekey`, `data-callback`, and `data-action`.
+</Step>
+</Steps>
+
+## Conclusion
+
+Congratulations! You've now incorporated Google's reCAPTCHA v3 into a form on a Blutui project. This integration ensures a seamless user experience, all the while adding an advanced layer of security against spam and bots.

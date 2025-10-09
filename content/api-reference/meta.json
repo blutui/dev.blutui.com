@@ -1,0 +1,17 @@
+{
+  "title": "API reference",
+  "icon": "Code",
+  "root": true,
+  "pages": [
+    "index",
+    "---[Code]API references---",
+    "console",
+    "admin",
+    "project",
+    "---[Building]Agencies---",
+    "...agencies",
+    "---[User]User---",
+    "...user",
+    "!timezones"
+  ]
+}

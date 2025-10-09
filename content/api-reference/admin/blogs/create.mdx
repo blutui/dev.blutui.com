@@ -1,0 +1,54 @@
+---
+title: 'Create blog'
+description: 'Create a blog in a project.'
+api: 'POST {handle}.blutui.com/admin/api/blogs'
+---
+
+### Body parameters
+
+<Parameter name="name" type="string" required>
+The name of the blog.
+</Parameter>
+
+<Parameter name="uri" type="string" required>
+The URL used to view all posts that belong to this blog.
+</Parameter>
+
+<Parameter name="slug" type="string">
+The unique slug of the blog.
+</Parameter>
+
+<Parameter name="layout" type="string">
+The layout used to display all blog posts.
+</Parameter>
+
+<Parameter name="post_layout" type="string">
+The layout used to display a single post in this blog.
+</Parameter>
+
+### Response
+
+```ts tab="Node.js"
+import Blutui from 'blutui'
+
+const blutui = new Blutui('ey....')
+
+blutui.project('one').admin.blogs.create({
+  name: 'Blog',
+  uri: '/blog',
+})
+```
+
+```bash tab="cURL"
+curl -X POST 'https://{handle}.blutui.com/admin/api/blogs' \
+     -H 'Authorization: Bearer ey....' \
+     -H 'Content-Type: application/json'
+     -d $'{
+  "name": "Blog",
+  "uri": "/blog"
+}'
+```
+
+<include>./blog-response.mdx</include>
+
+<include>./blog-response-parameters.mdx</include>

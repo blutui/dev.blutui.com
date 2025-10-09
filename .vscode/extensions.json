@@ -4,6 +4,6 @@
     "dbaeumer.vscode-eslint",
     "EditorConfig.editorconfig",
     "esbenp.prettier-vscode",
-    "stripe.markdoc-language-support"
+    "unifiedjs.vscode-mdx"
   ]
 }
