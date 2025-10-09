@@ -33,7 +33,7 @@ Whether the webhook endpoint is disabled or not.
 
 ### Response
 
-{% partial file="api/admin/webhook-response-parameters.md" /%}
+<include>./webhook-response-parameters.mdx</include>
 
 {% /column %}
 
@@ -62,7 +62,7 @@ curl -X PATCH 'https://{handle}.blutui.com/admin/api/webhooks/9a228a02-305b-4bfc
 
 {% /code-group %}
 
-{% partial file="api/admin/webhook-response.md" /%}
+<include>./webhook-response.mdx</include>
 
 {% /column %}
 

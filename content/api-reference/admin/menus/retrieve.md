@@ -21,7 +21,7 @@ Expand the response for the given items. Expand array accepts `items`.
 
 ### Response
 
-{% partial file="api/admin/menu-response-parameters.md" /%}
+<include>./menu-response-parameters.mdx</include>
 
 {% /column %}
 
@@ -45,7 +45,7 @@ curl -X GET 'https://{handle}.blutui.com/admin/api/menus/9a5b0b29-a4f8-4df6-bf53
 
 {% /code-group %}
 
-{% partial file="api/admin/menu-response.md" /%}
+<include>./menu-response.mdx</include>
 
 {% /column %}
 

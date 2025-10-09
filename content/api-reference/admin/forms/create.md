@@ -43,7 +43,7 @@ The spam score given to a form submission in order to be marked as spam.
 
 ### Response
 
-{% partial file="api/admin/form-response-parameters.md" /%}
+<include>./form-response-parameters.mdx</include>
 
 {% /column %}
 
@@ -76,7 +76,7 @@ curl -X POST 'https://{handle}.blutui.com/admin/api/forms' \
 
 {% /code-group %}
 
-{% partial file="api/admin/form-response.md" /%}
+<include>./form-response.mdx</include>
 
 {% /column %}
 

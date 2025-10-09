@@ -21,7 +21,7 @@ Expand the response for the given items. Expand array accepts `project`.
 
 ### Response
 
-{% partial file="api/console/cassette-response-parameters.md" /%}
+{% partial file="api/console/cassette-response-parameters.mdx</include>
 
 {% /column %}
 
@@ -45,7 +45,7 @@ curl -X GET 'https://api.blutui.com/v1/agencies/studio/cassettes/9d759f5a-7a1f-4
 
 {% /code-group %}
 
-{% partial file="api/console/cassette-response.md" /%}
+{% partial file="api/console/cassette-response.mdx</include>
 
 {% /column %}
 

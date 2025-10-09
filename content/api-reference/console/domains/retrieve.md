@@ -21,7 +21,7 @@ Expand the response for the given items. Expand array accepts `project`.
 
 ### Response
 
-{% partial file="api/console/domain-response-parameters.md" /%}
+{% partial file="api/console/domain-response-parameters.mdx</include>
 
 {% /column %}
 
@@ -45,7 +45,7 @@ curl -X GET 'https://api.blutui.com/v1/agencies/studio/domains/9c17d680-e0af-4f0
 
 {% /code-group %}
 
-{% partial file="api/console/domain-response.md" /%}
+{% partial file="api/console/domain-response.mdx</include>
 
 {% /column %}
 

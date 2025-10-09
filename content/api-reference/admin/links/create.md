@@ -27,7 +27,7 @@ The `name` of the foreign key on the collection that is linked to.
 
 ### Response
 
-{% partial file="api/admin/link-response-parameters.md" /%}
+<include>./link-response-parameters.mdx</include>
 
 {% /column %}
 
@@ -62,7 +62,7 @@ curl -X POST 'https://{handle}.blutui.com/admin/api/collections/collection-id/li
 
 {% /code-group %}
 
-{% partial file="api/admin/link-response.md" /%}
+<include>./link-response.mdx</include>
 
 {% /column %}
 

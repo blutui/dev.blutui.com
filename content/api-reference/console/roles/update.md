@@ -23,7 +23,7 @@ The list of permissions for the role.
 
 ### Response
 
-{% partial file="api/console/role-response-parameters.md" /%}
+{% partial file="api/console/role-response-parameters.mdx</include>
 
 {% /column %}
 
@@ -52,7 +52,7 @@ curl -X PATCH 'https://api.blutui.com/v1/agencies/studio/roles/2' \
 
 {% /code-group %}
 
-{% partial file="api/console/role-response.md" /%}
+{% partial file="api/console/role-response.mdx</include>
 
 {% /column %}
 

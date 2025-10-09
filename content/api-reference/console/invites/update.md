@@ -21,7 +21,7 @@ The ID of the role this invited team member will be apart of.
 
 ### Response
 
-{% partial file="api/console/invite-response-parameters.md" /%}
+{% partial file="api/console/invite-response-parameters.mdx</include>
 
 {% /column %}
 
@@ -50,7 +50,7 @@ curl -X PATCH 'https://api.blutui.com/v1/agencies/studio/invites/9dc1b356-6397-4
 
 {% /code-group %}
 
-{% partial file="api/console/invite-response.md" /%}
+{% partial file="api/console/invite-response.mdx</include>
 
 {% /column %}
 

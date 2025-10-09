@@ -15,7 +15,7 @@ The ID of the link to retrieve.
 
 ### Response
 
-{% partial file="api/admin/link-response-parameters.md" /%}
+<include>./link-response-parameters.mdx</include>
 
 {% /column %}
 
@@ -39,7 +39,7 @@ curl -X GET 'https://{handle}.blutui.com/admin/api/collections/collections-id/li
 
 {% /code-group %}
 
-{% partial file="api/admin/link-response.md" /%}
+<include>./link-response.mdx</include>
 
 {% /column %}
 

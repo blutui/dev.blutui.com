@@ -45,7 +45,7 @@ The asset URL for the agency's avatar.
 
 ### Response
 
-{% partial file="api/agency-response-parameters.md" /%}
+{% partial file="api/agency-response-parameters.mdx</include>
 
 {% /column %}
 
@@ -74,7 +74,7 @@ curl -X PATCH 'https://api.blutui.com/v1/agencies/9af3accc-1536-4336-8cc3-3b3b2a
 
 {% /code-group %}
 
-{% partial file="api/agency-response.md" /%}
+{% partial file="api/agency-response.mdx</include>
 
 {% /column %}
 

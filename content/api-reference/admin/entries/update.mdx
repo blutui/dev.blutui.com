@@ -4,32 +4,21 @@ description: 'Update an entry for a collection in a project.'
 api: 'PATCH {handle}.blutui.com/admin/api/collections/{collection_id}/entries/{id}'
 ---
 
-{% row %}
-
-{% column %}
 ### Path parameters
 
-<Parameter name="id" type="string" required="true" %}
+<Parameter name="id" type="string" required>
 The ID of the collection entry to update.
 </Parameter>
 
 ### Body parameters
 
-<Parameter name="*" type="any" %}
+<Parameter name="*" type="any">
 The key/value pair of a collection field.
 </Parameter>
 
 ### Response
 
-{% partial file="api/admin/entry-response-parameters.md" /%}
-
-{% /column %}
-
-{% column sticky="true" %}
-
-{% code-group %}
-
-```ts {% process=false filename="Node.js" %}
+```ts tab="Node.js"
 import Blutui from 'blutui'
 
 const blutui = new Blutui('ey....')
@@ -39,7 +28,7 @@ blutui.project('one').admin.entries.update('collection-id', '99e2addd-e8d2-45c3-
 })
 ```
 
-```bash {% process=false filename="cURL" %}
+```bash tab="cURL"
 curl -X PATCH 'https://{handle}.blutui.com/admin/api/collections/collection-id/entries/99e2addd-e8d2-45c3-8184-fbcae8a6cf29' \
      -H 'Authorization: Bearer ey....' \
      -H 'Content-Type: application/json'
@@ -48,10 +37,6 @@ curl -X PATCH 'https://{handle}.blutui.com/admin/api/collections/collection-id/e
 }'
 ```
 
-{% /code-group %}
+<include>./entry-response.mdx</include>
 
-{% partial file="api/admin/entry-response.md" /%}
-
-{% /column %}
-
-{% /row %}
+<include>./entry-response-parameters.mdx</include>

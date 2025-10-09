@@ -39,7 +39,7 @@ Whether the menu item should open in a new tab or not.
 
 ### Response
 
-{% partial file="api/admin/menu-response-parameters.md" /%}
+<include>./menu-response-parameters.mdx</include>
 
 {% /column %}
 
@@ -86,7 +86,7 @@ curl -X POST 'https://{handle}.blutui.com/admin/api/menus' \
 
 {% /code-group %}
 
-{% partial file="api/admin/menu-response.md" /%}
+<include>./menu-response.mdx</include>
 
 {% /column %}
 

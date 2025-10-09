@@ -15,7 +15,7 @@ The ID of the user to retrieve.
 
 ### Response
 
-{% partial file="api/admin/user-response-parameters.md" /%}
+<include>./user-response-parameters.mdx</include>
 
 {% /column %}
 
@@ -39,7 +39,7 @@ curl -X GET 'https://{handle}.blutui.com/admin/api/users/9a1aa882-849c-43d1-bb32
 
 {% /code-group %}
 
-{% partial file="api/admin/user-response.md" /%}
+<include>./user-response.mdx</include>
 
 {% /column %}
 

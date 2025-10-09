@@ -9,7 +9,7 @@ api: 'GET api.blutui.com/v1/agencies/{username}/roles/{id}'
 {% column %}
 ### Response
 
-{% partial file="api/console/role-response-parameters.md" /%}
+{% partial file="api/console/role-response-parameters.mdx</include>
 
 {% /column %}
 
@@ -33,7 +33,7 @@ curl -X GET 'https://api.blutui.com/v1/agencies/studio/roles/2' \
 
 {% /code-group %}
 
-{% partial file="api/console/role-response.md" /%}
+{% partial file="api/console/role-response.mdx</include>
 
 {% /column %}
 

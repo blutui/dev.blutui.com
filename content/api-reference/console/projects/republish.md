@@ -9,7 +9,7 @@ api: 'POST api.blutui.com/v1/agencies/{username}/projects/{id}/republish'
 {% column %}
 ### Response
 
-{% partial file="api/console/project-response-parameters.md" /%}
+{% partial file="api/console/project-response-parameters.mdx</include>
 
 {% /column %}
 
@@ -33,7 +33,7 @@ curl -X POST 'https://api.blutui.com/v1/agencies/studio/projects/9c17d680-e0af-4
 
 {% /code-group %}
 
-{% partial file="api/console/project-response.md" /%}
+{% partial file="api/console/project-response.mdx</include>
 
 {% /column %}
 

@@ -13,7 +13,7 @@ api: 'GET api.blutui.com/v1/agencies/{username}/brand'
 If an agency brand doesn't exist a `204` `No Content` response is returned.
 {% /callout %}
 
-{% partial file="api/console/brand-response-parameters.md" /%}
+{% partial file="api/console/brand-response-parameters.mdx</include>
 
 {% /column %}
 

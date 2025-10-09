@@ -53,7 +53,7 @@ curl -X GET 'https://api.blutui.com/v1/agencies/studio/roles' \
 
 {% /code-group %}
 
-{% partial file="api/console/role-response-list.md" /%}
+{% partial file="api/console/role-response-list.mdx</include>
 
 {% /column %}
 

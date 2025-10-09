@@ -53,7 +53,7 @@ curl -X GET 'https://api.blutui.com/v1/agencies/studio/projects/archived' \
 
 {% /code-group %}
 
-{% partial file="api/console/project-response-list.md" /%}
+{% partial file="api/console/project-response-list.mdx</include>
 
 {% /column %}
 

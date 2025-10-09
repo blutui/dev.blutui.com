@@ -15,7 +15,7 @@ The ID of the form to retrieve.
 
 ### Response
 
-{% partial file="api/admin/form-response-parameters.md" /%}
+<include>./form-response-parameters.mdx</include>
 
 {% /column %}
 
@@ -39,7 +39,7 @@ curl -X GET 'https://{handle}.blutui.com/admin/api/forms/0195b657-82dd-718a-8092
 
 {% /code-group %}
 
-{% partial file="api/admin/form-response.md" /%}
+<include>./form-response.mdx</include>
 
 {% /column %}
 

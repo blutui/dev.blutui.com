@@ -57,7 +57,7 @@ curl -X GET 'https://{handle}.blutui.com/admin/api/webhooks' \
 
 {% /code-group %}
 
-{% partial file="api/admin/webhook-response-list.md" /%}
+<include>./webhook-response-list.mdx</include>
 
 {% /column %}
 

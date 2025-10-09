@@ -57,7 +57,7 @@ curl -X GET 'https://{handle}.blutui.com/admin/api/route_patterns' \
 
 {% /code-group %}
 
-{% partial file="api/admin/route-pattern-response-list.md" /%}
+<include>./route-pattern-response-list.mdx</include>
 
 {% /column %}
 

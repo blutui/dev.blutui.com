@@ -54,7 +54,7 @@ curl -X POST 'https://api.blutui.com/v1/agencies/studio/projects/search' \
 
 {% /code-group %}
 
-{% partial file="api/console/project-response-list.md" /%}
+{% partial file="api/console/project-response-list.mdx</include>
 
 {% /column %}
 

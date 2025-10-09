@@ -97,7 +97,7 @@ Whether the form field is required or not.
 
 ### Response
 
-{% partial file="api/admin/form-response-parameters.md" /%}
+<include>./form-response-parameters.mdx</include>
 
 {% /column %}
 
@@ -126,7 +126,7 @@ curl -X PATCH 'https://{handle}.blutui.com/admin/api/forms/99e2addd-e8d2-45c3-81
 
 {% /code-group %}
 
-{% partial file="api/admin/form-response.md" /%}
+<include>./form-response.mdx</include>
 
 {% /column %}
 

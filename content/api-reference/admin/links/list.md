@@ -57,7 +57,7 @@ curl -X GET 'https://{handle}.blutui.com/admin/api/collections/collection-id/lin
 
 {% /code-group %}
 
-{% partial file="api/admin/link-response-list.md" /%}
+<include>./link-response-list.mdx</include>
 
 {% /column %}
 

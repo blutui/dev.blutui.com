@@ -15,7 +15,7 @@ The ID of the route_pattern to retrieve.
 
 ### Response
 
-{% partial file="api/admin/route-pattern-response-parameters.md" /%}
+<include>./route-pattern-response-parameters.mdx</include>
 
 {% /column %}
 
@@ -39,7 +39,7 @@ curl -X GET 'https://{handle}.blutui.com/admin/api/route_patterns/99e280a8-dfc6-
 
 {% /code-group %}
 
-{% partial file="api/admin/route-pattern-response.md" /%}
+<include>./route-pattern-response.mdx</include>
 
 {% /column %}
 

@@ -15,7 +15,7 @@ The ID of the project to restore.
 
 ### Response
 
-{% partial file="api/console/project-response-parameters.md" /%}
+{% partial file="api/console/project-response-parameters.mdx</include>
 
 {% /column %}
 
@@ -39,7 +39,7 @@ curl -X DELETE 'https://api.blutui.com/v1/agencies/studio/projects/9c17d680-e0af
 
 {% /code-group %}
 
-{% partial file="api/console/project-response.md" /%}
+{% partial file="api/console/project-response.mdx</include>
 
 {% /column %}
 

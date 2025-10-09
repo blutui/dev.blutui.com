@@ -45,7 +45,7 @@ The date and time when this page will be published.
 
 ### Response
 
-{% partial file="api/admin/page-response-parameters.md" /%}
+<include>./page-response-parameters.mdx</include>
 
 {% /column %}
 
@@ -74,7 +74,7 @@ curl -X PATCH 'https://{handle}.blutui.com/admin/api/pages/99d401fe-8a1a-486f-9f
 
 {% /code-group %}
 
-{% partial file="api/admin/page-response.md" /%}
+<include>./page-response.mdx</include>
 
 {% /column %}
 

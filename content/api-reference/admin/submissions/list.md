@@ -57,7 +57,7 @@ curl -X GET 'https://{handle}.blutui.com/admin/api/forms/form-id/submissions' \
 
 {% /code-group %}
 
-{% partial file="api/admin/submission-response-list.md" /%}
+<include>./submission-response-list.mdx</include>
 
 {% /column %}
 

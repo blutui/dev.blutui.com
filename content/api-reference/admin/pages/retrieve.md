@@ -15,7 +15,7 @@ The ID of the page to retrieve.
 
 ### Response
 
-{% partial file="api/admin/page-response-parameters.md" /%}
+<include>./page-response-parameters.mdx</include>
 
 {% /column %}
 
@@ -39,7 +39,7 @@ curl -X GET 'https://{handle}.blutui.com/admin/api/pages/99d401fe-8a1a-486f-9f1a
 
 {% /code-group %}
 
-{% partial file="api/admin/page-response.md" /%}
+<include>./page-response.mdx</include>
 
 {% /column %}
 

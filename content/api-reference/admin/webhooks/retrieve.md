@@ -15,7 +15,7 @@ The ID of the webhook endpoint to retrieve.
 
 ### Response
 
-{% partial file="api/admin/webhook-response-parameters.md" /%}
+<include>./webhook-response-parameters.mdx</include>
 
 {% /column %}
 
@@ -39,7 +39,7 @@ curl -X GET 'https://{handle}.blutui.com/admin/api/webhooks/9a228a02-305b-4bfc-8
 
 {% /code-group %}
 
-{% partial file="api/admin/webhook-response.md" /%}
+<include>./webhook-response.mdx</include>
 
 {% /column %}
 

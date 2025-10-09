@@ -23,7 +23,7 @@ The image URL of the agency logo.
 
 ### Response
 
-{% partial file="api/console/brand-response-parameters.md" /%}
+{% partial file="api/console/brand-response-parameters.mdx</include>
 
 {% /column %}
 

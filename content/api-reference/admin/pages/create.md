@@ -39,7 +39,7 @@ The date and time when this page will be published.
 
 ### Response
 
-{% partial file="api/admin/page-response-parameters.md" /%}
+<include>./page-response-parameters.mdx</include>
 
 {% /column %}
 
@@ -70,7 +70,7 @@ curl -X POST 'https://{handle}.blutui.com/admin/api/pages' \
 
 {% /code-group %}
 
-{% partial file="api/admin/page-response.md" /%}
+<include>./page-response.mdx</include>
 
 {% /column %}
 

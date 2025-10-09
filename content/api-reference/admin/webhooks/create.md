@@ -23,7 +23,7 @@ The webhook event.
 
 ### Response
 
-{% partial file="api/admin/webhook-response-parameters.md" /%}
+<include>./webhook-response-parameters.mdx</include>
 
 {% /column %}
 
@@ -54,7 +54,7 @@ curl -X POST 'https://{handle}.blutui.com/admin/api/webhooks' \
 
 {% /code-group %}
 
-{% partial file="api/admin/webhook-response.md" /%}
+<include>./webhook-response.mdx</include>
 
 {% /column %}
 

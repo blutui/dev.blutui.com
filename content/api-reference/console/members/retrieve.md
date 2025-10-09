@@ -15,7 +15,7 @@ The ID of the member to retrieve.
 
 ### Response
 
-{% partial file="api/console/member-response-parameters.md" /%}
+{% partial file="api/console/member-response-parameters.mdx</include>
 
 {% /column %}
 
@@ -39,7 +39,7 @@ curl -X GET 'https://api.blutui.com/v1/agencies/studio/members/99bc147e-3ad5-4b0
 
 {% /code-group %}
 
-{% partial file="api/console/member-response.md" /%}
+{% partial file="api/console/member-response.mdx</include>
 
 {% /column %}
 

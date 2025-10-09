@@ -37,7 +37,7 @@ The value of the route pattern if any.
 
 ### Response
 
-{% partial file="api/admin/route-pattern-response-parameters.md" /%}
+<include>./route-pattern-response-parameters.mdx</include>
 
 {% /column %}
 
@@ -66,7 +66,7 @@ curl -X PATCH 'https://{handle}.blutui.com/admin/api/route_patterns/99e280a8-dfc
 
 {% /code-group %}
 
-{% partial file="api/admin/route-pattern-response.md" /%}
+<include>./route-pattern-response.mdx</include>
 
 {% /column %}
 

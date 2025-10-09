@@ -15,7 +15,7 @@ The ID of the redirect to retrieve.
 
 ### Response
 
-{% partial file="api/admin/redirect-response-parameters.md" /%}
+<include>./redirect-response-parameters.mdx</include>
 
 {% /column %}
 
@@ -39,7 +39,7 @@ curl -X GET 'https://{handle}.blutui.com/admin/api/redirects/9a5b0b29-a4f8-4df6-
 
 {% /code-group %}
 
-{% partial file="api/admin/redirect-response.md" /%}
+<include>./redirect-response.mdx</include>
 
 {% /column %}
 

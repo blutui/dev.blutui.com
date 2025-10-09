@@ -41,7 +41,7 @@ Whether the menu item should open in a new tab or not.
 
 ### Response
 
-{% partial file="api/admin/menu-response-parameters.md" /%}
+<include>./menu-response-parameters.mdx</include>
 
 {% /column %}
 
@@ -70,7 +70,7 @@ curl -X PATCH 'https://{handle}.blutui.com/admin/api/menus/9a5b0b29-a4f8-4df6-bf
 
 {% /code-group %}
 
-{% partial file="api/admin/menu-response.md" /%}
+<include>./menu-response.mdx</include>
 
 {% /column %}
 

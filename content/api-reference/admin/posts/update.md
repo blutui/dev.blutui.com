@@ -49,7 +49,7 @@ The URL of the featured image.
 
 ### Response
 
-{% partial file="api/admin/post-response-parameters.md" /%}
+<include>./post-response-parameters.mdx</include>
 
 {% /column %}
 
@@ -78,7 +78,7 @@ curl -X PATCH 'https://{handle}.blutui.com/admin/api/posts/9a53098c-29df-4347-bf
 
 {% /code-group %}
 
-{% partial file="api/admin/post-response.md" /%}
+<include>./post-response.mdx</include>
 
 {% /column %}
 

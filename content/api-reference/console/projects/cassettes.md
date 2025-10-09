@@ -25,7 +25,7 @@ The current page used to display the pagination results.
 
 ### Response
 
-{% partial file="api/console/cassette-response-parameters.md" /%}
+{% partial file="api/console/cassette-response-parameters.mdx</include>
 
 {% /column %}
 
@@ -49,7 +49,7 @@ curl -X GET 'https://api.blutui.com/v1/agencies/studio/projects/9d759f5a-7a1f-44
 
 {% /code-group %}
 
-{% partial file="api/console/cassette-response-list.md" /%}
+{% partial file="api/console/cassette-response-list.mdx</include>
 
 {% /column %}
 

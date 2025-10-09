@@ -25,7 +25,7 @@ Determine if the team member should have full access to the agency.
 
 ### Response
 
-{% partial file="api/console/member-response-parameters.md" /%}
+{% partial file="api/console/member-response-parameters.mdx</include>
 
 {% /column %}
 
@@ -54,7 +54,7 @@ curl -X PATCH 'https://api.blutui.com/v1/agencies/studio/members/99bc147e-3ad5-4
 
 {% /code-group %}
 
-{% partial file="api/console/member-response.md" /%}
+{% partial file="api/console/member-response.mdx</include>
 
 {% /column %}
 

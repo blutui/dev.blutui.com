@@ -27,7 +27,7 @@ The description of the project.
 
 ### Response
 
-{% partial file="api/console/project-response-parameters.md" /%}
+{% partial file="api/console/project-response-parameters.mdx</include>
 
 {% /column %}
 
@@ -56,7 +56,7 @@ curl -X POST 'https://api.blutui.com/v1/agencies/studio/projects' \
 
 {% /code-group %}
 
-{% partial file="api/console/project-response.md" /%}
+{% partial file="api/console/project-response.mdx</include>
 
 {% /column %}
 

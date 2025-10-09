@@ -15,7 +15,7 @@ The ID of the blog post to retrieve.
 
 ### Response
 
-{% partial file="api/admin/post-response-parameters.md" /%}
+<include>./post-response-parameters.mdx</include>
 
 {% /column %}
 
@@ -39,7 +39,7 @@ curl -X GET 'https://{handle}.blutui.com/admin/api/posts/9a53098c-29df-4347-bfdb
 
 {% /code-group %}
 
-{% partial file="api/admin/post-response.md" /%}
+<include>./post-response.mdx</include>
 
 {% /column %}
 

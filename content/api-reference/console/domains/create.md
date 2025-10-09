@@ -19,7 +19,7 @@ The ID of the project this domain will belong to.
 
 ### Response
 
-{% partial file="api/console/domain-response-parameters.md" /%}
+{% partial file="api/console/domain-response-parameters.mdx</include>
 
 {% /column %}
 
@@ -50,7 +50,7 @@ curl -X POST 'https://api.blutui.com/v1/agencies/studio/domains' \
 
 {% /code-group %}
 
-{% partial file="api/console/domain-response.md" /%}
+{% partial file="api/console/domain-response.mdx</include>
 
 {% /column %}
 

@@ -43,7 +43,7 @@ The URL of the featured image.
 
 ### Response
 
-{% partial file="api/admin/post-response-parameters.md" /%}
+<include>./post-response-parameters.mdx</include>
 
 {% /column %}
 
@@ -82,7 +82,7 @@ curl -X POST 'https://{handle}.blutui.com/admin/api/posts' \
 
 {% /code-group %}
 
-{% partial file="api/admin/post-response.md" /%}
+<include>./post-response.mdx</include>
 
 {% /column %}
 

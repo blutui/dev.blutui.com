@@ -26,7 +26,7 @@ The to url of the redirect.
 
 ### Response
 
-{% partial file="api/admin/redirect-response-parameters.md" /%}
+<include>./redirect-response-parameters.mdx</include>
 
 {% /column %}
 
@@ -57,7 +57,7 @@ curl -X PATCH 'https://{handle}.blutui.com/admin/api/redirects/9a5b0b29-a4f8-4df
 
 {% /code-group %}
 
-{% partial file="api/admin/redirect-response.md" /%}
+<include>./redirect-response.mdx</include>
 
 {% /column %}
 

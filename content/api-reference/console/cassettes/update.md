@@ -21,7 +21,7 @@ The name of the Cassette.
 
 ### Response
 
-{% partial file="api/console/cassette-response-parameters.md" /%}
+{% partial file="api/console/cassette-response-parameters.mdx</include>
 
 {% /column %}
 
@@ -50,7 +50,7 @@ curl -X PATCH 'https://api.blutui.com/v1/agencies/studio/cassettes/9d759f5a-7a1f
 
 {% /code-group %}
 
-{% partial file="api/console/cassette-response.md" /%}
+{% partial file="api/console/cassette-response.mdx</include>
 
 {% /column %}
 

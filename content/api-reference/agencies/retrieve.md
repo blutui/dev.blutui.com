@@ -15,7 +15,7 @@ The ID of the agency to retrieve.
 
 ### Response
 
-{% partial file="api/agency-response-parameters.md" /%}
+{% partial file="api/agency-response-parameters.mdx</include>
 
 {% /column %}
 
@@ -39,7 +39,7 @@ curl -X GET 'https://api.blutui.com/v1/agencies/9af3accc-1536-4336-8cc3-3b3b2a96
 
 {% /code-group %}
 
-{% partial file="api/agency-response.md" /%}
+{% partial file="api/agency-response.mdx</include>
 
 {% /column %}
 

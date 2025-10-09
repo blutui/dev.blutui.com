@@ -15,7 +15,7 @@ The ID of the domain to refresh the verification token.
 
 ### Response
 
-{% partial file="api/console/domain-response-parameters.md" /%}
+{% partial file="api/console/domain-response-parameters.mdx</include>
 
 {% /column %}
 
@@ -39,7 +39,7 @@ curl -X POST 'https://api.blutui.com/v1/agencies/studio/domains/9c17d680-e0af-4f
 
 {% /code-group %}
 
-{% partial file="api/console/domain-response.md" /%}
+{% partial file="api/console/domain-response.mdx</include>
 
 {% /column %}
 

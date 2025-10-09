@@ -53,7 +53,7 @@ curl -X GET 'https://{handle}.blutui.com/admin/api/redirects' \
 
 {% /code-group %}
 
-{% partial file="api/admin/redirect-response-list.md" /%}
+<include>./redirect-response-list.mdx</include>
 
 {% /column %}
 

@@ -23,7 +23,7 @@ The unique handle for the Cassette.
 
 ### Response
 
-{% partial file="api/console/cassette-response-parameters.md" /%}
+{% partial file="api/console/cassette-response-parameters.mdx</include>
 
 {% /column %}
 
@@ -56,7 +56,7 @@ curl -X POST 'https://api.blutui.com/v1/agencies/studio/cassettes' \
 
 {% /code-group %}
 
-{% partial file="api/console/cassette-response.md" /%}
+{% partial file="api/console/cassette-response.mdx</include>
 
 {% /column %}
 
