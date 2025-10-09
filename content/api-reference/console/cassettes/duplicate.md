@@ -1,7 +1,7 @@
 ---
 title: 'Duplicate Cassette'
 description: 'Duplicate a Cassette for a project your agency.'
-api: 'POST /v1/agencies/{username}/cassettes/{id}/duplicate'
+api: 'POST api.blutui.com/v1/agencies/{username}/cassettes/{id}/duplicate'
 ---
 
 {% row %}
@@ -9,19 +9,19 @@ api: 'POST /v1/agencies/{username}/cassettes/{id}/duplicate'
 {% column %}
 ### Path parameters
 
-{% parameter name="id" type="string" required="true" %}
+<Parameter name="id" type="string" required="true" %}
 The ID of the Cassette to duplicate.
-{% /parameter %}
+</Parameter>
 
 ### Body parameters
 
-{% parameter name="name" type="string" required=true %}
+<Parameter name="name" type="string" required=true %}
 The name of the Cassette.
-{% /parameter %}
+</Parameter>
 
-{% parameter name="handle" type="array" required=true %}
+<Parameter name="handle" type="array" required=true %}
 The unique handle for the Cassette.
-{% /parameter %}
+</Parameter>
 
 ### Response
 

@@ -1,0 +1,35 @@
+---
+title: Role response parameters
+---
+
+<Parameter name="id" type="string" %}
+The unique identifier for this role.
+</Parameter>
+
+<Parameter name="object" type="string" %}
+This will always contain `role` for this endpoint.
+</Parameter>
+
+<Parameter name="name" type="string" %}
+The role name.
+</Parameter>
+
+<Parameter name="description" type="string | null" %}
+The description of the role.
+</Parameter>
+
+<Parameter name="is_super" type="boolean" %}
+Determine if the role is a super role. Super roles cannot be removed.
+</Parameter>
+
+<Parameter name="permissions" type="object" %}
+An object defining the permissions associated with the role. Each key in the object represents a specific permission, and the value is a boolean indicating whether the permission is granted (true) or denied (false).
+</Parameter>
+
+<Parameter name="created_at" type="timestamp" %}
+The role's created at timestamp.
+</Parameter>
+
+<Parameter name="updated_at" type="timestamp" %}
+The role's updated at timestamp.
+</Parameter>

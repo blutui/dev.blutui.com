@@ -9,25 +9,25 @@ api: 'POST {handle}.blutui.com/admin/api/route_patterns'
 {% column %}
 ### Body parameters
 
-{% parameter name="template" type="string" required="true" %}
+<Parameter name="template" type="string" required="true" %}
 The template used to display the resolved route.
-{% /parameter %}
+</Parameter>
 
-{% parameter name="pattern" type="array" required="true" %}
+<Parameter name="pattern" type="array" required="true" %}
 A list of route patterns. Min: 1 pattern.
-{% /parameter %}
+</Parameter>
 
-{% parameter name="pattern.*.type" type="string" required="true" %}
+<Parameter name="pattern.*.type" type="string" required="true" %}
 The type of route pattern.
-{% /parameter %}
+</Parameter>
 
-{% parameter name="pattern.*.name" type="string" required="true" %}
+<Parameter name="pattern.*.name" type="string" required="true" %}
 The name of the route pattern.
-{% /parameter %}
+</Parameter>
 
-{% parameter name="pattern.*.value" type="string | null" %}
+<Parameter name="pattern.*.value" type="string | null" %}
 The value of the route pattern if any.
-{% /parameter %}
+</Parameter>
 
 ### Response
 

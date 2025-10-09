@@ -1,7 +1,7 @@
 ---
 title: 'Update member'
 description: 'Update a team member in your agency.'
-api: 'PATCH /v1/agencies/{username}/members/{id}'
+api: 'PATCH api.blutui.com/v1/agencies/{username}/members/{id}'
 ---
 
 {% row %}
@@ -9,19 +9,19 @@ api: 'PATCH /v1/agencies/{username}/members/{id}'
 {% column %}
 ### Path parameters
 
-{% parameter name="id" type="string" required="true" %}
+<Parameter name="id" type="string" required="true" %}
 The ID of the member to update.
-{% /parameter %}
+</Parameter>
 
 ### Body parameters
 
-{% parameter name="role" type="integer" %}
+<Parameter name="role" type="integer" %}
 The ID of the role this member will be apart of.
-{% /parameter %}
+</Parameter>
 
-{% parameter name="has_full_access" type="boolean" %}
+<Parameter name="has_full_access" type="boolean" %}
 Determine if the team member should have full access to the agency.
-{% /parameter %}
+</Parameter>
 
 ### Response
 

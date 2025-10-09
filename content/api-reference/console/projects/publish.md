@@ -1,7 +1,7 @@
 ---
 title: 'Publish project'
 description: 'Publish a project in your agency.'
-api: 'POST /v1/agencies/{username}/projects/{id}/publish'
+api: 'POST api.blutui.com/v1/agencies/{username}/projects/{id}/publish'
 ---
 
 {% row %}

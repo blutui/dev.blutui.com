@@ -1,7 +1,7 @@
 ---
 title: 'Remove role'
 description: 'Remove a role in your agency.'
-api: 'DELETE /v1/agencies/{username}/roles/{id}'
+api: 'DELETE api.blutui.com/v1/agencies/{username}/roles/{id}'
 ---
 
 {% row %}
@@ -9,23 +9,23 @@ api: 'DELETE /v1/agencies/{username}/roles/{id}'
 {% column %}
 ### Path parameters
 
-{% parameter name="id" type="string" required="true" %}
+<Parameter name="id" type="string" required="true" %}
 The ID of the role to remove.
-{% /parameter %}
+</Parameter>
 
 ### Response
 
-{% parameter name="id" type="string" %}
+<Parameter name="id" type="string" %}
 The unique identifier for this role.
-{% /parameter %}
+</Parameter>
 
-{% parameter name="object" type="string" %}
+<Parameter name="object" type="string" %}
 This will always contain `role` for this endpoint.
-{% /parameter %}
+</Parameter>
 
-{% parameter name="deleted" type="boolean" %}
+<Parameter name="deleted" type="boolean" %}
 Determine if the object was successfully deleted.
-{% /parameter %}
+</Parameter>
 
 {% /column %}
 

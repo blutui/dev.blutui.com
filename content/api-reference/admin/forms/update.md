@@ -9,91 +9,91 @@ api: 'PATCH {handle}.blutui.com/admin/api/forms/{id}'
 {% column %}
 ### Path parameters
 
-{% parameter name="id" type="string" required="true" %}
+<Parameter name="id" type="string" required="true" %}
 The ID of the form to update.
-{% /parameter %}
+</Parameter>
 
 ### Body parameters
 
-{% parameter name="name" type="string" %}
+<Parameter name="name" type="string" %}
 The name of this form.
-{% /parameter %}
+</Parameter>
 
-{% parameter name="handle" type="string" %}
+<Parameter name="handle" type="string" %}
 The unique handle for this form.
-{% /parameter %}
+</Parameter>
 
-{% parameter name="template" type="string" %}
+<Parameter name="template" type="string" %}
 The template used to display this form.
-{% /parameter %}
+</Parameter>
 
-{% parameter name="email_from" type="string" %}
+<Parameter name="email_from" type="string" %}
 The sender email address.
-{% /parameter %}
+</Parameter>
 
-{% parameter name="email_to" type="string" %}
+<Parameter name="email_to" type="string" %}
 The recipient email address.
-{% /parameter %}
+</Parameter>
 
-{% parameter name="email_cc" type="string" %}
+<Parameter name="email_cc" type="string" %}
 The carbon copy email address.
-{% /parameter %}
+</Parameter>
 
-{% parameter name="email_bcc" type="string" %}
+<Parameter name="email_bcc" type="string" %}
 The blind carbon copy email address.
-{% /parameter %}
+</Parameter>
 
-{% parameter name="email_reply_to" type="string" %}
+<Parameter name="email_reply_to" type="string" %}
 The reply to email address.
-{% /parameter %}
+</Parameter>
 
-{% parameter name="store_submissions" type="boolean" %}
+<Parameter name="store_submissions" type="boolean" %}
 Whether the form submissions should be stored or not.
-{% /parameter %}
+</Parameter>
 
-{% parameter name="detects_spam" type="boolean" %}
+<Parameter name="detects_spam" type="boolean" %}
 Whether the form submissions should be checked for spam or not.
-{% /parameter %}
+</Parameter>
 
-{% parameter name="spam_score" type="number" %}
+<Parameter name="spam_score" type="number" %}
 The spam score given to a form submission in order to be marked as spam.
-{% /parameter %}
+</Parameter>
 
-{% parameter name="fields" type="array" %}
+<Parameter name="fields" type="array" %}
 The fields for this form.
-{% /parameter %}
+</Parameter>
 
-{% parameter name="fields.*.name" type="string" required="true" %}
+<Parameter name="fields.*.name" type="string" required="true" %}
 The name of the form field.
-{% /parameter %}
+</Parameter>
 
-{% parameter name="fields.*.label" type="string" required="true" %}
+<Parameter name="fields.*.label" type="string" required="true" %}
 The label for the form field.
-{% /parameter %}
+</Parameter>
 
-{% parameter name="fields.*.type" type="string" required="true" %}
+<Parameter name="fields.*.type" type="string" required="true" %}
 The type of form field.
-{% /parameter %}
+</Parameter>
 
-{% parameter name="fields.*.default_value" type="string | null" %}
+<Parameter name="fields.*.default_value" type="string | null" %}
 The default value for the form field.
-{% /parameter %}
+</Parameter>
 
-{% parameter name="fields.*.help_text" type="string | null" %}
+<Parameter name="fields.*.help_text" type="string | null" %}
 The a short description about this form field.
-{% /parameter %}
+</Parameter>
 
-{% parameter name="fields.*.order" type="number" %}
+<Parameter name="fields.*.order" type="number" %}
 The order of the form field.
-{% /parameter %}
+</Parameter>
 
-{% parameter name="fields.*.placeholder" type="string | null" %}
+<Parameter name="fields.*.placeholder" type="string | null" %}
 The placeholder value for the form field.
-{% /parameter %}
+</Parameter>
 
-{% parameter name="fields.*.required" type="string" %}
+<Parameter name="fields.*.required" type="string" %}
 Whether the form field is required or not.
-{% /parameter %}
+</Parameter>
 
 ### Response
 

@@ -9,9 +9,9 @@ api: 'GET {handle}.blutui.com/admin/api/users/{id}'
 {% column %}
 ### Path parameters
 
-{% parameter name="id" type="string" required="true" %}
+<Parameter name="id" type="string" required="true" %}
 The ID of the user to retrieve.
-{% /parameter %}
+</Parameter>
 
 ### Response
 

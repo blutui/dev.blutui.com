@@ -1,7 +1,7 @@
 ---
 title: 'Update brand'
 description: 'Update the current agency brand.'
-api: 'PATCH /v1/agencies/{username}/brand'
+api: 'PATCH api.blutui.com/v1/agencies/{username}/brand'
 ---
 
 {% row %}
@@ -9,17 +9,17 @@ api: 'PATCH /v1/agencies/{username}/brand'
 {% column %}
 ### Body parameters
 
-{% parameter name="logo" type="string" %}
+<Parameter name="logo" type="string" %}
 The image URL of the agency logo.
-{% /parameter %}
+</Parameter>
 
-{% parameter name="primary_color" type="string" %}
+<Parameter name="primary_color" type="string" %}
 The primary hexadecimal color of the agency brand.
-{% /parameter %}
+</Parameter>
 
-{% parameter name="secondary_color" type="string" %}
+<Parameter name="secondary_color" type="string" %}
 The secondary hexadecimal color of the agency brand.
-{% /parameter %}
+</Parameter>
 
 ### Response
 

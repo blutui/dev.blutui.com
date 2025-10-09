@@ -9,31 +9,31 @@ api: 'GET {handle}.blutui.com/admin/api/collections/{collection_id}/links'
 {% column %}
 ### Query parameters
 
-{% parameter name="limit" type="integer | default: 10" %}
+<Parameter name="limit" type="integer | default: 10" %}
 Limit the number of objects to return, ranging between 1 and 20.
-{% /parameter %}
+</Parameter>
 
-{% parameter name="page" type="integer | default: 1" %}
+<Parameter name="page" type="integer | default: 1" %}
 The current page used to display the pagination results.
-{% /parameter %}
+</Parameter>
 
-{% parameter name="expand" type="string[]" %}
+<Parameter name="expand" type="string[]" %}
 Expand the response for the given items. Expand array accepts `list`.
-{% /parameter %}
+</Parameter>
 
 ### Response
 
-{% parameter name="object" type="string" %}
+<Parameter name="object" type="string" %}
 This will always contain `list` for this endpoint.
-{% /parameter %}
+</Parameter>
 
-{% parameter name="data" type="array" %}
+<Parameter name="data" type="array" %}
 An array of up to `limit` collection link resources. If no collection links are available, an empty array is returned.
-{% /parameter %}
+</Parameter>
 
-{% parameter name="meta" type="object" %}
+<Parameter name="meta" type="object" %}
 Additional information about the list.
-{% /parameter %}
+</Parameter>
 
 {% /column %}
 

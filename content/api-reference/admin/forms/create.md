@@ -9,37 +9,37 @@ api: 'POST {handle}.blutui.com/admin/api/forms'
 {% column %}
 ### Body parameters
 
-{% parameter name="name" type="string" required="true" %}
+<Parameter name="name" type="string" required="true" %}
 The name of this form.
-{% /parameter %}
+</Parameter>
 
-{% parameter name="handle" type="string" required="true" %}
+<Parameter name="handle" type="string" required="true" %}
 The unique handle for this form.
-{% /parameter %}
+</Parameter>
 
-{% parameter name="template" type="string" required="true" %}
+<Parameter name="template" type="string" required="true" %}
 The template used to display this form.
-{% /parameter %}
+</Parameter>
 
-{% parameter name="email_from" type="string" %}
+<Parameter name="email_from" type="string" %}
 The sender email address.
-{% /parameter %}
+</Parameter>
 
-{% parameter name="email_to" type="string" %}
+<Parameter name="email_to" type="string" %}
 The recipient email address.
-{% /parameter %}
+</Parameter>
 
-{% parameter name="store_submissions" type="boolean" %}
+<Parameter name="store_submissions" type="boolean" %}
 Whether the form submissions should be stored or not.
-{% /parameter %}
+</Parameter>
 
-{% parameter name="detects_spam" type="boolean" %}
+<Parameter name="detects_spam" type="boolean" %}
 Whether the form submissions should be checked for spam or not.
-{% /parameter %}
+</Parameter>
 
-{% parameter name="spam_score" type="number" %}
+<Parameter name="spam_score" type="number" %}
 The spam score given to a form submission in order to be marked as spam.
-{% /parameter %}
+</Parameter>
 
 ### Response
 

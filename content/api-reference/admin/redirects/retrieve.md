@@ -9,9 +9,9 @@ api: 'GET {handle}.blutui.com/admin/api/redirects/{id}'
 {% column %}
 ### Path parameters
 
-{% parameter name="id" type="string" required="true" %}
+<Parameter name="id" type="string" required="true" %}
 The ID of the redirect to retrieve.
-{% /parameter %}
+</Parameter>
 
 ### Response
 

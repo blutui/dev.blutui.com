@@ -9,15 +9,15 @@ api: 'PATCH {handle}.blutui.com/admin/api/collections/{collection_id}/entries/{i
 {% column %}
 ### Path parameters
 
-{% parameter name="id" type="string" required="true" %}
+<Parameter name="id" type="string" required="true" %}
 The ID of the collection entry to update.
-{% /parameter %}
+</Parameter>
 
 ### Body parameters
 
-{% parameter name="*" type="any" %}
+<Parameter name="*" type="any" %}
 The key/value pair of a collection field.
-{% /parameter %}
+</Parameter>
 
 ### Response
 

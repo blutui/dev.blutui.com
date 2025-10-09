@@ -1,7 +1,7 @@
 ---
 title: 'Update agency'
 description: 'Update an agency for the currently authenticated user.'
-api: 'PATCH /v1/agencies/{id}'
+api: 'PATCH api.blutui.com/v1/agencies/{id}'
 ---
 
 {% row %}
@@ -9,39 +9,39 @@ api: 'PATCH /v1/agencies/{id}'
 {% column %}
 ### Path parameters
 
-{% parameter name="id" type="string" required="true" %}
+<Parameter name="id" type="string" required="true" %}
 The ID of the agency to update.
-{% /parameter %}
+</Parameter>
 
 ### Body parameters
 
-{% parameter name="name" type="string" %}
+<Parameter name="name" type="string" %}
 The name of the agency.
-{% /parameter %}
+</Parameter>
 
-{% parameter name="email" type="string" %}
+<Parameter name="email" type="string" %}
 The agency's primary email address.
-{% /parameter %}
+</Parameter>
 
-{% parameter name="location" type="string" %}
+<Parameter name="location" type="string" %}
 The ISO 3166 country code for the agency's location.
-{% /parameter %}
+</Parameter>
 
-{% parameter name="timezone" type="string" %}
+<Parameter name="timezone" type="string" %}
 The agency's preferred timezone. The value must be a valid timezone string, check the [list of supported timezones](/api/timezones) for more information.
-{% /parameter %}
+</Parameter>
 
-{% parameter name="url" type="string | null" %}
+<Parameter name="url" type="string | null" %}
 The agency's website URL.
-{% /parameter %}
+</Parameter>
 
-{% parameter name="description" type="string | null" %}
+<Parameter name="description" type="string | null" %}
 A short description about the agency.
-{% /parameter %}
+</Parameter>
 
-{% parameter name="avatar" type="string | null" %}
+<Parameter name="avatar" type="string | null" %}
 The asset URL for the agency's avatar.
-{% /parameter %}
+</Parameter>
 
 ### Response
 

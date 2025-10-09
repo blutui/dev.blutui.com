@@ -9,35 +9,35 @@ api: 'PATCH {handle}.blutui.com/admin/api/menus/{id}'
 {% column %}
 ### Path parameters
 
-{% parameter name="id" type="string" required="true" %}
+<Parameter name="id" type="string" required="true" %}
 The ID of the menu to update.
-{% /parameter %}
+</Parameter>
 
 ### Body parameters
 
-{% parameter name="name" type="string" %}
+<Parameter name="name" type="string" %}
 The name of the menu.
-{% /parameter %}
+</Parameter>
 
-{% parameter name="items" type="array" %}
+<Parameter name="items" type="array" %}
 The list of items in the menu.
-{% /parameter %}
+</Parameter>
 
-{% parameter name="items.*.label" type="string" %}
+<Parameter name="items.*.label" type="string" %}
 The label for the menu item.
-{% /parameter %}
+</Parameter>
 
-{% parameter name="items.*.url" type="string" %}
+<Parameter name="items.*.url" type="string" %}
 The URL for the menu item.
-{% /parameter %}
+</Parameter>
 
-{% parameter name="items.*.active" type="boolean" %}
+<Parameter name="items.*.active" type="boolean" %}
 Whether the menu item is active or not.
-{% /parameter %}
+</Parameter>
 
-{% parameter name="items.*.is_new_tab" type="boolean" %}
+<Parameter name="items.*.is_new_tab" type="boolean" %}
 Whether the menu item should open in a new tab or not.
-{% /parameter %}
+</Parameter>
 
 ### Response
 

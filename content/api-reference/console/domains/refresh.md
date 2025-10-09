@@ -1,7 +1,7 @@
 ---
 title: 'Refresh domain token'
 description: 'Refresh the verification token for a domain from your agency.'
-api: 'POST /v1/agencies/{username}/domains/{id}/refresh'
+api: 'POST api.blutui.com/v1/agencies/{username}/domains/{id}/refresh'
 ---
 
 {% row %}
@@ -9,9 +9,9 @@ api: 'POST /v1/agencies/{username}/domains/{id}/refresh'
 {% column %}
 ### Path parameters
 
-{% parameter name="id" type="string" required="true" %}
+<Parameter name="id" type="string" required="true" %}
 The ID of the domain to refresh the verification token.
-{% /parameter %}
+</Parameter>
 
 ### Response
 

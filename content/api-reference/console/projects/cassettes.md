@@ -1,7 +1,7 @@
 ---
 title: 'List all project Cassettes'
 description: 'List all Cassettes for a project in your agency.'
-api: 'GET /v1/agencies/{username}/projects/{id}/cassettes'
+api: 'GET api.blutui.com/v1/agencies/{username}/projects/{id}/cassettes'
 ---
 
 {% row %}
@@ -9,19 +9,19 @@ api: 'GET /v1/agencies/{username}/projects/{id}/cassettes'
 {% column %}
 ### Path parameters
 
-{% parameter name="id" type="string" required="true" %}
+<Parameter name="id" type="string" required="true" %}
 The ID of the project to retrieve.
-{% /parameter %}
+</Parameter>
 
 ### Query parameters
 
-{% parameter name="limit" type="integer | default: 10" %}
+<Parameter name="limit" type="integer | default: 10" %}
 Limit the number of objects to return, ranging between 1 and 20.
-{% /parameter %}
+</Parameter>
 
-{% parameter name="page" type="integer | default: 1" %}
+<Parameter name="page" type="integer | default: 1" %}
 The current page used to display the pagination results.
-{% /parameter %}
+</Parameter>
 
 ### Response
 

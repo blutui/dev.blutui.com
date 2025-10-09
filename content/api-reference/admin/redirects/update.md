@@ -10,19 +10,19 @@ api: 'PATCH {handle}.blutui.com/admin/api/redirects/{id}'
 
 ### Path parameters
 
-{% parameter name="id" type="string" required="true" %}
+<Parameter name="id" type="string" required="true" %}
 The ID of the redirect to update.
-{% /parameter %}
+</Parameter>
 
 ### Body parameters
 
-{% parameter name="from" type="string" %}
+<Parameter name="from" type="string" %}
 The from url of the redirect.
-{% /parameter %}
+</Parameter>
 
-{% parameter name="to" type="array" %}
+<Parameter name="to" type="array" %}
 The to url of the redirect.
-{% /parameter %}
+</Parameter>
 
 ### Response
 

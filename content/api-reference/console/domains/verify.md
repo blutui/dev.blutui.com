@@ -1,7 +1,7 @@
 ---
 title: Verify domain
 description: 'Check the verification status for a domain in your agency.'
-api: 'POST /v1/agencies/{username}/domains/{id}/verify'
+api: 'POST api.blutui.com/v1/agencies/{username}/domains/{id}/verify'
 ---
 
 {% row %}
@@ -9,23 +9,23 @@ api: 'POST /v1/agencies/{username}/domains/{id}/verify'
 {% column %}
 ### Path parameters
 
-{% parameter name="id" type="string" required="true" %}
+<Parameter name="id" type="string" required="true" %}
 The domain ID to verify the status of.
-{% /parameter %}
+</Parameter>
 
 ### Response
 
-{% parameter name="object" type="string" %}
+<Parameter name="object" type="string" %}
 This will always contain `domain_status` for this endpoint.
-{% /parameter %}
+</Parameter>
 
-{% parameter name="verified" type="boolean" %}
+<Parameter name="verified" type="boolean" %}
 Determine if the domain is verified.
-{% /parameter %}
+</Parameter>
 
-{% parameter name="message" type="string" %}
+<Parameter name="message" type="string" %}
 Additional information about the current verification state of the domain.
-{% /parameter %}
+</Parameter>
 
 {% /column %}
 

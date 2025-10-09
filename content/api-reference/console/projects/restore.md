@@ -1,7 +1,7 @@
 ---
 title: 'Restore project'
 description: 'Restore an archived project in your agency.'
-api: 'DELETE /v1/agencies/{username}/projects/{id}/archived'
+api: 'DELETE api.blutui.com/v1/agencies/{username}/projects/{id}/archived'
 ---
 
 {% row %}
@@ -9,9 +9,9 @@ api: 'DELETE /v1/agencies/{username}/projects/{id}/archived'
 {% column %}
 ### Path parameters
 
-{% parameter name="id" type="string" required="true" %}
+<Parameter name="id" type="string" required="true" %}
 The ID of the project to restore.
-{% /parameter %}
+</Parameter>
 
 ### Response
 

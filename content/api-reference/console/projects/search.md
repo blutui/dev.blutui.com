@@ -1,7 +1,7 @@
 ---
 title: 'Search projects'
 description: 'Search for projects in your agency.'
-api: 'POST /v1/agencies/{username}/projects/search'
+api: 'POST api.blutui.com/v1/agencies/{username}/projects/search'
 ---
 
 {% row %}
@@ -9,23 +9,23 @@ api: 'POST /v1/agencies/{username}/projects/search'
 {% column %}
 ### Body parameters
 
-{% parameter name="name" type="string" required=true %}
+<Parameter name="name" type="string" required=true %}
 The name of the project to search for.
-{% /parameter %}
+</Parameter>
 
 ### Response
 
-{% parameter name="object" type="string" %}
+<Parameter name="object" type="string" %}
 This will always contain `list` for this endpoint.
-{% /parameter %}
+</Parameter>
 
-{% parameter name="data" type="array" %}
+<Parameter name="data" type="array" %}
 An array of up to `limit` project resources. If no projects are available, an empty array is returned.
-{% /parameter %}
+</Parameter>
 
-{% parameter name="meta" type="object" %}
+<Parameter name="meta" type="object" %}
 Additional information about the list.
-{% /parameter %}
+</Parameter>
 
 {% /column %}
 

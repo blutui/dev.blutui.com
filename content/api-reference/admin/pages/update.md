@@ -9,39 +9,39 @@ api: 'PATCH {handle}.blutui.com/admin/api/pages/{id}'
 {% column %}
 ### Path parameters
 
-{% parameter name="id" type="string" required="true" %}
+<Parameter name="id" type="string" required="true" %}
 The ID of the page to update.
-{% /parameter %}
+</Parameter>
 
 ### Body parameters
 
-{% parameter name="name" type="string" %}
+<Parameter name="name" type="string" %}
 The name of the page.
-{% /parameter %}
+</Parameter>
 
-{% parameter name="uri" type="string" %}
+<Parameter name="uri" type="string" %}
 The URL used to access this page.
-{% /parameter %}
+</Parameter>
 
-{% parameter name="title" type="string" %}
+<Parameter name="title" type="string" %}
 The title of this page.
-{% /parameter %}
+</Parameter>
 
-{% parameter name="description" type="string" %}
+<Parameter name="description" type="string" %}
 The description of this page.
-{% /parameter %}
+</Parameter>
 
-{% parameter name="layout" type="string" %}
+<Parameter name="layout" type="string" %}
 The layout used to display this page.
-{% /parameter %}
+</Parameter>
 
-{% parameter name="active" type="boolean" %}
+<Parameter name="active" type="boolean" %}
 Whether the page is active or not.
-{% /parameter %}
+</Parameter>
 
-{% parameter name="publish_date" type="string" %}
+<Parameter name="publish_date" type="string" %}
 The date and time when this page will be published.
-{% /parameter %}
+</Parameter>
 
 ### Response
 

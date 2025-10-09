@@ -9,9 +9,9 @@ api: 'GET {handle}.blutui.com/admin/api/posts/{id}'
 {% column %}
 ### Path parameters
 
-{% parameter name="id" type="string" required="true" %}
+<Parameter name="id" type="string" required="true" %}
 The ID of the blog post to retrieve.
-{% /parameter %}
+</Parameter>
 
 ### Response
 

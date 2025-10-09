@@ -9,27 +9,27 @@ api: 'PATCH {handle}.blutui.com/admin/api/webhooks/{id}'
 {% column %}
 ### Path parameters
 
-{% parameter name="id" type="string" required="true" %}
+<Parameter name="id" type="string" required="true" %}
 The ID of the webhook endpoint to update.
-{% /parameter %}
+</Parameter>
 
 ### Body parameters
 
-{% parameter name="url" type="string" %}
+<Parameter name="url" type="string" %}
 The webhook endpoint to receive events.
-{% /parameter %}
+</Parameter>
 
-{% parameter name="events" type="array" %}
+<Parameter name="events" type="array" %}
 The list of events to send to the webhook endpoint.
-{% /parameter %}
+</Parameter>
 
-{% parameter name="events.*" type="string" %}
+<Parameter name="events.*" type="string" %}
 The webhook event.
-{% /parameter %}
+</Parameter>
 
-{% parameter name="disabled" type="boolean" %}
+<Parameter name="disabled" type="boolean" %}
 Whether the webhook endpoint is disabled or not.
-{% /parameter %}
+</Parameter>
 
 ### Response
 

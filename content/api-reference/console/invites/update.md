@@ -1,7 +1,7 @@
 ---
 title: 'Update invite'
 description: "Update a team member's invite in your agency."
-api: 'PATCH /v1/agencies/{username}/invites/{id}'
+api: 'PATCH api.blutui.com/v1/agencies/{username}/invites/{id}'
 ---
 
 {% row %}
@@ -9,15 +9,15 @@ api: 'PATCH /v1/agencies/{username}/invites/{id}'
 {% column %}
 ### Path parameters
 
-{% parameter name="id" type="string" required="true" %}
+<Parameter name="id" type="string" required="true" %}
 The ID of the invite to update.
-{% /parameter %}
+</Parameter>
 
 ### Body parameters
 
-{% parameter name="role" type="integer" %}
+<Parameter name="role" type="integer" %}
 The ID of the role this invited team member will be apart of.
-{% /parameter %}
+</Parameter>
 
 ### Response
 

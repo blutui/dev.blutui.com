@@ -1,7 +1,7 @@
 ---
 title: 'Update project'
 description: 'Update a project in your agency.'
-api: 'PATCH /v1/agencies/{username}/projects/{id}'
+api: 'PATCH api.blutui.com/v1/agencies/{username}/projects/{id}'
 ---
 
 {% row %}
@@ -9,25 +9,25 @@ api: 'PATCH /v1/agencies/{username}/projects/{id}'
 {% column %}
 ### Body parameters
 
-{% parameter name="name" type="string" %}
+<Parameter name="name" type="string" %}
 The name of the project.
-{% /parameter %}
+</Parameter>
 
-{% parameter name="password" type="string" %}
+<Parameter name="password" type="string" %}
 The password used to access the staging URL of the project.
-{% /parameter %}
+</Parameter>
 
-{% parameter name="timezone" type="string" %}
+<Parameter name="timezone" type="string" %}
 The timezone of the project. The value must be a valid timezone string, check the [list of supported timezones](/api/timezones) for more information.
-{% /parameter %}
+</Parameter>
 
-{% parameter name="primary_domain" type="string | null" %}
+<Parameter name="primary_domain" type="string | null" %}
 The ID of a verified domain to be used as the project's primary domain.
-{% /parameter %}
+</Parameter>
 
-{% parameter name="description" type="string | null" %}
+<Parameter name="description" type="string | null" %}
 The project description.
-{% /parameter %}
+</Parameter>
 
 ### Response
 

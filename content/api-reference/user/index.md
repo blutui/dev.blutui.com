@@ -1,7 +1,7 @@
 ---
 title: 'Retrieve current user'
 description: 'Retrieve the currently authenticated user.'
-api: 'GET /v1/user'
+api: 'GET api.blutui.com/v1/user'
 ---
 
 {% row %}
@@ -9,29 +9,29 @@ api: 'GET /v1/user'
 {% column %}
 ### Response
 
-{% parameter name="id" type="string" %}
+<Parameter name="id" type="string" %}
 The unique identifier for this user.
-{% /parameter %}
+</Parameter>
 
-{% parameter name="object" type="string" %}
+<Parameter name="object" type="string" %}
 This will always contain `user` for this endpoint.
-{% /parameter %}
+</Parameter>
 
-{% parameter name="name" type="string" %}
+<Parameter name="name" type="string" %}
 The user's full name.
-{% /parameter %}
+</Parameter>
 
-{% parameter name="two_factor_enabled" type="boolean" %}
+<Parameter name="two_factor_enabled" type="boolean" %}
 Determine if the user has enabled two factor authentication.
-{% /parameter %}
+</Parameter>
 
-{% parameter name="created_at" type="timestamp" %}
+<Parameter name="created_at" type="timestamp" %}
 The user's created at timestamp.
-{% /parameter %}
+</Parameter>
 
-{% parameter name="updated_at" type="timestamp" %}
+<Parameter name="updated_at" type="timestamp" %}
 The user's updated at timestamp.
-{% /parameter %}
+</Parameter>
 
 {% /column %}
 

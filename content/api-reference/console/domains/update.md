@@ -1,7 +1,7 @@
 ---
 title: 'Update domain'
 description: 'Update a domain in your agency.'
-api: 'PATCH /v1/agencies/{username}/domains/{id}'
+api: 'PATCH api.blutui.com/v1/agencies/{username}/domains/{id}'
 ---
 
 {% row %}
@@ -9,15 +9,15 @@ api: 'PATCH /v1/agencies/{username}/domains/{id}'
 {% column %}
 ### Path parameters
 
-{% parameter name="id" type="string" required="true" %}
+<Parameter name="id" type="string" required="true" %}
 The ID of the domain to update.
-{% /parameter %}
+</Parameter>
 
 ### Body parameters
 
-{% parameter name="project" type="string | null" required="true" %}
+<Parameter name="project" type="string | null" required="true" %}
 The ID of the project this domain will belong to.
-{% /parameter %}
+</Parameter>
 
 ### Response
 

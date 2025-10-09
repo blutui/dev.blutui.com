@@ -1,7 +1,7 @@
 ---
 title: 'Unpublish project'
 description: 'Unpublish a project in your agency.'
-api: 'POST /v1/agencies/{username}/projects/{id}/unpublish'
+api: 'POST api.blutui.com/v1/agencies/{username}/projects/{id}/unpublish'
 ---
 
 {% row %}

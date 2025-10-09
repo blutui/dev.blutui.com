@@ -7,13 +7,24 @@ import { notFound } from 'next/navigation'
 import { createMetadata } from 'lib/metadata'
 import { source } from 'lib/source'
 import { LLMCopyButton } from 'components/ai/page-actions'
+import { DocsApi } from 'components/docs-api'
 
 export default async function Page(props: PageProps<'/[...slug]'>) {
   const params = await props.params
   const page = source.getPage(params.slug)
   if (!page) notFound()
 
-  const { body: MDX, toc, full, lastModified } = page.data
+  const { body: MDX, toc, full, lastModified, api } = page.data
+
+  let method: string | null = null
+  let endpoint: string | null = null
+
+  if (api) {
+    const apiMethodEndpoint = api.split(' ', 2)
+
+    method = apiMethodEndpoint[0]
+    endpoint = apiMethodEndpoint[1]
+  }
 
   return (
     <DocsPage
@@ -25,11 +36,12 @@ export default async function Page(props: PageProps<'/[...slug]'>) {
         includeSeparator: true,
       }}
     >
-      <DocsTitle>{page.data.title}</DocsTitle>
-      <DocsDescription className="mb-0">{page.data.description}</DocsDescription>
-      <div className="mb-6 flex flex-row items-center gap-2">
+      <DocsTitle className="flex items-center justify-between gap-4">
+        {page.data.title}
         <LLMCopyButton markdownUrl={`${page.url}.mdx`} />
-      </div>
+      </DocsTitle>
+      {method && endpoint && <DocsApi method={method} endpoint={endpoint} />}
+      <DocsDescription>{page.data.description}</DocsDescription>
       <DocsBody>
         <MDX
           components={getMDXComponents({

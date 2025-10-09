@@ -1,7 +1,7 @@
 ---
 title: 'Create project'
 description: 'Create a project to your agency.'
-api: 'POST /v1/agencies/{username}/projects'
+api: 'POST api.blutui.com/v1/agencies/{username}/projects'
 ---
 
 {% row %}
@@ -9,21 +9,21 @@ api: 'POST /v1/agencies/{username}/projects'
 {% column %}
 ### Body parameters
 
-{% parameter name="name" type="string" required=true %}
+<Parameter name="name" type="string" required=true %}
 The name of the project.
-{% /parameter %}
+</Parameter>
 
-{% parameter name="handle" type="string" %}
+<Parameter name="handle" type="string" %}
 The unique slug of the project.
-{% /parameter %}
+</Parameter>
 
-{% parameter name="timezone" type="string" %}
+<Parameter name="timezone" type="string" %}
 The timezone of the project. The value must be a valid timezone string, check the [list of supported timezones](/api/timezones) for more information.
-{% /parameter %}
+</Parameter>
 
-{% parameter name="description" type="string" %}
+<Parameter name="description" type="string" %}
 The description of the project.
-{% /parameter %}
+</Parameter>
 
 ### Response
 

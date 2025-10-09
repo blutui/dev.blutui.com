@@ -10,13 +10,13 @@ api: 'POST {handle}.blutui.com/admin/api/redirects'
 
 ### Body parameters
 
-{% parameter name="from" type="string" required=true %}
+<Parameter name="from" type="string" required=true %}
 The from url of the redirect.
-{% /parameter %}
+</Parameter>
 
-{% parameter name="to" type="string" required=true %}
+<Parameter name="to" type="string" required=true %}
 The to url of the redirect.
-{% /parameter %}
+</Parameter>
 
 ### Response
 

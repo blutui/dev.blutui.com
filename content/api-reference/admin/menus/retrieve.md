@@ -9,15 +9,15 @@ api: 'GET {handle}.blutui.com/admin/api/menus/{id}'
 {% column %}
 ### Path parameters
 
-{% parameter name="id" type="string" required="true" %}
+<Parameter name="id" type="string" required="true" %}
 The ID of the menu to retrieve.
-{% /parameter %}
+</Parameter>
 
 ### Query parameters
 
-{% parameter name="expand" type="string[]" %}
+<Parameter name="expand" type="string[]" %}
 Expand the response for the given items. Expand array accepts `items`.
-{% /parameter %}
+</Parameter>
 
 ### Response
 

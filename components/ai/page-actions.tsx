@@ -49,7 +49,7 @@ export function LLMCopyButton({ markdownUrl }: LLMCopyButtonProps) {
       onClick={onClick}
     >
       {checked ? <Check /> : <Copy />}
-      Copy page
+      <span className="whitespace-nowrap max-lg:hidden">Copy page</span>
     </button>
   )
 }

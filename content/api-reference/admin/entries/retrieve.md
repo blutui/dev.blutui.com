@@ -9,9 +9,9 @@ api: 'GET {handle}.blutui.com/admin/api/collections/{collection_id}/entries/{id}
 {% column %}
 ### Path parameters
 
-{% parameter name="id" type="string" required="true" %}
+<Parameter name="id" type="string" required="true" %}
 The ID of the collection entry to retrieve.
-{% /parameter %}
+</Parameter>
 
 ### Response
 

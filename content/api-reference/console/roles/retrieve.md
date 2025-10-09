@@ -1,7 +1,7 @@
 ---
 title: 'Retrieve role'
 description: 'Retrieve a role in your agency.'
-api: 'GET /v1/agencies/{username}/roles/{id}'
+api: 'GET api.blutui.com/v1/agencies/{username}/roles/{id}'
 ---
 
 {% row %}

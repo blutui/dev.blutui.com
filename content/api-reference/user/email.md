@@ -1,7 +1,7 @@
 ---
 title: "Retrieve current user's email"
 description: "Retrieve the currently authenticated user's email address."
-api: 'GET /v1/user/email'
+api: 'GET api.blutui.com/v1/user/email'
 ---
 
 {% row %}
@@ -9,21 +9,21 @@ api: 'GET /v1/user/email'
 {% column %}
 ### Response
 
-{% parameter name="id" type="string" %}
+<Parameter name="id" type="string" %}
 The unique identifier for this user.
-{% /parameter %}
+</Parameter>
 
-{% parameter name="object" type="string" %}
+<Parameter name="object" type="string" %}
 This will always contain `user_email` for this endpoint.
-{% /parameter %}
+</Parameter>
 
-{% parameter name="email" type="string" %}
+<Parameter name="email" type="string" %}
 The user's email address.
-{% /parameter %}
+</Parameter>
 
-{% parameter name="verified" type="boolean" %}
+<Parameter name="verified" type="boolean" %}
 Determine if the user has verified their email address.
-{% /parameter %}
+</Parameter>
 
 {% /column %}
 

@@ -1,6 +1,7 @@
 import fs from 'node:fs'
-import { defineDocs, defineConfig, defineCollections } from 'fumadocs-mdx/config'
+import { defineDocs, defineConfig, frontmatterSchema } from 'fumadocs-mdx/config'
 import { remarkSteps } from 'fumadocs-core/mdx-plugins'
+import { z } from 'zod'
 
 export const docs = defineDocs({
   dir: 'content',
@@ -8,6 +9,9 @@ export const docs = defineDocs({
     postprocess: {
       includeProcessedMarkdown: true,
     },
+    schema: frontmatterSchema.extend({
+      api: z.optional(z.string()),
+    }),
   },
 })
 

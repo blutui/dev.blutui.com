@@ -1,7 +1,7 @@
 ---
 title: 'Update Cassette'
 description: 'Update a Cassette for a project your agency.'
-api: 'PATCH /v1/agencies/{username}/cassettes/{id}'
+api: 'PATCH api.blutui.com/v1/agencies/{username}/cassettes/{id}'
 ---
 
 {% row %}
@@ -9,15 +9,15 @@ api: 'PATCH /v1/agencies/{username}/cassettes/{id}'
 {% column %}
 ### Path parameters
 
-{% parameter name="id" type="string" required="true" %}
+<Parameter name="id" type="string" required="true" %}
 The ID of the Cassette to update.
-{% /parameter %}
+</Parameter>
 
 ### Body parameters
 
-{% parameter name="name" type="string" required="true" %}
+<Parameter name="name" type="string" required="true" %}
 The name of the Cassette.
-{% /parameter %}
+</Parameter>
 
 ### Response
 

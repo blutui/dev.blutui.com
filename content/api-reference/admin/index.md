@@ -1,7 +1,6 @@
 ---
 title: 'Admin API reference'
 description: ''
-api: true
 ---
 
 The Blutui Admin API is built on **REST** principles. We enforce **HTTPS** in every request to improve data security and privacy. The API does not support **HTTP**.

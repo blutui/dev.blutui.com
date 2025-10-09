@@ -1,7 +1,7 @@
 ---
 title: 'Remove invite'
 description: "Remove a team member's invite from your agency."
-api: 'DELETE /v1/agencies/{username}/invites/{id}'
+api: 'DELETE api.blutui.com/v1/agencies/{username}/invites/{id}'
 ---
 
 {% row %}
@@ -9,23 +9,23 @@ api: 'DELETE /v1/agencies/{username}/invites/{id}'
 {% column %}
 ### Path parameters
 
-{% parameter name="id" type="string" required="true" %}
+<Parameter name="id" type="string" required="true" %}
 The ID of the invite to remove.
-{% /parameter %}
+</Parameter>
 
 ### Response
 
-{% parameter name="id" type="string" %}
+<Parameter name="id" type="string" %}
 The unique identifier for this invite.
-{% /parameter %}
+</Parameter>
 
-{% parameter name="object" type="string" %}
+<Parameter name="object" type="string" %}
 This will always contain `invite` for this endpoint.
-{% /parameter %}
+</Parameter>
 
-{% parameter name="deleted" type="boolean" %}
+<Parameter name="deleted" type="boolean" %}
 Determine if the object was successfully deleted.
-{% /parameter %}
+</Parameter>
 
 {% /column %}
 

@@ -9,43 +9,43 @@ api: 'PATCH {handle}.blutui.com/admin/api/posts/{id}'
 {% column %}
 ### Path parameters
 
-{% parameter name="id" type="string" required="true" %}
+<Parameter name="id" type="string" required="true" %}
 The ID of the blog post to update.
-{% /parameter %}
+</Parameter>
 
 ### Body parameters
 
-{% parameter name="title" type="string" %}
+<Parameter name="title" type="string" %}
 The title for the blog post.
-{% /parameter %}
+</Parameter>
 
-{% parameter name="slug" type="string" %}
+<Parameter name="slug" type="string" %}
 The unique slug for this blog post.
-{% /parameter %}
+</Parameter>
 
-{% parameter name="content" type="string" %}
+<Parameter name="content" type="string" %}
 The HTML content of the blog post.
-{% /parameter %}
+</Parameter>
 
-{% parameter name="author" type="string" %}
+<Parameter name="author" type="string" %}
 The author of the blog post.
-{% /parameter %}
+</Parameter>
 
-{% parameter name="blog" type="string" %}
+<Parameter name="blog" type="string" %}
 The ID of the blog this post belongs to.
-{% /parameter %}
+</Parameter>
 
-{% parameter name="published_date" type="string" %}
+<Parameter name="published_date" type="string" %}
 The date and time when the blog post will be published.
-{% /parameter %}
+</Parameter>
 
-{% parameter name="description" type="string" %}
+<Parameter name="description" type="string" %}
 A short description of the blog post.
-{% /parameter %}
+</Parameter>
 
-{% parameter name="feature_image" type="string" %}
+<Parameter name="feature_image" type="string" %}
 The URL of the featured image.
-{% /parameter %}
+</Parameter>
 
 ### Response
 

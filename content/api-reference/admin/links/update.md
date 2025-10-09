@@ -9,27 +9,27 @@ api: 'PATCH {handle}.blutui.com/admin/api/collections/{collection_id}/links/{id}
 {% column %}
 ### Path parameters
 
-{% parameter name="id" type="string" required="true" %}
+<Parameter name="id" type="string" required="true" %}
 The ID of the collection link to update.
-{% /parameter %}
+</Parameter>
 
 ### Body parameters
 
-{% parameter name="to" type="string" %}
+<Parameter name="to" type="string" %}
 The ID of the collection that is linked to.
-{% /parameter %}
+</Parameter>
 
-{% parameter name="type" type="string" %}
+<Parameter name="type" type="string" %}
 The type of collection link.
-{% /parameter %}
+</Parameter>
 
-{% parameter name="through_field" type="string" %}
+<Parameter name="through_field" type="string" %}
 The `name` of the collection field the link is through.
-{% /parameter %}
+</Parameter>
 
-{% parameter name="foreign_key" type="string" %}
+<Parameter name="foreign_key" type="string" %}
 The `name` of the foreign key on the collection that is linked to.
-{% /parameter %}
+</Parameter>
 
 ### Response
 

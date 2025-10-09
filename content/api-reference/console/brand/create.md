@@ -1,7 +1,7 @@
 ---
 title: 'Create brand'
 description: 'Create a new agency brand.'
-api: 'POST /v1/agencies/{username}/brand'
+api: 'POST api.blutui.com/v1/agencies/{username}/brand'
 ---
 
 {% row %}
@@ -9,17 +9,17 @@ api: 'POST /v1/agencies/{username}/brand'
 {% column %}
 ### Body parameters
 
-{% parameter name="primary_color" type="string" required=true %}
+<Parameter name="primary_color" type="string" required=true %}
 The primary hexadecimal color of the agency brand.
-{% /parameter %}
+</Parameter>
 
-{% parameter name="secondary_color" type="string" required=true %}
+<Parameter name="secondary_color" type="string" required=true %}
 The secondary hexadecimal color of the agency brand.
-{% /parameter %}
+</Parameter>
 
-{% parameter name="logo" type="string" %}
+<Parameter name="logo" type="string" %}
 The image URL of the agency logo.
-{% /parameter %}
+</Parameter>
 
 ### Response
 

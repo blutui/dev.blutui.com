@@ -1,7 +1,7 @@
 ---
 title: 'Retrieve agency'
 description: 'Retrieve an agency for the currently authenticated user.'
-api: 'GET /v1/agencies/{id}'
+api: 'GET api.blutui.com/v1/agencies/{id}'
 ---
 
 {% row %}
@@ -9,9 +9,9 @@ api: 'GET /v1/agencies/{id}'
 {% column %}
 ### Path parameters
 
-{% parameter name="id" type="string" required="true" %}
+<Parameter name="id" type="string" required="true" %}
 The ID of the agency to retrieve.
-{% /parameter %}
+</Parameter>
 
 ### Response
 

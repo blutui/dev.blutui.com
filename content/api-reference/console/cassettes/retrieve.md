@@ -1,7 +1,7 @@
 ---
 title: 'Retrieve Cassette'
 description: 'Retrieve a Cassette for a project your agency.'
-api: 'GET /v1/agencies/{username}/cassettes/{id}'
+api: 'GET api.blutui.com/v1/agencies/{username}/cassettes/{id}'
 ---
 
 {% row %}
@@ -9,15 +9,15 @@ api: 'GET /v1/agencies/{username}/cassettes/{id}'
 {% column %}
 ### Path parameters
 
-{% parameter name="id" type="string" required="true" %}
+<Parameter name="id" type="string" required="true" %}
 The ID of the Cassette to retrieve.
-{% /parameter %}
+</Parameter>
 
 ### Query parameters
 
-{% parameter name="expand" type="string[]" %}
+<Parameter name="expand" type="string[]" %}
 Expand the response for the given items. Expand array accepts `project`.
-{% /parameter %}
+</Parameter>
 
 ### Response
 

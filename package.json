@@ -24,6 +24,7 @@
     "react": "19.1.1",
     "react-dom": "19.1.1",
     "scroll-into-view-if-needed": "^3.0.10",
+    "zod": "^4.1.12",
     "zustand": "^5.0.8"
   },
   "devDependencies": {

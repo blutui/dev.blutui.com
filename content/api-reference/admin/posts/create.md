@@ -9,37 +9,37 @@ api: 'POST {handle}.blutui.com/admin/api/posts'
 {% column %}
 ### Body parameters
 
-{% parameter name="title" type="string" required=true %}
+<Parameter name="title" type="string" required=true %}
 The title for the blog post.
-{% /parameter %}
+</Parameter>
 
-{% parameter name="slug" type="string" required=true %}
+<Parameter name="slug" type="string" required=true %}
 The unique slug for this blog post.
-{% /parameter %}
+</Parameter>
 
-{% parameter name="content" type="string" required=true %}
+<Parameter name="content" type="string" required=true %}
 The HTML content of the blog post.
-{% /parameter %}
+</Parameter>
 
-{% parameter name="author" type="string" required=true %}
+<Parameter name="author" type="string" required=true %}
 The author of the blog post.
-{% /parameter %}
+</Parameter>
 
-{% parameter name="blog" type="string" required=true %}
+<Parameter name="blog" type="string" required=true %}
 The ID of the blog this post belongs to.
-{% /parameter %}
+</Parameter>
 
-{% parameter name="published_date" type="string" required=true %}
+<Parameter name="published_date" type="string" required=true %}
 The date and time when the blog post will be published.
-{% /parameter %}
+</Parameter>
 
-{% parameter name="description" type="string" %}
+<Parameter name="description" type="string" %}
 A short description of the blog post.
-{% /parameter %}
+</Parameter>
 
-{% parameter name="feature_image" type="string" %}
+<Parameter name="feature_image" type="string" %}
 The URL of the featured image.
-{% /parameter %}
+</Parameter>
 
 ### Response
 

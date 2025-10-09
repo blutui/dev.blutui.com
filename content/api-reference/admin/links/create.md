@@ -9,21 +9,21 @@ api: 'POST {handle}.blutui.com/admin/api/collections/{collection_id}/links'
 {% column %}
 ### Body parameters
 
-{% parameter name="to" type="string" required="true" %}
+<Parameter name="to" type="string" required="true" %}
 The ID of the collection that is linked to.
-{% /parameter %}
+</Parameter>
 
-{% parameter name="type" type="string" required="true" %}
+<Parameter name="type" type="string" required="true" %}
 The type of collection link.
-{% /parameter %}
+</Parameter>
 
-{% parameter name="through_field" type="string" required="true" %}
+<Parameter name="through_field" type="string" required="true" %}
 The `name` of the collection field the link is through.
-{% /parameter %}
+</Parameter>
 
-{% parameter name="foreign_key" type="string" required="true" %}
+<Parameter name="foreign_key" type="string" required="true" %}
 The `name` of the foreign key on the collection that is linked to.
-{% /parameter %}
+</Parameter>
 
 ### Response
 

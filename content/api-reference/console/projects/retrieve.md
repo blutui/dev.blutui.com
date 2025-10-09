@@ -1,7 +1,7 @@
 ---
 title: 'Retrieve project'
 description: 'Retrieve a project in your agency.'
-api: 'GET /v1/agencies/{username}/projects/{id}'
+api: 'GET api.blutui.com/v1/agencies/{username}/projects/{id}'
 ---
 
 {% row %}
@@ -9,15 +9,15 @@ api: 'GET /v1/agencies/{username}/projects/{id}'
 {% column %}
 ### Path parameters
 
-{% parameter name="id" type="string" required="true" %}
+<Parameter name="id" type="string" required="true" %}
 The ID of the project to retrieve.
-{% /parameter %}
+</Parameter>
 
 ### Query parameters
 
-{% parameter name="expand" type="string[]" %}
+<Parameter name="expand" type="string[]" %}
 Expand the response for the given items. Expand array accepts `primary_domain`.
-{% /parameter %}
+</Parameter>
 
 ### Response
 

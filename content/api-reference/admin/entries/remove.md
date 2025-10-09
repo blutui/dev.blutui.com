@@ -9,23 +9,23 @@ api: 'DELETE {handle}.blutui.com/admin/api/collections/{collection_id}/entries/{
 {% column %}
 ### Path parameters
 
-{% parameter name="id" type="string" required="true" %}
+<Parameter name="id" type="string" required="true" %}
 The ID of the collection entry to remove.
-{% /parameter %}
+</Parameter>
 
 ### Response
 
-{% parameter name="id" type="string" %}
+<Parameter name="id" type="string" %}
 The unique identifier for this collection entry.
-{% /parameter %}
+</Parameter>
 
-{% parameter name="object" type="string" %}
+<Parameter name="object" type="string" %}
 This will always contain `collection_entry` for this endpoint.
-{% /parameter %}
+</Parameter>
 
-{% parameter name="deleted" type="boolean" %}
+<Parameter name="deleted" type="boolean" %}
 Determine if the object was successfully deleted.
-{% /parameter %}
+</Parameter>
 
 {% /column %}
 

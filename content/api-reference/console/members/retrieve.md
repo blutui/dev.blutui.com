@@ -1,7 +1,7 @@
 ---
 title: 'Retrieve member'
 description: 'Retrieve a team member in your agency.'
-api: 'GET /v1/agencies/{username}/members/{id}'
+api: 'GET api.blutui.com/v1/agencies/{username}/members/{id}'
 ---
 
 {% row %}
@@ -9,9 +9,9 @@ api: 'GET /v1/agencies/{username}/members/{id}'
 {% column %}
 ### Path parameters
 
-{% parameter name="id" type="string" required="true" %}
+<Parameter name="id" type="string" required="true" %}
 The ID of the member to retrieve.
-{% /parameter %}
+</Parameter>
 
 ### Response
 

@@ -9,33 +9,33 @@ api: 'POST {handle}.blutui.com/admin/api/menus'
 {% column %}
 ### Body parameters
 
-{% parameter name="name" type="string" required=true %}
+<Parameter name="name" type="string" required=true %}
 The name of the menu.
-{% /parameter %}
+</Parameter>
 
-{% parameter name="handle" type="string" required=true %}
+<Parameter name="handle" type="string" required=true %}
 The unique slug of the menu.
-{% /parameter %}
+</Parameter>
 
-{% parameter name="items" type="array" %}
+<Parameter name="items" type="array" %}
 The list of items in the menu.
-{% /parameter %}
+</Parameter>
 
-{% parameter name="items.*.label" type="string" required=true %}
+<Parameter name="items.*.label" type="string" required=true %}
 The label for the menu item.
-{% /parameter %}
+</Parameter>
 
-{% parameter name="items.*.url" type="string" required=true %}
+<Parameter name="items.*.url" type="string" required=true %}
 The URL for the menu item.
-{% /parameter %}
+</Parameter>
 
-{% parameter name="items.*.active" type="boolean" %}
+<Parameter name="items.*.active" type="boolean" %}
 Whether the menu item is active or not.
-{% /parameter %}
+</Parameter>
 
-{% parameter name="items.*.is_new_tab" type="boolean" %}
+<Parameter name="items.*.is_new_tab" type="boolean" %}
 Whether the menu item should open in a new tab or not.
-{% /parameter %}
+</Parameter>
 
 ### Response
 

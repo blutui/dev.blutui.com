@@ -5,6 +5,7 @@ import * as StepsComponents from 'fumadocs-ui/components/steps'
 
 import * as BadgeComponents from 'components/badge'
 import * as ChangelogComponents from 'components/changelog'
+import * as ParameterComponents from 'components/parameter'
 
 export function getMDXComponents(components?: MDXComponents): MDXComponents {
   return {
@@ -12,6 +13,7 @@ export function getMDXComponents(components?: MDXComponents): MDXComponents {
     ...defaultMdxComponents,
     ...BadgeComponents,
     ...ChangelogComponents,
+    ...ParameterComponents,
     ...StepsComponents,
     ...components,
   }

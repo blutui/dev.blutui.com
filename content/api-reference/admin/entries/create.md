@@ -9,9 +9,9 @@ api: 'POST {handle}.blutui.com/admin/api/collections/{collection_id}/entries'
 {% column %}
 ### Body parameters
 
-{% parameter name="*" type="any" required="true" %}
+<Parameter name="*" type="any" required="true" %}
 The key/value pair of a collection field.
-{% /parameter %}
+</Parameter>
 
 ### Response
 

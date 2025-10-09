@@ -1,7 +1,6 @@
 ---
 title: 'Authentication'
 description: "You'll need to authenticate your requests to access any endpoints in the Admin API."
-api: true
 ---
 
 The Blutui Project Admin API requires a Blutui [access tokens](https://console.blutui.com/profile) to authenticate requests. API requests made without the correct access token will return a `401` error. Requests using a valid access token but with insufficient permissions will return a `403` error.

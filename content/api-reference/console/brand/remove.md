@@ -1,7 +1,7 @@
 ---
 title: 'Remove brand'
 description: 'Remove the current agency brand.'
-api: 'DELETE /v1/agencies/{username}/brand'
+api: 'DELETE api.blutui.com/v1/agencies/{username}/brand'
 ---
 
 {% row %}
@@ -9,17 +9,17 @@ api: 'DELETE /v1/agencies/{username}/brand'
 {% column %}
 ### Response
 
-{% parameter name="id" type="string" %}
+<Parameter name="id" type="string" %}
 The unique identifier for this brand.
-{% /parameter %}
+</Parameter>
 
-{% parameter name="object" type="string" %}
+<Parameter name="object" type="string" %}
 This will always contain `brand` for this endpoint.
-{% /parameter %}
+</Parameter>
 
-{% parameter name="deleted" type="boolean" %}
+<Parameter name="deleted" type="boolean" %}
 Determine if the object was successfully deleted.
-{% /parameter %}
+</Parameter>
 
 {% /column %}
 

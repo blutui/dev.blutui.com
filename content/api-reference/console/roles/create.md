@@ -1,7 +1,7 @@
 ---
 title: 'Create role'
 description: 'Create a role to your agency.'
-api: 'POST /v1/agencies/{username}/roles'
+api: 'POST api.blutui.com/v1/agencies/{username}/roles'
 ---
 
 {% row %}
@@ -9,17 +9,17 @@ api: 'POST /v1/agencies/{username}/roles'
 {% column %}
 ### Body parameters
 
-{% parameter name="name" type="string" required=true %}
+<Parameter name="name" type="string" required=true %}
 The unique name of the role.
-{% /parameter %}
+</Parameter>
 
-{% parameter name="description" type="string | null" %}
+<Parameter name="description" type="string | null" %}
 The description of the role.
-{% /parameter %}
+</Parameter>
 
-{% parameter name="permissions" type="array" %}
+<Parameter name="permissions" type="array" %}
 The list of permissions for the role.
-{% /parameter %}
+</Parameter>
 
 ### Response
 

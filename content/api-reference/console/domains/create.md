@@ -1,7 +1,7 @@
 ---
 title: 'Add domain'
 description: 'Add a domain to your agency.'
-api: 'POST /v1/agencies/{username}/domains'
+api: 'POST api.blutui.com/v1/agencies/{username}/domains'
 ---
 
 {% row %}
@@ -9,13 +9,13 @@ api: 'POST /v1/agencies/{username}/domains'
 {% column %}
 ### Body parameters
 
-{% parameter name="name" type="string" required=true %}
+<Parameter name="name" type="string" required=true %}
 The name of the domain.
-{% /parameter %}
+</Parameter>
 
-{% parameter name="project" type="string | null" %}
+<Parameter name="project" type="string | null" %}
 The ID of the project this domain will belong to.
-{% /parameter %}
+</Parameter>
 
 ### Response
 

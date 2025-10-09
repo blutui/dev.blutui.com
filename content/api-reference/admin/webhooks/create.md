@@ -9,17 +9,17 @@ api: 'POST {handle}.blutui.com/admin/api/webhooks'
 {% column %}
 ### Body parameters
 
-{% parameter name="url" type="string" required=true %}
+<Parameter name="url" type="string" required=true %}
 The webhook endpoint to receive events.
-{% /parameter %}
+</Parameter>
 
-{% parameter name="events" type="array" required=true %}
+<Parameter name="events" type="array" required=true %}
 The list of events to send to the webhook endpoint.
-{% /parameter %}
+</Parameter>
 
-{% parameter name="events.*" type="string" %}
+<Parameter name="events.*" type="string" %}
 The webhook event.
-{% /parameter %}
+</Parameter>
 
 ### Response
 

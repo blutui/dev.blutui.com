@@ -1,7 +1,7 @@
 ---
 title: 'Create Cassette'
 description: 'Create a Cassette for a project in your agency.'
-api: 'POST /v1/agencies/{username}/cassettes'
+api: 'POST api.blutui.com/v1/agencies/{username}/cassettes'
 ---
 
 {% row %}
@@ -9,17 +9,17 @@ api: 'POST /v1/agencies/{username}/cassettes'
 {% column %}
 ### Body parameters
 
-{% parameter name="name" type="string" required=true %}
+<Parameter name="name" type="string" required=true %}
 The name of the Cassette.
-{% /parameter %}
+</Parameter>
 
-{% parameter name="project" type="string" required=true %}
+<Parameter name="project" type="string" required=true %}
 The ID of the project this Cassette will belong to.
-{% /parameter %}
+</Parameter>
 
-{% parameter name="handle" type="array" required=true %}
+<Parameter name="handle" type="array" required=true %}
 The unique handle for the Cassette.
-{% /parameter %}
+</Parameter>
 
 ### Response
 

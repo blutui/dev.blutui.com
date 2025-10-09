@@ -1,7 +1,7 @@
 ---
 title: 'Retrieve brand'
 description: 'Retrieve the current agency brand.'
-api: 'GET /v1/agencies/{username}/brand'
+api: 'GET api.blutui.com/v1/agencies/{username}/brand'
 ---
 
 {% row %}

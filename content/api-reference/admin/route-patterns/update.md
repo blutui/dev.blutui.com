@@ -9,31 +9,31 @@ api: 'PATCH {handle}.blutui.com/admin/api/route_patterns/{id}'
 {% column %}
 ### Path parameters
 
-{% parameter name="id" type="string" required="true" %}
+<Parameter name="id" type="string" required="true" %}
 The ID of the route pattern to update.
-{% /parameter %}
+</Parameter>
 
 ### Body parameters
 
-{% parameter name="template" type="string" %}
+<Parameter name="template" type="string" %}
 The template used to display the resolved route.
-{% /parameter %}
+</Parameter>
 
-{% parameter name="pattern" type="array" %}
+<Parameter name="pattern" type="array" %}
 A list of route patterns. Min: 1 pattern.
-{% /parameter %}
+</Parameter>
 
-{% parameter name="pattern.*.type" type="string" %}
+<Parameter name="pattern.*.type" type="string" %}
 The type of route pattern.
-{% /parameter %}
+</Parameter>
 
-{% parameter name="pattern.*.name" type="string" %}
+<Parameter name="pattern.*.name" type="string" %}
 The name of the route pattern.
-{% /parameter %}
+</Parameter>
 
-{% parameter name="pattern.*.value" type="string | null" %}
+<Parameter name="pattern.*.value" type="string | null" %}
 The value of the route pattern if any.
-{% /parameter %}
+</Parameter>
 
 ### Response
 

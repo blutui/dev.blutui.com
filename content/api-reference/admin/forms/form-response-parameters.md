@@ -1,0 +1,115 @@
+---
+title: Form response parameters
+---
+
+<Parameter name="id" type="string" %}
+The unique identifier for this form.
+</Parameter>
+
+<Parameter name="object" type="string" %}
+This will always contain `form` for this endpoint.
+</Parameter>
+
+<Parameter name="name" type="string" %}
+The name of this form.
+</Parameter>
+
+<Parameter name="handle" type="string" %}
+The unique handle for this form.
+</Parameter>
+
+<Parameter name="template" type="string" %}
+The template used to display this form.
+</Parameter>
+
+<Parameter name="email_from" type="string" %}
+The sender email address.
+</Parameter>
+
+<Parameter name="email_to" type="string" %}
+The recipient email address.
+</Parameter>
+
+<Parameter name="email_cc" type="string" %}
+The carbon copy email address.
+</Parameter>
+
+<Parameter name="email_bcc" type="string" %}
+The blind carbon copy email address.
+</Parameter>
+
+<Parameter name="email_reply_to" type="string" %}
+The reply to email address.
+</Parameter>
+
+<Parameter name="store_submissions" type="boolean" %}
+Whether the form submissions should be stored or not.
+</Parameter>
+
+<Parameter name="detects_spam" type="boolean" %}
+Whether the form submissions should be checked for spam or not.
+</Parameter>
+
+<Parameter name="spam_score" type="number" %}
+The spam score given to a form submission in order to be marked as spam.
+</Parameter>
+
+<Parameter name="fields" type="array" %}
+The fields for this form.
+</Parameter>
+
+<Parameter name="fields.*.id" type="string" %}
+The unique identifier for the form field.
+</Parameter>
+
+<Parameter name="fields.*.object" type="string" %}
+This will always contain `form_field`.
+</Parameter>
+
+<Parameter name="fields.*.name" type="string" %}
+The name of the form field.
+</Parameter>
+
+<Parameter name="fields.*.label" type="string" %}
+The label for the form field.
+</Parameter>
+
+<Parameter name="fields.*.default_value" type="string | null" %}
+The default value for the form field.
+</Parameter>
+
+<Parameter name="fields.*.help_text" type="string | null" %}
+The a short description about this form field.
+</Parameter>
+
+<Parameter name="fields.*.order" type="number" %}
+The order of the form field.
+</Parameter>
+
+<Parameter name="fields.*.placeholder" type="string | null" %}
+The placeholder value for the form field.
+</Parameter>
+
+<Parameter name="fields.*.required" type="string" %}
+Whether the form field is required or not.
+</Parameter>
+
+<Parameter name="fields.*.type" type="string" %}
+The type of form field.
+</Parameter>
+
+<Parameter name="fields.*.created_at" type="string" %}
+The date and time when the form field was created.
+</Parameter>
+
+<Parameter name="fields.*.updated_at" type="string" %}
+The date and time when the form field was updated.
+</Parameter>
+
+<Parameter name="created_at" type="string" %}
+The date and time when the form was created.
+</Parameter>
+
+<Parameter name="updated_at" type="string" %}
+The date and time when the form was updated.
+</Parameter>
