@@ -3,11 +3,11 @@
   "icon": "BookOpen",
   "root": true,
   "pages": [
-    "---[Album]Getting started---",
+    "---[Album]Getting Started---",
     "index",
     "...getting-started",
     "intellisense",
-    "---[Sparkles]AI components---",
+    "---[Sparkles]AI Components---",
     "...components",
     "---[SquareTerminal]Courier---",
     "...courier",

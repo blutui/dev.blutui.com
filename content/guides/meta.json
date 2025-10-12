@@ -3,6 +3,8 @@
   "icon": "GraduationCap",
   "root": true,
   "pages": [
+    "---[Album]Getting Started---",
+    "introduction",
     "---[SquareTerminal]Courier---",
     "install-courier-on-macos",
     "install-courier-on-windows",
@@ -17,7 +19,7 @@
     "send-form-submissions-to-an-email-address",
     "send-form-submissions-to-zapier",
 
-    "---[Sparkles]AI components---",
+    "---[Sparkles]AI Components---",
     "use-blutui-ai-in-a-project",
 
     "---[LayoutTemplate]Blutui Canvas---",

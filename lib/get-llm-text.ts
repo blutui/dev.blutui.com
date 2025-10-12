@@ -18,7 +18,7 @@ Source: https://raw.githubusercontent.com/blutui/dev.blutui.com/refs/heads/main/
 ${method ? `API Method: ${method}` : ''}
 ${endpoint ? `API Endpoint: ${endpoint}` : ''}
 
-${page.data.description ?? ''}
+${page.data.description ? `> ${page.data.description}` : ''}
 
 ${processed}`
 }

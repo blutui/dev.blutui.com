@@ -29,7 +29,7 @@ export default function Home() {
           </Card>
         </div>
         <div className="md:col-span-3">
-          <Card title="Guides" href="/guides">
+          <Card title="Guides" href="/guides/introduction">
             Find a guide on how to develop with Blutui.
           </Card>
         </div>
