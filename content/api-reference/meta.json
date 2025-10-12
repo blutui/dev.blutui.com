@@ -1,10 +1,10 @@
 {
-  "title": "API reference",
+  "title": "API Reference",
   "icon": "Code",
   "root": true,
   "pages": [
     "index",
-    "---[Code]API references---",
+    "---[Code]API Reference---",
     "console",
     "admin",
     "project",

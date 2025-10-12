@@ -1,0 +1,16 @@
+{
+  "pages": [
+    "create",
+    "update",
+    "retrieve",
+    "list",
+    "remove",
+    "restore",
+    "archived",
+    "domains",
+    "cassettes",
+    "search",
+    "publish",
+    "unpublish"
+  ]
+}
