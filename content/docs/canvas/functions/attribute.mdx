@@ -3,7 +3,7 @@ title: 'attribute'
 description: 'The attribute function can be used to access a "dynamic" attribute of a variable.'
 ---
 
-```canvas {% process=false %}
+```canvas {% process=false>
 {{ attribute(object, method) }}
 {{ attribute(object, method, arguments) }}
 {{ attribute(array, item) }}
@@ -11,7 +11,7 @@ description: 'The attribute function can be used to access a "dynamic" attribute
 
 In addition, the **defined** test can check for the existence of a dynamic attribute:
 
-```canvas {% process=false %}
+```canvas {% process=false>
 {{ attribute(object, method) is defined ? 'Method exists' : 'Method does not exist' }}
 ```
 

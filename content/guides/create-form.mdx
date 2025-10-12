@@ -55,70 +55,70 @@ Next, we'll use a system named [macro](/docs/canvas/tags/macro) to help define i
 
 ```canvas
 {# Input #}
-{% macro input(data) %}
-  <input type="{{ data.type }}" name="{{ data.name }}" value="{{ data.value }}" placeholder="{{ data.placeholder }}" {% if data.required %} required {% endif %} class="" />
-{% endmacro %}
+{% macro input(data)>
+  <input type="{{ data.type }}" name="{{ data.name }}" value="{{ data.value }}" placeholder="{{ data.placeholder }}" {% if data.required> required {% endif> class="" />
+{% endmacro>
 
 {# Textarea #}
-{% macro textarea(data) %}
-  <textarea type="{{ data.type }}" name="{{ data.name }}" value="{{ data.value }}" placeholder="{{ data.placeholder }}" {% if data.required %} required {% endif %} class=" " ></textarea>
-{% endmacro %}
+{% macro textarea(data)>
+  <textarea type="{{ data.type }}" name="{{ data.name }}" value="{{ data.value }}" placeholder="{{ data.placeholder }}" {% if data.required> required {% endif> class=" " ></textarea>
+{% endmacro>
 
 {# Checkbox #}
-{% macro checkbox(data) %}
-  {% for item in data.options %}
+{% macro checkbox(data)>
+  {% for item in data.options>
     <label class="">
       <input type="checkbox" name="{{ data.name }}[]" value="{{ item.value }}" />
       <span class="">{{ item.value }}</span>
     </label>
-  {% endfor %}
-{% endmacro %}
+  {% endfor>
+{% endmacro>
 
 {# Radio Button #}
-{% macro radio(data) %}
-  {% for item in data.options %}
+{% macro radio(data)>
+  {% for item in data.options>
     <label class="">
       <input type="radio" name="{{ data.name }}" value="{{ item.value }}" />
       <span class="">{{ item.label }}</span>
     </label>
-  {% endfor %}
-{% endmacro %}
+  {% endfor>
+{% endmacro>
 
 {# Select Menu #}
-{% macro select(data) %}
+{% macro select(data)>
   <div class="">
     <select name="{{ data.name }}" value="{{ data.value }}" class="">
-      {% for item in data.options %}
+      {% for item in data.options>
         <option value="{{ item.value }}">{{ item.value }}</option>
-      {% endfor %}
+      {% endfor>
     </select>
   </div>
-{% endmacro %}
+{% endmacro>
 
 {# Error Messages #}
-{% macro errors(data) %}
+{% macro errors(data)>
   <span class="">{{ data }}</span>
-{% endmacro %}
+{% endmacro>
 
 {# Form Field #}
-{% macro field(data) %}
+{% macro field(data)>
   <div class="">
-    <label for="{{ data.name }}" class="">{{ data.label }}{% if data.required %} <span>*</span> {% endif %}</label>
-    {% if data.type == 'checkbox' %}
+    <label for="{{ data.name }}" class="">{{ data.label }}{% if data.required> <span>*</span> {% endif></label>
+    {% if data.type == 'checkbox'>
       {{ _self.checkbox(data) }}
-    {% elseif data.type == 'radio' %}
+    {% elseif data.type == 'radio'>
       {{ _self.radio(data) }}
-    {% elseif data.type == 'select' %}
+    {% elseif data.type == 'select'>
       {{ _self.select(data) }}
-    {% elseif data.type == 'textarea' %}
+    {% elseif data.type == 'textarea'>
       {{ _self.textarea(data) }}
-    {% else %}
+    {% else>
       {{ _self.input(data) }}
-    {% endif %}
+    {% endif>
     <span>{{ data.help_text | escape }}</span>
     {{ _self.errors(data.errors) }}
   </div>
-{% endmacro %}
+{% endmacro>
 ```
 
 Feel free to customise the appearance and layout by modifying the provided HTML and adding CSS styles.
@@ -129,15 +129,15 @@ Feel free to customise the appearance and layout by modifying the provided HTML 
 Inside your `views/forms/contact.html` file, insert:
 
 ```canvas
-{% import 'components/form' as ui %}
+{% import 'components/form' as ui>
 
-{% form 'contact' %}  
-  {% for field in form.fields %}
+{% form 'contact'>  
+  {% for field in form.fields>
     {{ ui.field(field) }}
-  {% endfor %}
+  {% endfor>
     
   <button type="submit" class="">Submit</button>
-{% endform %}
+{% endform>
 ```
 
 This will setup the form and import the `components/form.html` file we created in the previous step. It includes security measures to help protect your form from bots. The code loops through each field and renders them based on their type. This approach will allow content creators to add more fields in the future directly from the dashboard.
@@ -147,7 +147,7 @@ You can directly reference individual form fields using `{{ ui.field(form.fields
 
 <Step>
 ### Embedding the form on a page
-To display the form on any page or section, use `{% include 'forms/contact' %}` snippet to embed the form at the desired location in your page code.
+To display the form on any page or section, use `{% include 'forms/contact'>` snippet to embed the form at the desired location in your page code.
 </Step>
 </Steps>
 

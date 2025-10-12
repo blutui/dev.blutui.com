@@ -3,7 +3,7 @@ title: 'trim'
 description: 'The trim filter strips whitespace (or other characters) from the beginning and end of a string.'
 ---
 
-```canvas {% process=false %}
+```canvas {% process=false>
 {{ '  I like Canvas.  ' | trim }}
 {# outputs 'I like Canvas.' #}
 

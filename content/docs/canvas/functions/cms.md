@@ -7,7 +7,7 @@ description: 'The cms function allows you to retrieve CMS content.'
 
 `cms.blog` function returns the given blog and its posts:
 
-```canvas {% process=false %}
+```canvas {% process=false>
 {{ cms.blog('news') }}
 ```
 
@@ -21,7 +21,7 @@ Argument | Description                                            | Type
 
 Example:
 
-```json {% process=false %}
+```json {% process=false>
 {
   "name": "News",
   "slug": "news",
@@ -53,7 +53,7 @@ Example:
 
 `cms.collection` function returns the given collections entries:
 
-```canvas {% process=false %}
+```canvas {% process=false>
 {{ cms.collection('staff') }}
 ```
 
@@ -67,7 +67,7 @@ Argument | Description                                            | Type
 
 Example:
 
-```json {% process=false %}
+```json {% process=false>
 [
   {
     "id": "c6a2c920-5bbc-4e78-b3c3-b97726ef0086",
@@ -86,7 +86,7 @@ Example:
 
 `cms.form` function returns the given form:
 
-```canvas {% process=false %}
+```canvas {% process=false>
 {{ cms.form('contact') }}
 ```
 
@@ -100,7 +100,7 @@ Argument | Description                                            | Type
 
 Example:
 
-```json {% process=false %}
+```json {% process=false>
 {
   "name": "Contact",
   "handle": "contact",
@@ -152,7 +152,7 @@ Example:
 
 `cms.menu` function returns the given menu:
 
-```canvas {% process=false %}
+```canvas {% process=false>
 {{ cms.menu('primary') }}
 ```
 
@@ -166,7 +166,7 @@ Argument | Description                                            | Type
 
 Example:
 
-```json {% process=false %}
+```json {% process=false>
 {
   "name": "Primary",
   "handle": "primary",

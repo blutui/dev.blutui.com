@@ -6,83 +6,83 @@ Horizontal reuse is an advanced Canvas feature that is hardly ever used in regul
 
 Template inheritance is one of the most powerful features of Canvas but it is limited to single inheritance; a template can only extend one other template. This limitation makes template inheritance simple to understand and easy to debug.
 
-```canvas {% process=false %}
-{% extends 'base.html' %}
+```canvas {% process=false>
+{% extends 'base.html'>
 
-{% block title %}{% endblock %}
-{% block content %}{% endblock %}
+{% block title>{% endblock>
+{% block content>{% endblock>
 ```
 
 Horizontal reuse is a way to achieve the same goal as multiple inheritance, but without the associated complexity:
 
-```canvas {% process=false %}
-{% extends 'base.html' %}
+```canvas {% process=false>
+{% extends 'base.html'>
 
-{% use 'blocks.html' %}
+{% use 'blocks.html'>
 
-{% block title %}{% endblock %}
-{% block content %}{% endblock %}
+{% block title>{% endblock>
+{% block content>{% endblock>
 ```
 
 The **use** statement tells Canvas to import the blocks defined in `blocks.html` into the current template (it's like macros, but for blocks):
 
-```canvas {% process=false %}
+```canvas {% process=false>
 {# blocks.html #}
 
-{% block sidebar %}{% endblock %}
+{% block sidebar>{% endblock>
 ```
 
 In this example, the **use** statement imports the `sidebar` block into the main template. The code is mostly equivalent to the following one (the imported blocks are not outputted automatically):
 
-```canvas {% process=false %}
-{% extends 'base.html' %}
+```canvas {% process=false>
+{% extends 'base.html'>
 
-{% block sidebar %}{% endblock %}
-{% block title %}{% endblock %}
-{% block content %}{% endblock %}
+{% block sidebar>{% endblock>
+{% block title>{% endblock>
+{% block content>{% endblock>
 ```
 
 The **use** tag only imports a template if it does not extend another template, if it does not define macros, and if the body is empty. But it can *use* other templates. Because **use** statements are resolved independtly of the context passed to the template, the template reference cannot be an expression.
 
 The main template can also override any imported block. If the template already defines the `sidebar` block, then the one defined in `blocks.html` is ignored. To avoid name conflicts, you can rename imported blocks:
 
-```canvas {% process=false %}
-{% extends 'base.html' %}
+```canvas {% process=false>
+{% extends 'base.html'>
 
-{% use 'blocks.html' with sidebar as base_sidebar, title as base_title %}
+{% use 'blocks.html' with sidebar as base_sidebar, title as base_title>
 
-{% block sidebar %}{% endblock %}
-{% block title %}{% endblock %}
-{% block content %}{% endblock %}
+{% block sidebar>{% endblock>
+{% block title>{% endblock>
+{% block content>{% endblock>
 ```
 
 The [parent()](/docs/canvas/functions/parent) function automatically determines the correct inheritance tree, so it can be used when overriding a block defined in an imported template:
 
-```canvas {% process=false %}
-{% extends 'base.html' %}
+```canvas {% process=false>
+{% extends 'base.html'>
 
-{% use 'blocks.html' %}
+{% use 'blocks.html'>
 
-{% block sidebar %}
+{% block sidebar>
   {{ parent() }}
-{% endblock %}
+{% endblock>
 
-{% block title %}{% endblock %}
-{% block content %}{% endblock %}
+{% block title>{% endblock>
+{% block content>{% endblock>
 ```
 
 In this example, the **parent()** function will correctly call the `sidebar` block from the `blocks.html` template.
 
 Renaming allows you to simulate inheritance by calling the "parent" block:
 
-```canvas {% process=false %}
-{% extends 'base.html' %}
+```canvas {% process=false>
+{% extends 'base.html'>
 
-{% use 'blocks.html' with sidebar as parent_sidebar %}
+{% use 'blocks.html' with sidebar as parent_sidebar>
 
-{% block sidebar %}
+{% block sidebar>
   {{ block('parent_sidebar') }}
-{% endblock %}
+{% endblock>
 ```
 
 You can use as many **use** statements as you want in any given template. If two imported templates define the same block, the latest one wins.

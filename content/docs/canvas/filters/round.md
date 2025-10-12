@@ -3,7 +3,7 @@ title: 'round'
 description: 'The round filter rounds a number to a given precision.'
 ---
 
-```canvas {% process=false %}
+```canvas {% process=false>
 {{ 42.55 | round }}
 {# outputs 43 #}
 

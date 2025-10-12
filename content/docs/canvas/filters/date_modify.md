@@ -3,7 +3,7 @@ title: 'date_modify'
 description: 'The date_modify filter modifies a date with a given modifier string.'
 ---
 
-```canvas {% process=false %}
+```canvas {% process=false>
 {{ post.published_at | date_modify('+1 day') | date('m/d/Y') }}
 ```
 

@@ -1,0 +1,48 @@
+---
+title: 'Update redirect'
+description: 'Update a redirect in a project.'
+api: 'PATCH {handle}.blutui.com/admin/api/redirects/{id}'
+---
+
+### Path parameters
+
+<Parameter name="id" type="string" required="true">
+The ID of the redirect to update.
+</Parameter>
+
+### Body parameters
+
+<Parameter name="from" type="string">
+The from url of the redirect.
+</Parameter>
+
+<Parameter name="to" type="array">
+The to url of the redirect.
+</Parameter>
+
+### Response
+
+```ts tab="Node.js"
+import Blutui from 'blutui'
+
+const blutui = new Blutui('ey....')
+
+blutui
+  .project('one')
+  .admin.redirects.update('9a5b0b29-a4f8-4df6-bf53-f282af312686', {
+    from: '/updated',
+  })
+```
+
+```bash tab="cURL"
+curl -X PATCH 'https://{handle}.blutui.com/admin/api/redirects/9a5b0b29-a4f8-4df6-bf53-f282af312686' \
+     -H 'Authorization: Bearer ey....' \
+     -H 'Content-Type: application/json'
+     -d $'{
+  "from": "/updated"
+}'
+```
+
+<include>./redirect-response.mdx</include>
+
+<include>./redirect-response-parameters.mdx</include>

@@ -3,24 +3,24 @@ title: 'sort'
 description: 'The sort filter sorts an array.'
 ---
 
-```canvas {% process=false %}
-{% for user in users | sort %}
+```canvas {% process=false>
+{% for user in users | sort>
   ...
-{% endfor %}
+{% endfor>
 ```
 
 You can pass an arrow function to sort the array:
 
-```canvas {% process=false %}
+```canvas {% process=false>
 {% set fruits = [
   { name: 'Apples', quantity: 5 },
   { name: 'Oranges', quantity: 2 },
   { name: 'Grapes', quantity: 4 },
-] %}
+]>
 
-{% for fruit in fruits | sort((a, b) => a.quantity <=> b.quantity) | column('name') %}
+{% for fruit in fruits | sort((a, b) => a.quantity <=> b.quantity) | column('name')>
   {{ fruit }}
-{% endfor %}
+{% endfor>
 ```
 
 _Note the usage of the spaceship operator to simplify the comparison._

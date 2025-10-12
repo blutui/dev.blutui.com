@@ -21,9 +21,9 @@ Filters that accept arguments have parentheses around the arguments. This exampl
 To apply a filter on a section of code, wrap it with the [apply](/docs/canvas/tags/apply) tag:
 
 ```canvas
-{% apply upper %}
+{% apply upper>
   This text becomes uppercase
-{% endapply %}
+{% endapply>
 ```
 
 ## Functions
@@ -33,17 +33,17 @@ Functions can be called to generate content. Functions are called by their name 
 For instance, the `range` function returns a list containing an arithmetic progression of integers:
 
 ```canvas
-{% for i in range(0, 3) %}
+{% for i in range(0, 3)>
   {{ i }},
-{% endfor %}
+{% endfor>
 ```
 
 ### Named arguments
 
 ```canvas
-{% for i in range(low = 1, high = 10, step = 2) %}
+{% for i in range(low = 1, high = 10, step = 2)>
   {{ i }},
-{% endfor %}
+{% endfor>
 ```
 
 Using named arguments makes your templates more explicit about the meaning of the values you pass as arguments:

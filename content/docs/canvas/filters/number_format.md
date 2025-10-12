@@ -3,19 +3,19 @@ title: 'number_format'
 description: 'The number_format filter formats numbers.'
 ---
 
-```canvas {% process=false %}
+```canvas {% process=false>
 {{ 200.35 | number_format }}
 ```
 
 You can control the number of decimal places, decimal point, and thousands separator using the additional arguments:
 
-```canvas {% process=false %}
+```canvas {% process=false>
 {{ 9800.333 | number_format(2, '.', ',') }}
 ```
 
 To format negative numbers or math calculation, wrap the previous statement with parentheses (needed because of Canvas [precedence of operators](/docs/canvas/getting-started/expressions)):
 
-```canvas {% process=false %}
+```canvas {% process=false>
 {{ -9800.333 | number_format(2, '.', ',') }} {# outputs : -9 #}
 {{ (-9800.333) | number_format(2, '.', ',') }} {# outputs : -9,800.33 #}
 {{  1 + 0.2 | number_format(2) }} {# outputs : 1.2 #}

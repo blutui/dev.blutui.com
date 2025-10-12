@@ -1,0 +1,42 @@
+---
+title: 'Create redirect'
+description: 'Create a redirect a project.'
+api: 'POST {handle}.blutui.com/admin/api/redirects'
+---
+
+### Body parameters
+
+<Parameter name="from" type="string" required>
+The from url of the redirect.
+</Parameter>
+
+<Parameter name="to" type="string" required>
+The to url of the redirect.
+</Parameter>
+
+### Response
+
+```ts tab="Node.js"
+import Blutui from 'blutui'
+
+const blutui = new Blutui('ey....')
+
+blutui.project('one').admin.redirects.create({
+  from: '/about',
+  to: '/about-us',
+})
+```
+
+```bash tab="cURL"
+curl -X POST 'https://{handle}.blutui.com/admin/api/redirects' \
+     -H 'Authorization: Bearer ey....' \
+     -H 'Content-Type: application/json'
+     -d $'{
+  "from": "/about",
+  "to": "/about-us"
+}'
+```
+
+<include>./redirect-response.mdx</include>
+
+<include>./redirect-response-parameters.mdx</include>

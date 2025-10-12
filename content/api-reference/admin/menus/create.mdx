@@ -1,0 +1,78 @@
+---
+title: 'Create menu'
+description: 'Create a menu and menu items in a project.'
+api: 'POST {handle}.blutui.com/admin/api/menus'
+---
+
+### Body parameters
+
+<Parameter name="name" type="string" required>
+The name of the menu.
+</Parameter>
+
+<Parameter name="handle" type="string" required>
+The unique slug of the menu.
+</Parameter>
+
+<Parameter name="items" type="array">
+The list of items in the menu.
+</Parameter>
+
+<Parameter name="items.*.label" type="string" required>
+The label for the menu item.
+</Parameter>
+
+<Parameter name="items.*.url" type="string" required>
+The URL for the menu item.
+</Parameter>
+
+<Parameter name="items.*.active" type="boolean">
+Whether the menu item is active or not.
+</Parameter>
+
+<Parameter name="items.*.is_new_tab" type="boolean">
+Whether the menu item should open in a new tab or not.
+</Parameter>
+
+### Response
+
+```ts tab="Node.js"
+import Blutui from 'blutui'
+
+const blutui = new Blutui('ey....')
+
+blutui.project('one').admin.menus.create({
+  name: 'Primary Menu',
+  handle: 'primary-menu',
+  items: [
+    {
+      label: 'About',
+      url: '/about',
+      isNewTab: false,
+      active: true,
+    },
+  ],
+})
+```
+
+```bash tab="cURL"
+curl -X POST 'https://{handle}.blutui.com/admin/api/menus' \
+     -H 'Authorization: Bearer ey....' \
+     -H 'Content-Type: application/json'
+     -d $'{
+  "name": "Primary Menu",
+  "handle": "primary-menu",
+  "items": [
+    {
+      "label": "About",
+      "url": "/about",
+      "is_new_tab": false,
+      "active": true,
+    }
+  ]
+}'
+```
+
+<include>./menu-response.mdx</include>
+
+<include>./menu-response-parameters.mdx</include>

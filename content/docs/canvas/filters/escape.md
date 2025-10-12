@@ -3,7 +3,7 @@ title: 'escape'
 description: 'The escape filter escapes a string using strategies that depend on the context'
 ---
 
-```canvas {% process=false %}
+```canvas {% process=false>
 <p>
   {{ user.username | escape }}
 </p>
@@ -11,7 +11,7 @@ description: 'The escape filter escapes a string using strategies that depend on
 
 For convenience, the **e** filter is defined as an alias:
 
-```canvas {% process=false %}
+```canvas {% process=false>
 <p>
   {{ user.username | e }}
 </p>
@@ -19,7 +19,7 @@ For convenience, the **e** filter is defined as an alias:
 
 The **escape** filter can also be used in contexts other than HTML thanks to an optional argument which defines the escaping strategy to use:
 
-```canvas {% process=false %}
+```canvas {% process=false>
 {{ user.username | e }}
 {# is equivalent to #}
 {{ user.username | e('html') }}
@@ -27,7 +27,7 @@ The **escape** filter can also be used in contexts other than HTML thanks to an 
 
 And here is how to escape variables included in JavaScript code:
 
-```canvas {% process=false %}
+```canvas {% process=false>
 {{ user.username | escape('js') }}
 {{ user.username | e('js') }}
 ```
@@ -44,23 +44,23 @@ Note that doing contextual escaping in HTML documents is hard and choosing the r
 
 When using automatic escaping, Canvas tries to not double-escape a variable when the automatic escaping strategy is the same as the one applied by the escape filter; but that does not work when using a variable as the escaping strategy:
 
-```canvas {% process=false %}
-{% set strategy = 'html' %}
+```canvas {% process=false>
+{% set strategy = 'html'>
 
-{% autoescape 'html' %}
+{% autoescape 'html'>
   {{ var | escape('html') }} {# won't be double-escaped #}
   {{ var | escape(strategy) }} {# will be double-escaped #}
-{% endautoescape %}
+{% endautoescape>
 ```
 
 When using a variable as the escaping strategy, you should disable automatic escaping:
 
-```canvas {% process=false %}
-{% set strategy = 'html' %}
+```canvas {% process=false>
+{% set strategy = 'html'>
 
-{% autoescape 'html' %}
+{% autoescape 'html'>
   {{ var | escape(strategy) | raw }} {# won't be double-escaped #}
-{% endautoescape %}
+{% endautoescape>
 ```
 
 ## Arguments

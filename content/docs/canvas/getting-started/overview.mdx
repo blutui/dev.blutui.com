@@ -15,7 +15,7 @@ A template contains **variables** or **expressions**, which get replaced with va
 
 Below is a minimal template that illustrates a few basics. We will cover further details later on:
 
-```canvas {% process=false %}
+```canvas {% process=false>
 <!DOCTYPE html>
 <html>
   <head>
@@ -24,9 +24,9 @@ Below is a minimal template that illustrates a few basics. We will cover further
 
   <body>
     <ul id="navigation">
-      {% for item in navigation %}
+      {% for item in navigation>
         <li><a href="{{ item.href }}">{{ item.caption }}</a></li>
-      {% endfor %}
+      {% endfor>
     </ul>
 
     <h1>My Webpage</h1>
@@ -35,7 +35,7 @@ Below is a minimal template that illustrates a few basics. We will cover further
 </html>
 ```
 
-There are two kinds of delimiters: `{% ... %}` and `{{ ... }}`. The first one is used to execute statements such as for-loops, the latter outputs the result of an expression.
+There are two kinds of delimiters: `{% ...>` and `{{ ... }}`. The first one is used to execute statements such as for-loops, the latter outputs the result of an expression.
 
 ## Project structure
 

@@ -23,7 +23,7 @@ If the current site is published.
 
 The meta description of the current site.
 
-```canvas {% process=false %}
+```canvas {% process=false>
 <meta name="description" content="{{ settings.meta_description }}">
 ```
 
@@ -31,7 +31,7 @@ The meta description of the current site.
 
 The Google site verification code of the current site.
 
-```canvas {% process=false %}
+```canvas {% process=false>
 <meta name="google-site-verification" content="{{ settings.google_verification_code }}">
 ```
 

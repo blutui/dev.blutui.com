@@ -5,13 +5,13 @@ description: 'Generates a HTML form tag.'
 
 The `form` tag generates an HTML form tag, including any required input tags to submit the form. The `form` tag requires a handle to render it's contents, usually found in your project dashboard:
 
-```canvas {% process=false %}
-{% form 'handle' %}
+```canvas {% process=false>
+{% form 'handle'>
   <!-- form content -->
-{% endform %}
+{% endform>
 ```
 
-```html {% filename="HTML Output" %}
+```html {% filename="HTML Output">
 <form method="POST" action="/" enctype="multipart/form-data">
   <input type="hidden" name="_form" value="handle" />
   <input type="hidden" name="_token" value="..." autocomplete="off">
@@ -47,27 +47,27 @@ Variable                           | Description
 `form.fields.{name}.max`           | The max character limit of the form field.
 `form.fields.{name}.options`       | An array of available options for `select`, `radio` & `checkbox` type fields.
 
-```canvas {% process=false %}
-{% form 'contact' %}
+```canvas {% process=false>
+{% form 'contact'>
   <h1>{{ form.name }}</h1>
 
   <input type="{{ form.fields.email.type }}" name="{{ form.fields.email.name }}" value="{{ form.fields.email.value }}" />
 
   <button type="submit">Submit</button>
-{% endform %}
+{% endform>
 ```
 
 ## Custom HTML attributes
 
 The `form` tag also provides the ability to define custom HTML attributes for the HTML `<form>` element:
 
-```canvas {% process=false %}
-{% form 'contact' with { id: 'contact' } %}
+```canvas {% process=false>
+{% form 'contact' with { id: 'contact' }>
   <!-- form content -->
-{% endform %}
+{% endform>
 ```
 
-```html {% filename="HTML Output" %}
+```html {% filename="HTML Output">
 <form method="POST" action="/" enctype="multipart/form-data" id="contact">
   <input type="hidden" name="_form" value="contact" />
   <input type="hidden" name="_token" value="..." autocomplete="off">
@@ -77,14 +77,14 @@ The `form` tag also provides the ability to define custom HTML attributes for th
 
 You can also access the custom HTML attributes inside the `form` block:
 
-```canvas {% process=false %}
-{% form 'contact' with { id: 'contact' } %}
+```canvas {% process=false>
+{% form 'contact' with { id: 'contact' }>
   <input type="hidden" name="form_id" value="{{ attributes.id }}" />
   <!-- form content -->
-{% endform %}
+{% endform>
 ```
 
-```html {% filename="HTML Output" %}
+```html {% filename="HTML Output">
 <form method="POST" action="/" enctype="multipart/form-data" id="contact">
   <input type="hidden" name="_form" value="contact" />
   <input type="hidden" name="_token" value="..." autocomplete="off">

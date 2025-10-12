@@ -3,13 +3,13 @@ title: 'recaptcha'
 description: 'The recaptcha function renders the required elements for a recaptcha component.'
 ---
 
-```canvas {% process=false %}
+```canvas {% process=false>
 {{ recaptcha() }}
 ```
 
 The following HTML is rendered:
 
-```html {% process=false %}
+```html {% process=false>
 <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 <div class="g-recaptcha" data-sitekey="{{ data.key }}" data-theme="light" data-size="normal" data-tabindex="0" data-callback="" data-expired-callback="" data-error-callback=""></div>
 <!-- data.key is a value from the site settings -->
@@ -17,7 +17,7 @@ The following HTML is rendered:
 
 You can also update the default `recaptcha` arguments:
 
-```canvas {% process=false %}
+```canvas {% process=false>
 {{ recaptcha(theme = 'dark', tabindex = 1) }}
 ```
 
@@ -36,13 +36,13 @@ Argument           | Description                                          | Type
 
 The `honeypot_field` functions renders the required HTML to protect your form from robots:
 
-```canvas {% process=false %}
+```canvas {% process=false>
 {{ honeypot_field() }}
 ```
 
 The following HTML is rendered:
 
-```html {% process=false %}
+```html {% process=false>
 <span style="display: none;">
   <input type="text" name="{{ honeypot.name }}" id="honeyeater">
   <input type="text" name="{{ honeypot.validFromName }}" value="{{ honeypot.validFromValue }}" id="honeyeater-ttl">

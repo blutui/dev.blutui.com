@@ -7,7 +7,7 @@ The Blutui Project Admin API requires a Blutui [access tokens](https://console.b
 
 Here's how to authenticate with an access token using cURL:
 
-```bash {% process=false filename="Example request with bearer token" %}
+```bash title="Example request with bearer token">
 curl https://{handle}.blutui.com/admin/api/menus \
   -H 'Authorization: Bearer ey....'
 ```

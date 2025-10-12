@@ -3,13 +3,13 @@ title: 'striptags'
 description: 'The striptags filter strips SGML/XML tags and replace adjacent whitespace by one space.'
 ---
 
-```canvas {% process=false %}
+```canvas {% process=false>
 {{ some_html | striptags }}
 ```
 
 You can also provide tags which should not be stripped:
 
-```canvas {% process=false %}
+```canvas {% process=false>
 {{ some_html | striptags('<br><p>') }}
 ```
 

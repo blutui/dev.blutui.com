@@ -8,14 +8,14 @@ Macros are defined in regular templates.
 
 Imagine having a generic helper template that define how to render HTML forms via macros (called `forms.html`):
 
-```canvas {% process=false %}
-{% macro input(name, value, type = 'text', size = 20) %}
+```canvas {% process=false>
+{% macro input(name, value, type = 'text', size = 20)>
   <input type="{{ type }}" name="{{ name }}" value="{{ value | e }}" size="{{ size }}" />
-{% endmacro %}
+{% endmacro>
 
-{% macro textarea(name, value, rows = 10, cols = 40) %}
+{% macro textarea(name, value, rows = 10, cols = 40)>
   <textarea name="{{ name }}" rows="{{ rows }}" cols="{{ cols }}">{{ value | e }}</textarea>
-{% endmacro %}
+{% endmacro>
 ```
 
 Each macro argument can have a default value (here `text` is the default value for `type` if not provided in the call).
@@ -33,23 +33,23 @@ There are two ways to import macros. You can import the complete template contai
 
 To import all macros from a template into a local variable, use the [import](/docs/canvas/tags/import) tag:
 
-```canvas {% process=false %}
-{% import 'forms.html' as forms %}
+```canvas {% process=false>
+{% import 'forms.html' as forms>
 ```
 
 The above **import** call imports the `forms.html` file (which can contain only macros, or a template and some macros), and import the macros as items of the `forms` local variable.
 
 The macros can then be called at will in the *current* template:
 
-```canvas {% process=false %}
+```canvas {% process=false>
 <p>{{ forms.input('username') }}</p>
 <p>{{ forms.input('password', null, 'password') }}</p>
 ```
 
 Alternatively you can import names from the template into the current namespace via the [from](/docs/canvas/tags/from) tag:
 
-```canvas {% process=false %}
-{% from 'forms.html' import input as input, textarea %}
+```canvas {% process=false>
+{% from 'forms.html' import input as input, textarea>
 
 <p>{{ input('password', '', 'password') }}</p>
 <p>{{ textarea('comment') }}</p>
@@ -57,12 +57,12 @@ Alternatively you can import names from the template into the current namespace 
 
 When **macro** usages and definitions are in the same template, you don't need to import the macros as they are automatically available under the special `_self` variable:
 
-```canvas {% process=false %}
+```canvas {% process=false>
 <p>{{ _self.input('password', '', 'password') }}</p>
 
-{% macro input(name, value, type = "text", size = 20) %}
+{% macro input(name, value, type = "text", size = 20)>
   <input type="{{ type }}" name="{{ name }}" value="{{ value | e }}" size="{{ size }}" />
-{% endmacro %}
+{% endmacro>
 ```
 
 ## Macro scoping
@@ -79,26 +79,26 @@ When calling **import** or **from** from a **macro** tag, the imported macros ar
 
 You can check if a macro is defined via the `defined` test:
 
-```canvas {% process=false %}
-{% import 'macros.html' as macros %}
+```canvas {% process=false>
+{% import 'macros.html' as macros>
 
-{% from 'macros.html' import hello %}
+{% from 'macros.html' import hello>
 
 {% if macros.hello is defined -%}
   OK
-{% endif %}
+{% endif>
 
 {% if hello is defined -%}
   OK
-{% endif %}
+{% endif>
 ```
 
 ## Named macro end-tags
 
 Canvas allows you to put the name of the macro after the end tag for better readability (the name after the `endmacro` word must match the macro name):
 
-```canvas {% process=false %}
-{% macro input() %}
+```canvas {% process=false>
+{% macro input()>
   ...
-{% endmacro input %}
+{% endmacro input>
 ```

@@ -3,7 +3,7 @@ title: 'url_encode'
 description: 'The url_encode filter percent encodes a given string as URL segment or an array as query string.'
 ---
 
-```canvas {% process=false %}
+```canvas {% process=false>
 {{ 'path-seg*ment' | url_encode }}
 {# outputs "path-seg%2Ament" #}
 

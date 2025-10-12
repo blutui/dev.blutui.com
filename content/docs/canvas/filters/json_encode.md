@@ -3,7 +3,7 @@ title: 'json_encode'
 description: 'The json_encode filter returns the JSON representation of a value.'
 ---
 
-```canvas {% process=false %}
+```canvas {% process=false>
 {{ data | json_encode() }}
 ```
 
@@ -17,7 +17,7 @@ Argument  | Description                                              | Type
 
 The following constants can be combined to form options for the **json_encode** filter:
 
-```canvas {% process=false %}
+```canvas {% process=false>
 {{ data | json_encode(constant('JSON_PRETTY_PRINT')) }}
 ```
 

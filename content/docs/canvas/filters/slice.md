@@ -3,10 +3,10 @@ title: 'slice'
 description: 'The slice filter extracts a slice of a sequence, a mapping, or a string.'
 ---
 
-```canvas {% process=false %}
-{% for i in [1, 2, 3, 4, 5] | slice(1, 2) %}
+```canvas {% process=false>
+{% for i in [1, 2, 3, 4, 5] | slice(1, 2)>
   {# will iterate over 2 and 3 #}
-{% endfor %}
+{% endfor>
 
 {{ '12345' | slice(1, 2) }}
 {# outputs 23 #}
@@ -14,18 +14,18 @@ description: 'The slice filter extracts a slice of a sequence, a mapping, or a s
 
 You can use any valid expression for both the start and the length:
 
-```canvas {% process=false %}
-{% for i in [1, 2, 3, 4, 5] | slice(start, length) %}
+```canvas {% process=false>
+{% for i in [1, 2, 3, 4, 5] | slice(start, length)>
   {# ... #}
-{% endfor %}
+{% endfor>
 ```
 
 As syntactic sugar, you can also use the `[]` notation:
 
-```canvas {% process=false %}
-{% for i in [1, 2, 3, 4, 5][start:length] %}
+```canvas {% process=false>
+{% for i in [1, 2, 3, 4, 5][start:length]>
   {# ... #}
-{% endfor %}
+{% endfor>
 
 {{ '12345'[1:2] }} {# will display "23" #}
 

@@ -123,9 +123,9 @@ The version method is still in beta, so it might not return the correct result.
 Get the browser or platform version you can use:
 
 ```canvas
-{% set browser = agent().browser() %}
+{% set browser = agent().browser()>
 {{ agent().version(browser) }}
 
-{% set platform = agent().platform() %}
+{% set platform = agent().platform()>
 {{ agent().version(platform) }}
 ```

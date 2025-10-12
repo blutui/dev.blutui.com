@@ -3,12 +3,12 @@ title: 'group_by'
 description: 'The group_by filter groups array items by a given key.'
 ---
 
-```canvas {% process=false %}
+```canvas {% process=false>
 {% set items = [
   { account_id: 'account-x10', product: 'Chair' },
   { account_id: 'account-x10', product: 'Bookcase' },
   { account_id: 'account-x11', product: 'Desk' },
-] | group_by('account_id') %}
+] | group_by('account_id')>
 
 {# output:
 {

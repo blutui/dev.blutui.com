@@ -3,7 +3,7 @@ title: 'last'
 description: 'The last filter returns the last "element" of a sequence, a mapping, or a string.'
 ---
 
-```canvas {% process=false %}
+```canvas {% process=false>
 {{ [1, 2, 3, 4] | last }}
 {# outputs 4 #}
 

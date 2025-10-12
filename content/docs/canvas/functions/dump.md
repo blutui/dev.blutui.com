@@ -5,7 +5,7 @@ description: 'The dump function dumps information about a variable.'
 
 This is mostly useful to check the output of the provided variable:
 
-```canvas {% process=false %}
+```canvas {% process=false>
 {{ dump(user) }}
 ```
 

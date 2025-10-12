@@ -4,37 +4,37 @@ title: 'for'
 
 Loop over each item in a sequence. For example, to display a list of users provided in a variable called `users`:
 
-```canvas {% process=false %}
+```canvas {% process=false>
 <h1>Members</h1>
 <ul>
-  {% for user in users %}
+  {% for user in users>
     <li>{{ user.username | e }}</li>
-  {% endfor %}
+  {% endfor>
 </ul>
 ```
 
 If you do need to iterate over a sequence of numbers, you can use the `..` operator:
 
-```canvas {% process=false %}
-{% for i in 0..10 %}
+```canvas {% process=false>
+{% for i in 0..10>
   * {{ i }}
-{% endfor %}
+{% endfor>
 ```
 
 The above snippet of code would print all numbers from 0 to 10. It can be also useful with letters:
 
-```canvas {% process=false %}
-{% for letter in 'a'..'z' %}
+```canvas {% process=false>
+{% for letter in 'a'..'z'>
   * {{ letter }}
-{% endfor %}
+{% endfor>
 ```
 
 The `..` operator can take any expression at both sides:
 
-```canvas {% process=false %}
-{% for letter in 'a'|upper..'z'|upper %}
+```canvas {% process=false>
+{% for letter in 'a'|upper..'z'|upper>
   * {{ letter }}
-{% endfor %}
+{% endfor>
 ```
 
 ## The loop variable
@@ -52,23 +52,23 @@ Variable         | Description
 `loop.length`    | The number of items in the sequence
 `loop.parent`    | The parent context
 
-```canvas {% process=false %}
-{% for user in users %}
+```canvas {% process=false>
+{% for user in users>
     {{ loop.index }} - {{ user.username }}
-{% endfor %}
+{% endfor>
 ```
 
 ## The else clause
 
 If no iteration took place because the sequence was empty, you can render a replacement block by using `else`:
 
-```canvas {% process=false %}
+```canvas {% process=false>
 <ul>
-  {% for user in users %}
+  {% for user in users>
     <li>{{ user.username | e }}</li>
-  {% else %}
+  {% else>
     <li><em>no user found</em></li>
-  {% endfor %}
+  {% endfor>
 </ul>
 ```
 
@@ -76,12 +76,12 @@ If no iteration took place because the sequence was empty, you can render a repl
 
 By default, a loop iterates over the values of the sequence. You can iterate on keys by using the `keys` filter:
 
-```canvas {% process=false %}
+```canvas {% process=false>
 <h1>Members</h1>
 <ul>
-    {% for key in users | keys %}
+    {% for key in users | keys>
         <li>{{ key }}</li>
-    {% endfor %}
+    {% endfor>
 </ul>
 ```
 
@@ -89,12 +89,12 @@ By default, a loop iterates over the values of the sequence. You can iterate on 
 
 You can also access both keys and values:
 
-```canvas {% process=false %}
+```canvas {% process=false>
 <h1>Members</h1>
 <ul>
-    {% for key, user in users %}
+    {% for key, user in users>
         <li>{{ key }}: {{ user.username | e }}</li>
-    {% endfor %}
+    {% endfor>
 </ul>
 ```
 
@@ -102,11 +102,11 @@ You can also access both keys and values:
 
 You might want to iterate over a subset of values. This can be achieved using the [slice](/docs/canvas/filters/slice) filter:
 
-```canvas {% process=false %}
+```canvas {% process=false>
 <h1>Top Ten Members</h1>
 <ul>
-    {% for user in users | slice(0, 10) %}
+    {% for user in users | slice(0, 10)>
         <li>{{ user.username | e }}</li>
-    {% endfor %}
+    {% endfor>
 </ul>
 ```

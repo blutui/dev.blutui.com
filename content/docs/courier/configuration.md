@@ -12,7 +12,7 @@ courier init [your-project-handle]
 
 This command will generate:
 
-```json {% process=false filename="courier.json" %}
+```json title="courier.json">
 {
   "handle": "[your-project-handle]",
   "cassette": "default"

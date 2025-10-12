@@ -5,8 +5,8 @@ description: 'The reduce filter iteratively reduces a sequence or a mapping to a
 
 The arrow function receives the return value of the previous iteration and the current value of the sequence or mapping:
 
-```canvas {% process=false %}
-{% set numbers = [1, 2, 3] %}
+```canvas {% process=false>
+{% set numbers = [1, 2, 3]>
 
 {{ numbers | reduce((carry, v) => carry + v) }}
 {# output 6 #}
@@ -14,7 +14,7 @@ The arrow function receives the return value of the previous iteration and the c
 
 The **reduce** filter takes an `initial` value as a second argument:
 
-```canvas {% process=false %}
+```canvas {% process=false>
 {{ numbers | reduce((carry, v) => carry + v, 10) }}
 {# output 16 #}
 ```

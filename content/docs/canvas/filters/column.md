@@ -4,8 +4,8 @@ description: 'The column filter returns the values from a single column in the i
 ---
 
 ```canvas
-{% set items = [{ 'fruit' : 'apple'}, {'fruit' : 'orange' }] %}
-{% set fruits = items | column('fruit') %}
+{% set items = [{ 'fruit' : 'apple'}, {'fruit' : 'orange' }]>
+{% set fruits = items | column('fruit')>
 {# fruits now contains ['apple', 'orange'] #}
 ```
 

@@ -3,7 +3,7 @@ title: 'replace'
 description: 'The replace filter formats a given string by replacing the placeholders.'
 ---
 
-```canvas {% process=false %}
+```canvas {% process=false>
 {{ "I like %this% and %that%." | replace({'%this%': foo, '%that%': "bar"}) }}
 
 {# outputs I like foo and bar

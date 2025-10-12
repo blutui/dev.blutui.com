@@ -3,7 +3,7 @@ title: 'slug'
 description: 'The slug filter returns a URL friendly version of the value.'
 ---
 
-```canvas {% process=false %}
+```canvas {% process=false>
 {{ 'Hello, World!' | slug }}
 
 {# outputs 'hello-world' #}
@@ -11,7 +11,7 @@ description: 'The slug filter returns a URL friendly version of the value.'
 
 The `slug` filter takes a `separator` value as the first argument:
 
-```canvas {% process=false %}
+```canvas {% process=false>
 {{ 'Hello, World!' | slug('_') }}
 
 {# outputs 'hello_world' #}
