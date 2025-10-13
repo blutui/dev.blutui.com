@@ -2,6 +2,7 @@
   "pages": [
     "update",
     "retrieve",
-    "list"
+    "list",
+    "!agency-response-list"
   ]
 }

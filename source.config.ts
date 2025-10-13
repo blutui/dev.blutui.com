@@ -29,6 +29,14 @@ export default defineConfig({
         dark: 'dark-plus',
       },
     },
-    recmaPlugins: [remarkSteps],
+    remarkCodeTabOptions: {
+      parseMdx: true,
+    },
+    remarkNpmOptions: {
+      persist: {
+        id: 'package-manager',
+      },
+    },
+    remarkPlugins: [remarkSteps],
   },
 })
