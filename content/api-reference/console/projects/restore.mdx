@@ -1,0 +1,31 @@
+---
+title: 'Restore project'
+description: 'Restore an archived project in your agency.'
+api: 'DELETE api.blutui.com/v1/agencies/{username}/projects/{id}/archived'
+---
+
+### Path parameters
+
+<Parameter name="id" type="string" required="true">
+The ID of the project to restore.
+</Parameter>
+
+### Response
+
+```ts tab="Node.js"
+import Blutui from 'blutui'
+
+const blutui = new Blutui('ey....')
+
+blutui.agency('studio').projects.restore('9c17d680-e0af-4f00-9e28-08c4e38e89e0')
+```
+
+```bash tab="cURL"
+curl -X DELETE 'https://api.blutui.com/v1/agencies/studio/projects/9c17d680-e0af-4f00-9e28-08c4e38e89e0/restore' \
+     -H 'Authorization: Bearer ey....' \
+     -H 'Content-Type: application/json'
+```
+
+<include>./project-response.mdx</include>
+
+<include>./project-response-parameters.mdx</include>

@@ -1,0 +1,48 @@
+---
+title: 'Create project'
+description: 'Create a project to your agency.'
+api: 'POST api.blutui.com/v1/agencies/{username}/projects'
+---
+
+### Body parameters
+
+<Parameter name="name" type="string" required>
+The name of the project.
+</Parameter>
+
+<Parameter name="handle" type="string">
+The unique slug of the project.
+</Parameter>
+
+<Parameter name="timezone" type="string">
+The timezone of the project. The value must be a valid timezone string, check the [list of supported timezones](/api/timezones) for more information.
+</Parameter>
+
+<Parameter name="description" type="string">
+The description of the project.
+</Parameter>
+
+### Response
+
+```ts tab="Node.js"
+import Blutui from 'blutui'
+
+const blutui = new Blutui('ey....')
+
+blutui.agency('studio').projects.create({
+  name: 'Example Site',
+})
+```
+
+```bash tab="cURL"
+curl -X POST 'https://api.blutui.com/v1/agencies/studio/projects' \
+     -H 'Authorization: Bearer ey....' \
+     -H 'Content-Type: application/json'
+     -d $'{
+  "name": "Example Site"
+}'
+```
+
+<include>./project-response.mdx</include>
+
+<include>./project-response-parameters.mdx</include>

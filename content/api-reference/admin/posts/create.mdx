@@ -1,0 +1,74 @@
+---
+title: 'Create post'
+description: 'Create a blog post in a project.'
+api: 'POST {handle}.blutui.com/admin/api/posts'
+---
+
+### Body parameters
+
+<Parameter name="title" type="string" required>
+The title for the blog post.
+</Parameter>
+
+<Parameter name="slug" type="string" required>
+The unique slug for this blog post.
+</Parameter>
+
+<Parameter name="content" type="string" required>
+The HTML content of the blog post.
+</Parameter>
+
+<Parameter name="author" type="string" required>
+The author of the blog post.
+</Parameter>
+
+<Parameter name="blog" type="string" required>
+The ID of the blog this post belongs to.
+</Parameter>
+
+<Parameter name="published_date" type="string" required>
+The date and time when the blog post will be published.
+</Parameter>
+
+<Parameter name="description" type="string">
+A short description of the blog post.
+</Parameter>
+
+<Parameter name="feature_image" type="string">
+The URL of the featured image.
+</Parameter>
+
+### Response
+
+```ts tab="Node.js"
+import Blutui from 'blutui'
+
+const blutui = new Blutui('ey....')
+
+blutui.project('one').admin.posts.create({
+  title: 'A very awesome post',
+  slug: '/a-very-awesome-post',
+  content: '<p>My post content</p>',
+  author: 'John Doe',
+  blog: '99e2addd-e8d2-45c3-8184-fbcae8a6cf29',
+  publish_date: '2024/09/25 11:00:00',
+})
+```
+
+```bash tab="cURL"
+curl -X POST 'https://{handle}.blutui.com/admin/api/posts' \
+     -H 'Authorization: Bearer ey....' \
+     -H 'Content-Type: application/json'
+     -d $'{
+  "title": "A very awesome post",
+  "slug": "/a-very-awesome-post",
+  "content": "<p>My post content</p>",
+  "author": "John Doe",
+  "blog": "99e2addd-e8d2-45c3-8184-fbcae8a6cf29",
+  "publish_date": "2024/09/25 11:00:00"
+}'
+```
+
+<include>./post-response.mdx</include>
+
+<include>./post-response-parameters.mdx</include>

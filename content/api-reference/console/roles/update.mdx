@@ -1,0 +1,44 @@
+---
+title: 'Update role'
+description: 'Update a role in your agency.'
+api: 'PATCH api.blutui.com/v1/agencies/{username}/roles/{id}'
+---
+
+### Body parameters
+
+<Parameter name="name" type="string" required>
+The unique name of the role.
+</Parameter>
+
+<Parameter name="description" type="string | null">
+The description of the role.
+</Parameter>
+
+<Parameter name="permissions" type="array">
+The list of permissions for the role.
+</Parameter>
+
+### Response
+
+```ts tab="Node.js"
+import Blutui from 'blutui'
+
+const blutui = new Blutui('ey....')
+
+blutui.agency('studio').roles.update(2, {
+  description: 'The frontend developer role.',
+})
+```
+
+```bash tab="cURL"
+curl -X PATCH 'https://api.blutui.com/v1/agencies/studio/roles/2' \
+     -H 'Authorization: Bearer ey....' \
+     -H 'Content-Type: application/json'
+     -d $'{
+  "description": "The frontend developer role."
+}'
+```
+
+<include>./role-response.mdx</include>
+
+<include>./role-response-parameters.mdx</include>

@@ -1,0 +1,7 @@
+{
+  "pages": [
+    "retrieve",
+    "list",
+    "remove"
+  ]
+}

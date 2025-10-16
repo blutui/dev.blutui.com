@@ -1,0 +1,47 @@
+---
+title: 'Remove webhook'
+description: 'Remove a webhook endpoint from a project.'
+api: 'DELETE {handle}.blutui.com/admin/api/webhooks/{id}'
+---
+
+### Path parameters
+
+<Parameter name="id" type="string" required="true">
+The ID of the webhook endpoint to remove.
+</Parameter>
+
+### Response
+
+```ts tab="Node.js"
+import Blutui from 'blutui'
+
+const blutui = new Blutui('ey....')
+
+blutui.project('one').admin.webhooks.remove('9a228a02-305b-4bfc-8e69-e523a95c216c')
+```
+
+```bash tab="cURL"
+curl -X DELETE 'https://{handle}.blutui.com/admin/api/webhooks/9a228a02-305b-4bfc-8e69-e523a95c216c' \
+     -H 'Authorization: Bearer ey....' \
+     -H 'Content-Type: application/json'
+```
+
+```json title="JSON Response"
+{
+  "id": "9a228a02-305b-4bfc-8e69-e523a95c216c",
+  "object": "webhook",
+  "deleted": true
+}
+```
+
+<Parameter name="id" type="string">
+The unique identifier for this webhook.
+</Parameter>
+
+<Parameter name="object" type="string">
+This will always contain `webhook` for this endpoint.
+</Parameter>
+
+<Parameter name="deleted" type="boolean">
+Determine if the object was successfully deleted.
+</Parameter>

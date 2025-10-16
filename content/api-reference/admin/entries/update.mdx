@@ -1,0 +1,42 @@
+---
+title: 'Update entry'
+description: 'Update an entry for a collection in a project.'
+api: 'PATCH {handle}.blutui.com/admin/api/collections/{collection_id}/entries/{id}'
+---
+
+### Path parameters
+
+<Parameter name="id" type="string" required>
+The ID of the collection entry to update.
+</Parameter>
+
+### Body parameters
+
+<Parameter name="*" type="any">
+The key/value pair of a collection field.
+</Parameter>
+
+### Response
+
+```ts tab="Node.js"
+import Blutui from 'blutui'
+
+const blutui = new Blutui('ey....')
+
+blutui.project('one').admin.entries.update('collection-id', '99e2addd-e8d2-45c3-8184-fbcae8a6cf29', {
+  title: 'Black Chair',
+})
+```
+
+```bash tab="cURL"
+curl -X PATCH 'https://{handle}.blutui.com/admin/api/collections/collection-id/entries/99e2addd-e8d2-45c3-8184-fbcae8a6cf29' \
+     -H 'Authorization: Bearer ey....' \
+     -H 'Content-Type: application/json'
+     -d $'{
+  "name": "Black Chair"
+}'
+```
+
+<include>./entry-response.mdx</include>
+
+<include>./entry-response-parameters.mdx</include>

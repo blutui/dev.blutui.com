@@ -1,0 +1,8 @@
+{
+  "pages": [
+    "update",
+    "retrieve",
+    "list",
+    "!agency-response-list"
+  ]
+}

@@ -1,0 +1,31 @@
+---
+title: 'Retrieve route pattern'
+description: 'Retrieve a route pattern for a project.'
+api: 'GET {handle}.blutui.com/admin/api/route_patterns/{id}'
+---
+
+### Path parameters
+
+<Parameter name="id" type="string" required="true">
+The ID of the route_pattern to retrieve.
+</Parameter>
+
+### Response
+
+```ts tab="Node.js"
+import Blutui from 'blutui'
+
+const blutui = new Blutui('ey....')
+
+blutui.project('one').admin.routePatterns.get('99e280a8-dfc6-4b46-8b6a-3055187fe078')
+```
+
+```bash tab="cURL"
+curl -X GET 'https://{handle}.blutui.com/admin/api/route_patterns/99e280a8-dfc6-4b46-8b6a-3055187fe078' \
+     -H 'Authorization: Bearer ey....' \
+     -H 'Content-Type: application/json'
+```
+
+<include>./route-pattern-response.mdx</include>
+
+<include>./route-pattern-response-parameters.mdx</include>

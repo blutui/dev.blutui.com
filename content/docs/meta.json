@@ -1,0 +1,17 @@
+{
+  "title": "Documentation",
+  "icon": "BookOpen",
+  "root": true,
+  "pages": [
+    "---[Album]Getting Started---",
+    "index",
+    "...getting-started",
+    "intellisense",
+    "---[Sparkles]AI Components---",
+    "...components",
+    "---[SquareTerminal]Courier---",
+    "...courier",
+    "---[LayoutTemplate]Canvas---",
+    "...canvas"
+  ]
+}

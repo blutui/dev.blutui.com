@@ -1,0 +1,9 @@
+{
+  "pages": [
+    "create",
+    "update",
+    "retrieve",
+    "remove",
+    "duplicate"
+  ]
+}

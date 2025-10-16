@@ -1,0 +1,46 @@
+---
+title: 'Search projects'
+description: 'Search for projects in your agency.'
+api: 'POST api.blutui.com/v1/agencies/{username}/projects/search'
+---
+
+### Body parameters
+
+<Parameter name="name" type="string" required>
+The name of the project to search for.
+</Parameter>
+
+### Response
+
+```ts tab="Node.js"
+import Blutui from 'blutui'
+
+const blutui = new Blutui('ey....')
+
+blutui.agency('studio').projects.search({
+  name: 'Example Site'
+})
+```
+
+```bash tab="cURL"
+curl -X POST 'https://api.blutui.com/v1/agencies/studio/projects/search' \
+     -H 'Authorization: Bearer ey....' \
+     -H 'Content-Type: application/json'
+     -d $'{
+  "name": "Example Site"
+}'
+```
+
+<include>./project-response-list.mdx</include>
+
+<Parameter name="object" type="string">
+This will always contain `list` for this endpoint.
+</Parameter>
+
+<Parameter name="data" type="array">
+An array of up to `limit` project resources. If no projects are available, an empty array is returned.
+</Parameter>
+
+<Parameter name="meta" type="object">
+Additional information about the list.
+</Parameter>

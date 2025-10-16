@@ -1,0 +1,33 @@
+{
+  "title": "Guides",
+  "icon": "GraduationCap",
+  "root": true,
+  "pages": [
+    "---[Album]Getting Started---",
+    "introduction",
+    "---[SquareTerminal]Courier---",
+    "install-courier-on-macos",
+    "install-courier-on-windows",
+    "preview-project-with-courier",
+    "pull-project-with-courier",
+    "push-project-with-courier",
+
+    "---[AtSign]Forms---",
+    "create-form",
+    "add-recaptcha-2-to-a-form",
+    "add-recaptcha-3-to-a-form",
+    "send-form-submissions-to-an-email-address",
+    "send-form-submissions-to-zapier",
+
+    "---[Sparkles]AI Components---",
+    "use-blutui-ai-in-a-project",
+
+    "---[LayoutTemplate]Blutui Canvas---",
+    "what-is-blutui-canvas",
+    "create-project",
+    "make-the-most-out-of-canvas",
+    "use-a-package-manager-in-a-project",
+    "use-parcel-js-in-a-project",
+    "use-tailwind-css-in-a-project"
+  ]
+}

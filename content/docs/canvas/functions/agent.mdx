@@ -1,0 +1,131 @@
+---
+title: 'agent'
+description: 'The agent function allows you to get information about the current device.'
+---
+
+## is
+
+Check for a certain property in the user agent:
+
+```canvas
+{{ agent().is('Windows') }}
+{{ agent().is('Firefox') }}
+{{ agent().is('iPhone') }}
+{{ agent().is('OS X') }}
+```
+
+## Magic is-method
+
+Magic method that does the same as the previous **is** method:
+
+```canvas
+{{ agent().isAndroidOS() }}
+{{ agent().isNexus() }}
+{{ agent().isSafari() }}
+```
+
+## Mobile detection
+
+Check for mobile device:
+
+```canvas
+{{ agent().isMobile() }}
+{{ agent().isTablet() }}
+```
+
+## Match user agent
+
+Search the user agent with a regular expression:
+
+```canvas
+{{ agent().match('regexp') }}
+```
+
+## Accepted languages
+
+Get the browser's accepted languages. Example:
+
+```canvas
+{{ agent().languages() }}
+{# outputs: ['en-us', 'en'] #}
+```
+
+## Device name
+
+Get the device name, if mobile. (iPhone, Nexus, ...)
+
+```canvas
+{{ agent().device() }}
+```
+
+## Device Type
+
+Get the device type. (desktop, tablet, mobile, ...)
+
+```canvas
+{{ agent().deviceType() }}
+```
+
+## Operating system
+
+Get the operating system. (Ubuntu, Windows, OS X, ...)
+
+```canvas
+{{ agent().platform() }}
+```
+
+## Browser name
+
+Get the browser name. (Chrome, IE, Safari, Firefox, ...)
+
+```canvas
+{{ agent().browser() }}
+```
+
+## Desktop detection
+
+Check if the user is using a desktop device.
+
+```canvas
+{{ agent().isDesktop() }}
+```
+
+## Phone detection
+
+Check if the user is using a phone device.
+
+```canvas
+{{ agent().isPhone() }}
+```
+
+## Robot detection
+
+Check if the user is a robot.
+
+```canvas
+{{ agent().isRobot() }}
+```
+
+## Robot name
+
+Get the robot name.
+
+```canvas
+{{ agent().robot() }}
+```
+
+## Browser version
+
+<Callout type="warning">
+The version method is still in beta, so it might not return the correct result.
+</Callout>
+
+Get the browser or platform version you can use:
+
+```canvas
+{% set browser = agent().browser()>
+{{ agent().version(browser) }}
+
+{% set platform = agent().platform()>
+{{ agent().version(platform) }}
+```

@@ -1,0 +1,47 @@
+---
+title: 'Remove role'
+description: 'Remove a role in your agency.'
+api: 'DELETE api.blutui.com/v1/agencies/{username}/roles/{id}'
+---
+
+### Path parameters
+
+<Parameter name="id" type="string" required="true">
+The ID of the role to remove.
+</Parameter>
+
+### Response
+
+```ts tab="Node.js"
+import Blutui from 'blutui'
+
+const blutui = new Blutui('ey....')
+
+blutui.agency('studio').roles.remove(2)
+```
+
+```bash tab="cURL"
+curl -X DELETE 'https://api.blutui.com/v1/agencies/studio/roles/2' \
+     -H 'Authorization: Bearer ey....' \
+     -H 'Content-Type: application/json'
+```
+
+```json title="JSON Response"
+{
+  "id": 2,
+  "object": "role",
+  "deleted": true
+}
+```
+
+<Parameter name="id" type="string">
+The unique identifier for this role.
+</Parameter>
+
+<Parameter name="object" type="string">
+This will always contain `role` for this endpoint.
+</Parameter>
+
+<Parameter name="deleted" type="boolean">
+Determine if the object was successfully deleted.
+</Parameter>
