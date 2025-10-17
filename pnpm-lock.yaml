@@ -35,7 +35,7 @@ importers:
         version: 12.0.3(fumadocs-core@15.8.5(@types/react@19.1.10)(algoliasearch@5.37.0)(lucide-react@0.544.0(react@19.1.1))(next@15.5.4(@opentelemetry/api@1.9.0)(react-dom@19.1.1(react@19.1.1))(react@19.1.1))(react-dom@19.1.1(react@19.1.1))(react@19.1.1))(next@15.5.4(@opentelemetry/api@1.9.0)(react-dom@19.1.1(react@19.1.1))(react@19.1.1))(react@19.1.1)
       fumadocs-ui:
         specifier: ^15.8.5
-        version: 15.8.5(@types/react-dom@19.1.7(@types/react@19.1.10))(@types/react@19.1.10)(algoliasearch@5.37.0)(lucide-react@0.544.0(react@19.1.1))(next@15.5.4(@opentelemetry/api@1.9.0)(react-dom@19.1.1(react@19.1.1))(react@19.1.1))(react-dom@19.1.1(react@19.1.1))(react@19.1.1)(tailwindcss@4.1.13)
+        version: 15.8.5(@types/react-dom@19.1.7(@types/react@19.1.10))(@types/react@19.1.10)(algoliasearch@5.37.0)(lucide-react@0.544.0(react@19.1.1))(next@15.5.4(@opentelemetry/api@1.9.0)(react-dom@19.1.1(react@19.1.1))(react@19.1.1))(react-dom@19.1.1(react@19.1.1))(react@19.1.1)(tailwindcss@4.1.14)
       lucide-react:
         specifier: ^0.544.0
         version: 0.544.0(react@19.1.1)
@@ -89,8 +89,8 @@ importers:
         specifier: ^0.6.14
         version: 0.6.14(prettier@3.6.2)
       tailwindcss:
-        specifier: ^4.1.13
-        version: 4.1.13
+        specifier: ^4.1.14
+        version: 4.1.14
       typescript:
         specifier: ^5.9.3
         version: 5.9.3
@@ -3141,9 +3141,6 @@ packages:
   tailwind-merge@3.3.1:
     resolution: {integrity: sha512-gBXpgUm/3rp1lMZZrM/w7D8GKqshif0zAymAhbCyIt8KMe+0v9DQ7cdYLR4FHH/cKpdTXb+A/tKKU3eolfsI+g==}
 
-  tailwindcss@4.1.13:
-    resolution: {integrity: sha512-i+zidfmTqtwquj4hMEwdjshYYgMbOrPzb9a0M3ZgNa0JMoZeFC6bxZvO8yr8ozS6ix2SDz0+mvryPeBs2TFE+w==}
-
   tailwindcss@4.1.14:
     resolution: {integrity: sha512-b7pCxjGO98LnxVkKjaZSDeNuljC4ueKUddjENJOADtubtdo8llTaJy7HwBMeLNSSo2N5QIAgklslK1+Ir8r6CA==}
 
@@ -5353,7 +5350,7 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  fumadocs-ui@15.8.5(@types/react-dom@19.1.7(@types/react@19.1.10))(@types/react@19.1.10)(algoliasearch@5.37.0)(lucide-react@0.544.0(react@19.1.1))(next@15.5.4(@opentelemetry/api@1.9.0)(react-dom@19.1.1(react@19.1.1))(react@19.1.1))(react-dom@19.1.1(react@19.1.1))(react@19.1.1)(tailwindcss@4.1.13):
+  fumadocs-ui@15.8.5(@types/react-dom@19.1.7(@types/react@19.1.10))(@types/react@19.1.10)(algoliasearch@5.37.0)(lucide-react@0.544.0(react@19.1.1))(next@15.5.4(@opentelemetry/api@1.9.0)(react-dom@19.1.1(react@19.1.1))(react@19.1.1))(react-dom@19.1.1(react@19.1.1))(react@19.1.1)(tailwindcss@4.1.14):
     dependencies:
       '@radix-ui/react-accordion': 1.2.12(@types/react-dom@19.1.7(@types/react@19.1.10))(@types/react@19.1.10)(react-dom@19.1.1(react@19.1.1))(react@19.1.1)
       '@radix-ui/react-collapsible': 1.1.12(@types/react-dom@19.1.7(@types/react@19.1.10))(@types/react@19.1.10)(react-dom@19.1.1(react@19.1.1))(react@19.1.1)
@@ -5378,7 +5375,7 @@ snapshots:
     optionalDependencies:
       '@types/react': 19.1.10
       next: 15.5.4(@opentelemetry/api@1.9.0)(react-dom@19.1.1(react@19.1.1))(react@19.1.1)
-      tailwindcss: 4.1.13
+      tailwindcss: 4.1.14
     transitivePeerDependencies:
       - '@mixedbread/sdk'
       - '@oramacloud/client'
@@ -6860,8 +6857,6 @@ snapshots:
       use-sync-external-store: 1.5.0(react@19.1.1)
 
   tailwind-merge@3.3.1: {}
-
-  tailwindcss@4.1.13: {}
 
   tailwindcss@4.1.14: {}
 
