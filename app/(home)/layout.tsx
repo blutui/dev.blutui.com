@@ -10,7 +10,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
       links={[
         { text: 'Documentation', url: '/docs' },
         { text: 'API Reference', url: '/api-reference' },
-        { text: 'Guides', url: '/guides' },
+        { text: 'Guides', url: '/guides/introduction' },
         { text: 'Changelog', url: '/changelog' },
       ]}
     >
