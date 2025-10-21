@@ -12,9 +12,9 @@ const instrumentSans = Instrument_Sans({
 export const metadata = createMetadata({
   title: {
     template: '%s | Blutui Developers',
-    default: 'Blutui',
+    default: 'Blutui Developers',
   },
-  description: 'Welcome to Blutui',
+  description: 'Welcome to the Blutui Developer documentation',
   metadataBase: baseUrl,
 })
 
