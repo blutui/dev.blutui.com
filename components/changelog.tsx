@@ -28,7 +28,7 @@ export function Changelog({ date, type, app, children }: ChangelogProps) {
             {formattedDate}
           </time>
           {type && (
-            <span className="inline-flex rounded-sm bg-neutral-200 px-1.5 py-0.5 font-mono text-sm font-semibold tracking-tight uppercase dark:bg-neutral-800">
+            <span className="inline-flex rounded-sm bg-neutral-200 px-1.5 py-0.5 font-mono text-xs font-semibold uppercase dark:bg-neutral-800">
               {type}
             </span>
           )}
