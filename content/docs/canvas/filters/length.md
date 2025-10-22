@@ -4,7 +4,7 @@ description: 'The length filter returns the number of items of a sequence or map
 ---
 
 ```canvas
-{% if users | length > 10>
+{% if users | length > 10 %}
   ...
 {% endif %}
 ```

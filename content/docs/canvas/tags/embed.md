@@ -9,13 +9,13 @@ Think of an embedded template as a "micro layout skeleton".
 ```canvas
 {% embed 'teasers_skeleton.html' %}
   {# These blocks are defined in "teasers_skeleton.html" and we override them right here: #}
-  {% block left_teaser>
+  {% block left_teaser %}
     Some content for the left teaser box
-  {% endblock>
-  {% block right_teaser>
+  {% endblock %}
+  {% block right_teaser %}
     Some content for the right teaser box
-  {% endblock>
-{% endembed>
+  {% endblock %}
+{% endembed %}
 ```
 
 The **embed** tag takes the idea of template inheritance to the level of content fragments. While template inheritance allows for "document skeletons", which are filled with life by child templates, the **embed** tag allows you to create "skeletons" for smaller units of content and re-use and fill them anywhere you like.
@@ -84,34 +84,34 @@ In such a situation, the **embed** tag comes in handy. The common layout code ca
 Page template `foo.html`:
 
 ```canvas
-{% extends "layout.html">
+{% extends "layout.html" %}
 
-{% block content>
-  {% embed "vertical_boxes_skeleton.html">
-    {% block top>
+{% block content %}
+  {% embed "vertical_boxes_skeleton.html" %}
+    {% block top %}
       Some content for the top box
-    {% endblock>
+    {% endblock %}
 
-    {% block bottom>
+    {% block bottom %}
       Some content for the bottom box
-    {% endblock>
-  {% endembed>
-{% endblock>
+    {% endblock %}
+  {% endembed %}
+{% endblock %}
 ```
 
 And here is the code for `vertical_boxes_skeleton.html`:
 
 ```canvas
 <div class="top_box">
-  {% block top>
+  {% block top %}
     Top box default content
-  {% endblock>
+  {% endblock %}
 </div>
 
 <div class="bottom_box">
-  {% block bottom>
+  {% block bottom %}
     Bottom box default content
-  {% endblock>
+  {% endblock %}
 </div>
 ```
 
@@ -120,17 +120,17 @@ The goal of the `vertical_boxes_skeleton.html` template being to factor out the 
 The **embed** tag takes the exact same arguments as the [include](/docs/canvas/tags/include) tag:
 
 ```canvas
-{% embed "base" with {'foo': 'bar'}>
+{% embed "base" with {'foo': 'bar'} %}
   ...
-{% endembed>
+{% endembed %}
 
-{% embed "base" with {'foo': 'bar'} only>
+{% embed "base" with {'foo': 'bar'} only %}
   ...
-{% endembed>
+{% endembed %}
 
-{% embed "base" ignore missing>
+{% embed "base" ignore missing %}
   ...
-{% endembed>
+{% endembed %}
 ```
 
 As embedded templates do not have "names", auto-escaping strategies based on the template name won't work as expected if you change the context (for instance, if you embed a CSS/JavaScript template into an HTML one). In that case, explicitly set the default auto-escaping strategy with the [autoescape](/docs/canvas/tags/autoescape) tag.

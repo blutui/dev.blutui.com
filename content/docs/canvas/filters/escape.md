@@ -50,7 +50,7 @@ When using automatic escaping, Canvas tries to not double-escape a variable when
 {% autoescape 'html' %}
   {{ var | escape('html') }} {# won't be double-escaped #}
   {{ var | escape(strategy) }} {# will be double-escaped #}
-{% endautoescape>
+{% endautoescape %}
 ```
 
 When using a variable as the escaping strategy, you should disable automatic escaping:
@@ -60,12 +60,12 @@ When using a variable as the escaping strategy, you should disable automatic esc
 
 {% autoescape 'html' %}
   {{ var | escape(strategy) | raw }} {# won't be double-escaped #}
-{% endautoescape>
+{% endautoescape %}
 ```
 
 ## Arguments
 
-Argument    | Description           | Type
------------ | --------------------- | -------
-`strategy`  | The escaping strategy | String
-`charset`   | The string charset    | String
+| Argument   | Description           | Type   |
+| ---------- | --------------------- | ------ |
+| `strategy` | The escaping strategy | String |
+| `charset`  | The string charset    | String |

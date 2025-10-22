@@ -16,11 +16,11 @@ Also you can deprecate a block in the following way:
 {% block hey>
   {% deprecated 'The "hey" block is deprecated, use "greet" instead.' %}
   {{ block('greet') }}
-{% endblock>
+{% endblock %}
 
 {% block greet>
   Hey you!
-{% endblock>
+{% endblock %}
 ```
 
 Note that by default, the deprecation notices are silenced and never displayed nor logged.

@@ -22,7 +22,7 @@ When using the **default** filter on an expression that uses variables in some m
 Using the **default** filter on a boolean variable might trigger unexpected behaviour, as `false` is treated as an empty value. Consider using `??` instead:
 
 ```canvas
-{% set foo = false>
+{% set foo = false %}
 {{ foo | default(true) }} {# true #}
 {{ foo ?? true }} {# false #}
 ```
@@ -31,6 +31,6 @@ Read the documentation for the [defined](/docs/canvas/tests/defined) and [empty]
 
 ## Arguments
 
-Argument   | Description       | Type
----------- | ----------------- | -------
-`default`  | The default value | String
+| Argument  | Description       | Type   |
+| --------- | ----------------- | ------ |
+| `default` | The default value | String |

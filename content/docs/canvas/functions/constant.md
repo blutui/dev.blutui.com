@@ -16,7 +16,7 @@ You can read constants from object instances as well:
 Use the **defined** test to check if a constant is defined:
 
 ```canvas
-{% if constant('SOME_CONST') is defined>
+{% if constant('SOME_CONST') is defined %}
   ...
 {% endif %}
 ```

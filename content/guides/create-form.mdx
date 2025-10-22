@@ -14,12 +14,14 @@ Creating forms in Blutui can be an intuitive process. This guide provides a deta
 ### Navigate to forms
 
 Head to your Blutui Project Dashboard. Click on **Forms** to access the forms section of the dashboard.
+
 </Step>
 
 <Step>
 ### Create a new form
 
 From the **Forms** screen, click on the **Create form** button. A modal will appear, prompting you to enter a name for your form. The name will automatically be converted into a slug format for the handle. You can opt to use a custom handle by clicking on **Use custom handle**.
+
 </Step>
 
 <Step>
@@ -32,12 +34,14 @@ Click **Add field** and select the **Text** option for the `Name` field. Label i
 Similarly, add the Email (using the `email` type) and Message (using the `textarea` type).
 
 ![](https://cdn.blutui.com/uploads/assets/Dev/guides/create-form-1.png)
+
 </Step>
 
 <Step>
 ### Save the form
 
 Click the **Update form** button to save your changes.
+
 </Step>
 </Steps>
 
@@ -57,12 +61,12 @@ Next, we'll use a system named [macro](/docs/canvas/tags/macro) to help define i
 {# Input #}
 {% macro input(data) %}
   <input type="{{ data.type }}" name="{{ data.name }}" value="{{ data.value }}" placeholder="{{ data.placeholder }}" {% if data.required> required {% endif %} class="" />
-{% endmacro>
+{% endmacro %}
 
 {# Textarea #}
 {% macro textarea(data) %}
   <textarea type="{{ data.type }}" name="{{ data.name }}" value="{{ data.value }}" placeholder="{{ data.placeholder }}" {% if data.required> required {% endif %} class=" " ></textarea>
-{% endmacro>
+{% endmacro %}
 
 {# Checkbox #}
 {% macro checkbox(data) %}
@@ -72,7 +76,7 @@ Next, we'll use a system named [macro](/docs/canvas/tags/macro) to help define i
       <span class="">{{ item.value }}</span>
     </label>
   {% endfor %}
-{% endmacro>
+{% endmacro %}
 
 {# Radio Button #}
 {% macro radio(data) %}
@@ -82,7 +86,7 @@ Next, we'll use a system named [macro](/docs/canvas/tags/macro) to help define i
       <span class="">{{ item.label }}</span>
     </label>
   {% endfor %}
-{% endmacro>
+{% endmacro %}
 
 {# Select Menu #}
 {% macro select(data) %}
@@ -93,12 +97,12 @@ Next, we'll use a system named [macro](/docs/canvas/tags/macro) to help define i
       {% endfor %}
     </select>
   </div>
-{% endmacro>
+{% endmacro %}
 
 {# Error Messages #}
 {% macro errors(data) %}
   <span class="">{{ data }}</span>
-{% endmacro>
+{% endmacro %}
 
 {# Form Field #}
 {% macro field(data) %}
@@ -112,16 +116,17 @@ Next, we'll use a system named [macro](/docs/canvas/tags/macro) to help define i
       {{ _self.select(data) }}
     {% elseif data.type == 'textarea' %}
       {{ _self.textarea(data) }}
-    {% else>
+    {% else %}
       {{ _self.input(data) }}
     {% endif %}
     <span>{{ data.help_text | escape }}</span>
     {{ _self.errors(data.errors) }}
   </div>
-{% endmacro>
+{% endmacro %}
 ```
 
 Feel free to customise the appearance and layout by modifying the provided HTML and adding CSS styles.
+
 </Step>
 
 <Step>
@@ -131,18 +136,19 @@ Inside your `views/forms/contact.html` file, insert:
 ```canvas
 {% import 'components/form' as ui>
 
-{% form 'contact' %}  
+{% form 'contact' %}
   {% for field in form.fields>
     {{ ui.field(field) }}
   {% endfor %}
-    
+
   <button type="submit" class="">Submit</button>
-{% endform>
+{% endform %}
 ```
 
 This will setup the form and import the `components/form.html` file we created in the previous step. It includes security measures to help protect your form from bots. The code loops through each field and renders them based on their type. This approach will allow content creators to add more fields in the future directly from the dashboard.
 
 You can directly reference individual form fields using `{{ ui.field(form.fields.name) }}` or `{{ ui.field(form.fields['name']) }}`. Lastly add a form submission button at the end.
+
 </Step>
 
 <Step>

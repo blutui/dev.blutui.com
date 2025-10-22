@@ -4,7 +4,7 @@ description: 'The reverse filter reverses a sequence, a mapping, or a string.'
 ---
 
 ```canvas
-{% for user in users | reverse>
+{% for user in users | reverse %}
   ...
 {% endfor %}
 
@@ -15,7 +15,7 @@ description: 'The reverse filter reverses a sequence, a mapping, or a string.'
 For sequences and mappings, numeric keys are not preserved. To reverse them as well, pass true as an argument to the **reverse** filter:
 
 ```canvas
-{% for key, value in {1: "a", 2: "b", 3: "c"} | reverse>
+{% for key, value in {1: "a", 2: "b", 3: "c"} | reverse %}
   {{ key }}: {{ value }}
 {%- endfor %}
 
@@ -30,6 +30,6 @@ For sequences and mappings, numeric keys are not preserved. To reverse them as w
 
 ## Arguments
 
-Argument        | Description                                           | Type
---------------- | ----------------------------------------------------- | -------
-`preserve_keys` | Preserve keys when reversing a mapping or a sequence. | Boolean
+| Argument        | Description                                           | Type    |
+| --------------- | ----------------------------------------------------- | ------- |
+| `preserve_keys` | Preserve keys when reversing a mapping or a sequence. | Boolean |
