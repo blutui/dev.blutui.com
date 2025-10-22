@@ -3,7 +3,7 @@ import type { BaseLayoutProps } from 'fumadocs-ui/layouts/shared'
 
 export const logo = (
   <>
-    <Logo className="-mb-1 h-7" />
+    <Logo className="-mb-0.5 h-7" />
   </>
 )
 
@@ -22,9 +22,12 @@ export function baseOptions(): BaseLayoutProps {
         secondary: true,
       },
     ],
+    themeSwitch: {
+      mode: 'light-dark',
+    },
     nav: {
       title: <>{logo}</>,
-      transparentMode: 'always',
+      transparentMode: 'top',
     },
   }
 }
