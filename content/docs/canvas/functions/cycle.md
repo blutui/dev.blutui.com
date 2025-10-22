@@ -15,7 +15,7 @@ description: 'The cycle function cycles on an array of values.'
 The array can contain any number of values:
 
 ```canvas
-{% set fruits = ['apple', 'orange', 'citrus']>
+{% set fruits = ['apple', 'orange', 'citrus'] %}
 
 {% for i in 0..10>
   {{ cycle(fruits, i) }}
@@ -24,6 +24,6 @@ The array can contain any number of values:
 
 ## Arguments
 
-Argument   | Description        | Type
----------- | ------------------ | ----
-`position` | The cycle position | Any
+| Argument   | Description        | Type |
+| ---------- | ------------------ | ---- |
+| `position` | The cycle position | Any  |

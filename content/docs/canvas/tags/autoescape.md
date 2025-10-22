@@ -20,7 +20,7 @@ Autoescaping is turned on by default. You can mark a section of a template to be
   using the js escaping strategy
 {% endautoescape>
 
-{% autoescape false>
+{% autoescape false %}
   Everything will be outputted as is in this block
 {% endautoescape>
 ```

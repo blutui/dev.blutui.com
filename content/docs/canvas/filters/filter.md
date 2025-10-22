@@ -4,7 +4,7 @@ description: 'Filter elements of a sequence or a mapping using an arrow function
 ---
 
 ```canvas
-{% set sizes = [34, 36, 38, 40, 42]>
+{% set sizes = [34, 36, 38, 40, 42] %}
 
 {{ sizes | filter(v => v > 38) | join(', ') }}
 {# output 40, 42 #}
@@ -28,7 +28,7 @@ It also works with mappings:
   m:  38,
   l:  40,
   xl: 42,
-}>
+} %}
 
 {% for k, v in sizes | filter(v => v > 38) -%}
   {{ k }} = {{ v }}
@@ -49,7 +49,7 @@ Note that the arrow function has access to the current context.
 
 ## Arguments
 
-Argument | Description             | Type
--------- | ----------------------- | --------
-`array`  | The sequence or mapping | Array
-`arrow`  | The arrow function      | Function
+| Argument | Description             | Type     |
+| -------- | ----------------------- | -------- |
+| `array`  | The sequence or mapping | Array    |
+| `arrow`  | The arrow function      | Function |

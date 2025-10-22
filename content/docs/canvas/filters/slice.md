@@ -23,7 +23,7 @@ You can use any valid expression for both the start and the length:
 As syntactic sugar, you can also use the `[]` notation:
 
 ```canvas
-{% for i in [1, 2, 3, 4, 5][start:length]>
+{% for i in [1, 2, 3, 4, 5][start:length] %}
   {# ... #}
 {% endfor %}
 
@@ -42,8 +42,8 @@ If length is given and is positive, then the sequence will have up to that many 
 
 ## Arguments
 
-Argument        | Description                                                 | Type
---------------- | ----------------------------------------------------------- | -------
-`start`         | The start of the slice                                      | Number
-`length`        | The size of the slice                                       | Number
-`preserve_keys` | Whether to preserve key or not (when the input is an array) | Boolean
+| Argument        | Description                                                 | Type    |
+| --------------- | ----------------------------------------------------------- | ------- |
+| `start`         | The start of the slice                                      | Number  |
+| `length`        | The size of the slice                                       | Number  |
+| `preserve_keys` | Whether to preserve key or not (when the input is an array) | Boolean |

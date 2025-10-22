@@ -11,7 +11,7 @@ A second parameter can be provided and used to fill in missing items:
 <table>
   {% for row in items | batch(3, 'No item') %}
     <tr>
-      {% for column in row>
+      {% for column in row %}
         <td>{{ column }}</td>
       {% endfor %}
     </tr>
@@ -43,8 +43,8 @@ The above example will be rendered as:
 
 ## Arguments
 
-Argument        | Description                                                  | Type
---------------- | ------------------------------------------------------------ | -------
-`size`          | The size of the batch; fractional numbers will be rounded up | Number
-`fill`          | Used to fill in missing items                                | String
-`preserve_keys` | Whether to preserve keys or not                              | Boolean
+| Argument        | Description                                                  | Type    |
+| --------------- | ------------------------------------------------------------ | ------- |
+| `size`          | The size of the batch; fractional numbers will be rounded up | Number  |
+| `fill`          | Used to fill in missing items                                | String  |
+| `preserve_keys` | Whether to preserve keys or not                              | Boolean |

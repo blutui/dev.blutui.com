@@ -17,7 +17,7 @@ Let's take the following example to illustrate how a block works and more import
   {% block post>
     <h1>{{ post.title }}</h1>
     <p>{{ post.body }}</p>
-  {% endblock>
+  {% endblock %}
 {% endfor %}
 ```
 
@@ -33,7 +33,7 @@ If you render this template, the result would be exactly the same with or withou
     <header>{{ post.title }}</header>
     <section>{{ post.text }}</section>
   </article>
-{% endblock>
+{% endblock %}
 ```
 
 Now, when rendering the child template, the loop is going to use the block defined in the child template instead of the one defined in the base one; the executed template is then equivalent to the following one:

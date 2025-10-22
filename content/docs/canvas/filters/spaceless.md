@@ -18,11 +18,11 @@ The `spaceless` does not remove whitespace within HTML tags or whitespace in pla
 You can combine **spaceless** with the [apply](/docs/canvas/tags/apply) tag to apply the transformation on large amounts of HTML:
 
 ```canvas
-{% apply spaceless>
+{% apply spaceless %}
   <div>
     <strong>foo</strong>
   </div>
-{% endapply>
+{% endapply %}
 
 {# output will be <div><strong>foo</strong></div> #}
 ```

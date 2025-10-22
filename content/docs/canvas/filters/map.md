@@ -9,7 +9,7 @@ The arrow function receives the value of the sequence or mapping:
 {% set people = [
   { first: 'Bob', last: 'Smith' },
   { first: 'Alice', last: 'Dupond' },
-]>
+] %}
 
 {{ people | map(p => "#{p.first} #{p.last}") | join(', ') }}
 
@@ -22,7 +22,7 @@ The arrow function also receives the key as a second argument:
 {% set people = {
   "Bob": "Smith",
   "Alice": "Dupond",
-}>
+} %}
 
 {{ people | map((value, key) => "#{key} #{value}") | join(', ') }}
 {# outputs Bob Smith, Alice Dupond #}
@@ -30,6 +30,6 @@ The arrow function also receives the key as a second argument:
 
 ## Arguments
 
-Argument  | Description        | Type
---------- | ------------------ | --------
-`arrow`   | The arrow function | Function
+| Argument | Description        | Type     |
+| -------- | ------------------ | -------- |
+| `arrow`  | The arrow function | Function |

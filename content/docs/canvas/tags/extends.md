@@ -8,17 +8,17 @@ The **extends** tag can be used to extend a template from another one. Canvas do
 <!DOCTYPE html>
 <html>
   <head>
-    {% block head>
+    {% block head %}
       <link rel="stylesheet" href="style.css" />
-      <title>{% block title>{% endblock> - My Webpage</title>
-    {% endblock>
+      <title>{% block title %}{% endblock %} - My Webpage</title>
+    {% endblock %}
   </head>
   <body>
-    <div id="content">{% block content>{% endblock></div>
+    <div id="content">{% block content %}{% endblock %}</div>
     <div id="footer">
-      {% block footer>
+      {% block footer %}
         &copy; Copyright by <a href="https://domain.invalid/">you</a>.
-      {% endblock>
+      {% endblock %}
     </div>
   </body>
 </html>
@@ -33,21 +33,21 @@ A child template might look like this:
 ```canvas
 {% extends 'base.html' %}
 
-{% block title>Home{% endblock>
+{% block title %}Home{% endblock %}
 
-{% block head>
+{% block head %}
   {{ parent() }}
   <style type="text/css">
     .important { color: #336699; }
   </style>
-{% endblock>
+{% endblock %}
 
-{% block content>
+{% block content %}
   <h1>Home</h1>
   <p class="important">
     Welcome on my awesome homepage.
   </p>
-{% endblock>
+{% endblock %}
 ```
 
 The **extends** tag is the key here. It tells the template engine that this template "extends" another template. When the Canvas template engine evaluates this template, first it locates the parent. The extends tag should be the first tag in the template.
@@ -59,9 +59,9 @@ You can't define multiple block tags with the same name in the same template. Th
 If you want to print a block multiple times you can however use the [block](/docs/canvas/functions/block) function:
 
 ```canvas
-<title>{% block title>{% endblock></title>
+<title>{% block title %}{% endblock %}</title>
 <h1>{{ block('title') }}</h1>
-{% block body>{% endblock>
+{% block body %}{% endblock %}
 ```
 
 ## Parent blocks
@@ -69,11 +69,11 @@ If you want to print a block multiple times you can however use the [block](/doc
 It's possible to render the contents of the parent block by using the [parent](/docs/canvas/functions/parent) function. This gives back the results of the parent block:
 
 ```canvas
-{% block sidebar>
+{% block sidebar %}
   <h3>Table Of Contents</h3>
   ...
   {{ parent() }}
-{% endblock>
+{% endblock %}
 ```
 
 ## Named block end-tags
@@ -81,11 +81,11 @@ It's possible to render the contents of the parent block by using the [parent](/
 Canvas allows you to put the name of the block after the end tag for better readability (the name after the `endblock` word must match the block name):
 
 ```canvas
-{% block sidebar>
-  {% block inner_sidebar>
+{% block sidebar %}
+  {% block inner_sidebar %}
     ...
-  {% endblock inner_sidebar>
-{% endblock sidebar>
+  {% endblock inner_sidebar %}
+{% endblock sidebar %}
 ```
 
 ## Block nesting and scope
@@ -93,8 +93,8 @@ Canvas allows you to put the name of the block after the end tag for better read
 Blocks can be nested for more complex layouts. Per default, blocks have access to variables from outer scopes:
 
 ```canvas
-{% for item in list>
-  <li>{% block loop_item>{{ item }}{% endblock></li>
+{% for item in list %}
+  <li>{% block loop_item %}{{ item }}{% endblock %}</li>
 {% endfor %}
 ```
 
@@ -103,13 +103,13 @@ Blocks can be nested for more complex layouts. Per default, blocks have access t
 For blocks with little content, it's possible to use a shortcut syntax. The following constructs do the same thing:
 
 ```canvas
-{% block title>
+{% block title %}
   {{ page_title | title }}
-{% endblock>
+{% endblock %}
 ```
 
 ```canvas
-{% block title page_title | title>
+{% block title page_title | title %}
 ```
 
 ## Dynamic inheritance
@@ -117,13 +117,13 @@ For blocks with little content, it's possible to use a shortcut syntax. The foll
 Canvas supports dynamic inheritance by using a variable as the base template:
 
 ```canvas
-{% extends some_var>
+{% extends some_var %}
 ```
 
 You can also provide a list of templates that are checked for existence. The first template that exists will be used as a parent:
 
 ```canvas
-{% extends ['layout.html', 'base_layout.html']>
+{% extends ['layout.html', 'base_layout.html'] %}
 ```
 
 ## Conditional interitance

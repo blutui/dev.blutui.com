@@ -11,11 +11,11 @@ Imagine having a generic helper template that define how to render HTML forms vi
 ```canvas
 {% macro input(name, value, type = 'text', size = 20) %}
   <input type="{{ type }}" name="{{ name }}" value="{{ value | e }}" size="{{ size }}" />
-{% endmacro>
+{% endmacro %}
 
 {% macro textarea(name, value, rows = 10, cols = 40) %}
   <textarea name="{{ name }}" rows="{{ rows }}" cols="{{ cols }}">{{ value | e }}</textarea>
-{% endmacro>
+{% endmacro %}
 ```
 
 Each macro argument can have a default value (here `text` is the default value for `type` if not provided in the call).
@@ -34,12 +34,12 @@ There are two ways to import macros. You can import the complete template contai
 To import all macros from a template into a local variable, use the [import](/docs/canvas/tags/import) tag:
 
 ```canvas
-{% import 'forms.html' as forms>
+{% import 'forms.html' as forms %}
 ```
 
 The above **import** call imports the `forms.html` file (which can contain only macros, or a template and some macros), and import the macros as items of the `forms` local variable.
 
-The macros can then be called at will in the *current* template:
+The macros can then be called at will in the _current_ template:
 
 ```canvas
 <p>{{ forms.input('username') }}</p>
@@ -49,7 +49,7 @@ The macros can then be called at will in the *current* template:
 Alternatively you can import names from the template into the current namespace via the [from](/docs/canvas/tags/from) tag:
 
 ```canvas
-{% from 'forms.html' import input as input, textarea>
+{% from 'forms.html' import input as input, textarea %}
 
 <p>{{ input('password', '', 'password') }}</p>
 <p>{{ textarea('comment') }}</p>
@@ -62,7 +62,7 @@ When **macro** usages and definitions are in the same template, you don't need t
 
 {% macro input(name, value, type = "text", size = 20) %}
   <input type="{{ type }}" name="{{ name }}" value="{{ value | e }}" size="{{ size }}" />
-{% endmacro>
+{% endmacro %}
 ```
 
 ## Macro scoping
@@ -80,9 +80,9 @@ When calling **import** or **from** from a **macro** tag, the imported macros ar
 You can check if a macro is defined via the `defined` test:
 
 ```canvas
-{% import 'macros.html' as macros>
+{% import 'macros.html' as macros %}
 
-{% from 'macros.html' import hello>
+{% from 'macros.html' import hello %}
 
 {% if macros.hello is defined -%}
   OK
@@ -100,5 +100,5 @@ Canvas allows you to put the name of the macro after the end tag for better read
 ```canvas
 {% macro input() %}
   ...
-{% endmacro input>
+{% endmacro input %}
 ```

@@ -6,7 +6,7 @@ description: 'The reduce filter iteratively reduces a sequence or a mapping to a
 The arrow function receives the return value of the previous iteration and the current value of the sequence or mapping:
 
 ```canvas
-{% set numbers = [1, 2, 3]>
+{% set numbers = [1, 2, 3] %}
 
 {{ numbers | reduce((carry, v) => carry + v) }}
 {# output 6 #}
@@ -23,7 +23,7 @@ Note that the arrow function has access to the current context.
 
 ## Arguments
 
-Argument  | Description        | Type
---------- | ------------------ | --------
-`arrow`   | The arrow function | Function
-`initial` | The initial value  | String
+| Argument  | Description        | Type     |
+| --------- | ------------------ | -------- |
+| `arrow`   | The arrow function | Function |
+| `initial` | The initial value  | String   |
