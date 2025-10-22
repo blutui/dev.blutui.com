@@ -4,18 +4,18 @@ title: 'autoescape'
 
 Autoescaping is turned on by default. You can mark a section of a template to be escaped or not by using the `autoescape` tag:
 
-```canvas {% process=false>
+```canvas
 {% autoescape>
   Everything will be automatically escaped in this block
   using the HTML strategy
 {% endautoescape>
 
-{% autoescape 'html'>
+{% autoescape 'html' %}
   Everything will be automatically escaped in this block
   using the HTML strategy
 {% endautoescape>
 
-{% autoescape 'js'>
+{% autoescape 'js' %}
   Everything will be automatically escaped in this block
   using the js escaping strategy
 {% endautoescape>
@@ -27,7 +27,7 @@ Autoescaping is turned on by default. You can mark a section of a template to be
 
 When automatic escaping is enabled everything is escaped by default except for values explicitly marked as safe. Those can be marked in the template by using the [raw](/docs/canvas/filters/raw) filter:
 
-```canvas {% process=false>
+```canvas
 {% autoescape>
   {{ safe_value | raw }}
 {% endautoescape>
@@ -37,8 +37,8 @@ Functions and tags returning template data (like [macro](/docs/canvas/tags/macro
 
 Canvas does not escape static expressions:
 
-```canvas {% process=false>
-{% set hello = '<strong>Hello</strong>'>
+```canvas
+{% set hello = '<strong>Hello</strong>' %}
 {{ hello }}
 {{ '<strong>world</strong>' }}
 ```

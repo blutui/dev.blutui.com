@@ -11,10 +11,10 @@ Alternatives: [sort](/docs/canvas/filters/sort)
 
 The `sort_by` filter sorts an array:
 
-```canvas {% process=false>
-{% for user in users | sort_by('key', true)>
+```canvas
+{% for user in users | sort_by('key', true) %}
   ...
-{% endfor>
+{% endfor %}
 ```
 
 ### Arguments

@@ -7,7 +7,7 @@ description: 'Get information about the current route.'
 
 The url of the current page.
 
-```canvas {% process=false>
+```canvas
 {{ route.url }}
 {# outputs '/' if the current route is the homepage #}
 ```
@@ -16,7 +16,7 @@ The url of the current page.
 
 The route type.
 
-```canvas {% process=false>
+```canvas
 {{ route.type }}
 {# outputs 'static' if the current route is static #}
 ```

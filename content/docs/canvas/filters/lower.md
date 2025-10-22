@@ -3,7 +3,7 @@ title: 'lower'
 description: 'The lower filter converts a value to lowercase.'
 ---
 
-```canvas {% process=false>
+```canvas
 {{ 'WELCOME' | lower }}
 
 {# outputs 'welcome' #}

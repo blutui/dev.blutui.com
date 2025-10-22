@@ -10,7 +10,7 @@ A block provides a way to change how a certain part of a template is rendered bu
 
 Let's take the following example to illustrate how a block works and more importantly, how it does not work:
 
-```canvas {% process=false>
+```canvas
 {# base.html #}
 
 {% for post in posts>
@@ -18,15 +18,15 @@ Let's take the following example to illustrate how a block works and more import
     <h1>{{ post.title }}</h1>
     <p>{{ post.body }}</p>
   {% endblock>
-{% endfor>
+{% endfor %}
 ```
 
 If you render this template, the result would be exactly the same with or without the `block` tag. The `block` inside the `for` loop is just a way to make it overridable by a child template:
 
-```canvas {% process=false>
+```canvas
 {# child.html #}
 
-{% extends 'base.html'>
+{% extends 'base.html' %}
 
 {% block post>
   <article>
@@ -38,35 +38,35 @@ If you render this template, the result would be exactly the same with or withou
 
 Now, when rendering the child template, the loop is going to use the block defined in the child template instead of the one defined in the base one; the executed template is then equivalent to the following one:
 
-```canvas {% process=false>
+```canvas
 {% for post in posts>
   <article>
     <header>{{ post.title }}</header>
     <section>{{ post.text }}</section>
   </article>
-{% endfor>
+{% endfor %}
 ```
 
 Let's take another example: a block included within an **if** statement:
 
-```canvas {% process=false>
+```canvas
 {% if posts is empty>
   {% block head>
     {{ parent() }}
 
     <meta name="robots" content="noindex, follow">
   {% endblock head>
-{% endif>
+{% endif %}
 ```
 
 Contrary to what you might think, this template does not define a block conditionally; it just makes overridable by a child template the output of what will be rendered when the condition is `true`. If you want the output to be displayed conditionally, use the following instead:
 
-```canvas {% process=false>
+```canvas
 {% block head>
   {{ parent() }}
 
   {% if posts is empty>
     <meta name="robots" content="noindex, follow">
-  {% endif>
+  {% endif %}
 {% endblock head>
 ```

@@ -15,7 +15,7 @@ A template contains **variables** or **expressions**, which get replaced with va
 
 Below is a minimal template that illustrates a few basics. We will cover further details later on:
 
-```canvas {% process=false>
+```canvas
 <!DOCTYPE html>
 <html>
   <head>
@@ -26,7 +26,7 @@ Below is a minimal template that illustrates a few basics. We will cover further
     <ul id="navigation">
       {% for item in navigation>
         <li><a href="{{ item.href }}">{{ item.caption }}</a></li>
-      {% endfor>
+      {% endfor %}
     </ul>
 
     <h1>My Webpage</h1>

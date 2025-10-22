@@ -64,7 +64,7 @@ First lets create a new page on your newly created project.
 In your newly created Canvas template add the following code:
 
 ```canvas title="pages/about.html">
-{% extends 'templates/default'>
+{% extends 'templates/default' %}
 
 {% block body>
   <!--This is where your page code goes-->
@@ -87,12 +87,12 @@ Now that you know how to make pages, let's look at creating a navigation menu.
 
 Now that you have a menu, let's learn how to add it to your Canvas template. To do this create a `menu` variable using the [set](/docs/canvas/tags/set) tag, and assign the CMS menu object to it using the helper function:
 
-```canvas {% process=false>
-{% set menu = cms.menu('main')>
+```canvas
+{% set menu = cms.menu('main') %}
 
 {% for item in menu.items>
    <a href="{{ item.href }}">{{ item.label }}</a>
-{% endfor>
+{% endfor %}
 ```
 
 For more information about the `cms.menu()` function, read the [cms.menu function guide](/docs/canvas/functions/cms#menu).
@@ -103,7 +103,7 @@ Now that you have some pages and a menu, you might want to create some editable 
 
 In this example we'll add a text area on your canvas. To do this you use `cms_text`:
 
-```canvas {% process=false>
+```canvas
 {{ cms_text('hero-content') }}
 ```
 
@@ -126,7 +126,7 @@ You will notice that all data types require a value for the `Name` field, this i
 Let's create a template that will render this collection, to do this you need the collection handle. In this example the handle is `staff`. First create a `collections` folder in our Canvas `views` directory, and add a file called `staff.html`, with:
 
 ```canvas title="collections/staff.html">
-{% set collection = cms.collection('staff')>
+{% set collection = cms.collection('staff') %}
 
 {% for entry in collection>
   <div>
@@ -136,16 +136,16 @@ Let's create a template that will render this collection, to do this you need th
       {{ entry.text }}
     </p>
   </div>
-{% endfor>
+{% endfor %}
 ```
 
 In this code example you are calling the collection, setting it to a `collection` variable and looping through each collection entry to display it the way you want. Once the collection template is created, you can [include](/docs/canvas/tags/include) it in your page template:
 
 ```canvas title="pages/about.html">
-{% extends 'templates/default'>
+{% extends 'templates/default' %}
 
 {% block body>
-  {% include 'collections/staff.html'>
+  {% include 'collections/staff.html' %}
 {% endblock>
 ```
 
@@ -159,7 +159,7 @@ In this example we'll create a **Locations** collection and link it to our **Sta
 
 To get the value of this link in your Canvas, you can access the `foreign_keys` in the collection entry object or for convenience you can call it directly from the `entry` object. For example:
 
-```canvas {% process=false>
+```canvas
 {{ entry.foreign_keys.location }}
 {{ entry.location }} {# This is only possible if your entry doesn't already have a location field. #}
 ```
@@ -180,10 +180,10 @@ Now that you can create complex collections, you might want to render each colle
 Add the following code in the **template** you set during the routing pattern creation process. The routing pattern template is a mix of a new page and a collection template:
 
 ```canvas title="pages/staff.html">
-{% extends 'templates/default'>
+{% extends 'templates/default' %}
 
 {# Set the staff collection to the collection variable #}
-{% set collection = cms.collection('staff')>
+{% set collection = cms.collection('staff') %}
 {# Filter the collection entries to find the first entry by the matching `title` field #}
 {% set entry = collection | filter(entry => ((entry.title | slug) == route.data.slug)) | first>
 
@@ -203,12 +203,12 @@ Now that your new form is created, lets add this form to your Canvas. At the top
 ```canvas title="forms/contact.html">
 {% import 'macros/form' as ui>
 
-{% form 'contact'>
+{% form 'contact' %}
     <input type="hidden" name="redirect" value="/contact/success">  
 
     {% for field in form.fields>
       {{ ui.field(field) }}
-    {% endfor>
+    {% endfor %}
 
     {{ recaptcha() }}
 

@@ -6,16 +6,16 @@ description: 'The batch filter "batches" items by returning a list of lists with
 A second parameter can be provided and used to fill in missing items:
 
 ```canvas
-{% set items = ['a', 'b', 'c', 'd', 'e', 'f', 'g']>
+{% set items = ['a', 'b', 'c', 'd', 'e', 'f', 'g'] %}
 
 <table>
-  {% for row in items | batch(3, 'No item')>
+  {% for row in items | batch(3, 'No item') %}
     <tr>
       {% for column in row>
         <td>{{ column }}</td>
-      {% endfor>
+      {% endfor %}
     </tr>
-  {% endfor>
+  {% endfor %}
 </table>
 ```
 

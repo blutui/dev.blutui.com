@@ -1,0 +1,86 @@
+---
+title: How do I create a page in my project?
+description: Learn how to create and manage pages for your Blutui project through the dashboard.
+---
+
+## Introduction
+
+Now it’s time to create a page for your Blutui project.  
+There are two ways to do this:
+
+1. Create a page directly inside the **`pages`** directory of your project.
+2. Create and manage the page through the **Blutui dashboard** using a layout.
+
+Both approaches work, but creating and managing pages from the **dashboard** offers greater flexibility, allowing you to edit content, control visibility, and manage metadata without touching code.  
+This guide will focus on creating a page from the dashboard.
+
+## Creating a page
+
+<Steps>
+<Step>
+## Ensure you have a layout
+
+Before creating a page, make sure you’ve set up a layout.  
+Follow this guide to create your first layout:
+[How do I create a layout?](/guides/create-layout)
+
+</Step>
+
+<Step>
+## Go to the Pages section in your project dashboard
+
+Open your project in the **Blutui dashboard** and navigate to the **Pages** section.  
+Click **Add Page** to create a new one.
+
+</Step>
+
+<Step>
+## Configure your page details
+
+You’ll see a form with several options to configure your page:
+
+![Add Page](https://cdn.blutui.com/uploads/assets/Dev/guides/add-page.png)
+
+- **Name** — The internal name for your page.
+- **URL** — The public address where your page can be accessed.
+- **Meta title** and **Meta description** — Used for SEO and search results.
+- **Publish date & time** — Schedule when your page goes live.
+- **Layout** — Select a layout template from your `layouts` folder.
+
+If your desired layout doesn’t appear, make sure you’ve run:
+
+```bash
+courier push
+```
+
+or have `courier dev` running locally to sync your layout files.
+
+</Step>
+
+<Step>
+###  Save and preview your page
+
+Once you’ve filled out the details and selected a layout, save your page.
+You can now visit your page using the URL you defined in the form.
+
+</Step>
+</Steps>
+
+## Next steps
+
+Now that your page is created and visible, it’s time to make it editable by adding **Canopy elements** to your layout.
+This allows content editors to update text, images, and other components directly from the dashboard.
+
+<Cards>
+  <Card title="How do I create a layout?" href="/guides/create-layout">
+    Learn how to build and structure a layout for your page.
+  </Card>
+
+<Card title="How do I add Canopy elements to a layout?" href="/guides/add-canopy-to-layout">
+  Learn how to make your page content editable from the dashboard.
+</Card>
+
+  <Card title="How do I push a project to Blutui?" href="/guides/push-project-with-courier">
+    Learn how to push your updated pages and layouts to Blutui.
+  </Card>
+</Cards>
