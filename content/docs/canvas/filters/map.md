@@ -5,7 +5,7 @@ description: 'The map filter applies an arrow function to the elements of a sequ
 
 The arrow function receives the value of the sequence or mapping:
 
-```canvas {% process=false>
+```canvas
 {% set people = [
   { first: 'Bob', last: 'Smith' },
   { first: 'Alice', last: 'Dupond' },
@@ -18,7 +18,7 @@ The arrow function receives the value of the sequence or mapping:
 
 The arrow function also receives the key as a second argument:
 
-```canvas {% process=false>
+```canvas
 {% set people = {
   "Bob": "Smith",
   "Alice": "Dupond",

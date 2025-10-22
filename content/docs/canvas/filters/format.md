@@ -3,7 +3,7 @@ title: 'format'
 description: 'The format filter formats a given string by replacing the placeholders.'
 ---
 
-```canvas {% process=false>
+```canvas
 {{ 'I like %s and %s.' | format(foo, 'bar') }}
 
 {# outputs I like foo and bar

@@ -4,8 +4,8 @@ title: 'parent'
 
 When a template uses inheritance, it's possible to render the contents of the parent block when overriding a block by using the **parent** function:
 
-```canvas {% process=false>
-{% extends 'base.html'>
+```canvas
+{% extends 'base.html' %}
 
 {% block sidebar>
   <h3>Table Of Contents</h3>

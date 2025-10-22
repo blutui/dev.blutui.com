@@ -4,7 +4,7 @@ title: 'with'
 
 Use the **with** tag to create a new inner scope. Variables set within this scope are not visible outside of the scope:
 
-```canvas {% process=false>
+```canvas
 {% with>
   {% set foo = 42>
   {{ foo }} {# foo is 42 here #}
@@ -15,7 +15,7 @@ Use the **with** tag to create a new inner scope. Variables set within this scop
 
 Instead of defining variables at the beginning of the scope, you can pass a hash of variables you want to define in the **with** tag; the previous example is equivalent to the following one:
 
-```canvas {% process=false>
+```canvas
 {% with { foo: 42 }>
   {{ foo }} {# foo is 42 here #}
 {% endwith>
@@ -31,8 +31,8 @@ Instead of defining variables at the beginning of the scope, you can pass a hash
 
 By default, the inner scope has access to the outer scope context; you can disable this behavior by appending the `only` keyword:
 
-```canvas {% process=false>
-{% set bar = 'bar'>
+```canvas
+{% set bar = 'bar' %}
 {% with { foo: 42 } only>
   {# only foo is defined #}
   {# bar is not defined #}

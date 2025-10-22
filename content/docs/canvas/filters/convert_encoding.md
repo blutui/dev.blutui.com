@@ -5,7 +5,7 @@ description: 'The convert_encoding filter converts a string from one encoding to
 
 The first argument is the expected output charset and the second one is the input charset:
 
-```canvas {% process=false>
+```canvas
 {{ data | convert_encoding('UTF-8', 'iso-2022-jp') }}
 ```
 

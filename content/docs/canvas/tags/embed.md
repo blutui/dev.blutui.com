@@ -6,8 +6,8 @@ The **embed** tag combines the behaviour of [include](/docs/canvas/tags/include)
 
 Think of an embedded template as a "micro layout skeleton".
 
-```canvas {% process=false>
-{% embed 'teasers_skeleton.html'>
+```canvas
+{% embed 'teasers_skeleton.html' %}
   {# These blocks are defined in "teasers_skeleton.html" and we override them right here: #}
   {% block left_teaser>
     Some content for the left teaser box
@@ -22,7 +22,7 @@ The **embed** tag takes the idea of template inheritance to the level of content
 
 Since the use case may not be obvious, let's look at a simplified example. Imagine a base template shared by multiple pages, defining a single block named "content":
 
-```canvas {% process=false>
+```canvas
 ┌─── page layout ─────────────────────┐
 │                                     │
 │           ┌── block "content" ──┐   │
@@ -37,7 +37,7 @@ Since the use case may not be obvious, let's look at a simplified example. Imagi
 
 Some pages ("foo.html" and "bar.html") share the same content structure - two vertically stacked boxes:
 
-```canvas {% process=false>
+```canvas
 ┌─── page layout ─────────────────────┐
 │                                     │
 │           ┌── block "content" ──┐   │
@@ -54,7 +54,7 @@ Some pages ("foo.html" and "bar.html") share the same content structure - two ve
 
 While other pages ("boom.html" and "baz.html") share a different content structure - two boxes side by side:
 
-```canvas {% process=false>
+```canvas
 ┌─── page layout ─────────────────────┐
 │                                     │
 │           ┌── block "content" ──┐   │
@@ -83,7 +83,7 @@ In such a situation, the **embed** tag comes in handy. The common layout code ca
 
 Page template `foo.html`:
 
-```canvas {% process=false>
+```canvas
 {% extends "layout.html">
 
 {% block content>
@@ -101,7 +101,7 @@ Page template `foo.html`:
 
 And here is the code for `vertical_boxes_skeleton.html`:
 
-```canvas {% process=false>
+```canvas
 <div class="top_box">
   {% block top>
     Top box default content
@@ -119,7 +119,7 @@ The goal of the `vertical_boxes_skeleton.html` template being to factor out the 
 
 The **embed** tag takes the exact same arguments as the [include](/docs/canvas/tags/include) tag:
 
-```canvas {% process=false>
+```canvas
 {% embed "base" with {'foo': 'bar'}>
   ...
 {% endembed>

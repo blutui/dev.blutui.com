@@ -4,7 +4,7 @@ title: 'apply'
 
 The **apply** tag allows you to apply Canvas filters on a block of template data:
 
-```canvas {% process=false>
+```canvas
 {% apply upper>
   This text becomes uppercase
 {% endapply>
@@ -12,8 +12,8 @@ The **apply** tag allows you to apply Canvas filters on a block of template data
 
 You can also chain filters and pass arguments to them:
 
-```canvas {% process=false>
-{% apply lower | escape('html')>
+```canvas
+{% apply lower | escape('html') %}
   <strong>SOME TEXT</strong>
 {% endapply>
 

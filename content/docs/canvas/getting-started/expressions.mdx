@@ -6,8 +6,8 @@ description: 'Canvas allows expressions everywhere.'
 The operator precedence is as follows, with the lowest-precedence operators listed first: `?:` (ternary operator), `b-and`, `b-xor`, `b-or`, `or`, `and`, `==`, `!=`, `<=>`, `<`, `>`, `>=`, `<=`, `in`, `matches`, `starts with`, `ends with`, `..`, `+`, `-`, `~`, `*`, `/`, `//`, `%`, `is` (tests), `**`, `??`, `|` (filters), `[]`, and `.`:
 
 ```canvas
-{% set greeting = 'Hello '>
-{% set name = 'Fabien'>
+{% set greeting = 'Hello ' %}
+{% set name = 'Fabien' %}
 
 {{ greeting ~ name | lower }} {# Hello fabien #}
 
@@ -38,7 +38,7 @@ The simplest form of expressions are literals. Literals are representations for 
 { 2: 'foo', 4: 'bar' }
 
 {# keys as expressions (the expression must be enclosed into parentheses) #}
-{% set foo = 'foo'>
+{% set foo = 'foo' %}
 { (foo): 'foo', (1 + 1): 'bar', (foo ~ 'b'): 'baz' }
 ```
 
@@ -49,7 +49,7 @@ The simplest form of expressions are literals. Literals are representations for 
 Arrays and hashes can be nested:
 
 ```canvas
-{% set foo = [1, {"foo": "bar"}]>
+{% set foo = [1, {"foo": "bar"}] %}
 ```
 
 Using double-quoted or single-quoted strings has no impact on performance but [string interpolation](#string-interpolation) is only supported in double-quoted strings.
@@ -84,21 +84,21 @@ The following comparison operators are supported in any expression: `==`, `!=`, 
 You can also check if a string `starts with` or `ends with` another string:
 
 ```canvas
-{% if 'Fabien' starts with 'F'>
+{% if 'Fabien' starts with 'F' %}
   ...
-{% endif>
+{% endif %}
 
-{% if 'Fabien' ends with 'n'>
+{% if 'Fabien' ends with 'n' %}
   ...
-{% endif>
+{% endif %}
 ```
 
 For complex string comparisons, the matches operator allows you to use regular expressions:
 
 ```canvas
-{% if phone matches '/^[\\d\\.]+$/'>
+{% if phone matches '/^[\\d\\.]+$/' %}
   ...
-{% endif>
+{% endif %}
 ```
 
 ## Containment operator
@@ -118,10 +118,10 @@ You can use this filter to perform a containment test on strings, arrays, or obj
 To perform a negative test, use the `not in` operator:
 
 ```canvas
-{% if 1 not in [1, 2, 3]>
+{% if 1 not in [1, 2, 3] %}
 
 {# is equivalent to #}
-{% if not (1 in [1, 2, 3])>
+{% if not (1 in [1, 2, 3]) %}
 ```
 
 ## Test operator
@@ -136,16 +136,16 @@ The `is` operator performs tests. Tests can be used to test a variable against a
 Tests can accept arguments too:
 
 ```canvas
-{% if post.status is constant('Post::PUBLISHED')>
+{% if post.status is constant('Post::PUBLISHED') %}
 ```
 
 Tests can be negated by using the `is not` operator:
 
 ```canvas
-{% if post.status is not constant('Post::PUBLISHED')>
+{% if post.status is not constant('Post::PUBLISHED') %}
 
 {# is equivalent to #}
-{% if not (post.status is constant('Post::PUBLISHED'))>
+{% if not (post.status is constant('Post::PUBLISHED')) %}
 ```
 
 ## Other operators
@@ -188,8 +188,8 @@ Note that you must use parentheses when combining it with the filter operator du
 - `...`: The spread operator can be used to expand arrays or hashes (it cannot be used to expand the arguments of a function call):
 
 ```canvas
-{% set numbers = [1, 2, ...moreNumbers]>
-{% set ratings = { 'foo': 10, 'bar': 5, ...moreRatings }>
+{% set numbers = [1, 2, ...moreNumbers] %}
+{% set ratings = { 'foo': 10, 'bar': 5, ...moreRatings } %}
 ```
 
 ## String interpolation

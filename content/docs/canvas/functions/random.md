@@ -9,7 +9,7 @@ description: 'The random function returns a random value depending on the suppli
 - a random integer between the integer parameter (when negative) and 0 (inclusive).
 - a random integer between the first integer and the second integer parameter (inclusive).
 
-```canvas {% process=false>
+```canvas
 {{ random(['apple', 'orange', 'citrus']) }} {# example output: orange #}
 {{ random('ABC') }}                         {# example output: C #}
 {{ random() }}                              {# example output: 15386094 #}

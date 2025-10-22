@@ -3,8 +3,8 @@ title: 'split'
 description: 'The split filter splits a string by the given delimiter and returns a list of strings.'
 ---
 
-```canvas {% process=false>
-{% set foo = 'one,two,three' | split(',')>
+```canvas
+{% set foo = 'one,two,three' | split(',') %}
 {# foo contains ['one', 'two', 'three'] #}
 ```
 
@@ -14,8 +14,8 @@ You can also pass a `limit` argument:
 - If `limit` is negative, all components except the last -limit are returned;
 - If `limit` is zero, then this is treated as 1.
 
-```canvas {% process=false>
-{% set foo = 'one,two,three,four,five' | split(',', 3)>
+```canvas
+{% set foo = 'one,two,three,four,five' | split(',', 3) %}
 {# foo contains ['one', 'two', 'three,four,five'] #}
 ```
 

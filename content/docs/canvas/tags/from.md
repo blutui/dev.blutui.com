@@ -4,7 +4,7 @@ title: 'from'
 
 The `from` tag imports [macro](/docs/canvas/tags/macro) names into the current namespace. The tag is documented in detail in the documentation for the [macro](/docs/canvas/tags/macro) tag.
 
-```canvas {% process=false>
+```canvas
 {% from 'forms.html' import input as input, textarea>
 
 <p>{{ input('password', '', 'password') }}</p>

@@ -3,7 +3,7 @@ title: 'date'
 description: 'The date filter formats a date to a given format.'
 ---
 
-```canvas {% process=false>
+```canvas
 {{ post.published_at | date('m/d/Y') }}
 ```
 
@@ -11,19 +11,19 @@ For more information on how to [format](#format) a date see the table below.
 
 The **date** filter accepts strings. For instance, to display the current date, filter the word "now":
 
-```canvas {% process=false>
+```canvas
 {{ 'now' | date('m/d/Y') }}
 ```
 
 To escape words and characters in the date format use `\\` in front of each character:
 
-```canvas {% process=false>
+```canvas
 {{ post.published_at | date('F jS \\a\\t g:ia') }}
 ```
 
 If the value passed to the **date** filter is `null`, it will return the current date by default. If an empty string is desired instead of the current date, use a ternary operator:
 
-```canvas {% process=false>
+```canvas
 {{ post.published_at is empty ? '' : post.published_at | date('m/d/Y') }}
 ```
 
@@ -33,7 +33,7 @@ If no format is provided, Canvas will use: `F j, Y H:i`
 
 By default, the date is displayed by applying the default timezone, but you can override it by explicitly specifying a timezone:
 
-```canvas {% process=false>
+```canvas
 {{ post.published_at | date('m/d/Y', 'Europe/Paris') }}
 ```
 

@@ -5,8 +5,8 @@ description: 'Generates a HTML form tag.'
 
 The `form` tag generates an HTML form tag, including any required input tags to submit the form. The `form` tag requires a handle to render it's contents, usually found in your project dashboard:
 
-```canvas {% process=false>
-{% form 'handle'>
+```canvas
+{% form 'handle' %}
   <!-- form content -->
 {% endform>
 ```
@@ -47,8 +47,8 @@ Variable                           | Description
 `form.fields.{name}.max`           | The max character limit of the form field.
 `form.fields.{name}.options`       | An array of available options for `select`, `radio` & `checkbox` type fields.
 
-```canvas {% process=false>
-{% form 'contact'>
+```canvas
+{% form 'contact' %}
   <h1>{{ form.name }}</h1>
 
   <input type="{{ form.fields.email.type }}" name="{{ form.fields.email.name }}" value="{{ form.fields.email.value }}" />
@@ -61,7 +61,7 @@ Variable                           | Description
 
 The `form` tag also provides the ability to define custom HTML attributes for the HTML `<form>` element:
 
-```canvas {% process=false>
+```canvas
 {% form 'contact' with { id: 'contact' }>
   <!-- form content -->
 {% endform>
@@ -77,7 +77,7 @@ The `form` tag also provides the ability to define custom HTML attributes for th
 
 You can also access the custom HTML attributes inside the `form` block:
 
-```canvas {% process=false>
+```canvas
 {% form 'contact' with { id: 'contact' }>
   <input type="hidden" name="form_id" value="{{ attributes.id }}" />
   <!-- form content -->
