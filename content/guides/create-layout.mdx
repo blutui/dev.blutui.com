@@ -1,0 +1,86 @@
+---
+title: How do I create a layout?
+description: Learn how to create and manage layouts for your Blutui site.
+---
+
+## Introduction
+
+A **layout** is a reusable template that defines the structure of a page. You can create unique layouts for individual pages or use them to maintain consistency across similar types of content, such as blog posts or managed pages.
+
+Layouts make it easy to combine structured design with editable content, giving you control over how elements appear while allowing site editors to manage content visually in the dashboard.
+
+## Creating a layout
+
+<Steps>
+<Step>
+### Create a `layouts` folder
+
+In your project’s `views` directory, create a new folder called **`layouts`**.  
+This directory will hold all your layout templates.
+
+</Step>
+
+<Step>
+### Add a new layout file
+
+Inside the `layouts` folder, create a new HTML or Canvas file.  
+Name it based on its structure or purpose—for example:
+
+```bash
+about.html
+long-text-bottom-image.html
+```
+
+This naming helps you identify each layout at a glance.
+
+</Step>
+
+<Step>
+### Extend the default template
+
+Inside your new layout file, begin by extending your site’s base template:
+
+```canvas
+{% extends 'templates/default' %}
+
+{% block body %}
+  {# Your layout code goes here #}
+{% endblock %}
+```
+
+All content for your layout should be placed within the `{% block body %}` section.
+
+</Step>
+
+<Step>
+### Push your layout to Blutui
+
+Once saved, push your new layout to Blutui by running:
+
+```bash
+courier push
+```
+
+If you’re already running `courier dev`, your layout will automatically sync with your local environment.
+
+</Step> 
+</Steps>
+
+## Next steps
+
+You won’t be able to view your layout until it’s connected to a page in the dashboard.
+Follow the next guides to continue:
+
+<Cards>
+  <Card title="How do I create a page in the dashboard?" href="/guides/create-page">
+    Learn how to create a new page and link it to your custom layout.
+  </Card>
+
+<Card title="How do I add Canopy elements to a layout?" href="/guides/add-canopy-to-layout">
+  Learn how to make your layouts editable using Canopy elements.
+</Card>
+
+  <Card title="How do I push a project to Blutui?" href="/guides/push-project-with-courier">
+    Learn how to push your project code from your machine to Blutui.
+  </Card>
+</Cards>

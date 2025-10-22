@@ -5,6 +5,7 @@
   "pages": [
     "---[Album]Getting Started---",
     "introduction",
+    "create-page",
     "---[SquareTerminal]Courier---",
     "install-courier-on-macos",
     "install-courier-on-windows",
@@ -28,6 +29,8 @@
     "make-the-most-out-of-canvas",
     "use-a-package-manager-in-a-project",
     "use-parcel-js-in-a-project",
-    "use-tailwind-css-in-a-project"
+    "use-tailwind-css-in-a-project",
+    "create-layout",
+    "add-canopy-to-layout"
   ]
 }
