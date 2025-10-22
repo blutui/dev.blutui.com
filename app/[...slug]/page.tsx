@@ -6,7 +6,7 @@ import { notFound } from 'next/navigation'
 
 import { createMetadata } from 'lib/metadata'
 import { source } from 'lib/source'
-import { LLMCopyButton } from 'components/ai/page-actions'
+import { LLMButton } from 'components/ai/page-actions'
 import { DocsApi } from 'components/docs-api'
 
 export default async function Page(props: PageProps<'/[...slug]'>) {
@@ -36,10 +36,12 @@ export default async function Page(props: PageProps<'/[...slug]'>) {
         includeSeparator: true,
       }}
     >
-      <DocsTitle className="flex items-center justify-between gap-4">
-        {page.data.title}
-        <LLMCopyButton markdownUrl={`${page.url}.mdx`} />
-      </DocsTitle>
+      <div className="flex items-center justify-between gap-4">
+        <DocsTitle className="flex-1">{page.data.title}</DocsTitle>
+        <div className="shrink-0">
+          <LLMButton markdownUrl={`${page.url}.mdx`} />
+        </div>
+      </div>
       {method && endpoint && <DocsApi method={method} endpoint={endpoint} />}
       <DocsDescription>{page.data.description}</DocsDescription>
       <DocsBody>
