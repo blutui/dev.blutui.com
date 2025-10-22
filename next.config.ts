@@ -3,6 +3,7 @@ import type { NextConfig } from 'next'
 
 const config: NextConfig = {
   reactStrictMode: true,
+  serverExternalPackages: ['typescript', 'shiki', '@takumi-rs/core'],
   images: {
     remotePatterns: [
       {

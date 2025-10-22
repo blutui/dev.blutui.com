@@ -22,7 +22,6 @@ export default defineConfig({
   mdxOptions: {
     rehypeCodeOptions: {
       lazy: true,
-      experimentalJSEngine: true,
       langs: ['html', canvas, 'bash'],
       themes: {
         light: 'light-plus',
