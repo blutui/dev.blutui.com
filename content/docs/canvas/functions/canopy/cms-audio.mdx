@@ -42,9 +42,9 @@ The `class` variable is only accessible in the code. All other variables are ava
 
 ```canvas
 <audio {{ controls }} {{ autoplay }} class={{ class }}>
-  {% for source in sources>
+  {% for source in sources %}
     <source src="{{ url }}" type="{{ type }}">
-  {% endfor>
+  {% endfor %}
 </audio>
 ```
 

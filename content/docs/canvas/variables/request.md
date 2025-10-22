@@ -9,7 +9,7 @@ The hostname of the current request.
 
 `http://example.com`
 
-```canvas {% process=false>
+```canvas
 {{ request.hostname }}
 {# outputs 'example.com' #}
 ```
@@ -20,7 +20,7 @@ The URL of the current request with the request protocol.
 
 `http://example.com`
 
-```canvas {% process=false>
+```canvas
 {{ request.host }}
 {# outputs 'http://example.com' #}
 ```
@@ -31,7 +31,7 @@ If the current request secure. Returns a `boolean` value.
 
 `http://example.com`
 
-```canvas {% process=false>
+```canvas
 {{ request.secure }}
 {# outputs false #}
 ```
@@ -62,7 +62,7 @@ The URL parameters as `key` & `value` pairs.
 
 `http://example.com/?foo=bar`
 
-```canvas {% process=false>
+```canvas
 {{ request.params }}
 
 {# outputs: {

@@ -3,26 +3,26 @@ title: 'date'
 description: 'The date function converts an argument to a date to allow date comparison.'
 ---
 
-```canvas {% process=false>
-{% if date(user.created_at) < date('-2days')>
+```canvas
+{% if date(user.created_at) < date('-2days') %}
   {# do something #}
-{% endif>
+{% endif %}
 ```
 
 You can pass a timezone as the second argument:
 
-```canvas {% process=false>
-{% if date(user.created_at) < date('-2days', 'Europe/Paris')>
+```canvas
+{% if date(user.created_at) < date('-2days', 'Europe/Paris') %}
   {# do something #}
-{% endif>
+{% endif %}
 ```
 
 If no argument is passed, the function returns the current date:
 
-```canvas {% process=false>
-{% if date(user.created_at) < date()>
+```canvas
+{% if date(user.created_at) < date() %}
   {# always! #}
-{% endif>
+{% endif %}
 ```
 
 ## Arguments

@@ -3,7 +3,7 @@ title: 'nl2br'
 description: 'The nl2br filter inserts HTML line breaks before all newlines in a string.'
 ---
 
-```canvas {% process=false>
+```canvas
 {{ 'I like Canvas.\nYou will like it too.' | nl2br }}
 
 {# outputs
