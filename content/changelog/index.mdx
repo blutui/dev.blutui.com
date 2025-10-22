@@ -5,45 +5,64 @@ description: A continuous stream of changes made to the Blutui platform.
 
 {/* Please use the ISO standard date and time format. */}
 
-<Changelog date="2024-10-17">
-<Badge tone="success">Added</Badge>
-
-- Added improved performance when loading the **Agency Console** in your web browser for the first time.
-
-<Badge tone="attention">Fixed</Badge>
-
-- Fixed an issue in the **Agency Console** where the brand was not being shown.
+<Changelog date="2024-11-21" type="Fixed" app="Console">
+Fixed an issue with roles not showing when updating a team members access.
 </Changelog>
 
-<Changelog date="2024-10-09">
-<Badge tone="attention">Fixed</Badge>
-
-- Fixed error handling for project form submissions.
+<Changelog date="2024-11-21" type="Added" app="Console">
+Added improved Agency Console UI.
 </Changelog>
 
-<Changelog date="2024-09-11">
-<Badge tone="attention">Fixed</Badge>
-
-- Fixed an issue with project webhooks sometimes not sending requests to the configured endpoint.
+<Changelog date="2024-11-11" type="Fixed" app="Console">
+Fixed UI for changing an active Cassette.
 </Changelog>
 
-<Changelog date="2024-08-20">
-<Badge tone="success">Added</Badge>
-
-- Added improved support for project timezones.
+<Changelog date="2024-11-05" type="Added" app="Courier">
+Added a warning when pushing code to an active Cassette.
 </Changelog>
 
-<Changelog date="2024-08-08">
-<Badge tone="success">Added</Badge>
-
-- Added `members` resource in the [Console API](/api-reference/console). You can now manage the role and access for team members in your agency through the API.
+<Changelog date="2024-10-30" type="Changed" app="Console API">
+Changed `projects` update endpoint to allow `primary_domain` to be unset.
 </Changelog>
 
-<Changelog date="2024-07-26">
-<Badge tone="attention">Fixed</Badge>
+<Changelog date="2024-10-29" type="Added">
+Added Blutui Cassettes. Cassettes allow teams to work on different aspects of a project, or versions of a site at the same time.
+</Changelog>
 
-- Fixed `is_super` response parameter on the `role` resource in the [Console API](/api-reference/console) to always return a `boolean`.
-- Fixed the dates and times in the **Project Dashboard** to respect the timezone of the project.
+<Changelog date="2024-10-24" type="Fixed" app="Console">
+Fixed invitations section where the list of roles was not being shown.
+</Changelog>
+
+<Changelog date="2024-10-17" type="Added" app="Console">
+Added improved performance when loading the **Agency Console** in your web browser for the first time.
+</Changelog>
+
+<Changelog date="2024-10-17" type="Fixed" app="Console">
+Fixed an issue where the brand was not being shown.
+</Changelog>
+
+<Changelog date="2024-10-09" type="Fixed" app="Projects">
+Fixed error handling for project form submissions.
+</Changelog>
+
+<Changelog date="2024-09-11" type="Fixed" app="Projects">
+Fixed an issue with project webhooks sometimes not sending requests to the configured endpoint.
+</Changelog>
+
+<Changelog date="2024-08-20" type="Added" app="Projects">
+Added improved support for timezones.
+</Changelog>
+
+<Changelog date="2024-08-08" type="Added" app="Console API">
+Added `members` resource in the [Console API](/api-reference/console). You can now manage the role and access for team members in your agency through the API.
+</Changelog>
+
+<Changelog date="2024-07-26" type="Fixed" app="Console API">
+Fixed `is_super` response parameter on the `role` resource in the [Console API](/api-reference/console) to always return a `boolean`.
+</Changelog>
+
+<Changelog date="2024-07-26" type="Fixed" app="Project Dashboard">
+Fixed the dates and times to respect the timezone of the project.
 </Changelog>
 
 <Changelog date="2024-07-25">
