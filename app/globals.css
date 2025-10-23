@@ -18,7 +18,7 @@
 
   --color-fd-primary: hsl(238, 100%, 57%);
 
-  --container-8xl: 90rem;
+  --container-8xl: 100rem;
 }
 
 .dark {
@@ -26,5 +26,10 @@
 }
 
 :root {
-  --fd-layout-width: 1600px;
+  --fd-layout-width: 100vw;
+  --spacing-fd-container: 1568px;
+}
+
+#nd-toc {
+  inset-inline-end: 0 !important;
 }

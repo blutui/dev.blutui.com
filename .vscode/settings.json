@@ -33,6 +33,7 @@
     "package.json": "package-lock.json, yarn.lock, pnpm-lock.yaml"
   },
   "tailwindCSS.experimental.classRegex": [
+    ["cva\\(([^)]*)\\)", "[\"'`]([^\"'`]*).*?[\"'`]"],
     ["cn\\(([^)]*)\\)", "(?:'|\"|`)([^']*)(?:'|\"|`)"]
   ],
   "tailwindCSS.experimental.configFile": "app/globals.css"
