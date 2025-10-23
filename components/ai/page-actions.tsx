@@ -95,7 +95,7 @@ export function LLMButton({ markdownUrl }: LLMButtonProps) {
               color: 'secondary',
               size: 'sm',
               className:
-                '[&_svg]:text-fd-muted-foreground -ml-px h-7.5 cursor-pointer gap-2 rounded-l-none [&_svg]:size-4',
+                '[&_svg]:text-fd-muted-foreground -ml-px cursor-pointer gap-2 rounded-l-none lg:h-7.5 [&_svg]:size-3.5',
             })
           )}
         >
