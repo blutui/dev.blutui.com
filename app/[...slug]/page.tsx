@@ -32,9 +32,6 @@ export default async function Page(props: PageProps<'/[...slug]'>) {
       full={full}
       tableOfContent={{ style: 'clerk' }}
       lastUpdate={lastModified ? new Date(lastModified) : undefined}
-      breadcrumb={{
-        includeSeparator: true,
-      }}
     >
       <div className="flex items-center justify-between gap-4">
         <DocsTitle className="flex-1">{page.data.title}</DocsTitle>
