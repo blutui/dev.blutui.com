@@ -1,0 +1,122 @@
+---
+title: How do I add meta and title tags to my project?
+description: Learn how to set up dynamic meta tags and titles in your Blutui project templates for improved SEO and social sharing.
+---
+
+## Introduction
+
+Adding meta and title tags helps define how your site appears in search results and on social media platforms.  
+This guide walks you through setting up a reusable **meta component** in your Blutui project that automatically pulls metadata from your pages, posts, or collections — while allowing easy overrides when needed.
+
+## Adding meta and title support
+
+### 1. Add a meta block to your master template
+
+Open your main layout file — by default this is located at:
+
+```
+
+template/default.html
+
+```
+
+This is your outermost template. Inside the `<head>` section, add a new block named `meta`:
+
+```twig
+{% block meta %}{% endblock %}
+```
+
+This block will later be used to include your meta component.
+
+### 2. Create a `meta.html` component
+
+Next, create a new component file that will handle all your meta logic.
+
+If your project already has a `components` folder inside `views`, place it there.
+Otherwise, create the folder first:
+
+```
+views/components/meta.html
+```
+
+Paste the following snippet into `meta.html`:
+
+```canvas
+{% if not title %}
+   {% set title = page.title ?? blog.name ?? post.seo_title ?? post.title ?? page.name %}
+{% endif %}
+
+{% if not description %}
+   {% set description = page.description ?? blog.description ?? post.seo_description ?? post.description ?? page.description %}
+{% endif %}
+
+{% if not image %}
+   {% set image = "" %}
+{% endif %}
+
+<!-- Primary Meta Tags -->
+<title>{{ title }} | {{ settings['site_name'] }}</title>
+<meta name="title" content="{{ title }}" />
+<meta name="description" content="{{ description }}" />
+
+<!-- Opengraph / Facebook -->
+<meta property="og:type" content="website" />
+<meta property="og:url" content="{{ request.host }}{{ route.url }}" />
+<meta property="og:title" content="{{ title }}" />
+<meta property="og:description" content="{{ description }}" />
+<meta property="og:image" content="{{ image }}" />
+
+<!-- X (Twitter) -->
+<meta property="twitter:card" content="summary_large_image" />
+<meta property="twitter:url" content="{{ request.host }}{{ route.url }}" />
+<meta property="twitter:title" content="{{ title }}" />
+<meta property="twitter:description" content="{{ description }}" />
+<meta property="twitter:image" content="{{ image }}" />
+```
+
+This code dynamically pulls the meta title, description, and OpenGraph image from your page or post.
+If these aren’t defined, it gracefully falls back to defaults.
+
+### 3. Include the meta component in your master template
+
+Go back to your `default.html` (or whichever layout defines the outer structure).
+Inside the `{% block meta %}` you created earlier, include the component:
+
+```canvas
+{% block meta %}
+  {% include 'components/meta' %}
+{% endblock %}
+```
+
+This connects your reusable meta component to the layout.
+
+### 4. Override meta information on specific pages
+
+If you need to override the default metadata (for example, to set a unique title or image), you can redefine the `meta` block on any page that extends your layout.
+
+Example:
+
+```canvas
+{% block meta %}
+  {% include 'components/meta' with { title: "My Epic Page" } %}
+{% endblock %}
+```
+
+You can also pass variables dynamically from routed pages or collections:
+
+```canvas
+{% block meta %}
+  {% include 'components/meta' with { title: collection.name } %}
+{% endblock %}
+```
+
+This makes your meta component flexible and reusable across all templates.
+
+## Useful links
+
+- [Blocks documentation](https://dev.blutui.com/docs/canvas/tags/extends)
+- [Include tag documentation](https://dev.blutui.com/docs/canvas/tags/include)
+
+## Next steps
+
+Now that your project supports meta and title tags, you can enhance SEO and social previews even further by adding structured data or canonical tags.
