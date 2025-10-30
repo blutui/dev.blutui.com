@@ -6,6 +6,8 @@
     "---[Album]Getting Started---",
     "introduction",
     "create-page",
+    "add-collection-to-project",
+    "add-menu-to-project",
     "---[SquareTerminal]Courier---",
     "install-courier-on-macos",
     "install-courier-on-windows",
@@ -31,6 +33,7 @@
     "use-parcel-js-in-a-project",
     "use-tailwind-css-in-a-project",
     "create-layout",
-    "add-canopy-to-layout"
+    "add-canopy-to-layout",
+    "add-meta-and-title"
   ]
 }
