@@ -52,6 +52,12 @@ Paste the following snippet into `meta.html`:
    {% set image = "" %}
 {% endif %}
 
+{% set robots_noindex = (post.is_noindex ?? page.is_noindex ?? false) %}
+{% set robots_nofollow = (post.is_nofollow ?? page.is_nofollow ?? false) %}
+<meta name="robots" content="{{ robots_noindex ? 'noindex' : 'index' }}, {{ robots_nofollow ? 'nofollow' : 'follow' }}">
+
+<link rel="canonical" href="{{ request.canonical_url }}">
+
 <!-- Primary Meta Tags -->
 <title>{{ title }} | {{ settings['site_name'] }}</title>
 <meta name="title" content="{{ title }}" />
