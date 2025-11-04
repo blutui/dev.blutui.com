@@ -8,6 +8,7 @@
     "create-page",
     "add-collection-to-project",
     "add-menu-to-project",
+    "extend-pages-with-collections",
     "---[SquareTerminal]Courier---",
     "install-courier-on-macos",
     "install-courier-on-windows",
