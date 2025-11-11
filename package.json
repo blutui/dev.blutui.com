@@ -13,7 +13,7 @@
     "@takumi-rs/image-response": "^0.37.0",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
-    "fumadocs-core": "^16.0.9",
+    "fumadocs-core": "^16.0.10",
     "fumadocs-mdx": "^13.0.6",
     "fumadocs-ui": "^16.0.10",
     "lucide-react": "^0.553.0",
