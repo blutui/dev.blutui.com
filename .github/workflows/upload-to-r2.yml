@@ -1,0 +1,38 @@
+name: Upload Markdown to R2
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'content/**/*.md'   
+      - 'content/**/*.mdx'  
+
+jobs:
+  upload-to-r2:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      
+      - name: Upload markdown files to R2
+        env:
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          R2_BUCKET: ${{ secrets.R2_BUCKET_NAME }}
+          R2_ACCOUNT_ID: ${{ secrets.R2_ACCOUNT_ID }}
+        run: |  
+          # Sync to R2 - files will be stored preserving directory structure
+          aws s3 sync ./content/ \
+            "s3://${R2_BUCKET}/" \
+            --endpoint-url "https://${R2_ACCOUNT_ID}.r2.cloudflarestorage.com" \
+            --exclude "*" \
+            --include "*.md" \
+            --include "*.mdx" \
+            --delete
+      
+      - name: Upload summary
+        run: |
+          md_count=$(find ./content -type f \( -name "*.md" -o -name "*.mdx" \) | wc -l)
+          echo "Uploaded $md_count markdown files from /content to R2 (preserving directory structure)"
