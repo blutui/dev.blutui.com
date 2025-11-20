@@ -1,0 +1,115 @@
+---
+title: How do I link two collections?
+description: Learn how to connect two collections in Blutui so you can reuse shared content without duplicating data.
+---
+
+## Introduction
+
+Now that you know how to create collections, you may want to **link one collection to another**.  
+This allows you to reuse existing content instead of duplicating it across multiple collections.
+
+In this guide, we’ll walk through linking a **Locations** collection to a **Staff** collection.  
+This will allow each staff entry to reference a location dynamically based on entries in the Locations collection — all managed through the dashboard.
+
+---
+
+### 1. Create and prepare your collections
+
+For this example, you should have:
+
+- A **Locations** collection (e.g., Auckland, Wellington, Christchurch)
+- A **Staff** collection 
+
+If you haven't created these yet, do that first.
+
+---
+
+### 2. Add a link field in your collection settings
+
+Blutui allows you to link collections directly from the dashboard — no code required.
+
+1. Open the **Locations** collection in your project dashboard.  
+2. Click **Manage links**.  
+3. Click **New link**.  
+4. Select the field you want to link (e.g., a `location` reference).  
+5. Give your link a **Name** — just like naming a field type.
+
+This creates a relationship between collections so you can easily reference entries from one collection inside another.
+
+---
+
+### 3. Access linked collection values in Canvas
+
+Once a link has been created, you can access it from your Canvas templates in two ways:
+
+#### Option A — Access via `foreign_keys`
+
+```canvas
+{{ entry.foreign_keys.location }}
+````
+
+This is the canonical way to retrieve linked collection values.
+
+#### Option B — Access directly from the entry object *(shortcut)*
+
+```canvas
+{{ entry.location }}
+```
+
+> **Note:**
+> This shortcut only works if your entry does **not** already have a `location` field defined.
+> If you already have a field called `location`, always use the `foreign_keys` version.
+
+---
+
+### Example Use Case
+
+If your **Staff** collection has a linked `location`, you can display it like this:
+
+```canvas
+<div class="staff-member">
+  <h2>{{ entry.name }}</h2>
+  <p>Based in: {{ entry.location.name }}</p>
+</div>
+```
+
+Or using the full foreign key reference:
+
+```canvas
+<p>Based in: {{ entry.foreign_keys.location.name }}</p>
+```
+
+This allows you to update and manage locations in **one** place — the Locations collection — while automatically updating all linked Staff entries.
+
+---
+
+## Why link collections?
+
+Linking collections helps you:
+
+* Avoid duplicated data
+* Maintain consistency across related content
+* Scale content without rewriting it
+* Manage shared data (like locations, categories, authors, services, products, etc.) in one place
+
+It’s one of the most powerful features for building flexible, data-driven sites in Blutui.
+
+---
+
+## Next steps
+
+You can now try linking more collections — such as categories, tags, teams, or related products — and build powerful relational content structures.
+
+<Cards>
+  <Card title="Add data-driven content" href="/guides/add-collection-to-project">
+    Learn how to create and render collections dynamically.
+  </Card>
+
+  <Card title="Expand page content with collections" href="/guides/expand-page-content-with-collections">
+    Learn how to extend pages with linked content such as authors.
+  </Card>
+
+  <Card title="cms.collection function" href="/docs/canvas/functions/cms#collection">
+    Learn how to fetch and filter collection entries in your templates.
+  </Card>
+</Cards>

@@ -9,6 +9,8 @@
     "add-collection-to-project",
     "add-menu-to-project",
     "extend-pages-with-collections",
+    "add-link-between-collections",
+    "add-route-patterns",
     "---[SquareTerminal]Courier---",
     "install-courier-on-macos",
     "install-courier-on-windows",
@@ -35,6 +37,7 @@
     "use-tailwind-css-in-a-project",
     "create-layout",
     "add-canopy-to-layout",
-    "add-meta-and-title"
+    "add-meta-and-title",
+    "use-blutui-image-optimiser"
   ]
 }
