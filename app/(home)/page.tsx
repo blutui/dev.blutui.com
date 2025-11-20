@@ -24,7 +24,7 @@ export default function Home() {
 
       <div className="max-w-8xl mx-auto mt-0 grid gap-6 px-8 lg:grid-cols-6">
         <div className="md:col-span-3">
-          <Card title="Read the docs" href="/docs/getting-started/create">
+          <Card title="Read the docs" href="/docs/getting-started/create-a-project">
             Learn how to get set up and start building your first project.
           </Card>
         </div>
