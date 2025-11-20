@@ -1,0 +1,58 @@
+---
+title: 'Running Your Project'
+description: 'Start building your Blutui project with confidence.'
+---
+
+Now that you have scaffolded your Blutui project and understand the folder structure, you are ready to build your site.
+Depending on the starter canvas you chose during the **courier create** step, you will need to run:
+
+```bash
+npm install
+npm run dev
+```
+
+to install all necessary dependencies and start the development server.
+
+After which on a different terminal you can run:
+
+```bash
+courier dev
+```
+
+to start your development server on `https://localhost:8080/`.
+
+<Callout>
+  Courier only tracks changes after you have run the development server and only tracks changes in the **public** and
+  **views** directories. Any changes made outside these directories will not be included
+</Callout>
+
+Let's edit the **index.canvas** page and add the following code.
+
+```canvas {% process=false filename="pages/index.canvas" %}
+{% extends 'templates/default' %}
+
+{% block body %}
+    <h1>Hello blutui</h1>
+    {{ cms_text('text-tag', { value: 'Editable text content.' }) }}
+{% endblock %}
+```
+
+Reload your browser and you should see the text on your page.
+
+<Callout>
+The **cms_text** function is a **Canopy** element, which are editable pieces of content on your site. These are defined by developers in code and can be edited by content editors on the dashboard.
+
+Learn more about [cms-text](/docs/canvas/functions/canopy/cms-text).
+
+</Callout>
+
+Once you're happy with your changes, run
+
+```bash
+courier push
+```
+
+to push your changes.
+
+Your project will be available on your **staging site** at
+`https://[project-handel].blutui.com`
