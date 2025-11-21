@@ -11,6 +11,7 @@
     "extend-pages-with-collections",
     "add-link-between-collections",
     "add-route-patterns",
+    "deploy-project",
     "---[SquareTerminal]Courier---",
     "install-courier-on-macos",
     "install-courier-on-windows",
