@@ -8,19 +8,14 @@ const exclude = ['-response-parameters', '-response', '-response-list', '/instal
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const url = (path: string): string => new URL(path, baseUrl).toString()
 
-  return [
-    {
-      url: url('/'),
-      changeFrequency: 'monthly',
-      priority: 1,
-    },
-    ...source
+  const items = await Promise.all(
+    source
       .getPages()
       .filter((page) => {
         return exclude.every((s) => !page.url.includes(s))
       })
-      .map((page) => {
-        const { lastModified } = page.data
+      .map(async (page) => {
+        const { lastModified } = await page.data.load()
 
         return {
           url: url(page.url),
@@ -28,6 +23,15 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
           changeFrequency: 'weekly',
           priority: 0.5,
         } as MetadataRoute.Sitemap[number]
-      }),
+      })
+  )
+
+  return [
+    {
+      url: url('/'),
+      changeFrequency: 'monthly',
+      priority: 1,
+    },
+    ...items.filter((v) => v !== undefined),
   ]
 }
