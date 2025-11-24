@@ -14,13 +14,13 @@ export default async function Page(props: PageProps<'/[...slug]'>) {
   const page = source.getPage(params.slug)
   if (!page) notFound()
 
-  const { body: MDX, toc, full, lastModified, api } = page.data
+  const { body: Mdx, toc, lastModified } = await page.data.load()
 
   let method: string | null = null
   let endpoint: string | null = null
 
-  if (api) {
-    const apiMethodEndpoint = api.split(' ', 2)
+  if (page.data.api) {
+    const apiMethodEndpoint = page.data.api.split(' ', 2)
 
     method = apiMethodEndpoint[0]
     endpoint = apiMethodEndpoint[1]
@@ -29,7 +29,7 @@ export default async function Page(props: PageProps<'/[...slug]'>) {
   return (
     <DocsPage
       toc={toc}
-      full={full}
+      full={page.data.full}
       tableOfContent={{ style: 'clerk' }}
       lastUpdate={lastModified ? new Date(lastModified) : undefined}
     >
@@ -42,7 +42,7 @@ export default async function Page(props: PageProps<'/[...slug]'>) {
       {method && endpoint && <DocsApi method={method} endpoint={endpoint} />}
       <DocsDescription>{page.data.description}</DocsDescription>
       <DocsBody>
-        <MDX
+        <Mdx
           components={getMDXComponents({
             a: createRelativeLink(source, page),
           })}
