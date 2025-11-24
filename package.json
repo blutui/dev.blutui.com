@@ -27,7 +27,7 @@
     "@tailwindcss/postcss": "^4.1.17",
     "@types/mdx": "^2.0.13",
     "@types/node": "^22.19.1",
-    "@types/react": "19.2.4",
+    "@types/react": "19.2.7",
     "@types/react-dom": "19.2.3",
     "@typescript-eslint/parser": "^8.46.4",
     "eslint": "^9.39.1",
@@ -44,7 +44,7 @@
   "packageManager": "pnpm@10.5.2",
   "pnpm": {
     "overrides": {
-      "@types/react": "19.2.4",
+      "@types/react": "19.2.7",
       "@types/react-dom": "19.2.3"
     }
   }
