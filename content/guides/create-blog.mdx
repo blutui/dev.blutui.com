@@ -1,0 +1,223 @@
+---
+title: How do I create a blog in my project?
+description: Learn how to set up a blog, create posts, and render both the blog index and individual posts using Canvas templates.
+---
+
+## Introduction
+
+Blutui makes it easy to create a fully functional blog with a dedicated **blog index page** and individual **blog post pages**.  
+In this guide, we’ll walk through:
+
+- Creating blog layouts  
+- Setting up a blog in the dashboard  
+- Rendering blog posts  
+- Displaying individual post content  
+- Using example Canvas code for both pages  
+
+By the end, you’ll have a working blog system with automatic routing and dynamic content.
+
+---
+
+### 1. Create your blog layouts
+
+Start by creating two layouts inside your project:
+
+```bash
+views/layouts/blogs/
+├─ index.html   # Blog list page
+└─ post.html    # Individual blog post page
+```
+
+If you plan to have multiple blogs with different designs, you can create folders such as:
+
+```bash
+views/layouts/news/
+views/layouts/events/
+```
+
+Each blog can have its own index and post layouts.
+
+---
+
+### 2. Create a blog in the dashboard
+
+1. Open your project in the **Blutui dashboard**.  
+2. Navigate to the **Blogs** section.  
+3. Click **Create new blog**.  
+4. Set the **URL**, **name**, and select the two layouts you created:
+
+- **Index layout** → `layouts/blogs/index.html`
+- **Post layout** → `layouts/blogs/post.html`
+
+Save the blog.
+
+---
+
+### 3. Create your first blog post
+
+Inside the blog you just created, click **Add Post**.
+
+Add:
+
+- Title  
+- Publish date  
+- Description  
+- Author  
+- Cover image (optional)  
+- Content  
+
+This gives you a post to render while you build your templates.
+
+---
+### 4. Set up your layouts
+
+Both `index.html` and `post.html` must extend your default template.  
+For more details, see:  
+https://dev.blutui.com/guides/create-layout
+
+---
+
+### 5. Rendering the blog index (index.html)
+
+On the blog index page, you can access the `blog` object.  
+This gives you everything you need to list posts:
+
+```json
+{
+  "name": "News",
+  "slug": "news",
+  "uri": "/news",
+  "description": null,
+  "posts": [
+    {
+      "id": "f55baa72-5be5-43f5-9063-d2b35559c900",
+      "title": "Post 1",
+      "slug": "/post--b5mpy-",
+      "publish_date": "2025-06-09T13:52:38.000000Z",
+      "author": "Fred",
+      "description": "Description",
+      "cover_image": null,
+      "content": "<p>This is a post</p>"
+    }
+  ],
+  "post_count": 1
+}
+```
+
+Now you can loop through all blog posts and display them:
+
+```canvas
+<div>
+  <h1>{{ blog.name }}</h1>
+
+  <div>
+    {% for post in blog.posts
+       | sort((a, b) => b.publish_date <=> a.publish_date)
+       | reverse 
+    %}
+      <div>
+        <img src="{{ post.cover_image }}" alt="{{ post.title }}">
+        <h2>{{ post.title }}</h2>
+        <p>{{ post.description }}</p>
+        <p>{{ post.publish_date | date('d M Y') }}</p>
+        <p>{{ post.author }}</p>
+        <p>{{ post.content | reading_time }} reading time</p>
+        <a href="{{ post.slug }}">Read more</a>
+      </div>
+    {% endfor %}
+  </div>
+</div>
+```
+
+This:
+
+* Displays the blog’s name
+* Loops through all posts
+* Sorts by publish date
+* Shows title, description, author, reading time, and cover image
+
+---
+
+### 6. Rendering individual posts (post.html)
+
+Inside the post layout, the `post` object is available automatically.
+
+Here’s a simple example:
+
+```canvas
+<div>
+  <h1>{{ post.title }}</h1>
+
+  <h3>{{ post.description }}</h3>
+
+  <p>{{ post.publish_date | date('d M Y') }}</p>
+  <p>{{ post.author }}</p>
+  <p>{{ post.content | reading_time }} reading time</p>
+
+  <img src="{{ post.cover_image }}" alt="{{ post.title }}">
+
+  <div>
+    {{ post.content | raw }}
+  </div>
+</div>
+```
+
+Notes:
+
+* `post.content | raw` is the full post body
+* Make sure your styles apply to elements inside the post body (paragraphs, headings, images, lists, etc.)
+
+---
+
+### 7. Routing is automatic
+
+You **do not need** any route patterns.
+Blutui blogs automatically generate:
+
+* `/your-blog-slug`
+* `/your-blog-slug/post-slug`
+
+Everything is handled for you.
+
+---
+
+### Extra tip — Meta tags
+
+If you're using the meta guide:
+[https://dev.blutui.com/guides/add-meta-and-title](https://dev.blutui.com/guides/add-meta-and-title)
+
+You automatically get sensible defaults:
+
+* Post title
+* Post description
+
+It’s recommended to set the **OpenGraph image** to the blog post’s cover image:
+
+```canvas
+{% block meta %}
+  {% include 'components/meta' with { image: post.cover_image } %}
+{% endblock %}
+```
+
+---
+
+## Next steps
+
+You can now expand your blog by adding:
+
+* Author profiles using collections
+* Related posts
+
+<Cards>
+  <Card title="Expand page content with collections" href="/guides/expand-page-content-with-collections">
+    Add dynamic author or category data to your blog posts.
+  </Card>
+
+  <Card title="Create a layout" href="/guides/create-layout">
+    Learn how to structure and style your blog layouts.
+  </Card>
+
+  <Card title="Add meta and title tags" href="/guides/add-meta-and-title">
+    Improve SEO and social sharing for your blog posts.
+  </Card>
+</Cards>
