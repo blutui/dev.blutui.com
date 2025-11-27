@@ -12,6 +12,9 @@
     "---[SquareTerminal]Courier---",
     "...courier",
     "---[LayoutTemplate]Canvas---",
-    "...canvas"
+    "...canvas",
+    "---[CassetteTape]Cassettes---",
+    "...cassettes"
+
   ]
 }
