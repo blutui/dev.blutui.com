@@ -10,7 +10,7 @@ Blutui Cassettes are like a version control system for the front-end logic of yo
 Every Blutui Cassette contains a **public** and **views** directory. These directories contain the front-end logic of your project. When you use the `courier push` command, these changes are uploaded to the Cassette configured within the `courier.json` file.
 
 <Callout>
-Cassettes only track changes in the **public** and **views** directories. Any changes made outside these directories will not be included in the cassette and won't be available when you run **courier pull**.
+Blutui Courier only pushes & pulls the **public** and **views** directories. Any changes made outside these directories will not be included in the Cassette and won't be available when you run **courier pull**.
 </Callout>
 
 The Cassette to which your changes are pushed and pulled from is determined by the `cassette` attribute in your `courier.json` file. By changing this attribute, you can direct your development efforts to a different Cassette, allowing you to work on multiple versions of your site simultaneously.
