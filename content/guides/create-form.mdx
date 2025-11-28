@@ -60,7 +60,7 @@ Next, we'll use a system named [macro](/docs/canvas/tags/macro) to help define i
 ```canvas
 {# Input #}
 {% macro input(data) %}
-  <input type="{{ data.type }}" name="{{ data.name }}" value="{{ data.value }}" placeholder="{{ data.placeholder }}" {% if data.required> required {% endif %} class="" />
+  <input type="{{ data.type }}" name="{{ data.name }}" value="{{ data.value }}" placeholder="{{ data.placeholder }}" {% if data.required %} required {% endif %} class="" />
 {% endmacro %}
 
 {# Textarea #}
@@ -70,7 +70,7 @@ Next, we'll use a system named [macro](/docs/canvas/tags/macro) to help define i
 
 {# Checkbox #}
 {% macro checkbox(data) %}
-  {% for item in data.options>
+  {% for item in data.options %}
     <label class="">
       <input type="checkbox" name="{{ data.name }}[]" value="{{ item.value }}" />
       <span class="">{{ item.value }}</span>
@@ -80,7 +80,7 @@ Next, we'll use a system named [macro](/docs/canvas/tags/macro) to help define i
 
 {# Radio Button #}
 {% macro radio(data) %}
-  {% for item in data.options>
+  {% for item in data.options %}
     <label class="">
       <input type="radio" name="{{ data.name }}" value="{{ item.value }}" />
       <span class="">{{ item.label }}</span>
@@ -92,7 +92,7 @@ Next, we'll use a system named [macro](/docs/canvas/tags/macro) to help define i
 {% macro select(data) %}
   <div class="">
     <select name="{{ data.name }}" value="{{ data.value }}" class="">
-      {% for item in data.options>
+      {% for item in data.options %}
         <option value="{{ item.value }}">{{ item.value }}</option>
       {% endfor %}
     </select>
@@ -107,7 +107,7 @@ Next, we'll use a system named [macro](/docs/canvas/tags/macro) to help define i
 {# Form Field #}
 {% macro field(data) %}
   <div class="">
-    <label for="{{ data.name }}" class="">{{ data.label }}{% if data.required> <span>*</span> {% endif %}</label>
+    <label for="{{ data.name }}" class="">{{ data.label }}{% if data.required %} <span>*</span> {% endif %}</label>
     {% if data.type == 'checkbox' %}
       {{ _self.checkbox(data) }}
     {% elseif data.type == 'radio' %}
@@ -134,10 +134,10 @@ Feel free to customise the appearance and layout by modifying the provided HTML 
 Inside your `views/forms/contact.html` file, insert:
 
 ```canvas
-{% import 'components/form' as ui>
+{% import 'components/form' as ui %}
 
 {% form 'contact' %}
-  {% for field in form.fields>
+  {% for field in form.fields %}
     {{ ui.field(field) }}
   {% endfor %}
 
