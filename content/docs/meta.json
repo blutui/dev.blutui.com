@@ -11,10 +11,10 @@
     "...components",
     "---[SquareTerminal]Courier---",
     "...courier",
-    "---[LayoutTemplate]Canvas---",
-    "...canvas",
     "---[CassetteTape]Cassettes---",
-    "...cassettes"
+    "...cassettes",
+    "---[LayoutTemplate]Canvas---",
+    "...canvas"
 
   ]
 }
