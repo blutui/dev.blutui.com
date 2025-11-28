@@ -1,0 +1,112 @@
+---
+title: How do I redirect after submitting a form?
+description: Learn how to automatically redirect users to a thank-you or confirmation page after submitting a form in Blutui.
+---
+
+## Introduction
+
+When a user submits a form, you may want to redirect them to a **thank-you page**, **confirmation screen**, or any other route in your project.  
+Blutui makes this easy — simply add a hidden `redirect` field inside your form.
+
+This guide will show you how to set up a form redirect in just a few lines.
+
+---
+
+### 1. Wrap your form with the form tags
+
+First, ensure your form is created using the Canvas form tag:
+
+```canvas
+{% form 'contact' %}
+  
+{% endform %}
+````
+
+Replace `'contact'` with the handle of the form you created in the dashboard.
+
+If you need help creating a form, see:
+[How do I make a form in a Blutui project?](https://dev.blutui.com/guides/create-form)
+
+---
+
+### 2. Add the redirect field
+
+Inside your `{% form %}` block, add a hidden input named `redirect`:
+
+```canvas
+{% form 'contact' %}
+
+  <input type="hidden" name="redirect" value="/contact/thank-you">
+
+{% endform %}
+```
+
+The `value` is the page you want the user to be taken to after the form is submitted.
+
+In this example:
+
+```
+/contact/thank-you
+```
+
+This means the user will be redirected to the **thank-you page** once the form is processed.
+
+---
+
+### 3. Make sure the redirect page exists
+
+The redirect will only work if the target page exists.
+
+If you need help creating a page, follow this guide:
+[How do I create a page?](https://dev.blutui.com/guides/create-page)
+
+---
+
+## Example structure
+
+Here is a full example of a contact form with a redirect:
+
+```canvas
+{% form 'contact' %}
+  <input type="hidden" name="redirect" value="/contact/thank-you">
+
+  <label>
+    Your name
+    <input type="text" name="name" required>
+  </label>
+
+  <label>
+    Your email
+    <input type="email" name="email" required>
+  </label>
+
+  <label>
+    Message
+    <textarea name="message" required></textarea>
+  </label>
+
+  <button type="submit">Send</button>
+{% endform %}
+```
+
+---
+
+## Next steps
+
+You now have a fully working redirect after form submission.
+This is useful for:
+
+* Contact forms
+* Booking forms
+* Application forms
+* Confirmation screens
+
+<Cards>
+  <Card title="How do I create a form?" href="/guides/create-form">
+    Learn how to create and manage forms in Blutui.
+  </Card>
+
+  <Card title="How do I create a page?" href="/guides/create-page">
+    Learn how to create the thank-you page for your redirect.
+  </Card>
+</Cards>
