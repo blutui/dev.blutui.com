@@ -70,20 +70,9 @@ Here is a full example of a contact form with a redirect:
 {% form 'contact' %}
   <input type="hidden" name="redirect" value="/contact/thank-you">
 
-  <label>
-    Your name
-    <input type="text" name="name" required>
-  </label>
-
-  <label>
-    Your email
-    <input type="email" name="email" required>
-  </label>
-
-  <label>
-    Message
-    <textarea name="message" required></textarea>
-  </label>
+  {% for field in form.fields %}
+    {{ ui.field(field) }}
+  {% endfor %}
 
   <button type="submit">Send</button>
 {% endform %}
