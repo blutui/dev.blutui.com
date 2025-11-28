@@ -3,7 +3,7 @@ title: 'Getting Started'
 description: 'Learn how to use cassettes in Blutui'
 ---
 
-Blutui cassettes are a version control system for the front-end logic of your website. They provide a simple and efficient way to manage and switch between different website designs for a single site. This is particularly useful for seasonal events, special promotions, or any scenario where you need a distinct look and feel for your website without creating an entirely new one.
+Blutui cassettes are a version control system for the front-end logic of your website. They provide a simple and efficient way to manage and switch between different website designs for a single site. This is particularly useful for any scenario where you need a distinct look and feel for your website without creating an entirely new one.
 
 ## How do Cassettes Work?
 
@@ -13,17 +13,9 @@ Blutui tracks changes within the **public** and **views** directories of your pr
 Cassettes only track changes in the **public** and **views** directories. Any changes made outside these directories will not be included in the cassette and won't be available when you run **courier pull**.
 </Callout>
 
-The cassette to which your changes are pushed is determined by the cassette attribute in your **courier.json** file. By changing this attribute, you can direct your development efforts to a different cassette, allowing you to work on multiple versions of your site simultaneously.
+The cassette to which your changes are pushed is determined by the **cassette** attribute in your `courier.json` file. By changing this attribute, you can direct your development efforts to a different cassette, allowing you to work on multiple versions of your site simultaneously.
 
-## Managing Cassettes
-
-You can manage your cassettes through the Blutui Agency console. Here's a typical workflow:
-
-![Duplicate a Cassette](https://cdn.blutui.com/uploads/assets/Dev/cassettes/duplicate-cassette.png)
-
-**1. Duplicate a Cassette:** To create a new version of your site (e.g., a Christmas theme), you can duplicate an existing cassette from the Agency console. This creates a new, identical copy of your site's front-end logic.
-
-```json
+```json tab="courier.json"
 {
   "$schema": "https://dev.blutui.com/schemas/v1/schema.json",
   "cassette": "[cassette-name]",
@@ -31,7 +23,15 @@ You can manage your cassettes through the Blutui Agency console. Here's a typica
 }
 ```
 
-**2. Switch Cassettes Locally:** Update the cassette attribute in your **courier.json** file to the name of the Active cassette. Now, any changes you make and push will be applied to this new version.
+### Managing Cassettes
+
+You can manage your cassettes through the Blutui Agency console. Here's a typical workflow:
+
+![Duplicate a Cassette](https://cdn.blutui.com/uploads/assets/Dev/cassettes/duplicate-cassette.png)
+
+**1. Duplicate a Cassette:** To create a new version of your site (e.g., a Christmas theme), you can duplicate an existing cassette from the Agency console. This creates a new, identical copy of your site's front-end logic.
+
+**2. Switch Cassettes Locally:** Update the **cassette** attribute in your `courier.json` to the name of the cassette you want to develop. Now, any changes you make and push will be applied to this new version.
 
 **3. Develop and Test:** You can now develop your new site version (e.g., add Christmas-specific styles, layouts, and content) without affecting your live website.
 
@@ -41,10 +41,84 @@ You can manage your cassettes through the Blutui Agency console. Here's a typica
 The change is immediate, and your new site UI will be visible to all visitors.
 </Callout>
 
----
+### Restrictions on the Active Cassette
 
-### What's Next? Understanding Collections
+Once you set a cassette to **Active**, it is recommended that you develop any new features or changes on a **new cassette** created by duplicating the active cassette. This ensures the production version of the site is not affected by development changes.
 
-Now that you know how to manage cassettes, you can start developing your data structure using Blutui Collections. Collections allow you to manage your site's content, making it easier to create dynamic and engaging web experiences which are easily editable.
+While you can override this and develop on the active cassette directly, it is **not recommended**. When you attempt to push to an active cassette, Courier will show a warning similar to:
 
-Continue to the [Blutui Collections]() to begin managing your site's content and structure effectively.
+```bash
+The "[cassette-name]" is currently active. You can not push to an active Cassette.
+
+If you're feeling a little adventurous you can use the "--allow-active" flag to bypass this check.
+```
+
+To bypass this restriction, you can add the `--allow-active` flag to your `courier push` command:
+
+```bash
+courier push --allow-active
+```
+
+<Callout>
+This warning will not occur if your site has not yet been published. However, once your site is live, pushing directly to the active cassette means any errors will immediately affect your production site.
+</Callout>
+
+### Example using Cassettes
+
+As an example, imagine you have a site with a banner section: one for the **main** site and another for a **Christmas** version.
+
+Locally, in your `courier.json` file, you set which cassette you want to develop by updating the `cassette` attribute.
+
+You can learn how to run your project and push changes here [Running a project](http://localhost:3000/docs/getting-started/running-project)
+
+Below is an example where each cassette has a slightly different version of the banner section.
+
+**Main cassette**
+
+```json tab="courier.json"
+{
+  "$schema": "https://dev.blutui.com/schemas/v1/schema.json",
+  "cassette": "10_main",
+  "handle": "[project-handle]"
+}
+```
+
+```twig tab="banner.canvas"
+<section class="bg-slate-900 text-white py-8">
+  <div class="mx-auto px-6 text-left space-y-3">
+    {{ cms_heading('banner-main', {
+      element: 'h2',
+      value: 'Main banner',
+      class: 'text-2xl font-semibold tracking-tight sm:text-3xl'
+    }) }}
+  </div>
+</section>
+```
+
+**Christmas cassette**
+
+```json tab="courier.json"
+{
+  "$schema": "https://dev.blutui.com/schemas/v1/schema.json",
+  "cassette": "21_christmas",
+  "handle": "[project-handle]"
+}
+```
+
+```twig tab="banner.canvas"
+<section class="bg-gradient-to-r from-emerald-900 via-emerald-800 to-red-900 text-white py-8">
+  <div class="mx-auto px-6 text-left space-y-3">
+    {{ cms_heading('banner-christmas', {
+      element: 'h2',
+      value: 'Merry Christmas & Happy Holidays',
+      class: 'text-2xl font-semibold tracking-tight sm:text-3xl text-emerald-50'
+    }) }}
+  </div>
+</section>
+```
+
+<Callout>
+Note that the ID for `cms_heading` has been changed in each cassette: `banner-main` and `banner-christmas`. This is because Canopy elements with the same ID will share the same content. If you change the content of an element, it will change in all versions that use that same ID. Since we need different content for each banner, we use different IDs in each cassette.
+</Callout>
+
+Once you develop the Christmas version on a separate cassette, using the Agency console you can quickly switch the active cassette to make the change live.
