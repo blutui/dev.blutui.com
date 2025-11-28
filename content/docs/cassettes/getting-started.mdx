@@ -1,0 +1,124 @@
+---
+title: 'Getting Started'
+description: 'Learn how to use cassettes in Blutui'
+---
+
+Blutui Cassettes are like a version control system for the front-end logic of your website. They provide a simple and efficient way to manage and switch between different website designs for a single project. This is particularly useful for any scenario where you need a distinct look and feel for your website without creating an entirely new one.
+
+## How do Cassettes Work?
+
+Every Blutui Cassette contains a **public** and **views** directory. These directories contain the front-end logic of your project. When you use the `courier push` command, these changes are uploaded to the Cassette configured within the `courier.json` file.
+
+<Callout>
+Blutui Courier only pushes & pulls the **public** and **views** directories. Any changes made outside these directories will not be included in the Cassette and won't be available when you run **courier pull**.
+</Callout>
+
+The Cassette to which your changes are pushed and pulled from is determined by the `cassette` attribute in your `courier.json` file. By changing this attribute, you can direct your development efforts to a different Cassette, allowing you to work on multiple versions of your site simultaneously.
+
+```json tab="courier.json"
+{
+  "$schema": "https://dev.blutui.com/schemas/v1/schema.json",
+  "cassette": "[cassette-name]",
+  "handle": "[project-handle]"
+}
+```
+
+### Typical Cassette Workflow
+
+You can manage your Cassettes through the Blutui Agency Console. Here's a typical workflow:
+
+![Duplicate a Cassette](https://cdn.blutui.com/uploads/assets/Dev/cassettes/duplicate-cassette.png)
+
+**1. Duplicate a Cassette:** To create a new version of your project (e.g., a Christmas theme), you can duplicate an existing Cassette from the Agency Console. This creates a new, identical copy of your project's front-end logic.
+
+**2. Switch Cassettes Locally:** Update the `cassette` attribute in your `courier.json` config file to the name of the Cassette you want to develop. Now, any changes you make and push will be applied to this new version.
+
+**3. Develop and Test:** You can now develop your new project version (e.g., add Christmas-specific styles, layouts, and content) without affecting your live website.
+
+**4. Go Live:** Once you are satisfied with the new Cassette, you can make it the live version of your site. This is done in the Agency console by selecting the **Active Cassette** from the dropdown list and clicking the **Update** button.
+
+<Callout>
+The change is immediate, and your new site UI will be visible to all visitors.
+</Callout>
+
+### Restrictions on the Active Cassette
+
+Once you set a Cassette to **Active**, it is recommended that you develop any new features or changes on a **new Cassette** created by duplicating the active Cassette. This ensures the production version of the project is not affected by development changes.
+
+While you can override this and develop on the active Cassette directly, it is **not recommended**. When you attempt to push to an active cassette, Courier will show a warning similar to:
+
+```bash
+The "[cassette-name]" is currently active. You can not push to an active Cassette.
+
+If you're feeling a little adventurous you can use the "--allow-active" flag to bypass this check.
+```
+
+To bypass this restriction, you can add the `--allow-active` flag to your `courier push` command:
+
+```bash
+courier push --allow-active
+```
+
+<Callout>
+This warning will not occur if your site has not yet been published. However, once your site is live, pushing directly to the active Cassette means any errors will immediately affect your production site.
+</Callout>
+
+### Example using Cassettes
+
+As an example, imagine you have a project with a banner section: one for the **main** site and another for a **Christmas** version.
+
+Locally, in your `courier.json` file, you set which Cassette you want to develop by updating the `cassette` attribute.
+
+You can learn how to run your project locally and push changes here [Running a project](/docs/getting-started/running-project)
+
+Below is an example where each Cassette has a slightly different version of the banner section.
+
+**Main Cassette**
+
+```json tab="courier.json"
+{
+  "$schema": "https://dev.blutui.com/schemas/v1/schema.json",
+  "cassette": "10_main",
+  "handle": "[project-handle]"
+}
+```
+
+```twig tab="banner.canvas"
+<section class="bg-slate-900 text-white py-8">
+  <div class="mx-auto px-6 text-left space-y-3">
+    {{ cms_heading('banner-main', {
+      element: 'h2',
+      value: 'Main banner',
+      class: 'text-2xl font-semibold tracking-tight sm:text-3xl'
+    }) }}
+  </div>
+</section>
+```
+
+**Christmas Cassette**
+
+```json tab="courier.json"
+{
+  "$schema": "https://dev.blutui.com/schemas/v1/schema.json",
+  "cassette": "21_christmas",
+  "handle": "[project-handle]"
+}
+```
+
+```twig tab="banner.canvas"
+<section class="bg-gradient-to-r from-emerald-900 via-emerald-800 to-red-900 text-white py-8">
+  <div class="mx-auto px-6 text-left space-y-3">
+    {{ cms_heading('banner-christmas', {
+      element: 'h2',
+      value: 'Merry Christmas & Happy Holidays',
+      class: 'text-2xl font-semibold tracking-tight sm:text-3xl text-emerald-50'
+    }) }}
+  </div>
+</section>
+```
+
+<Callout>
+Note that the ID for `cms_heading` has been changed in each Cassette: `banner-main` and `banner-christmas`. This is because Canopy elements with the same ID will share the same content. If you change the content of an element, it will change in all versions that use that same ID. Since we need different content for each banner, we use different IDs in each Cassette.
+</Callout>
+
+Once you have developed the Christmas version on a separate Cassette, using the Agency Console you can quickly switch the active Cassette to make the change live.
