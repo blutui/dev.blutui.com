@@ -9,7 +9,7 @@ export default function Layout({ children }: LayoutProps<'/[...slug]'>) {
   return (
     <DocsLayout
       {...base}
-      nav={{ ...nav, mode: 'top' }}
+      nav={{ ...nav, mode: 'auto' }}
       tabMode="navbar"
       tree={source.pageTree}
       sidebar={{

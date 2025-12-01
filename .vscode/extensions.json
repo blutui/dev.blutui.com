@@ -3,7 +3,7 @@
     "bradlc.vscode-tailwindcss",
     "dbaeumer.vscode-eslint",
     "EditorConfig.editorconfig",
-    "esbenp.prettier-vscode",
+    "prettier.prettier-vscode",
     "unifiedjs.vscode-mdx"
   ]
 }

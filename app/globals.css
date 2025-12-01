@@ -26,10 +26,7 @@
 }
 
 :root {
-  --fd-layout-width: 100vw;
+  --fd-layout-width: 1400px;
+  --fd-nav-height: 80px !important;
   --spacing-fd-container: 1568px;
-}
-
-#nd-toc {
-  inset-inline-end: 0 !important;
 }
