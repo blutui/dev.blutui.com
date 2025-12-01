@@ -5,7 +5,7 @@ export default function Home() {
   return (
     <div className="w-full grow">
       <div className="relative overflow-hidden pt-10 pb-8 md:pb-12">
-        <div className="max-w-8xl relative mx-auto flex items-center">
+        <div className="relative mx-auto flex max-w-(--fd-layout-width) items-center">
           <div className="w-full px-8 py-6 md:py-10">
             <p className="mb-2 text-xs tracking-widest text-zinc-500 uppercase dark:text-white/50">
               Developer Documentation
@@ -22,7 +22,7 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="max-w-8xl mx-auto mt-0 grid gap-6 px-8 lg:grid-cols-6">
+      <div className="mx-auto mt-0 grid max-w-(--fd-layout-width) gap-6 px-8 lg:grid-cols-6">
         <div className="md:col-span-3">
           <Card title="Read the docs" href="/docs/getting-started/create-a-project">
             Learn how to get set up and start building your first project.

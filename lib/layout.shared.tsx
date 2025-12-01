@@ -27,7 +27,7 @@ export function baseOptions(): BaseLayoutProps {
     },
     nav: {
       title: <>{logo}</>,
-      transparentMode: 'top',
+      transparentMode: 'always',
     },
   }
 }
