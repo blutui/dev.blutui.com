@@ -30,7 +30,6 @@
     "@types/react": "19.2.7",
     "@types/react-dom": "19.2.3",
     "@typescript-eslint/parser": "^8.48.0",
-    "baseline-browser-mapping": "^2.8.32",
     "eslint": "^9.39.1",
     "eslint-config-next": "16.0.6",
     "postcss": "^8.5.6",
