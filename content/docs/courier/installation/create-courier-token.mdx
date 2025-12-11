@@ -35,7 +35,7 @@ Complete the [getting started guide](/docs/courier/getting-started#linking-your-
 1. To securely add your access token to a `token.txt` file, use the following command:
 
 ```bash
-printf "Enter your Courier access token: " && read -s TOKEN && echo $TOKEN > token.txt
+printf "Enter your Courier access token: " && read -s TOKEN && echo "" && echo $TOKEN > token.txt && echo "Token saved"
 ```
 
 <Callout>
