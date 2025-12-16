@@ -9,7 +9,7 @@
   },
   "dependencies": {
     "@takumi-rs/core": "^0.57.3",
-    "@takumi-rs/helpers": "^0.57.3",
+    "@takumi-rs/helpers": "^0.57.6",
     "@takumi-rs/image-response": "^0.57.3",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
