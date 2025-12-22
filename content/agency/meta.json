@@ -1,0 +1,6 @@
+{
+  "title": "Agency",
+  "icon": "BookOpen",
+  "root": true,
+  "pages": ["agency"]
+}
