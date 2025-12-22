@@ -1,5 +1,5 @@
 ---
-title: 'Editing Text in Canopy'
+title: 'Editing Text'
 description: 'How to edit Canopy text'
 ---
 

@@ -1,5 +1,5 @@
 ---
-title: 'Editing Headings in Canopy'
+title: 'Editing Headings'
 description: 'How to edit Canopy headings'
 ---
 

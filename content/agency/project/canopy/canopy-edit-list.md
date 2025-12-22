@@ -1,5 +1,5 @@
 ---
-title: 'Editing Lists in Canopy'
+title: 'Editing Lists'
 description: 'How to edit Canopy lists'
 ---
 

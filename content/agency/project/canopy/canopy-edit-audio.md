@@ -1,5 +1,5 @@
 ---
-title: 'Editing Audio in Canopy'
+title: 'Editing Audio'
 description: 'How to edit Canopy audio files'
 ---
 

@@ -1,5 +1,5 @@
 ---
-title: 'Editing Videos in Canopy'
+title: 'Editing Videos'
 description: 'How to edit Canopy videos'
 ---
 

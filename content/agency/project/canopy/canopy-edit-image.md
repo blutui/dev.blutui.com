@@ -1,5 +1,5 @@
 ---
-title: 'Editing Images in Canopy'
+title: 'Editing Images'
 description: 'How to edit Canopy images'
 ---
 

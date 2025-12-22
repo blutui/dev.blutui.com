@@ -1,5 +1,5 @@
 ---
-title: 'Editing Code blocks in Canopy'
+title: 'Editing Code blocks'
 description: 'How to edit Canopy code block'
 ---
 

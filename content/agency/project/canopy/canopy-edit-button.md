@@ -1,5 +1,5 @@
 ---
-title: 'Editing Buttons in Canopy'
+title: 'Editing Buttons'
 description: 'How to edit Canopy buttons'
 ---
 
