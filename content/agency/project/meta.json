@@ -1,0 +1,12 @@
+{
+  "$schema": "../../../.source/json-schema/docs.meta.json",
+  "pages": [
+    "assets",
+    "blogs",
+    "pages",
+    "collections",
+    "forms",
+    "menus",
+    "canopy"
+  ]
+}

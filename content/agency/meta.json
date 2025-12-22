@@ -2,5 +2,5 @@
   "title": "Agency",
   "icon": "BookOpen",
   "root": true,
-  "pages": ["agency"]
+  "pages": ["getting-started", "---[LayoutTemplate]Project---", "...project"]
 }
