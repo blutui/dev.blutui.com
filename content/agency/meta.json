@@ -2,5 +2,11 @@
   "title": "Agency",
   "icon": "BookOpen",
   "root": true,
-  "pages": ["getting-started", "---[LayoutTemplate]Project---", "...project"]
+  "pages": [
+    "---[LayoutTemplate]Project---",
+    "getting-started",
+    "...project",
+    "---[LayoutTemplate]Console---",
+    "...console"
+  ]
 }
