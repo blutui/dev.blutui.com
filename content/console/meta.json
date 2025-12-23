@@ -1,0 +1,16 @@
+{
+  "$schema": "../../.source/json-schema/docs.meta.json",
+  "title": "Console",
+  "icon": "BookOpen",
+  "root": true,
+  "pages": [
+    "---[Album]Getting Started---",
+    "index",
+    "console-basics",
+    "organisation-settings",
+    "site-settings",
+    "building-sites",
+    "accounts",
+    "faqs"
+  ]
+}

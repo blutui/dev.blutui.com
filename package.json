@@ -22,6 +22,7 @@
     "fumadocs-ui": "^16.3.2",
     "lucide-react": "^0.562.0",
     "next": "16.1.1",
+    "next-themes": "^0.4.6",
     "react": "19.2.3",
     "react-dom": "19.2.3",
     "scroll-into-view-if-needed": "^3.1.0",
