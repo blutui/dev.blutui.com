@@ -32,7 +32,7 @@ export default async function Page(props: PageProps<'/[...slug]'>) {
       toc={toc}
       full={page.data.full}
       tableOfContent={{ style: 'clerk' }}
-      lastUpdate={lastModified ? new Date(lastModified) : undefined}
+      // lastUpdate={lastModified ? new Date(lastModified) : undefined}
     >
       <div className="flex items-center justify-between gap-4">
         <DocsTitle className="flex-1">{page.data.title}</DocsTitle>
