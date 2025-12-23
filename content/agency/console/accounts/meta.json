@@ -1,3 +1,11 @@
 {
-  "pages": ["organisations", "billing", "email-verification", "agency-plans", "login", "password-reset"]
+  "$schema": "../../../../.source/json-schema/docs.meta.json",
+  "pages": [
+    "organisations",
+    "billing",
+    "email-verification",
+    "agency-plans",
+    "login",
+    "password-reset"
+  ]
 }

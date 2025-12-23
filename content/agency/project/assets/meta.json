@@ -1,3 +1,8 @@
 {
-  "pages": ["managing-assets", "uploading-assets", "folders-assets"]
+  "$schema": "../../../../.source/json-schema/docs.meta.json",
+  "pages": [
+    "managing-assets",
+    "uploading-assets",
+    "folders-assets"
+  ]
 }

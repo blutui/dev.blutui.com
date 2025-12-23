@@ -1,3 +1,11 @@
 {
-  "pages": ["console-basics", "organisation-settings", "site-settings", "building-sites", "accounts", "faqs"]
+  "$schema": "../../../.source/json-schema/docs.meta.json",
+  "pages": [
+    "console-basics",
+    "organisation-settings",
+    "site-settings",
+    "building-sites",
+    "accounts",
+    "faqs"
+  ]
 }
