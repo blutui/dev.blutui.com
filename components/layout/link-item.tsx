@@ -29,6 +29,7 @@ export interface MainItemType extends WithHref, Filterable {
   icon?: ReactNode;
   text: ReactNode;
   description?: ReactNode;
+  items?: MenuItemType['items'];
 }
 
 export interface IconItemType extends WithHref, Filterable {
@@ -43,6 +44,7 @@ export interface IconItemType extends WithHref, Filterable {
    * @defaultValue true
    */
   secondary?: boolean;
+  items?: MenuItemType['items'];
 }
 
 export interface ButtonItemType extends WithHref, Filterable {
@@ -53,10 +55,12 @@ export interface ButtonItemType extends WithHref, Filterable {
    * @defaultValue false
    */
   secondary?: boolean;
+  items?: MenuItemType['items'];
 }
 
 export interface MenuItemType extends Partial<WithHref>, Filterable {
   type: 'menu';
+  url?: string;
   icon?: ReactNode;
   text: ReactNode;
 
