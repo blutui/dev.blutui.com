@@ -15,6 +15,7 @@ import type { SidebarTab } from './index';
 
 export interface SidebarTabWithProps extends SidebarTab {
   props?: ComponentProps<'a'>;
+  items?: SidebarTabWithProps[];
 }
 
 export function SidebarTabsDropdown({
@@ -108,7 +109,10 @@ export function SidebarTabsDropdown({
   );
 }
 
-export function isTabActive(tab: SidebarTab, pathname: string) {
+export function isTabActive(tab: SidebarTabWithProps, pathname: string): boolean {
+  if (tab.items) {
+    return tab.items.some((item) => isTabActive(item, pathname));
+  }
   if (tab.urls) return tab.urls.has(normalize(pathname));
 
   return isActive(tab.url, pathname, true);

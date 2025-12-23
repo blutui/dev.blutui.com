@@ -148,9 +148,20 @@ export function LayoutHeaderTabs({
           title,
           url,
           unlisted,
+          items,
           props: { className, ...rest } = {},
         } = option;
         const isSelected = selectedIdx === i;
+
+        if (items) {
+          return (
+            <LayoutHeaderTabDropdown
+              key={i}
+              item={option}
+              isSelected={isSelected}
+            />
+          );
+        }
 
         return (
           <Link
@@ -164,11 +175,100 @@ export function LayoutHeaderTabs({
             )}
             {...rest}
           >
-            {title} Hello
+            {title} 
           </Link>
         );
       })}
     </div>
+  );
+}
+
+function LayoutHeaderTabDropdown({
+  item,
+  isSelected,
+}: {
+  item: SidebarTabWithProps;
+  isSelected: boolean;
+}) {
+  const [open, setOpen] = useState(false);
+  const pathname = usePathname();
+  const timeoutRef = useRef<number>(null);
+  const freezeUntil = useRef<number>(null);
+  const hoverDelay = 50;
+
+  const delaySetOpen = (value: boolean) => {
+    if (timeoutRef.current) {
+      clearTimeout(timeoutRef.current);
+      timeoutRef.current = null;
+    }
+
+    timeoutRef.current = window.setTimeout(() => {
+      setOpen(value);
+      freezeUntil.current = Date.now() + 300;
+    }, hoverDelay);
+  };
+  const onPointerEnter = (e: PointerEvent) => {
+    if (e.pointerType === 'touch') return;
+    delaySetOpen(true);
+  };
+  const onPointerLeave = (e: PointerEvent) => {
+    if (e.pointerType === 'touch') return;
+    delaySetOpen(false);
+  };
+  function isTouchDevice() {
+    return 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+  }
+
+  return (
+    <Popover
+      open={open}
+      onOpenChange={(value) => {
+        if (freezeUntil.current === null || Date.now() >= freezeUntil.current)
+          setOpen(value);
+      }}
+    >
+      <PopoverTrigger
+        className={cn(
+          'inline-flex border-b-2 border-transparent transition-colors items-center pb-1.5 font-medium gap-2 text-fd-muted-foreground text-sm text-nowrap hover:text-fd-accent-foreground focus-visible:outline-none',
+          isSelected && 'border-fd-primary text-fd-primary',
+          item.props?.className,
+        )}
+        // @ts-ignore
+        onPointerEnter={onPointerEnter}
+        // @ts-ignore
+        onPointerLeave={onPointerLeave}
+        {...item.props}
+      >
+        {item.title}
+        <ChevronDown className="size-3" />
+      </PopoverTrigger>
+      <PopoverContent
+        className="flex flex-col p-1 text-fd-muted-foreground text-start"
+        onPointerEnter={onPointerEnter}
+        onPointerLeave={onPointerLeave}
+      >
+        {item.items?.map((child, i) => {
+          const isActive = isTabActive(child, pathname);
+          return (
+            <Link
+              key={i}
+              href={child.url}
+              className={cn(
+                'inline-flex items-center gap-2 rounded-md p-2 transition-colors hover:bg-fd-accent hover:text-fd-accent-foreground data-[active=true]:text-fd-primary [&_svg]:size-4',
+                isActive && 'text-fd-primary',
+              )}
+              data-active={isActive}
+              onClick={() => {
+                if (isTouchDevice()) setOpen(false);
+              }}
+            >
+              {child.icon}
+              {child.title}
+            </Link>
+          );
+        })}
+      </PopoverContent>
+    </Popover>
   );
 }
 
