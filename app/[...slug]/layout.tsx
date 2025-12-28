@@ -39,6 +39,10 @@ export default function Layout({ children }: LayoutProps<'/[...slug]'>) {
                 url: '/api-reference',
               },
               {
+                title: 'Canvas',
+                url: '/canvas/getting-started/expressions',
+              },
+              {
                 title: 'Changelog',
                 url: '/changelog',
               },

@@ -21,6 +21,10 @@ export default function Layout({ children }: { children: React.ReactNode }) {
               url: '/api-reference',
             },
             {
+              text:'Canvas',
+              url: '/canvas/getting-started/expressions',
+            },
+            {
               text: 'Changelog',
               url: '/changelog',
             },
