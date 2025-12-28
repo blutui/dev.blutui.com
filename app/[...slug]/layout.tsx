@@ -1,9 +1,11 @@
 import { source } from 'lib/source'
 import { baseOptions } from 'lib/layout.shared'
 import { DocsLayout } from 'components/layout/notebook'
+import { getNavigationLinks } from 'lib/utils'
 
 export default function Layout({ children }: LayoutProps<'/[...slug]'>) {
   const { nav, ...base } = baseOptions()
+  const navigationLinks = getNavigationLinks('docs')
 
   return (
     <DocsLayout
@@ -13,42 +15,7 @@ export default function Layout({ children }: LayoutProps<'/[...slug]'>) {
       tree={source.pageTree}
       sidebar={{
         collapsible: false,
-        tabs: [
-          {
-            title: 'Developers',
-            url: '/docs',
-          },
-          {
-            title: 'Project',
-            url: '/project',
-          },
-          {
-            title: 'Console',
-            url: '/console',
-          },
-          {
-            title: 'Guides',
-            url: '/guides/introduction',
-          },
-          {
-            title: 'References',
-            url: '/api-reference',
-            items: [
-              {
-                title: 'API Reference',
-                url: '/api-reference',
-              },
-              {
-                title: 'Canvas',
-                url: '/canvas/getting-started/expressions',
-              },
-              {
-                title: 'Changelog',
-                url: '/changelog',
-              },
-            ],
-          },
-        ],
+        tabs: navigationLinks,
       }}
     >
       {children}
