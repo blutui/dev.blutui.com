@@ -10,7 +10,7 @@
   "dependencies": {
     "@takumi-rs/core": "^0.60.8",
     "@takumi-rs/helpers": "^0.59.0",
-    "@takumi-rs/image-response": "^0.60.0",
+    "@takumi-rs/image-response": "^0.60.8",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "fumadocs-core": "^16.3.2",
