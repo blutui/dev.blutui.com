@@ -2,6 +2,8 @@
 
 import { useState, useRef, useEffect } from 'react';
 import { Sparkles, Send } from 'lucide-react';
+import Markdown from 'react-markdown'
+import remarkGfm from 'remark-gfm'
 import { cn } from '../../lib/cn';
 import { buttonVariants } from '../ui/button';
 import { ScrollArea, ScrollViewport } from '../ui/scroll-area';
@@ -28,19 +30,19 @@ export function AiSearchModal() {
     setResponse(''); // Clear previous response
 
     try {
-      // Example fetch call
-      // const res = await fetch('/api/ai-search', {
-      //   method: 'POST',
-      //   body: JSON.stringify({ query }),
-      // });
-      // const data = await res.json();
+      const res = await fetch('/api/ai', {
+        method: 'POST',
+        body: JSON.stringify({ query }),
+      });
+      const data = await res.json();
+      console.log('AI response data:', data);
       
       // Simulating a fetch with a delay
-      await new Promise(resolve => setTimeout(resolve, 1000));
+    //   await new Promise(resolve => setTimeout(resolve, 1000));
       
-      const mockResponse = `Here is a simulated response for: "${query}".\n\nThis is where the AI answer would appear. It can be long and detailed.\n\n- Point 1\n- Point 2\n- Point 3\n\nCurrently this is fetched all at once, but the structure allows for streaming updates in the future.`;
+    //   const mockResponse = `Here is a simulated response for: "${query}".\n\nThis is where the AI answer would appear. It can be long and detailed.\n\n- Point 1\n- Point 2\n- Point 3\n\nCurrently this is fetched all at once, but the structure allows for streaming updates in the future.`;
       
-      setResponse(mockResponse);
+      setResponse(data.response);
     } catch (error) {
       console.error('Failed to fetch AI response', error);
       setResponse('Sorry, something went wrong.');
@@ -75,12 +77,12 @@ export function AiSearchModal() {
           </DialogTitle>
         </DialogHeader>
 
-        <div className="flex-1 overflow-hidden relative flex flex-col min-h-75">
+        <div className="flex-1 overflow-hidden relative flex flex-col max-h-96">
             <ScrollArea className="flex-1">
               <ScrollViewport ref={viewportRef} className="p-4">
                 {response ? (
-                    <div className="prose prose-sm dark:prose-invert max-w-none whitespace-pre-wrap">
-                    {response}
+                    <div className="prose prose-sm dark:prose-invert max-w-none">
+                    <Markdown remarkPlugins={[remarkGfm]}>{response}</Markdown>
                     </div>
                 ) : (
                     <div className="flex flex-col items-center justify-center h-full text-fd-muted-foreground py-20">
