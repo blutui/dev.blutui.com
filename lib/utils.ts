@@ -56,4 +56,3 @@ export function getNavigationLinks(type: 'home' | 'docs') {
     return mappedItem
   })
 }
-

@@ -1,7 +1,7 @@
-import type { ComponentProps } from 'react';
-import { cn } from '../../../lib/cn';
-import { type BaseLayoutProps, type NavOptions } from '../shared';
-import { Header } from './client';
+import type { ComponentProps } from 'react'
+import { cn } from '../../../lib/cn'
+import { type BaseLayoutProps, type NavOptions } from '../shared'
+import { Header } from './client'
 
 export interface HomeLayoutProps extends BaseLayoutProps {
   nav?: Partial<
@@ -9,30 +9,19 @@ export interface HomeLayoutProps extends BaseLayoutProps {
       /**
        * Open mobile menu when hovering the trigger
        */
-      enableHoverToOpen?: boolean;
+      enableHoverToOpen?: boolean
     }
-  >;
+  >
 }
 
 export function HomeLayout(props: HomeLayoutProps & ComponentProps<'main'>) {
-  const {
-    nav = {},
-    links,
-    githubUrl,
-    i18n,
-    themeSwitch = {},
-    searchToggle,
-    ...rest
-  } = props;
+  const { nav = {}, links, githubUrl, i18n, themeSwitch = {}, searchToggle, ...rest } = props
 
   return (
     <main
       id="nd-home-layout"
       {...rest}
-      className={cn(
-        'flex flex-1 flex-col [--fd-layout-width:1400px]',
-        rest.className,
-      )}
+      className={cn('flex flex-1 flex-col [--fd-layout-width:1400px]', rest.className)}
     >
       {nav.enabled !== false &&
         (nav.component ?? (
@@ -47,5 +36,5 @@ export function HomeLayout(props: HomeLayoutProps & ComponentProps<'main'>) {
         ))}
       {props.children}
     </main>
-  );
+  )
 }

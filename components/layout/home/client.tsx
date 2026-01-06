@@ -1,16 +1,11 @@
-'use client';
-import { type ComponentProps, Fragment, useMemo, useState, useRef, type PointerEvent } from 'react';
-import { cva } from 'class-variance-authority';
-import Link from 'fumadocs-core/link';
-import { cn } from '../../../lib/cn';
-import { isActive } from '../../../lib/urls';
-import {
-  type LinkItemType,
-  type NavOptions,
-  renderTitleNav,
-  resolveLinkItems,
-} from '../shared';
-import { LinkItem } from '../link-item';
+'use client'
+import { type ComponentProps, Fragment, useMemo, useState, useRef, type PointerEvent } from 'react'
+import { cva } from 'class-variance-authority'
+import Link from 'fumadocs-core/link'
+import { cn } from '../../../lib/cn'
+import { isActive } from '../../../lib/urls'
+import { type LinkItemType, type NavOptions, renderTitleNav, resolveLinkItems } from '../shared'
+import { LinkItem } from '../link-item'
 import {
   NavigationMenu,
   NavigationMenuContent,
@@ -19,27 +14,17 @@ import {
   NavigationMenuList,
   NavigationMenuTrigger,
   NavigationMenuViewport,
-} from '../../ui/navigation-menu';
-import {
-  Popover,
-  PopoverContent,
-  PopoverTrigger,
-} from '../../ui/popover';
-import { usePathname } from 'next/navigation';
-import { buttonVariants } from '../../ui/button';
-import type { HomeLayoutProps } from './index';
-import {
-  LargeSearchToggle,
-  SearchToggle,
-} from '../search-toggle';
-import { AiSearchModal } from '../../ai/ai-search-modal';
-import { ThemeToggle } from '../theme-toggle';
-import {
-  LanguageToggle,
-  LanguageToggleText,
-} from '../language-toggle';
-import { ChevronDown, Languages } from 'lucide-react';
-import { useIsScrollTop } from 'fumadocs-ui/utils/use-is-scroll-top';
+} from '../../ui/navigation-menu'
+import { Popover, PopoverContent, PopoverTrigger } from '../../ui/popover'
+import { usePathname } from 'next/navigation'
+import { buttonVariants } from '../../ui/button'
+import type { HomeLayoutProps } from './index'
+import { LargeSearchToggle, SearchToggle } from '../search-toggle'
+import { AiSearchModal } from '../../ai/ai-search-modal'
+import { ThemeToggle } from '../theme-toggle'
+import { LanguageToggle, LanguageToggleText } from '../language-toggle'
+import { ChevronDown, Languages } from 'lucide-react'
+import { useIsScrollTop } from 'fumadocs-ui/utils/use-is-scroll-top'
 
 export const navItemVariants = cva('[&_svg]:size-4', {
   variants: {
@@ -58,7 +43,7 @@ export const navItemVariants = cva('[&_svg]:size-4', {
   defaultVariants: {
     variant: 'main',
   },
-});
+})
 
 export function Header({
   nav = {},
@@ -69,25 +54,25 @@ export function Header({
   searchToggle = {},
 }: HomeLayoutProps) {
   const { navItems, menuItems } = useMemo(() => {
-    const navItems: LinkItemType[] = [];
-    const menuItems: LinkItemType[] = [];
+    const navItems: LinkItemType[] = []
+    const menuItems: LinkItemType[] = []
 
     for (const item of resolveLinkItems({ links, githubUrl })) {
       switch (item.on ?? 'all') {
         case 'menu':
-          menuItems.push(item);
-          break;
+          menuItems.push(item)
+          break
         case 'nav':
-          navItems.push(item);
-          break;
+          navItems.push(item)
+          break
         default:
-          navItems.push(item);
-          menuItems.push(item);
+          navItems.push(item)
+          menuItems.push(item)
       }
     }
 
-    return { navItems, menuItems };
-  }, [links, githubUrl]);
+    return { navItems, menuItems }
+  }, [links, githubUrl])
 
   return (
     <HeaderNavigationMenu transparentMode={nav.transparentMode}>
@@ -102,39 +87,31 @@ export function Header({
             <NavigationMenuLinkItem key={i} item={item} className="text-sm" />
           ))}
       </ul>
-      <div className="flex flex-row items-center justify-end gap-1.5 flex-1 max-lg:hidden">
+      <div className="flex flex-1 flex-row items-center justify-end gap-1.5 max-lg:hidden">
         {searchToggle.enabled !== false &&
           (searchToggle.components?.lg ?? (
-            <LargeSearchToggle
-              className="w-full rounded-full ps-2.5 max-w-[240px]"
-              hideIfDisabled
-            />
+            <LargeSearchToggle className="w-full max-w-[240px] rounded-full ps-2.5" hideIfDisabled />
           ))}
         <AiSearchModal />
-        {themeSwitch.enabled !== false &&
-          (themeSwitch.component ?? <ThemeToggle mode={themeSwitch?.mode} />)}
+        {themeSwitch.enabled !== false && (themeSwitch.component ?? <ThemeToggle mode={themeSwitch?.mode} />)}
         {i18n && (
           <LanguageToggle>
             <Languages className="size-5" />
           </LanguageToggle>
         )}
-        <ul className="flex flex-row gap-2 items-center empty:hidden">
+        <ul className="flex flex-row items-center gap-2 empty:hidden">
           {navItems.filter(isSecondary).map((item, i) => (
             <NavigationMenuLinkItem
               key={i}
-              className={cn(
-                item.type === 'icon' && '-mx-1 first:ms-0 last:me-0',
-              )}
+              className={cn(item.type === 'icon' && '-mx-1 first:ms-0 last:me-0')}
               item={item}
             />
           ))}
         </ul>
       </div>
-      <ul className="flex flex-row items-center ms-auto -me-1.5 lg:hidden">
+      <ul className="ms-auto -me-1.5 flex flex-row items-center lg:hidden">
         {searchToggle.enabled !== false &&
-          (searchToggle.components?.sm ?? (
-            <SearchToggle className="p-2" hideIfDisabled />
-          ))}
+          (searchToggle.components?.sm ?? <SearchToggle className="p-2" hideIfDisabled />)}
         <AiSearchModal />
         <NavigationMenuItem>
           <NavigationMenuTrigger
@@ -144,11 +121,9 @@ export function Header({
                 size: 'icon',
                 color: 'ghost',
                 className: 'group [&_svg]:size-5.5',
-              }),
+              })
             )}
-            onPointerMove={
-              nav.enableHoverToOpen ? undefined : (e) => e.preventDefault()
-            }
+            onPointerMove={nav.enableHoverToOpen ? undefined : (e) => e.preventDefault()}
           >
             <ChevronDown className="transition-transform duration-300 group-data-[state=open]:rotate-180" />
           </NavigationMenuTrigger>
@@ -156,11 +131,7 @@ export function Header({
             {menuItems
               .filter((item) => !isSecondary(item))
               .map((item, i) => (
-                <MobileNavigationMenuLinkItem
-                  key={i}
-                  item={item}
-                  className="sm:hidden"
-                />
+                <MobileNavigationMenuLinkItem key={i} item={item} className="sm:hidden" />
               ))}
             <div className="-ms-1.5 flex flex-row items-center gap-2 max-sm:mt-2">
               {menuItems.filter(isSecondary).map((item, i) => (
@@ -175,56 +146,45 @@ export function Header({
                 <LanguageToggle>
                   <Languages className="size-5" />
                   <LanguageToggleText />
-                  <ChevronDown className="size-3 text-fd-muted-foreground" />
+                  <ChevronDown className="text-fd-muted-foreground size-3" />
                 </LanguageToggle>
               )}
-              {themeSwitch.enabled !== false &&
-                (themeSwitch.component ?? (
-                  <ThemeToggle mode={themeSwitch?.mode} />
-                ))}
+              {themeSwitch.enabled !== false && (themeSwitch.component ?? <ThemeToggle mode={themeSwitch?.mode} />)}
             </div>
           </NavigationMenuContent>
         </NavigationMenuItem>
       </ul>
     </HeaderNavigationMenu>
-  );
+  )
 }
 
 function isSecondary(item: LinkItemType): boolean {
-  if ('secondary' in item && item.secondary != null) return item.secondary;
+  if ('secondary' in item && item.secondary != null) return item.secondary
 
-  return item.type === 'icon';
+  return item.type === 'icon'
 }
 
 function HeaderNavigationMenu({
   transparentMode = 'none',
   ...props
 }: ComponentProps<'div'> & {
-  transparentMode?: NavOptions['transparentMode'];
+  transparentMode?: NavOptions['transparentMode']
 }) {
-  const [value, setValue] = useState('');
-  const isTop = useIsScrollTop({ enabled: transparentMode === 'top' }) ?? true;
-  const isTransparent =
-    transparentMode === 'top' ? isTop : transparentMode === 'always';
+  const [value, setValue] = useState('')
+  const isTop = useIsScrollTop({ enabled: transparentMode === 'top' }) ?? true
+  const isTransparent = transparentMode === 'top' ? isTop : transparentMode === 'always'
 
   return (
     <NavigationMenu value={value} onValueChange={setValue} asChild>
-      <header
-        id="nd-nav"
-        {...props}
-        className={cn('sticky h-14 top-0 z-40', props.className)}
-      >
+      <header id="nd-nav" {...props} className={cn('sticky top-0 z-40 h-14', props.className)}>
         <div
           className={cn(
-            'backdrop-blur-lg border-b transition-colors *:mx-auto *:max-w-(--fd-layout-width)',
-            value.length > 0 && 'max-lg:shadow-lg max-lg:rounded-b-2xl',
-            (!isTransparent || value.length > 0) && 'bg-fd-background/80',
+            'border-b backdrop-blur-lg transition-colors *:mx-auto *:max-w-(--fd-layout-width)',
+            value.length > 0 && 'max-lg:rounded-b-2xl max-lg:shadow-lg',
+            (!isTransparent || value.length > 0) && 'bg-fd-background/80'
           )}
         >
-          <NavigationMenuList
-            className="flex h-14 w-full items-center px-4"
-            asChild
-          >
+          <NavigationMenuList className="flex h-14 w-full items-center px-4" asChild>
             <nav>{props.children}</nav>
           </NavigationMenuList>
 
@@ -232,32 +192,24 @@ function HeaderNavigationMenu({
         </div>
       </header>
     </NavigationMenu>
-  );
+  )
 }
 
-function NavigationMenuLinkItem({
-  item,
-  ...props
-}: {
-  item: LinkItemType;
-  className?: string;
-}) {
-  if (item.type === 'custom') return <div {...props}>{item.children}</div>;
+function NavigationMenuLinkItem({ item, ...props }: { item: LinkItemType; className?: string }) {
+  if (item.type === 'custom') return <div {...props}>{item.children}</div>
 
   if (item.type === 'menu') {
     const children = (item.items ?? []).map((child, j) => {
       if (child.type === 'custom') {
-        return <Fragment key={j}>{child.children}</Fragment>;
+        return <Fragment key={j}>{child.children}</Fragment>
       }
 
       const {
         banner = child.icon ? (
-          <div className="w-fit rounded-md border bg-fd-muted p-1 [&_svg]:size-4">
-            {child.icon}
-          </div>
+          <div className="bg-fd-muted w-fit rounded-md border p-1 [&_svg]:size-4">{child.icon}</div>
         ) : null,
         ...rest
-      } = child.menu ?? {};
+      } = child.menu ?? {}
 
       return (
         <NavigationMenuLink key={`${j}-${child.url}`} asChild>
@@ -266,23 +218,21 @@ function NavigationMenuLinkItem({
             external={child.external}
             {...rest}
             className={cn(
-              'flex flex-col gap-2 rounded-lg border bg-fd-card p-3 transition-colors hover:bg-fd-accent/80 hover:text-fd-accent-foreground',
-              rest.className,
+              'bg-fd-card hover:bg-fd-accent/80 hover:text-fd-accent-foreground flex flex-col gap-2 rounded-lg border p-3 transition-colors',
+              rest.className
             )}
           >
             {rest.children ?? (
               <>
                 {banner}
                 <p className="text-base font-medium">{child.text}</p>
-                <p className="text-sm text-fd-muted-foreground empty:hidden">
-                  {child.description}
-                </p>
+                <p className="text-fd-muted-foreground text-sm empty:hidden">{child.description}</p>
               </>
             )}
           </Link>
         </NavigationMenuLink>
-      );
-    });
+      )
+    })
 
     return (
       <NavigationMenuItem {...props}>
@@ -299,11 +249,11 @@ function NavigationMenuLinkItem({
           {children}
         </NavigationMenuContent>
       </NavigationMenuItem>
-    );
+    )
   }
 
   if ('items' in item && item.items) {
-    return <HomeLinkDropdown item={item} {...props} />;
+    return <HomeLinkDropdown item={item} {...props} />
   }
 
   return (
@@ -318,70 +268,58 @@ function NavigationMenuLinkItem({
         </LinkItem>
       </NavigationMenuLink>
     </NavigationMenuItem>
-  );
+  )
 }
 
-function HomeLinkDropdown({
-  item,
-  className,
-  ...props
-}: {
-  item: LinkItemType;
-  className?: string;
-}) {
-  const [open, setOpen] = useState(false);
-  const pathname = usePathname();
-  const timeoutRef = useRef<number>(null);
-  const freezeUntil = useRef<number>(null);
-  const hoverDelay = 50;
+function HomeLinkDropdown({ item, className, ...props }: { item: LinkItemType; className?: string }) {
+  const [open, setOpen] = useState(false)
+  const pathname = usePathname()
+  const timeoutRef = useRef<number>(null)
+  const freezeUntil = useRef<number>(null)
+  const hoverDelay = 50
 
   const delaySetOpen = (value: boolean) => {
     if (timeoutRef.current) {
-      clearTimeout(timeoutRef.current);
-      timeoutRef.current = null;
+      clearTimeout(timeoutRef.current)
+      timeoutRef.current = null
     }
 
     timeoutRef.current = window.setTimeout(() => {
-      setOpen(value);
-      freezeUntil.current = Date.now() + 300;
-    }, hoverDelay);
-  };
+      setOpen(value)
+      freezeUntil.current = Date.now() + 300
+    }, hoverDelay)
+  }
   const onPointerEnter = (e: PointerEvent) => {
-    if (e.pointerType === 'touch') return;
-    delaySetOpen(true);
-  };
+    if (e.pointerType === 'touch') return
+    delaySetOpen(true)
+  }
   const onPointerLeave = (e: PointerEvent) => {
-    if (e.pointerType === 'touch') return;
-    delaySetOpen(false);
-  };
+    if (e.pointerType === 'touch') return
+    delaySetOpen(false)
+  }
   function isTouchDevice() {
-    return 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+    return 'ontouchstart' in window || navigator.maxTouchPoints > 0
   }
 
-  if (item.type === 'custom') return null;
+  if (item.type === 'custom') return null
 
-  const active = item.url && isActive(item.url, pathname, false);
+  const active = item.url && isActive(item.url, pathname, false)
 
   return (
     <NavigationMenuItem {...props}>
       <Popover
         open={open}
         onOpenChange={(value) => {
-          if (freezeUntil.current === null || Date.now() >= freezeUntil.current)
-            setOpen(value);
+          if (freezeUntil.current === null || Date.now() >= freezeUntil.current) setOpen(value)
         }}
       >
         <PopoverTrigger
-          className={cn(navItemVariants(), 'rounded-md group', className)}
+          className={cn(navItemVariants(), 'group rounded-md', className)}
           onPointerEnter={onPointerEnter}
           onPointerLeave={onPointerLeave}
         >
           {item.url ? (
-            <Link
-              href={item.url}
-              className={cn(active && 'text-fd-primary')}
-              onClick={() => setOpen(false)}
-            >
+            <Link href={item.url} className={cn(active && 'text-fd-primary')} onClick={() => setOpen(false)}>
               {item.text}
             </Link>
           ) : (
@@ -390,49 +328,40 @@ function HomeLinkDropdown({
           <ChevronDown className="size-3 transition-transform duration-300 group-data-[state=open]:rotate-180" />
         </PopoverTrigger>
         <PopoverContent
-          className="flex flex-col p-1 text-fd-muted-foreground text-start min-w-[180px]"
+          className="text-fd-muted-foreground flex min-w-[180px] flex-col p-1 text-start"
           onPointerEnter={onPointerEnter}
           onPointerLeave={onPointerLeave}
         >
           {item.items?.map((child, i) => {
-            if (child.type === 'custom')
-              return <Fragment key={i}>{child.children}</Fragment>;
+            if (child.type === 'custom') return <Fragment key={i}>{child.children}</Fragment>
 
-            const isChildActive =
-              child.url && isActive(child.url, pathname, false);
+            const isChildActive = child.url && isActive(child.url, pathname, false)
             return (
               <Link
                 key={i}
                 href={child.url}
                 className={cn(
-                  'inline-flex items-center gap-2 rounded-md p-2 transition-colors hover:bg-fd-accent hover:text-fd-accent-foreground data-[active=true]:text-fd-primary [&_svg]:size-4',
-                  isChildActive && 'text-fd-primary',
+                  'hover:bg-fd-accent hover:text-fd-accent-foreground data-[active=true]:text-fd-primary inline-flex items-center gap-2 rounded-md p-2 transition-colors [&_svg]:size-4',
+                  isChildActive && 'text-fd-primary'
                 )}
                 data-active={isChildActive}
                 onClick={() => {
-                  if (isTouchDevice()) setOpen(false);
+                  if (isTouchDevice()) setOpen(false)
                 }}
               >
                 {child.icon}
                 {child.text}
               </Link>
-            );
+            )
           })}
         </PopoverContent>
       </Popover>
     </NavigationMenuItem>
-  );
+  )
 }
 
-function MobileNavigationMenuLinkItem({
-  item,
-  ...props
-}: {
-  item: LinkItemType;
-  className?: string;
-}) {
-  if (item.type === 'custom')
-    return <div className={cn('grid', props.className)}>{item.children}</div>;
+function MobileNavigationMenuLinkItem({ item, ...props }: { item: LinkItemType; className?: string }) {
+  if (item.type === 'custom') return <div className={cn('grid', props.className)}>{item.children}</div>
 
   if (item.type === 'menu' || ('items' in item && item.items)) {
     const header = (
@@ -440,11 +369,11 @@ function MobileNavigationMenuLinkItem({
         {item.icon}
         {item.text}
       </>
-    );
+    )
 
     return (
       <div className={cn('mb-4 flex flex-col', props.className)}>
-        <p className="mb-1 text-sm text-fd-muted-foreground">
+        <p className="text-fd-muted-foreground mb-1 text-sm">
           {item.url ? (
             <NavigationMenuLink asChild>
               <Link href={item.url} external={item.external}>
@@ -459,7 +388,7 @@ function MobileNavigationMenuLinkItem({
           <MobileNavigationMenuLinkItem key={i} item={child} />
         ))}
       </div>
-    );
+    )
   }
 
   return (
@@ -468,7 +397,7 @@ function MobileNavigationMenuLinkItem({
         item={item}
         className={cn(
           {
-            main: 'inline-flex items-center gap-2 py-1.5 transition-colors hover:text-fd-popover-foreground/50 data-[active=true]:font-medium data-[active=true]:text-fd-primary [&_svg]:size-4',
+            main: 'hover:text-fd-popover-foreground/50 data-[active=true]:text-fd-primary inline-flex items-center gap-2 py-1.5 transition-colors data-[active=true]:font-medium [&_svg]:size-4',
             icon: buttonVariants({
               size: 'icon',
               color: 'ghost',
@@ -478,7 +407,7 @@ function MobileNavigationMenuLinkItem({
               className: 'gap-1.5 [&_svg]:size-4',
             }),
           }[item.type ?? 'main'],
-          props.className,
+          props.className
         )}
         aria-label={item.type === 'icon' ? item.label : undefined}
       >
@@ -486,5 +415,5 @@ function MobileNavigationMenuLinkItem({
         {item.type === 'icon' ? undefined : item.text}
       </LinkItem>
     </NavigationMenuLink>
-  );
+  )
 }

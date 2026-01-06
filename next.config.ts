@@ -19,9 +19,9 @@ const config: NextConfig = {
         destination: '/llms.mdx/:path*',
       },
       {
-        source:'/api/ai',
+        source: '/api/ai',
         destination: 'http://localhost:8787/ai',
-      }
+      },
     ]
   },
   async redirects() {
