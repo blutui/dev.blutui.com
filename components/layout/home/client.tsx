@@ -32,7 +32,6 @@ import {
   LargeSearchToggle,
   SearchToggle,
 } from '../search-toggle';
-import { AiSearchModal } from '../../ai/ai-search-modal';
 import { ThemeToggle } from '../theme-toggle';
 import {
   LanguageToggle,
@@ -110,7 +109,6 @@ export function Header({
               hideIfDisabled
             />
           ))}
-        <AiSearchModal />
         {themeSwitch.enabled !== false &&
           (themeSwitch.component ?? <ThemeToggle mode={themeSwitch?.mode} />)}
         {i18n && (
@@ -135,7 +133,6 @@ export function Header({
           (searchToggle.components?.sm ?? (
             <SearchToggle className="p-2" hideIfDisabled />
           ))}
-        <AiSearchModal />
         <NavigationMenuItem>
           <NavigationMenuTrigger
             aria-label="Toggle Menu"
