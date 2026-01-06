@@ -1,7 +1,7 @@
 'use client'
 
-import { useState, useRef, useEffect } from 'react'
-import { Sparkles, Send } from 'lucide-react'
+import { useState } from 'react'
+import { Sparkles, Search, Loader2 } from 'lucide-react'
 import Markdown from 'react-markdown'
 import remarkGfm from 'remark-gfm'
 import { cn } from '../../lib/cn'
@@ -36,7 +36,6 @@ export function AiSearchModal() {
     }
   }
 
-
   return (
     <Dialog open={isOpen} onOpenChange={setIsOpen}>
       <DialogTrigger asChild>
@@ -49,55 +48,54 @@ export function AiSearchModal() {
         </button>
       </DialogTrigger>
       <DialogContent className="flex max-h-[80vh] max-w-2xl flex-col gap-0 overflow-hidden p-0">
-        <DialogHeader className="border-fd-border border-b p-4">
+        <DialogHeader>
           <DialogTitle className="flex items-center gap-2">
-            <Sparkles className="text-fd-primary/80 size-5" />
-            Blutui AI
+            <div className="h-14 w-full gap-4">
+              <div className="w-full">
+                <form onSubmit={handleSubmit} className="">
+                  <div className="relative">
+                    <div className="flex items-center">
+                      <Sparkles className="text-fd-primary/80 ml-4 size-6" />
+                      <input
+                        type="text"
+                        value={query}
+                        onChange={(e) => setQuery(e.target.value)}
+                        placeholder="Ask a Question"
+                        className="h-14 w-full py-3 pr-12 pl-4 text-lg font-medium focus:ring-0 focus:outline-none"
+                        autoFocus
+                      />
+                    </div>
+
+                    <button
+                      type="submit"
+                      disabled={isLoading || !query.trim()}
+                      className={cn(
+                        buttonVariants({ color: 'secondary', size: 'icon-sm' }),
+                        'absolute top-1/2 right-2 -translate-y-1/2'
+                      )}
+                    >
+                      <Search className="size-4" />
+                    </button>
+                  </div>
+                </form>
+              </div>
+            </div>
           </DialogTitle>
         </DialogHeader>
 
-          <div className='p-4 flex min-h-44 max-h-96 flex-1 flex-col overflow-y-auto'>
-            {response && (
-              <div className="prose prose-sm dark:prose-invert max-w-none">
-                <Markdown remarkPlugins={[remarkGfm]}>{response}</Markdown>
-              </div>
-            )}
-            {isLoading ? (
-              <div className="text-fd-muted-foreground mt-2 flex animate-pulse items-center gap-2 text-sm">
-                <Sparkles className="size-4" />
-                Thinking...
-              </div>
-            ) : (
-              !response && (
-                <div className="text-fd-muted-foreground h-full my-auto mx-auto">
-                  <p>Ask me anything about the documentation...</p>
-                </div>
-              )
-            )}
-          </div>
-
-        <form onSubmit={handleSubmit} className="border-fd-border bg-fd-muted/30 border-t p-4">
-          <div className="relative">
-            <input
-              type="text"
-              value={query}
-              onChange={(e) => setQuery(e.target.value)}
-              placeholder="Ask a Question"
-              className="bg-fd-background border-fd-border focus:ring-fd-primary/50 w-full rounded-md border py-3 pr-12 pl-4 text-sm focus:ring-2 focus:outline-none"
-              autoFocus
-            />
-            <button
-              type="submit"
-              disabled={isLoading || !query.trim()}
-              className={cn(
-                buttonVariants({ color: 'primary', size: 'icon-sm' }),
-                'absolute top-1/2 right-2 -translate-y-1/2'
-              )}
-            >
-              <Send className="size-4" />
-            </button>
-          </div>
-        </form>
+        <div className="flex max-h-96 flex-1 flex-col overflow-y-auto">
+          {response && (
+            <div className="prose prose-sm dark:prose-invert max-w-none p-4">
+              <Markdown remarkPlugins={[remarkGfm]}>{response}</Markdown>
+            </div>
+          )}
+          {isLoading ? (
+            <div className="text-fd-muted-foreground flex animate-pulse items-center gap-2 p-4 text-sm">
+              <Loader2 className="size-4 animate-spin" />
+              Thinking
+            </div>
+          ) : null}
+        </div>
       </DialogContent>
     </Dialog>
   )
