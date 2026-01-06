@@ -59,7 +59,6 @@ export function AiSearchModal() {
         body: JSON.stringify({ query }),
       })
       const data: VectorStoreSearchResultsPage = await res.json()
-      console.log('AI response data:', data)
       setReferences(data.data)
       setResponse(data.response)
     } catch (error) {
