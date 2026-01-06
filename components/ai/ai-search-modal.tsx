@@ -11,32 +11,32 @@ import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from 
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from '../ui/collapsible'
 
 export interface VectorStoreSearchResultsPage {
-  object: "vector_store.search_results.page";
-  search_query: string;
-  response: string;
-  data: VectorStoreSearchResult[];
-  has_more: boolean;
-  next_page: string | null;
+  object: 'vector_store.search_results.page'
+  search_query: string
+  response: string
+  data: VectorStoreSearchResult[]
+  has_more: boolean
+  next_page: string | null
 }
 
 export interface VectorStoreSearchResult {
-  file_id: string;
-  filename: string;
-  score: number;
-  attributes: VectorStoreSearchResultAttributes;
-  content: VectorStoreSearchContent[];
+  file_id: string
+  filename: string
+  score: number
+  attributes: VectorStoreSearchResultAttributes
+  content: VectorStoreSearchContent[]
 }
 
 export interface VectorStoreSearchResultAttributes {
-  timestamp: number;
-  folder: string;
-  filename: string;
+  timestamp: number
+  folder: string
+  filename: string
 }
 
 export interface VectorStoreSearchContent {
-  id: string;
-  type: "text";
-  text: string;
+  id: string
+  type: 'text'
+  text: string
 }
 
 export function AiSearchModal() {
@@ -123,7 +123,7 @@ export function AiSearchModal() {
             </div>
           )}
           {references.length > 0 && (
-            <Collapsible className="border-t border-fd-border px-4 pt-2 pb-4">
+            <Collapsible className="border-fd-border border-t px-4 pt-2 pb-4">
               <CollapsibleTrigger className="group flex w-full items-center gap-2">
                 <h3 className="text-sm font-medium">References</h3>
                 <ChevronRight className="text-fd-muted-foreground size-4 transition-transform group-data-[state=open]:rotate-90" />
@@ -140,9 +140,9 @@ export function AiSearchModal() {
                     })()
                     return (
                       <li key={index}>
-                        <Link 
-                          href={href} 
-                          className="hover:text-fd-primary underline block" 
+                        <Link
+                          href={href}
+                          className="hover:text-fd-primary block underline"
                           onClick={() => setIsOpen(false)}
                         >
                           {ref.filename}
