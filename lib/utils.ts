@@ -11,14 +11,6 @@ const navigationData = [
     url: '/docs',
   },
   {
-    title: 'Project',
-    url: '/project',
-  },
-  {
-    title: 'Console',
-    url: '/console',
-  },
-  {
     title: 'Guides',
     url: '/guides/introduction',
   },

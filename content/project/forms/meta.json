@@ -1,8 +1,0 @@
-{
-  "$schema": "../../../../.source/json-schema/docs.meta.json",
-  "pages": [
-    "creating-forms",
-    "adding-fields",
-    "exporting-data"
-  ]
-}

@@ -20,7 +20,7 @@ const config: NextConfig = {
       },
       {
         source:'/api/ai',
-        destination: 'https://99dca862-ai-search-api.blutui.workers.dev/ai',
+        destination: 'http://localhost:8787/ai',
       }
     ]
   },
