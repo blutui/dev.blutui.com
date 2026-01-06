@@ -1,17 +1,49 @@
 'use client'
 
 import { useState } from 'react'
-import { Sparkles, Search, Loader2 } from 'lucide-react'
+import Link from 'next/link'
+import { Sparkles, Search, Loader2, ChevronRight } from 'lucide-react'
 import Markdown from 'react-markdown'
 import remarkGfm from 'remark-gfm'
 import { cn } from '../../lib/cn'
 import { buttonVariants } from '../ui/button'
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from '../ui/dialog'
+import { Collapsible, CollapsibleContent, CollapsibleTrigger } from '../ui/collapsible'
+
+export interface VectorStoreSearchResultsPage {
+  object: "vector_store.search_results.page";
+  search_query: string;
+  response: string;
+  data: VectorStoreSearchResult[];
+  has_more: boolean;
+  next_page: string | null;
+}
+
+export interface VectorStoreSearchResult {
+  file_id: string;
+  filename: string;
+  score: number;
+  attributes: VectorStoreSearchResultAttributes;
+  content: VectorStoreSearchContent[];
+}
+
+export interface VectorStoreSearchResultAttributes {
+  timestamp: number;
+  folder: string;
+  filename: string;
+}
+
+export interface VectorStoreSearchContent {
+  id: string;
+  type: "text";
+  text: string;
+}
 
 export function AiSearchModal() {
   const [isOpen, setIsOpen] = useState(false)
   const [query, setQuery] = useState('')
   const [response, setResponse] = useState('')
+  const [references, setReferences] = useState<VectorStoreSearchResult[]>([])
   const [isLoading, setIsLoading] = useState(false)
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -26,7 +58,9 @@ export function AiSearchModal() {
         method: 'POST',
         body: JSON.stringify({ query }),
       })
-      const data = await res.json()
+      const data: VectorStoreSearchResultsPage = await res.json()
+      console.log('AI response data:', data)
+      setReferences(data.data)
       setResponse(data.response)
     } catch (error) {
       console.error('Failed to fetch AI response', error)
@@ -88,6 +122,38 @@ export function AiSearchModal() {
             <div className="prose prose-sm dark:prose-invert max-w-none p-4">
               <Markdown remarkPlugins={[remarkGfm]}>{response}</Markdown>
             </div>
+          )}
+          {references.length > 0 && (
+            <Collapsible className="border-t border-fd-border px-4 pt-2 pb-4">
+              <CollapsibleTrigger className="group flex w-full items-center gap-2">
+                <h3 className="text-sm font-medium">References</h3>
+                <ChevronRight className="text-fd-muted-foreground size-4 transition-transform group-data-[state=open]:rotate-90" />
+              </CollapsibleTrigger>
+              <CollapsibleContent>
+                <ul className="mt-2 list-disc pl-5 text-sm">
+                  {references.map((ref, index) => {
+                    const href = (() => {
+                      let path = ref.filename
+                      path = path.replace(/^content\/?/, '')
+                      path = path.replace(/\.mdx?$/, '')
+                      if (!path.startsWith('/')) path = '/' + path
+                      return path
+                    })()
+                    return (
+                      <li key={index}>
+                        <Link 
+                          href={href} 
+                          className="hover:text-fd-primary underline block" 
+                          onClick={() => setIsOpen(false)}
+                        >
+                          {ref.filename}
+                        </Link>
+                      </li>
+                    )
+                  })}
+                </ul>
+              </CollapsibleContent>
+            </Collapsible>
           )}
           {isLoading ? (
             <div className="text-fd-muted-foreground flex animate-pulse items-center gap-2 p-4 text-sm">
