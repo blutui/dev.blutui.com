@@ -46,6 +46,15 @@ export function AiSearchModal() {
   const [references, setReferences] = useState<VectorStoreSearchResult[]>([])
   const [isLoading, setIsLoading] = useState(false)
 
+  const handleOpenChange = (open: boolean) => {
+    setIsOpen(open)
+    if (!open) {
+      setQuery('')
+      setResponse('')
+      setReferences([])
+    }
+  }
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     if (!query.trim()) return
@@ -70,7 +79,7 @@ export function AiSearchModal() {
   }
 
   return (
-    <Dialog open={isOpen} onOpenChange={setIsOpen}>
+    <Dialog open={isOpen} onOpenChange={handleOpenChange}>
       <DialogTrigger asChild>
         <button
           className="border-fd-primary text-fd-primary hover:bg-fd-primary/5 hover:text-fd-primary/80 inline-flex items-center gap-2 rounded-full border p-1.5 px-3"
