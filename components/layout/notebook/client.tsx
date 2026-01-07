@@ -116,15 +116,18 @@ export function LayoutHeaderTabs({
   options: SidebarTabWithProps[]
 }) {
   const pathname = usePathname()
-  const selectedIdx = useMemo(() => {
-    return options.findLastIndex((option) => isTabActive(option, pathname))
-  }, [options, pathname])
+  const currentRoot = pathname.split('/')[1]
 
   return (
     <div className={cn('flex flex-row items-end gap-6', className)} {...props}>
       {options.map((option, i) => {
         const { title, url, unlisted, items, props: { className, ...rest } = {} } = option
-        const isSelected = selectedIdx === i
+
+        let isSelected = currentRoot === url.split('/')[1]
+
+        if (items && items.some((item) => currentRoot === item.url.split('/')[1])) {
+          isSelected = true
+        }
 
         if (items) {
           return <LayoutHeaderTabDropdown key={i} item={option} isSelected={isSelected} />
