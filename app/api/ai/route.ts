@@ -9,7 +9,5 @@ export async function POST(request: Request) {
     body: JSON.stringify({ query }),
   })
 
-  const data = await res.json()
-
-  return Response.json(data)
+  return new Response(res.body)
 }

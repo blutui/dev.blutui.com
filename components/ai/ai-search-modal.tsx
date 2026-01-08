@@ -1,14 +1,12 @@
 'use client'
 
-import { useState } from 'react'
-import Link from 'next/link'
+import { useEffect, useState } from 'react'
 import { Sparkles, Search, Loader2, ChevronRight } from 'lucide-react'
 import Markdown from 'react-markdown'
 import remarkGfm from 'remark-gfm'
 import { cn } from '../../lib/cn'
 import { buttonVariants } from '../ui/button'
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from '../ui/dialog'
-import { Collapsible, CollapsibleContent, CollapsibleTrigger } from '../ui/collapsible'
 
 export interface VectorStoreSearchResultsPage {
   object: 'vector_store.search_results.page'
@@ -43,7 +41,6 @@ export function AiSearchModal() {
   const [isOpen, setIsOpen] = useState(false)
   const [query, setQuery] = useState('')
   const [response, setResponse] = useState('')
-  const [references, setReferences] = useState<VectorStoreSearchResult[]>([])
   const [isLoading, setIsLoading] = useState(false)
 
   const handleOpenChange = (open: boolean) => {
@@ -51,9 +48,12 @@ export function AiSearchModal() {
     if (!open) {
       setQuery('')
       setResponse('')
-      setReferences([])
     }
   }
+
+  useEffect(() => {
+    console.log('AI Response Updated:', response)
+  }, [response])
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
@@ -65,11 +65,48 @@ export function AiSearchModal() {
     try {
       const res = await fetch('/api/ai', {
         method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
         body: JSON.stringify({ query }),
       })
-      const data: VectorStoreSearchResultsPage = await res.json()
-      setReferences(data.data)
-      setResponse(data.response)
+
+      if (!res.ok) {
+        throw new Error(res.statusText)
+      }
+
+      const reader = res.body?.getReader()
+      if (!reader) return
+
+      const decoder = new TextDecoder()
+      let buffer = ''
+
+      while (true) {
+        const { done, value } = await reader.read()
+        if (done) break
+
+        const text = decoder.decode(value, { stream: true })
+        buffer += text
+
+        const lines = buffer.split('\n')
+        // Keep the last line in the buffer as it might be incomplete
+        buffer = lines.pop() || ''
+
+        for (const line of lines) {
+          const trimmed = line.trim()
+          if (!trimmed || !trimmed.startsWith('data: ')) continue
+
+          try {
+            const jsonStr = trimmed.slice(6) // Remove "data: " prefix
+            const data = JSON.parse(jsonStr)
+            if (data.response) {
+              setResponse((prev) => prev + data.response)
+            }
+          } catch (e) {
+            console.error('Failed to parse stream line:', line, e)
+          }
+        }
+      }
     } catch (error) {
       console.error('Failed to fetch AI response', error)
       setResponse('Sorry, something went wrong.')
@@ -131,39 +168,7 @@ export function AiSearchModal() {
               <Markdown remarkPlugins={[remarkGfm]}>{response}</Markdown>
             </div>
           )}
-          {references.length > 0 && (
-            <Collapsible className="border-fd-border border-t px-4 pt-2 pb-4">
-              <CollapsibleTrigger className="group flex w-full items-center gap-2">
-                <h3 className="text-sm font-medium">References</h3>
-                <ChevronRight className="text-fd-muted-foreground size-4 transition-transform group-data-[state=open]:rotate-90" />
-              </CollapsibleTrigger>
-              <CollapsibleContent>
-                <ul className="mt-2 list-disc pl-5 text-sm">
-                  {references.map((ref, index) => {
-                    const href = (() => {
-                      let path = ref.filename
-                      path = path.replace(/^content\/?/, '')
-                      path = path.replace(/\.mdx?$/, '')
-                      if (!path.startsWith('/')) path = '/' + path
-                      return path
-                    })()
-                    return (
-                      <li key={index}>
-                        <Link
-                          href={href}
-                          className="hover:text-fd-primary block underline"
-                          onClick={() => setIsOpen(false)}
-                        >
-                          {ref.filename}
-                        </Link>
-                      </li>
-                    )
-                  })}
-                </ul>
-              </CollapsibleContent>
-            </Collapsible>
-          )}
-          {isLoading ? (
+          {isLoading && !response ? (
             <div className="text-fd-muted-foreground flex animate-pulse items-center gap-2 p-4 text-sm">
               <Loader2 className="size-4 animate-spin" />
               Thinking
