@@ -1,6 +1,6 @@
 'use client'
 
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { Sparkles, Search, Loader2, ChevronRight } from 'lucide-react'
 import Markdown from 'react-markdown'
 import remarkGfm from 'remark-gfm'
@@ -42,6 +42,7 @@ export function AiSearchModal() {
   const [query, setQuery] = useState('')
   const [response, setResponse] = useState('')
   const [isLoading, setIsLoading] = useState(false)
+  const bottomRef = useRef<HTMLDivElement>(null)
 
   const handleOpenChange = (open: boolean) => {
     setIsOpen(open)
@@ -50,6 +51,12 @@ export function AiSearchModal() {
       setResponse('')
     }
   }
+
+  useEffect(() => {
+    if (response || isLoading) {
+      bottomRef.current?.scrollIntoView({ behavior: 'smooth' })
+    }
+  }, [response, isLoading])
 
   useEffect(() => {
     console.log('AI Response Updated:', response)
@@ -174,6 +181,7 @@ export function AiSearchModal() {
               Thinking
             </div>
           ) : null}
+          <div ref={bottomRef} className="h-px w-full" />
         </div>
       </DialogContent>
     </Dialog>
