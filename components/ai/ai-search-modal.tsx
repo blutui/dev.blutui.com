@@ -4,9 +4,12 @@ import { useEffect, useRef, useState } from 'react'
 import { Sparkles, Search, Loader2, ChevronRight } from 'lucide-react'
 import Markdown from 'react-markdown'
 import remarkGfm from 'remark-gfm'
+import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter'
+import { vscDarkPlus } from 'react-syntax-highlighter/dist/esm/styles/prism'
 import { cn } from '../../lib/cn'
 import { buttonVariants } from '../ui/button'
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from '../ui/dialog'
+import { useTheme } from 'next-themes'
 
 export interface VectorStoreSearchResultsPage {
   object: 'vector_store.search_results.page'
@@ -44,6 +47,8 @@ export function AiSearchModal() {
   const [isLoading, setIsLoading] = useState(false)
   const bottomRef = useRef<HTMLDivElement>(null)
 
+  const { theme } = useTheme()
+
   const handleOpenChange = (open: boolean) => {
     setIsOpen(open)
     if (!open) {
@@ -57,10 +62,6 @@ export function AiSearchModal() {
       bottomRef.current?.scrollIntoView({ behavior: 'smooth' })
     }
   }, [response, isLoading])
-
-  useEffect(() => {
-    console.log('AI Response Updated:', response)
-  }, [response])
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
@@ -172,7 +173,30 @@ export function AiSearchModal() {
         <div className="flex max-h-96 flex-1 flex-col overflow-y-auto">
           {response && (
             <div className="prose prose-sm dark:prose-invert max-w-none p-4">
-              <Markdown remarkPlugins={[remarkGfm]}>{response}</Markdown>
+              <Markdown
+                remarkPlugins={[remarkGfm]}
+                components={{
+                  code({ node, inline, className, children, ...props }: any) {
+                    const match = /language-(\w+)/.exec(className || '')
+                    return !inline && match ? (
+                      <SyntaxHighlighter
+                        className="not-prose"
+                        {...props}
+                        style={theme === 'dark' ? vscDarkPlus : undefined}
+                        language={match[1] === 'canvas' ? 'twig' : match[1]}
+                      >
+                        {String(children).replace(/\n$/, '')}
+                      </SyntaxHighlighter>
+                    ) : (
+                      <code {...props} className={className}>
+                        {children}
+                      </code>
+                    )
+                  },
+                }}
+              >
+                {response}
+              </Markdown>
             </div>
           )}
           {isLoading && !response ? (
