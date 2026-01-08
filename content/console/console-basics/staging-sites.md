@@ -4,17 +4,12 @@ description: 'The concept of staging sites and how they work'
 
 ---
 
-How blutui staging site works is the site you develop. Until published your site is just in staging. 
+How Blutui staging site works is the site you develop. Until published your site is just in staging. 
 
-### What to do with staging site
+### What to do with staging site or cassette
 
-Bluid your blutui site. The `[your-site]`.blutui.com is the staging link. This is where you will see your site develop when pushing code up. 
+When you build your Blutui site, a staging environment is automatically created at [your-site].blutui.com. This staging URL is where you can view your site as it develops when new code is pushed.
 
-To show someone that you dont want admin access to the site send them your site staging link `[your-site]`.blutui.com and the `Password` that is located in the `Security` tab of your site. 
+If you need to share a specific, non-active cassette, click the ⋯ (options) button next to the cassette to access its unique preview link.
 
-### What happens after publishing.
-
-The staging site still is there. This allows you to chane the code in an area without pushing to live build. This is great to add and test new page layouts. 
-
-Just make sure after you make these changes on staging and are happy with them `Republish` the site to set them live.
-
+If you want to share the site without granting admin access, you will also need to provide the site’s Password, which can be found in the Security tab of the site settings.
