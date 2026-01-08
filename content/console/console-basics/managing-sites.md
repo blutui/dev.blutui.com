@@ -9,7 +9,7 @@ From the sites panel you can view all of your current sites. Selecting the login
 ### Settings
 In this section, you are able to edit your site's name, sub-domain, description and timezone. On the right hand side of the page you will see a list of actions with red buttons titled Request a Transfer, Unpublish and Delete. 
 
-- Requesting a transfer will mean that you will lose control of that site by transferring ownership to another user. You will no longer have rights to manage it anymore. Clicking on this button will then bring up the following message:
+- Requesting a transfer will mean that you will lose control of that site by transferring ownership to another agency. You will no longer have rights to manage it anymore. To transfer a site, click the Transfer Ownership button and enter the destination agency’s handle. You can easily find an agency’s handle by selecting it from the Agency dropdown in the top-right corner the handle appears beneath the selected agency and begins with an @.
 
 - Unpublishing a site means that the site will be taken offline and hidden from the public. This action should not be done lightly, particularly if it is a customer site that is generating money. Clicking on this button will then bring up the following message:
 
