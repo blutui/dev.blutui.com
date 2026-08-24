@@ -468,3 +468,141 @@ Combine the setting with the [form tag](/canvas/tags/form), passing the picked h
   As with collections and entries, guard your output: a form that was never selected, or was deleted after being
   selected, resolves to `null` rather than erroring.
 </Callout>
+
+### Blog
+
+**type: `blog`**
+
+A blog picked from the site's blogs. It mirrors the [Collection](#collection) selector: the editor sees a dropdown of the site's blogs and chooses one, so a single block template can render posts from whichever blog the page needs, the news blog here, a case studies blog there, without hard-coding a slug.
+
+| Attribute                | Description                                     | Data Type |
+| :----------------------- | :------------------------------------------------ | --------: |
+| `placeholder` (optional) | The text on the empty option in the picker      |    String |
+
+The stored value is the blog slug, a plain String, so `default` may be a blog slug too.
+
+```json
+{ "name": "source", "type": "blog", "label": "Blog", "placeholder": "Choose a blog" }
+```
+
+The value in the template section is `null` while no blog is picked, or when the slug no longer exists. Otherwise it is an object in the same shape the [blog module](/canvas/functions/cms#blog) returns, so existing blog markup ports over unchanged:
+
+| Value property | Description                                              | Data Type |
+| :------------- | :--------------------------------------------------------- | --------: |
+| `id`           | The blog's unique id                                     |    String |
+| `object`       | Always `blog`                                            |    String |
+| `name`         | The blog name                                            |    String |
+| `slug`         | The blog slug                                            |    String |
+| `description`  | The blog description                                     |    String |
+| `uri`          | The blog's URI, such as `/news`                          |    String |
+| `layout`       | The blog's index layout template                         |    String |
+| `posts`        | The blog's published posts, newest first                 |     Array |
+| `posts_count`  | The number of published posts                            |    Number |
+| `posts_layout` | The blog's post layout template                          |    String |
+
+```canvas
+{% if settings.source %}
+  <h2>{{ settings.source.name }}</h2>
+  {% for post in settings.source.posts %}
+    <article>
+      <a href="{{ post.slug }}">{{ post.title }}</a>
+      <p>{{ post.publish_date|date('d M Y') }}</p>
+      <p>{{ post.description }}</p>
+    </article>
+  {% endfor %}
+{% endif %}
+```
+
+#### The post object
+
+Every post, whether it arrives through a blog's `posts` array or through a [Post](#post) setting, exposes the same keys:
+
+| Value property                 | Description                                        | Data Type |
+| :----------------------------- | :---------------------------------------------------- | --------: |
+| `id`                           | The post's unique id                               |    String |
+| `blog_id`                      | The id of the blog the post belongs to             |    String |
+| `title`                        | The post title                                     |    String |
+| `description`                  | The post description                               |    String |
+| `content`                      | The post body as HTML, output it with [raw](/canvas/filters/raw) |    String |
+| `slug`                         | The post's full path, such as `/news/my-post`      |    String |
+| `author`                       | The post author                                    |    String |
+| `cover_image`                  | The cover image URL                                |    String |
+| `seo_title`                    | The SEO title                                      |    String |
+| `seo_description`              | The SEO description                                |    String |
+| `is_noindex`                   | Whether the post is excluded from indexing         |   Boolean |
+| `is_nofollow`                  | Whether the post's links are marked nofollow       |   Boolean |
+| `publish_date`                 | When the post publishes                            |    String |
+| `created_at`                   | When the post was created                          |    String |
+| `updated_at`                   | When the post was last updated                     |    String |
+
+`slug` is the post's full path, so link to it directly rather than prefixing the blog's `uri`. The three dates are Strings, ready to pass to the [date](/canvas/filters/date) filter.
+
+Posts come back newest first, ordered by `publish_date`, both in a blog's `posts` array and in the editor's post picker.
+
+<Callout>
+  As with collections and forms, guard your output: a blog that was never picked, or whose slug no longer exists,
+  resolves to `null` rather than erroring. Blogs are stored by slug, so renaming a blog's slug breaks existing block
+  data that points at it.
+</Callout>
+
+### Post
+
+**type: `post`**
+
+One or more posts hand-picked from a blog. It mirrors the [Entry](#entry) setting: use it when the editor chooses specific posts rather than a whole blog, a featured post, a set of related reading, or a hand-picked roundup.
+
+| Attribute                 | Description                                                                                                        | Data Type |
+| :------------------------ | :-------------------------------------------------------------------------------------------------------------------- | --------: |
+| `blog` (optional)         | Locks the block to one blog by slug. The editor's blog dropdown is hidden, and this always overrides the stored slug |    String |
+| `default_blog` (optional) | Pre-selects a blog in the editor, but the editor can change it. Ignored when `blog` is set                          |    String |
+| `multiple` (optional)     | Whether editors pick a single post or several. `true` switches to a multi-select. Defaults to `false`               |   Boolean |
+| `max` (optional)          | Caps the number of selections when `multiple` is `true`                                                            |    Number |
+| `min` (optional)          | Accepted and validated, but not enforced by the picker, the same as [Entry](#entry) today                           |    Number |
+| `placeholder` (optional)  | The trigger text shown before anything is picked                                                                   |    String |
+
+The stored value is `{ "blog": "<slug>", "id": <id> }`, or `{ "blog": "<slug>", "ids": [<id>, ...] }` in multiple mode.
+
+```json
+{ "name": "featured", "type": "post", "label": "Featured post", "blog": "news" }
+```
+
+```json
+{ "name": "related", "type": "post", "label": "Related", "multiple": true, "max": 3 }
+```
+
+<Callout>
+  Use `blog` whenever the block is designed around one specific blog. It gives editors a simpler picker with no blog
+  dropdown, and it guarantees which posts the template can receive.
+</Callout>
+
+#### Rendering posts
+
+Each post is a [post object](#the-post-object). With `multiple` off, the value is the picked post, or `null` when nothing is picked:
+
+```canvas
+{% if settings.featured %}
+  <h3><a href="{{ settings.featured.slug }}">{{ settings.featured.title }}</a></h3>
+  <img src="{{ settings.featured.cover_image }}" alt="{{ settings.featured.title }}">
+{% endif %}
+```
+
+With `multiple` on, the value is always an array, empty rather than `null` when nothing is picked, in the exact order the editor picked them, so you can rely on that order for layout:
+
+```canvas
+{% if settings.related|length > 0 %}
+  {% for post in settings.related %}
+    <a href="{{ post.slug }}">{{ post.title }}</a>
+  {% endfor %}
+{% endif %}
+```
+
+#### Picking posts
+
+Picker labels are automatic: the post title, with the publish date as a muted hint beside it. There is no `display_field` equivalent, [Entry](#entry) needs one because collections have arbitrary fields, while posts always have a title.
+
+<Callout type="warning">
+  Scheduled posts behave differently in the editor and on the site. The picker lists posts with a future
+  `publish_date` so editors can line them up ahead of time, but rendering excludes them, matching the blog module. A
+  scheduled post resolves to `null`, or drops out of the array in multiple mode, until it publishes. Always guard
+  your output.
+</Callout>
