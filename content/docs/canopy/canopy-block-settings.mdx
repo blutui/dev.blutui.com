@@ -468,3 +468,61 @@ Combine the setting with the [form tag](/canvas/tags/form), passing the picked h
   As with collections and entries, guard your output: a form that was never selected, or was deleted after being
   selected, resolves to `null` rather than erroring.
 </Callout>
+
+### Blog
+
+**type: `blog`**
+
+A blog picked from the site's blogs. It works like the [Collection](#collection) selector: the editor sees a dropdown of the site's blogs and chooses one, so a single block template can render posts from whichever blog the page needs, the news blog here, a case studies blog there, without hard-coding a slug.
+
+| Attribute                | Description                            | Data Type |
+| :----------------------- | :-------------------------------------- | --------: |
+| `placeholder` (optional) | Placeholder text shown in the dropdown |    String |
+
+`default` may be a blog slug String.
+
+The value is `null` while no blog is selected, or when the selected blog has been deleted. Otherwise it is an object, in the same shape the [cms.blog](/canvas/functions/cms#blog) function returns:
+
+| Value property | Description                                              | Data Type |
+| :------------- | :--------------------------------------------------------- | --------: |
+| `id`           | The blog's unique id                                     |    String |
+| `object`       | Always `blog`                                            |    String |
+| `name`         | The blog name                                            |    String |
+| `slug`         | The blog slug                                            |    String |
+| `description`  | The blog description                                     |    String |
+| `uri`          | The blog's URI, such as `/news`                          |    String |
+| `layout`       | The blog's index layout template                         |    String |
+| `posts`        | The blog's published posts, newest first                 |     Array |
+| `posts_count`  | The number of published posts                            |    Number |
+| `posts_layout` | The blog's post layout template                          |    String |
+
+Each post in `posts` exposes `title`, `slug`, `publish_date`, `author`, `description`, `cover_image`, and `content`, along with `id`, `created_at`, and `updated_at`. Posts are ordered by publish date, newest first, and scheduled posts are excluded, so a block shows exactly what the blog itself renders.
+
+```json tab="Config"
+{
+    "name": "source",
+    "type": "blog",
+    "label": "Blog",
+    "placeholder": "Select a blog",
+    "help": "Published posts from the chosen blog are rendered."
+}
+```
+
+```canvas tab="Template"
+{% if settings.source %}
+  <h2>{{ settings.source.name }}</h2>
+  {% for post in settings.source.posts %}
+    <article>
+      <a href="{{ post.slug }}">{{ post.title }}</a>
+      <p>{{ post.publish_date|date('d M Y') }}</p>
+      <p>{{ post.description }}</p>
+    </article>
+  {% endfor %}
+{% endif %}
+```
+
+<Callout>
+  As with collections and forms, guard your output: a blog that was never selected, or was deleted after being
+  selected, resolves to `null` rather than erroring. Blogs are stored by slug, so renaming a blog's slug breaks
+  existing block data that points at it.
+</Callout>
